@@ -34,7 +34,7 @@ def embedded_names(pdf,page,side):
  return names,text
 
 def ocr_words(image):
- tsv=run("tesseract",str(image),"stdout","-l","jpn+eng","--psm","11","tsv")
+ tsv=run("tesseract",str(image),"stdout","-l","jpn+eng","--psm","6","tsv")
  rows=list(csv.DictReader(tsv.splitlines(),delimiter="\t"));out=[]
  for r in rows:
   text=r.get("text","").strip()
