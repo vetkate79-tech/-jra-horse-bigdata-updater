@@ -5,7 +5,7 @@ Output is quarantined unless every race passes row-count and numeric checks.
 import csv, json, os, re, subprocess, tempfile
 from pathlib import Path
 
-DPI=400
+DPI=int(os.getenv("OCR_DPI","400"));PSM=os.getenv("OCR_PSM","6")
 NAME_ROW=re.compile(r"^\s*(.{2,100}?)\s*(牡|牝|騸)\s*(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\s|$)")
 KATA=re.compile(r"^[ァ-ヶー・ヴヷヸヹヺ]{2,18}$")
 TIME=re.compile(r"([0-3])\s*[:：]\s*([0-5]\d)\s*[.．]\s*(\d)")
@@ -37,7 +37,7 @@ def ocr_numeric_rows(image):
  from PIL import Image
  source=Image.open(image);numeric=source.crop((int(source.width*.60),0,source.width,source.height))
  numeric_path=Path(image).with_name(Path(image).stem+"_numeric.png");numeric.save(numeric_path)
- text=run("tesseract",str(numeric_path),"stdout","-l","jpn+eng","--psm","6")
+ text=run("tesseract",str(numeric_path),"stdout","-l","jpn+eng","--psm",PSM)
  out=[];previous_time=None
  for raw_line in text.splitlines():
   if "ハロンタイム" in raw_line or "通過タイム" in raw_line:continue
@@ -99,7 +99,7 @@ def extract(pdf):
     audit.append({"race_no":race_no,"names":len(names),"numeric_rows":len(numbers),"reasons":reasons})
     target=quarantine if reasons else accepted
     for pos,(name,num) in enumerate(zip(names,numbers),1):
-     target.append({**meta,"race_date":race_date,"race_no":race_no,"finish_position":pos,"horse_name":name,**num,
+     target.append({**meta,"race_date":race_date,"race_no":race_no,"finish_position":pos,"horse_name":name,"source_pdf":pdf.name,"source_page":page,"source_side":side,"retry_dpi":DPI,"retry_psm":PSM,**num,
                     "validation_status":"QUARANTINED" if reasons else "PASS","validation_reason":";".join(reasons)})
  return accepted,quarantine,audit
 
