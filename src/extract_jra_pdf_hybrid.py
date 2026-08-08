@@ -37,21 +37,27 @@ def ocr_numeric_rows(image):
  text=run("tesseract",str(image),"stdout","-l","jpn+eng","--psm","6")
  out=[]
  for raw_line in text.splitlines():
-  compact=raw_line.replace(" ","")
-  match=TIME.search(compact)
+  if "ハロンタイム" in raw_line or "通過タイム" in raw_line:continue
+  match=TIME.search(raw_line)
   if not match:continue
-  prefix=compact[:match.start()];suffix=compact[match.end():]
-  lead="".join(re.findall(r"\d",prefix[:8]))
+  prefix=raw_line[:match.start()];suffix=raw_line[match.end():]
+  leading=re.match(r"^\s*([0-9|/ ,]{1,10})",prefix)
+  lead="".join(re.findall(r"\d",leading.group(1))) if leading else ""
   horse_no=None
-  for cut in range(1,min(3,len(lead))):
-   frame=int(lead[:cut]);number=int(lead[cut:])
-   if 1<=frame<=8 and 1<=number<=18:horse_no=number;break
-  if horse_no is None:continue
+  if len(lead)>=2:
+   frame=int(lead[0]);rest=int(lead[1:])
+   if 1<=frame<=8:
+    horse_no=rest if 1<=rest<=18 else int(lead[-1])
   body=None
   for token in re.findall(r"\d{3,4}",prefix):
    value=int(token[-3:])
    if 300<=value<=699:body=value
-  odds_values=[float(m.group(1)+"."+m.group(2)) for m in ODDS.finditer(suffix)]
+  odds_values=[]
+  for m in ODDS.finditer(suffix):
+   decimals=m.group(2);value=float(m.group(1)+"."+decimals)
+   if len(decimals)==2 and decimals.endswith("0"):value=round(value,1)
+   odds_values.append(value)
+  if body is None and not odds_values:continue
   out.append({"horse_no":horse_no,"time":f"{match.group(1)}:{match.group(2)}.{match.group(3)}",
               "body_weight":body,"win_odds":odds_values[-1] if odds_values else None,
               "ocr_confidence":"","ocr_line":raw_line})
