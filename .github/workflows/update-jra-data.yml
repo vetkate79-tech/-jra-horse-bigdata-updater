@@ -50,6 +50,13 @@ jobs:
           UPDATE_MODE="${UPDATE_MODE:-all}" \
           UPDATE_SCOPE="${UPDATE_SCOPE:-full_year}" \
           python src/update_registry.py
+      - name: Reprocess quarantine queue
+        run: |
+          mkdir -p data/quarantine_queue data/quarantine_resolved
+          shopt -s nullglob
+          for pdf in data/quarantine_queue/*.pdf; do
+            python src/resolve_quarantine.py "$pdf" data/quarantine_resolved
+          done
       - name: Validate history and rebuild profiles three times
         run: |
           if [ -f data/race_results.csv ]; then
