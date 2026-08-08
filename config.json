@@ -1,0 +1,14 @@
+{
+  "years": [
+    2025
+  ],
+  "schedule_timezone": "Asia/Tokyo",
+  "spreadsheet_id": "1U0Nt70UxiJbTFrX9C3KKP37fBVxtjnEvuLvw3HU9_pk",
+  "registry_sheet": "horse_master",
+  "update_policy": {
+    "registry": "weekly",
+    "profile_batch_size": 250,
+    "history_batch_size": 250,
+    "resume": true
+  }
+}
