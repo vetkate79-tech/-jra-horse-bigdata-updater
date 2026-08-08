@@ -13,7 +13,7 @@ INDEX=f"https://www.jra.go.jp/datafile/seiseki/report/{YEAR}.html"
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 CACHE=Path("cache")/str(YEAR); PDF=CACHE/"pdf"; TXT=CACHE/"txt"
 DATA=Path("data"); STATUS=Path("status"); OUT=DATA/f"horse_master_{YEAR}.csv"; MASTER=DATA/"horse_master_all.csv"
-ROW=re.compile(r"^\\s*(.{2,120}?)\\s*(牡|牝|騸)\\s+(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\\s|$)")
+ROW=re.compile(r"^\\s*(.{2,120}?)\\s*(牡|牝|騸)\\s*(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\\s|$)")
 KATA=re.compile(r"^[ァ-ヶー・ヴヷヸヹヺ]{2,18}$")
 
 def select_result_urls(raw):
