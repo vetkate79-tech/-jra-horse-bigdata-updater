@@ -1,3 +1,4 @@
 gspread>=6,<7
 google-auth>=2,<3
 beautifulsoup4>=4.12,<5
+Pillow>=10,<12
