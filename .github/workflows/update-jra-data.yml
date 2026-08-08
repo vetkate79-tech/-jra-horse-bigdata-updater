@@ -78,6 +78,8 @@ jobs:
           else
             echo "model_predictions.csv not present; backtest remains blocked"
           fi
+      - name: Continue 130 percent walk-forward validation
+        run: python src/run_endless_validation.py
       - name: Commit data and status
         run: |
           git config user.name "jra-data-bot"
