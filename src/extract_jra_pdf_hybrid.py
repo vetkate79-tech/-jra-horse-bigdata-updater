@@ -34,32 +34,31 @@ def embedded_names(pdf,page,side):
  return names,text
 
 def ocr_numeric_rows(image):
- text=run("tesseract",str(image),"stdout","-l","jpn+eng","--psm","6")
- out=[]
+ from PIL import Image
+ source=Image.open(image);numeric=source.crop((int(source.width*.60),0,source.width,source.height))
+ numeric_path=Path(image).with_name(Path(image).stem+"_numeric.png");numeric.save(numeric_path)
+ text=run("tesseract",str(numeric_path),"stdout","-l","jpn+eng","--psm","6")
+ out=[];previous_time=None
  for raw_line in text.splitlines():
   if "ハロンタイム" in raw_line or "通過タイム" in raw_line:continue
   match=TIME.search(raw_line)
-  if not match:continue
-  prefix=raw_line[:match.start()];suffix=raw_line[match.end():]
-  leading=re.match(r"^\s*([0-9|/ ,]{1,10})",prefix)
-  lead="".join(re.findall(r"\d",leading.group(1))) if leading else ""
-  horse_no=None
-  if len(lead)>=2:
-   frame=int(lead[0]);rest=int(lead[1:])
-   if 1<=frame<=8:
-    horse_no=rest if 1<=rest<=18 else int(lead[-1])
   body=None
-  for token in re.findall(r"\d{3,4}",prefix):
+  for token in re.findall(r"\d{3,4}",raw_line[:match.start()] if match else raw_line):
    value=int(token[-3:])
    if 300<=value<=699:body=value
-  odds_values=[]
-  for m in ODDS.finditer(suffix):
+  all_decimals=[]
+  for m in ODDS.finditer(raw_line[match.end():] if match else raw_line):
    decimals=m.group(2);value=float(m.group(1)+"."+decimals)
    if len(decimals)==2 and decimals.endswith("0"):value=round(value,1)
-   odds_values.append(value)
-  if body is None and not odds_values:continue
-  out.append({"horse_no":horse_no,"time":f"{match.group(1)}:{match.group(2)}.{match.group(3)}",
-              "body_weight":body,"win_odds":odds_values[-1] if odds_values else None,
+   all_decimals.append(value)
+  odds=all_decimals[-1] if all_decimals else None
+  if match:
+   time_value=f"{match.group(1)}:{match.group(2)}.{match.group(3)}";previous_time=time_value
+  elif body is not None and odds is not None and previous_time is not None:
+   time_value=previous_time
+  else:continue
+  if body is None and odds is None:continue
+  out.append({"horse_no":None,"time":time_value,"body_weight":body,"win_odds":odds,
               "ocr_confidence":"","ocr_line":raw_line})
  return out
 
@@ -95,8 +94,8 @@ def extract(pdf):
     reasons=[]
     if not 3<=len(names)<=18:reasons.append(f"name_count={len(names)}")
     if len(numbers)!=len(names):reasons.append(f"row_mismatch names={len(names)} numeric={len(numbers)}")
-    if any(x["horse_no"] is None or x["body_weight"] is None or x["win_odds"] is None for x in numbers):reasons.append("missing_core_numeric")
-    if len({x["horse_no"] for x in numbers})!=len(numbers):reasons.append("duplicate_horse_no")
+    if any(x["body_weight"] is None or x["win_odds"] is None for x in numbers):reasons.append("missing_core_numeric")
+   
     audit.append({"race_no":race_no,"names":len(names),"numeric_rows":len(numbers),"reasons":reasons})
     target=quarantine if reasons else accepted
     for pos,(name,num) in enumerate(zip(names,numbers),1):
