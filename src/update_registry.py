@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import csv, json, os, re, subprocess, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin
+from bs4 import BeautifulSoup
 
 YEAR=int(os.getenv("TARGET_YEAR","2025"))
 MODE=os.getenv("UPDATE_MODE","all")
@@ -14,6 +15,27 @@ CACHE=Path("cache")/str(YEAR); PDF=CACHE/"pdf"; TXT=CACHE/"txt"
 DATA=Path("data"); STATUS=Path("status"); OUT=DATA/f"horse_master_{YEAR}.csv"; MASTER=DATA/"horse_master_all.csv"
 ROW=re.compile(r"^\\s*(.{2,120}?)\\s+(牡|牝|騸)\\s+(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\\s|$)")
 KATA=re.compile(r"^[ァ-ヶー・ヴヷヸヹヺ]{2,12}$")
+
+def select_result_urls(raw):
+ soup=BeautifulSoup(raw,"html.parser",from_encoding="shift_jis")
+ scope=os.getenv("UPDATE_SCOPE","full_year")
+ if scope!="previous_weekend":
+  return list(dict.fromkeys(urljoin(INDEX,a.get("href")) for a in soup.select("a[href$='.pdf']") if f"/report/{YEAR}/" in urljoin(INDEX,a.get("href")) and "-hyo-" not in a.get("href")))
+ jst_today=(datetime.now(timezone.utc)+timedelta(hours=9)).date()
+ end=jst_today-timedelta(days=jst_today.weekday()+1)
+ start=end-timedelta(days=1)
+ current=None;urls=[]
+ for node in soup.find_all(["h2","h3","a"]):
+  if node.name=="h2" and "各競馬場" in node.get_text():break
+  if node.name=="h3":
+   m=re.search(r"(\\d{1,2})月(\\d{1,2})日",node.get_text())
+   current=date(YEAR,int(m.group(1)),int(m.group(2))) if m else None
+  elif current and start<=current<=end:
+   href=node.get("href","")
+   if href.endswith(".pdf") and "-hyo-" not in href:urls.append(urljoin(INDEX,href))
+ if not urls:raise RuntimeError(f"No JRA result PDFs for previous weekend {start}..{end}")
+ print(f"weekly window: {start}..{end}; {len(urls)} result PDFs")
+ return list(dict.fromkeys(urls))
 
 class Links(HTMLParser):
  def __init__(self): super().__init__(); self.items=[]
@@ -98,8 +120,7 @@ def main():
  for p in (PDF,TXT,DATA,STATUS):p.mkdir(parents=True,exist_ok=True)
  if MODE not in ("registry","all"):
   (STATUS/"checkpoint.json").write_text(json.dumps({"mode":MODE,"status":"QUEUED_ENRICHMENT_MODULE"},ensure_ascii=False,indent=2));return
- parser=Links();parser.feed(fetch(INDEX).decode("utf-8","ignore"))
- urls=list(dict.fromkeys(parser.items));unique={};errors=[]
+ urls=select_result_urls(fetch(INDEX));unique={};errors=[]
  for start in range(0,len(urls),48):
   batch=urls[start:start+48];results=[]
   with ThreadPoolExecutor(max_workers=12) as ex:
