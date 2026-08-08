@@ -131,12 +131,25 @@ def main():
   for source,txt in sorted(results):
    for name,sex,src in parse(source,txt):unique.setdefault(name,{"horse_name":name,"sex":sex,"first_seen_pdf":src,"first_seen_year":str(YEAR),"last_seen_year":str(YEAR),"active_years":str(YEAR)})
   print(f"{min(start+48,len(urls))}/{len(urls)} PDFs; {len(unique)} horses")
- if len(unique)<1000:raise RuntimeError(f"Quality gate failed: only {len(unique)} horses")
+ minimum=30 if os.getenv("UPDATE_SCOPE")=="previous_weekend" else 1000
+ if len(unique)<minimum:raise RuntimeError(f"Quality gate failed: only {len(unique)} horses; expected at least {minimum}")
  rows=list(unique.values())
- for i,r in enumerate(rows,1):r["queue_no"]=i
- fields=["queue_no","horse_name","sex","first_seen_pdf","first_seen_year","last_seen_year","active_years"];tmp=OUT.with_suffix(".tmp")
+ fields=["queue_no","horse_name","sex","first_seen_pdf","first_seen_year","last_seen_year","active_years"]
+ year_data={}
+ if OUT.exists():
+  with OUT.open(encoding="utf-8-sig",newline="") as f:
+   for old in csv.DictReader(f):
+    if old.get("horse_name"):year_data[old["horse_name"]]=old
+ for item in rows:
+  name=item["horse_name"]
+  if name in year_data:
+   year_data[name]["sex"]=item["sex"];year_data[name]["last_seen_year"]=str(YEAR)
+  else:year_data[name]=dict(item)
+ year_rows=sorted(year_data.values(),key=lambda x:x["horse_name"])
+ for i,r in enumerate(year_rows,1):r["queue_no"]=i
+ tmp=OUT.with_suffix(".tmp")
  with tmp.open("w",encoding="utf-8-sig",newline="") as f:
-  w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+  w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(year_rows)
  tmp.replace(OUT)
  cumulative={}
  if MASTER.exists():
