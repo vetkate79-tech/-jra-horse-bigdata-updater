@@ -33,46 +33,28 @@ def embedded_names(pdf,page,side):
    if name and name not in names:names.append(name)
  return names,text
 
-def ocr_words(image):
- tsv=run("tesseract",str(image),"stdout","-l","jpn+eng","--psm","6","tsv")
- rows=list(csv.DictReader(tsv.splitlines(),delimiter="\t"));out=[]
- for r in rows:
-  text=r.get("text","").strip()
-  try:conf=float(r.get("conf","-1"))
-  except ValueError:conf=-1
-  if text and conf>=15:
-   out.append({"text":text,"x":int(r["left"]),"y":int(r["top"]),"w":int(r["width"]),"h":int(r["height"]),"conf":conf,"line_key":(r["block_num"],r["par_num"],r["line_num"])})
- return out
-
-def numeric_rows(words,width):
- grouped={}
- for word in words:grouped.setdefault(word["line_key"],[]).append(word)
+def ocr_numeric_rows(image):
+ text=run("tesseract",str(image),"stdout","-l","jpn+eng","--psm","6")
  out=[]
- for parts in grouped.values():
-  parts.sort(key=lambda w:w["x"]);compact="".join(w["text"] for w in parts).replace(" ","")
+ for raw_line in text.splitlines():
+  compact=raw_line.replace(" ","")
   match=TIME.search(compact)
   if not match:continue
-  left=[w["text"] for w in parts if w["x"]<width*.12]
-  nums=[int(x) for x in re.findall(r"\d{1,2}"," ".join(left))]
-  horse_no=nums[-1] if nums else None
-  if horse_no is None or not 1<=horse_no<=18:continue
-  body_candidates=[]
-  for w in parts:
-   if width*.55<w["x"]<width*.72:
-    for raw in re.findall(r"\d{2,4}",w["text"]):
-     value=int(raw[-3:])
-     if 300<=value<=699:body_candidates.append(value)
-  odds_candidates=[]
-  for w in parts:
-   if w["x"]>width*.78:
-    for m in ODDS.finditer(w["text"]):odds_candidates.append(float(m.group(1)+"."+m.group(2)))
+  prefix=compact[:match.start()];suffix=compact[match.end():]
+  lead="".join(re.findall(r"\d",prefix[:8]))
+  horse_no=None
+  for cut in range(1,min(3,len(lead))):
+   frame=int(lead[:cut]);number=int(lead[cut:])
+   if 1<=frame<=8 and 1<=number<=18:horse_no=number;break
+  if horse_no is None:continue
+  body=None
+  for token in re.findall(r"\d{3,4}",prefix):
+   value=int(token[-3:])
+   if 300<=value<=699:body=value
+  odds_values=[float(m.group(1)+"."+m.group(2)) for m in ODDS.finditer(suffix)]
   out.append({"horse_no":horse_no,"time":f"{match.group(1)}:{match.group(2)}.{match.group(3)}",
-              "body_weight":body_candidates[-1] if body_candidates else None,
-              "win_odds":odds_candidates[-1] if odds_candidates else None,
-              "ocr_confidence":round(sum(w["conf"] for w in parts)/len(parts),2),
-              "ocr_line":" ".join(w["text"] for w in parts),"_y":min(w["y"] for w in parts)})
- out.sort(key=lambda x:x["_y"])
- for item in out:item.pop("_y",None)
+              "body_weight":body,"win_odds":odds_values[-1] if odds_values else None,
+              "ocr_confidence":"","ocr_line":raw_line})
  return out
 
 def filename_meta(pdf):
@@ -103,7 +85,7 @@ def extract(pdf):
     race_no=(page-1)*2+side+1
     if race_no>12:continue
     crop=image.crop((side*half,0,(side+1)*half,image.height));crop_path=root/f"p{page}s{side}.png";crop.save(crop_path)
-    names,embedded=embedded_names(pdf,page,side);numbers=numeric_rows(ocr_words(crop_path),half)
+    names,embedded=embedded_names(pdf,page,side);numbers=ocr_numeric_rows(crop_path)
     reasons=[]
     if not 3<=len(names)<=18:reasons.append(f"name_count={len(names)}")
     if len(numbers)!=len(names):reasons.append(f"row_mismatch names={len(names)} numeric={len(numbers)}")
