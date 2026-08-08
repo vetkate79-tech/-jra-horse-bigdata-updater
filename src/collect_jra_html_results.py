@@ -84,12 +84,15 @@ def extract_race(cname):
  "着順":"finish_position","Rt":"rating"}
  table=table.rename(columns={k:v for k,v in rename.items() if k in table.columns})
  meta=m.groupdict();text=soup.get_text(" ",strip=True)
- race_name=""
  title=soup.title.get_text(" ",strip=True) if soup.title else ""
- h1=soup.find(["h1","h2"],string=re.compile("レース"))
- if h1:race_name=h1.get_text(" ",strip=True)
- surface="障害" if "障害" in text[:5000] else ("ダート" if "ダート" in text[:5000] else ("芝" if "芝" in text[:5000] else ""))
- distance=(re.search(r"(\d{3,4})\s*メートル",text[:5000]) or re.search(r"(\d{3,4})\s*[ｍm]",text[:5000]))
+ result_table_tag=next((t for t in soup.find_all("table") if "馬名" in t.get_text() and "着順" in t.get_text()),None)
+ race_heading=result_table_tag.find_previous(["h2","h3"]) if result_table_tag else None
+ race_name=race_heading.get_text(" ",strip=True) if race_heading else ""
+ distance_match=(re.search(r"コース[：:]\s*(\d{1,2}(?:,\d{3})|\d{3,4})\s*メートル",text) or
+  re.search(r"(?<![\d,])(\d{1,2}(?:,\d{3})|\d{3,4})\s*[ｍm]",text[:7000]))
+ distance_m=distance_match.group(1).replace(",","") if distance_match else ""
+ course_window=text[max(0,distance_match.start()-200):distance_match.end()+120] if distance_match else text[:5000]
+ surface="障害" if "障害" in race_name else ("ダート" if "ダート" in course_window else ("芝" if "芝" in course_window else ""))
  rows=[]
  for _,r in table.iterrows():
   name=re.sub(r"\s+","",str(r.get("horse_name","")))
@@ -97,8 +100,8 @@ def extract_race(cname):
   row={k:("" if pd.isna(v) else str(v)) for k,v in r.items()}
   row.update({"race_id":cname.split("/")[0],"race_date":f'{meta["date"][:4]}-{meta["date"][4:6]}-{meta["date"][6:]}',
    "course":COURSES.get(meta["course"],meta["course"]),"meeting_no":meta["meeting"],"meeting_day":meta["day"],
-   "race_no":meta["race"],"race_name":race_name or title,"surface":surface,
-   "distance_m":distance.group(1) if distance else "","horse_name":name,"horse_id":links.get(name,""),
+   "race_no":meta["race"],"race_name":race_name,"surface":surface,
+   "distance_m":distance_m,"horse_name":name,"horse_id":links.get(name,""),
    "source_url":ENDPOINT+"?CNAME="+urllib.parse.quote(cname,safe=""),"data_status":"PASS_HTML"})
   rows.append(row)
  # Hard gates: unique starters and plausible structured values.
@@ -108,6 +111,10 @@ def extract_race(cname):
  if len(names)!=len(set(names)):errors.append("duplicate_name")
  if any(not re.fullmatch(r"\d{1,2}",str(x).replace(".0","")) for x in numbers):errors.append("horse_no")
  if not any(str(x.get("finish_position")) in ("1","1.0") for x in rows):errors.append("winner")
+ if not distance_m or not distance_m.isdigit() or not 1000<=int(distance_m)<=5000:errors.append("distance")
+ if not race_name or race_name in ("レース結果","レース結果 JRA","レース結果　JRA"):errors.append("race_name")
+ if surface not in ("芝","ダート","障害"):errors.append("surface")
+ if any(not x.get("horse_id") for x in rows):errors.append("missing_horse_id")
  if errors:
   for x in rows:x["data_status"]="QUARANTINED_HTML:"+",".join(errors)
  return cname,rows,errors
@@ -139,10 +146,20 @@ def main():
   h["starts_2025"]+=1;h["last_race_date"]=max(h["last_race_date"],r["race_date"])
   if not h["horse_id"] and r["horse_id"]:h["horse_id"]=r["horse_id"]
  atomic_csv(HORSES,sorted(horse_map.values(),key=lambda x:x["horse_name"]))
+ passed_races={r["race_id"] for r in passed}
+ invalid_distances=sum(not str(r.get("distance_m","")).isdigit() or not 1000<=int(r["distance_m"])<=5000 for r in passed)
+ missing_horse_ids=sum(not r.get("horse_id") for r in passed)
+ bad_race_names=sum(not r.get("race_name") or r["race_name"] in ("レース結果","レース結果 JRA","レース結果　JRA") for r in passed)
+ complete=(len(months)==12 and len(days)>=288 and len(races)>=3455 and len(passed_races)==len(races)
+  and len(passed)==len(all_rows) and len(passed)>30000 and len(horse_map)>7000 and not errors
+  and invalid_distances==0 and missing_horse_ids==0 and bad_race_names==0)
  state={"year":YEAR,"months":len(months),"meeting_days":len(days),"races_discovered":len(races),
-  "rows_total":len(all_rows),"rows_passed":len(passed),"horses_linked":len(horse_map),"errors":errors,
-  "status":"PASS" if len(passed)>30000 and len(horse_map)>7000 else "INCOMPLETE"}
+  "races_passed":len(passed_races),"rows_total":len(all_rows),"rows_passed":len(passed),
+  "horses_linked":len(horse_map),"invalid_distances":invalid_distances,
+  "missing_horse_ids":missing_horse_ids,"bad_race_names":bad_race_names,"errors":errors,
+  "status":"PASS" if complete else "INCOMPLETE"}
  (STATUS/f"html_collection_{YEAR}.json").write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps({k:v for k,v in state.items() if k!="errors"},ensure_ascii=False))
+ if state["status"]!="PASS":raise SystemExit("HTML collection quality gate failed")
 
 if __name__=="__main__":main()
