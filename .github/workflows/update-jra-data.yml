@@ -7,6 +7,10 @@ on:
         description: Target year
         required: false
         default: "2026"
+      scope:
+        description: full_year or previous_weekend
+        required: false
+        default: "full_year"
       mode:
         description: registry, profile, history, or all
         required: false
@@ -39,10 +43,12 @@ jobs:
         env:
           TARGET_YEAR: ${{ inputs.year }}
           UPDATE_MODE: ${{ inputs.mode }}
+          UPDATE_SCOPE: ${{ github.event_name == 'schedule' && 'previous_weekend' || inputs.scope || 'full_year' }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: |
           TARGET_YEAR="${TARGET_YEAR:-$(TZ=Asia/Tokyo date +%Y)}" \
           UPDATE_MODE="${UPDATE_MODE:-all}" \
+          UPDATE_SCOPE="${UPDATE_SCOPE:-full_year}" \
           python src/update_registry.py
       - name: Commit data and status
         run: |
