@@ -41,44 +41,38 @@ def ocr_words(image):
   try:conf=float(r.get("conf","-1"))
   except ValueError:conf=-1
   if text and conf>=15:
-   out.append({"text":text,"x":int(r["left"]),"y":int(r["top"]),"w":int(r["width"]),"h":int(r["height"]),"conf":conf})
+   out.append({"text":text,"x":int(r["left"]),"y":int(r["top"]),"w":int(r["width"]),"h":int(r["height"]),"conf":conf,"line_key":(r["block_num"],r["par_num"],r["line_num"])})
  return out
 
 def numeric_rows(words,width):
- # OCR often splits 1:55.9 into several tokens. Reconstruct visual rows by y-coordinate.
- bands=[]
- for word in sorted(words,key=lambda w:(w["y"]+w["h"]/2,w["x"])):
-  cy=word["y"]+word["h"]/2
-  best=None
-  for band in bands:
-   if abs(cy-band["y"])<=24:
-    best=band;break
-  if best is None:
-   best={"y":cy,"words":[]};bands.append(best)
-  best["words"].append(word)
-  best["y"]=sum(x["y"]+x["h"]/2 for x in best["words"])/len(best["words"])
+ grouped={}
+ for word in words:grouped.setdefault(word["line_key"],[]).append(word)
  out=[]
- for band in sorted(bands,key=lambda b:b["y"]):
-  parts=sorted(band["words"],key=lambda w:w["x"])
-  compact="".join(w["text"] for w in parts).replace(" ","")
+ for parts in grouped.values():
+  parts.sort(key=lambda w:w["x"]);compact="".join(w["text"] for w in parts).replace(" ","")
   match=TIME.search(compact)
   if not match:continue
-  time_value=f"{match.group(1)}:{match.group(2)}.{match.group(3)}"
   left=[w["text"] for w in parts if w["x"]<width*.12]
   nums=[int(x) for x in re.findall(r"\d{1,2}"," ".join(left))]
   horse_no=nums[-1] if nums else None
+  if horse_no is None or not 1<=horse_no<=18:continue
   body_candidates=[]
   for w in parts:
    if width*.55<w["x"]<width*.72:
-    body_candidates += [int(x) for x in re.findall(r"(?<!\d)([34-6]\d{2})(?!\d)",w["text"])]
+    for raw in re.findall(r"\d{2,4}",w["text"]):
+     value=int(raw[-3:])
+     if 300<=value<=699:body_candidates.append(value)
   odds_candidates=[]
   for w in parts:
    if w["x"]>width*.78:
     for m in ODDS.finditer(w["text"]):odds_candidates.append(float(m.group(1)+"."+m.group(2)))
-  out.append({"horse_no":horse_no,"time":time_value,"body_weight":body_candidates[-1] if body_candidates else None,
+  out.append({"horse_no":horse_no,"time":f"{match.group(1)}:{match.group(2)}.{match.group(3)}",
+              "body_weight":body_candidates[-1] if body_candidates else None,
               "win_odds":odds_candidates[-1] if odds_candidates else None,
               "ocr_confidence":round(sum(w["conf"] for w in parts)/len(parts),2),
-              "ocr_line":" ".join(w["text"] for w in parts)})
+              "ocr_line":" ".join(w["text"] for w in parts),"_y":min(w["y"] for w in parts)})
+ out.sort(key=lambda x:x["_y"])
+ for item in out:item.pop("_y",None)
  return out
 
 def filename_meta(pdf):
