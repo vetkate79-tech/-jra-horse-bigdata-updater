@@ -50,6 +50,27 @@ jobs:
           UPDATE_MODE="${UPDATE_MODE:-all}" \
           UPDATE_SCOPE="${UPDATE_SCOPE:-full_year}" \
           python src/update_registry.py
+      - name: Validate history and rebuild profiles three times
+        run: |
+          if [ -f data/race_results.csv ]; then
+            python src/build_horse_profiles.py
+            FIRST_HASH="$(sha256sum data/horse_profiles.csv | cut -d ' ' -f1)"
+            python src/build_horse_profiles.py
+            SECOND_HASH="$(sha256sum data/horse_profiles.csv | cut -d ' ' -f1)"
+            python src/build_horse_profiles.py
+            THIRD_HASH="$(sha256sum data/horse_profiles.csv | cut -d ' ' -f1)"
+            test "$FIRST_HASH" = "$SECOND_HASH"
+            test "$SECOND_HASH" = "$THIRD_HASH"
+          else
+            echo "race_results.csv not present; history/profile stage remains blocked"
+          fi
+      - name: Evaluate chronological backtest when predictions exist
+        run: |
+          if [ -f data/model_predictions.csv ]; then
+            python src/evaluate_backtest.py
+          else
+            echo "model_predictions.csv not present; backtest remains blocked"
+          fi
       - name: Commit data and status
         run: |
           git config user.name "jra-data-bot"
