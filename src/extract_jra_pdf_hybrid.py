@@ -6,10 +6,10 @@ import csv, json, os, re, subprocess, tempfile
 from pathlib import Path
 
 DPI=400
-NAME_ROW=re.compile(r"^\\s*(.{2,100}?)\\s*(牡|牝|騸)\\s*(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\\s|$)")
+NAME_ROW=re.compile(r"^\s*(.{2,100}?)\s*(牡|牝|騸)\s*(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\s|$)")
 KATA=re.compile(r"^[ァ-ヶー・ヴヷヸヹヺ]{2,18}$")
-TIME=re.compile(r"([0-3])\\s*[:：]\\s*([0-5]\\d)\\s*[.．]\\s*(\\d)")
-ODDS=re.compile(r"(?<!\\d)(\\d{1,3})\\s*[.．]\\s*(\\d{1,2})(?!\\d)")
+TIME=re.compile(r"([0-3])\s*[:：]\s*([0-5]\d)\s*[.．]\s*(\d)")
+ODDS=re.compile(r"(?<!\d)(\d{1,3})\s*[.．]\s*(\d{1,2})(?!\d)")
 VENUES={"sapporo":"札幌","hakodate":"函館","fukushima":"福島","niigata":"新潟",
 "tokyo":"東京","nakayama":"中山","chukyo":"中京","kyoto":"京都","hanshin":"阪神","kokura":"小倉"}
 
