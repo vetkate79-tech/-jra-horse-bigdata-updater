@@ -6,7 +6,7 @@ on:
       year:
         description: Target year
         required: false
-        default: "2025"
+        default: "2026"
       mode:
         description: registry, profile, history, or all
         required: false
@@ -37,10 +37,13 @@ jobs:
         run: pip install -r requirements.txt
       - name: Update data
         env:
-          TARGET_YEAR: ${{ inputs.year || '2025' }}
-          UPDATE_MODE: ${{ inputs.mode || 'all' }}
+          TARGET_YEAR: ${{ inputs.year }}
+          UPDATE_MODE: ${{ inputs.mode }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-        run: python src/update_registry.py
+        run: |
+          TARGET_YEAR="${TARGET_YEAR:-$(TZ=Asia/Tokyo date +%Y)}" \
+          UPDATE_MODE="${UPDATE_MODE:-all}" \
+          python src/update_registry.py
       - name: Commit data and status
         run: |
           git config user.name "jra-data-bot"
