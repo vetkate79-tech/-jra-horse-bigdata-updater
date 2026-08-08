@@ -11,7 +11,7 @@ MODE=os.getenv("UPDATE_MODE","all")
 INDEX=f"https://www.jra.go.jp/datafile/seiseki/report/{YEAR}.html"
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 CACHE=Path("cache")/str(YEAR); PDF=CACHE/"pdf"; TXT=CACHE/"txt"
-DATA=Path("data"); STATUS=Path("status"); OUT=DATA/f"horse_master_{YEAR}.csv"
+DATA=Path("data"); STATUS=Path("status"); OUT=DATA/f"horse_master_{YEAR}.csv"; MASTER=DATA/"horse_master_all.csv"
 ROW=re.compile(r"^\\s*(.{2,120}?)\\s+(牡|牝|騸)\\s+(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\\s|$)")
 KATA=re.compile(r"^[ァ-ヶー・ヴヷヸヹヺ]{2,12}$")
 
@@ -61,12 +61,14 @@ def sync_sheet(rows):
  creds=Credentials.from_service_account_info(json.loads(raw),scopes=["https://www.googleapis.com/auth/spreadsheets","https://www.googleapis.com/auth/drive"])
  ws=gspread.authorize(creds).open_by_key(cfg["spreadsheet_id"]).worksheet(cfg["registry_sheet"])
  values=ws.get_all_values()
- required=["queue_no","horse_id","horse_name","sex","first_seen_pdf","profile_status","history_status","source_url"]
+ required=["queue_no","horse_id","horse_name","sex","first_seen_pdf","first_seen_year","last_seen_year","active_years","profile_status","history_status","source_url"]
  if not values:
   ws.append_row(required,value_input_option="RAW");values=[required]
  headers=values[0]
  missing=[h for h in required if h not in headers]
- if missing:raise RuntimeError("Sheet is missing required columns: "+",".join(missing))
+ if missing:
+  headers=headers+missing
+  ws.update("1:1",[headers],value_input_option="RAW")
  col={h:headers.index(h) for h in required}
  existing={r[col["horse_name"]]:i+2 for i,r in enumerate(values[1:]) if len(r)>col["horse_name"] and r[col["horse_name"]]}
  append=[]
@@ -75,11 +77,18 @@ def sync_sheet(rows):
   if name in existing:
    row=existing[name]
    ws.update_cell(row,col["sex"]+1,item["sex"])
-   ws.update_cell(row,col["first_seen_pdf"]+1,item["first_seen_pdf"])
+   old=values[row-1] if row-1<len(values) else []
+   first=(old[col["first_seen_year"]] if len(old)>col["first_seen_year"] else "") or item["first_seen_year"]
+   years=(old[col["active_years"]] if len(old)>col["active_years"] else "")
+   years=",".join(sorted(set(filter(None,years.split(",")+[str(YEAR)]))))
+   ws.update_cell(row,col["first_seen_year"]+1,first)
+   ws.update_cell(row,col["last_seen_year"]+1,str(YEAR))
+   ws.update_cell(row,col["active_years"]+1,years)
   else:
    new=[""]*len(headers)
    new[col["queue_no"]]=str(len(values)+len(append))
    new[col["horse_name"]]=name;new[col["sex"]]=item["sex"];new[col["first_seen_pdf"]]=item["first_seen_pdf"]
+   new[col["first_seen_year"]]=item["first_seen_year"];new[col["last_seen_year"]]=item["last_seen_year"];new[col["active_years"]]=item["active_years"]
    new[col["profile_status"]]="PENDING_ID_RESOLUTION";new[col["history_status"]]="PENDING";new[col["source_url"]]=INDEX
    append.append(new)
  if append:ws.append_rows(append,value_input_option="RAW")
@@ -99,16 +108,34 @@ def main():
     try:results.append(f.result())
     except Exception as e:errors.append({"url":futures[f],"error":repr(e)})
   for source,txt in sorted(results):
-   for name,sex,src in parse(source,txt):unique.setdefault(name,{"horse_name":name,"sex":sex,"first_seen_pdf":src})
+   for name,sex,src in parse(source,txt):unique.setdefault(name,{"horse_name":name,"sex":sex,"first_seen_pdf":src,"first_seen_year":str(YEAR),"last_seen_year":str(YEAR),"active_years":str(YEAR)})
   print(f"{min(start+48,len(urls))}/{len(urls)} PDFs; {len(unique)} horses")
  if len(unique)<1000:raise RuntimeError(f"Quality gate failed: only {len(unique)} horses")
  rows=list(unique.values())
  for i,r in enumerate(rows,1):r["queue_no"]=i
- fields=["queue_no","horse_name","sex","first_seen_pdf"];tmp=OUT.with_suffix(".tmp")
+ fields=["queue_no","horse_name","sex","first_seen_pdf","first_seen_year","last_seen_year","active_years"];tmp=OUT.with_suffix(".tmp")
  with tmp.open("w",encoding="utf-8-sig",newline="") as f:
   w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
- tmp.replace(OUT);sheet=sync_sheet(rows)
- state={"year":YEAR,"mode":MODE,"pdf_total":len(urls),"horse_total":len(rows),"errors":errors,"sheet":sheet,"completed_at":datetime.now(timezone.utc).isoformat()}
+ tmp.replace(OUT)
+ cumulative={}
+ if MASTER.exists():
+  with MASTER.open(encoding="utf-8-sig",newline="") as f:
+   for old in csv.DictReader(f):
+    if old.get("horse_name"):cumulative[old["horse_name"]]=old
+ for item in rows:
+  name=item["horse_name"]
+  if name in cumulative:
+   old=cumulative[name];years=set(filter(None,old.get("active_years","").split(",")));years.add(str(YEAR))
+   old["sex"]=item["sex"];old["last_seen_year"]=str(YEAR);old["active_years"]=",".join(sorted(years))
+   old["first_seen_year"]=old.get("first_seen_year") or str(YEAR);old["first_seen_pdf"]=old.get("first_seen_pdf") or item["first_seen_pdf"]
+  else:cumulative[name]=dict(item)
+ master_rows=sorted(cumulative.values(),key=lambda x:(int(x.get("first_seen_year") or YEAR),x["horse_name"]))
+ for i,item in enumerate(master_rows,1):item["queue_no"]=i
+ master_tmp=MASTER.with_suffix(".tmp")
+ with master_tmp.open("w",encoding="utf-8-sig",newline="") as f:
+  w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(master_rows)
+ master_tmp.replace(MASTER);sheet=sync_sheet(rows)
+ state={"year":YEAR,"mode":MODE,"pdf_total":len(urls),"horse_total":len(rows),"cumulative_horse_total":len(master_rows),"errors":errors,"sheet":sheet,"completed_at":datetime.now(timezone.utc).isoformat()}
  (STATUS/"checkpoint.json").write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps(state,ensure_ascii=False))
 
