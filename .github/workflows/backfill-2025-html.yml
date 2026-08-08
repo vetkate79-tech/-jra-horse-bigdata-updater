@@ -1,4 +1,5 @@
 name: Backfill 2025 JRA HTML histories
+# Re-run after strict distance and race-name validation updates
 
 on:
   workflow_dispatch:
