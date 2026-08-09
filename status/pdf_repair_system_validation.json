@@ -14,6 +14,16 @@
     "accepted_race": 1,
     "gate": "row counts match and every core numeric field is present"
   },
+  "optimized_coordinate_consensus": {
+    "fixture": "2025-1tokyo1.pdf",
+    "runner_rows_preserved": 152,
+    "horse_name_consensus": 152,
+    "win_odds_consensus": 147,
+    "body_weight_consensus": 129,
+    "time_consensus": 111,
+    "unresolved_cells_retained": true,
+    "race_level_all_or_nothing_gate_removed": true
+  },
   "repair_policy": {
     "overwrite_valid_html": false,
     "minimum_independent_ocr_votes": 2,
