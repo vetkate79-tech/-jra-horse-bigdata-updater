@@ -47,8 +47,13 @@ def main():
  ap=argparse.ArgumentParser();ap.add_argument('--results',type=Path,required=True);ap.add_argument('--year',type=int,required=True)
  ap.add_argument('--workers',type=int,default=12);ap.add_argument('--checkpoint',type=Path,default=Path('work/enrichment'))
  a=ap.parse_args();a.checkpoint.mkdir(parents=True,exist_ok=True);done=a.checkpoint/f'done_{a.year}.jsonl'
+ meta={}
  with a.results.open(encoding='utf-8-sig',newline='') as f:
-  items={(r['race_id'],r['race_date'],r['source_url']) for r in csv.DictReader(f)}
+  for r in csv.DictReader(f):
+   x=meta.setdefault(r['race_id'],{'race_date':r['race_date'],'source_url':r['source_url'],'course':r.get('course',''),
+    'surface':r.get('surface',''),'distance_m':r.get('distance_m',''),'field_size':0})
+   x['field_size']+=1
+ items={(rid,x['race_date'],x['source_url']) for rid,x in meta.items()}
  completed={}
  if done.exists():
   for line in done.read_text(encoding='utf-8').splitlines():
@@ -63,6 +68,8 @@ def main():
    completed[record['context']['race_id']]=record;log.write(json.dumps(record,ensure_ascii=False)+'\n');log.flush()
    if i%100==0:print(f'enrichment {i}/{len(pending)}')
  contexts=[x['context'] for x in completed.values()];payouts=[p for x in completed.values() for p in x['payouts']]
+ for c in contexts:
+  c.update({k:v for k,v in meta.get(c['race_id'],{}).items() if k not in ('race_date','source_url')})
  atomic(Path(f'data/race_context_{a.year}.csv'),contexts);atomic(Path(f'data/race_payouts_{a.year}.csv'),payouts)
  report={'races':len(items),'completed':len(contexts),'payout_rows':len(payouts),'failed':sum(x['context']['data_status']!='PASS_HTML' for x in completed.values())}
  Path(f'status/enrichment_{a.year}.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(report))
