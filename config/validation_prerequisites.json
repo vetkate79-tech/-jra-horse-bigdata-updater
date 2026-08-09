@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "objective": "leakage_safe_walk_forward_betting_validation",
+  "required_sources": {
+    "race_results": {
+      "path": "data/race_results_html_2025.csv",
+      "required_columns": ["race_id", "race_date", "race_no", "course", "surface", "distance_m", "horse_id", "horse_name", "horse_no", "finish_position", "time", "last3f", "carried_weight", "body_weight_delta", "jockey", "trainer", "popularity", "data_status"]
+    },
+    "payouts": {
+      "path": "data/race_payouts_2025.csv",
+      "required_columns": ["race_id", "bet_type", "winning_selection", "payout_per_100_yen", "data_status", "source_url"]
+    },
+    "market_odds": {
+      "path": "data/market_odds_2025.csv",
+      "required_columns": ["race_id", "captured_at", "bet_type", "selection", "odds", "data_status", "source_url"]
+    },
+    "race_context": {
+      "path": "data/race_context_2025.csv",
+      "required_columns": ["race_id", "weather", "track_condition", "race_class", "field_size", "data_status", "source_url"]
+    },
+    "model_predictions": {
+      "path": "data/model_predictions.csv",
+      "required_columns": ["prediction_id", "generated_at", "race_id", "race_date", "model_version", "feature_cutoff_at", "bet_type", "selection", "stake_yen", "data_status"]
+    }
+  },
+  "semantic_gates": {
+    "forbidden_race_names": ["緊急情報", "レース結果", "レース結果 JRA", "レース結果　JRA"],
+    "allowed_surfaces": ["芝", "ダート", "障害"],
+    "min_distance_m": 1000,
+    "max_distance_m": 5000,
+    "max_runners": 18,
+    "accepted_statuses": ["PASS_HTML", "PASS", "RESOLVED_CONSENSUS"]
+  },
+  "leakage_rules": {
+    "feature_cutoff_must_precede_race": true,
+    "horse_history_must_precede_target_race": true,
+    "result_and_payout_columns_forbidden_in_features": ["finish_position", "time", "last3f", "margin", "payout_per_100_yen", "is_hit"],
+    "odds_capture_must_not_follow_race_start": true
+  }
+}
