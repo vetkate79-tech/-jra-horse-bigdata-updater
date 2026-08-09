@@ -27,7 +27,9 @@ def inspect_csv(path, required):
     return result
 
 def semantic_race_audit(path, gates):
-    out = {"rows": 0, "races": 0, "bad_race_name_rows": 0, "missing_values": {}, "invalid_values": {}, "duplicate_runner_keys": 0}
+    out = {"rows": 0, "races": 0, "bad_race_name_rows": 0, "missing_values": {}, "invalid_values": {},
+           "special_finish_rows": 0, "missing_time_rows": 0, "missing_last3f_rows": 0,
+           "missing_popularity_rows": 0, "missing_body_weight_rows": 0, "duplicate_runner_keys": 0}
     if not path.exists(): return out
     required_values = ["race_id", "race_date", "horse_id", "horse_name", "horse_no", "finish_position", "surface", "distance_m"]
     missing = Counter(); invalid = Counter(); races=set(); keys=set()
@@ -37,6 +39,11 @@ def semantic_race_audit(path, gates):
             for c in required_values:
                 if not str(r.get(c, "")).strip(): missing[c] += 1
             if r.get("race_name", "").strip() in gates["forbidden_race_names"]: out["bad_race_name_rows"] += 1
+            if not re.fullmatch(r"\d+(?:\.0)?", r.get("finish_position", "")): out["special_finish_rows"] += 1
+            if not r.get("time", "").strip(): out["missing_time_rows"] += 1
+            if not r.get("last3f", "").strip(): out["missing_last3f_rows"] += 1
+            if not r.get("popularity", "").strip(): out["missing_popularity_rows"] += 1
+            if not r.get("body_weight_delta", "").strip(): out["missing_body_weight_rows"] += 1
             if r.get("surface") not in gates["allowed_surfaces"]: invalid["surface"] += 1
             try:
                 d=int(float(r.get("distance_m", "")))
