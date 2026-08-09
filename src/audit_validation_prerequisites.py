@@ -61,7 +61,7 @@ def main():
     for name,spec in cfg["required_sources"].items():
         sources[name]=inspect_csv(Path(spec["path"]),spec["required_columns"])
     semantic=semantic_race_audit(Path(cfg["required_sources"]["race_results"]["path"]),cfg["semantic_gates"])
-    blocking=[name for name,x in sources.items() if x["status"]!="PASS"]
+    blocking=[name for name,x in sources.items() if x["status"]!="PASS" and cfg["required_sources"][name].get("blocking",True)]
     if semantic.get("status")!="PASS": blocking.append("race_results_semantics")
     audit={"schema_version":1,"status":"READY" if not blocking else "BLOCKED","blocking_prerequisites":blocking,
            "sources":sources,"race_results_semantics":semantic,
