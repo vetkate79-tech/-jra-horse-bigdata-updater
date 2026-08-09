@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Build all-horse profiles from verified structured JRA HTML rows."""
-import csv, json
+import csv, json, os
 from collections import Counter, defaultdict
 from pathlib import Path
 
-YEAR=2025
-SOURCE=Path(f"data/race_results_html_{YEAR}.csv")
-OUT=Path(f"data/horse_profiles_{YEAR}.csv")
-REPORT=Path(f"status/horse_profile_quality_{YEAR}.json")
+YEAR=int(os.getenv("TARGET_YEAR","2025"))
+SOURCE=Path(os.getenv("PROFILE_SOURCE",f"data/race_results_html_{YEAR}.csv"))
+OUT=Path(os.getenv("PROFILE_OUT",f"data/horse_profiles_{YEAR}.csv"))
+REPORT=Path(os.getenv("PROFILE_REPORT",f"status/horse_profile_quality_{YEAR}.json"))
 
 def n(v):
  try:return float(v)
