@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "ready_for_validation": false,
+  "approved_inputs": [
+    "data/race_results_html_2025.csv"
+  ],
+  "blocked_inputs": [
+    "data/race_payouts_2025.csv",
+    "data/market_odds_2025.csv",
+    "data/race_context_2025.csv",
+    "data/model_predictions.csv"
+  ],
+  "quality_report": "status/validation_prerequisite_audit.json"
+}
