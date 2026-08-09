@@ -15,7 +15,8 @@ VENUES={"sapporo":"札幌","hakodate":"函館","fukushima":"福島","niigata":"�
 "tokyo":"東京","nakayama":"中山","chukyo":"中京","kyoto":"京都","hanshin":"阪神","kokura":"小倉"}
 
 def run(*args):
- return subprocess.run(args,check=True,capture_output=True,text=True).stdout
+ env=os.environ.copy();env.setdefault("OMP_THREAD_LIMIT","1")
+ return subprocess.run(args,check=True,capture_output=True,text=True,env=env).stdout
 
 def document_kind(pdf):
  info=run("pdfinfo",str(pdf));title=re.search(r"Title:\s*(.*)",info)
