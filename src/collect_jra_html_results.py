@@ -19,27 +19,6 @@ DAY=re.compile(r"pw01srl\d+/[A-F0-9]{2}")
 RACE=re.compile(r"pw01sde\d+/[A-F0-9]{2}")
 META=re.compile(r"pw01sde10(?P<course>\d{2})(?P<year>\d{4})(?P<meeting>\d{2})(?P<day>\d{2})(?P<race>\d{2})(?P<date>\d{8})")
 COURSES={"01":"札幌","02":"函館","03":"福島","04":"新潟","05":"東京","06":"中山","07":"中京","08":"京都","09":"阪神","10":"小倉"}
-FORBIDDEN_RACE_NAMES={"緊急情報","レース結果","レース結果 JRA","レース結果　JRA"}
-RACE_NAME_HINT=re.compile(r"(第\d+回|ステークス|記念|特別|賞|未勝利|新馬|メイクデビュー|[123]勝クラス|オープン|リステッド|L$|G[ⅠⅡⅢ123])")
-
-def extract_race_name(soup):
- # Site-wide headings can precede the race body; score semantic race headings.
- candidates=[]
- for tag in soup.select('h1,h2,h3,[class*="race_name"],[class*="raceName"],[id*="race_name"],[id*="raceName"]'):
-  value=re.sub(r"\s+"," ",tag.get_text(" ",strip=True)).strip()
-  if not value or value in FORBIDDEN_RACE_NAMES or len(value)>100:continue
-  if any(x in value for x in ("検索ウィンドウ","払戻金","勝馬の紹介","JRAからのお知らせ","関連メニュー")):continue
-  score=0
-  attrs=" ".join([tag.name or "",str(tag.get("class","")),str(tag.get("id",""))]).lower()
-  if "race" in attrs:score+=5
-  if RACE_NAME_HINT.search(value):score+=8
-  if tag.name=="h2":score+=2
-  if re.search(r"[ぁ-んァ-ヶ一-龠]",value):score+=1
-  candidates.append((score,-len(value),value))
- if not candidates:return ""
- candidates.sort(reverse=True)
- return candidates[0][2] if candidates[0][0]>=3 else ""
-
 
 def request(cname,post=False,retries=5):
  data=urllib.parse.urlencode({"cname":cname}).encode() if post else None
@@ -107,7 +86,15 @@ def extract_race(cname):
  meta=m.groupdict();text=soup.get_text(" ",strip=True)
  title=soup.title.get_text(" ",strip=True) if soup.title else ""
  result_table_tag=next((t for t in soup.find_all("table") if "馬名" in t.get_text() and "着順" in t.get_text()),None)
- race_name=extract_race_name(soup)
+ race_name_tag=soup.select_one("#race_result .race_name") or soup.select_one("span.race_name")
+ race_name=race_name_tag.get_text(" ",strip=True) if race_name_tag else ""
+ weather_tag=soup.select_one("#race_result .weather .txt")
+ condition_tag=soup.select_one("#race_result .baba .turf .txt") or soup.select_one("#race_result .baba .dirt .txt")
+ class_tag=soup.select_one("#race_result .race_title .class")
+ category_tag=soup.select_one("#race_result .race_title .category")
+ rule_tag=soup.select_one("#race_result .race_title .rule")
+ weight_rule_tag=soup.select_one("#race_result .race_title .weight")
+ start_time_tag=soup.select_one("#race_result .date_line .time strong")
  distance_match=(re.search(r"コース[：:]\s*(\d{1,2}(?:,\d{3})|\d{3,4})\s*メートル",text) or
   re.search(r"(?<![\d,])(\d{1,2}(?:,\d{3})|\d{3,4})\s*[ｍm]",text[:7000]))
  distance_m=distance_match.group(1).replace(",","") if distance_match else ""
@@ -121,6 +108,13 @@ def extract_race(cname):
   row.update({"race_id":cname.split("/")[0],"race_date":f'{meta["date"][:4]}-{meta["date"][4:6]}-{meta["date"][6:]}',
    "course":COURSES.get(meta["course"],meta["course"]),"meeting_no":meta["meeting"],"meeting_day":meta["day"],
    "race_no":meta["race"],"race_name":race_name,"surface":surface,
+   "weather":weather_tag.get_text(" ",strip=True) if weather_tag else "",
+   "track_condition":condition_tag.get_text(" ",strip=True) if condition_tag else "",
+   "race_class":class_tag.get_text(" ",strip=True) if class_tag else "",
+   "race_category":category_tag.get_text(" ",strip=True) if category_tag else "",
+   "race_rule":rule_tag.get_text(" ",strip=True) if rule_tag else "",
+   "weight_rule":weight_rule_tag.get_text(" ",strip=True) if weight_rule_tag else "",
+   "scheduled_start":start_time_tag.get_text(" ",strip=True) if start_time_tag else "",
    "distance_m":distance_m,"horse_name":name,"horse_id":links.get(name,""),
    "source_url":ENDPOINT+"?CNAME="+urllib.parse.quote(cname,safe=""),"data_status":"PASS_HTML"})
   rows.append(row)
@@ -132,7 +126,11 @@ def extract_race(cname):
  if any(not re.fullmatch(r"\d{1,2}",str(x).replace(".0","")) for x in numbers):errors.append("horse_no")
  if not any(str(x.get("finish_position")) in ("1","1.0") for x in rows):errors.append("winner")
  if not distance_m or not distance_m.isdigit() or not 1000<=int(distance_m)<=5000:errors.append("distance")
- if not race_name or race_name in FORBIDDEN_RACE_NAMES:errors.append("race_name")
+ if not race_name or race_name in ("レース結果","レース結果 JRA","レース結果　JRA"):errors.append("race_name")
+ if not weather_tag:errors.append("weather")
+ if not condition_tag:errors.append("track_condition")
+ if not class_tag:errors.append("race_class")
+ if not start_time_tag:errors.append("scheduled_start")
  if surface not in ("芝","ダート","障害"):errors.append("surface")
  if any(not x.get("horse_id") for x in rows):errors.append("missing_horse_id")
  if errors:
@@ -169,7 +167,7 @@ def main():
  passed_races={r["race_id"] for r in passed}
  invalid_distances=sum(not str(r.get("distance_m","")).isdigit() or not 1000<=int(r["distance_m"])<=5000 for r in passed)
  missing_horse_ids=sum(not r.get("horse_id") for r in passed)
- bad_race_names=sum(not r.get("race_name") or r["race_name"] in FORBIDDEN_RACE_NAMES for r in passed)
+ bad_race_names=sum(not r.get("race_name") or r["race_name"] in ("レース結果","レース結果 JRA","レース結果　JRA") for r in passed)
  complete=(len(months)==12 and len(days)>=288 and len(races)>=3455 and len(passed_races)==len(races)
   and len(passed)==len(all_rows) and len(passed)>30000 and len(horse_map)>7000 and not errors
   and invalid_distances==0 and missing_horse_ids==0 and bad_race_names==0)
