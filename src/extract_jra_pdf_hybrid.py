@@ -2,11 +2,12 @@
 """Hybrid JRA PDF extractor: embedded text for names, OCR for custom-font numbers.
 Output is quarantined unless every race passes row-count and numeric checks.
 """
-import csv, json, os, re, subprocess, tempfile
+import csv, json, os, re, subprocess, tempfile, xml.etree.ElementTree as ET
 from pathlib import Path
 
 DPI=int(os.getenv("OCR_DPI","400"));PSM=os.getenv("OCR_PSM","6")
 NAME_ROW=re.compile(r"^\s*(.{2,100}?)\s*(牡|牝|騸)\s*(?:黒鹿|青鹿|栃栗|栗|鹿|芦|青|白)(?:\s|$)")
+BBOX_NAME_ROW=re.compile(r"^\s*(.{2,100}?)\s*(牡|牝|騸)(?:\s|$)")
 KATA=re.compile(r"^[ァ-ヶー・ヴヷヸヹヺ]{2,18}$")
 TIME=re.compile(r"([0-3])\s*[:：]\s*([0-5]\d)\s*[.．]\s*(\d)")
 ODDS=re.compile(r"(?<!\d)(\d{1,3})\s*[.．]\s*(\d{1,2})(?!\d)")
@@ -43,6 +44,51 @@ def embedded_names(pdf,page,side):
    name=clean_name(m.group(1))
    if name and name not in names:names.append(name)
  return names,text
+
+def embedded_name_rows(pdf,page,side):
+ raw=run("pdftotext","-f",str(page),"-l",str(page),"-bbox-layout",str(pdf),"-")
+ root=ET.fromstring(raw);ns={"x":"http://www.w3.org/1999/xhtml"};out=[]
+ for line in root.findall(".//x:line",ns):
+  x_min=float(line.attrib["xMin"])
+  if side==0 and x_min>=421:continue
+  if side==1 and x_min<421:continue
+  text=" ".join((w.text or "") for w in line.findall("x:word",ns))
+  m=BBOX_NAME_ROW.search(text)
+  if not m:continue
+  name=clean_name(m.group(1))
+  if name and name not in {x["horse_name"] for x in out}:
+   out.append({"horse_name":name,"y_min":float(line.attrib["yMin"]),"y_max":float(line.attrib["yMax"])})
+ return out
+
+def parse_numeric_line(raw_line):
+ match=TIME.search(raw_line);body=None
+ for token in re.findall(r"\d{3,4}",raw_line[:match.start()] if match else raw_line):
+  value=int(token[-3:])
+  if 300<=value<=699:body=value
+ decimals=[]
+ for m in ODDS.finditer(raw_line[match.end():] if match else raw_line):
+  value=float(m.group(1)+"."+m.group(2));decimals.append(value)
+ return {"horse_no":None,"time":f"{match.group(1)}:{match.group(2)}.{match.group(3)}" if match else None,
+         "body_weight":body,"win_odds":decimals[-1] if decimals else None,"ocr_confidence":"","ocr_line":raw_line}
+
+def ocr_numeric_by_name_rows(image,name_rows):
+ from PIL import Image
+ source=Image.open(image);sx=source.width/421.0;sy=source.height/595.276
+ x0=int(245*sx);numeric=source.crop((x0,0,source.width,source.height))
+ with tempfile.NamedTemporaryFile(suffix=".png") as tmp:
+  numeric.save(tmp.name);tsv=run("tesseract",tmp.name,"stdout","-l","eng","--psm",PSM,"tsv")
+ words=[]
+ for item in csv.DictReader(tsv.splitlines(),delimiter="\t"):
+  text=(item.get("text") or "").strip()
+  if not text:continue
+  try:words.append((int(item["left"]),int(item["top"]),int(item["height"]),text))
+  except (TypeError,ValueError):continue
+ out=[]
+ for row in name_rows:
+  low=(row["y_min"]-3.5)*sy;high=(row["y_max"]+3.5)*sy
+  tokens=[(left,text) for left,top,height,text in words if low<=top+height/2<=high]
+  out.append(parse_numeric_line(" ".join(text for _,text in sorted(tokens))))
+ return out
 
 def ocr_numeric_rows(image):
  from PIL import Image
@@ -105,7 +151,8 @@ def extract(pdf):
     race_no=(page-1)*2+side+1
     if race_no>12:continue
     crop=image.crop((side*half,0,(side+1)*half,image.height));crop_path=root/f"p{page}s{side}.png";crop.save(crop_path)
-    names,embedded=embedded_names(pdf,page,side);numbers=ocr_numeric_rows(crop_path)
+    name_rows=embedded_name_rows(pdf,page,side);names=[x["horse_name"] for x in name_rows]
+    embedded="";numbers=ocr_numeric_by_name_rows(crop_path,name_rows)
     reasons=[]
     if not 3<=len(names)<=18:reasons.append(f"name_count={len(names)}")
     if len(numbers)!=len(names):reasons.append(f"row_mismatch names={len(names)} numeric={len(numbers)}")
