@@ -20,13 +20,13 @@ RACE=re.compile(r"pw01sde\d+/[A-F0-9]{2}")
 META=re.compile(r"pw01sde10(?P<course>\d{2})(?P<year>\d{4})(?P<meeting>\d{2})(?P<day>\d{2})(?P<race>\d{2})(?P<date>\d{8})")
 COURSES={"01":"札幌","02":"函館","03":"福島","04":"新潟","05":"東京","06":"中山","07":"中京","08":"京都","09":"阪神","10":"小倉"}
 FORBIDDEN_RACE_NAMES={"緊急情報","レース結果","レース結果 JRA","レース結果　JRA"}
-RACE_NAME_HINT=re.compile(r"(第\\d+回|ステークス|記念|特別|賞|未勝利|新馬|メイクデビュー|[123]勝クラス|オープン|リステッド|L$|G[ⅠⅡⅢ123])")
+RACE_NAME_HINT=re.compile(r"(第\d+回|ステークス|記念|特別|賞|未勝利|新馬|メイクデビュー|[123]勝クラス|オープン|リステッド|L$|G[ⅠⅡⅢ123])")
 
 def extract_race_name(soup):
  # Site-wide headings can precede the race body; score semantic race headings.
  candidates=[]
  for tag in soup.select('h1,h2,h3,[class*="race_name"],[class*="raceName"],[id*="race_name"],[id*="raceName"]'):
-  value=re.sub(r"\\s+"," ",tag.get_text(" ",strip=True)).strip()
+  value=re.sub(r"\s+"," ",tag.get_text(" ",strip=True)).strip()
   if not value or value in FORBIDDEN_RACE_NAMES or len(value)>100:continue
   if any(x in value for x in ("検索ウィンドウ","払戻金","勝馬の紹介","JRAからのお知らせ","関連メニュー")):continue
   score=0
