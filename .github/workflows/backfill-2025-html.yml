@@ -1,5 +1,5 @@
 name: Backfill 2025 JRA HTML histories
-# Re-run after strict distance and race-name validation updates
+# Re-run after semantic race-name extraction and audit updates
 
 on:
   workflow_dispatch:
@@ -33,6 +33,8 @@ jobs:
         run: python src/collect_jra_html_results.py
       - name: Build and validate all-horse profiles
         run: python src/build_html_horse_profiles.py
+      - name: Refresh semantic validation audit
+        run: python src/audit_validation_prerequisites.py
       - name: Commit verified histories
         run: |
           git config user.name "jra-data-bot"
