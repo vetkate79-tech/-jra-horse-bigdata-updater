@@ -4,22 +4,28 @@
   "required_sources": {
     "race_results": {
       "path": "data/race_results_html_2025.csv",
+      "blocking": true,
       "required_columns": ["race_id", "race_date", "race_no", "course", "surface", "distance_m", "horse_id", "horse_name", "horse_no", "finish_position", "time", "last3f", "carried_weight", "body_weight_delta", "jockey", "trainer", "popularity", "data_status"]
     },
     "payouts": {
       "path": "data/race_payouts_2025.csv",
+      "blocking": true,
       "required_columns": ["race_id", "bet_type", "winning_selection", "payout_per_100_yen", "data_status", "source_url"]
     },
     "market_odds": {
       "path": "data/market_odds_2025.csv",
+      "blocking": false,
+      "usage": "evaluation_and_value_overlay_only_never_ability_features",
       "required_columns": ["race_id", "captured_at", "bet_type", "selection", "odds", "data_status", "source_url"]
     },
     "race_context": {
       "path": "data/race_context_2025.csv",
+      "blocking": true,
       "required_columns": ["race_id", "weather", "track_condition", "race_class", "field_size", "data_status", "source_url"]
     },
     "model_predictions": {
       "path": "data/model_predictions.csv",
+      "blocking": true,
       "required_columns": ["prediction_id", "generated_at", "race_id", "race_date", "model_version", "feature_cutoff_at", "bet_type", "selection", "stake_yen", "data_status"]
     }
   },
