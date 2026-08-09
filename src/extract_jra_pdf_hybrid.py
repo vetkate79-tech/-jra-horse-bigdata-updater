@@ -16,6 +16,17 @@ VENUES={"sapporo":"札幌","hakodate":"函館","fukushima":"福島","niigata":"�
 def run(*args):
  return subprocess.run(args,check=True,capture_output=True,text=True).stdout
 
+def document_kind(pdf):
+ info=run("pdfinfo",str(pdf));title=re.search(r"Title:\s*(.*)",info)
+ sample=run("pdftotext","-f","1","-l","1","-layout",str(pdf),"-")
+ title_text=title.group(1).strip() if title else ""
+ # JRA race cards and result sheets are visually similar. Never infer results from card order.
+ result_markers=("成績表" in title_text or ("払戻金" in sample and "着 差" in sample))
+ card_markers=("装鞍所集合" in sample or "本賞 （Added Money）" in sample)
+ if result_markers:return "RESULT_SHEET",{"title":title_text,"result_markers":True,"card_markers":card_markers}
+ if card_markers:return "RACE_CARD",{"title":title_text,"result_markers":False,"card_markers":True}
+ return "UNKNOWN",{"title":title_text,"result_markers":False,"card_markers":False}
+
 def clean_name(raw):
  parts=[x for x in re.split(r"\s{2,}",raw.strip()) if x]
  name=re.sub(r"\s+","",parts[-1] if parts else raw)
@@ -76,6 +87,10 @@ def pdf_date(pdf):
  return f"{m.group(3)}-{months[m.group(1)]:02d}-{int(m.group(2)):02d}"
 
 def extract(pdf):
+ kind,document_audit=document_kind(pdf)
+ if kind!="RESULT_SHEET":
+  return [],[],[{"document_status":"REJECTED","document_kind":kind,**document_audit,
+                 "reasons":["NOT_CONFIRMED_RESULT_SHEET"]}]
  meta=filename_meta(pdf);race_date=pdf_date(pdf)
  pages=int(re.search(r"Pages:\s+(\d+)",run("pdfinfo",str(pdf))).group(1))
  accepted=[];quarantine=[];audit=[]
@@ -96,7 +111,7 @@ def extract(pdf):
     if len(numbers)!=len(names):reasons.append(f"row_mismatch names={len(names)} numeric={len(numbers)}")
     if any(x["body_weight"] is None or x["win_odds"] is None for x in numbers):reasons.append("missing_core_numeric")
    
-    audit.append({"race_no":race_no,"names":len(names),"numeric_rows":len(numbers),"reasons":reasons})
+    audit.append({"document_kind":kind,"race_no":race_no,"names":len(names),"numeric_rows":len(numbers),"reasons":reasons})
     target=quarantine if reasons else accepted
     for pos,(name,num) in enumerate(zip(names,numbers),1):
      target.append({**meta,"race_date":race_date,"race_no":race_no,"finish_position":pos,"horse_name":name,"source_pdf":pdf.name,"source_page":page,"source_side":side,"retry_dpi":DPI,"retry_psm":PSM,**num,
