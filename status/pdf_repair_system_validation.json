@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "document_classifier": {
+    "race_card_fixture": "20260801-sapporo.pdf",
+    "race_card_result": "REJECTED_RACE_CARD",
+    "result_sheet_fixture": "a.pdf",
+    "result_sheet_result": "ACCEPTED_RESULT_SHEET"
+  },
+  "result_sheet_extraction": {
+    "races_tested": 12,
+    "accepted_races": 1,
+    "accepted_rows": 14,
+    "quarantined_rows": 131,
+    "accepted_race": 1,
+    "gate": "row counts match and every core numeric field is present"
+  },
+  "repair_policy": {
+    "overwrite_valid_html": false,
+    "minimum_independent_ocr_votes": 2,
+    "ambiguous_values": "QUARANTINE",
+    "original_value_retained": true,
+    "source_pdf_retained": true,
+    "repair_fields_retained": true
+  },
+  "status": "PASS_WITH_QUARANTINE"
+}
