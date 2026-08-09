@@ -14,6 +14,7 @@ START_CNAME=os.getenv("JRA_MONTH_SEED","pw01skl10202508/E1")
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 DATA=Path("data");STATUS=Path("status");CACHE=Path("cache/html")/str(YEAR)
 OUT=DATA/f"race_results_html_{YEAR}.csv";HORSES=DATA/f"horse_ids_{YEAR}.csv"
+PAYOUTS=DATA/f"race_payouts_{YEAR}.csv";CONTEXT=DATA/f"race_context_{YEAR}.csv"
 MONTH=re.compile(rf"pw01skl10{YEAR}(\d{{2}})/[A-F0-9]{{2}}")
 DAY=re.compile(r"pw01srl\d+/[A-F0-9]{2}")
 RACE=re.compile(r"pw01sde\d+/[A-F0-9]{2}")
@@ -118,6 +119,29 @@ def extract_race(cname):
    "distance_m":distance_m,"horse_name":name,"horse_id":links.get(name,""),
    "source_url":ENDPOINT+"?CNAME="+urllib.parse.quote(cname,safe=""),"data_status":"PASS_HTML"})
   rows.append(row)
+ payout_rows=[]
+ for item in soup.select("#race_result .refund_area li"):
+  label=item.find("dt");bet_type=label.get_text(" ",strip=True) if label else ""
+  for line in item.select(".line"):
+   selection=line.select_one(".num");yen=line.select_one(".yen");pop=line.select_one(".pop")
+   selection_text=selection.get_text(" ",strip=True) if selection else ""
+   yen_text=re.sub(r"\D","",yen.get_text(" ",strip=True) if yen else "")
+   if bet_type and selection_text and yen_text:
+    payout_rows.append({"race_id":cname.split("/")[0],"race_date":f'{meta["date"][:4]}-{meta["date"][4:6]}-{meta["date"][6:]}',
+     "bet_type":bet_type,"winning_selection":selection_text,"payout_per_100_yen":yen_text,
+     "payout_popularity":re.sub(r"\D","",pop.get_text(" ",strip=True)) if pop else "",
+     "source_url":ENDPOINT+"?CNAME="+urllib.parse.quote(cname,safe=""),"data_status":"PASS_HTML"})
+ context={"race_id":cname.split("/")[0],"race_date":f'{meta["date"][:4]}-{meta["date"][4:6]}-{meta["date"][6:]}',
+  "course":COURSES.get(meta["course"],meta["course"]),"race_no":meta["race"],"race_name":race_name,
+  "weather":weather_tag.get_text(" ",strip=True) if weather_tag else "",
+  "track_condition":condition_tag.get_text(" ",strip=True) if condition_tag else "",
+  "race_class":class_tag.get_text(" ",strip=True) if class_tag else "",
+  "race_category":category_tag.get_text(" ",strip=True) if category_tag else "",
+  "race_rule":rule_tag.get_text(" ",strip=True) if rule_tag else "",
+  "weight_rule":weight_rule_tag.get_text(" ",strip=True) if weight_rule_tag else "",
+  "scheduled_start":start_time_tag.get_text(" ",strip=True) if start_time_tag else "",
+  "surface":surface,"distance_m":distance_m,"field_size":len(rows),
+  "source_url":ENDPOINT+"?CNAME="+urllib.parse.quote(cname,safe=""),"data_status":"PASS_HTML"}
  # Hard gates: unique starters and plausible structured values.
  names=[x["horse_name"] for x in rows];numbers=[x.get("horse_no","") for x in rows]
  errors=[]
@@ -133,9 +157,12 @@ def extract_race(cname):
  if not start_time_tag:errors.append("scheduled_start")
  if surface not in ("芝","ダート","障害"):errors.append("surface")
  if any(not x.get("horse_id") for x in rows):errors.append("missing_horse_id")
+ if not payout_rows:errors.append("payouts")
  if errors:
   for x in rows:x["data_status"]="QUARANTINED_HTML:"+",".join(errors)
- return cname,rows,errors
+  for x in payout_rows:x["data_status"]="QUARANTINED_HTML:"+",".join(errors)
+  context["data_status"]="QUARANTINED_HTML:"+",".join(errors)
+ return cname,rows,payout_rows,context,errors
 
 def atomic_csv(path,rows):
  fields=sorted(set().union(*(r.keys() for r in rows))) if rows else []
@@ -146,17 +173,19 @@ def atomic_csv(path,rows):
 
 def main():
  DATA.mkdir(exist_ok=True);STATUS.mkdir(exist_ok=True);CACHE.mkdir(parents=True,exist_ok=True)
- months,days,races=discover();all_rows=[];errors=[]
+ months,days,races=discover();all_rows=[];all_payouts=[];all_context=[];errors=[]
  with ThreadPoolExecutor(max_workers=4) as ex:
   futures={ex.submit(extract_race,c):c for c in races}
   for i,f in enumerate(as_completed(futures),1):
    try:
-    _,rows,err=f.result();all_rows.extend(rows)
+    _,rows,payouts,context,err=f.result();all_rows.extend(rows);all_payouts.extend(payouts);all_context.append(context)
     if err:errors.append({"race":futures[f],"errors":err})
    except Exception as e:errors.append({"race":futures[f],"errors":[repr(e)]})
    if i%100==0:print(f"races {i}/{len(races)} rows {len(all_rows)} errors {len(errors)}")
  passed=[r for r in all_rows if r["data_status"]=="PASS_HTML"]
  atomic_csv(OUT,all_rows)
+ atomic_csv(PAYOUTS,all_payouts)
+ atomic_csv(CONTEXT,all_context)
  horse_map={}
  for r in passed:
   h=horse_map.setdefault(r["horse_name"],{"horse_name":r["horse_name"],"horse_id":r["horse_id"],
@@ -175,6 +204,7 @@ def main():
   "races_passed":len(passed_races),"rows_total":len(all_rows),"rows_passed":len(passed),
   "horses_linked":len(horse_map),"invalid_distances":invalid_distances,
   "missing_horse_ids":missing_horse_ids,"bad_race_names":bad_race_names,"errors":errors,
+  "payout_rows":len(all_payouts),"context_rows":len(all_context),
   "status":"PASS" if complete else "INCOMPLETE"}
  (STATUS/f"html_collection_{YEAR}.json").write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps({k:v for k,v in state.items() if k!="errors"},ensure_ascii=False))
