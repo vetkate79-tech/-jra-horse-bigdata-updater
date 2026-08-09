@@ -1,0 +1,40 @@
+name: Validate JRA model safely
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Audit validation prerequisites
+        run: python src/audit_validation_prerequisites.py
+      - name: Build leakage-safe validation ledger
+        run: python src/build_validation_dataset.py
+      - name: Evaluate only when the ledger passed
+        run: |
+          if [ -f data/validation_bets.csv ] && grep -q '"status": "PASS"' status/validation_dataset_quality.json; then
+            cp data/validation_bets.csv data/model_predictions.csv
+            python src/evaluate_backtest.py
+            python src/manage_experiment_registry.py --summary status/backtest_summary.json --model-version manual-validation
+          else
+            echo "Blocked inputs are listed in status/validation_prerequisite_audit.json"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jra-validation-${{ github.run_number }}
+          path: |
+            status/
+            experiments/
+            data/validation_input_manifest.json
+            data/validation_bets.csv
+          if-no-files-found: warn
+          retention-days: 90
