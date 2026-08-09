@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "BLOCKED",
+  "blocking_prerequisites": [
+    "payouts",
+    "market_odds",
+    "race_context",
+    "model_predictions",
+    "race_results_semantics"
+  ],
+  "sources": {
+    "race_results": {
+      "path": "data/race_results_html_2025.csv",
+      "exists": true,
+      "rows": 47884,
+      "columns": [
+        "body_weight_delta",
+        "carried_weight",
+        "corner_positions",
+        "course",
+        "data_status",
+        "distance_m",
+        "finish_position",
+        "horse_id",
+        "horse_name",
+        "horse_no",
+        "jockey",
+        "last3f",
+        "margin",
+        "meeting_day",
+        "meeting_no",
+        "popularity",
+        "race_date",
+        "race_id",
+        "race_name",
+        "race_no",
+        "rating",
+        "sex_age",
+        "source_url",
+        "surface",
+        "time",
+        "trainer",
+        "平均1F",
+        "枠"
+      ],
+      "missing_columns": [],
+      "duplicate_rows": 0,
+      "status": "PASS"
+    },
+    "payouts": {
+      "path": "data/race_payouts_2025.csv",
+      "exists": false,
+      "rows": 0,
+      "columns": [],
+      "missing_columns": [],
+      "duplicate_rows": 0,
+      "status": "MISSING"
+    },
+    "market_odds": {
+      "path": "data/market_odds_2025.csv",
+      "exists": false,
+      "rows": 0,
+      "columns": [],
+      "missing_columns": [],
+      "duplicate_rows": 0,
+      "status": "MISSING"
+    },
+    "race_context": {
+      "path": "data/race_context_2025.csv",
+      "exists": false,
+      "rows": 0,
+      "columns": [],
+      "missing_columns": [],
+      "duplicate_rows": 0,
+      "status": "MISSING"
+    },
+    "model_predictions": {
+      "path": "data/model_predictions.csv",
+      "exists": false,
+      "rows": 0,
+      "columns": [],
+      "missing_columns": [],
+      "duplicate_rows": 0,
+      "status": "MISSING"
+    }
+  },
+  "race_results_semantics": {
+    "rows": 47884,
+    "races": 3455,
+    "bad_race_name_rows": 47884,
+    "missing_values": {},
+    "invalid_values": {},
+    "duplicate_runner_keys": 0,
+    "status": "INCOMPLETE"
+  },
+  "next_action": "collect_or_repair_blocking_sources"
+}
