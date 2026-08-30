@@ -1,0 +1,46 @@
+name: Build public horse catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/build_public_horse_catalog.py'
+      - '.github/workflows/build-public-horse-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-horse-catalog
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Collect 2026 JRA official HTML results
+        env:
+          TARGET_YEAR: '2026'
+          JRA_MONTH_SEED: 'pw01skl10202608/E1'
+        run: python src/collect_jra_html_results.py
+      - name: Build 2026 profiles
+        env:
+          TARGET_YEAR: '2026'
+        run: python src/build_html_horse_profiles.py || true
+      - name: Build public catalog
+        run: python src/build_public_horse_catalog.py
+      - name: Commit generated horse data
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/race_results_html_2026.csv data/horse_ids_2026.csv data/horse_profiles_2026.csv docs/data/horses || true
+          git diff --cached --quiet || git commit -m 'data: add 2026 weekend and graded horse catalog'
+          git push
