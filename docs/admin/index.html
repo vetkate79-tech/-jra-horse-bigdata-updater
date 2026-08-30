@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>JRA AI Management ERP</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">J</div>
+        <div><strong>JRA AI</strong><span>Management ERP</span></div>
+      </div>
+      <nav id="nav">
+        <button class="nav-item active" data-view="today">今日の運用</button>
+        <button class="nav-item" data-view="races">レース管理</button>
+        <button class="nav-item" data-view="models">モデル管理</button>
+        <button class="nav-item" data-view="pdca">PDCA / 検証</button>
+        <button class="nav-item" data-view="audit">監査ログ</button>
+        <button class="nav-item" data-view="system">システム状態</button>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="dot ok"></span><span id="connectionLabel">DATA CONNECTING</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">JRA PREDICTION OPERATIONS</p>
+          <h1 id="pageTitle">今日の運用</h1>
+        </div>
+        <div class="top-actions">
+          <span class="pill" id="modelVersion">model: -</span>
+          <span class="pill" id="snapshotTime">snapshot: -</span>
+        </div>
+      </header>
+
+      <section id="view-today" class="view active">
+        <div class="kpi-grid" id="kpis"></div>
+        <div class="panel-grid two">
+          <section class="panel">
+            <div class="panel-head"><div><span class="label">RACE STATE</span><h2>本日の全レース</h2></div><span id="raceCount" class="muted"></span></div>
+            <div class="race-table-wrap"><table class="race-table"><thead><tr><th>場/R</th><th>発走</th><th>型</th><th>軸</th><th>状態</th><th>EV</th><th>投入</th></tr></thead><tbody id="raceTableBody"></tbody></table></div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><div><span class="label">RISK CONTROL</span><h2>運用監査</h2></div></div>
+            <div id="riskCards" class="risk-list"></div>
+          </section>
+        </div>
+        <section class="panel">
+          <div class="panel-head"><div><span class="label">PIPELINE</span><h2>予想状態フロー</h2></div></div>
+          <div id="stateFlow" class="state-flow"></div>
+        </section>
+      </section>
+
+      <section id="view-races" class="view">
+        <section class="panel">
+          <div class="panel-head"><div><span class="label">RACE MANAGEMENT</span><h2>レース管理</h2></div></div>
+          <div id="raceCards" class="race-cards"></div>
+        </section>
+      </section>
+
+      <section id="view-models" class="view">
+        <div class="panel-grid two">
+          <section class="panel"><div class="panel-head"><div><span class="label">CHAMPION / CHALLENGER</span><h2>モデル比較</h2></div></div><div id="modelCards" class="model-list"></div></section>
+          <section class="panel"><div class="panel-head"><div><span class="label">MECHANISMS</span><h2>正式機構</h2></div></div><div id="mechanisms" class="mechanism-grid"></div></section>
+        </div>
+      </section>
+
+      <section id="view-pdca" class="view">
+        <div class="kpi-grid" id="pdcaKpis"></div>
+        <div class="panel-grid two">
+          <section class="panel"><div class="panel-head"><div><span class="label">ERROR TYPES</span><h2>外れ方の分類</h2></div></div><div id="errorBars" class="bars"></div></section>
+          <section class="panel"><div class="panel-head"><div><span class="label">ROLE DIVERSITY</span><h2>相手役割分散</h2></div></div><div id="roleBars" class="bars"></div></section>
+        </div>
+      </section>
+
+      <section id="view-audit" class="view">
+        <section class="panel"><div class="panel-head"><div><span class="label">IMMUTABLE AUDIT</span><h2>監査ログ</h2></div></div><div id="auditList" class="audit-list"></div></section>
+      </section>
+
+      <section id="view-system" class="view">
+        <div class="panel-grid two">
+          <section class="panel"><div class="panel-head"><div><span class="label">DATA SOURCES</span><h2>接続状態</h2></div></div><div id="sourceList" class="risk-list"></div></section>
+          <section class="panel"><div class="panel-head"><div><span class="label">RULES</span><h2>固定ガードレール</h2></div></div><ul class="guardrails"><li>人気・オッズを能力順位へ混入しない</li><li>SEALED後の能力順位・候補馬を市場情報で変更しない</li><li>結果後に発走前記録を復元しない</li><li>FROZENモデルを上書きしない</li><li>欠損値を0補完しない</li><li>買い目水増しだけの改善を禁止</li></ul></section>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
