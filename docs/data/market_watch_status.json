@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-08-31T03:32:46.382817+09:00",
+  "policy": {
+    "thursday": "publish all races immediately without odds",
+    "friday_morning": "pure prediction only",
+    "after_friday_noon": "odds check every 12h",
+    "race_day": "odds check every 3h",
+    "race_relative": [
+      "T-60",
+      "T-30",
+      "T-10"
+    ],
+    "firewall": "odds never change ability ranking; only value/purchase judgment"
+  },
+  "races": []
+}
