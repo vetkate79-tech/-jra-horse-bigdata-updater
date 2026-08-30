@@ -1,100 +1,81 @@
 {
-  "mode": "HISTORICAL_REPLAY_DEMO",
+  "mode": "PRE_RACE_ARCHIVE",
   "excluded_from_official_metrics": true,
-  "note": "サイト実装確認用。発走前会話ログが保存されている予想と、発走後の公式結果を分離して表示する。正式な未見成績集計には含めない。",
-  "dates": ["2026-08-29", "2026-08-30"],
+  "note": "過去チャットに残る発走前の見立てを優先収録。最低限、本命・中心馬が確認できれば掲載。結果は補助表示。",
+  "dates": ["2026-08-16", "2026-08-23", "2026-08-29", "2026-08-30"],
   "races": [
     {
-      "date": "2026-08-29",
-      "track": "新潟",
-      "race_no": 7,
-      "race_name": "赤倉特別",
-      "surface": "芝",
-      "distance_m": 2000,
-      "prediction_source": "PRE_RACE_CONVERSATION_LOG",
-      "type_label": "標準型",
-      "decision": "CAUTION",
-      "axis": "2 ボウウィンドウ",
-      "partners": ["8 ホウオウタイタン", "12 マイネルアズーロ", "17 マイネルアレス"],
-      "holes": ["15 スピンザブラッド", "10 ペッレグリーニ"],
-      "formation": "1列目 2 / 2列目 8・12・17 / 3列目 8・10・12・15・17",
-      "ticket_count": 9,
-      "stake": 900,
-      "main_tickets": ["2-8-12", "2-8-17", "2-12-17"],
-      "result_top3": ["2 ボウウィンドウ", "5", "15 スピンザブラッド"],
-      "trio_result": "2-5-15",
-      "trio_payout": 37950,
-      "hit": false,
-      "review": "軸2は1着、穴15も3着まで来たが、2着5を候補に残せず不的中。相手1頭抜け型。"
+      "date": "2026-08-16", "track": "中京", "race_no": 7, "race_name": "中京記念",
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "事前予想",
+      "axis": "12 サトノシャイニング", "partners": ["6", "3", "5", "9", "10"], "holes": []
     },
     {
-      "date": "2026-08-29",
-      "track": "中京",
-      "race_no": 6,
-      "race_name": "清洲特別",
-      "surface": "ダート",
-      "distance_m": 1200,
-      "prediction_source": "PRE_RACE_CONVERSATION_LOG",
-      "type_label": "標準型",
-      "decision": "BUY",
-      "axis": "6",
-      "partners": ["2", "3", "9"],
-      "holes": ["14", "16"],
-      "formation": "1列目 6 / 2列目 2・3・9 / 3列目 2・3・9・14・16",
-      "ticket_count": 9,
-      "stake": 900,
-      "tickets": ["2-3-6", "2-6-9", "3-6-9", "2-3-9", "2-6-14", "3-6-14", "6-9-14", "2-6-16", "3-6-16"],
-      "result_top3": ["1 フィドルファドル", "11 アオイレーギーナ", "6 ダノンモンテローザ"],
-      "trio_result": "1-6-11",
-      "trio_payout": 8450,
-      "hit": false,
-      "review": "3着6は残したが、1着1と2着11を候補に取れず不的中。全体評価ミス寄り。"
+      "date": "2026-08-16", "track": "札幌", "race_no": 11, "race_name": "札幌記念",
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "事前予想",
+      "axis": "10 アドマイヤテラ", "partners": ["7 ショウヘイ"], "holes": []
     },
     {
-      "date": "2026-08-29",
-      "track": "中京",
-      "race_no": 7,
-      "race_name": "長篠ステークス",
-      "surface": "芝",
-      "distance_m": 1400,
-      "prediction_source": "PRE_RACE_CONVERSATION_LOG",
-      "type_label": "標準型",
-      "decision": "BUY",
-      "axis": "10 ポッドロワール",
-      "partners": ["1 ボンヌソワレ", "5 チャンネルトンネル", "14 ガンマジーティーピ"],
-      "holes": ["9 モジャーリオ", "15 ユウファラオ", "13 ユハンヌス", "4 ブルクトーア"],
-      "formation": "1列目 10 / 2列目 1・5・14 / 3列目 1・4・5・9・13・14・15",
-      "ticket_count": 9,
-      "stake": 900,
-      "main_tickets": ["1-5-10", "1-10-14", "5-10-14"],
-      "result_top3": ["4 ブルクトーア", "5 チャンネルトンネル", "1 ボンヌソワレ"],
-      "trio_result": "1-4-5",
-      "trio_payout": 5290,
-      "hit": false,
-      "review": "1〜3着の4・5・1は全て相手候補内。軸10固定だけが原因で取り逃した典型的な軸飛び・相手内完結型。"
+      "date": "2026-08-23", "track": "札幌", "race_no": 4,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "事前予想",
+      "axis": "5 メイショウテンジン", "partners": [], "holes": []
     },
     {
-      "date": "2026-08-30",
-      "track": "新潟",
-      "race_no": 11,
-      "race_name": "3歳以上1勝クラス",
-      "surface": "芝",
-      "distance_m": 1800,
-      "prediction_source": "PRE_RACE_CONVERSATION_LOG",
-      "type_label": "安定型",
-      "decision": "BUY",
-      "axis": "10 タッセルノット",
-      "partners": ["11 シェーンシュティア", "2 シアブリス", "5 カンティーナ"],
-      "holes": ["8 ダーリングハースト", "12 ヴァリスマリネリス"],
-      "formation": "三連複 10軸フォーメーション・9点",
-      "ticket_count": 9,
-      "stake": 900,
-      "result_top3": ["10 タッセルノット", "8 ダーリングハースト", "11 シェーンシュティア"],
-      "trio_result": "8-10-11",
-      "trio_payout": 1180,
-      "hit": true,
-      "return_amount": 1180,
-      "review": "軸10が1着、穴8が2着、相手11が3着。役割分散がそのまま馬券内3頭に対応し的中。"
+      "date": "2026-08-23", "track": "新潟", "race_no": 5,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "事前予想",
+      "axis": "9 ジーナグレイス", "partners": [], "holes": []
+    },
+    {
+      "date": "2026-08-23", "track": "中京", "race_no": 5,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "見送り",
+      "axis": "6 ヴィスコンテッサ", "partners": [], "holes": [], "decision": "PASS",
+      "pre_note": "中心評価は6。妙味なしとして見送り判断。"
+    },
+    {
+      "date": "2026-08-23", "track": "札幌", "race_no": 5,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG_REVISED_BLIND", "type_label": "事前予想",
+      "axis": "2 アオイゲート", "partners": [], "holes": [],
+      "pre_note": "人気・オッズ混入を隔離した再評価後の軸。"
+    },
+    {
+      "date": "2026-08-23", "track": "新潟", "race_no": 6, "race_name": "古町ステークス",
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG_REVISED_BLIND", "type_label": "事前予想",
+      "axis": "13 ロフティストーリー", "partners": [], "holes": [],
+      "pre_note": "人気・オッズ混入を隔離した再評価後の軸。"
+    },
+    {
+      "date": "2026-08-23", "track": "中京", "race_no": 6, "race_name": "有松特別",
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG_REVISED_BLIND", "type_label": "事前予想",
+      "axis": "3 ジーティーマン", "partners": [], "holes": [],
+      "pre_note": "人気・オッズ混入を隔離した再評価後の軸。"
+    },
+    {
+      "date": "2026-08-29", "track": "新潟", "race_no": 7, "race_name": "赤倉特別", "surface": "芝", "distance_m": 2000,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "標準型", "decision": "CAUTION",
+      "axis": "2 ボウウィンドウ", "partners": ["8 ホウオウタイタン", "12 マイネルアズーロ", "17 マイネルアレス"], "holes": ["15 スピンザブラッド", "10 ペッレグリーニ"],
+      "formation": "1列目 2 / 2列目 8・12・17 / 3列目 8・10・12・15・17", "ticket_count": 9, "stake": 900,
+      "result_top3": ["2 ボウウィンドウ", "5", "15 スピンザブラッド"], "trio_result": "2-5-15", "trio_payout": 37950, "hit": false,
+      "review": "軸2は1着、穴15も3着まで来たが、2着5を候補に残せず不的中。"
+    },
+    {
+      "date": "2026-08-29", "track": "中京", "race_no": 6, "race_name": "清洲特別", "surface": "ダート", "distance_m": 1200,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "標準型", "decision": "BUY",
+      "axis": "6", "partners": ["2", "3", "9"], "holes": ["14", "16"],
+      "formation": "1列目 6 / 2列目 2・3・9 / 3列目 2・3・9・14・16", "ticket_count": 9, "stake": 900,
+      "result_top3": ["1 フィドルファドル", "11 アオイレーギーナ", "6 ダノンモンテローザ"], "trio_result": "1-6-11", "trio_payout": 8450, "hit": false
+    },
+    {
+      "date": "2026-08-29", "track": "中京", "race_no": 7, "race_name": "長篠ステークス", "surface": "芝", "distance_m": 1400,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "標準型", "decision": "BUY",
+      "axis": "10 ポッドロワール", "partners": ["1 ボンヌソワレ", "5 チャンネルトンネル", "14 ガンマジーティーピ"], "holes": ["9 モジャーリオ", "15 ユウファラオ", "13 ユハンヌス", "4 ブルクトーア"],
+      "formation": "1列目 10 / 2列目 1・5・14 / 3列目 1・4・5・9・13・14・15", "ticket_count": 9, "stake": 900,
+      "result_top3": ["4 ブルクトーア", "5 チャンネルトンネル", "1 ボンヌソワレ"], "trio_result": "1-4-5", "trio_payout": 5290, "hit": false
+    },
+    {
+      "date": "2026-08-30", "track": "新潟", "race_no": 11, "race_name": "3歳以上1勝クラス", "surface": "芝", "distance_m": 1800,
+      "prediction_source": "PRE_RACE_CONVERSATION_LOG", "type_label": "安定型", "decision": "BUY",
+      "axis": "10 タッセルノット", "partners": ["11 シェーンシュティア", "2 シアブリス", "5 カンティーナ"], "holes": ["8 ダーリングハースト", "12 ヴァリスマリネリス"],
+      "formation": "三連複 10軸フォーメーション・9点", "ticket_count": 9, "stake": 900,
+      "result_top3": ["10 タッセルノット", "8 ダーリングハースト", "11 シェーンシュティア"], "trio_result": "8-10-11", "trio_payout": 1180, "hit": true, "return_amount": 1180
     }
   ]
 }
