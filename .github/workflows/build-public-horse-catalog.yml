@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/build_public_horse_catalog.py'
+      - 'src/collect_jra_target_dates.py'
       - '.github/workflows/build-public-horse-catalog.yml'
   workflow_dispatch:
 
@@ -26,21 +27,19 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Collect 2026 JRA official HTML results
+      - name: Collect Aug 29-30 JRA official HTML results
         env:
           TARGET_YEAR: '2026'
+          TARGET_DATES: '2026-08-29,2026-08-30'
           JRA_MONTH_SEED: 'pw01skl10202608/E1'
-        run: python src/collect_jra_html_results.py
-      - name: Build 2026 profiles
-        env:
-          TARGET_YEAR: '2026'
-        run: python src/build_html_horse_profiles.py || true
+        run: python src/collect_jra_target_dates.py
       - name: Build public catalog
         run: python src/build_public_horse_catalog.py
       - name: Commit generated horse data
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add data/race_results_html_2026.csv data/horse_ids_2026.csv data/horse_profiles_2026.csv docs/data/horses || true
-          git diff --cached --quiet || git commit -m 'data: add 2026 weekend and graded horse catalog'
+          git add data/race_results_html_2026_weekend.csv data/race_payouts_2026_weekend.csv data/race_context_2026_weekend.csv status/html_collection_2026_weekend.json docs/data/horses || true
+          git diff --cached --quiet || git commit -m 'data: add Aug 29-30 runners and graded horse catalog'
+          git pull --rebase origin main
           git push
