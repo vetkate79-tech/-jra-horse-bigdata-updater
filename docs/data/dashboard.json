@@ -1,0 +1,78 @@
+{
+  "summary": {
+    "model_version": "JRA-ERP-v0.1",
+    "snapshot_time": "waiting for live pipeline",
+    "total_races": 0,
+    "buy_races": 0,
+    "pass_races": 0,
+    "roi": 0,
+    "return_amount": 0,
+    "hit_rate": 0,
+    "hits": 0,
+    "daily_budget": 10000,
+    "remaining_budget": 10000,
+    "roi_ex_top": 0,
+    "axis_survival": 0,
+    "third_column_miss_rate": 0,
+    "elimination_miss_rate": 0,
+    "max_drawdown": 0,
+    "purchase_rate": 0
+  },
+  "state_counts": {
+    "DATA_PENDING": 0,
+    "DATA_READY": 0,
+    "PREDICTED": 0,
+    "SEALED": 0,
+    "PRE_RACE_CHECK": 0,
+    "EV_CONFIRMED": 0,
+    "PASS": 0,
+    "RESULT_PENDING": 0,
+    "SCORED": 0,
+    "PDCA_RECORDED": 0
+  },
+  "races": [],
+  "risks": [
+    {"name":"予想データ接続","level":"warn","detail":"管理ERPの画面実装済み。予想Web側の共通JSON/API接続待ち。"},
+    {"name":"市場情報ファイアウォール","level":"ok","detail":"能力層とEV層はデータ契約上で分離する。"},
+    {"name":"封印・監査","level":"warn","detail":"ライブ予想側から prediction_hash / sealed_snapshot_time を受け取って監査表示する。"}
+  ],
+  "models": [
+    {"name":"A3/B5/C7 FROZEN v1.0","status":"CHAMPION / READ ONLY","roi":0,"hit_rate":0,"note":"上書き禁止の比較基準"},
+    {"name":"Current Integrated","status":"CURRENT","roi":0,"hit_rate":0,"note":"軸耐久性・相手役割分散・3着侵入・敗因シミュレーションを含む"}
+  ],
+  "mechanisms": [
+    {"name":"基礎能力","status":"ACTIVE","note":"人気・オッズ不使用"},
+    {"name":"条件適性","status":"ACTIVE","note":"距離・コース・馬場・斤量等"},
+    {"name":"展開 / レース構造","status":"ACTIVE","note":"複数シナリオ"},
+    {"name":"軸耐久性","status":"ACTIVE","note":"能力順位と軸固定可否を分離"},
+    {"name":"相手役割分散","status":"CRITICAL","note":"能力型への偏りを常時監査"},
+    {"name":"3着侵入","status":"ACTIVE","note":"同数入替を原則"},
+    {"name":"軸飛び / 相手内完結","status":"ACTIVE","note":"券型変換の重点監査"},
+    {"name":"敗因シミュレーション","status":"ACTIVE","note":"前残り・前崩れ・軸飛び等"},
+    {"name":"環境機構","status":"ACTIVE","note":"馬場・天候・風・開催バイアス"},
+    {"name":"券型自動切替","status":"ACTIVE","note":"EV層で最終採否"},
+    {"name":"完全穴の取りこぼし補修","status":"LIGHT PATCH","note":"除外ロジックの大幅緩和は禁止"},
+    {"name":"発走4分前EV","status":"ACTIVE","note":"封印後にのみ市場情報を利用"}
+  ],
+  "error_types": [
+    {"label":"軸飛び型","value":0},
+    {"label":"相手1頭抜け型","value":0},
+    {"label":"穴馬侵入型","value":0},
+    {"label":"全体評価ミス型","value":0},
+    {"label":"相手内完結 / 券型ミス","value":0}
+  ],
+  "role_distribution": [
+    {"label":"能力型","value":0},
+    {"label":"展開型","value":0},
+    {"label":"条件適性型","value":0},
+    {"label":"穴侵入型","value":0}
+  ],
+  "audit": [
+    {"time":"-","level":"INFO","title":"管理ERP初期化","detail":"ライブ予想システム接続前の初期状態。後付け成績は生成しない。"}
+  ],
+  "sources": [
+    {"name":"JRA horse big data updater","status":"ok","detail":"GitHub Actionsによる独立更新機構。"},
+    {"name":"Prediction Web API / JSON","status":"warn","detail":"別で実装中の予想Web側と共通データ契約で接続予定。"},
+    {"name":"Management ERP","status":"ok","detail":"GitHub Pagesで無料配信可能な静的管理画面。"}
+  ]
+}

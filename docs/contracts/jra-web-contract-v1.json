@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jra-web-contract-v1",
+  "title": "JRA Prediction Web / Management ERP shared contract",
+  "type": "object",
+  "required": ["summary", "races"],
+  "properties": {
+    "summary": {
+      "type": "object",
+      "required": ["model_version", "snapshot_time"],
+      "properties": {
+        "model_version": {"type":"string"},
+        "snapshot_time": {"type":"string"},
+        "total_races": {"type":"integer"},
+        "buy_races": {"type":"integer"},
+        "pass_races": {"type":"integer"},
+        "roi": {"type":"number"},
+        "return_amount": {"type":"number"},
+        "hit_rate": {"type":"number"},
+        "hits": {"type":"integer"},
+        "daily_budget": {"type":"number"},
+        "remaining_budget": {"type":"number"},
+        "roi_ex_top": {"type":"number"},
+        "axis_survival": {"type":"number"},
+        "third_column_miss_rate": {"type":"number"},
+        "elimination_miss_rate": {"type":"number"},
+        "max_drawdown": {"type":"number"},
+        "purchase_rate": {"type":"number"}
+      }
+    },
+    "races": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["race_id","track","race_no","race_state","classification"],
+        "properties": {
+          "race_id": {"type":"string"},
+          "track": {"type":"string"},
+          "race_no": {"type":"integer"},
+          "start_time": {"type":"string"},
+          "surface": {"type":"string"},
+          "distance": {"type":"integer"},
+          "going": {"type":["string","null"]},
+          "weather": {"type":["string","null"]},
+          "race_state": {"enum":["DATA_PENDING","DATA_READY","PREDICTED","SEALED","PRE_RACE_CHECK","EV_CONFIRMED","PASS","RESULT_PENDING","SCORED","PDCA_RECORDED"]},
+          "classification": {"enum":["A","B","C","PASS"]},
+          "model_version": {"type":"string"},
+          "sealed_snapshot_time": {"type":["string","null"]},
+          "prediction_hash": {"type":["string","null"]},
+          "axis": {"type":["string","null"]},
+          "axis_durability": {"enum":["HIGH","MEDIUM","LOW","UNKNOWN"]},
+          "axis_failure_risk": {"enum":["HIGH","MEDIUM","LOW","UNKNOWN"]},
+          "ticket_summary": {"type":["string","null"]},
+          "stake": {"type":"number"},
+          "ev": {"type":["number","null"]},
+          "market_snapshot_time": {"type":["string","null"]},
+          "ability_market_firewall": {"const":true},
+          "role_tags": {"type":"array","items":{"type":"string"}},
+          "third_place_intrusion_candidates": {"type":"array","items":{"type":"string"}},
+          "failure_scenarios": {"type":"array","items":{"type":"string"}},
+          "excluded_tickets_ipat_order": {"type":"array","items":{"type":"string"}}
+        }
+      }
+    },
+    "audit": {"type":"array"},
+    "models": {"type":"array"},
+    "mechanisms": {"type":"array"},
+    "error_types": {"type":"array"},
+    "role_distribution": {"type":"array"},
+    "sources": {"type":"array"}
+  },
+  "x-governance": {
+    "market_data_before_seal": "forbidden",
+    "post_result_prediction_rewrite": "forbidden",
+    "missing_value_zero_fill": "forbidden",
+    "frozen_model_overwrite": "forbidden",
+    "low_rank_hole_policy": "light_patch_only",
+    "critical_mechanism": "opponent_role_diversification"
+  }
+}
