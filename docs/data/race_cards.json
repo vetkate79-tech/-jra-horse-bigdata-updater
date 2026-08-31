@@ -1,6 +1,101 @@
 {
-  "source": "JRA_OFFICIAL_ONLY",
-  "status": "DATA_PENDING",
-  "race_count": 0,
-  "races": []
+  "source": "JRA_OFFICIAL_UI_TEST_SAMPLE",
+  "status": "READY_FOR_UI_TEST",
+  "note": "使用感と一本化試験用。JRA公式で確認できた馬名のみ収録。完全な出馬表取得後は同一スキーマで差し替える。",
+  "races": [
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 11,
+      "race_name": "3歳以上1勝クラス",
+      "start_time": "17:30",
+      "surface": "芝",
+      "distance_m": 1800,
+      "sample_incomplete": true,
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202603041120260830%2F0A",
+      "horses": [
+        {"n":"1","frame":1,"name":"ブルバンビーナ","sex":"牝4","weight":"54.0","jockey":"石田 拓郎"},
+        {"n":"2","frame":2,"name":"シアブリス","sex":"牝5","weight":"56.0","jockey":"三浦 皇成"},
+        {"n":"3","frame":3,"name":"スカイダンスタイム","sex":"牝5","weight":"54.0","jockey":"石神 深道"},
+        {"n":"4","frame":3,"name":"ナックホワイト","sex":"牝3","weight":"53.0","jockey":"大野 拓弥"},
+        {"n":"6","frame":4,"name":"ニシノコマチムスメ","sex":"牝5","weight":"56.0","jockey":"菊沢 一樹"},
+        {"n":"9","frame":6,"name":"ケイツールピア","sex":"牝5","weight":"53.0","jockey":"上里 直汰"},
+        {"n":"10","frame":6,"name":"タッセルノット","sex":"牝3","weight":"53.0","jockey":"戸崎 圭太"},
+        {"n":"11","frame":7,"name":"シェーンシュティア","sex":"牝4","weight":"56.0","jockey":"杉原 誠人"},
+        {"n":"12","frame":7,"name":"ヴァリスマリネリス","sex":"牝3","weight":"53.0","jockey":"津村 明秀"},
+        {"n":"13","frame":8,"name":"ココソラーレ","sex":"牝3","weight":"53.0","jockey":"武藤 雅"}
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 3,
+      "race_name": "2歳未勝利",
+      "start_time": "10:45",
+      "surface": "芝",
+      "distance_m": 2000,
+      "sample_incomplete": true,
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202603040320260830%2F22",
+      "horses": [
+        {"n":"1","frame":1,"name":"ケイジャーダ","sex":"牝2","weight":"55.0","jockey":"柴田 大知"},
+        {"n":"2","frame":2,"name":"ニシノリリックス","sex":"牝2","weight":"55.0","jockey":"石橋 脩"}
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 7,
+      "race_name": "日本海ステークス",
+      "start_time": "15:10",
+      "surface": "芝",
+      "distance_m": 2200,
+      "sample_incomplete": true,
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202603040720260830%2FF6",
+      "horses": [
+        {"n":"1","frame":1,"name":"シャドウメテオ","sex":"牝4","weight":"56.0","jockey":"三浦 皇成"}
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 8,
+      "race_name": "新潟記念",
+      "start_time": "15:45",
+      "surface": "芝",
+      "distance_m": 2000,
+      "sample_incomplete": true,
+      "source_url": "https://www.jra.go.jp/datafile/seiseki/replay/2026/077.html",
+      "horses": [
+        {"n":"5","frame":5,"name":"ゾロアストロ","sex":"牡3","weight":"55.0","jockey":"岩田 望来"}
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 8,
+      "race_name": "熊野特別",
+      "start_time": "16:10",
+      "surface": "芝",
+      "distance_m": 2200,
+      "sample_incomplete": true,
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0107202603040820260830%2F89",
+      "horses": [
+        {"n":"1","frame":1,"name":"ブレットパス","sex":"","weight":"","jockey":""}
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 11,
+      "race_name": "3歳未勝利",
+      "start_time": "17:45",
+      "surface": "芝",
+      "distance_m": 1400,
+      "sample_incomplete": true,
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0107202603041120260830%2FE8",
+      "horses": [
+        {"n":"1","frame":1,"name":"プリモマーレ","sex":"","weight":"","jockey":""}
+      ]
+    }
+  ]
 }
