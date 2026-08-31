@@ -1,0 +1,48 @@
+{
+  "contract_version": "user-prediction-feedback-v1",
+  "purpose": "Collect anonymized user betting predictions for later aggregate/OOS research without contaminating the pure AI ability layer.",
+  "privacy": {
+    "direct_personal_data": "forbidden",
+    "account_name": "not_required",
+    "email": "forbidden",
+    "free_text": "optional_but_do_not_store_until_moderation_is_available",
+    "anonymous_session_id": "random_client_id_only"
+  },
+  "submission": {
+    "submission_id": "uuid",
+    "created_at": "ISO8601",
+    "anonymous_session_id": "random_uuid",
+    "race_id": "string",
+    "race_date": "YYYY-MM-DD",
+    "track": "string",
+    "race_no": "integer",
+    "bet_type": "WIN|PLACE|QUINELLA|EXACTA|WIDE|TRIO|TRIFECTA",
+    "ticket_expression": "normalized string",
+    "selected_horse_numbers": [1,2,3],
+    "source": "public_web_ai_check",
+    "odds_seen_before_input": "unknown|yes|no"
+  },
+  "ai_response_snapshot": {
+    "pure_ai_prediction_id": "string",
+    "pure_ai_created_before_user_input": true,
+    "user_ticket_probability": "number|null",
+    "success_scenario": "string",
+    "failure_scenario": "string",
+    "ai_axis": "string|null",
+    "ai_ticket_summary": "string|null"
+  },
+  "post_race_join": {
+    "result_joined": "boolean",
+    "ticket_hit": "boolean|null",
+    "return_per_100yen": "number|null",
+    "joined_at": "ISO8601|null"
+  },
+  "firewall": {
+    "may_influence_pure_ai_ability_rank": false,
+    "may_influence_pre_seal_prediction": false,
+    "may_be_used_for_research_features": true,
+    "promotion_requires_oos_validation": true,
+    "minimum_oos_sample_before_any_weight": 1000,
+    "default_weight": 0
+  }
+}
