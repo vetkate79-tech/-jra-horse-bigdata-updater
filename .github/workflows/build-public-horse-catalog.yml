@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/build_public_horse_catalog.py'
+      - 'src/build_public_race_cards.py'
       - 'src/collect_jra_target_dates.py'
       - '.github/workflows/build-public-horse-catalog.yml'
   workflow_dispatch:
@@ -35,11 +36,13 @@ jobs:
         run: python src/collect_jra_target_dates.py
       - name: Build public catalog
         run: python src/build_public_horse_catalog.py
-      - name: Commit generated horse data
+      - name: Build verified race cards
+        run: python src/build_public_race_cards.py
+      - name: Commit generated horse and race data
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add data/race_results_html_2026_weekend.csv data/race_payouts_2026_weekend.csv data/race_context_2026_weekend.csv status/html_collection_2026_weekend.json docs/data/horses || true
-          git diff --cached --quiet || git commit -m 'data: add Aug 29-30 runners and graded horse catalog'
+          git add data/race_results_html_2026_weekend.csv data/race_payouts_2026_weekend.csv data/race_context_2026_weekend.csv status/html_collection_2026_weekend.json docs/data/horses docs/data/race_cards.json || true
+          git diff --cached --quiet || git commit -m 'data: publish verified Aug 29-30 race cards'
           git pull --rebase origin main
           git push
