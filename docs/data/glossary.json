@@ -1,0 +1,22 @@
+{
+  "updated_at": "2026-08-31",
+  "policy": "サイト内で使用する競馬専門用語を短く平易に説明。外部ソースは要約し、出典を保持する。",
+  "terms": [
+    {"term":"上がり","reading":"あがり","category":"レース展開","summary":"レース終盤の区間。『上がり3ハロン』はゴールから逆算した最後の600mを指す。","source_name":"JRA 競馬用語辞典","source_url":"https://www.jra.go.jp/kouza/yougo/c10010_list.html"},
+    {"term":"上がり3ハロン","reading":"あがりさんはろん","category":"レース展開","summary":"最後の600mの走破タイム。終盤の伸びを比べるときによく使う。","source_name":"JRA / netkeiba 用語解説","source_url":"https://www.jra.go.jp/kouza/yougo/c10010_list.html"},
+    {"term":"脚質","reading":"きゃくしつ","category":"脚質","summary":"逃げ・先行・差し・追い込みなど、その馬が得意とするレースの運び方。","source_name":"JRA 競馬用語辞典","source_url":"https://www.jra.go.jp/kouza/yougo/c10180_list.html"},
+    {"term":"差し馬","reading":"さしうま","category":"脚質","summary":"中団より後ろから進み、4コーナーから直線で前の馬を交わす形を得意とする馬。","source_name":"JRA 競馬用語辞典","source_url":"https://www.jra.go.jp/kouza/yougo/c10180_list.html"},
+    {"term":"差し脚","reading":"さしあし","category":"脚質","summary":"後方から終盤に速い脚を使い、前の馬を追い抜くときの伸び。","source_name":"JRA 競馬用語辞典","source_url":"https://www.jra.go.jp/kouza/yougo/w31.html"},
+    {"term":"追い込み","reading":"おいこみ","category":"脚質","summary":"前半は後方で脚をため、レース後半に一気に順位を上げる戦法。","source_name":"netkeiba 競馬用語まとめ","source_url":"https://dir.netkeiba.com/keibamatome/detail.html?no=3385&rf=kmlp"},
+    {"term":"ハイペース","reading":"はいぺーす","category":"ペース","summary":"前半が後半より速く流れる展開。先行勢が消耗しやすく、持続力や底力が問われやすい。","source_name":"netkeiba 競馬用語まとめ","source_url":"https://dir.netkeiba.com/keibamatome/detail.html?no=3385&rf=kmlp"},
+    {"term":"スローペース","reading":"すろーぺーす","category":"ペース","summary":"前半がゆっくり流れる展開。脚を温存しやすく、終盤の瞬発力勝負になりやすい。","source_name":"netkeiba 競馬用語まとめ","source_url":"https://dir.netkeiba.com/keibamatome/detail.html?no=3385&rf=kmlp"},
+    {"term":"ミドルペース","reading":"みどるぺーす","category":"ペース","summary":"前半と後半の流れに大きな偏りがない中間的なペース。","source_name":"netkeiba 競馬用語まとめ","source_url":"https://dir.netkeiba.com/keibamatome/detail.html?no=3385&rf=kmlp"},
+    {"term":"位置取り","reading":"いちどり","category":"レース展開","summary":"レース中に馬が集団のどの位置で走っているか。前・中団・後方などで表す。","source_name":"JRA用語を基礎にしたサイト内説明","source_url":"https://www.jra.go.jp/kouza/yougo/c10010_list.html"},
+    {"term":"前残り","reading":"まえのこり","category":"レース展開","summary":"逃げ・先行など前方で運んだ馬が、そのまま上位に残るレース結果や展開。","source_name":"サイト内実戦用語","source_url":"https://www.jra.go.jp/kouza/yougo/c10180_list.html"},
+    {"term":"持続力勝負","reading":"じぞくりょくしょうぶ","category":"レース展開","summary":"短い瞬発力だけでなく、長めの区間で高いスピードを維持する力が必要になる展開。","source_name":"サイト内実戦用語","source_url":"https://www.jra.go.jp/kouza/yougo/c10010_list.html"},
+    {"term":"返し馬","reading":"かえしうま","category":"レース前","summary":"パドック後にコースへ出た馬が、レース前に行うウォーミングアップ。","source_name":"netkeiba 競馬用語まとめ","source_url":"https://dir.netkeiba.com/keibamatome/detail.html?no=3385&rf=kmlp"},
+    {"term":"新馬","reading":"しんば","category":"クラス","summary":"まだ出走経験がなく、新馬戦へ出走する資格を持つ2歳・3歳馬。","source_name":"JRA 競馬用語辞典","source_url":"https://www.jra.go.jp/kouza/yougo/c10170_list.html"},
+    {"term":"オープン馬","reading":"おーぷんば","category":"クラス","summary":"収得賞金を積み、オープン競走を中心に出走する上位クラスの馬。","source_name":"JRA 競馬用語辞典","source_url":"https://www.jra.go.jp/kouza/yougo/c10170_list.html"},
+    {"term":"控除率","reading":"こうじょりつ","category":"馬券","summary":"馬券売上から払戻原資へ回る前に差し引かれる割合。券種ごとの期待値を見るうえで重要。","source_name":"JRA 競馬用語辞典","source_url":"https://www.jra.go.jp/kouza/yougo/w174.html"}
+  ]
+}
