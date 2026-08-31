@@ -37,16 +37,32 @@ def atomic_csv(path,rows):
         w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(rows)
     tmp.replace(path)
 
-def main():
-    month=request(SEED,post=True)
+def discover_target_races():
+    # JRA public navigation pages are GET links. POST here previously returned a page
+    # from which target race CNAMEs were not discoverable, producing 0/72.
+    month=request(SEED,post=False)
     days=core.cnames(core.DAY,month)
     races=set()
+    inspected=[]
     for day in days:
-        html=request(day,post=True)
-        for race in core.cnames(core.RACE,html):
+        try:
+            html=request(day,post=False)
+        except Exception as e:
+            inspected.append({'day':day,'error':repr(e)})
+            continue
+        found=core.cnames(core.RACE,html)
+        inspected.append({'day':day,'races_found':len(found)})
+        for race in found:
             m=core.META.search(race)
-            if m and m.group('date') in TARGETS:races.add(race)
+            if m and m.group('date') in TARGETS:
+                races.add(race)
+    return races,inspected
+
+def main():
+    races,discovery_log=discover_target_races()
     if len(races)!=72:
+        STATUS.parent.mkdir(exist_ok=True)
+        STATUS.write_text(json.dumps({'races_discovered':len(races),'expected':72,'target_dates':sorted(TARGETS),'discovery_log':discovery_log,'status':'DISCOVERY_INCOMPLETE'},ensure_ascii=False,indent=2),encoding='utf-8')
         raise RuntimeError(f'target race discovery gate failed: expected 72, got {len(races)}')
     all_rows=[];all_payouts=[];all_context=[];errors=[]
     with ThreadPoolExecutor(max_workers=4) as ex:
@@ -63,9 +79,9 @@ def main():
     ok=len(passed_races)==72 and all(v==36 for v in by_date.values()) and not errors and missing_ids==0
     atomic_csv(OUT,all_rows);atomic_csv(PAYOUTS,all_payouts);atomic_csv(CONTEXT,all_context)
     STATUS.parent.mkdir(exist_ok=True)
-    state={'races_discovered':len(races),'races_passed':len(passed_races),'race_count_by_date':by_date,'runner_rows':len(passed),'missing_horse_ids':missing_ids,'errors':errors,'status':'PASS' if ok else 'INCOMPLETE'}
+    state={'races_discovered':len(races),'races_passed':len(passed_races),'race_count_by_date':by_date,'runner_rows':len(passed),'missing_horse_ids':missing_ids,'errors':errors,'discovery_log':discovery_log,'status':'PASS' if ok else 'INCOMPLETE'}
     STATUS.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding='utf-8')
-    print(json.dumps({k:v for k,v in state.items() if k!='errors'},ensure_ascii=False,indent=2))
+    print(json.dumps({k:v for k,v in state.items() if k not in ('errors','discovery_log')},ensure_ascii=False,indent=2))
     if not ok:raise SystemExit('target date quality gate failed')
 
 if __name__=='__main__':main()
