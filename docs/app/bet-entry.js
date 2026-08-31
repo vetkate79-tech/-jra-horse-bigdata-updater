@@ -1,29 +1,63 @@
-const demo={dates:['2026-08-30','2026-08-29'],tracks:['新潟','中京','札幌'],races:[1,2,3,4,5,6,7,8,9,10,11,12],horses:[
-{n:'1',frame:1,name:'アーバンシック',sex:'牡4',weight:'58.0',jockey:'横山武史',recent:'2-4-1-3'},
-{n:'2',frame:1,name:'シアブリス',sex:'牝5',weight:'56.0',jockey:'戸崎圭太',recent:'3-2-5-1'},
-{n:'3',frame:2,name:'サクラトップラン',sex:'牡4',weight:'58.0',jockey:'菅原明良',recent:'5-1-6-4'},
-{n:'4',frame:2,name:'ブルクトーア',sex:'牡3',weight:'55.0',jockey:'三浦皇成',recent:'1-3-2-6'},
-{n:'5',frame:3,name:'カンティーナ',sex:'牝4',weight:'56.0',jockey:'津村明秀',recent:'2-5-4-1'},
-{n:'6',frame:3,name:'ダノンモンテローザ',sex:'牡4',weight:'58.0',jockey:'荻野極',recent:'3-3-7-2'},
-{n:'7',frame:4,name:'ミラーダカリエンテ',sex:'牝3',weight:'53.0',jockey:'石川裕紀人',recent:'4-1-8-3'},
-{n:'8',frame:4,name:'ダーリングハースト',sex:'牝3',weight:'53.0',jockey:'大野拓弥',recent:'2-6-1-5'},
-{n:'9',frame:5,name:'モジャーリオ',sex:'牡3',weight:'55.0',jockey:'丸山元気',recent:'6-2-3-4'},
-{n:'10',frame:5,name:'タッセルノット',sex:'牡4',weight:'58.0',jockey:'C.ルメール',recent:'1-2-2-1'},
-{n:'11',frame:6,name:'シェーンシュティア',sex:'牝4',weight:'56.0',jockey:'川田将雅',recent:'2-1-4-2'},
-{n:'12',frame:6,name:'ヴァリスマリネリス',sex:'牝4',weight:'56.0',jockey:'佐々木大輔',recent:'5-3-1-7'},
-{n:'13',frame:7,name:'ユハンヌス',sex:'牡5',weight:'58.0',jockey:'岩田望来',recent:'4-6-2-3'},
-{n:'14',frame:7,name:'ガンマジーティーピ',sex:'牡3',weight:'55.0',jockey:'坂井瑠星',recent:'1-5-3-2'},
-{n:'15',frame:8,name:'ユウファラオ',sex:'牡4',weight:'58.0',jockey:'丹内祐次',recent:'7-3-1-5'},
-{n:'16',frame:8,name:'サマーナイト',sex:'牡4',weight:'58.0',jockey:'原優介',recent:'3-8-2-1'}]};
-let s={date:'2026-08-30',track:'新潟',race:11,bet:'三連複',mode:'フォーメーション',col:0,sel:[new Set(['10']),new Set(['11','2','5']),new Set(['11','2','5','8','12'])]};
+let catalog={races:[]};
+let s={date:null,track:null,race:null,bet:'単勝',mode:'通常',col:0,sel:[new Set(),new Set(),new Set()]};
 const $=q=>document.querySelector(q),$$=q=>[...document.querySelectorAll(q)];
-function combos(){const out=new Set();const a=[...s.sel[0]],b=[...s.sel[1]],c=[...s.sel[2]];if(s.bet==='三連複'){if(s.mode==='BOX'){const z=[...s.sel[0]].map(Number).sort((x,y)=>x-y);for(let i=0;i<z.length;i++)for(let j=i+1;j<z.length;j++)for(let k=j+1;k<z.length;k++)out.add(`${z[i]}-${z[j]}-${z[k]}`)}else{a.forEach(x=>b.forEach(y=>c.forEach(z=>{const v=[+x,+y,+z];if(new Set(v).size===3)out.add(v.sort((m,n)=>m-n).join('-'))})))}return [...out].sort((x,y)=>x.localeCompare(y,undefined,{numeric:true}))}if(s.bet==='馬連'||s.bet==='ワイド'){const x=[...s.sel[0]],y=s.mode==='BOX'?x:[...s.sel[1]];x.forEach(a=>y.forEach(b=>{if(a!==b)out.add([+a,+b].sort((m,n)=>m-n).join('-'))}));return [...out]}if(s.bet==='単勝'||s.bet==='複勝')return [...s.sel[0]].sort((a,b)=>a-b);return []}
-function frameClass(f){return `frame-${f}`}
-function horse(n){return demo.horses.find(h=>h.n===String(n))}
-function render(){renderSeg('#dateSeg',demo.dates,s.date,v=>s.date=v);renderSeg('#trackSeg',demo.tracks,s.track,v=>s.track=v);$('#raceStrip').innerHTML=demo.races.map(r=>`<button class="${s.race===r?'on':''}" data-race="${r}">${r}<small>R</small></button>`).join('');$$('[data-race]').forEach(b=>b.onclick=()=>{s.race=+b.dataset.race;render()});const bets=['単勝','複勝','馬連','ワイド','三連複','三連単','馬単'];$('#betTypes').innerHTML=bets.map(v=>`<button class="${s.bet===v?'on':''}" data-bet="${v}">${v}</button>`).join('');$$('[data-bet]').forEach(b=>b.onclick=()=>{s.bet=b.dataset.bet;s.mode=(s.bet==='単勝'||s.bet==='複勝')?'通常':'フォーメーション';s.col=0;s.sel=[new Set(),new Set(),new Set()];$('#aiResult').classList.remove('show');render()});const modes=(s.bet==='三連複'||s.bet==='三連単')?['フォーメーション','1頭軸','2頭軸','BOX']:['通常','BOX'];$('#modeTabs').innerHTML=(s.bet==='単勝'||s.bet==='複勝')?'':modes.map(v=>`<button class="${s.mode===v?'on':''}" data-mode="${v}">${v}</button>`).join('');$$('[data-mode]').forEach(b=>b.onclick=()=>{s.mode=b.dataset.mode;s.col=0;s.sel=[new Set(),new Set(),new Set()];render()});let cols=1;if(['馬連','ワイド','馬単'].includes(s.bet)&&s.mode!=='BOX')cols=2;if(['三連複','三連単'].includes(s.bet)&&s.mode!=='BOX')cols=3;$('#columnTabs').innerHTML=Array.from({length:cols},(_,i)=>`<button class="${s.col===i?'on':''}" data-col="${i}"><small>${cols===1?'選択':`${i+1}列目`}</small><b>${s.sel[i].size?s.sel[i].size+'頭':'未選択'}</b></button>`).join('');$$('[data-col]').forEach(b=>b.onclick=()=>{s.col=+b.dataset.col;render()});$('#horses').innerHTML=demo.horses.map(h=>`<button class="horse ${s.sel[s.col].has(h.n)?'selected':''}" data-horse="${h.n}"><span class="frame ${frameClass(h.frame)}">${h.frame}</span><span class="num">${h.n}</span><span class="horse-main"><span class="name">${h.name}</span><span class="meta">${h.sex} ・ ${h.weight}kg　<span class="jockey">${h.jockey}</span></span></span><span class="recent"><small>近4走</small><b>${h.recent}</b></span><span class="check"></span></button>`).join('');$$('[data-horse]').forEach(b=>b.onclick=()=>{const n=b.dataset.horse;if(s.bet==='単勝'||s.bet==='複勝'){s.sel[0].clear();s.sel[0].add(n)}else if(s.sel[s.col].has(n))s.sel[s.col].delete(n);else s.sel[s.col].add(n);$('#aiResult').classList.remove('show');render()});const cs=combos();$('#pointCount').textContent=`${cs.length}点`;$('#ticketText').textContent=cs.length?cs.slice(0,20).join(' / ')+(cs.length>20?' …':''):'出馬表から馬を選択してください';$('#selectedRace').textContent=`${s.track} ${s.race}R`;$('#selectedBet').textContent=`${s.bet} ${s.mode==='通常'?'':s.mode}`;$('#totalPoints').textContent=`${cs.length}点`;$('.consult').disabled=!cs.length}
-function renderSeg(sel,vals,cur,set){$(sel).innerHTML=vals.map(v=>`<button class="${cur===v?'on':''}" data-v="${v}">${v.replace('2026-','').replace('-','/')}</button>`).join('');$$(sel+' [data-v]').forEach(b=>b.onclick=()=>{set(b.dataset.v);render()})}
-function demoWinProb(n){const h=horse(n);if(!h)return null;const finishes=h.recent.split('-').map(Number);const score=finishes.reduce((a,v)=>a+Math.max(0,6-v),0)/finishes.length;return Math.round(Math.max(6,Math.min(34,8+score*4.2)))}
-function partnerCandidates(selected){return demo.horses.filter(h=>h.n!==selected).map(h=>({h,score:h.recent.split('-').map(Number).reduce((a,v)=>a+Math.max(0,6-v),0)})).sort((a,b)=>b.score-a.score).slice(0,3).map(x=>x.h)}
-function showThinking(done){const box=$('#aiResult');box.classList.add('show');box.innerHTML=`<div class="thinking"><div class="spinner"></div><h3>AIが買い目を解析中</h3><p id="thinkingText">選択馬の勝ち筋を確認しています…</p><div class="thinking-steps"><span class="on">能力</span><span>展開</span><span>相手</span></div></div>`;box.scrollIntoView({behavior:'smooth',block:'start'});const msgs=['選択馬の勝ち筋を確認しています…','レース展開との相性を照合しています…','一緒に持つ馬券候補を組み立てています…'];const dots=$$('.thinking-steps span');let i=0;const timer=setInterval(()=>{i++;if(i<msgs.length){$('#thinkingText').textContent=msgs[i];dots.forEach((d,j)=>d.classList.toggle('on',j<=i))}else{clearInterval(timer);done()}},650)}
-function showAnalysis(cs){const selected=[...s.sel[0]][0];const h=horse(selected);if(s.bet==='単勝'&&h){const prob=demoWinProb(selected);const partners=partnerCandidates(selected);const p1=partners[0],p2=partners[1],p3=partners[2];$('#aiResult').innerHTML=`<div class="ai-card win-analysis"><div class="analysis-head"><div><small>単勝 ${h.n}</small><h3>${h.name}</h3></div><div class="win-prob"><small>勝つ確率の目安</small><b>${prob}%</b></div></div><p class="demo-label">操作デモ用の参考表示。実運用では封印済みAI予測確率を使用します。</p><section class="scenario-card"><small>この馬が勝つなら</small><h4>好位〜中団でロスなく運び、直線で先に進路を確保する展開</h4><p>前半で脚を使いすぎず、4角まで射程圏を維持。直線入口で前が壁にならず、持続力勝負に持ち込める形が勝ち筋です。</p></section><section class="scenario-card risk"><small>崩れるなら</small><h4>位置取りが後ろになり、直線だけで差し切る形を強いられるケース</h4><p>序盤の不利やペース急変で想定位置を取れないと、単勝としてはリスクが上がります。</p></section><section class="suggest-card"><div class="suggest-title"><small>この単勝を買うなら</small><h4>同じ勝ち筋から派生する馬券</h4></div><button class="suggest-row"><b>馬連</b><span>${h.n}-${p1.n} / ${h.n}-${p2.n}</span><small>${h.name}が勝ち切り、${p1.name}・${p2.name}が相手に残る想定</small></button><button class="suggest-row"><b>ワイド</b><span>${h.n}-${p1.n}</span><small>単勝より少し広く、同じ展開を押さえる候補</small></button><button class="suggest-row"><b>三連複</b><span>${h.n}-${p1.n}-${p2.n} / ${h.n}-${p1.n}-${p3.n}</span><small>中心馬の勝ち筋と相手上位を組み合わせた派生案</small></button></section><div class="pickline"><b>AIの中心評価</b><br>本命 ${h.n} ${h.name}<br>相手候補 ${partners.map(x=>`${x.n} ${x.name}`).join(' / ')}</div></div>`}else{const prob=Math.max(4,Math.min(48,Math.round(34-cs.length*.8+(s.bet==='三連複'?6:0))));$('#aiResult').innerHTML=`<div class="ai-card"><h3>この買い目が来るなら</h3><p>選択した中心馬が大きく位置を落とさず、相手候補が想定どおりの位置取りを取る流れが必要です。</p><div class="prob"><small>的中確率の目安</small><b>${prob}%</b></div><div class="pickline"><b>AI予想</b><br>あなたの買い目とAIの事前予想を比較して表示します。</div></div>`}}
-$('.consult').onclick=()=>{const cs=combos();if(!cs.length)return;$('.consult').disabled=true;showThinking(()=>{showAnalysis(cs);$('.consult').disabled=false;const payload={ts:new Date().toISOString(),date:s.date,track:s.track,race_no:s.race,bet_type:s.bet,input_mode:s.mode,tickets:cs,selections:s.sel.map(x=>[...x])};const q=JSON.parse(localStorage.getItem('jra-user-prediction-queue')||'[]');q.push(payload);localStorage.setItem('jra-user-prediction-queue',JSON.stringify(q.slice(-200)))})};render();
+const uniq=a=>[...new Set(a)];
+const currentRace=()=>catalog.races.find(r=>r.date===s.date&&r.track===s.track&&Number(r.race_no)===Number(s.race));
+const horse=n=>(currentRace()?.horses||[]).find(h=>String(h.n)===String(n));
+const frameClass=f=>`frame-${f||1}`;
+function resetSelection(){s.col=0;s.sel=[new Set(),new Set(),new Set()];$('#aiResult').innerHTML='';}
+function combos(){
+  const out=new Set(),a=[...s.sel[0]],b=[...s.sel[1]],c=[...s.sel[2]];
+  if(s.bet==='単勝'||s.bet==='複勝')return a.sort((x,y)=>+x-+y);
+  if(s.bet==='馬連'||s.bet==='ワイド'||s.bet==='馬単'){
+    const y=s.mode==='BOX'?a:b;
+    a.forEach(x=>y.forEach(z=>{if(x!==z){const v=s.bet==='馬単'?`${x}-${z}`:[+x,+z].sort((m,n)=>m-n).join('-');out.add(v)}}));
+    return [...out];
+  }
+  if(s.bet==='三連複'){
+    if(s.mode==='BOX'){
+      const z=a.map(Number).sort((x,y)=>x-y);for(let i=0;i<z.length;i++)for(let j=i+1;j<z.length;j++)for(let k=j+1;k<z.length;k++)out.add(`${z[i]}-${z[j]}-${z[k]}`)
+    }else a.forEach(x=>b.forEach(y=>c.forEach(z=>{const v=[+x,+y,+z];if(new Set(v).size===3)out.add(v.sort((m,n)=>m-n).join('-'))})));
+    return [...out];
+  }
+  if(s.bet==='三連単'){
+    if(s.mode==='BOX'){
+      a.forEach(x=>a.forEach(y=>a.forEach(z=>{if(new Set([x,y,z]).size===3)out.add(`${x}-${y}-${z}`)})));
+    }else a.forEach(x=>b.forEach(y=>c.forEach(z=>{if(new Set([x,y,z]).size===3)out.add(`${x}-${y}-${z}`)})));
+    return [...out];
+  }
+  return [];
+}
+function renderSeg(sel,vals,cur,cb,label=v=>v){$(sel).innerHTML=vals.map(v=>`<button class="${cur===v?'on':''}" data-v="${v}">${label(v)}</button>`).join('');$$(sel+' [data-v]').forEach(b=>b.onclick=()=>cb(b.dataset.v));}
+function render(){
+  const dates=uniq(catalog.races.map(r=>r.date)).sort().reverse();
+  if(!s.date||!dates.includes(s.date))s.date=dates[0]||null;
+  renderSeg('#dateSeg',dates,s.date,v=>{s.date=v;const tracks=uniq(catalog.races.filter(r=>r.date===v).map(r=>r.track));s.track=tracks[0]||null;const races=catalog.races.filter(r=>r.date===v&&r.track===s.track);s.race=races[0]?.race_no||null;resetSelection();render()},v=>v.slice(5).replace('-','/'));
+  const tracks=uniq(catalog.races.filter(r=>r.date===s.date).map(r=>r.track));
+  if(!s.track||!tracks.includes(s.track))s.track=tracks[0]||null;
+  renderSeg('#trackSeg',tracks,s.track,v=>{s.track=v;const rs=catalog.races.filter(r=>r.date===s.date&&r.track===v);s.race=rs[0]?.race_no||null;resetSelection();render()});
+  const races=catalog.races.filter(r=>r.date===s.date&&r.track===s.track).sort((a,b)=>a.race_no-b.race_no);
+  if(!races.some(r=>Number(r.race_no)===Number(s.race)))s.race=races[0]?.race_no||null;
+  $('#raceStrip').innerHTML=races.map(r=>`<button class="${Number(s.race)===Number(r.race_no)?'on':''}" data-race="${r.race_no}">${r.race_no}<small>R</small></button>`).join('');
+  $$('[data-race]').forEach(b=>b.onclick=()=>{s.race=+b.dataset.race;resetSelection();render()});
+  const bets=['単勝','複勝','馬連','ワイド','三連複','三連単','馬単'];
+  $('#betTypes').innerHTML=bets.map(v=>`<button class="${s.bet===v?'on':''}" data-bet="${v}">${v==='複勝'?'軸候補（複勝）':v}</button>`).join('');
+  $$('[data-bet]').forEach(b=>b.onclick=()=>{s.bet=b.dataset.bet;s.mode=(s.bet==='単勝'||s.bet==='複勝')?'通常':'フォーメーション';resetSelection();render()});
+  const triple=['三連複','三連単'].includes(s.bet);const modes=triple?['フォーメーション','BOX']:['通常','BOX'];
+  $('#modeTabs').innerHTML=(s.bet==='単勝'||s.bet==='複勝')?'':modes.map(v=>`<button class="${s.mode===v?'on':''}" data-mode="${v}">${v}</button>`).join('');
+  $$('[data-mode]').forEach(b=>b.onclick=()=>{s.mode=b.dataset.mode;resetSelection();render()});
+  let cols=1;if(['馬連','ワイド','馬単'].includes(s.bet)&&s.mode!=='BOX')cols=2;if(triple&&s.mode!=='BOX')cols=3;
+  $('#columnTabs').innerHTML=Array.from({length:cols},(_,i)=>`<button class="${s.col===i?'on':''}" data-col="${i}"><small>${cols===1?'選択':`${i+1}列目`}</small><b>${s.sel[i].size?s.sel[i].size+'頭':'未選択'}</b></button>`).join('');
+  $$('[data-col]').forEach(b=>b.onclick=()=>{s.col=+b.dataset.col;render()});
+  const r=currentRace();
+  $('#selectedRace').textContent=r?`${r.track} ${r.race_no}R ${r.race_name||''}`:'レース未選択';
+  $('#selectedBet').textContent=`${s.bet==='複勝'?'軸候補（複勝）':s.bet}${s.mode==='通常'?'':' '+s.mode}`;
+  const hs=r?.horses||[];
+  $('#horses').innerHTML=hs.length?hs.map(h=>`<button class="horse ${s.sel[s.col].has(String(h.n))?'selected':''}" data-horse="${h.n}"><span class="frame ${frameClass(h.frame)}">${h.frame||''}</span><span class="num">${h.n}</span><span class="horse-main"><span class="name">${h.name}</span><span class="meta">${[h.sex,h.weight&&h.weight+'kg',h.jockey].filter(Boolean).join(' ・ ')}</span></span><span class="recent"><small>${r.sample_incomplete?'UI試験':'出馬表'}</small><b>${r.start_time||''}</b></span><span class="check"></span></button>`).join(''):`<div class="empty-race">このレースの出馬表はまだ試験データに入っていません。</div>`;
+  $$('[data-horse]').forEach(b=>b.onclick=()=>{const n=String(b.dataset.horse);if(s.bet==='単勝'||s.bet==='複勝'){s.sel[0].clear();s.sel[0].add(n)}else if(s.sel[s.col].has(n))s.sel[s.col].delete(n);else s.sel[s.col].add(n);render()});
+  const cs=combos();$('#pointCount').textContent=`${cs.length}点`;$('#totalPoints').textContent=`${cs.length}点`;$('#ticketText').textContent=cs.length?cs.join(' / '):'出馬表から気になる馬を選んでください';$('.consult').disabled=!cs.length;
+  $('.consult').textContent='選んだ馬を確認';
+  if(r?.sample_incomplete)$('#ticketText').insertAdjacentHTML('beforeend','<br><small>※現在はUI一本化試験のため、JRA公式で確認済みの馬名だけを表示しています。</small>');
+}
+$('.consult').onclick=()=>{const r=currentRace(),cs=combos();if(!r||!cs.length)return;const names=uniq(s.sel.flatMap(x=>[...x])).map(n=>`${n} ${horse(n)?.name||''}`);$('#aiResult').innerHTML=`<div class="ai-card"><h3>${r.track} ${r.race_no}R</h3><p>${r.race_name||''} / ${r.surface||''}${r.distance_m?` ${r.distance_m}m`:''}</p><div class="pickline"><b>選んだ馬</b><br>${names.join('<br>')}</div><p class="demo-label">今は使用感・データ一本化の試験表示です。予想はまだ出しません。</p></div>`;};
+fetch('../data/race_cards.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{catalog=d||{races:[]};render()}).catch(()=>{catalog={races:[]};render()});
