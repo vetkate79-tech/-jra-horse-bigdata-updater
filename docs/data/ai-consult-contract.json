@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "endpoint": "/api/consult",
+  "request": {
+    "question": "string",
+    "context": {
+      "surface": "consult|analysis|prediction",
+      "date": "optional YYYY-MM-DD",
+      "track": "optional string",
+      "race_no": "optional integer",
+      "selected_horses": "optional array",
+      "bet_type": "optional string",
+      "analysis_section": "optional string"
+    },
+    "policy": {
+      "no_guessing": true,
+      "no_market_leak": true,
+      "prefer_feature_guidance": true,
+      "glossary_is_reference_only": true
+    }
+  },
+  "response": {
+    "title": "string",
+    "answer": "string",
+    "confidence": "optional high|medium|low",
+    "feature": {
+      "href": "optional string",
+      "label": "optional string",
+      "reason": "optional string"
+    },
+    "missing_data": "optional array"
+  },
+  "rules": [
+    "Do not answer race-specific questions with invented horses, odds, probabilities, race conditions, or results.",
+    "If required race data is unavailable, explain what data is missing and guide the user to the site feature that can provide it.",
+    "Glossary data may explain terminology but must never be used as a substitute for answering the user's actual question.",
+    "Pure ability evaluation must remain isolated from odds, popularity, and other users' predictions.",
+    "When the question can be answered safely from general horse-racing knowledge, answer directly in plain Japanese.",
+    "For advanced race questions, prefer race-context data from the detailed analysis feature before answering."
+  ]
+}
