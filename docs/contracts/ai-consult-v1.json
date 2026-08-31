@@ -1,0 +1,35 @@
+{
+  "contract_version": "ai-consult-v1",
+  "request": {
+    "question": "string",
+    "context": {
+      "race_id": "string|null",
+      "race_date": "YYYY-MM-DD|null",
+      "track": "string|null",
+      "race_no": "integer|null",
+      "horse_ids": ["string"],
+      "page": "consult|prediction|analysis"
+    }
+  },
+  "response": {
+    "answer": "string",
+    "answer_status": "ANSWERED|NEEDS_RACE_DATA|NEEDS_ODDS|NEEDS_ANALYSIS_FEATURE|UNSUPPORTED",
+    "feature_guidance": [{"label":"string","href":"string","reason":"string"}],
+    "terms_used": [{
+      "term":"string",
+      "reading":"string|null",
+      "category":"string|null",
+      "short_definition":"string|null",
+      "confidence":"number 0..1",
+      "source_hint":"string|null"
+    }],
+    "do_not_guess": true
+  },
+  "rules": {
+    "dictionary_is_not_primary_answer_source": true,
+    "invent_race_or_horse_data": false,
+    "invent_odds_or_probability": false,
+    "when_data_missing_use_feature_guidance": true,
+    "unknown_or_low_confidence_terms_go_to_candidate_store": true
+  }
+}
