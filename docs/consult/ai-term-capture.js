@@ -29,11 +29,15 @@
     const terms=e.detail?.terms_used||[];
     terms.forEach(upsert);
   });
-  // Consult already loads this file on every visit. Chain-load the full site
-  // terminology search so new site terms become searchable without duplicating
-  // script tags across pages.
-  const s=document.createElement('script');
-  s.src='./site-word-search.js?ts=20260901';
-  s.defer=true;
-  document.head.appendChild(s);
+  function loadSiteSearch(){
+    if(document.querySelector('script[data-site-word-search]'))return;
+    const s=document.createElement('script');
+    s.src='./site-word-search.js?ts=20260901b';
+    s.dataset.siteWordSearch='1';
+    document.body.appendChild(s);
+  }
+  // The consult page defines `terms`, `esc`, `showPane` and `renderWords`
+  // later in the document. Load the extension only after all of them exist.
+  if(document.readyState==='complete')setTimeout(loadSiteSearch,0);
+  else window.addEventListener('load',loadSiteSearch,{once:true});
 })();
