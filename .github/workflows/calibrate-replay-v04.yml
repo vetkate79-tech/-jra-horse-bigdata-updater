@@ -1,0 +1,31 @@
+name: Calibrate replay v0.4
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/calibrate_replay_v04.py'
+      - '.github/workflows/calibrate-replay-v04.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cross-track calibration
+        run: python src/calibrate_replay_v04.py
+      - name: Commit outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/model-calibration-v04.json status/model-calibration-v04.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Calibrate v0.4 with cross-track robustness'
+          git pull --rebase origin main
+          git push origin HEAD:main
