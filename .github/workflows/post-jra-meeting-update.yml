@@ -13,6 +13,7 @@ on:
       - 'src/merge_latest_results_into_catalog.py'
       - 'src/update_recent_runner_elite.py'
       - 'src/merge_active_elite_into_catalog.py'
+      - 'src/expand_horse_categories.py'
       - '.github/workflows/post-jra-meeting-update.yml'
 
 permissions:
@@ -66,6 +67,9 @@ jobs:
       - name: Merge graded/open horses into public catalog
         if: steps.state.outputs.updated == 'true'
         run: python src/merge_active_elite_into_catalog.py
+      - name: Expand lower class categories from verified JRA races
+        if: steps.state.outputs.updated == 'true'
+        run: python src/expand_horse_categories.py
       - name: Commit automatic central-meeting update
         if: steps.state.outputs.updated == 'true'
         run: |
