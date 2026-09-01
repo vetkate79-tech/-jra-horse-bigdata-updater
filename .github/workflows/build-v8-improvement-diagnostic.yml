@@ -1,0 +1,28 @@
+name: Build V8 improvement diagnostic
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/build_v8_improvement_diagnostic.py'
+      - 'docs/data/oral-v6-72-scored.json'
+      - 'docs/data/oral-v7-72-style-scored.json'
+      - '.github/workflows/build-v8-improvement-diagnostic.yml'
+permissions:
+  contents: write
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/build_v8_improvement_diagnostic.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-v8-improvement-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build V8 improvement diagnostic'
+          git pull --rebase origin main
+          git push origin HEAD:main
