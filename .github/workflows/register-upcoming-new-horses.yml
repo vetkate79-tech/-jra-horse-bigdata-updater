@@ -1,0 +1,55 @@
+name: Register upcoming JRA debut horses
+
+on:
+  schedule:
+    # Thursday 16:30 / 19:30 JST, Friday 09:30 JST, Saturday 07:30 JST.
+    - cron: '30 7 * * 4'
+    - cron: '30 10 * * 4'
+    - cron: '30 0 * * 5'
+    - cron: '30 22 * * 5'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/collect_upcoming_new_horses.py'
+      - 'src/enrich_new_horse_entries.py'
+      - '.github/workflows/register-upcoming-new-horses.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: register-upcoming-new-horses
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Restore JRA horse profile cache
+        uses: actions/cache@v4
+        with:
+          path: cache/jra_horse_profiles
+          key: jra-new-horse-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            jra-new-horse-${{ runner.os }}-
+            jra-profile-incremental-${{ runner.os }}-
+      - name: Discover upcoming new-horse racecards
+        run: python src/collect_upcoming_new_horses.py
+      - name: Enrich registered debut horses
+        run: python src/enrich_new_horse_entries.py
+      - name: Commit pre-debut horse registration
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/data/horses/catalog.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json
+          git diff --cached --quiet || git commit -m 'data: register upcoming JRA debut horses'
+          git pull --rebase origin main
+          git push
