@@ -1,0 +1,31 @@
+name: Test active elite horse parser
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/collect_active_elite_horses.py'
+      - 'src/discover_registered_horse_ids.py'
+      - '.github/workflows/test-active-elite-parser.yml'
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt && pip install pypdf
+      - name: Test JRA registered roster discovery
+        run: python src/discover_registered_horse_ids.py
+      - name: Parse first 25 candidate profiles
+        env:
+          ELITE_PROFILE_WORKERS: '3'
+          ELITE_MAX_PROFILES: '25'
+        run: python src/collect_active_elite_horses.py
+      - name: Show parser summary
+        run: cat status/active_elite_catalog.json
