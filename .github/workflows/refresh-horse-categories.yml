@@ -8,6 +8,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'src/enrich_all_catalog_profiles.py'
       - 'src/expand_horse_categories.py'
       - 'src/enrich_new_horse_entries.py'
       - 'src/check_horse_master_completion.py'
@@ -23,7 +24,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,6 +34,17 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Restore JRA horse profile cache
+        uses: actions/cache@v4
+        with:
+          path: cache/jra_horse_profiles
+          key: jra-full-profile-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            jra-full-profile-${{ runner.os }}-
+            jra-profile-incremental-${{ runner.os }}-
+            jra-new-horse-${{ runner.os }}-
+      - name: Enrich all catalog horses from JRA official profiles
+        run: python src/enrich_all_catalog_profiles.py
       - name: Expand category labels
         run: python src/expand_horse_categories.py
       - name: Enrich new horses
@@ -43,8 +55,8 @@ jobs:
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/catalog.json status/horse_master_completion.json
-          git diff --cached --quiet || git commit -m 'data: refresh public horse categories'
+          git add docs/data/horses/catalog.json status/horse_master_completion.json status/all_catalog_profile_enrichment.json
+          git diff --cached --quiet || git commit -m 'data: enrich and refresh public horse master'
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push && exit 0
             echo "push race detected; retry $i/5"
