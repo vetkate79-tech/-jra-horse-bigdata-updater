@@ -1,0 +1,223 @@
+{
+  "races_discovered": 72,
+  "racecard_races_ready": 72,
+  "racecard_count_by_date": {
+    "2026-08-29": 36,
+    "2026-08-30": 36
+  },
+  "all_runner_rows": 973,
+  "racecard_bad_groups": [],
+  "strict_races_passed": 44,
+  "strict_race_count_by_date": {
+    "20260829": 22,
+    "20260830": 22
+  },
+  "strict_runner_rows": 595,
+  "strict_missing_horse_ids": 0,
+  "strict_gate_error_count": 28,
+  "fatal_error_count": 0,
+  "gate_errors": [
+    {
+      "race": "pw01sde0101202602030120260829/3D",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0101202602040120260830/65",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602030420260829/3B",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602030520260829/F0",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602030820260829/0F",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602031220260829/23",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602040320260830/AE",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602040620260830/CD",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602040720260830/82",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1001202602040920260830/EC",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603030220260829/E0",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603030620260829/B4",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603030820260829/1E",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603031220260829/32",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603040220260830/08",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603040620260830/DC",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603041020260830/F0",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1004202603041220260830/5A",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603030220260829/BE",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603030620260829/92",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603030920260829/B1",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603031020260829/A6",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603031220260829/10",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603040520260830/05",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603040420260830/50",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603040620260830/BA",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603040920260830/D9",
+      "errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde1007202603041220260830/38",
+      "errors": [
+        "track_condition"
+      ]
+    }
+  ],
+  "fatal_errors": [],
+  "discovery_log": [
+    {
+      "seed": "pw01sde0104202603030120260829/4C",
+      "links_found": 17,
+      "target_links": 18
+    },
+    {
+      "seed": "pw01sde0107202603030120260829/2A",
+      "links_found": 17,
+      "target_links": 18
+    },
+    {
+      "seed": "pw01sde0101202602030120260829/3D",
+      "links_found": 17,
+      "target_links": 18
+    },
+    {
+      "seed": "pw01sde0104202603040120260830/74",
+      "links_found": 17,
+      "target_links": 18
+    },
+    {
+      "seed": "pw01sde0107202603040120260830/52",
+      "links_found": 17,
+      "target_links": 18
+    },
+    {
+      "seed": "pw01sde0101202602040120260830/65",
+      "links_found": 17,
+      "target_links": 18
+    }
+  ],
+  "status": "RACECARD_PASS"
+}
