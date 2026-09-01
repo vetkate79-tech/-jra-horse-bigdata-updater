@@ -1,0 +1,48 @@
+name: Build word dictionary and global links
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/data/glossary.json'
+      - 'docs/data/site-terms.json'
+      - 'docs/data/site-term-candidates.json'
+      - 'src/build_word_dictionary_pages.py'
+      - 'src/inject_global_word_links.py'
+      - 'docs/word-links.js'
+      - '.github/workflows/build-word-dictionary.yml'
+  schedule:
+    - cron: '40 18 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-dictionary-writes
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build dictionary index and term pages
+        run: python src/build_word_dictionary_pages.py
+      - name: Inject global word linker
+        run: python src/inject_global_word_links.py
+      - name: Commit dictionary site updates
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/words docs/data/word-index.json docs/**/*.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'site: publish dictionary index and global term links'
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            sleep $((i*2))
+          done
+          exit 1
