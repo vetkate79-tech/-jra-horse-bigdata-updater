@@ -1,0 +1,47 @@
+name: Build active elite horse catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/collect_active_elite_horses.py'
+      - '.github/workflows/build-active-elite-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: active-elite-horse-catalog
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Restore JRA profile cache
+        uses: actions/cache@v4
+        with:
+          path: cache/jra_horse_profiles
+          key: jra-horse-profiles-${{ runner.os }}-v1-${{ hashFiles('data/horse_ids_2025.csv', 'data/race_results_html_2026_weekend.csv') }}
+          restore-keys: |
+            jra-horse-profiles-${{ runner.os }}-v1-
+      - name: Build active graded and open catalogs
+        env:
+          ELITE_PROFILE_WORKERS: '4'
+        run: python src/collect_active_elite_horses.py
+      - name: Commit generated active elite catalogs
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json
+          git diff --cached --quiet || git commit -m 'data: publish active graded and open horse catalogs'
+          git pull --rebase origin main
+          git push
