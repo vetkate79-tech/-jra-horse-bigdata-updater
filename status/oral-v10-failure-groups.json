@@ -1,3 +1,196 @@
 {
-  "status": "WAITING_FOR_V10"
+  "status": "READY",
+  "policy": "Diagnostics only; use generalizable groups, not race identities.",
+  "groups": {
+    "ALL": {
+      "races": 72,
+      "top3": 21,
+      "wins": 12,
+      "trio_bought": 44,
+      "trio_hits": 3,
+      "axis_top3_rate_pct": 29.17,
+      "axis_win_rate_pct": 16.67,
+      "trio_hit_rate_pct": 6.82
+    },
+    "DECISION_BUY": {
+      "races": 39,
+      "top3": 10,
+      "wins": 6,
+      "trio_bought": 39,
+      "trio_hits": 3,
+      "axis_top3_rate_pct": 25.64,
+      "axis_win_rate_pct": 15.38,
+      "trio_hit_rate_pct": 7.69
+    },
+    "DECISION_CAUTION": {
+      "races": 5,
+      "top3": 1,
+      "wins": 1,
+      "trio_bought": 5,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 20.0,
+      "axis_win_rate_pct": 20.0,
+      "trio_hit_rate_pct": 0.0
+    },
+    "DECISION_PASS": {
+      "races": 28,
+      "top3": 10,
+      "wins": 5,
+      "trio_bought": 0,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 35.71,
+      "axis_win_rate_pct": 17.86,
+      "trio_hit_rate_pct": null
+    },
+    "DUR_HIGH": {
+      "races": 20,
+      "top3": 4,
+      "wins": 3,
+      "trio_bought": 20,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 20.0,
+      "axis_win_rate_pct": 15.0,
+      "trio_hit_rate_pct": 0.0
+    },
+    "DUR_LOW": {
+      "races": 28,
+      "top3": 10,
+      "wins": 5,
+      "trio_bought": 0,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 35.71,
+      "axis_win_rate_pct": 17.86,
+      "trio_hit_rate_pct": null
+    },
+    "DUR_MID": {
+      "races": 24,
+      "top3": 7,
+      "wins": 4,
+      "trio_bought": 24,
+      "trio_hits": 3,
+      "axis_top3_rate_pct": 29.17,
+      "axis_win_rate_pct": 16.67,
+      "trio_hit_rate_pct": 12.5
+    },
+    "PURCHASED": {
+      "races": 44,
+      "top3": 11,
+      "wins": 7,
+      "trio_bought": 44,
+      "trio_hits": 3,
+      "axis_top3_rate_pct": 25.0,
+      "axis_win_rate_pct": 15.91,
+      "trio_hit_rate_pct": 6.82
+    },
+    "PURCHASED_DUR_HIGH": {
+      "races": 20,
+      "top3": 4,
+      "wins": 3,
+      "trio_bought": 20,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 20.0,
+      "axis_win_rate_pct": 15.0,
+      "trio_hit_rate_pct": 0.0
+    },
+    "PURCHASED_DUR_MID": {
+      "races": 24,
+      "top3": 7,
+      "wins": 4,
+      "trio_bought": 24,
+      "trio_hits": 3,
+      "axis_top3_rate_pct": 29.17,
+      "axis_win_rate_pct": 16.67,
+      "trio_hit_rate_pct": 12.5
+    },
+    "PURCHASED_TRACK_中京": {
+      "races": 17,
+      "top3": 7,
+      "wins": 4,
+      "trio_bought": 17,
+      "trio_hits": 3,
+      "axis_top3_rate_pct": 41.18,
+      "axis_win_rate_pct": 23.53,
+      "trio_hit_rate_pct": 17.65
+    },
+    "PURCHASED_TRACK_新潟": {
+      "races": 9,
+      "top3": 2,
+      "wins": 1,
+      "trio_bought": 9,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 22.22,
+      "axis_win_rate_pct": 11.11,
+      "trio_hit_rate_pct": 0.0
+    },
+    "PURCHASED_TRACK_札幌": {
+      "races": 18,
+      "top3": 2,
+      "wins": 2,
+      "trio_bought": 18,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 11.11,
+      "axis_win_rate_pct": 11.11,
+      "trio_hit_rate_pct": 0.0
+    },
+    "QUALITY_HIGH": {
+      "races": 55,
+      "top3": 12,
+      "wins": 8,
+      "trio_bought": 36,
+      "trio_hits": 1,
+      "axis_top3_rate_pct": 21.82,
+      "axis_win_rate_pct": 14.55,
+      "trio_hit_rate_pct": 2.78
+    },
+    "QUALITY_LOW": {
+      "races": 8,
+      "top3": 5,
+      "wins": 3,
+      "trio_bought": 0,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 62.5,
+      "axis_win_rate_pct": 37.5,
+      "trio_hit_rate_pct": null
+    },
+    "QUALITY_MID": {
+      "races": 9,
+      "top3": 4,
+      "wins": 1,
+      "trio_bought": 8,
+      "trio_hits": 2,
+      "axis_top3_rate_pct": 44.44,
+      "axis_win_rate_pct": 11.11,
+      "trio_hit_rate_pct": 25.0
+    },
+    "TRACK_中京": {
+      "races": 24,
+      "top3": 8,
+      "wins": 5,
+      "trio_bought": 17,
+      "trio_hits": 3,
+      "axis_top3_rate_pct": 33.33,
+      "axis_win_rate_pct": 20.83,
+      "trio_hit_rate_pct": 17.65
+    },
+    "TRACK_新潟": {
+      "races": 24,
+      "top3": 9,
+      "wins": 5,
+      "trio_bought": 9,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 37.5,
+      "axis_win_rate_pct": 20.83,
+      "trio_hit_rate_pct": 0.0
+    },
+    "TRACK_札幌": {
+      "races": 24,
+      "top3": 4,
+      "wins": 2,
+      "trio_bought": 18,
+      "trio_hits": 0,
+      "axis_top3_rate_pct": 16.67,
+      "axis_win_rate_pct": 8.33,
+      "trio_hit_rate_pct": 0.0
+    }
+  }
 }
