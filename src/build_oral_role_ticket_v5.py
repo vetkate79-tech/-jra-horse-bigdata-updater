@@ -65,7 +65,7 @@ def compatible(main_h,hole,axis_style):
  return ms!=hs
 
 def make_tickets(axis,main,holes,recovery):
- a=axis;out=[]
+ a=str(axis['n']);out=[]
  for x,y in itertools.combinations(main,2):out.append(combo(a,x['n'],y['n']))
  if recovery:
   for m in main:
@@ -73,7 +73,7 @@ def make_tickets(axis,main,holes,recovery):
   return list(dict.fromkeys(out))[:9]
  for m in main:
   for h in holes:
-   if compatible(m,h,axis.get('running_style')):out.append(combo(a['n'],m['n'],h['n']))
+   if compatible(m,h,axis.get('running_style')):out.append(combo(a,m['n'],h['n']))
  return list(dict.fromkeys(out))[:9]
 
 def main():
