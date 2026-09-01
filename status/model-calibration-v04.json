@@ -1,0 +1,70 @@
+{
+  "version": "BLIND_RULE_REPLAY_V0.4_CROSS_TRACK",
+  "method": "8/29 cross-track robustness; 8/30 diagnostic",
+  "selected_config": {
+    "axis_gap": 1.5,
+    "dual_gap": 0.5,
+    "zero_history_gap": 0.5
+  },
+  "folds": [
+    {
+      "track": "中京",
+      "races": 10,
+      "bets": 10,
+      "passes": 0,
+      "hits": 1,
+      "stake": 7900,
+      "return": 2240,
+      "hit_rate_pct": 10.0,
+      "roi_pct": 28.35
+    },
+    {
+      "track": "新潟",
+      "races": 11,
+      "bets": 10,
+      "passes": 1,
+      "hits": 3,
+      "stake": 7800,
+      "return": 6610,
+      "hit_rate_pct": 30.0,
+      "roi_pct": 84.74
+    },
+    {
+      "track": "札幌",
+      "races": 12,
+      "bets": 8,
+      "passes": 4,
+      "hits": 0,
+      "stake": 5900,
+      "return": 0,
+      "hit_rate_pct": 0.0,
+      "roi_pct": 0.0
+    }
+  ],
+  "calibration_result": {
+    "races": 33,
+    "bets": 28,
+    "passes": 5,
+    "hits": 4,
+    "stake": 21600,
+    "return": 8850,
+    "hit_rate_pct": 14.29,
+    "roi_pct": 40.97
+  },
+  "next_day_diagnostic": {
+    "races": 35,
+    "bets": 13,
+    "passes": 22,
+    "hits": 4,
+    "stake": 10900,
+    "return": 3540,
+    "hit_rate_pct": 30.77,
+    "roi_pct": 32.48
+  },
+  "policy": [
+    "same horse-ranking foundation",
+    "switch AXIS7 / DUAL9 / GROUP10 by score gap",
+    "avoid blanket PASS caused only by sparse profile history",
+    "do not promote until future unseen weekends confirm"
+  ]
+}
