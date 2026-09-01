@@ -10,6 +10,7 @@ on:
       - 'docs/**/*.html'
       - 'docs/**/*.js'
       - 'docs/data/site-terms.json'
+      - 'docs/data/site-terms-extra.json'
       - 'docs/data/glossary.json'
       - 'src/build_site_term_candidates.py'
       - '.github/workflows/audit-site-terms.yml'
