@@ -1,0 +1,61 @@
+name: Run oral v6 full 72 sealed replay
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/run_oral_v6_72_sealed_replay.py'
+      - 'src/score_oral_v6_72_replay.py'
+      - '.github/workflows/run-oral-v6-72-sealed-replay.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install parser dependencies
+        run: pip install pandas beautifulsoup4 lxml requests
+      - name: Build all 72 predictions before opening results
+        run: python src/run_oral_v6_72_sealed_replay.py
+      - name: Verify sealed prediction artifact
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/oral-v6-72-predictions-sealed.json').read_text())
+          assert d['race_count']==72
+          assert d['result_data_used'] is False
+          assert d['odds_popularity_used'] is False
+          assert d['post_target_running_style_used'] is False
+          assert len(d['prediction_hash_sha256'])==64
+          print({'prediction_hash':d['prediction_hash_sha256'],'profile_errors':len(d['profile_fetch_errors'])})
+          PY
+      - name: Open results only after seal and score all 72
+        run: python src/score_oral_v6_72_replay.py
+      - name: Verify 72 result joins
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/oral-v6-72-scored.json').read_text())
+          s=d['summary']
+          assert s['race_count_scored']==72, s
+          assert not s['missing_result_joins'], s['missing_result_joins']
+          print(json.dumps(s,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit sealed replay and score
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-v6-72-predictions-sealed.json docs/data/oral-v6-72-scored.json status/oral-v6-72-predictions-sealed.json status/oral-v6-72-scored.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Run certified oral v6 sealed replay across 72 races'
+          git pull --rebase origin main
+          git push origin HEAD:main
