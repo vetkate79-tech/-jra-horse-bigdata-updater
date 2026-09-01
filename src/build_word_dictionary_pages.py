@@ -15,7 +15,10 @@ def norm(s):
     return re.sub(r'[\s・･._\-ー()（）]','',str(s or '').lower())
 
 def slug(term):
-    return urllib.parse.quote(str(term),safe='')
+    # Never use a percent-encoded string as a physical directory name.
+    # GitHub Pages/browser URL decoding can otherwise turn it into a 404.
+    # UTF-8 hex is deterministic, ASCII-only and safe on every browser.
+    return 't-' + str(term).encode('utf-8').hex()
 
 def load_terms():
     by={}
@@ -34,7 +37,6 @@ def load_terms():
 
 def category(t):
     c=t.get('category') or 'その他'
-    # consolidate small variations for browsing
     if c in ('馬券','予想','脚質','展開','ペース','能力','成績','クラス','重賞','馬データ','市場','詳細分析','レース前','サイト内候補'): return c
     if '血統' in c or '調教' in c: return '血統・調教'
     if 'AI' in c or '機能' in c: return 'AI・機能'
