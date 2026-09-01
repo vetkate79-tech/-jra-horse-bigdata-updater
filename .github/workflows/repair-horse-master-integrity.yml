@@ -1,0 +1,55 @@
+name: Repair horse master integrity
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/repair-horse-master-integrity.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: horse-master-integrity-repair
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reconcile verified elite catalogs
+        run: python src/reconcile_elite_from_verified_master.py
+      - name: Merge elite into unified catalog
+        run: python src/merge_active_elite_into_catalog.py
+      - name: Audit completion and categories
+        run: python src/check_horse_master_completion.py
+      - name: Verify completion
+        run: |
+          python - <<'PY'
+          import json
+          s=json.load(open('status/horse_master_completion.json',encoding='utf-8'))['summary']
+          assert s['status']=='COMPLETE', s
+          assert not s.get('structural_issues'), s
+          assert s.get('base_graded_count',0)>0 and s.get('base_open_count',0)>0, s
+          assert s.get('active_elite_count',0)>0, s
+          print(json.dumps(s,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit repaired horse master
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/data/horses/catalog.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json status/horse_master_completion.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'data: reconcile horse master elite categories'
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep $((i*3))
+          done
+          exit 1
