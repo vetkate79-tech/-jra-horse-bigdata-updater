@@ -16,8 +16,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python src/diagnose_v10_failure_groups.py
-      - run: |
+      - name: Diagnose completed V10 artifacts
+        run: python src/diagnose_v10_failure_groups.py
+      - name: Commit diagnostic
+        run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add status/oral-v10-failure-groups.json
