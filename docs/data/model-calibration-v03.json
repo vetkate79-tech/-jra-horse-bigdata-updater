@@ -1,0 +1,48 @@
+{
+  "version": "BLIND_RULE_REPLAY_V0.3_PDCA",
+  "method": "chronological holdout",
+  "calibration_date": "2026-08-29",
+  "holdout_date": "2026-08-30",
+  "truth_note": "Thresholds and ticket strategy are selected only on 8/29. 8/30 is scored once as holdout.",
+  "base_policy": "Keep the same horse ranking foundation; improve PASS/axis fixation/ticket-shape conversion only.",
+  "selected_config": {
+    "axis_gap": 2.0,
+    "dual_gap": 0.8,
+    "min_starts": 1,
+    "max_uncertainty": 0.6
+  },
+  "ticket_shapes": {
+    "AXIS7": "top1 fixed; 7 trio combinations when score gap is strong",
+    "DUAL9": "top2 centered; up to 9 combinations when two horses form the core",
+    "GROUP10": "top5 box-like 10 combinations when axis fixation is weak"
+  },
+  "calibration_result": {
+    "races": 33,
+    "bets": 20,
+    "passes": 13,
+    "hits": 2,
+    "stake": 14800,
+    "return": 3180,
+    "axis_survived": 13,
+    "candidate_top3_complete": 7,
+    "hit_rate_pct": 10.0,
+    "roi_pct": 21.49
+  },
+  "holdout_result": {
+    "races": 35,
+    "bets": 0,
+    "passes": 35,
+    "hits": 0,
+    "stake": 0,
+    "return": 0,
+    "axis_survived": 21,
+    "candidate_top3_complete": 12,
+    "hit_rate_pct": 0,
+    "roi_pct": 0
+  },
+  "limitations": [
+    "Only one weekend is available. Holdout sample remains small.",
+    "This is a PDCA candidate, not production promotion.",
+    "Odds/popularity are excluded from horse ranking and calibration."
+  ]
+}
