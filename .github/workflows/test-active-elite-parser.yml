@@ -6,6 +6,7 @@ on:
     paths:
       - 'src/collect_active_elite_horses.py'
       - 'src/discover_registered_horse_ids.py'
+      - 'src/test_known_elite_profiles.py'
       - '.github/workflows/test-active-elite-parser.yml'
   workflow_dispatch:
 
@@ -22,6 +23,8 @@ jobs:
       - run: pip install -r requirements.txt && pip install pypdf
       - name: Test JRA registered roster discovery
         run: python src/discover_registered_horse_ids.py
+      - name: Parse known active graded/open profiles
+        run: PYTHONPATH=src python src/test_known_elite_profiles.py
       - name: Parse first 25 candidate profiles
         env:
           ELITE_PROFILE_WORKERS: '3'
