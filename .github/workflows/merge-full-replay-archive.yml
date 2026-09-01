@@ -1,0 +1,52 @@
+name: Publish full Aug replay archive
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/merge_full_replay_into_archive.py'
+      - 'docs/data/replay-2026-08-29-30-full.json'
+      - '.github/workflows/merge-full-replay-archive.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: replay-archive-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Merge full replay into public archive
+        run: python src/merge_full_replay_into_archive.py
+      - name: Verify 36 plus 36 races
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/replay-demo-2026-08-29-30.json').read_text())
+          a=[r for r in d['races'] if r.get('date')=='2026-08-29']
+          b=[r for r in d['races'] if r.get('date')=='2026-08-30']
+          assert len(a)==36, len(a)
+          assert len(b)==36, len(b)
+          assert sum(r.get('prediction_source')=='BLIND_REPLAY_RECONSTRUCTION' for r in a+b)==68
+          print({'0829':len(a),'0830':len(b),'blind':68})
+          PY
+      - name: Commit public archive
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/replay-demo-2026-08-29-30.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Publish all 72 Aug replay races'
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i*3))
+          done
+          exit 1
