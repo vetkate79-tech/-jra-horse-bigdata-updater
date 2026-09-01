@@ -1,0 +1,27 @@
+name: Evaluate V8 improvement
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/evaluate_v8_improvement.py'
+      - 'docs/data/oral-v8-72-fullstyle-scored.json'
+      - '.github/workflows/evaluate-v8-improvement.yml'
+permissions:
+  contents: write
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/evaluate_v8_improvement.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-v8-improvement-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Evaluate V8 ticket-role changes'
+          git pull --rebase origin main
+          git push origin HEAD:main
