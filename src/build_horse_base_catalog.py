@@ -39,7 +39,8 @@ def main():
         'source':'INTERNAL_HORSE_CATALOG',
         'mode':'LIGHTWEIGHT_BASE_MASTER',
         'detail_policy':'expand only horses on verified upcoming JRA racecards',
-        'new_horse_policy':'keep light pedigree/training memo before debut'
+        'new_horse_policy':'keep light pedigree/training memo before debut',
+        'ui_fields':['horse_name','sex_age','trainer','sire','damsire','current_class','active','latest_race_date','latest_finish']
     }
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps({'summary':summary,'horses':horses},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
