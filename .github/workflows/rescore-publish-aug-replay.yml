@@ -1,0 +1,56 @@
+name: Rescore and publish Aug replay
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/rescore_blind_replay_by_race_key.py'
+      - '.github/workflows/rescore-publish-aug-replay.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: replay-rescore-publish
+  cancel-in-progress: false
+
+jobs:
+  rescore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Rescore sealed predictions by date track race
+        run: python src/rescore_blind_replay_by_race_key.py
+      - name: Merge corrected score into public archive
+        run: python src/merge_full_replay_into_archive.py
+      - name: Verify strict coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('docs/data/replay-2026-08-29-30-sealed.json').read_text())
+          f=json.loads(Path('docs/data/replay-2026-08-29-30-full.json').read_text())
+          a=json.loads(Path('docs/data/replay-demo-2026-08-29-30.json').read_text())
+          z=f['evaluation_summary']
+          assert z['races']==72 and z['result_matched_races']==72 and z['payout_matched_races']==72
+          assert f['prediction_hash_sha256']==s['prediction_hash_sha256']
+          target=[r for r in a['races'] if r.get('date') in ('2026-08-29','2026-08-30')]
+          assert len(target)==72
+          assert all(len(r.get('result_top3',[]))==3 for r in target)
+          print(z)
+          PY
+      - name: Commit corrected evaluated archive
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/replay-2026-08-29-30-full.json docs/data/replay-demo-2026-08-29-30.json status/replay-2026-08-29-30-evaluation.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Correct all 72 Aug replay result joins'
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i*3))
+          done
+          exit 1
