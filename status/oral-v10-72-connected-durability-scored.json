@@ -1,0 +1,24 @@
+{
+  "model_version": "ORAL_V10_72_CONNECTED_DURABILITY",
+  "prediction_hash_sha256": "863fdf18332054ffe19cce3df48035a5bfff59e16ffda5959429f50a80955efa",
+  "race_count_scored": 72,
+  "missing_result_joins": [],
+  "decision_counts": {
+    "BUY": 39,
+    "PASS": 28,
+    "CAUTION": 5
+  },
+  "axis_1st": 12,
+  "axis_2nd_3rd": 9,
+  "axis_outside_top3": 51,
+  "axis_top3_rate_pct": 29.17,
+  "trio_bought_races": 44,
+  "trio_hits": 3,
+  "trio_hit_rate_pct": 6.82,
+  "result_opened_after_prediction_seal": true,
+  "vs_v9": {
+    "axis_top3_delta": 0,
+    "trio_hits_delta": 2,
+    "bought_races_delta": 21
+  }
+}
