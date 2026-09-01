@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -38,11 +40,15 @@ jobs:
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/words docs/data/word-index.json docs/**/*.html
+          # Generated word pages and every public HTML touched by the linker
+          # must be committed together. Staging docs/ avoids leaving injected
+          # HTML unstaged, which previously made rebase fail and discarded the
+          # generated dictionary site.
+          git add -A docs/
           git diff --cached --quiet && exit 0
           git commit -m 'site: publish dictionary index and global term links'
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && exit 0
+            git pull --rebase --autostash origin main && git push && exit 0
             sleep $((i*2))
           done
           exit 1
