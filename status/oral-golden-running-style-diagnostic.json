@@ -1,0 +1,385 @@
+{
+  "races": [
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 6,
+      "horses": [
+        {
+          "n": "1",
+          "name": "フィドルファドル",
+          "expected_role": "PARTNER",
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "2",
+          "name": "ザウリ",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "3",
+          "name": "オコタンペ",
+          "expected_role": "PARTNER",
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "4",
+          "name": "シルフズミスチーフ",
+          "expected_role": "AXIS",
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "5",
+          "name": "ルクスレイモンド",
+          "expected_role": "PARTNER",
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "6",
+          "name": "ダノンモンテローザ",
+          "expected_role": "PARTNER",
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "7",
+          "name": "ローマンレイク",
+          "expected_role": null,
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "8",
+          "name": "ブルーノート",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "9",
+          "name": "シアター",
+          "expected_role": null,
+          "running_style": "ESCAPE",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "10",
+          "name": "リードプリンシパル",
+          "expected_role": null,
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "11",
+          "name": "アオイレーギーナ",
+          "expected_role": null,
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "12",
+          "name": "バッハアルプゼー",
+          "expected_role": "PARTNER",
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "13",
+          "name": "ゲーベル",
+          "expected_role": null,
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 7,
+      "horses": [
+        {
+          "n": "1",
+          "name": "ボンヌソワレ",
+          "expected_role": "PARTNER",
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "2",
+          "name": "ロードマイライフ",
+          "expected_role": null,
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "3",
+          "name": "ビップジーニー",
+          "expected_role": null,
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "4",
+          "name": "ブルクトーア",
+          "expected_role": "HOLE",
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "5",
+          "name": "チャンネルトンネル",
+          "expected_role": "PARTNER",
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "6",
+          "name": "セシリエプラージュ",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "7",
+          "name": "コト",
+          "expected_role": null,
+          "running_style": "STALK",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "8",
+          "name": "ダークエクリプス",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "9",
+          "name": "モジャーリオ",
+          "expected_role": "HOLE",
+          "running_style": "STALK",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "10",
+          "name": "ポッドロワール",
+          "expected_role": "AXIS",
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "11",
+          "name": "フライングブレード",
+          "expected_role": null,
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "12",
+          "name": "ポエットリー",
+          "expected_role": null,
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "13",
+          "name": "ユハンヌス",
+          "expected_role": "HOLE",
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "14",
+          "name": "ガンマジーティーピ",
+          "expected_role": "PARTNER",
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "15",
+          "name": "ユウファラオ",
+          "expected_role": "HOLE",
+          "running_style": "ESCAPE",
+          "running_style_basis": null,
+          "starts_used": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 7,
+      "horses": [
+        {
+          "n": "1",
+          "name": "ハギノコラソン",
+          "expected_role": null,
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "2",
+          "name": "ボウウィンドウ",
+          "expected_role": "AXIS",
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "3",
+          "name": "バンフィエルド",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "4",
+          "name": "ツルマウカタチ",
+          "expected_role": null,
+          "running_style": "STALK",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "5",
+          "name": "ロールザダイス",
+          "expected_role": null,
+          "running_style": "ESCAPE",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "6",
+          "name": "オリバナム",
+          "expected_role": null,
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "7",
+          "name": "ジャンビ",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "8",
+          "name": "ホウオウタイタン",
+          "expected_role": "PARTNER",
+          "running_style": "STALK",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "9",
+          "name": "バガン",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "10",
+          "name": "ペッレグリーニ",
+          "expected_role": "HOLE",
+          "running_style": "STALK",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "11",
+          "name": "ティムール",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "12",
+          "name": "マイネルアズーロ",
+          "expected_role": "PARTNER",
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "13",
+          "name": "エリーナストーム",
+          "expected_role": null,
+          "running_style": "ESCAPE",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "14",
+          "name": "カフェアローロ",
+          "expected_role": null,
+          "running_style": "DEEP_CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "15",
+          "name": "スピンザブラッド",
+          "expected_role": "HOLE",
+          "running_style": "CLOSER",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "16",
+          "name": "ピエナフェーヴル",
+          "expected_role": null,
+          "running_style": "FRONT",
+          "running_style_basis": null,
+          "starts_used": null
+        },
+        {
+          "n": "17",
+          "name": "マイネルアレス",
+          "expected_role": "PARTNER",
+          "running_style": "ESCAPE",
+          "running_style_basis": null,
+          "starts_used": null
+        }
+      ]
+    }
+  ]
+}
