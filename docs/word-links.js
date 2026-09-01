@@ -7,7 +7,8 @@ const SKIP=new Set(['SCRIPT','STYLE','TEXTAREA','INPUT','SELECT','OPTION','BUTTO
 const norm=s=>String(s||'').normalize('NFKC').toLowerCase();
 const jp=/[一-龯々〆ヵヶぁ-ゖァ-ヶー]/u;
 const latin=/[A-Za-z0-9_]/;
-function css(){const s=document.createElement('style');s.textContent='.jra-word-link{color:#2f6fae!important;text-decoration:none;border-bottom:1px dotted #7aa5cf;cursor:pointer;font-weight:600}.jra-word-link:active{opacity:.65}.horse,.filter,.choice,.feature,.card,.mini-links a,.hero-actions a,.week,.quick button,.search button,.term{cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}.horse,.filter,.feature,.card,.mini-links a,.term{box-shadow:0 7px 20px rgba(43,64,52,.07)}.horse:hover,.filter:hover,.feature:hover,.card:hover,.mini-links a:hover,.term:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(43,64,52,.11)}.horse:active,.filter:active,.choice:active,.feature:active,.card:active,.mini-links a:active,.hero-actions a:active,.week:active,.quick button:active,.search button:active,.term:active{transform:scale(.975)}.horse .arrow{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ee;color:#0b7146;font-weight:950}.filter small{display:inline-flex;align-items:center;gap:4px;padding:5px 8px;border-radius:999px;background:#e8f4ee}.top a,.mobile-nav a{cursor:pointer}.mobile-nav a.active{position:relative}.mobile-nav a.active:after{content:"";position:absolute;left:32%;right:32%;bottom:4px;height:3px;border-radius:999px;background:currentColor}';document.head.appendChild(s)}
+const DICTIONARY_BLUE='rgb(47, 111, 174)';
+function css(){const s=document.createElement('style');s.textContent='.jra-word-link{color:#2f6fae!important;text-decoration:none;border-bottom:1px dotted #7aa5cf;cursor:pointer;font-weight:600}.jra-word-link:active{opacity:.65}.jra-orphan-blue-reset{color:inherit!important}.horse,.filter,.choice,.feature,.card,.mini-links a,.hero-actions a,.week,.quick button,.search button,.term{cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}.horse,.filter,.feature,.card,.mini-links a,.term{box-shadow:0 7px 20px rgba(43,64,52,.07)}.horse:hover,.filter:hover,.feature:hover,.card:hover,.mini-links a:hover,.term:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(43,64,52,.11)}.horse:active,.filter:active,.choice:active,.feature:active,.card:active,.mini-links a:active,.hero-actions a:active,.week:active,.quick button:active,.search button:active,.term:active{transform:scale(.975)}.horse .arrow{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ee;color:#0b7146;font-weight:950}.filter small{display:inline-flex;align-items:center;gap:4px;padding:5px 8px;border-radius:999px;background:#e8f4ee}.top a,.mobile-nav a{cursor:pointer}.mobile-nav a.active{position:relative}.mobile-nav a.active:after{content:"";position:absolute;left:32%;right:32%;bottom:4px;height:3px;border-radius:999px;background:currentColor}';document.head.appendChild(s)}
 function pageHref(url){return BASE+url}
 function boundaryOK(text,start,end,hit){
   const before=start>0?text[start-1]:'';
@@ -62,6 +63,16 @@ function run(doc){
   }
   [...new Set(nodes)].forEach(n=>linkTextNode(n,words));
 }
-async function init(){css();try{const r=await fetch(INDEX+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);run(await r.json())}catch(e){console.error('word links',e)}}
+function resetOrphanDictionaryBlue(){
+  for(const el of document.body.querySelectorAll('*')){
+    if(el.matches('a,button,[role="button"]')||el.closest('a,button,[role="button"],.jra-word-link')||el.hasAttribute('onclick'))continue;
+    if(getComputedStyle(el).color===DICTIONARY_BLUE)el.classList.add('jra-orphan-blue-reset');
+  }
+}
+async function init(){
+  css();
+  try{const r=await fetch(INDEX+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);run(await r.json())}catch(e){console.error('word links',e)}
+  requestAnimationFrame(()=>resetOrphanDictionaryBlue());
+}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
