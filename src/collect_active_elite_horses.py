@@ -3,7 +3,7 @@
 
 Truth rules:
 - active: no 抹消年月日 on JRA horse profile
-- flat open class: 収得賞金（平地） > 16,000,000 yen (JRA class rule)
+- flat classes: determined from JRA official 収得賞金（平地）
 - graded horse: active horse with at least one flat G1/G2/G3 start
 
 Candidate pool = 2025 runners + verified 2026-08-29/30 runners + any horse IDs
@@ -59,14 +59,45 @@ def request_profile(hid,retries=4):
         try:
             with urllib.request.urlopen(req,timeout=45) as resp:raw=resp.read()
             if len(raw)<10_000:raise RuntimeError(f'short profile {len(raw)}')
-            text=raw.decode('cp932','replace');path.write_text(text,encoding='utf-8');return text
+            # JRADB responses have historically been CP932, but tolerate UTF-8 if JRA changes encoding.
+            enc='cp932'
+            head=raw[:3000].lower()
+            if b'charset=utf-8' in head or b'charset="utf-8"' in head:enc='utf-8'
+            text=raw.decode(enc,'replace');path.write_text(text,encoding='utf-8');return text
         except Exception:
             if attempt==retries-1:raise
             time.sleep(1.5*(attempt+1))
     raise RuntimeError('unreachable')
 
+def html_with_image_labels(html):
+    """JRA uses image alt text for GⅠ/GⅡ/GⅢ labels; inject it into text/tables."""
+    soup=BeautifulSoup(html,'html.parser')
+    for img in soup.find_all('img'):
+        label=clean(img.get('alt') or img.get('title'))
+        if label and re.search(r'G[ⅠⅡⅢ123]|Ｇ[ⅠⅡⅢ]',label,re.I):img.replace_with(' '+label+' ')
+    return str(soup)
+
 def money(text,label):
-    m=re.search(re.escape(label)+r'\s*([0-9,]+)円',text);return int(m.group(1).replace(',','')) if m else None
+    # Accept Japanese/full-width parentheses, optional separators and whitespace/newlines.
+    bare=label.replace('（','').replace('）','').replace('(','').replace(')','')
+    pats=[
+      re.escape(label)+r'\s*([0-9０-９,，]+)\s*円',
+      r'収得賞金\s*[（(]?\s*平地\s*[）)]?\s*([0-9０-９,，]+)\s*円' if '平地' in bare else
+      r'収得賞金\s*[（(]?\s*障害\s*[）)]?\s*([0-9０-９,，]+)\s*円'
+    ]
+    trans=str.maketrans('０１２３４５６７８９，','0123456789,')
+    for pat in pats:
+        m=re.search(pat,text,re.I)
+        if m:return int(m.group(1).translate(trans).replace(',',''))
+    return None
+
+def flat_class_from_prize(prize):
+    if prize is None:return 'UNKNOWN'
+    if prize>16_000_000:return 'OPEN'
+    if prize>10_000_000:return '3WIN'
+    if prize>5_000_000:return '2WIN'
+    if prize>0:return '1WIN'
+    return 'ZERO'
 
 def field_between(text,label,next_labels):
     nxt='|'.join(re.escape(x) for x in next_labels);m=re.search(re.escape(label)+r'\s*(.*?)\s*(?='+nxt+r')',text,re.S)
@@ -79,7 +110,6 @@ def profile_name(soup,text,fallback=''):
         if node:
             v=re.sub(r'\s+','',node.get_text(' ',strip=True))
             if v and v!='競走馬情報':return v
-    # Header text normally looks like 競走馬情報ホース名English Name（JPN）...
     m=re.search(r'競走馬情報\s*(.*?)\s*[A-Za-z][A-Za-z .\'-]*[（(]JPN[）)]',text)
     if m:
         raw=m.group(1);parts=re.findall(r'[一-龯々〆ヵヶぁ-んァ-ヶー・]+',raw)
@@ -88,7 +118,7 @@ def profile_name(soup,text,fallback=''):
     return ''
 
 def normalized_tables(html):
-    try:tables=pd.read_html(StringIO(html))
+    try:tables=pd.read_html(StringIO(html_with_image_labels(html)))
     except Exception:return []
     out=[]
     for t in tables:
@@ -125,15 +155,15 @@ def race_history(html):
     return dedup(graded),dedup(open_rows),all_count
 
 def parse_profile(candidate,html):
-    soup=BeautifulSoup(html,'html.parser');text=re.sub(r'\s+',' ',soup.get_text(' ',strip=True));erased=re.search(r'抹消年月日\s*(\d{4}年\d{1,2}月\d{1,2}日)',text)
-    flat_prize=money(text,'収得賞金（平地）');obstacle_prize=money(text,'収得賞金（障害）');graded,open_history,race_count=race_history(html);name=profile_name(soup,text,candidate['horse_name'])
+    labeled=html_with_image_labels(html);soup=BeautifulSoup(labeled,'html.parser');text=re.sub(r'\s+',' ',soup.get_text(' ',strip=True));erased=re.search(r'抹消年月日\s*(\d{4}年\d{1,2}月\d{1,2}日)',text)
+    flat_prize=money(text,'収得賞金（平地）');obstacle_prize=money(text,'収得賞金（障害）');graded,open_history,race_count=race_history(labeled);name=profile_name(soup,text,candidate['horse_name'])
     return {
       'horse_name':name,'horse_id':candidate['horse_id'],'active':not bool(erased),'deregistered_at':erased.group(1) if erased else None,
       'sex':field_between(text,'性別',['馬主名','母']),'age':field_between(text,'馬齢',['調教師名','母の父']),'trainer':field_between(text,'調教師名',['母の父','生年月日']),
       'owner':field_between(text,'馬主名',['母','馬齢']),'sire':field_between(text,'父',['性別','馬主名']),'dam':field_between(text,'母',['馬齢','調教師名']),
       'damsire':field_between(text,'母の父',['生年月日','生産牧場']),'birth_date':field_between(text,'生年月日',['生産牧場','母の母']),'breeder':field_between(text,'生産牧場',['母の母','毛色']),
       'coat':field_between(text,'毛色',['産地','馬名意味']),'birthplace':field_between(text,'産地',['馬名意味','取引市場']),
-      'flat_acquired_prize_yen':flat_prize,'obstacle_acquired_prize_yen':obstacle_prize,'current_flat_class':'OPEN' if flat_prize is not None and flat_prize>OPEN_THRESHOLD_YEN else 'NON_OPEN_OR_UNKNOWN',
+      'flat_acquired_prize_yen':flat_prize,'obstacle_acquired_prize_yen':obstacle_prize,'current_flat_class':flat_class_from_prize(flat_prize),
       'graded_experience':sorted({r['grade'] for r in graded}),'graded_starts':graded,'open_or_higher_history':open_history,'profile_race_rows':race_count,
       'profile_url':profile_url(candidate['horse_id']),'candidate_sources':sorted(candidate['candidate_sources'])}
 
@@ -149,7 +179,7 @@ def main():
                 profiles.append(p)
             except Exception as e:errors.append({'horse_id':c['horse_id'],'horse_name':c['horse_name'],'error':repr(e)})
             if i%250==0:print(f'profiles {i}/{len(candidates)} ok={len(profiles)} errors={len(errors)}',flush=True)
-    profiles.sort(key=lambda x:x['horse_name']);active=[x for x in profiles if x['active']];graded=[x for x in active if x['graded_starts']];opened=[x for x in active if x['flat_acquired_prize_yen'] is not None and x['flat_acquired_prize_yen']>OPEN_THRESHOLD_YEN]
+    profiles.sort(key=lambda x:x['horse_name']);active=[x for x in profiles if x['active']];graded=[x for x in active if x['graded_starts']];opened=[x for x in active if x['current_flat_class']=='OPEN']
     elite_ids={x['horse_id'] for x in graded+opened};elite=[x for x in active if x['horse_id'] in elite_ids]
     meta={'source':'JRA_OFFICIAL_HORSE_PROFILE','candidate_count':len(candidates),'profiles_ok':len(profiles),'profiles_error':len(errors),'active_count':len(active),'active_graded_count':len(graded),'active_open_count':len(opened),'elite_union_count':len(elite),'open_definition':'JRA flat acquired prize > 16,000,000 yen','open_threshold_yen':OPEN_THRESHOLD_YEN,'graded_definition':'active JRA horse with at least one flat G1/G2/G3 start in profile history','registered_roster_candidates':sum('CURRENT_REGISTERED_ROSTER' in x['candidate_sources'] for x in candidates)}
     for fn,hs in [('active_graded.json',graded),('active_open.json',opened),('active_elite.json',elite)]: (DOCS/fn).write_text(json.dumps({'summary':meta,'horses':hs},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
