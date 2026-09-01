@@ -1,0 +1,26 @@
+name: Diagnose golden running styles
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/diagnose_golden_running_styles.py'
+      - '.github/workflows/diagnose-golden-running-styles.yml'
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/diagnose_golden_running_styles.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-golden-running-style-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Inspect golden running style roles'
+          git pull --rebase origin main
+          git push origin HEAD:main
