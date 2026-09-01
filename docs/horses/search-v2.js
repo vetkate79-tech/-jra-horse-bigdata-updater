@@ -1,25 +1,28 @@
 (()=>{
 'use strict';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'}[c]));
 const pct=v=>v==null||v===''?'--':(Number(v)*100).toFixed(1)+'%';
 const kata=s=>String(s??'').replace(/[ぁ-ゖ]/g,ch=>String.fromCharCode(ch.charCodeAt(0)+0x60));
 const norm=s=>kata(String(s??'').normalize('NFKC').toLowerCase()).replace(/[\s・･._\-ー]/g,'');
 let horses=[], weekly=new Map(), cat='ALL';
+const STYLE_CATS={STYLE_ESCAPE:'ESCAPE',STYLE_FRONT:'FRONT',STYLE_STALK:'STALK',STYLE_CLOSER:'CLOSER',STYLE_DEEP_CLOSER:'DEEP_CLOSER'};
 function has(h,x){return (h.tags||[]).includes(x)||(h.current_class||'')===x}
 function categoryMatch(h){
  if(cat==='ALL')return true;
  if(cat==='GRADED')return (h.tags||[]).includes('GRADED');
  if(cat==='UNBEATEN')return h.unbeaten===true&&Number(h.wins||0)>=2;
+ if(STYLE_CATS[cat])return h.running_style===STYLE_CATS[cat];
  return has(h,cat);
 }
-function searchBlob(h){return norm([h.horse_name,h.trainer,h.sire,h.damsire,h.current_class_label].filter(Boolean).join(' '))}
+function searchBlob(h){return norm([h.horse_name,h.trainer,h.sire,h.damsire,h.current_class_label,h.running_style_label].filter(Boolean).join(' '))}
 function filtered(){const q=norm($('#q')?.value||'');return horses.filter(h=>categoryMatch(h)&&(!q||searchBlob(h).includes(q))).sort((a,b)=>String(a.horse_name||'').localeCompare(String(b.horse_name||''),'ja'))}
 function tagHtml(h){
  const tags=[];
  if((h.tags||[]).includes('GRADED'))tags.push('重賞馬');
  if((h.tags||[]).includes('OPEN'))tags.push('オープン');
  if(h.current_class_label)tags.push(h.current_class_label);else if(h.current_class)tags.push(h.current_class);
+ if(h.running_style_label&&h.running_style!=='UNKNOWN')tags.push(h.running_style_label);
  if((h.tags||[]).includes('NEW_ENTRY'))tags.push('出走前登録');
  if(weekly.has(h.horse_id))tags.push('今週出走');
  return [...new Set(tags)].map(x=>`<span class="tag">${esc(x)}</span>`).join('');
@@ -28,7 +31,7 @@ function render(){
  const rows=filtered(),q=norm($('#q')?.value||''),count=$('#count'),list=$('#list');if(!count||!list)return;
  count.textContent=q?`${rows.length.toLocaleString()}頭見つかりました`:`${rows.length.toLocaleString()}頭`;
  const shown=q?rows:rows.slice(0,500);
- list.innerHTML=shown.map(h=>`<button class="horse" data-hid="${esc(h.horse_id||'')}" data-name="${esc(h.horse_name||'')}"><div class="horse-top"><div><b>${esc(h.horse_name)}</b><small>${esc(h.sex_age||'性齢確認中')} ${h.trainer?'/ '+esc(h.trainer):''}</small></div><span class="arrow">›</span></div><div class="tags">${tagHtml(h)}</div></button>`).join('')||`<div class="empty">${q?'登録済み馬の中に該当する馬はいません。':'該当する馬はいません'}</div>`;
+ list.innerHTML=shown.map(h=>`<button class="horse" data-hid="${esc(h.horse_id||'')}" data-name="${esc(h.horse_name||'')}"><div class="horse-top"><div><b>${esc(h.horse_name)}</b><small>${esc(h.sex_age||'性齢確認中')} ${h.trainer?'/ 調教師 '+esc(h.trainer):''}</small></div><span class="arrow">›</span></div><div class="tags">${tagHtml(h)}</div></button>`).join('')||`<div class="empty">${q?'登録済み馬の中に該当する馬はいません。':'該当する馬はいません'}</div>`;
  $$('.horse').forEach(b=>b.onclick=()=>openHorse(b.dataset.hid,b.dataset.name));
 }
 function raceDate(r){return String(r.date||r.race_date||'')}
@@ -38,7 +41,8 @@ function openHorse(hid,name){
  const w=weekly.get(base.horse_id)||null;
  const isNew=has(base,'NEW')||(base.tags||[]).includes('NEW_ENTRY');
  const status=base.active===true?'現役':base.active===false?'抹消':'確認中';
- const basic=`<div class="section"><h3>基本データ</h3><div class="race"><b>クラス</b> ${label(base.current_class_label||base.current_class)}<br><b>父</b> ${label(base.sire||base.pedigree_summary?.sire)}<br><b>母父</b> ${label(base.damsire||base.pedigree_summary?.damsire)}<br><b>登録状態</b> ${status}${base.latest_race_date?`<br><b>最新出走</b> ${esc(base.latest_race_date)}${base.latest_finish?` / ${esc(base.latest_finish)}着`:''}`:''}</div></div>`;
+ const styleNote=base.running_style_provisional&&base.running_style!=='UNKNOWN'?'（暫定）':'';
+ const basic=`<div class="section"><h3>基本データ</h3><div class="race"><b>クラス</b> ${label(base.current_class_label||base.current_class)}<br><b>脚質</b> ${label(base.running_style_label)}${styleNote}<br><b>父</b> ${label(base.sire||base.pedigree_summary?.sire)}<br><b>母父</b> ${label(base.damsire||base.pedigree_summary?.damsire)}<br><b>登録状態</b> ${status}${base.latest_race_date?`<br><b>最新出走</b> ${esc(base.latest_race_date)}${base.latest_finish?` / ${esc(base.latest_finish)}着`:''}`:''}</div></div>`;
  const pedigree=isNew?`<div class="section"><h3>新馬の血統</h3><div class="race"><b>父</b> ${label(base.sire||base.pedigree_summary?.sire)}<br><b>母父</b> ${label(base.damsire||base.pedigree_summary?.damsire)}${base.pedigree_summary?.dam?`<br><b>母</b> ${esc(base.pedigree_summary.dam)}`:''}</div></div>`:'';
  const training=isNew?`<div class="section"><h3>調教メモ</h3><div class="race">${base.training_summary?esc(base.training_summary):'確認できた調教情報を順次追加します。'}</div></div>`:'';
  const raceWeek=w?`<div class="section"><h3>今週の出走</h3><div class="race"><b>${esc(w.race?.date||'')} ${esc(w.race?.track||'')} ${esc(w.race?.race_no||'')}R ${esc(w.race?.race_name||'')}</b>${w.horse_no?`<br>馬番 ${esc(w.horse_no)}`:''}</div></div>`:'';
@@ -49,7 +53,7 @@ function openHorse(hid,name){
  $('#sheet')?.classList.add('open');
 }
 function bind(){
- const q=$('#q');if(q){q.placeholder='馬名・父・母父・調教師を検索';q.oninput=render;}
+ const q=$('#q');if(q){q.placeholder='馬名・父・母父・調教師・脚質を検索';q.oninput=render;}
  $('#filter')?.addEventListener('click',()=>$('#filterSheet')?.classList.add('open'));
  $('[data-filter-close]')?.addEventListener('click',()=>$('#filterSheet')?.classList.remove('open'));
  $('[data-close]')?.addEventListener('click',()=>$('#sheet')?.classList.remove('open'));
