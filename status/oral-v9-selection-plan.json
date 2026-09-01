@@ -1,0 +1,17 @@
+{
+  "status": "READY",
+  "source": "V8 change diagnostic only",
+  "rule": "Do not tune on individual race identities. Prefer general role-selection changes only when they create hits without losing prior hits and preserve golden-case parity.",
+  "changed_races": 72,
+  "new_hits": 1,
+  "lost_hits": 0,
+  "new_hit_races": [
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 9
+    }
+  ],
+  "lost_hit_races": [],
+  "candidate_action": "KEEP_V8_ROLE_DIVERSITY"
+}
