@@ -1,7 +1,7 @@
 {
   "files_scanned": 22,
   "registered_keys": 149,
-  "uncovered_candidates": 62,
+  "uncovered_candidates": 71,
   "top_candidates": [
     {
       "term": "展開",
@@ -100,7 +100,27 @@
       ]
     },
     {
+      "term": "3着以内耐久性",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
       "term": "3着侵入・穴候補",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "3頭の組み合わせ成立を評価",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
@@ -137,6 +157,16 @@
       "occurrences": 1,
       "pages": [
         "app/app.js"
+      ]
+    },
+    {
+      "term": "そこから複勝は3着内耐久性",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
       ]
     },
     {
@@ -230,6 +260,26 @@
       ]
     },
     {
+      "term": "三連複候補に着順再現性を追加",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "中心候補",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
       "term": "中心馬の評価は維持しつつ",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
@@ -277,6 +327,16 @@
       "occurrences": 1,
       "pages": [
         "app/answer-report.js"
+      ]
+    },
+    {
+      "term": "同脚質で潰し合う2頭",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
       ]
     },
     {
@@ -410,6 +470,26 @@
       ]
     },
     {
+      "term": "未見日の回収率",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "未見日の的中率",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
       "term": "本命・相手・穴候補に分ける",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
@@ -427,86 +507,6 @@
       "occurrences": 1,
       "pages": [
         "analysis/index.html"
-      ]
-    },
-    {
-      "term": "条件適性型",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "analysis/index.html"
-      ]
-    },
-    {
-      "term": "的中確率の目安",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/wizard.js"
-      ]
-    },
-    {
-      "term": "相手・穴候補を見る",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "相手候補にAIとの重なりあり",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "相手候補はAIと違う組み立て",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "穴侵入型",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "analysis/index.html"
-      ]
-    },
-    {
-      "term": "穴候補にAIとの重なりあり",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "穴候補はAIと違う見方",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
       ]
     }
   ]
