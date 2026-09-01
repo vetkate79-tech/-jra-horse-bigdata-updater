@@ -1,0 +1,27 @@
+{
+  "version": "V11_PURCHASE_GATE_CALIBRATION",
+  "train_date": "2026-08-29",
+  "holdout_date": "2026-08-30",
+  "result_fields_used_for_training": [
+    "axis_grade on train_date only"
+  ],
+  "holdout_results_accessed_for_calibration": false,
+  "minimum_train_purchases": 8,
+  "maximum_train_purchases": 14,
+  "selected_rule": {
+    "score_min": 0,
+    "score_max_exclusive": 70,
+    "gap_min": 1,
+    "gap_max": 4,
+    "uncertainty_max": 0.8,
+    "train_selected": 8,
+    "train_axis_top3": 4,
+    "train_axis_wins": 3,
+    "train_axis_top3_rate_pct": 50.0,
+    "train_axis_win_rate_pct": 37.5,
+    "objective": 0.578941
+  },
+  "candidate_count": 928,
+  "policy": "No track/race identity, popularity, odds, or holdout result may enter the gate. Rule is sealed before holdout scoring.",
+  "config_hash_sha256": "5919199fab364dc4fd2b683195c19f72db2e8326153b13d81fe47adfd2e7b764"
+}
