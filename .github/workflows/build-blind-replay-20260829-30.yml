@@ -1,0 +1,56 @@
+name: Build blind replay 2026-08-29-30
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/build_blind_replay_20260829_30.py'
+      - '.github/workflows/build-blind-replay-20260829-30.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blind-replay-20260829-30
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pandas beautifulsoup4 lxml
+      - name: Build sealed predictions then score
+        env:
+          ELITE_PROFILE_WORKERS: '8'
+        run: python src/build_blind_replay_20260829_30.py
+      - name: Verify full coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('docs/data/replay-2026-08-29-30-sealed.json').read_text())
+          f=json.loads(Path('docs/data/replay-2026-08-29-30-full.json').read_text())
+          assert s['race_count']==72
+          assert len(s['races'])==72 and len(f['races'])==72
+          assert f['evaluation_summary']['races']==72
+          assert s['prediction_hash_sha256']==f['prediction_hash_sha256']
+          print(f['evaluation_summary'])
+          PY
+      - name: Commit replay outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/replay-2026-08-29-30-sealed.json docs/data/replay-2026-08-29-30-full.json status/replay-2026-08-29-30-evaluation.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build sealed full-card replay for Aug 29-30'
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i*3))
+          done
+          exit 1
