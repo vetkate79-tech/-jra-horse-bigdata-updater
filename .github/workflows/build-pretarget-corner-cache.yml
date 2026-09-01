@@ -1,0 +1,40 @@
+name: Build pre-target JRA corner cache
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/build_pretarget_corner_cache.py'
+      - '.github/workflows/build-pretarget-corner-cache.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas beautifulsoup4 lxml requests
+      - name: Build pre-target corner cache
+        run: python src/build_pretarget_corner_cache.py
+      - name: Verify no target-date leakage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/pretarget-corner-cache.json').read_text())
+          assert d['cutoff_exclusive']=='2026-08-29'
+          assert all((not x.get('date') or x['date']<'2026-08-29') for xs in d['horses'].values() for x in xs)
+          print({'horse_count':d['horse_count'],'resolved':d['horse_with_corner_history'],'urls':d['race_urls_fetched'],'errors':len(d['errors'])})
+          PY
+      - name: Commit cache
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/pretarget-corner-cache.json status/pretarget-corner-cache.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build pre-target official JRA corner cache'
+          git pull --rebase origin main
+          git push origin HEAD:main
