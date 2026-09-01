@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'src/build_replay_axis_results.py'
+      - 'src/patch_replay_axis_ui.py'
       - 'docs/data/replay-demo-2026-08-29-30.json'
       - 'data/race_results_html_2026.csv'
       - '.github/workflows/build-replay-axis-results.yml'
@@ -22,6 +23,8 @@ jobs:
           python-version: '3.11'
       - name: Build axis result display data
         run: python src/build_replay_axis_results.py
+      - name: Patch replay UI
+        run: python src/patch_replay_axis_ui.py
       - name: Verify result labels
         run: |
           python - <<'PY'
@@ -32,13 +35,16 @@ jobs:
           assert d['race_count'] > 0
           assert d['matched_count'] > 0
           assert all(x['evaluation'] in ('HIT','PLACE','MISS','UNKNOWN') for x in d['rows'])
+          html=Path('docs/replay/index.html').read_text()
+          assert '軸馬1着' in html and 'replay-axis-results.json' in html
+          assert '払戻 ' not in html
           print({'race_count':d['race_count'],'matched_count':d['matched_count']})
           PY
       - name: Commit axis result display data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/data/replay-axis-results.json status/replay-axis-results.json
+          git add docs/data/replay-axis-results.json status/replay-axis-results.json docs/replay/index.html
           git diff --cached --quiet && exit 0
           git commit -m 'Publish axis-first replay result labels'
           git pull --rebase origin main
