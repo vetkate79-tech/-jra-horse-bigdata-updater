@@ -4,6 +4,11 @@
 This pass deliberately does not invent a class when JRA evidence is insufficient.
 It fills authoritative active/deregistered state, pedigree/profile fields, flat
 acquired prize, current flat class, graded/open history and NEW pedigree fields.
+
+For a JRA profile with an explicitly parsed flat acquired prize of 0 yen, the
+combination of that official value and official profile race-row count is enough
+to distinguish an unstarted NEW horse from a started MAIDEN horse without using
+odds, popularity, or inferred results.
 """
 from __future__ import annotations
 import json,sys
@@ -15,7 +20,10 @@ from collect_active_elite_horses import request_profile,parse_profile
 CAT=Path('docs/data/horses/catalog.json')
 STATUS=Path('status/all_catalog_profile_enrichment.json')
 WORKERS=4
-LABELS={'OPEN':'オープンクラス','3WIN':'3勝クラス','2WIN':'2勝クラス','1WIN':'1勝クラス'}
+LABELS={
+    'OPEN':'オープンクラス','3WIN':'3勝クラス','2WIN':'2勝クラス',
+    '1WIN':'1勝クラス','MAIDEN':'未勝利馬','NEW':'新馬'
+}
 
 
 def main():
@@ -46,11 +54,31 @@ def main():
                     tags=set(base.get('tags') or []);tags.add('GRADED');base['tags']=sorted(tags)
                 if p.get('open_or_higher_history'):
                     base['open_or_higher_history']=p['open_or_higher_history']
+
                 flat_class=p.get('current_flat_class')
+                class_source=''
                 if flat_class in LABELS:
-                    base['current_class']=flat_class;base['current_class_label']=LABELS[flat_class]
-                    base['class_source']='JRA_OFFICIAL_ACQUIRED_PRIZE'
-                    tags=set(base.get('tags') or []);tags.add(flat_class);base['tags']=sorted(tags)
+                    resolved_class=flat_class
+                    class_source='JRA_OFFICIAL_ACQUIRED_PRIZE'
+                elif flat_class=='ZERO':
+                    # JRA official profile truth: 0-yen acquired prize + no race
+                    # history means not yet started; 0-yen + at least one official
+                    # profile race row means the horse remains a zero-prize maiden.
+                    race_rows=int(p.get('profile_race_rows') or 0)
+                    resolved_class='NEW' if race_rows==0 else 'MAIDEN'
+                    class_source='JRA_OFFICIAL_ZERO_PRIZE_AND_PROFILE_HISTORY'
+                else:
+                    resolved_class=''
+
+                if resolved_class:
+                    base['current_class']=resolved_class
+                    base['current_class_label']=LABELS[resolved_class]
+                    base['class_source']=class_source
+                    tags=set(base.get('tags') or [])
+                    tags.discard('NEW' if resolved_class=='MAIDEN' else 'MAIDEN')
+                    tags.add(resolved_class)
+                    base['tags']=sorted(tags)
+
                 if base.get('current_class')=='NEW' or 'NEW_ENTRY' in (base.get('tags') or []) or 'NEW' in (base.get('tags') or []):
                     base['pedigree_summary']={'sire':p.get('sire') or None,'damsire':p.get('damsire') or None,'dam':p.get('dam') or None}
                 ok+=1
@@ -59,7 +87,7 @@ def main():
 
     s=dict(doc.get('summary') or {})
     s['all_profile_enrichment_ok']=ok;s['all_profile_enrichment_errors']=len(errors)
-    s['all_profile_enrichment_policy']='JRA official horse profile only; current flat class comes from official acquired prize thresholds; unresolved zero-prize state is resolved by verified race evidence'
+    s['all_profile_enrichment_policy']='JRA official horse profile only; positive flat class comes from official acquired-prize thresholds; explicit zero-prize is NEW when profile race rows are 0 and MAIDEN when official profile history has at least one start'
     doc['summary']=s
     CAT.write_text(json.dumps(doc,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     STATUS.parent.mkdir(exist_ok=True)
