@@ -1,0 +1,1597 @@
+{
+  "version": "ORAL_GOLDEN_FAST_V6",
+  "result_data_used": false,
+  "odds_popularity_used": false,
+  "summary": [
+    {
+      "track": "中京",
+      "race_no": 6,
+      "axis": {
+        "horse_no": "4",
+        "horse_name": "シルフズミスチーフ"
+      },
+      "decision": "BUY",
+      "main": [
+        "5",
+        "6",
+        "12"
+      ],
+      "holes": [
+        "11",
+        "1",
+        "10",
+        "9"
+      ],
+      "tickets": [
+        "4-5-6",
+        "4-5-12",
+        "4-6-12",
+        "4-5-11",
+        "1-4-5",
+        "4-5-10",
+        "4-5-9",
+        "4-11-12",
+        "1-4-12"
+      ]
+    },
+    {
+      "track": "中京",
+      "race_no": 7,
+      "axis": {
+        "horse_no": "10",
+        "horse_name": "ポッドロワール"
+      },
+      "decision": "BUY",
+      "main": [
+        "14",
+        "1",
+        "5"
+      ],
+      "holes": [
+        "4",
+        "13",
+        "9",
+        "15"
+      ],
+      "tickets": [
+        "1-10-14",
+        "5-10-14",
+        "1-5-10",
+        "10-14-15",
+        "1-10-13",
+        "1-9-10",
+        "1-10-15",
+        "4-5-10",
+        "5-9-10"
+      ]
+    },
+    {
+      "track": "新潟",
+      "race_no": 7,
+      "axis": {
+        "horse_no": "2",
+        "horse_name": "ボウウィンドウ"
+      },
+      "decision": "CAUTION",
+      "main": [
+        "17",
+        "12",
+        "8"
+      ],
+      "holes": [
+        "10",
+        "15"
+      ],
+      "tickets": [
+        "2-12-17",
+        "2-8-17",
+        "2-8-12",
+        "2-10-17",
+        "2-15-17",
+        "2-10-12",
+        "2-12-15",
+        "2-8-10",
+        "2-8-15"
+      ]
+    }
+  ],
+  "races": [
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 6,
+      "race_name": "清洲特別",
+      "surface": "ダート",
+      "distance_m": 1200,
+      "target_class": "2勝クラス",
+      "analysis": {
+        "model_version": "ORAL_INTEGRATED_V1_SHADOW",
+        "axis": {
+          "horse_no": "4",
+          "horse_name": "シルフズミスチーフ"
+        },
+        "axis_durability": {
+          "score": 58.6,
+          "status": "MID",
+          "gap_to_second": 11.769,
+          "uncertainty": 0.0,
+          "reasons": [
+            "能力評価で2位との差が大きい",
+            "事前データの不確実性が低い"
+          ]
+        },
+        "partner_roles": [
+          {
+            "horse_no": "5",
+            "horse_name": "ルクスレイモンド",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "6",
+            "horse_name": "ダノンモンテローザ",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "バッハアルプゼー",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "11",
+            "horse_name": "アオイレーギーナ",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "フィドルファドル",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "10",
+            "horse_name": "リードプリンシパル",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "シアター",
+            "running_style": "ESCAPE"
+          }
+        ],
+        "third_place_intrusion": [
+          {
+            "horse_no": "12",
+            "horse_name": "バッハアルプゼー",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 1.329
+          },
+          {
+            "horse_no": "6",
+            "horse_name": "ダノンモンテローザ",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 0.62
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "フィドルファドル",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 0.625
+          }
+        ],
+        "failure_scenarios": [
+          {
+            "id": "BASE",
+            "label": "基本成立",
+            "covered_horses": [
+              "11",
+              "5",
+              "12"
+            ]
+          },
+          {
+            "id": "AXIS_FAIL",
+            "label": "軸だけ飛ぶ",
+            "covered_horses": [
+              "11",
+              "5",
+              "12",
+              "6"
+            ],
+            "note": "相手内完結を最低1組監査"
+          },
+          {
+            "id": "THIRD_INTRUSION",
+            "label": "3着低順位馬侵入",
+            "covered_horses": [
+              "12",
+              "6",
+              "1"
+            ]
+          },
+          {
+            "id": "STRUCTURE_FLIP",
+            "label": "想定展開反転",
+            "covered_horses": [
+              "5",
+              "12",
+              "1"
+            ]
+          }
+        ],
+        "ticket_shape": "ROLE_DIVERSIFIED_AXIS_V6",
+        "trio_tickets": [
+          "4-5-6",
+          "4-5-12",
+          "4-6-12",
+          "4-5-11",
+          "1-4-5",
+          "4-5-10",
+          "4-5-9",
+          "4-11-12",
+          "1-4-12"
+        ],
+        "ticket_count": 9,
+        "classification": "B",
+        "pre_market_decision": "BUY",
+        "data_quality": "HIGH",
+        "derived_ticket_analysis": {
+          "PLACE": {
+            "decision": "CAUTION",
+            "primary_horses": [
+              {
+                "horse_no": "4",
+                "horse_name": "シルフズミスチーフ"
+              }
+            ],
+            "reason": "軸耐久性を3着以内残存へ読み替える"
+          },
+          "WIDE": {
+            "decision": "BUY_CANDIDATE",
+            "primary_horses": [
+              {
+                "horse_no": "4",
+                "horse_name": "シルフズミスチーフ"
+              },
+              {
+                "horse_no": "11",
+                "horse_name": "アオイレーギーナ"
+              }
+            ],
+            "reason": "軸と相手が同時に馬券内へ残る組合せを優先"
+          },
+          "QUINELLA": {
+            "decision": "CAUTION",
+            "primary_horses": [
+              {
+                "horse_no": "4",
+                "horse_name": "シルフズミスチーフ"
+              },
+              {
+                "horse_no": "11",
+                "horse_name": "アオイレーギーナ"
+              }
+            ],
+            "reason": "3着耐久性より1・2着到達力を要求"
+          },
+          "WIN": {
+            "decision": "PASS",
+            "primary_horses": [
+              {
+                "horse_no": "4",
+                "horse_name": "シルフズミスチーフ"
+              }
+            ],
+            "reason": "安定性とは別に1着を取り切る評価差が必要"
+          },
+          "TRIFECTA": {
+            "decision": "PASS",
+            "primary_horses": [
+              {
+                "horse_no": "4",
+                "horse_name": "シルフズミスチーフ"
+              }
+            ],
+            "reason": "三連複候補に加え着順再現性が必要"
+          }
+        },
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
+        "implementation_note": "Phase1 rule-based oral-operation shadow; richer running-style/pace fields are consumed when available.",
+        "consensus_policy": "base ability + capped structural fit (max 50) + axis reliability penalty; no odds/popularity/results",
+        "recovery_axis": false,
+        "role_main_partners": [
+          {
+            "horse_no": "5",
+            "horse_name": "ルクスレイモンド",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "6",
+            "horse_name": "ダノンモンテローザ",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "バッハアルプゼー",
+            "running_style": "FRONT"
+          }
+        ],
+        "role_holes": [
+          {
+            "horse_no": "11",
+            "horse_name": "アオイレーギーナ",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "フィドルファドル",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "10",
+            "horse_name": "リードプリンシパル",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "シアター",
+            "running_style": "ESCAPE"
+          }
+        ],
+        "ticket_conversion_policy": "main promotion requires recent form or recent same-course evidence; full-field role diversity; no target result/popularity/odds"
+      },
+      "ranked_snapshot": [
+        {
+          "n": "4",
+          "name": "シルフズミスチーフ",
+          "horse_id": "pw01dud102022110001/FE",
+          "score": 91.939,
+          "starts_before": 8,
+          "show_rate_prior": 0.3462,
+          "recent_form": 0.6364,
+          "condition_fit": 0.3462,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.333,
+          "exact_class_top3_rate": 0.5,
+          "exact_track_top3_rate": 0.75,
+          "latest_finish": 2,
+          "latest_same_class_finish": 2,
+          "latest_exact_track_finish": 2,
+          "latest_exact_class_finish": 2,
+          "oral_structure_score": 72.471,
+          "base_score_v1": 41.939,
+          "score_before_consensus": 114.41,
+          "structure_score_capped": 50.0,
+          "consensus_raw_score": 91.939,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "11",
+          "name": "アオイレーギーナ",
+          "horse_id": "pw01dud102022102939/8F",
+          "score": 80.17,
+          "starts_before": 6,
+          "show_rate_prior": 0.4091,
+          "recent_form": 0.5455,
+          "condition_fit": 0.4091,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.4,
+          "exact_class_top3_rate": 0.4,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 15,
+          "latest_same_class_finish": 15,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 15,
+          "oral_structure_score": 38.2,
+          "base_score_v1": 41.97,
+          "score_before_consensus": 80.17,
+          "structure_score_capped": 38.2,
+          "consensus_raw_score": 80.17,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "5",
+          "name": "ルクスレイモンド",
+          "horse_id": "pw01dud102023100670/DF",
+          "score": 78.693,
+          "starts_before": 3,
+          "show_rate_prior": 0.5625,
+          "recent_form": 0.9697,
+          "condition_fit": 0.5625,
+          "uncertainty": 0.4,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.6,
+          "same_class_top3_rate": 0.5,
+          "exact_class_top3_rate": 1.0,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 3,
+          "latest_same_class_finish": 3,
+          "latest_exact_track_finish": 3,
+          "latest_exact_class_finish": 3,
+          "oral_structure_score": 93.2,
+          "base_score_v1": 59.296,
+          "score_before_consensus": 152.496,
+          "structure_score_capped": 50.0,
+          "consensus_raw_score": 109.296,
+          "axis_reliability_factor": 0.72
+        },
+        {
+          "n": "12",
+          "name": "バッハアルプゼー",
+          "horse_id": "pw01dud102022106923/89",
+          "score": 76.577,
+          "starts_before": 5,
+          "show_rate_prior": 0.55,
+          "recent_form": 0.7636,
+          "condition_fit": 0.55,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.8,
+          "same_class_top3_rate": 0,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 1,
+          "latest_same_class_finish": null,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 20.4,
+          "base_score_v1": 56.177,
+          "score_before_consensus": 76.577,
+          "structure_score_capped": 20.4,
+          "consensus_raw_score": 76.577,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "6",
+          "name": "ダノンモンテローザ",
+          "horse_id": "pw01dud102021100158/4A",
+          "score": 76.288,
+          "starts_before": 4,
+          "show_rate_prior": 0.3889,
+          "recent_form": 0.5227,
+          "condition_fit": 0.3889,
+          "uncertainty": 0.2,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.6,
+          "same_class_top3_rate": 0.6,
+          "exact_class_top3_rate": 0.333,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 3,
+          "latest_same_class_finish": 3,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 3,
+          "oral_structure_score": 53.571,
+          "base_score_v1": 38.707,
+          "score_before_consensus": 92.278,
+          "structure_score_capped": 50.0,
+          "consensus_raw_score": 88.707,
+          "axis_reliability_factor": 0.86
+        },
+        {
+          "n": "1",
+          "name": "フィドルファドル",
+          "horse_id": "pw01dud102022104674/DB",
+          "score": 74.515,
+          "starts_before": 11,
+          "show_rate_prior": 0.2812,
+          "recent_form": 0.6446,
+          "condition_fit": 0.2812,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.6,
+          "same_class_top3_rate": 0.6,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 12,
+          "latest_same_class_finish": 12,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 34.4,
+          "base_score_v1": 40.115,
+          "score_before_consensus": 74.515,
+          "structure_score_capped": 34.4,
+          "consensus_raw_score": 74.515,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "10",
+          "name": "リードプリンシパル",
+          "horse_id": "pw01dud102022105748/97",
+          "score": 67.044,
+          "starts_before": 8,
+          "show_rate_prior": 0.3462,
+          "recent_form": 0.5795,
+          "condition_fit": 0.3462,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.2,
+          "same_class_top3_rate": 0,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0.5,
+          "latest_finish": 1,
+          "latest_same_class_finish": null,
+          "latest_exact_track_finish": 1,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 28.6,
+          "base_score_v1": 38.444,
+          "score_before_consensus": 67.044,
+          "structure_score_capped": 28.6,
+          "consensus_raw_score": 67.044,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "2",
+          "name": "ザウリ",
+          "horse_id": "pw01dud102019101399/43",
+          "score": 62.117,
+          "starts_before": 8,
+          "show_rate_prior": 0.3462,
+          "recent_form": 0.7045,
+          "condition_fit": 0.3462,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.4,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 0.429,
+          "latest_finish": 6,
+          "latest_same_class_finish": 6,
+          "latest_exact_track_finish": 6,
+          "latest_exact_class_finish": 6,
+          "oral_structure_score": 19.643,
+          "base_score_v1": 42.474,
+          "score_before_consensus": 62.117,
+          "structure_score_capped": 19.643,
+          "consensus_raw_score": 62.117,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "13",
+          "name": "ゲーベル",
+          "horse_id": "pw01dud102021100786/BA",
+          "score": 57.388,
+          "starts_before": 6,
+          "show_rate_prior": 0.3182,
+          "recent_form": 0.303,
+          "condition_fit": 0.3182,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.0,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 0.5,
+          "latest_finish": 8,
+          "latest_same_class_finish": 8,
+          "latest_exact_track_finish": 1,
+          "latest_exact_class_finish": 8,
+          "oral_structure_score": 26.7,
+          "base_score_v1": 30.688,
+          "score_before_consensus": 57.388,
+          "structure_score_capped": 26.7,
+          "consensus_raw_score": 57.388,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "3",
+          "name": "オコタンペ",
+          "horse_id": "pw01dud102021105849/AF",
+          "score": 53.168,
+          "starts_before": 11,
+          "show_rate_prior": 0.2812,
+          "recent_form": 0.5455,
+          "condition_fit": 0.2812,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.0,
+          "same_class_top3_rate": 0.0,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 0.667,
+          "latest_finish": 4,
+          "latest_same_class_finish": 4,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 9,
+          "oral_structure_score": 18.2,
+          "base_score_v1": 34.968,
+          "score_before_consensus": 53.168,
+          "structure_score_capped": 18.2,
+          "consensus_raw_score": 53.168,
+          "axis_reliability_factor": 1.0
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 7,
+      "race_name": "長篠ステークス",
+      "surface": "芝",
+      "distance_m": 1400,
+      "target_class": "3勝クラス",
+      "analysis": {
+        "model_version": "ORAL_INTEGRATED_V1_SHADOW",
+        "axis": {
+          "horse_no": "10",
+          "horse_name": "ポッドロワール"
+        },
+        "axis_durability": {
+          "score": 55.2,
+          "status": "MID",
+          "gap_to_second": 6.986,
+          "uncertainty": 0.0,
+          "reasons": [
+            "能力評価で2位との差が大きい",
+            "事前データの不確実性が低い"
+          ]
+        },
+        "partner_roles": [
+          {
+            "horse_no": "14",
+            "horse_name": "ガンマジーティーピ",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "ボンヌソワレ",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "5",
+            "horse_name": "チャンネルトンネル",
+            "running_style": "DEEP_CLOSER"
+          },
+          {
+            "horse_no": "4",
+            "horse_name": "ブルクトーア",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "13",
+            "horse_name": "ユハンヌス",
+            "running_style": "DEEP_CLOSER"
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "モジャーリオ",
+            "running_style": "STALK"
+          },
+          {
+            "horse_no": "15",
+            "horse_name": "ユウファラオ",
+            "running_style": "ESCAPE"
+          }
+        ],
+        "third_place_intrusion": [
+          {
+            "horse_no": "13",
+            "horse_name": "ユハンヌス",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 0.965
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "モジャーリオ",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 1.061
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "ボンヌソワレ",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 0.986
+          }
+        ],
+        "failure_scenarios": [
+          {
+            "id": "BASE",
+            "label": "基本成立",
+            "covered_horses": [
+              "14",
+              "4",
+              "13"
+            ]
+          },
+          {
+            "id": "AXIS_FAIL",
+            "label": "軸だけ飛ぶ",
+            "covered_horses": [
+              "14",
+              "4",
+              "13",
+              "9"
+            ],
+            "note": "相手内完結を最低1組監査"
+          },
+          {
+            "id": "THIRD_INTRUSION",
+            "label": "3着低順位馬侵入",
+            "covered_horses": [
+              "13",
+              "9",
+              "1"
+            ]
+          },
+          {
+            "id": "STRUCTURE_FLIP",
+            "label": "想定展開反転",
+            "covered_horses": [
+              "14",
+              "4",
+              "13"
+            ]
+          }
+        ],
+        "ticket_shape": "ROLE_DIVERSIFIED_AXIS_V6",
+        "trio_tickets": [
+          "1-10-14",
+          "5-10-14",
+          "1-5-10",
+          "10-14-15",
+          "1-10-13",
+          "1-9-10",
+          "1-10-15",
+          "4-5-10",
+          "5-9-10"
+        ],
+        "ticket_count": 9,
+        "classification": "B",
+        "pre_market_decision": "BUY",
+        "data_quality": "HIGH",
+        "derived_ticket_analysis": {
+          "PLACE": {
+            "decision": "CAUTION",
+            "primary_horses": [
+              {
+                "horse_no": "10",
+                "horse_name": "ポッドロワール"
+              }
+            ],
+            "reason": "軸耐久性を3着以内残存へ読み替える"
+          },
+          "WIDE": {
+            "decision": "BUY_CANDIDATE",
+            "primary_horses": [
+              {
+                "horse_no": "10",
+                "horse_name": "ポッドロワール"
+              },
+              {
+                "horse_no": "14",
+                "horse_name": "ガンマジーティーピ"
+              }
+            ],
+            "reason": "軸と相手が同時に馬券内へ残る組合せを優先"
+          },
+          "QUINELLA": {
+            "decision": "CAUTION",
+            "primary_horses": [
+              {
+                "horse_no": "10",
+                "horse_name": "ポッドロワール"
+              },
+              {
+                "horse_no": "14",
+                "horse_name": "ガンマジーティーピ"
+              }
+            ],
+            "reason": "3着耐久性より1・2着到達力を要求"
+          },
+          "WIN": {
+            "decision": "PASS",
+            "primary_horses": [
+              {
+                "horse_no": "10",
+                "horse_name": "ポッドロワール"
+              }
+            ],
+            "reason": "安定性とは別に1着を取り切る評価差が必要"
+          },
+          "TRIFECTA": {
+            "decision": "PASS",
+            "primary_horses": [
+              {
+                "horse_no": "10",
+                "horse_name": "ポッドロワール"
+              }
+            ],
+            "reason": "三連複候補に加え着順再現性が必要"
+          }
+        },
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
+        "implementation_note": "Phase1 rule-based oral-operation shadow; richer running-style/pace fields are consumed when available.",
+        "consensus_policy": "base ability + capped structural fit (max 50) + axis reliability penalty; no odds/popularity/results",
+        "recovery_axis": false,
+        "role_main_partners": [
+          {
+            "horse_no": "14",
+            "horse_name": "ガンマジーティーピ",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "ボンヌソワレ",
+            "running_style": "FRONT"
+          },
+          {
+            "horse_no": "5",
+            "horse_name": "チャンネルトンネル",
+            "running_style": "DEEP_CLOSER"
+          }
+        ],
+        "role_holes": [
+          {
+            "horse_no": "4",
+            "horse_name": "ブルクトーア",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "13",
+            "horse_name": "ユハンヌス",
+            "running_style": "DEEP_CLOSER"
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "モジャーリオ",
+            "running_style": "STALK"
+          },
+          {
+            "horse_no": "15",
+            "horse_name": "ユウファラオ",
+            "running_style": "ESCAPE"
+          }
+        ],
+        "ticket_conversion_policy": "main promotion requires recent form or recent same-course evidence; full-field role diversity; no target result/popularity/odds"
+      },
+      "ranked_snapshot": [
+        {
+          "n": "10",
+          "name": "ポッドロワール",
+          "horse_id": "pw01dud102022101573/6A",
+          "score": 90.519,
+          "starts_before": 8,
+          "show_rate_prior": 0.3462,
+          "recent_form": 0.5795,
+          "condition_fit": 0.3462,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.8,
+          "same_class_top3_rate": 0.5,
+          "exact_class_top3_rate": 1.0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 2,
+          "latest_same_class_finish": 2,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 2,
+          "oral_structure_score": 65.927,
+          "base_score_v1": 40.519,
+          "score_before_consensus": 106.446,
+          "structure_score_capped": 50.0,
+          "consensus_raw_score": 90.519,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "14",
+          "name": "ガンマジーティーピ",
+          "horse_id": "pw01dud102022106123/01",
+          "score": 83.533,
+          "starts_before": 7,
+          "show_rate_prior": 0.375,
+          "recent_form": 0.6104,
+          "condition_fit": 0.375,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.8,
+          "same_class_top3_rate": 0.0,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 10,
+          "latest_same_class_finish": 10,
+          "latest_exact_track_finish": 3,
+          "latest_exact_class_finish": 10,
+          "oral_structure_score": 40.812,
+          "base_score_v1": 42.721,
+          "score_before_consensus": 83.533,
+          "structure_score_capped": 40.812,
+          "consensus_raw_score": 83.533,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "4",
+          "name": "ブルクトーア",
+          "horse_id": "pw01dud102022104694/FB",
+          "score": 80.194,
+          "starts_before": 6,
+          "show_rate_prior": 0.5,
+          "recent_form": 0.6515,
+          "condition_fit": 0.5,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.0,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 7,
+          "latest_same_class_finish": 7,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 7,
+          "oral_structure_score": 30.855,
+          "base_score_v1": 49.339,
+          "score_before_consensus": 80.194,
+          "structure_score_capped": 30.855,
+          "consensus_raw_score": 80.194,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "13",
+          "name": "ユハンヌス",
+          "horse_id": "pw01dud102020110039/AE",
+          "score": 78.305,
+          "starts_before": 9,
+          "show_rate_prior": 0.4643,
+          "recent_form": 0.6263,
+          "condition_fit": 0.4643,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.2,
+          "same_class_top3_rate": 0.2,
+          "exact_class_top3_rate": 0.25,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 11,
+          "latest_same_class_finish": 11,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 11,
+          "oral_structure_score": 31.5,
+          "base_score_v1": 46.805,
+          "score_before_consensus": 78.305,
+          "structure_score_capped": 31.5,
+          "consensus_raw_score": 78.305,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "9",
+          "name": "モジャーリオ",
+          "horse_id": "pw01dud102022106603/D6",
+          "score": 63.936,
+          "starts_before": 12,
+          "show_rate_prior": 0.4412,
+          "recent_form": 0.7273,
+          "condition_fit": 0.4412,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.25,
+          "exact_class_top3_rate": 0.333,
+          "exact_track_top3_rate": 0.0,
+          "latest_finish": 14,
+          "latest_same_class_finish": 14,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 14,
+          "oral_structure_score": 15.963,
+          "base_score_v1": 47.973,
+          "score_before_consensus": 63.936,
+          "structure_score_capped": 15.963,
+          "consensus_raw_score": 63.936,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "1",
+          "name": "ボンヌソワレ",
+          "horse_id": "pw01dud102022105435/9B",
+          "score": 61.422,
+          "starts_before": 7,
+          "show_rate_prior": 0.4583,
+          "recent_form": 0.6494,
+          "condition_fit": 0.4583,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.0,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 0.0,
+          "latest_finish": 5,
+          "latest_same_class_finish": 5,
+          "latest_exact_track_finish": 5,
+          "latest_exact_class_finish": 5,
+          "oral_structure_score": 11.45,
+          "base_score_v1": 49.972,
+          "score_before_consensus": 61.422,
+          "structure_score_capped": 11.45,
+          "consensus_raw_score": 61.422,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "5",
+          "name": "チャンネルトンネル",
+          "horse_id": "pw01dud102021106369/C9",
+          "score": 53.136,
+          "starts_before": 9,
+          "show_rate_prior": 0.3214,
+          "recent_form": 0.6162,
+          "condition_fit": 0.3214,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.2,
+          "same_class_top3_rate": 0.2,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 7,
+          "latest_same_class_finish": 7,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 13.615,
+          "base_score_v1": 39.521,
+          "score_before_consensus": 53.136,
+          "structure_score_capped": 13.615,
+          "consensus_raw_score": 53.136,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "12",
+          "name": "ポエットリー",
+          "horse_id": "pw01dud102021105202/24",
+          "score": 47.058,
+          "starts_before": 5,
+          "show_rate_prior": 0.35,
+          "recent_form": 0.5818,
+          "condition_fit": 0.35,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.2,
+          "same_class_top3_rate": 0.2,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 9,
+          "latest_same_class_finish": 9,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 9,
+          "oral_structure_score": 7.4,
+          "base_score_v1": 39.658,
+          "score_before_consensus": 47.058,
+          "structure_score_capped": 7.4,
+          "consensus_raw_score": 47.058,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "15",
+          "name": "ユウファラオ",
+          "horse_id": "pw01dud102023110065/B6",
+          "score": 44.648,
+          "starts_before": 7,
+          "show_rate_prior": 0.375,
+          "recent_form": 0.6753,
+          "condition_fit": 0.375,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.2,
+          "same_class_top3_rate": 0,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 17,
+          "latest_same_class_finish": null,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 1.776,
+          "base_score_v1": 42.872,
+          "score_before_consensus": 44.648,
+          "structure_score_capped": 1.776,
+          "consensus_raw_score": 44.648,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "2",
+          "name": "ロードマイライフ",
+          "horse_id": "pw01dud102021103312/87",
+          "score": 42.146,
+          "starts_before": 9,
+          "show_rate_prior": 0.3214,
+          "recent_form": 0.6869,
+          "condition_fit": 0.3214,
+          "uncertainty": 0,
+          "target_class": "3勝クラス",
+          "recent_top3_rate": 0.0,
+          "same_class_top3_rate": 0.0,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 4,
+          "latest_same_class_finish": 4,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 1.875,
+          "base_score_v1": 40.271,
+          "score_before_consensus": 42.146,
+          "structure_score_capped": 1.875,
+          "consensus_raw_score": 42.146,
+          "axis_reliability_factor": 1.0
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 7,
+      "race_name": "赤倉特別",
+      "surface": "芝",
+      "distance_m": 2000,
+      "target_class": "2勝クラス",
+      "analysis": {
+        "model_version": "ORAL_INTEGRATED_V1_SHADOW",
+        "axis": {
+          "horse_no": "2",
+          "horse_name": "ボウウィンドウ"
+        },
+        "axis_durability": {
+          "score": 73.3,
+          "status": "HIGH",
+          "gap_to_second": 10.042,
+          "uncertainty": 0.0,
+          "reasons": [
+            "能力評価で2位との差が大きい",
+            "事前データの不確実性が低い",
+            "条件適性が比較的高い"
+          ]
+        },
+        "partner_roles": [
+          {
+            "horse_no": "17",
+            "horse_name": "マイネルアレス",
+            "running_style": "ESCAPE"
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "マイネルアズーロ",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "8",
+            "horse_name": "ホウオウタイタン",
+            "running_style": "STALK"
+          },
+          {
+            "horse_no": "10",
+            "horse_name": "ペッレグリーニ",
+            "running_style": "STALK"
+          },
+          {
+            "horse_no": "15",
+            "horse_name": "スピンザブラッド",
+            "running_style": "CLOSER"
+          }
+        ],
+        "third_place_intrusion": [
+          {
+            "horse_no": "17",
+            "horse_name": "マイネルアレス",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 0.81
+          },
+          {
+            "horse_no": "16",
+            "horse_name": "ピエナフェーヴル",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 1.541
+          },
+          {
+            "horse_no": "13",
+            "horse_name": "エリーナストーム",
+            "reason": "能力順位より条件/近走面の上振れ余地",
+            "intrusion_score": 1.551
+          }
+        ],
+        "failure_scenarios": [
+          {
+            "id": "BASE",
+            "label": "基本成立",
+            "covered_horses": [
+              "11",
+              "12",
+              "16"
+            ]
+          },
+          {
+            "id": "AXIS_FAIL",
+            "label": "軸だけ飛ぶ",
+            "covered_horses": [
+              "11",
+              "12",
+              "17",
+              "16"
+            ],
+            "note": "相手内完結を最低1組監査"
+          },
+          {
+            "id": "THIRD_INTRUSION",
+            "label": "3着低順位馬侵入",
+            "covered_horses": [
+              "17",
+              "16",
+              "13"
+            ]
+          },
+          {
+            "id": "STRUCTURE_FLIP",
+            "label": "想定展開反転",
+            "covered_horses": [
+              "11",
+              "12",
+              "17"
+            ]
+          }
+        ],
+        "ticket_shape": "ROLE_DIVERSIFIED_AXIS_V6",
+        "trio_tickets": [
+          "2-12-17",
+          "2-8-17",
+          "2-8-12",
+          "2-10-17",
+          "2-15-17",
+          "2-10-12",
+          "2-12-15",
+          "2-8-10",
+          "2-8-15"
+        ],
+        "ticket_count": 9,
+        "classification": "C",
+        "pre_market_decision": "CAUTION",
+        "data_quality": "HIGH",
+        "derived_ticket_analysis": {
+          "PLACE": {
+            "decision": "BUY_CANDIDATE",
+            "primary_horses": [
+              {
+                "horse_no": "2",
+                "horse_name": "ボウウィンドウ"
+              }
+            ],
+            "reason": "軸耐久性を3着以内残存へ読み替える"
+          },
+          "WIDE": {
+            "decision": "BUY_CANDIDATE",
+            "primary_horses": [
+              {
+                "horse_no": "2",
+                "horse_name": "ボウウィンドウ"
+              },
+              {
+                "horse_no": "11",
+                "horse_name": "ティムール"
+              }
+            ],
+            "reason": "軸と相手が同時に馬券内へ残る組合せを優先"
+          },
+          "QUINELLA": {
+            "decision": "CAUTION",
+            "primary_horses": [
+              {
+                "horse_no": "2",
+                "horse_name": "ボウウィンドウ"
+              },
+              {
+                "horse_no": "11",
+                "horse_name": "ティムール"
+              }
+            ],
+            "reason": "3着耐久性より1・2着到達力を要求"
+          },
+          "WIN": {
+            "decision": "BUY_CANDIDATE",
+            "primary_horses": [
+              {
+                "horse_no": "2",
+                "horse_name": "ボウウィンドウ"
+              }
+            ],
+            "reason": "安定性とは別に1着を取り切る評価差が必要"
+          },
+          "TRIFECTA": {
+            "decision": "CAUTION",
+            "primary_horses": [
+              {
+                "horse_no": "2",
+                "horse_name": "ボウウィンドウ"
+              }
+            ],
+            "reason": "三連複候補に加え着順再現性が必要"
+          }
+        },
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
+        "implementation_note": "Phase1 rule-based oral-operation shadow; richer running-style/pace fields are consumed when available.",
+        "decision_override_reason": "現級での再現実績は高いが直近現級戦が馬券外のため、復調前提軸として1段階慎重化",
+        "consensus_policy": "base ability + capped structural fit (max 50) + axis reliability penalty; no odds/popularity/results",
+        "recovery_axis": true,
+        "role_main_partners": [
+          {
+            "horse_no": "17",
+            "horse_name": "マイネルアレス",
+            "running_style": "ESCAPE"
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "マイネルアズーロ",
+            "running_style": "CLOSER"
+          },
+          {
+            "horse_no": "8",
+            "horse_name": "ホウオウタイタン",
+            "running_style": "STALK"
+          }
+        ],
+        "role_holes": [
+          {
+            "horse_no": "10",
+            "horse_name": "ペッレグリーニ",
+            "running_style": "STALK"
+          },
+          {
+            "horse_no": "15",
+            "horse_name": "スピンザブラッド",
+            "running_style": "CLOSER"
+          }
+        ],
+        "ticket_conversion_policy": "main promotion requires recent form or recent same-course evidence; full-field role diversity; no target result/popularity/odds"
+      },
+      "ranked_snapshot": [
+        {
+          "n": "2",
+          "name": "ボウウィンドウ",
+          "horse_id": "pw01dud102022105002/4E",
+          "score": 103.9,
+          "starts_before": 5,
+          "show_rate_prior": 0.55,
+          "recent_form": 0.8727,
+          "condition_fit": 0.55,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.8,
+          "same_class_top3_rate": 0.75,
+          "exact_class_top3_rate": 0.75,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 11,
+          "latest_same_class_finish": 11,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 11,
+          "oral_structure_score": 42.733,
+          "base_score_v1": 61.167,
+          "score_before_consensus": 103.9,
+          "structure_score_capped": 42.733,
+          "consensus_raw_score": 103.9,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "11",
+          "name": "ティムール",
+          "horse_id": "pw01dud102020103048/4A",
+          "score": 93.858,
+          "starts_before": 8,
+          "show_rate_prior": 0.5,
+          "recent_form": 0.6477,
+          "condition_fit": 0.5,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.333,
+          "exact_class_top3_rate": 1.0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 11,
+          "latest_same_class_finish": 11,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 3,
+          "oral_structure_score": 44.892,
+          "base_score_v1": 48.966,
+          "score_before_consensus": 93.858,
+          "structure_score_capped": 44.892,
+          "consensus_raw_score": 93.858,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "12",
+          "name": "マイネルアズーロ",
+          "horse_id": "pw01dud102022100274/5B",
+          "score": 93.451,
+          "starts_before": 6,
+          "show_rate_prior": 0.5,
+          "recent_form": 0.6818,
+          "condition_fit": 0.5,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.8,
+          "same_class_top3_rate": 0,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 1,
+          "latest_same_class_finish": null,
+          "latest_exact_track_finish": 1,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 42.733,
+          "base_score_v1": 50.718,
+          "score_before_consensus": 93.451,
+          "structure_score_capped": 42.733,
+          "consensus_raw_score": 93.451,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "17",
+          "name": "マイネルアレス",
+          "horse_id": "pw01dud102022106817/14",
+          "score": 92.053,
+          "starts_before": 10,
+          "show_rate_prior": 0.3667,
+          "recent_form": 0.6545,
+          "condition_fit": 0.3667,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.8,
+          "same_class_top3_rate": 1.0,
+          "exact_class_top3_rate": 1.0,
+          "exact_track_top3_rate": 1.0,
+          "latest_finish": 3,
+          "latest_same_class_finish": 3,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 3,
+          "oral_structure_score": 84.686,
+          "base_score_v1": 42.053,
+          "score_before_consensus": 126.739,
+          "structure_score_capped": 50.0,
+          "consensus_raw_score": 92.053,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "16",
+          "name": "ピエナフェーヴル",
+          "horse_id": "pw01dud102022101175/8C",
+          "score": 86.176,
+          "starts_before": 4,
+          "show_rate_prior": 0.6111,
+          "recent_form": 0.8636,
+          "condition_fit": 0.6111,
+          "uncertainty": 0.2,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 1.0,
+          "same_class_top3_rate": 1.0,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 1,
+          "latest_same_class_finish": null,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 40.4,
+          "base_score_v1": 59.805,
+          "score_before_consensus": 100.205,
+          "structure_score_capped": 40.4,
+          "consensus_raw_score": 100.205,
+          "axis_reliability_factor": 0.86
+        },
+        {
+          "n": "13",
+          "name": "エリーナストーム",
+          "horse_id": "pw01dud102022105030/98",
+          "score": 78.739,
+          "starts_before": 6,
+          "show_rate_prior": 0.5909,
+          "recent_form": 0.8636,
+          "condition_fit": 0.5909,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.0,
+          "exact_class_top3_rate": 0.0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 10,
+          "latest_same_class_finish": 10,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": 8,
+          "oral_structure_score": 17.867,
+          "base_score_v1": 60.872,
+          "score_before_consensus": 78.739,
+          "structure_score_capped": 17.867,
+          "consensus_raw_score": 78.739,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "1",
+          "name": "ハギノコラソン",
+          "horse_id": "pw01dud102022100439/BC",
+          "score": 69.961,
+          "starts_before": 12,
+          "show_rate_prior": 0.4412,
+          "recent_form": 0.7348,
+          "condition_fit": 0.4412,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.8,
+          "same_class_top3_rate": 0.5,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 7,
+          "latest_same_class_finish": 7,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 21.764,
+          "base_score_v1": 48.197,
+          "score_before_consensus": 69.961,
+          "structure_score_capped": 21.764,
+          "consensus_raw_score": 69.961,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "9",
+          "name": "バガン",
+          "horse_id": "pw01dud102018106354/E3",
+          "score": 64.171,
+          "starts_before": 8,
+          "show_rate_prior": 0.4231,
+          "recent_form": 0.6818,
+          "condition_fit": 0.4231,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.2,
+          "same_class_top3_rate": 0.2,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0.5,
+          "latest_finish": 8,
+          "latest_same_class_finish": 8,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 17.567,
+          "base_score_v1": 46.604,
+          "score_before_consensus": 64.171,
+          "structure_score_capped": 17.567,
+          "consensus_raw_score": 64.171,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "6",
+          "name": "オリバナム",
+          "horse_id": "pw01dud102022100381/43",
+          "score": 57.507,
+          "starts_before": 5,
+          "show_rate_prior": 0.45,
+          "recent_form": 0.7091,
+          "condition_fit": 0.45,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.4,
+          "same_class_top3_rate": 0.25,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0,
+          "latest_finish": 7,
+          "latest_same_class_finish": 7,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 7.4,
+          "base_score_v1": 50.107,
+          "score_before_consensus": 57.507,
+          "structure_score_capped": 7.4,
+          "consensus_raw_score": 57.507,
+          "axis_reliability_factor": 1.0
+        },
+        {
+          "n": "15",
+          "name": "スピンザブラッド",
+          "horse_id": "pw01dud102021105244/4A",
+          "score": 54.035,
+          "starts_before": 5,
+          "show_rate_prior": 0.35,
+          "recent_form": 0.6364,
+          "condition_fit": 0.35,
+          "uncertainty": 0,
+          "target_class": "2勝クラス",
+          "recent_top3_rate": 0.2,
+          "same_class_top3_rate": 0.333,
+          "exact_class_top3_rate": 0,
+          "exact_track_top3_rate": 0.0,
+          "latest_finish": 4,
+          "latest_same_class_finish": 4,
+          "latest_exact_track_finish": null,
+          "latest_exact_class_finish": null,
+          "oral_structure_score": 11.782,
+          "base_score_v1": 42.253,
+          "score_before_consensus": 54.035,
+          "structure_score_capped": 11.782,
+          "consensus_raw_score": 54.035,
+          "axis_reliability_factor": 1.0
+        }
+      ]
+    }
+  ]
+}
