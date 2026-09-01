@@ -1,0 +1,55 @@
+name: Run oral V11 holdout purchase gate
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/calibrate_v11_purchase_gate.py'
+      - 'src/apply_score_v11_holdout.py'
+      - '.github/workflows/run-oral-v11-holdout-gate.yml'
+permissions:
+  contents: write
+jobs:
+  holdout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Calibrate gate on Aug 29 only
+        run: python src/calibrate_v11_purchase_gate.py
+      - name: Verify calibration isolation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('status/oral-v11-purchase-gate-config.json').read_text())
+          assert d['train_date']=='2026-08-29'
+          assert d['holdout_date']=='2026-08-30'
+          assert d['holdout_results_accessed_for_calibration'] is False
+          assert 8 <= d['selected_rule']['train_selected'] <= 14
+          assert d['config_hash_sha256']
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - name: Apply sealed rule then open Aug 30 holdout
+        run: python src/apply_score_v11_holdout.py
+      - name: Verify holdout sequence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('status/oral-v11-holdout-scored.json').read_text())
+          assert d['holdout_date']=='2026-08-30'
+          assert d['holdout_races']==36
+          assert d['holdout_results_opened_after_seal'] is True
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit V11 artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-v11-purchase-gate-config.json docs/data/oral-v11-72-gated-predictions-sealed.json docs/data/oral-v11-holdout-scored.json status/oral-v11-holdout-scored.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Evaluate V11 purchase gate on holdout'
+          git pull --rebase origin main
+          git push origin HEAD:main
