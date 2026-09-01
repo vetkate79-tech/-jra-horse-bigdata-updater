@@ -1,0 +1,41 @@
+name: Refresh public horse categories
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/expand_horse_categories.py'
+      - 'src/enrich_new_horse_entries.py'
+      - '.github/workflows/refresh-horse-categories.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-horse-categories
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Expand category labels
+        run: python src/expand_horse_categories.py
+      - name: Enrich new horses
+        run: python src/enrich_new_horse_entries.py
+      - name: Commit refreshed public horse catalog
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/data/horses/catalog.json
+          git diff --cached --quiet || git commit -m 'data: refresh public horse categories'
+          git pull --rebase origin main
+          git push
