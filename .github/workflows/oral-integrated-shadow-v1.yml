@@ -1,0 +1,46 @@
+name: Oral integrated shadow v1
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/oral_operational_layer.py'
+      - 'src/build_oral_integrated_shadow.py'
+      - '.github/workflows/oral-integrated-shadow-v1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Seal oral operational layer then score
+        run: PYTHONPATH=src python src/build_oral_integrated_shadow.py
+      - name: Verify sealed shadow
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('docs/data/oral-integrated-v1-shadow-sealed.json').read_text())
+          e=json.loads(Path('docs/data/oral-integrated-v1-shadow-evaluation.json').read_text())
+          assert p['result_data_used'] is False
+          assert p['odds_popularity_used'] is False
+          assert p['prediction_hash_sha256']==e['prediction_hash_sha256']
+          assert p['race_count']==72
+          assert e['result_opened_after_seal'] is True
+          print(json.dumps(e['summary'],ensure_ascii=False,indent=2))
+          PY
+      - name: Commit shadow outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-integrated-v1-shadow-sealed.json docs/data/oral-integrated-v1-shadow-evaluation.json status/oral-integrated-v1-shadow.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Run oral integrated v1 shadow replay'
+          git pull --rebase origin main
+          git push origin HEAD:main
