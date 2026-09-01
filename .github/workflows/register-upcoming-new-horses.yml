@@ -1,4 +1,4 @@
-name: Register upcoming JRA debut horses
+name: Register upcoming JRA debut horses and race-week details
 
 on:
   schedule:
@@ -13,6 +13,8 @@ on:
     paths:
       - 'src/collect_upcoming_new_horses.py'
       - 'src/enrich_new_horse_entries.py'
+      - 'src/collect_upcoming_runner_details.py'
+      - 'src/build_horse_base_catalog.py'
       - 'src/check_horse_master_completion.py'
       - '.github/workflows/register-upcoming-new-horses.yml'
 
@@ -44,20 +46,24 @@ jobs:
           restore-keys: |
             jra-new-horse-${{ runner.os }}-
             jra-profile-incremental-${{ runner.os }}-
-      - name: Discover upcoming new-horse racecards
+      - name: Register debut horses from verified JRA cards
         run: python src/collect_upcoming_new_horses.py
-      - name: Enrich registered debut horses
+      - name: Enrich only registered debut horses
         run: python src/enrich_new_horse_entries.py
+      - name: Expand details only for this week's runners
+        run: python src/collect_upcoming_runner_details.py
+      - name: Build lightweight public horse master
+        run: python src/build_horse_base_catalog.py
       - name: Check horse master completion
         run: python src/check_horse_master_completion.py
-      - name: Commit pre-debut horse registration
+      - name: Commit race-week horse data
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/catalog.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json status/horse_master_completion.json
-          git diff --cached --quiet || git commit -m 'data: register upcoming JRA debut horses'
+          git add docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json status/weekly_runner_details.json status/horse_master_completion.json
+          git diff --cached --quiet || git commit -m 'data: refresh lightweight master and race-week runner details'
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && exit 0
+            git pull --rebase --autostash origin main && git push && exit 0
             echo "push race detected; retry $i/5"
             sleep $((i*5))
           done
