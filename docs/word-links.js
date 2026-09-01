@@ -1,15 +1,67 @@
 (()=>{
 'use strict';
-const BASE='/ -jra-horse-bigdata-updater/'.replace(' ','');
+const BASE='/-jra-horse-bigdata-updater/';
 const INDEX=BASE+'data/word-index.json';
-const SKIP=new Set(['SCRIPT','STYLE','TEXTAREA','INPUT','SELECT','OPTION','BUTTON','A','CODE','PRE','NOSCRIPT']);
+const PROSE_SELECTOR='p,.summary,.description,.desc,.notice,.principle,.help,.intro-copy,.body-copy,[data-word-links-scope]';
+const SKIP=new Set(['SCRIPT','STYLE','TEXTAREA','INPUT','SELECT','OPTION','BUTTON','A','CODE','PRE','NOSCRIPT','H1','H2','H3','H4','H5','H6','LABEL']);
 const norm=s=>String(s||'').normalize('NFKC').toLowerCase();
+const jp=/[一-龯々〆ヵヶぁ-ゖァ-ヶー]/u;
+const latin=/[A-Za-z0-9_]/;
 function css(){const s=document.createElement('style');s.textContent='.jra-word-link{color:#2f6fae!important;text-decoration:none;border-bottom:1px dotted #7aa5cf;cursor:pointer;font-weight:600}.jra-word-link:active{opacity:.65}';document.head.appendChild(s)}
-function escapeRx(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 function pageHref(url){return BASE+url}
-function linkTextNode(node,entries,rx){const text=node.nodeValue;if(!text||!rx.test(text))return;rx.lastIndex=0;const frag=document.createDocumentFragment();let last=0,m;while((m=rx.exec(text))){if(m.index>last)frag.appendChild(document.createTextNode(text.slice(last,m.index)));const hit=m[0];const e=entries.get(norm(hit));if(!e){frag.appendChild(document.createTextNode(hit));last=rx.lastIndex;continue}const a=document.createElement('a');a.className='jra-word-link';a.href=pageHref(e.url);a.textContent=hit;a.dataset.word=e.term;frag.appendChild(a);last=rx.lastIndex;}if(last<text.length)frag.appendChild(document.createTextNode(text.slice(last)));node.parentNode.replaceChild(frag,node);}
-function run(doc){const entries=new Map();const words=[];for(const e of doc.terms||[]){for(const w of [e.term,...(e.aliases||[])]){if(!w||String(w).length<2)continue;const k=norm(w);if(!entries.has(k)){entries.set(k,e);words.push(String(w))}}}words.sort((a,b)=>b.length-a.length);if(!words.length)return;const rx=new RegExp(words.map(escapeRx).join('|'),'giu');const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement;if(!p||SKIP.has(p.tagName)||p.closest('[data-no-word-links],.jra-word-link'))return NodeFilter.FILTER_REJECT;const t=n.nodeValue.trim();return t?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(n=>linkTextNode(n,entries,rx));}
-function loadConsultDictionary(){if(!location.pathname.endsWith('/consult/')&&!location.pathname.endsWith('/consult/index.html'))return;const s=document.createElement('script');s.src=BASE+'consult/site-word-search.js?ts='+Date.now();s.defer=true;document.body.appendChild(s);}
-async function init(){css();loadConsultDictionary();try{const r=await fetch(INDEX+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);run(await r.json())}catch(e){console.error('word links',e)}}
+function boundaryOK(text,start,end,hit){
+  const before=start>0?text[start-1]:'';
+  const after=end<text.length?text[end]:'';
+  const first=hit[0]||'',last=hit[hit.length-1]||'';
+  if(jp.test(first)&&jp.test(before))return false;
+  if(jp.test(last)&&jp.test(after))return false;
+  if(latin.test(first)&&latin.test(before))return false;
+  if(latin.test(last)&&latin.test(after))return false;
+  return true;
+}
+function findNext(text,from,words){
+  let best=null;
+  for(const w of words){
+    let seek=from;
+    while(seek<text.length){
+      const i=text.indexOf(w.text,seek);if(i<0)break;
+      const end=i+w.text.length;
+      if(boundaryOK(text,i,end,w.text)){if(!best||i<best.i||(i===best.i&&w.text.length>best.w.text.length))best={i,end,w};break;}
+      seek=i+1;
+    }
+  }
+  return best;
+}
+function linkTextNode(node,words){
+  const text=node.nodeValue;if(!text)return;
+  const frag=document.createDocumentFragment();let pos=0,changed=false;
+  while(pos<text.length){
+    const m=findNext(text,pos,words);if(!m)break;
+    if(m.i>pos)frag.appendChild(document.createTextNode(text.slice(pos,m.i)));
+    const a=document.createElement('a');a.className='jra-word-link';a.href=pageHref(m.w.entry.url);a.textContent=text.slice(m.i,m.end);a.dataset.word=m.w.entry.term;frag.appendChild(a);
+    pos=m.end;changed=true;
+  }
+  if(!changed)return;
+  if(pos<text.length)frag.appendChild(document.createTextNode(text.slice(pos)));
+  node.parentNode.replaceChild(frag,node);
+}
+function run(doc){
+  const seen=new Set(),words=[];
+  for(const e of doc.terms||[]){
+    for(const raw of [e.term,...(e.aliases||[])]){
+      const text=String(raw||'').normalize('NFKC');if(!text)continue;
+      const k=norm(text);if(seen.has(k))continue;seen.add(k);words.push({text,entry:e});
+    }
+  }
+  words.sort((a,b)=>b.text.length-a.text.length);if(!words.length)return;
+  const roots=[...document.querySelectorAll(PROSE_SELECTOR)].filter(el=>!el.closest('nav,header,[data-no-word-links],.jra-word-link'));
+  const nodes=[];
+  for(const root of roots){
+    const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement;if(!p||SKIP.has(p.tagName)||p.closest('[data-no-word-links],.jra-word-link,a,button,nav,header,h1,h2,h3,h4,h5,h6'))return NodeFilter.FILTER_REJECT;return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
+    while(walker.nextNode())nodes.push(walker.currentNode);
+  }
+  [...new Set(nodes)].forEach(n=>linkTextNode(n,words));
+}
+async function init(){css();try{const r=await fetch(INDEX+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);run(await r.json())}catch(e){console.error('word links',e)}}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
