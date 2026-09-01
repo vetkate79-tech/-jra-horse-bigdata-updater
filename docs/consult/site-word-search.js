@@ -29,13 +29,16 @@ function install(){
     const q=norm(input.value);
     const rows=terms.filter(x=>matches(x,q));
     document.querySelector('#wordCount').textContent=`${rows.length}語`;
-    document.querySelector('#wordList').innerHTML=rows.map(x=>`<article class="term" data-term-card="${esc(x.term)}"><div class="term-head"><div><h2>${esc(x.term)}</h2><span class="reading">${esc(x.reading||'')}</span>${decorateAliases(x)}</div><span class="tag">${esc(x.category||'サイト用語')}</span></div><p>${esc(x.summary||x.short_definition||'サイト内で使われている用語です。詳しい意味はAIに聞けます。')}</p>${x.source_url?`<a class="source" href="${esc(x.source_url)}" target="_blank" rel="noopener">出典：${esc(x.source_name||'参照元')}</a>`:'<span class="source">JRA AI サイト内用語</span>'}</article>`).join('')||'<div class="empty">該当する用語はありません</div>';
+    document.querySelector('#wordList').innerHTML=rows.map(x=>`<article class="term" data-term-card="${esc(x.term)}"><div class="term-head"><div><h2>${esc(x.term)}</h2><span class="reading">${esc(x.reading||'')}</span>${decorateAliases(x)}</div><span class="tag">${esc(x.category||'サイト用語')}</span></div><p>${esc(x.summary||x.short_definition||'サイト内で使われている用語です。詳しい意味はAIに聞けます。')}</p>${x.source_url?`<a class="source" href="${esc(x.source_url)}" target="_blank" rel="noopener">出典：${esc(x.source_name||'参照元')}</a>`:'<span class="source">${esc(x.source_name||'JRA AI サイト内用語')}</span>'}</article>`).join('')||'<div class="empty">該当する用語はありません</div>';
     document.querySelectorAll('[data-term-card]').forEach(x=>x.onclick=()=>{showPane('askPane');document.querySelector('#q').value=`${x.dataset.termCard}ってどういう意味？`;document.querySelector('#ask').click()});
   };
-  fetch('../data/site-terms.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{
-    terms=mergeTerms(terms,d.terms||[]);
+  Promise.all([
+    fetch('../data/site-terms.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{terms:[]}).catch(()=>({terms:[]})),
+    fetch('../data/site-term-candidates.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{terms:[]}).catch(()=>({terms:[]}))
+  ]).then(([official,candidates])=>{
+    terms=mergeTerms(terms,[...(official.terms||[]),...(candidates.terms||[])]);
     renderWords();
-  }).catch(e=>console.error('site terms load failed',e));
+  });
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })();
