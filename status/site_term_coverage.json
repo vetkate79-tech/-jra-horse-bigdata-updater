@@ -1,14 +1,14 @@
 {
-  "files_scanned": 44,
+  "files_scanned": 22,
   "registered_keys": 149,
-  "uncovered_candidates": 103,
+  "uncovered_candidates": 56,
   "top_candidates": [
     {
       "term": "相手候補",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 5,
+      "occurrences": 3,
       "pages": [
         "app/app.js",
         "app/answer-report.js"
@@ -19,43 +19,9 @@
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 5,
+      "occurrences": 3,
       "pages": [
         "app/app.js"
-      ]
-    },
-    {
-      "term": "条件適性",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 4,
-      "pages": [
-        "analysis/index.html",
-        "data/dashboard.json"
-      ]
-    },
-    {
-      "term": "競馬場",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 4,
-      "pages": [
-        "ai-consult-client.js",
-        "app/index.html",
-        "app/wizard.js",
-        "architecture/user-prediction-bigdata.md"
-      ]
-    },
-    {
-      "term": "この買い目",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 2,
-      "pages": [
-        "app/answer-report.js"
       ]
     },
     {
@@ -69,17 +35,6 @@
       ]
     },
     {
-      "term": "人気・オッズ",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 2,
-      "pages": [
-        "data/dashboard.json",
-        "admin/index.html"
-      ]
-    },
-    {
       "term": "全競馬場",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
@@ -90,40 +45,18 @@
       ]
     },
     {
-      "term": "崩れる展開",
+      "term": "展開",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
       "occurrences": 2,
       "pages": [
-        "app/wizard.js",
-        "architecture/user-prediction-bigdata.md"
-      ]
-    },
-    {
-      "term": "市場・妙味",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 2,
-      "pages": [
-        "ai-consult-client.js",
+        "consult/smart-consult.js",
         "analysis/index.html"
       ]
     },
     {
-      "term": "成立確率",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 2,
-      "pages": [
-        "app/app.js",
-        "app/answer-report.js"
-      ]
-    },
-    {
-      "term": "日付・競馬場",
+      "term": "日付・競馬場・レ",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
@@ -143,54 +76,14 @@
       ]
     },
     {
-      "term": "穴侵入",
+      "term": "調教メモ",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
       "occurrences": 2,
       "pages": [
-        "analysis/index.html",
-        "data/dashboard.json"
-      ]
-    },
-    {
-      "term": "10軸フォーメーション",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "3コーナー",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/answer-report.js"
-      ]
-    },
-    {
-      "term": "3列目漏れ率",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "admin/app.js"
-      ]
-    },
-    {
-      "term": "3着侵入",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "data/dashboard.json"
+        "horses/search-v2.js",
+        "horses/new-horse-detail.js"
       ]
     },
     {
@@ -204,36 +97,6 @@
       ]
     },
     {
-      "term": "AIが中心に見た馬が位置取りや展開",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "AIが新しく使った用語は候補",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "consult/index.html"
-      ]
-    },
-    {
-      "term": "AIと集合知の一致率",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "architecture/user-prediction-bigdata.md"
-      ]
-    },
-    {
       "term": "AIの玄人向け詳細分析",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
@@ -244,73 +107,13 @@
       ]
     },
     {
-      "term": "AIの買い目",
+      "term": "AIも評価している馬",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
       "occurrences": 1,
       "pages": [
         "app/app.js"
-      ]
-    },
-    {
-      "term": "AIも評価",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "AI回答から追加された候補",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "consult/index.html"
-      ]
-    },
-    {
-      "term": "IPアドレスを分析",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "architecture/user-prediction-bigdata.md"
-      ]
-    },
-    {
-      "term": "JRAの出馬表が公開された後に競馬場",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "horses/week/2026-09-05-06/index.html"
-      ]
-    },
-    {
-      "term": "SEALED後の能力順位・候補",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "admin/index.html"
-      ]
-    },
-    {
-      "term": "あなたが考えている馬券",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/wizard.js"
       ]
     },
     {
@@ -324,86 +127,6 @@
       ]
     },
     {
-      "term": "あなたの選択馬はAIの中心評価",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/answer-report.js"
-      ]
-    },
-    {
-      "term": "その買い目が成立する展開",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "ai-consult-client.js"
-      ]
-    },
-    {
-      "term": "その馬が来るならどんな展開",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "index.html"
-      ]
-    },
-    {
-      "term": "その馬により強く展開",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
-      ]
-    },
-    {
-      "term": "どの展開",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/answer-report.js"
-      ]
-    },
-    {
-      "term": "の確率",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/answer-report.js"
-      ]
-    },
-    {
-      "term": "の買い目",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/wizard.js"
-      ]
-    },
-    {
-      "term": "はAI評価",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/wizard.js"
-      ]
-    },
-    {
       "term": "を上位評価",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
@@ -414,17 +137,7 @@
       ]
     },
     {
-      "term": "クラス別・競馬場",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "architecture/user-prediction-bigdata.md"
-      ]
-    },
-    {
-      "term": "スで評価が変わる候補",
+      "term": "スで評価が変わる候補を確認",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
@@ -434,27 +147,17 @@
       ]
     },
     {
-      "term": "スで軸が飛ぶとしたらどんな展開",
+      "term": "ス依存・馬場条件など",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
       "occurrences": 1,
       "pages": [
-        "consult/index.html"
+        "analysis/index.html"
       ]
     },
     {
-      "term": "ス・馬場・斤量",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "data/dashboard.json"
-      ]
-    },
-    {
-      "term": "ス別展開",
+      "term": "ス別展開デ",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
@@ -464,7 +167,7 @@
       ]
     },
     {
-      "term": "ス展開",
+      "term": "ス展開コメントは予想デ",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
@@ -484,33 +187,323 @@
       ]
     },
     {
-      "term": "ト・位置取り・ペース",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "analysis/index.html"
-      ]
-    },
-    {
-      "term": "ライト表示では省いている内部評価",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "analysis/index.html"
-      ]
-    },
-    {
-      "term": "一緒に検討する馬券",
+      "term": "中心馬の評価は維持しつつ",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
       "source_name": "JRA AI サイト内自動検出",
       "occurrences": 1,
       "pages": [
         "app/answer-report.js"
+      ]
+    },
+    {
+      "term": "中心馬評価",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/answer-report.js"
+      ]
+    },
+    {
+      "term": "今週の出走馬・クラス別検索",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "horses/index.html"
+      ]
+    },
+    {
+      "term": "券型・買い目構造",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "単勝的中確率",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/answer-report.js"
+      ]
+    },
+    {
+      "term": "妙味判定",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "展開・レ",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "展開型",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "崩れる展開",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/wizard.js"
+      ]
+    },
+    {
+      "term": "差し決着の反転シナリオを確認",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "市場・妙味",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "成立しやすい展開",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/wizard.js"
+      ]
+    },
+    {
+      "term": "成立確率",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/app.js"
+      ]
+    },
+    {
+      "term": "成立確率の目安",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/answer-report.js"
+      ]
+    },
+    {
+      "term": "最後に買い目を決める",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "about/index.html"
+      ]
+    },
+    {
+      "term": "本命・相手・穴候補に分ける",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "about/index.html"
+      ]
+    },
+    {
+      "term": "本命候補",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "条件適性型",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "的中確率の目安",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/wizard.js"
+      ]
+    },
+    {
+      "term": "相手・穴候補を見る",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/app.js"
+      ]
+    },
+    {
+      "term": "相手候補にAIとの重なりあり",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/app.js"
+      ]
+    },
+    {
+      "term": "相手候補はAIと違う組み立て",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/app.js"
+      ]
+    },
+    {
+      "term": "穴侵入型",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "穴候補にAIとの重なりあり",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/app.js"
+      ]
+    },
+    {
+      "term": "穴候補はAIと違う見方",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/app.js"
+      ]
+    },
+    {
+      "term": "競馬場",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/index.html"
+      ]
+    },
+    {
+      "term": "競馬場を選ぶ",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/wizard.js"
+      ]
+    },
+    {
+      "term": "能力評価と分離",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
+      ]
+    },
+    {
+      "term": "血統情報取得待ち",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "horses/new-horse-detail.js"
+      ]
+    },
+    {
+      "term": "複数買い目は",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/wizard.js"
+      ]
+    },
+    {
+      "term": "記念馬券でも100円でも",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "index.html"
+      ]
+    },
+    {
+      "term": "距離・馬場・コ",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "analysis/index.html"
       ]
     }
   ]
