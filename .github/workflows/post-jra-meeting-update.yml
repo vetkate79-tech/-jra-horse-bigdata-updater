@@ -2,7 +2,6 @@ name: Post JRA meeting data update
 
 on:
   schedule:
-    # 19:30 / 21:30 JST every day. No JRA meeting => safe no-op.
     - cron: '30 10 * * *'
     - cron: '30 12 * * *'
   workflow_dispatch:
@@ -14,6 +13,8 @@ on:
       - 'src/update_recent_runner_elite.py'
       - 'src/merge_active_elite_into_catalog.py'
       - 'src/expand_horse_categories.py'
+      - 'src/build_horse_base_catalog.py'
+      - 'src/expire_weekly_runner_details.py'
       - 'src/check_horse_master_completion.py'
       - '.github/workflows/post-jra-meeting-update.yml'
 
@@ -59,18 +60,24 @@ jobs:
           print('updated='+('true' if s.get('status')=='UPDATED' else 'false'))
           print('dates='+','.join(s.get('complete_dates',[])))
           PY
-      - name: Merge latest runners into public horse master
+      - name: Merge latest runners into internal horse catalog
         if: steps.state.outputs.updated == 'true'
         run: python src/merge_latest_results_into_catalog.py
       - name: Refresh graded/open status for recent runners
         if: steps.state.outputs.updated == 'true'
         run: python src/update_recent_runner_elite.py
-      - name: Merge graded/open horses into public catalog
+      - name: Merge graded/open horses into internal catalog
         if: steps.state.outputs.updated == 'true'
         run: python src/merge_active_elite_into_catalog.py
       - name: Expand lower class categories from verified JRA races
         if: steps.state.outputs.updated == 'true'
         run: python src/expand_horse_categories.py
+      - name: Remove detail rows for already completed dates
+        if: steps.state.outputs.updated == 'true'
+        run: python src/expire_weekly_runner_details.py
+      - name: Rebuild lightweight public horse master
+        if: steps.state.outputs.updated == 'true'
+        run: python src/build_horse_base_catalog.py
       - name: Check horse master completion
         if: steps.state.outputs.updated == 'true'
         run: python src/check_horse_master_completion.py
@@ -79,10 +86,10 @@ jobs:
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add data/race_results_html_2026.csv data/race_payouts_2026.csv data/race_context_2026.csv status/jra_post_meeting_update.json status/horse_master_completion.json docs/data/horses/catalog.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json || true
+          git add data/race_results_html_2026.csv data/race_payouts_2026.csv data/race_context_2026.csv status/jra_post_meeting_update.json status/horse_master_completion.json docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json || true
           git diff --cached --quiet || git commit -m "data: auto update completed JRA meeting ${{ steps.state.outputs.dates }}"
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && exit 0
+            git pull --rebase --autostash origin main && git push && exit 0
             echo "push race detected; retry $i/5"
             sleep $((i*5))
           done
