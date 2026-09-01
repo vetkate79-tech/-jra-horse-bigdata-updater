@@ -13,13 +13,14 @@ on:
     paths:
       - 'src/collect_upcoming_new_horses.py'
       - 'src/enrich_new_horse_entries.py'
+      - 'src/check_horse_master_completion.py'
       - '.github/workflows/register-upcoming-new-horses.yml'
 
 permissions:
   contents: write
 
 concurrency:
-  group: register-upcoming-new-horses
+  group: horse-data-writes
   cancel-in-progress: false
 
 jobs:
@@ -28,6 +29,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -45,11 +48,17 @@ jobs:
         run: python src/collect_upcoming_new_horses.py
       - name: Enrich registered debut horses
         run: python src/enrich_new_horse_entries.py
+      - name: Check horse master completion
+        run: python src/check_horse_master_completion.py
       - name: Commit pre-debut horse registration
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/catalog.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json
+          git add docs/data/horses/catalog.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json status/horse_master_completion.json
           git diff --cached --quiet || git commit -m 'data: register upcoming JRA debut horses'
-          git pull --rebase origin main
-          git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            echo "push race detected; retry $i/5"
+            sleep $((i*5))
+          done
+          exit 1
