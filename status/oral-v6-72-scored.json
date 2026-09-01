@@ -1,0 +1,67 @@
+{
+  "model_version": "ORAL_V6_72_SEALED_REPLAY",
+  "prediction_hash_sha256": "eb5fd8e1285c6ea8d08d9d492d9fbcce7a9d804d8d5ee729939cc5a4f8a0797a",
+  "race_count_expected": 72,
+  "race_count_scored": 72,
+  "missing_result_joins": [],
+  "decision_counts": {
+    "PASS": 49,
+    "BUY": 21,
+    "CAUTION": 2
+  },
+  "axis_1st": 12,
+  "axis_2nd_3rd": 9,
+  "axis_outside_top3": 51,
+  "axis_win_rate_pct": 16.67,
+  "axis_top3_rate_pct": 29.17,
+  "axis_top3_by_popularity": {
+    "1": 12,
+    "2": 5,
+    "3": 2,
+    "4": 1,
+    "5": 1
+  },
+  "trio_bought_races": 23,
+  "trio_hits": 0,
+  "trio_hit_rate_pct": 0.0,
+  "by_date": {
+    "2026-08-29": {
+      "races": 36,
+      "axis_1st": 7,
+      "axis_2nd_3rd": 4,
+      "axis_out": 25,
+      "axis_top3_rate": 30.56
+    },
+    "2026-08-30": {
+      "races": 36,
+      "axis_1st": 5,
+      "axis_2nd_3rd": 5,
+      "axis_out": 26,
+      "axis_top3_rate": 27.78
+    }
+  },
+  "by_track": {
+    "中京": {
+      "races": 24,
+      "axis_1st": 5,
+      "axis_2nd_3rd": 3,
+      "axis_out": 16,
+      "axis_top3_rate": 33.33
+    },
+    "新潟": {
+      "races": 24,
+      "axis_1st": 5,
+      "axis_2nd_3rd": 4,
+      "axis_out": 15,
+      "axis_top3_rate": 37.5
+    },
+    "札幌": {
+      "races": 24,
+      "axis_1st": 2,
+      "axis_2nd_3rd": 2,
+      "axis_out": 20,
+      "axis_top3_rate": 16.67
+    }
+  },
+  "result_opened_after_prediction_seal": true
+}
