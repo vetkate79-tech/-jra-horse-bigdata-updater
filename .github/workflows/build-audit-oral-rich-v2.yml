@@ -1,0 +1,45 @@
+name: Build and audit oral rich v2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/build_oral_rich_shadow_v2.py'
+      - 'src/audit_oral_golden_v2.py'
+      - 'docs/data/oral-chat-golden-cases.json'
+      - '.github/workflows/build-audit-oral-rich-v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pandas beautifulsoup4 lxml requests
+      - name: Build rich pre-race shadow
+        run: python src/build_oral_rich_shadow_v2.py
+      - name: Audit against verified original chat cases
+        run: python src/audit_oral_golden_v2.py
+      - name: Show audit
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/oral-golden-v2-audit.json').read_text())
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit rich shadow and audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-integrated-v2-rich-sealed.json docs/data/oral-golden-v2-audit.json status/oral-integrated-v2-rich.json status/oral-golden-v2-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Evaluate rich oral parity v2'
+          git pull --rebase origin main
+          git push origin HEAD:main
