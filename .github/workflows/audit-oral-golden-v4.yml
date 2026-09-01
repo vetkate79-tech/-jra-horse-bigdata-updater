@@ -1,0 +1,26 @@
+name: Audit oral golden v4
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/audit_oral_golden_v4.py'
+      - '.github/workflows/audit-oral-golden-v4.yml'
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/audit_oral_golden_v4.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-golden-v4-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Audit oral golden v4 parity'
+          git pull --rebase origin main
+          git push origin HEAD:main
