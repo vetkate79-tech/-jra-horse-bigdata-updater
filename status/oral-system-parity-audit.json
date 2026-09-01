@@ -1,0 +1,533 @@
+{
+  "audit_version": "ORAL_SYSTEM_PARITY_AUDIT_V1",
+  "system_model_version": "ORAL_INTEGRATED_V1_SHADOW",
+  "verdict": "NOT_COMPLETE",
+  "systemization_complete": false,
+  "historical_chat_parity": {
+    "actual_pre_race_logs": 12,
+    "system_joinable_logs": 4,
+    "coverage_rate": 0.3333,
+    "axis": {
+      "comparable": 4,
+      "matches": 2,
+      "match_rate": 0.5
+    },
+    "decision": {
+      "comparable": 4,
+      "matches": 1,
+      "match_rate": 0.25
+    },
+    "ticket_shape": {
+      "comparable": 0,
+      "matches": 0,
+      "match_rate": null
+    },
+    "tickets": {
+      "comparable": 4,
+      "matches": 0,
+      "match_rate": 0.0
+    }
+  },
+  "invariant_tests": {
+    "race_count": 72,
+    "same_input_repeat": {
+      "passed": true,
+      "failures": []
+    },
+    "result_isolation": {
+      "passed": true,
+      "failures": []
+    },
+    "odds_popularity_isolation": {
+      "passed": true,
+      "failures": []
+    },
+    "ticket_shape_coverage": {
+      "PASS": 52,
+      "DUAL": 14,
+      "AXIS": 6
+    },
+    "classification_coverage": {
+      "PASS": 52,
+      "B": 15,
+      "A": 5
+    }
+  },
+  "blockers": [
+    "保存済み実会話予想の全日付を現行Shadow入力で再実行できていない",
+    "実会話予想とシステムの軸が完全一致していない",
+    "BUY/CAUTION/PASSが実会話予想と完全一致していない",
+    "最終買い目が実会話予想と完全一致していない"
+  ],
+  "comparisons": [
+    {
+      "date": "2026-08-16",
+      "track": "中京",
+      "race_no": 7,
+      "race_name": "中京記念",
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": false,
+      "axis": {
+        "actual": "12",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [
+          "6",
+          "3",
+          "5",
+          "9",
+          "10"
+        ],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": 0.0
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-16",
+      "track": "札幌",
+      "race_no": 11,
+      "race_name": "札幌記念",
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": false,
+      "axis": {
+        "actual": "10",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [
+          "7"
+        ],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": 0.0
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-23",
+      "track": "中京",
+      "race_no": 5,
+      "race_name": null,
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": false,
+      "axis": {
+        "actual": "6",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": "PASS",
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": "PASS",
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": null
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-23",
+      "track": "中京",
+      "race_no": 6,
+      "race_name": "有松特別",
+      "source": "PRE_RACE_CONVERSATION_LOG_REVISED_BLIND",
+      "system_available": false,
+      "axis": {
+        "actual": "3",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": null
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-23",
+      "track": "新潟",
+      "race_no": 5,
+      "race_name": null,
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": false,
+      "axis": {
+        "actual": "9",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": null
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-23",
+      "track": "新潟",
+      "race_no": 6,
+      "race_name": "古町ステークス",
+      "source": "PRE_RACE_CONVERSATION_LOG_REVISED_BLIND",
+      "system_available": false,
+      "axis": {
+        "actual": "13",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": null
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-23",
+      "track": "札幌",
+      "race_no": 4,
+      "race_name": null,
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": false,
+      "axis": {
+        "actual": "5",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": null
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-23",
+      "track": "札幌",
+      "race_no": 5,
+      "race_name": null,
+      "source": "PRE_RACE_CONVERSATION_LOG_REVISED_BLIND",
+      "system_available": false,
+      "axis": {
+        "actual": "2",
+        "system": null,
+        "match": false
+      },
+      "decision": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": null,
+        "match": null
+      },
+      "partners": {
+        "actual": [],
+        "system_top5": [],
+        "overlap": 0,
+        "recall": null
+      },
+      "tickets": {
+        "actual_count": 0,
+        "system_count": 0,
+        "exact_match": null
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 6,
+      "race_name": "清洲特別",
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": true,
+      "axis": {
+        "actual": "6",
+        "system": "5",
+        "match": false
+      },
+      "decision": {
+        "actual": "BUY",
+        "system": "BUY",
+        "match": true
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": "DUAL",
+        "match": null
+      },
+      "partners": {
+        "actual": [
+          "2",
+          "3",
+          "9"
+        ],
+        "system_top5": [
+          "12",
+          "2",
+          "11",
+          "4",
+          "1"
+        ],
+        "overlap": 1,
+        "recall": 0.3333
+      },
+      "tickets": {
+        "actual_count": 9,
+        "system_count": 9,
+        "exact_match": false
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 7,
+      "race_name": "長篠ステークス",
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": true,
+      "axis": {
+        "actual": "10",
+        "system": "1",
+        "match": false
+      },
+      "decision": {
+        "actual": "BUY",
+        "system": "PASS",
+        "match": false
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": "PASS",
+        "match": null
+      },
+      "partners": {
+        "actual": [
+          "1",
+          "5",
+          "14"
+        ],
+        "system_top5": [
+          "4",
+          "9",
+          "13",
+          "15",
+          "14"
+        ],
+        "overlap": 1,
+        "recall": 0.3333
+      },
+      "tickets": {
+        "actual_count": 15,
+        "system_count": 0,
+        "exact_match": false
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 7,
+      "race_name": "赤倉特別",
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": true,
+      "axis": {
+        "actual": "2",
+        "system": "2",
+        "match": true
+      },
+      "decision": {
+        "actual": "CAUTION",
+        "system": "BUY",
+        "match": false
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": "DUAL",
+        "match": null
+      },
+      "partners": {
+        "actual": [
+          "8",
+          "12",
+          "17"
+        ],
+        "system_top5": [
+          "13",
+          "16",
+          "12",
+          "6",
+          "11"
+        ],
+        "overlap": 1,
+        "recall": 0.3333
+      },
+      "tickets": {
+        "actual_count": 9,
+        "system_count": 9,
+        "exact_match": false
+      },
+      "archive_has_enough_for_full_parity": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 11,
+      "race_name": "3歳以上1勝クラス",
+      "source": "PRE_RACE_CONVERSATION_LOG",
+      "system_available": true,
+      "axis": {
+        "actual": "10",
+        "system": "10",
+        "match": true
+      },
+      "decision": {
+        "actual": "BUY",
+        "system": "PASS",
+        "match": false
+      },
+      "ticket_shape": {
+        "actual": null,
+        "system": "PASS",
+        "match": null
+      },
+      "partners": {
+        "actual": [
+          "11",
+          "2",
+          "5"
+        ],
+        "system_top5": [
+          "8",
+          "2",
+          "1",
+          "3",
+          "12"
+        ],
+        "overlap": 1,
+        "recall": 0.3333
+      },
+      "tickets": {
+        "actual_count": 9,
+        "system_count": 0,
+        "exact_match": false
+      },
+      "archive_has_enough_for_full_parity": false
+    }
+  ],
+  "audit_note": "実会話ログで保存されていない相手・除外・買い目は一致判定不能とし、推測で補完しない。再現予想は実会話とのパリティ母集団に含めない。"
+}
