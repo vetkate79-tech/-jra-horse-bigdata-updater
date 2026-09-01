@@ -4,8 +4,22 @@
     "complete_horse_count": 973,
     "incomplete_horse_count": 0,
     "missing_field_counts": {},
+    "category_counts": {
+      "GRADED": 96,
+      "OPEN": 20,
+      "3WIN": 42,
+      "2WIN": 122,
+      "1WIN": 251,
+      "MAIDEN": 378,
+      "NEW": 64,
+      "UNKNOWN": 0
+    },
+    "base_open_count": 43,
+    "base_graded_count": 20,
+    "active_elite_count": 43,
+    "structural_issues": [],
     "status": "COMPLETE",
-    "definition": "complete within discovered JRA horse master; future debut/meeting runners continue to append automatically"
+    "definition": "complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically"
   },
   "issues": []
 }
