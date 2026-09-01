@@ -1,0 +1,27 @@
+name: Diagnose V10 failure groups
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/diagnose_v10_failure_groups.py'
+      - 'docs/data/oral-v10-72-connected-durability-scored.json'
+      - '.github/workflows/diagnose-v10-failure-groups.yml'
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/diagnose_v10_failure_groups.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-v10-failure-groups.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Diagnose V10 failure groups'
+          git pull --rebase origin main
+          git push origin HEAD:main
