@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'src/discover_registered_horse_ids.py'
       - 'src/collect_active_elite_horses.py'
       - 'src/merge_active_elite_into_catalog.py'
       - '.github/workflows/build-active-elite-catalog.yml'
@@ -26,14 +27,19 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - run: pip install -r requirements.txt
-      - name: Restore JRA profile cache
+      - run: pip install -r requirements.txt && pip install pypdf
+      - name: Restore JRA caches
         uses: actions/cache@v4
         with:
-          path: cache/jra_horse_profiles
-          key: jra-horse-profiles-${{ runner.os }}-v1-${{ hashFiles('data/horse_ids_2025.csv', 'data/race_results_html_2026_weekend.csv') }}
+          path: |
+            cache/jra_horse_profiles
+            cache/jra_registered_roster
+          key: jra-horse-data-${{ runner.os }}-v2-${{ hashFiles('data/horse_ids_2025.csv', 'data/race_results_html_2026_weekend.csv') }}
           restore-keys: |
+            jra-horse-data-${{ runner.os }}-v2-
             jra-horse-profiles-${{ runner.os }}-v1-
+      - name: Discover current registered horse IDs
+        run: python src/discover_registered_horse_ids.py
       - name: Build active graded and open catalogs
         env:
           ELITE_PROFILE_WORKERS: '4'
@@ -44,7 +50,7 @@ jobs:
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/catalog.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json
+          git add data/current_registered_horse_ids.csv status/current_registered_roster.json docs/data/horses/catalog.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json
           git diff --cached --quiet || git commit -m 'data: publish active graded and open horse catalogs'
           git pull --rebase origin main
           git push
