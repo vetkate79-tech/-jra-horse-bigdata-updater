@@ -1,10 +1,17 @@
 {
-  "version": "ORAL_V6_ROBUSTNESS_AUDIT",
+  "version": "ORAL_V6_ROBUSTNESS_AUDIT_V2",
   "source_file": "src/build_oral_role_ticket_v6.py",
   "race_specific_horse_names_found": [],
-  "golden_truth_import_found": true,
+  "golden_truth_import_found": false,
+  "truth_reference_tokens_checked": [
+    "oral-chat-golden-cases.json",
+    "oral-golden-v6-audit.json",
+    "expected_tickets",
+    "axis_expected",
+    "decision_expected"
+  ],
   "suspicious_string_number_groups": [],
-  "no_identity_hardcode": false,
+  "no_identity_hardcode": true,
   "declared_result_data_used": false,
   "declared_odds_popularity_used": false,
   "canonical_hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
@@ -12,5 +19,33 @@
   "clone_hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
   "irrelevant_injection_invariant": true,
   "deterministic_clone": true,
-  "passed": false
+  "shuffle_cases": [
+    {
+      "seed": 11,
+      "hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+      "matches_canonical": true
+    },
+    {
+      "seed": 37,
+      "hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+      "matches_canonical": true
+    },
+    {
+      "seed": 101,
+      "hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+      "matches_canonical": true
+    },
+    {
+      "seed": 509,
+      "hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+      "matches_canonical": true
+    },
+    {
+      "seed": 20260901,
+      "hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+      "matches_canonical": true
+    }
+  ],
+  "full_field_order_invariant": true,
+  "passed": true
 }
