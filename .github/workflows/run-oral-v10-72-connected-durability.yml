@@ -1,0 +1,52 @@
+name: Run oral V10 connected durability sealed replay
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/run_oral_v10_72_connected_durability.py'
+      - 'src/score_oral_v10_72_replay.py'
+      - '.github/workflows/run-oral-v10-72-connected-durability.yml'
+permissions:
+  contents: write
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas beautifulsoup4 lxml requests
+      - name: Build V10 predictions before opening results
+        run: python src/run_oral_v10_72_connected_durability.py
+      - name: Verify seal/isolation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/oral-v10-72-connected-durability-sealed.json').read_text())
+          assert d['race_count']==72
+          assert d['result_data_used'] is False and d['odds_popularity_used'] is False and d['post_target_running_style_used'] is False
+          assert d['prediction_hash_sha256']
+          print({'hash':d['prediction_hash_sha256'],'durability':d['durability_status_counts']})
+          PY
+      - name: Open results after seal and score
+        run: python src/score_oral_v10_72_replay.py
+      - name: Verify 72 joins
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('status/oral-v10-72-connected-durability-scored.json').read_text())
+          assert d['race_count_scored']==72 and not d['missing_result_joins'] and d['result_opened_after_prediction_seal'] is True
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit V10 artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-v10-72-connected-durability-sealed.json docs/data/oral-v10-72-connected-durability-scored.json status/oral-v10-72-connected-durability-sealed.json status/oral-v10-72-connected-durability-scored.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Evaluate V10 connected durability'
+          git pull --rebase origin main
+          git push origin HEAD:main
