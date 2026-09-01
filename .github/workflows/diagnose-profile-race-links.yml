@@ -1,0 +1,27 @@
+name: Diagnose profile race links
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/diagnose_profile_race_links.py'
+      - '.github/workflows/diagnose-profile-race-links.yml'
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas beautifulsoup4 lxml requests
+      - run: python src/diagnose_profile_race_links.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/profile-race-link-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Inspect JRA profile race links'
+          git pull --rebase origin main
+          git push origin HEAD:main
