@@ -19,10 +19,17 @@ def num(v):
     return int(v) if m else None
 
 
+def frame_of(r):
+    # JRA result tables have appeared with several whitespace variants.
+    for key in ('frame','枠','枠番','枠 番','枠　番','枠 馬番','枠馬番'):
+        n=num(r.get(key))
+        if n is not None and 1<=n<=8:return n
+    return None
+
+
 def main():
     OUT.parent.mkdir(parents=True,exist_ok=True)
-    if not SRC.exists():
-        raise SystemExit('race result source missing')
+    if not SRC.exists(): raise SystemExit('race result source missing')
 
     rows=[]
     with SRC.open(encoding='utf-8-sig',newline='') as f:
@@ -46,39 +53,35 @@ def main():
         if len(names)!=len(set(names)): reasons.append('duplicate_name')
         if len(numbers)!=len(set(numbers)): reasons.append('duplicate_horse_no')
         if reasons:
-            rejected.append({'date':date,'track':track,'race_no':race_no,'reasons':reasons})
-            continue
+            rejected.append({'date':date,'track':track,'race_no':race_no,'reasons':reasons}); continue
 
         first=rs[0]; horses=[]
         for r in rs:
-            n=num(r.get('horse_no')); frame=num(r.get('枠') or r.get('frame'))
+            n=num(r.get('horse_no'))
             horses.append({
-                'n':str(n),'frame':frame,'name':clean(r.get('horse_name')),
+                'n':str(n),'frame':frame_of(r),'name':clean(r.get('horse_name')),
                 'sex':clean(r.get('sex_age')),'weight':clean(r.get('carried_weight')),
                 'jockey':clean(r.get('jockey')),'recent':'','horse_id':clean(r.get('horse_id'))
             })
         statuses={clean(x.get('data_status')) for x in rs}
         quality='STRICT_PASS' if statuses=={'PASS_HTML'} else 'RACECARD_MINIMAL_VERIFIED'
         races.append({
-            'race_id':clean(first.get('race_id')),
-            'date':date,'track':track,'race_no':race_no,
-            'race_name':clean(first.get('race_name')),
-            'start_time':clean(first.get('scheduled_start')),
-            'surface':clean(first.get('surface')),
-            'distance_m':num(first.get('distance_m')),
-            'field_size':len(horses),
-            'source_url':clean(first.get('source_url')),
-            'source':'JRA_OFFICIAL_RESULT_HTML','quality':quality,
-            'horses':horses
+            'race_id':clean(first.get('race_id')),'date':date,'track':track,'race_no':race_no,
+            'race_name':clean(first.get('race_name')),'start_time':clean(first.get('scheduled_start')),
+            'surface':clean(first.get('surface')),'distance_m':num(first.get('distance_m')),
+            'field_size':len(horses),'source_url':clean(first.get('source_url')),
+            'source':'JRA_OFFICIAL_RESULT_HTML','quality':quality,'horses':horses
         })
 
     by_date=Counter(x['date'] for x in races)
     by_track=Counter(f"{x['date']}:{x['track']}" for x in races)
+    frame_known=sum(h.get('frame') is not None for r in races for h in r['horses'])
+    runner_count=sum(len(r['horses']) for r in races)
     ready=(len(races)==72 and all(by_date.get(d,0)==36 for d in TARGET_DATES) and all(v==12 for v in by_track.values()) and len(by_track)==6)
     payload={
-        'source':'JRA_OFFICIAL_ONLY','status':'READY' if ready else 'INCOMPLETE',
-        'race_count':len(races),'race_count_by_date':dict(sorted(by_date.items())),
-        'race_count_by_date_track':dict(sorted(by_track.items())),
+        'source':'JRA_OFFICIAL_ONLY','status':'READY' if ready else 'INCOMPLETE','race_count':len(races),
+        'runner_count':runner_count,'frame_known_count':frame_known,
+        'race_count_by_date':dict(sorted(by_date.items())),'race_count_by_date_track':dict(sorted(by_track.items())),
         'rejected':rejected,'races':races
     }
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
