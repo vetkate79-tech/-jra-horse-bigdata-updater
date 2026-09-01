@@ -1,0 +1,64 @@
+{
+  "version": "BLIND_RULE_REPLAY_V0.5_SEALED_THEN_SCORED",
+  "config_hash_sha256": "439072b27c9d4d9b9723d1a230e9bffdcd154e46191949d20f4aad2b5b1b8b64",
+  "prediction_hash_sha256": "0bd889102057cc185254af39a0e63bebad6a30881ad0ed0add03eaad04340763",
+  "training_result": {
+    "races": 51,
+    "bets": 46,
+    "passes": 5,
+    "hits": 10,
+    "stake": 42200,
+    "return": 22080,
+    "hit_rate_pct": 21.74,
+    "roi_pct": 52.32,
+    "shapes": {
+      "AXIS9": 13,
+      "DUAL9": 25,
+      "GROUP10": 8,
+      "PASS": 5
+    }
+  },
+  "holdout_result": {
+    "races": 17,
+    "bets": 14,
+    "passes": 3,
+    "hits": 2,
+    "stake": 13300,
+    "return": 1470,
+    "hit_rate_pct": 14.29,
+    "roi_pct": 11.05,
+    "shapes": {
+      "AXIS9": 0,
+      "DUAL9": 7,
+      "GROUP10": 7,
+      "PASS": 3
+    }
+  },
+  "full_replay_result": {
+    "races": 68,
+    "bets": 60,
+    "passes": 8,
+    "hits": 12,
+    "stake": 55500,
+    "return": 23550,
+    "hit_rate_pct": 20.0,
+    "roi_pct": 42.43,
+    "shapes": {
+      "AXIS9": 13,
+      "DUAL9": 32,
+      "GROUP10": 15,
+      "PASS": 8
+    }
+  },
+  "comparison_v04": {
+    "races": 35,
+    "bets": 13,
+    "passes": 22,
+    "hits": 4,
+    "stake": 10900,
+    "return": 3540,
+    "hit_rate_pct": 30.77,
+    "roi_pct": 32.48
+  },
+  "truth_note": "Only holdout_result is treated as unseen after v0.5 sealing. Full replay includes tuning races and is not an unbiased estimate."
+}

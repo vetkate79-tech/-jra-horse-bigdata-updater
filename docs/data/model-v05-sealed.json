@@ -1,0 +1,20 @@
+{
+  "version": "BLIND_RULE_REPLAY_V0.5_SEALED",
+  "training_scope": "2026-08-29 all reconstructed + 2026-08-30 R1-6 reconstructed",
+  "holdout_scope": "2026-08-30 R7-12 reconstructed",
+  "base_prediction_hash": "02924fa33b1a18a6f6af791acc108e5e42cc8566af21d1d96350afbdbcd637e5",
+  "selected_config": {
+    "axis_gap": 1.2,
+    "axis_unc": 0.4,
+    "dual_gap": 0.3,
+    "dual_spread": 1.5,
+    "sparse_spread_pass": 0.8
+  },
+  "policy": [
+    "horse ranking foundation unchanged",
+    "AXIS9 / DUAL9 / GROUP10 switch",
+    "sparse history alone does not force PASS",
+    "holdout outcomes are not used to select config"
+  ],
+  "config_hash_sha256": "439072b27c9d4d9b9723d1a230e9bffdcd154e46191949d20f4aad2b5b1b8b64"
+}
