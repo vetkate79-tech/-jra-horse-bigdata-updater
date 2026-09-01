@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'src/build_blind_replay_20260829_30.py'
+      - 'src/build_blind_replay_20260829_30_v2.py'
       - '.github/workflows/build-blind-replay-20260829-30.yml'
 
 permissions:
@@ -12,7 +13,7 @@ permissions:
 
 concurrency:
   group: blind-replay-20260829-30
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -26,9 +27,7 @@ jobs:
       - name: Install dependencies
         run: pip install pandas beautifulsoup4 lxml
       - name: Build sealed predictions then score
-        env:
-          ELITE_PROFILE_WORKERS: '8'
-        run: python src/build_blind_replay_20260829_30.py
+        run: python src/build_blind_replay_20260829_30_v2.py
       - name: Verify full coverage
         run: |
           python - <<'PY'
