@@ -8,6 +8,7 @@ on:
       - 'src/build_horse_base_catalog.py'
       - '.github/workflows/build-lightweight-horse-master.yml'
       - 'docs/data/horses/catalog.json'
+      - 'data/race_results_html_2026.csv'
 
 permissions:
   contents: write
@@ -38,6 +39,8 @@ jobs:
           assert n>0, 'base catalog is empty'
           assert all(h.get('horse_id') and h.get('horse_name') for h in d['horses'])
           print('validated', n, 'horses')
+          print('open', d.get('summary',{}).get('open_count'))
+          print('graded', d.get('summary',{}).get('graded_count'))
           PY
       - name: Commit lightweight horse master
         run: |
