@@ -1,0 +1,44 @@
+name: Calibrate replay v0.5
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/calibrate_replay_v05.py'
+      - '.github/workflows/calibrate-replay-v05.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Tune seal and score v0.5
+        run: python src/calibrate_replay_v05.py
+      - name: Verify sealed outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          c=json.loads(Path('docs/data/model-v05-sealed.json').read_text())
+          p=json.loads(Path('docs/data/replay-v05-predictions-sealed.json').read_text())
+          e=json.loads(Path('docs/data/replay-v05-evaluation.json').read_text())
+          assert c['config_hash_sha256']==p['config_hash_sha256']==e['config_hash_sha256']
+          assert len(p['races'])==68
+          assert e['holdout_result']['races']>0
+          print(e)
+          PY
+      - name: Commit v0.5 outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/model-v05-sealed.json docs/data/replay-v05-predictions-sealed.json docs/data/replay-v05-evaluation.json status/replay-v05-evaluation.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Seal and score replay model v0.5'
+          git pull --rebase origin main
+          git push origin HEAD:main
