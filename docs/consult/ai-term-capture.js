@@ -29,4 +29,11 @@
     const terms=e.detail?.terms_used||[];
     terms.forEach(upsert);
   });
+  // Consult already loads this file on every visit. Chain-load the full site
+  // terminology search so new site terms become searchable without duplicating
+  // script tags across pages.
+  const s=document.createElement('script');
+  s.src='./site-word-search.js?ts=20260901';
+  s.defer=true;
+  document.head.appendChild(s);
 })();
