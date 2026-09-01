@@ -6,6 +6,7 @@ on:
     paths:
       - 'src/audit_oral_system_parity.py'
       - 'src/extract_oral_parity_cases.py'
+      - 'src/final_oral_system_audit.py'
       - 'src/oral_operational_layer.py'
       - 'docs/data/replay-demo-2026-08-29-30.json'
       - 'docs/data/replay-2026-08-29-30-sealed.json'
@@ -27,6 +28,8 @@ jobs:
         run: python src/audit_oral_system_parity.py
       - name: Extract detailed regression cases
         run: python src/extract_oral_parity_cases.py
+      - name: Final completion audit
+        run: python src/final_oral_system_audit.py
       - name: Verify audit artifacts
         run: |
           python - <<'PY'
@@ -34,23 +37,23 @@ jobs:
           from pathlib import Path
           d=json.loads(Path('docs/data/oral-system-parity-audit.json').read_text())
           c=json.loads(Path('docs/data/oral-parity-case-details.json').read_text())
+          f=json.loads(Path('docs/data/oral-system-final-audit.json').read_text())
           assert d['historical_chat_parity']['actual_pre_race_logs'] > 0
           assert d['invariant_tests']['race_count'] == 72
           assert c['case_count'] >= 4
+          assert len(f['tests']) >= 10
           print(json.dumps({
-            'verdict':d['verdict'],
-            'historical_chat_parity':d['historical_chat_parity'],
-            'invariant_tests':d['invariant_tests'],
-            'blockers':d['blockers'],
-            'case_count':c['case_count'],
+            'verdict':f['verdict'],
+            'tests':f['tests'],
+            'hard_blockers':f['hard_blockers'],
           },ensure_ascii=False,indent=2))
           PY
       - name: Commit audit report
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/data/oral-system-parity-audit.json status/oral-system-parity-audit.json docs/data/oral-parity-case-details.json
+          git add docs/data/oral-system-parity-audit.json status/oral-system-parity-audit.json docs/data/oral-parity-case-details.json docs/data/oral-system-final-audit.json status/oral-system-final-audit.json
           git diff --cached --quiet && exit 0
-          git commit -m 'Audit oral-system parity against archived predictions'
+          git commit -m 'Complete oral-system parity audit suite'
           git pull --rebase origin main
           git push origin HEAD:main
