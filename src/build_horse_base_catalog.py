@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build the lightweight public horse master from the internal catalog.
 
-The internal catalog remains lossless for validation/backfill.  The public base
-catalog intentionally contains only stable identity/profile fields.  Race-week
+The internal catalog remains lossless for validation/backfill. The public base
+catalog intentionally contains only stable identity/profile fields. Race-week
 analytics live in weekly_runner_details.json instead.
 """
 import json
@@ -13,7 +13,8 @@ OUT=Path('docs/data/horses/base_catalog.json')
 
 BASE_FIELDS=(
     'horse_name','horse_id','sex_age','trainer','sire','damsire',
-    'current_class','current_class_label','active','latest_race_date','latest_finish'
+    'current_class','current_class_label','active','latest_race_date','latest_finish',
+    'unbeaten','wins'
 )
 KEEP_TAGS={'GRADED','OPEN','NEW','NEW_ENTRY'}
 
@@ -21,7 +22,6 @@ def compact(h):
     x={k:h.get(k) for k in BASE_FIELDS if h.get(k) not in (None,'')}
     tags=[t for t in (h.get('tags') or []) if t in KEEP_TAGS]
     if tags:x['tags']=sorted(set(tags))
-    # New horses alone keep the small pre-debut information agreed for the UI.
     is_new=(h.get('current_class')=='NEW' or 'NEW' in tags or 'NEW_ENTRY' in tags)
     if is_new:
         p=h.get('pedigree_summary') or {}
