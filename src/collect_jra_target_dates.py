@@ -6,6 +6,11 @@ from pathlib import Path
 os.environ.setdefault('TARGET_YEAR','2026')
 import collect_jra_html_results as core
 
+# JRA exposes both pw01sde01... and pw01sde10... result-page CNAMEs.
+# The shared historical parser only matched the latter, so patch its metadata
+# matcher for this targeted collector without changing the 2025 backfill code.
+core.META=re.compile(r"pw01sde(?:01|10)(?P<course>\d{2})(?P<year>\d{4})(?P<meeting>\d{2})(?P<day>\d{2})(?P<race>\d{2})(?P<date>\d{8})")
+
 TARGETS={x.replace('-','') for x in os.getenv('TARGET_DATES','2026-08-29,2026-08-30').split(',')}
 OUT=Path(os.getenv('TARGET_OUT','data/race_results_html_2026_weekend.csv'))
 PAYOUTS=Path('data/race_payouts_2026_weekend.csv')
@@ -15,7 +20,6 @@ UA=core.UA
 
 # Verified JRA result-page seeds. Each page contains the race-navigation links for
 # its own venue/day, so six seeds are sufficient to discover 6 x 12 = 72 races.
-# Keeping these explicit also avoids depending on JRA's month/day selector markup.
 DEFAULT_SEEDS=[
     'pw01sde0104202603030120260829/4C', # 8/29 新潟1R
     'pw01sde0107202603030120260829/2A', # 8/29 中京1R
@@ -39,7 +43,6 @@ def request(cname,post=False,retries=5):
         try:
             with urllib.request.urlopen(req,timeout=60) as r: raw=r.read()
             if len(raw)<15000: raise RuntimeError(f'short response {len(raw)}')
-            # JRA DB pages have historically used Shift_JIS/CP932.
             return raw.decode('cp932','replace')
         except Exception:
             if attempt==retries-1: raise
@@ -58,10 +61,9 @@ def atomic_csv(path,rows):
 
 
 def race_links(raw_html):
-    """Extract both /XX and %2FXX CNAME forms from JRA navigation markup."""
     text=urllib.parse.unquote(html_lib.unescape(raw_html))
     vals=re.findall(r'pw01sde(?:01|10)\d{20}/[A-Fa-f0-9]{2}',text)
-    return list(dict.fromkeys(v.upper() if v[-2:].islower() else v for v in vals))
+    return list(dict.fromkeys(vals))
 
 
 def logical_key(cname):
@@ -89,7 +91,6 @@ def discover_target_races():
             key=logical_key(race)
             if not key:
                 continue
-            # Prefer the public 01 variant when both 01/10 variants appear.
             old=discovered.get(key)
             if old is None or ('pw01sde01' in race and 'pw01sde10' in old):
                 discovered[key]=race
