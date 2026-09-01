@@ -1,12 +1,9 @@
 {
   "summary": {
     "horse_count": 973,
-    "complete_horse_count": 0,
-    "incomplete_horse_count": 973,
+    "complete_horse_count": 710,
+    "incomplete_horse_count": 263,
     "missing_field_counts": {
-      "active_status": 973,
-      "new_sire": 97,
-      "new_damsire": 97,
       "category": 263
     },
     "status": "IN_PROGRESS",
@@ -14,7271 +11,1844 @@
   },
   "issues": [
     {
-      "horse_id": "pw01dud002024105321/BF",
-      "horse_name": "アイアムイガイニモ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106018/17",
-      "horse_name": "アイアムツヨスギル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104487/6E",
-      "horse_name": "アイドクレース",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101114/D2",
-      "horse_name": "アイファージェット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106595/A7",
-      "horse_name": "アイムスティルミー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106017/A4",
-      "horse_name": "アウアリイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106068/F4",
-      "horse_name": "アオイハルカ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
       "horse_id": "pw01dud102022102939/8F",
       "horse_name": "アオイレーギーナ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100233/4D",
-      "horse_name": "アキノビューティー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022110139/F7",
-      "horse_name": "アスクアットバット",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102018104534/47",
       "horse_name": "アスクキングコング",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103485/26",
-      "horse_name": "アスコットアイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105144/31",
-      "horse_name": "アスコットダンス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104987/08",
-      "horse_name": "アスコットペスカ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100785/5F",
-      "horse_name": "アズライトアスール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103750/BD",
-      "horse_name": "アチーヴァー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105641/CD",
-      "horse_name": "アティラン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105753/F4",
-      "horse_name": "アデルフィー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100145/12",
-      "horse_name": "アトモス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105279/D1",
-      "horse_name": "アニマレイ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100390/E0",
       "horse_name": "アバレリュウ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023104398/C0",
       "horse_name": "アビヤント",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105264/6A",
       "horse_name": "アムールドパリ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105659/5D",
       "horse_name": "アムールリーベ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105040/34",
-      "horse_name": "アメジストブリエ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101492/17",
-      "horse_name": "アモロロプーロ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021103002/E4",
       "horse_name": "アラナコア",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104857/1B",
-      "horse_name": "アリアス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105796/01",
       "horse_name": "アリスメティーク",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100316/2A",
-      "horse_name": "アルアンダルス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022102978/5C",
-      "horse_name": "アルシャンティ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106811/EE",
-      "horse_name": "アルティマローネ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100255/DF",
-      "horse_name": "アルテクィーン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021100540/66",
-      "horse_name": "アルプスオジョー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021101554/4A",
       "horse_name": "アルベリック",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106839/4B",
-      "horse_name": "アワードリームス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105666/B8",
-      "horse_name": "アンナモエ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105244/7B",
-      "horse_name": "アンヌグロース",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020102140/0D",
       "horse_name": "アンビバレント",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107044/DE",
-      "horse_name": "アンヴデット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107330/21",
-      "horse_name": "アヴァンデセール",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105638/6E",
-      "horse_name": "アヴレディール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103718/2E",
-      "horse_name": "アーガイルショア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102411/6E",
-      "horse_name": "アージェンタイド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106860/E4",
-      "horse_name": "アーティキュレート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106863/24",
-      "horse_name": "アーデルブリックス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103867/3C",
-      "horse_name": "アート",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105436/9B",
       "horse_name": "アーバンシック",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101291/42",
-      "horse_name": "イカルステソーロ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105458/A0",
-      "horse_name": "イクオクコウネン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101713/11",
-      "horse_name": "イサギ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102157/E6",
-      "horse_name": "イデアジュアンイハ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102094/0F",
-      "horse_name": "イデアモッコス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106849/B6",
-      "horse_name": "イトシサ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102908/04",
-      "horse_name": "イドム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105014/D0",
-      "horse_name": "イノーマル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106870/DB",
-      "horse_name": "イベリスアマラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106115/08",
-      "horse_name": "イルリサット",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101556/D4",
-      "horse_name": "インサイドストーム",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021106635/79",
       "horse_name": "インザモーメント",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021103574/48",
       "horse_name": "インジケーター",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106628/4D",
-      "horse_name": "インティサール",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106418/68",
-      "horse_name": "インテンスゲイズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105539/B0",
-      "horse_name": "イントリー",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024102718/CB",
-      "horse_name": "ウィザードシチー",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102388/D2",
-      "horse_name": "ウィズアツインクル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104203/4C",
-      "horse_name": "ウィナーズクロノ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104748/A8",
       "horse_name": "ウィルサヴァイブ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021105857/F2",
-      "horse_name": "ウィンターガーデン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105882/87",
-      "horse_name": "ウイニングレイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106221/4C",
-      "horse_name": "ウインイルネージュ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024103547/FC",
       "horse_name": "ウインガラハッド",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102018101615/FE",
-      "horse_name": "ウインシュクラン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105858/7D",
-      "horse_name": "ウインテラジーナ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021106194/71",
       "horse_name": "ウインデイジー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105872/D2",
-      "horse_name": "ウインリーブル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101121/15",
-      "horse_name": "ウェンロック",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105555/91",
-      "horse_name": "ウォータースパウト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103229/17",
-      "horse_name": "ウォーターパラディ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021104052/3C",
-      "horse_name": "ウヌボレヤサン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106891/87",
-      "horse_name": "ウモラダエピカ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106700/DF",
-      "horse_name": "ウラノグラフィア",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102899/D6",
-      "horse_name": "ウルウノマーズ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105536/E4",
-      "horse_name": "エイシンイクサボシ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105525/61",
-      "horse_name": "エイシンキーウィ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105530/19",
-      "horse_name": "エイシンキーンラン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105537/57",
-      "horse_name": "エイシンリーガル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102996/22",
-      "horse_name": "エイズルブルーム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020103772/1F",
-      "horse_name": "エイトスターズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103222/F2",
-      "horse_name": "エオアリイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104469/D9",
-      "horse_name": "エクスマキナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106743/5F",
-      "horse_name": "エクラドリオン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104685/8F",
-      "horse_name": "エコロゲラン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103566/1D",
-      "horse_name": "エコロゼルダ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107273/16",
-      "horse_name": "エコロディアン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106427/78",
-      "horse_name": "エコロナイン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102354/D6",
-      "horse_name": "エタンセル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102555/AB",
-      "horse_name": "エターナルホープ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022105459/A0",
-      "horse_name": "エテオクロス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022107185/4F",
-      "horse_name": "エテルノレガーメ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019104108/AB",
-      "horse_name": "エナジーグラン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103236/73",
-      "horse_name": "エナノムスメ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021100564/6B",
       "horse_name": "エフォートレス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105600/33",
-      "horse_name": "エフティヴェント",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105865/03",
       "horse_name": "エボルヴィング",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101532/D0",
-      "horse_name": "エポカスピーガ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020103280/6D",
       "horse_name": "エマヌエーレ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105485/78",
       "horse_name": "エリカカリーナ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102608/FE",
-      "horse_name": "エリカビアリッツ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103467/5F",
-      "horse_name": "エリュグレイス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103226/4A",
-      "horse_name": "エリースノー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105030/98",
       "horse_name": "エリーナストーム",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022105601/1A",
       "horse_name": "エルマーゴ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022107254/C4",
       "horse_name": "エンプレスフレーム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022104824/ED",
-      "horse_name": "エンベッカ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100037/2A",
-      "horse_name": "エンルートフライト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100731/E8",
-      "horse_name": "エーテルワーム",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104647/04",
       "horse_name": "エーデルヴェーグ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105601/8D",
-      "horse_name": "オウケンサクラコ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103646/D3",
-      "horse_name": "オオルリ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023103962/2E",
       "horse_name": "オクトーバーナイン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105849/AF",
       "horse_name": "オコタンペ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022105456/47",
       "horse_name": "オストラヴァ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023110048/EF",
-      "horse_name": "オスロクィーン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105365/9A",
-      "horse_name": "オプレントジュエル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100381/43",
       "horse_name": "オリバナム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020102013/EC",
-      "horse_name": "オリンポスカズマ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105056/F7",
       "horse_name": "オルトパラティウム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102640/8D",
-      "horse_name": "オレンジフィールド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103399/5D",
-      "horse_name": "オンザノアール",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023102455/7A",
       "horse_name": "オンザムービー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105688/4B",
-      "horse_name": "オンナキュヌヴィ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021100557/B4",
-      "horse_name": "オーサムストローク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106354/06",
-      "horse_name": "オーバースタンド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103915/1E",
-      "horse_name": "オーパパ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100990/AB",
-      "horse_name": "オーブフレッシュ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107041/11",
-      "horse_name": "オーリエイト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104841/CD",
-      "horse_name": "オーレアミスト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103348/9A",
-      "horse_name": "オーロラボレアリス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102719/99",
-      "horse_name": "カイシンパジェント",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104121/3D",
       "horse_name": "カウンティフェア",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023103036/11",
       "horse_name": "カガラプンツェル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100421/A0",
-      "horse_name": "カシノリアーナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105439/F3",
-      "horse_name": "カシマライフウ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021101259/DD",
       "horse_name": "カズタンジャー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002017104266/57",
-      "horse_name": "カップッチョ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102934/F5",
-      "horse_name": "カツラコマチ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104855/35",
-      "horse_name": "カノープス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105234/52",
-      "horse_name": "カパルア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021100469/60",
       "horse_name": "カフェアローロ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106253/EE",
-      "horse_name": "カフェオドヴィー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102246/94",
-      "horse_name": "カフェプラウド",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023103899/52",
       "horse_name": "カフジエメンタール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104468/66",
-      "horse_name": "カフジポポー",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103786/2B",
-      "horse_name": "カラスアゲハ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102896/0A",
-      "horse_name": "カラーオブサクセス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103527/69",
-      "horse_name": "カリドーラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105339/DB",
-      "horse_name": "カルロット",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106613/8B",
       "horse_name": "カレンデュラ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104576/35",
-      "horse_name": "カンティーナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022104062/BF",
-      "horse_name": "カージオイド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103404/BF",
-      "horse_name": "カーボフリオ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106214/21",
-      "horse_name": "ガビーズメロディ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106468/9F",
-      "horse_name": "ガミーヌ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024107168/A0",
-      "horse_name": "ガヤーズサムライ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105114/01",
-      "horse_name": "ガヤーズベース",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100855/60",
-      "horse_name": "ガラード",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105402/B7",
-      "horse_name": "ガルディーノ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101141/A9",
-      "horse_name": "ガンバレベアー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106123/01",
       "horse_name": "ガンマジーティーピ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107327/AA",
-      "horse_name": "ガードオブオナー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103321/3C",
-      "horse_name": "キコリータ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105977/42",
-      "horse_name": "キタノサリスカ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100605/C7",
-      "horse_name": "キミガスキダ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101140/35",
-      "horse_name": "キムケンシーサー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100642/09",
       "horse_name": "キャッスルレイク",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101787/D9",
-      "horse_name": "キャッチアップ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105293/B3",
-      "horse_name": "キャトルエピス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101730/64",
-      "horse_name": "キャンドル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105124/2A",
-      "horse_name": "キングズテイル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104387/CA",
       "horse_name": "キントラダンサー",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021103727/B3",
       "horse_name": "キーチパルフェ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102695/35",
-      "horse_name": "ギオンバヤシ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101182/74",
-      "horse_name": "ギガントシュラーク",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106715/FD",
-      "horse_name": "ギザキズラヴ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106450/9C",
-      "horse_name": "ギャルズマインド",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022106395/D2",
       "horse_name": "クァンタムウェーブ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023101050/A1",
       "horse_name": "クオンタムスター",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103697/0A",
-      "horse_name": "クライングナウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101286/59",
-      "horse_name": "クラウンアールシー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101281/1A",
-      "horse_name": "クラウンフリード",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100293/20",
-      "horse_name": "クラウンロムパイア",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106172/83",
-      "horse_name": "クラックショット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105462/FE",
-      "horse_name": "クラテロス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105119/40",
-      "horse_name": "クラリノ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107197/B8",
-      "horse_name": "クランズクラウン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100786/EB",
-      "horse_name": "クリコイーコ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101412/F2",
-      "horse_name": "クリコバロー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020100934/73",
       "horse_name": "クリニクラウン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102637/2E",
-      "horse_name": "クリノライジング",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021101733/19",
       "horse_name": "クロドラバール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102150/C1",
-      "horse_name": "クロミ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023110041/CA",
-      "horse_name": "クロレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102887/54",
-      "horse_name": "クロームクロス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100281/9E",
-      "horse_name": "クールドリオン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103483/B3",
-      "horse_name": "クールフィデル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103218/39",
-      "horse_name": "グラスゴー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106645/FC",
-      "horse_name": "グランセゾン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102434/E7",
-      "horse_name": "グランフルス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101989/95",
-      "horse_name": "グランブリーゼ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021110107/55",
-      "horse_name": "グランメドウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102038/EF",
-      "horse_name": "グリニッジローズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103680/BC",
-      "horse_name": "グロリアスマーチ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021105022/E2",
-      "horse_name": "グローブアマランス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105470/28",
-      "horse_name": "グローリーバローズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103607/06",
-      "horse_name": "ケイジャーダ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104497/7E",
-      "horse_name": "ケイツーキップ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021101801/34",
-      "horse_name": "ケイツールピア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020105949/6D",
       "horse_name": "ケンキョ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104669/96",
-      "horse_name": "ゲレイロ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021100786/BA",
       "horse_name": "ゲーベル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105634/BB",
-      "horse_name": "ゲームチェンジャー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103350/85",
-      "horse_name": "コイゾラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102700/97",
-      "horse_name": "コイバナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105461/FF",
-      "horse_name": "コウセイケンタロス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023109031/6C",
-      "horse_name": "ココソラーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101437/F6",
-      "horse_name": "コジアン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106461/7A",
-      "horse_name": "コスモアルペジオ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106832/F5",
-      "horse_name": "コスモキャバリエ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104927/A8",
-      "horse_name": "コスモクラウン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104491/E5",
-      "horse_name": "コスモクラシック",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106800/DF",
-      "horse_name": "コスモグラニット",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022100526/9D",
       "horse_name": "コスモコンフェルマ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106785/6D",
       "horse_name": "コスモシェルベット",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105875/B7",
-      "horse_name": "コスモセイント",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103621/74",
-      "horse_name": "コスモノーチラス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107094/2E",
-      "horse_name": "コスモフィレンツェ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106419/DB",
-      "horse_name": "コスモヘリアンサス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103655/70",
-      "horse_name": "コスモルミナ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106405/FF",
       "horse_name": "コックオーヴァン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021101019/3B",
       "horse_name": "コト",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021102219/A5",
       "horse_name": "コパノエビータ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102161/B7",
-      "horse_name": "コメットサン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104623/18",
       "horse_name": "コリカンチャ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024107182/0E",
-      "horse_name": "コルキス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105954/3D",
-      "horse_name": "コンテナライン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104110/D3",
-      "horse_name": "コンパクトファイト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024102409/9B",
-      "horse_name": "コーズウルルン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100162/34",
       "horse_name": "ゴットランド",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022106186/D3",
       "horse_name": "ゴッドエスパーダ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106084/48",
-      "horse_name": "ゴッドレイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103089/46",
-      "horse_name": "ゴルタン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101754/37",
-      "horse_name": "ゴルディアス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105499/F8",
-      "horse_name": "ゴルトシェーン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107093/BB",
-      "horse_name": "ゴンファロニエーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104681/C3",
-      "horse_name": "ゴーイントゥノヴァ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104239/BB",
-      "horse_name": "ゴーゴーエイミー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103931/8B",
-      "horse_name": "ゴーゴーパンチ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105699/41",
-      "horse_name": "ゴーストミステリー",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021103555/9B",
-      "horse_name": "ゴールデンステップ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105726/1D",
-      "horse_name": "ゴールデンダガー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101097/ED",
-      "horse_name": "ゴールデンテティス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104872/E3",
-      "horse_name": "ゴールデンドラゴン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102333/43",
-      "horse_name": "ゴールドエンバー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103680/48",
-      "horse_name": "ゴールドシューター",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103674/1D",
-      "horse_name": "ゴールドバーニング",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104504/C6",
-      "horse_name": "ゴールドプレイヤー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104164/EF",
-      "horse_name": "サイモンイロハニー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105837/76",
-      "horse_name": "サイモンジェセル",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022105814/E5",
-      "horse_name": "サイモンノーブル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023103519/26",
       "horse_name": "サウジバラード",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103035/11",
-      "horse_name": "サウンドシェリー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104254/83",
-      "horse_name": "サウンドファミリエ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104249/CB",
-      "horse_name": "サウンドヴィヴァン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101898/01",
-      "horse_name": "サカトクフェイス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023105286/A1",
       "horse_name": "サガルマータ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020105354/18",
       "horse_name": "サクセスアイ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106106/DF",
-      "horse_name": "サクセスブルー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102019106280/A2",
       "horse_name": "サクラオーラ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105474/F5",
       "horse_name": "サダムオプシス",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020103477/E4",
       "horse_name": "サトノアルペジオ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106932/CB",
-      "horse_name": "サトノエスケープ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104907/70",
       "horse_name": "サトノパトリオット",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106326/D4",
-      "horse_name": "サトノパラディ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101966/A8",
-      "horse_name": "サトノボルテクス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104786/02",
       "horse_name": "サトノラポール",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023100925/7A",
       "horse_name": "サトノワーグナー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106163/E6",
-      "horse_name": "サマースプラッシュ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104729/14",
-      "horse_name": "サマーナイト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104379/13",
-      "horse_name": "サマーナジュム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105140/7E",
-      "horse_name": "サヨノパララックス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107037/B3",
-      "horse_name": "サルーミアモール",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105540/11",
       "horse_name": "サロニコス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101315/33",
-      "horse_name": "サンエンジェルス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101979/6C",
-      "horse_name": "サンオブザサン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106956/B7",
-      "horse_name": "サングラント",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100004/A1",
-      "horse_name": "サンゴート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105554/05",
-      "horse_name": "サンシュノジンギ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103242/9E",
-      "horse_name": "サンスベリア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021102753/28",
       "horse_name": "サンセットブライト",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107068/E3",
-      "horse_name": "サンセリテ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022103594/F4",
       "horse_name": "サンタアニタ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104879/08",
-      "horse_name": "サンタカタリナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102804/94",
-      "horse_name": "サンタピア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024106654/CA",
       "horse_name": "サンタンジェロ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106724/3F",
-      "horse_name": "サンロンブル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102018103473/F4",
       "horse_name": "サヴァビアン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020100734/11",
       "horse_name": "サヴォーナ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106182/7A",
-      "horse_name": "サヴマ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104680/AB",
-      "horse_name": "サートゥルチェア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103873/67",
-      "horse_name": "サーロー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102019101399/43",
       "horse_name": "ザウリ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106733/DC",
-      "horse_name": "ザンテソーロ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021103299/FB",
       "horse_name": "シアター",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021105742/72",
-      "horse_name": "シアブリス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104716/AB",
-      "horse_name": "シェーンシュティア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103018/4B",
-      "horse_name": "シェーンルスカ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103169/B2",
-      "horse_name": "シエーナカラー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102530/4C",
-      "horse_name": "シカゴキャッツ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024106603/07",
       "horse_name": "シスキンブルーム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022102961/40",
-      "horse_name": "シックスパック",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106896/AD",
-      "horse_name": "シホノグラツィア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103239/B3",
-      "horse_name": "シャイニングスター",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101323/D0",
-      "horse_name": "シャイニーヒーロー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022101495/3F",
-      "horse_name": "シャインフリーリー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106253/93",
-      "horse_name": "シャトンダンス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023103423/6C",
       "horse_name": "シャドウマスター",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022105454/61",
       "horse_name": "シャドウメテオ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104745/68",
       "horse_name": "シャルクハフト",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103353/6B",
-      "horse_name": "シャンデリュイーズ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022102347/93",
       "horse_name": "シャンハイナイト",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103517/CD",
-      "horse_name": "シュエットアムール",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104887/BF",
       "horse_name": "シュバルツマサムネ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023105347/05",
       "horse_name": "ショウナンカリス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100531/E1",
-      "horse_name": "ショウナンタヅナ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105867/02",
       "horse_name": "ショウナンハウル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101299/C1",
-      "horse_name": "ショウナンバッカス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020103148/7B",
       "horse_name": "ショウナンライシン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104480/D5",
-      "horse_name": "ショウナンワンパク",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100176/41",
-      "horse_name": "ショパンコンクール",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022110001/FE",
       "horse_name": "シルフズミスチーフ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022100458/82",
-      "horse_name": "シンギタイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101778/97",
-      "horse_name": "シンデレラカラー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023100214/A0",
       "horse_name": "シーグルロス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100676/36",
-      "horse_name": "シーラーステート",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023105412/C7",
       "horse_name": "シーンオブドリーム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100834/59",
-      "horse_name": "ジェイエルキール",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101819/68",
-      "horse_name": "ジェイエルライナー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022103522/9E",
       "horse_name": "ジェットブレード",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103402/65",
-      "horse_name": "ジェントル",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022101476/AB",
       "horse_name": "ジェーケーボンバー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102517/6A",
-      "horse_name": "ジャストグレース",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024108325/58",
       "horse_name": "ジャスパートレノ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100803/43",
-      "horse_name": "ジャックナダル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104060/65",
-      "horse_name": "ジャンヌドゥレーヴ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021103878/8E",
       "horse_name": "ジャンビ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100596/80",
-      "horse_name": "ジャーナーリア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002019105118/C3",
       "horse_name": "ジュンブロッサム",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104899/B5",
       "horse_name": "ジュンライデン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107194/EB",
-      "horse_name": "ジュンヴァグネル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106998/C4",
-      "horse_name": "ジュンヴァッテッド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023110029/42",
-      "horse_name": "ジューンセクレタ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105278/5E",
-      "horse_name": "ジューンマロン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107309/89",
-      "horse_name": "ジリアート",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100816/07",
       "horse_name": "ジンガー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103991/46",
-      "horse_name": "ジーティーエスピ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106134/9C",
-      "horse_name": "ジーティーハルカゼ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107267/D2",
-      "horse_name": "ジーティービキニ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024107165/47",
       "horse_name": "ジーティーマイカ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107385/24",
-      "horse_name": "ジーナグレイス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020103632/C7",
       "horse_name": "スイミーユニバンス",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022103494/C3",
       "horse_name": "スイートオレンジ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104025/64",
-      "horse_name": "スイートハイデン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102133/FA",
-      "horse_name": "スイートポメロ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021107025/32",
-      "horse_name": "スカイダンスタイム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103411/5D",
-      "horse_name": "スクランプシャス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104496/98",
-      "horse_name": "スコーピオンイメル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024107043/10",
-      "horse_name": "スタレネルヴェント",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104182/41",
-      "horse_name": "スターオブザイヤー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105545/68",
-      "horse_name": "スターオブロンドン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023100704/85",
       "horse_name": "スターシップ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022105392/8A",
-      "horse_name": "スタードメイソン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022105848/E1",
-      "horse_name": "ステイクオール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101910/1A",
-      "horse_name": "ステキサプライズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102263/5B",
-      "horse_name": "ステラデルークス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103482/CD",
-      "horse_name": "ステラノヴァ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105743/E5",
       "horse_name": "ステレンボッシュ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103588/B0",
-      "horse_name": "スノーリン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024105617/DB",
       "horse_name": "スハッチェ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021101891/C4",
-      "horse_name": "スパークルジョイ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105244/4A",
       "horse_name": "スピンザブラッド",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024107310/1A",
-      "horse_name": "スピーディスピン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021103322/97",
-      "horse_name": "スプリングデイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106897/39",
-      "horse_name": "スプレンドーレ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020102674/FE",
       "horse_name": "スペルキャスター",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107077/80",
-      "horse_name": "スマイルガーデン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106004/C8",
-      "horse_name": "スマートエトワール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106001/56",
-      "horse_name": "スマートコーラル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022100497/4F",
-      "horse_name": "スマートブル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106210/55",
-      "horse_name": "スリーキズナヒメ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100471/09",
-      "horse_name": "スリーケイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106208/F6",
-      "horse_name": "スリーコーズ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021100248/84",
       "horse_name": "セイウンデセオ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100241/77",
-      "horse_name": "セイウンバジリスク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104858/02",
-      "horse_name": "セイルロケット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105494/A0",
-      "horse_name": "セイレイカ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021104941/59",
       "horse_name": "セシリエプラージュ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102255/31",
-      "horse_name": "セッシュウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023110025/8F",
-      "horse_name": "セリエンクーニゲン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100017/0A",
-      "horse_name": "セレスティナ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104372/EE",
-      "horse_name": "セレーノ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100580/D7",
-      "horse_name": "セントピュアベース",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103622/CE",
-      "horse_name": "セールデュクール",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022106187/46",
       "horse_name": "ゼンダンタカ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002019100915/47",
-      "horse_name": "ゼンノインヴォーク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105717/99",
-      "horse_name": "ソナタムーンライト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106429/77",
-      "horse_name": "ソニックアイル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104583/5F",
-      "horse_name": "ソリドゥス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100743/52",
-      "horse_name": "ソルティアーラ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023102806/7A",
       "horse_name": "ソルパッサーレ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103942/F5",
-      "horse_name": "ソードスレイプニル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101900/7D",
-      "horse_name": "ソーハッピー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107195/D2",
-      "horse_name": "ゾネブルーム",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106850/D4",
       "horse_name": "ゾロアストロ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103155/4A",
-      "horse_name": "タイキオーベロン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022102882/A2",
       "horse_name": "タイセイカイザー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105256/58",
-      "horse_name": "タイセイグローバル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104576/C1",
-      "horse_name": "タイセイソアリング",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020103713/4B",
       "horse_name": "タイセイフェリーク",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100914/DE",
-      "horse_name": "タイセイフレッサ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021104101/AA",
-      "horse_name": "タイセイブロウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100824/62",
-      "horse_name": "タイセイリッター",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104679/BF",
-      "horse_name": "タイセイルビー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022101403/C9",
-      "horse_name": "タイセイレグノ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105027/39",
-      "horse_name": "タイニーワンダー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024105166/C3",
       "horse_name": "タイフーンナイン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104329/DC",
-      "horse_name": "タガノアルテミス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023104324/84",
       "horse_name": "タガノエルー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104322/B7",
-      "horse_name": "タガノシルフィー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106553/F5",
       "horse_name": "タガノバビロン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104330/C8",
-      "horse_name": "タガノランパート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104332/C7",
-      "horse_name": "タガノラヴズワン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106077/91",
       "horse_name": "タケルフォーカス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107121/AF",
-      "horse_name": "タッセルノット",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023101168/7A",
       "horse_name": "タビニュ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100935/FD",
-      "horse_name": "タプティ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104230/B0",
-      "horse_name": "タマモパルファン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021104618/D4",
-      "horse_name": "タリスマン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104800/19",
-      "horse_name": "タワーウマザンマイ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102977/8E",
-      "horse_name": "ダイシンパルス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105465/57",
-      "horse_name": "ダイヒョウカーク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100510/F3",
-      "horse_name": "ダイメイアゲイン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106299/E0",
-      "horse_name": "ダイユウルミナス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022102153/75",
       "horse_name": "ダガーリング",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106809/1B",
-      "horse_name": "ダディーズレガリア",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105938/01",
-      "horse_name": "ダヌラーサナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106361/D5",
-      "horse_name": "ダノンアズール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106180/20",
-      "horse_name": "ダノンキューブ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104645/37",
       "horse_name": "ダノンシーマ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105024/F9",
-      "horse_name": "ダノンステート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107239/88",
-      "horse_name": "ダノンプレリュード",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022105478/4D",
       "horse_name": "ダノンミッション",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021100158/4A",
       "horse_name": "ダノンモンテローザ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102197/0D",
-      "horse_name": "ダリアフレイバー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102336/9C",
-      "horse_name": "ダンシングアウェイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104027/63",
-      "horse_name": "ダンツアラーム",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023104848/7E",
       "horse_name": "ダンツシタン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102019106739/52",
       "horse_name": "ダークエクリプス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107179/97",
-      "horse_name": "ダーリングハースト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104603/9D",
-      "horse_name": "チェイサー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106452/82",
-      "horse_name": "チェスティーノ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100609/06",
-      "horse_name": "チェッリーニ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105643/B4",
       "horse_name": "チェルヴィニア",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023107389/09",
       "horse_name": "チャリングクロス",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021106369/C9",
       "horse_name": "チャンネルトンネル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023110023/90",
-      "horse_name": "チャンピオンロード",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105320/C0",
-      "horse_name": "チャーチルデュース",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104944/CA",
-      "horse_name": "チュオンソン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104607/50",
-      "horse_name": "チュラヴェール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102387/78",
-      "horse_name": "チョコブラウニー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103008/3A",
-      "horse_name": "チョトツモウシン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103528/C3",
-      "horse_name": "ツルノマイハシ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021102106/F2",
       "horse_name": "ツルマウカタチ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105584/1D",
       "horse_name": "ツーネサーン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020103048/4A",
       "horse_name": "ティムール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104905/FD",
-      "horse_name": "テイエムプレミラン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021101088/38",
-      "horse_name": "テイキットイージー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021102379/36",
       "horse_name": "テイクザクラウン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105048/71",
-      "horse_name": "テキサス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102548/F4",
-      "horse_name": "テラシエスタ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103178/68",
-      "horse_name": "テンユウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106739/01",
-      "horse_name": "テンラッキーロード",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104101/C2",
-      "horse_name": "テンレッドサン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022102905/93",
       "horse_name": "ディアウス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103518/B3",
-      "horse_name": "ディサイドオンミー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104000/92",
       "horse_name": "ディベルティスマン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105366/99",
-      "horse_name": "ディースカウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100601/6E",
-      "horse_name": "ディープナイト",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023100521/EA",
       "horse_name": "ディーリライズ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019105490/25",
-      "horse_name": "ディーンズリスター",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107123/95",
-      "horse_name": "デュードロップ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101973/D3",
-      "horse_name": "デルニエジョイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022105343/AD",
-      "horse_name": "デルマサクラサク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101361/B7",
-      "horse_name": "デルマテイネ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103481/E6",
-      "horse_name": "デルマフジ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101362/2A",
-      "horse_name": "デルマホダカ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106190/BD",
       "horse_name": "デンプシー",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022102700/0B",
       "horse_name": "トゥーザムーン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100555/E6",
-      "horse_name": "トウカイジーク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021107279/B0",
-      "horse_name": "トクシージェネラル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105538/56",
-      "horse_name": "トスカ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023106431/4A",
       "horse_name": "トライアンフパス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023110010/27",
-      "horse_name": "トラッドロア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024101160/55",
       "horse_name": "トラデスカンティア",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021104928/77",
       "horse_name": "トラペジスト",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002020103486/81",
-      "horse_name": "トラマンダーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103779/E8",
-      "horse_name": "トリエンナーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103085/EE",
-      "horse_name": "トリスティ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100245/B6",
-      "horse_name": "トルネードサンダー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021102203/CA",
       "horse_name": "トレベルオール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102235/11",
-      "horse_name": "トワイライトサイト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103852/79",
-      "horse_name": "トワイライトローズ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103845/1D",
-      "horse_name": "トーアシチフクジン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106838/D8",
-      "horse_name": "トーセンイルン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106857/85",
-      "horse_name": "トーセンルルド",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020103650/01",
       "horse_name": "ドゥレッツァ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021110130/60",
       "horse_name": "ドッビアーコ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100515/A6",
-      "horse_name": "ドラリズム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100126/D8",
-      "horse_name": "ドリームオブコージ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101847/B1",
-      "horse_name": "ドリームリボン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023105789/EF",
       "horse_name": "ドンテスタマスター",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024102887/F9",
-      "horse_name": "ナイトインチュニス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022106926/FB",
-      "horse_name": "ナインオブレター",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105552/93",
       "horse_name": "ナグルファル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103885/76",
-      "horse_name": "ナックホワイト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103916/AA",
-      "horse_name": "ナデシコザクラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100505/22",
-      "horse_name": "ナポリ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021102510/2D",
       "horse_name": "ナムラフッカー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106243/DE",
-      "horse_name": "ナムラヴンダー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022102878/2B",
-      "horse_name": "ナンナンプー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021100190/0B",
-      "horse_name": "ニシノインヴィクタ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100360/3C",
-      "horse_name": "ニシノギャルズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022106999/C4",
-      "horse_name": "ニシノクードクール",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022106427/79",
       "horse_name": "ニシノケンタマン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021107253/DE",
-      "horse_name": "ニシノコマチムスメ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103935/E3",
-      "horse_name": "ニシノマキロイ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105422/4A",
-      "horse_name": "ニシノムホウモノ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103855/D2",
-      "horse_name": "ニシノリリックス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106495/8F",
       "horse_name": "ニューアライブ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022101601/5E",
       "horse_name": "ニュークレド",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107231/D7",
-      "horse_name": "ニルマーネル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103299/13",
-      "horse_name": "ヌビアン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024103505/D6",
       "horse_name": "ヌーンベルク",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105319/A2",
-      "horse_name": "ネイティヴプライド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103049/7A",
-      "horse_name": "ネオアンボウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106685/E1",
-      "horse_name": "ネクストドア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104690/D4",
-      "horse_name": "ネッタイヤライ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023107143/B5",
       "horse_name": "ノチェセラーダ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103955/5E",
-      "horse_name": "ノブステップ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101721/22",
-      "horse_name": "ノリノドラゴン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106079/77",
       "horse_name": "ノリマル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105973/02",
-      "horse_name": "ノルトハウゼン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020102711/76",
       "horse_name": "ノルドヴェスト",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021101166/63",
-      "horse_name": "ノーマジック",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107310/75",
-      "horse_name": "ハイティー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106566/76",
-      "horse_name": "ハイネスプラウド",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101347/30",
-      "horse_name": "ハイバーニアン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100439/BC",
       "horse_name": "ハギノコラソン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105694/76",
-      "horse_name": "ハクサンレイホウ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102019103593/D1",
       "horse_name": "ハセドン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101475/AB",
-      "horse_name": "ハチマン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103137/9C",
-      "horse_name": "ハッピーラッキー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100566/50",
-      "horse_name": "ハッピーラブソング",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103323/3B",
-      "horse_name": "ハツアカネ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105811/18",
-      "horse_name": "ハニーオーケストラ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105394/57",
       "horse_name": "ハニードレス",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022101604/B7",
       "horse_name": "ハニーローリエ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103936/CA",
-      "horse_name": "ハネマン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023105065/AC",
       "horse_name": "ハバタクジユウニ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021100561/F9",
       "horse_name": "ハビレ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100910/2B",
-      "horse_name": "ハピネスサンライズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104323/9D",
-      "horse_name": "ハリケンライズ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106310/12",
-      "horse_name": "ハルカカナタ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103400/DA",
-      "horse_name": "ハルヒメ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101004/04",
-      "horse_name": "ハンザキ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105416/1F",
-      "horse_name": "ハンデンブレイズ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102018106354/E3",
       "horse_name": "バガン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024108273/91",
       "horse_name": "バクソウシャチョウ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002019101643/ED",
       "horse_name": "バシレウスシチー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107318/99",
-      "horse_name": "バタフライ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105240/96",
-      "horse_name": "バターショコラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106590/DC",
-      "horse_name": "バダジェフスカ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106923/89",
       "horse_name": "バッハアルプゼー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101198/AA",
-      "horse_name": "バトルセレーネ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103285/C4",
-      "horse_name": "バトンロード",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106019/8A",
-      "horse_name": "バミューダブーケ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105018/10",
       "horse_name": "バルティカ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106909/C0",
-      "horse_name": "バルフルール",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002019104850/D3",
       "horse_name": "バレエマスター",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020106698/A6",
       "horse_name": "バンディート",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102019104531/7A",
       "horse_name": "バンフィエルド",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100967/A0",
-      "horse_name": "バークシャーシチー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104692/15",
       "horse_name": "バースライト",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102471/E7",
-      "horse_name": "バーバラップ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107212/2A",
-      "horse_name": "パシフィックドーン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106931/58",
-      "horse_name": "パトローナス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103479/E1",
-      "horse_name": "パルフェクシオン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107440/EF",
-      "horse_name": "パワポケウォーズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002019107007/ED",
-      "horse_name": "パワポケビー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021100363/96",
       "horse_name": "パワーホール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102310/CA",
-      "horse_name": "パンキー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022110082/F1",
-      "horse_name": "パヴィーア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105302/12",
-      "horse_name": "パーフェクトゲーム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102097/68",
-      "horse_name": "パープルタウン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024102844/60",
-      "horse_name": "ヒズストーリー",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106148/EC",
-      "horse_name": "ヒメヒオウギ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106388/A7",
-      "horse_name": "ヒルノプーリア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104474/05",
-      "horse_name": "ヒルノボローニャ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106949/E7",
-      "horse_name": "ビクスバイト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101728/D3",
-      "horse_name": "ビスクヴィート",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024106262/30",
       "horse_name": "ビスケットサンド",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105812/5A",
       "horse_name": "ビップジーニー",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020103199/57",
       "horse_name": "ビップスコーピオン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105763/05",
       "horse_name": "ビップチェイス",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023100095/31",
       "horse_name": "ビップムーラン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104028/62",
-      "horse_name": "ビップルーチェ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022110094/E7",
-      "horse_name": "ビリオネアボーイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102170/E1",
-      "horse_name": "ビレッジルイーザ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105967/32",
-      "horse_name": "ビロングトゥミー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100644/07",
-      "horse_name": "ビンチャリ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104515/D6",
       "horse_name": "ビーアイフォルテ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106494/1C",
       "horse_name": "ビービーアジャイル",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023100547/BC",
       "horse_name": "ビービークローサー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022102397/FC",
-      "horse_name": "ビービーバザーク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100715/EF",
-      "horse_name": "ピエナオルカ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022101175/8C",
       "horse_name": "ピエナフェーヴル",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105979/9C",
       "horse_name": "ピカピカサンダー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104811/10",
-      "horse_name": "ピクシーゲイル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024101438/50",
       "horse_name": "ピクニックマーチ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101391/CE",
-      "horse_name": "ピグマリオン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024108326/CB",
       "horse_name": "ピコキング",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022101716/DE",
       "horse_name": "ピコシー",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024108327/3E",
       "horse_name": "ピコジャック",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105997/EE",
-      "horse_name": "ピュアノーブル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105427/FD",
-      "horse_name": "ピョイットハレルヤ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024109031/DF",
       "horse_name": "ピンクゴールド",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106588/95",
-      "horse_name": "ピーエムリンダ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020101024/80",
       "horse_name": "ピースオブザライフ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105298/7E",
-      "horse_name": "ピースフルマインド",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021100476/30",
       "horse_name": "ファイツオン",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021103478/E3",
       "horse_name": "ファビュラススター",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105804/48",
-      "horse_name": "ファルカータ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103648/2D",
-      "horse_name": "ファンクション",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104674/DB",
       "horse_name": "フィドルファドル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107117/C4",
-      "horse_name": "フィールザウィル",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106605/48",
-      "horse_name": "フェイスリフト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106484/F3",
-      "horse_name": "フェーダーローター",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021100165/01",
       "horse_name": "フォルテフィオーレ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105934/35",
-      "horse_name": "フォルトゥナロッサ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019105076/F3",
-      "horse_name": "フォーグッド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021104770/B4",
-      "horse_name": "フォーディアライフ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105405/10",
-      "horse_name": "フクシマブリルハム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100211/BA",
-      "horse_name": "フクノブロッサム",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102019102665/C9",
       "horse_name": "フタイテンロック",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020103218/95",
       "horse_name": "フミサウンド",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020100906/10",
       "horse_name": "フライングブレード",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105971/91",
       "horse_name": "フラッシング",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002019105745/C0",
-      "horse_name": "フレイムジョーカー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101577/C2",
-      "horse_name": "フレイムスター",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022102995/3C",
       "horse_name": "フレッシュラン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105062/3A",
-      "horse_name": "フレンチブラッサム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102369/25",
-      "horse_name": "フロムザムーン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002017104238/0D",
       "horse_name": "フームスムート",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107528/7F",
-      "horse_name": "ブクブクー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022106016/32",
-      "horse_name": "ブライアーヒル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100573/07",
-      "horse_name": "ブライティアロード",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104374/ED",
-      "horse_name": "ブライトエンジェル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002019105197/D0",
-      "horse_name": "ブラックシールド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106131/43",
-      "horse_name": "ブラックミューズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102701/F1",
-      "horse_name": "ブラッドムーン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105005/33",
-      "horse_name": "ブランドブラン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021100303/36",
-      "horse_name": "ブリオメンテ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102410/FB",
-      "horse_name": "ブリックアブラック",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104694/FB",
       "horse_name": "ブルクトーア",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101749/67",
-      "horse_name": "ブルバンビーナ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102019100871/91",
       "horse_name": "ブルーノート",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106576/9F",
-      "horse_name": "ブレイズフォート",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023107157/91",
       "horse_name": "ブレットパス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023110070/A0",
-      "horse_name": "ブームバップビート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024108113/E7",
-      "horse_name": "プッシュザリミット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106906/67",
-      "horse_name": "プペアンビスキュイ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102808/47",
-      "horse_name": "プリティウーマン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023107208/E5",
-      "horse_name": "プリモマーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103535/93",
-      "horse_name": "プリュスエクラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021105747/98",
-      "horse_name": "プリュノワール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107367/EA",
-      "horse_name": "プリヴィマーク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021103451/9E",
-      "horse_name": "プルミエールパス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103471/BD",
-      "horse_name": "プレイザリード",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023103503/7D",
       "horse_name": "プレセピオ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101677/F3",
-      "horse_name": "プロスト",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100534/3A",
-      "horse_name": "ヘルヴィッツ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103504/7C",
-      "horse_name": "ベラジオセブン",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104441/95",
-      "horse_name": "ベリベリハッピー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103168/3F",
-      "horse_name": "ベルアズーロ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021100606/09",
       "horse_name": "ベルイストワール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100305/1B",
-      "horse_name": "ベルラフィネ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106477/3C",
-      "horse_name": "ベレーバスク",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105352/BE",
       "horse_name": "ベンサレム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022104221/6E",
-      "horse_name": "ペイシャアーサー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103126/19",
-      "horse_name": "ペイシャダンシング",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106132/2A",
-      "horse_name": "ペイシャラム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106578/E0",
-      "horse_name": "ペカリーナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100609/93",
-      "horse_name": "ペガサスウィンド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022101053/55",
-      "horse_name": "ペガサスノース",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105647/67",
       "horse_name": "ペッレグリーニ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106886/B6",
-      "horse_name": "ペルウィクトール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024107035/E6",
-      "horse_name": "ペントザリス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021104092/7C",
       "horse_name": "ペンナヴェローチェ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102018105047/AA",
-      "horse_name": "ホウオウサンデー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022103278/F4",
       "horse_name": "ホウオウタイタン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021105772/A2",
-      "horse_name": "ホウオウバローロ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106585/23",
-      "horse_name": "ホウオウビリーヴ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105365/3F",
-      "horse_name": "ホウオウファラオ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104637/0D",
       "horse_name": "ホウオウブースター",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106315/C5",
-      "horse_name": "ホウライブラック",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106325/D5",
-      "horse_name": "ホットゥトロット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105800/08",
-      "horse_name": "ホットロッドハート",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021102409/DE",
       "horse_name": "ホレーショ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104300/24",
-      "horse_name": "ホワイトホール",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105002/4E",
       "horse_name": "ボウウィンドウ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103740/39",
-      "horse_name": "ボビーザグレート",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105435/9B",
       "horse_name": "ボンヌソワレ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023103016/D8",
       "horse_name": "ボールドタワー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104350/01",
-      "horse_name": "ボールドペイト",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002019104658/09",
       "horse_name": "ボーンディスウェイ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105202/24",
       "horse_name": "ポエットリー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104309/48",
-      "horse_name": "ポカポカヨウキ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105018/28",
-      "horse_name": "ポケットブック",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022101573/6A",
       "horse_name": "ポッドロワール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105444/DD",
-      "horse_name": "ポップアップ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107155/92",
-      "horse_name": "マイコンプリート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105779/6B",
-      "horse_name": "マイトレーヤー",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100274/5B",
       "horse_name": "マイネルアズーロ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106462/ED",
-      "horse_name": "マイネルアルゴー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106817/14",
       "horse_name": "マイネルアレス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103606/93",
-      "horse_name": "マイネルウルカヌス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103571/7A",
-      "horse_name": "マイネルサリーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019100768/75",
-      "horse_name": "マイネルニコラス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021106827/98",
       "horse_name": "マイネルバーテクス",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020105809/E3",
       "horse_name": "マイネルフォルツァ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104485/88",
-      "horse_name": "マイネルリーヒム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020100621/5E",
-      "horse_name": "マイバラード",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024101904/49",
-      "horse_name": "マイフレダ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022101920/85",
-      "horse_name": "マグネシアブリック",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106580/E4",
-      "horse_name": "マシュマロデイズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101433/9E",
-      "horse_name": "マジギレカレン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021103682/A3",
-      "horse_name": "マジックブルー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022100622/02",
       "horse_name": "マジックローズ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100978/0A",
-      "horse_name": "マダムカマラード",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101845/3F",
-      "horse_name": "マッシブショット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101445/08",
-      "horse_name": "マテンロウカナロア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022110093/8D",
       "horse_name": "マテンロウサン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107344/71",
-      "horse_name": "マテンロウルクス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021106618/B2",
       "horse_name": "マハナ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105177/46",
-      "horse_name": "マムダッドベル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105362/41",
       "horse_name": "マルカベント",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100626/5A",
-      "horse_name": "マルターズドン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002020103063/44",
-      "horse_name": "マルディランダ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002024101644/0F",
       "horse_name": "マルモリムソウ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100654/17",
-      "horse_name": "マンナット",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102909/04",
-      "horse_name": "マーゴットクリュグ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023103696/7E",
       "horse_name": "マーゴットサンズ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106889/F6",
-      "horse_name": "マーゴットライズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101530/76",
-      "horse_name": "ミアエッテ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105257/CB",
-      "horse_name": "ミエノストロング",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102931/9C",
-      "horse_name": "ミクロスギガース",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106651/71",
-      "horse_name": "ミシェルバローズ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021106986/CF",
       "horse_name": "ミスエル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100676/AA",
-      "horse_name": "ミスヘンリー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103857/13",
-      "horse_name": "ミスマラッカ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105346/92",
-      "horse_name": "ミッキーラヴィータ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103308/B5",
-      "horse_name": "ミッドセンチュリー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022105529/A1",
       "horse_name": "ミッドタウンナイト",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104759/5C",
-      "horse_name": "ミハテヌユメ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104727/2D",
-      "horse_name": "ミリオンカラー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102386/EC",
-      "horse_name": "ミリオングローリー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105679/95",
-      "horse_name": "ミレニアルピンク",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021104217/9D",
       "horse_name": "ムチャスグラシアス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102843/48",
-      "horse_name": "ムーングレイル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024106276/F3",
       "horse_name": "ムーンベリル",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022102573/59",
       "horse_name": "メイショウアイル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106568/D0",
-      "horse_name": "メイショウアカリ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105091/10",
-      "horse_name": "メイショウケンゴウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103634/AC",
-      "horse_name": "メイショウサトノヒ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020106635/ED",
       "horse_name": "メイショウシナノ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101043/D1",
-      "horse_name": "メイショウジンソウ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024102590/51",
-      "horse_name": "メイショウスパーク",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100154/0A",
       "horse_name": "メイショウズイウン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024102272/84",
-      "horse_name": "メイショウセイクウ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106570/48",
-      "horse_name": "メイショウタイザン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100979/96",
-      "horse_name": "メイショウトライオ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102244/AE",
-      "horse_name": "メイショウドキョウ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106560/51",
       "horse_name": "メイショウナルカミ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021102550/6D",
-      "horse_name": "メイショウハッブル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104940/FE",
-      "horse_name": "メイショウハーブス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102245/21",
-      "horse_name": "メイショウヒタカミ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103251/AF",
-      "horse_name": "メイショウビストロ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002019104091/FE",
-      "horse_name": "メイショウブレゲ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103237/5A",
-      "horse_name": "メイショウホダワラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021102835/1F",
-      "horse_name": "メイショウマドロス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100608/20",
-      "horse_name": "メイショウライガ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101938/D2",
-      "horse_name": "メイショウローゼ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106741/61",
-      "horse_name": "メイリー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100718/61",
-      "horse_name": "メメボス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106944/34",
-      "horse_name": "メモリアデルレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002020101920/86",
-      "horse_name": "メラヴィリオーザ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103334/BE",
-      "horse_name": "モカプウイング",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106603/D6",
       "horse_name": "モジャーリオ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104659/12",
-      "horse_name": "モチロンコクラ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100695/57",
-      "horse_name": "モノノケ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022105525/D5",
       "horse_name": "モルビド",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104597/23",
       "horse_name": "モンテディアーナ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106819/9F",
-      "horse_name": "モンテパステル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104404/AE",
-      "horse_name": "モンテール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106658/7D",
-      "horse_name": "モントリオール",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022105830/39",
       "horse_name": "モンドデラモーレ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022103288/04",
       "horse_name": "ヤコブセン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104826/04",
-      "horse_name": "ヤマトデュノール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104359/F3",
-      "horse_name": "ヤマニンリンキング",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002019100606/17",
       "horse_name": "ヤマニンループ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103075/C5",
-      "horse_name": "ヤマメホープ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100351/B8",
-      "horse_name": "ヤマヤロード",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023110065/B6",
       "horse_name": "ユウファラオ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020110039/AE",
       "horse_name": "ユハンヌス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022102088/CC",
-      "horse_name": "ユーティジャーニー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106798/EE",
-      "horse_name": "ユーフォナイト",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021102336/9D",
-      "horse_name": "ヨシノヤッタルデー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105478/4C",
-      "horse_name": "ヨツバ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002018103293/CB",
-      "horse_name": "ヨドノゴールド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101825/38",
-      "horse_name": "ヨドノサファイア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100348/28",
       "horse_name": "ヨドノタイヨウ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105184/E5",
-      "horse_name": "ライネリーベ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022101473/52",
-      "horse_name": "ライラックデューン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024103814/1F",
-      "horse_name": "ライヴテキーラ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102925/3F",
-      "horse_name": "ライヴマティーニ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105751/27",
-      "horse_name": "ラウンドヒル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106277/7F",
-      "horse_name": "ラガッタレアーレ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106185/47",
-      "horse_name": "ラグナトーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104597/C8",
-      "horse_name": "ラスターヴァース",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105812/8B",
-      "horse_name": "ラスベガスサイン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105657/A8",
-      "horse_name": "ラッキーヴォーグ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105794/1B",
-      "horse_name": "ラテライト",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104190/53",
       "horse_name": "ラトルシェ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020102648/81",
-      "horse_name": "ラパンラピッド",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024101636/CC",
       "horse_name": "ラビリンスティアラ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104405/08",
-      "horse_name": "ラピス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103733/F6",
-      "horse_name": "ラプランセス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106162/73",
-      "horse_name": "ラベンダーヘイズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106794/AF",
-      "horse_name": "ラミアスペランツァ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022101405/C8",
       "horse_name": "ララバニュルス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107304/31",
-      "horse_name": "ランウェイミューズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107013/3B",
-      "horse_name": "ランブルスコ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102131/14",
-      "horse_name": "ラヴネヴァーダイズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024107358/F2",
-      "horse_name": "リアスハート",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020105299/4D",
       "horse_name": "リアライズ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023101295/69",
-      "horse_name": "リアライズアリス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105773/88",
       "horse_name": "リアライズオーラム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021103518/B4",
-      "horse_name": "リアルセンター",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021103293/49",
-      "horse_name": "リアンクトワ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104430/F9",
-      "horse_name": "リアンマヒナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103100/BB",
-      "horse_name": "リオンプライム",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106916/77",
       "horse_name": "リゾートアイランド",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102018103590/EC",
-      "horse_name": "リッケンバッカー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104623/A4",
-      "horse_name": "リベラル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106540/A4",
-      "horse_name": "リムリックアイル",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022100321/E3",
       "horse_name": "リメンバーヒム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103223/7D",
-      "horse_name": "リュウノタキノボリ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021104365/38",
       "horse_name": "リュウノタブーク",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105508/82",
       "horse_name": "リューデスハイム",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102008/4B",
-      "horse_name": "リラカリス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106372/CC",
-      "horse_name": "リラベガ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105011/EB",
-      "horse_name": "リンゲルブルーメ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101735/17",
-      "horse_name": "リントゥラウル",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002018104797/7B",
       "horse_name": "リンフレスカンテ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105748/97",
       "horse_name": "リードプリンシパル",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024107393/DA",
       "horse_name": "ルアシュエル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105051/43",
-      "horse_name": "ルイスイメル",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024108222/B5",
-      "horse_name": "ルガルデ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100800/5D",
-      "horse_name": "ルギッドドランジュ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107227/05",
-      "horse_name": "ルクシエル",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002021101100/6A",
-      "horse_name": "ルクスアドラー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104510/AF",
-      "horse_name": "ルクスアルカード",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024100134/02",
-      "horse_name": "ルクスマグナ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023100670/DF",
       "horse_name": "ルクスレイモンド",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022104640/F8",
-      "horse_name": "ルシタニア",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105863/A9",
       "horse_name": "ルシャルムール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103934/E4",
-      "horse_name": "ルディドゥゲンジ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024105383/EC",
       "horse_name": "ルベルグラン",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106761/99",
-      "horse_name": "ルボワ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100727/E5",
-      "horse_name": "ルミナスレイナ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024104167/60",
-      "horse_name": "ルークスイテルム",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106616/CB",
-      "horse_name": "ルージュエピック",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002021105749/97",
       "horse_name": "ルージュベルベット",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023106623/9B",
-      "horse_name": "ルージュボニート",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105569/C8",
       "horse_name": "ルージュマローネ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105608/CB",
-      "horse_name": "ルージュリヴィエラ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100690/18",
-      "horse_name": "ルーセントムーン",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102023103013/7F",
       "horse_name": "ルーナディサングエ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103887/43",
-      "horse_name": "レイアン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024106436/15",
-      "horse_name": "レイデアルマス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103506/BD",
-      "horse_name": "レイランディ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100891/D4",
-      "horse_name": "レインボーワールド",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103787/2B",
-      "horse_name": "レウコテア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002020107018/EF",
-      "horse_name": "レジェンダリーデイ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102020103910/3B",
       "horse_name": "レジェンドシップ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002020104174/E7",
       "horse_name": "レジーナローズ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024110006/55",
-      "horse_name": "レッドアバンドーネ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020100084/F1",
-      "horse_name": "レッドカメリア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103441/8D",
-      "horse_name": "レッドフロイデ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101427/E6",
-      "horse_name": "レッドマウロア",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106614/E5",
-      "horse_name": "レッドリガーレ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023107340/A5",
-      "horse_name": "レッドレガリア",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022105290/73",
-      "horse_name": "レッドヴァリアート",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106851/A2",
       "horse_name": "レディゴディヴァ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104267/79",
       "horse_name": "レヴァンテシチー",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024104453/FE",
-      "horse_name": "レーゲンシャウアー",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100578/5F",
-      "horse_name": "ロジキセキ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105019/9B",
-      "horse_name": "ロゼハイスクール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102425/63",
-      "horse_name": "ロックフラワー",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023107166/2E",
       "horse_name": "ロデオドライブ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103490/F6",
-      "horse_name": "ロマノヴェリテ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102234/85",
-      "horse_name": "ロマンス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106053/8C",
-      "horse_name": "ロンバスブレス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024105349/5E",
-      "horse_name": "ロンバルディア",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024102958/6D",
-      "horse_name": "ロンリーマン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023100998/43",
-      "horse_name": "ローズラフィネ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022100637/38",
-      "horse_name": "ロードアルディート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105793/4D",
-      "horse_name": "ロードスタニング",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105838/44",
-      "horse_name": "ロードステラート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024100208/E8",
-      "horse_name": "ロードフローリス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021103312/87",
       "horse_name": "ロードマイライフ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105822/9B",
-      "horse_name": "ロードメルヴェイユ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105813/E5",
-      "horse_name": "ロードヴェルテクス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102021105976/B7",
       "horse_name": "ローマンレイク",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022106626/4F",
       "horse_name": "ロールザダイス",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023104559/55",
-      "horse_name": "ローレルエース",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106323/EF",
-      "horse_name": "ワイドグンサ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002022103306/E8",
-      "horse_name": "ワイドデコラシオン",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023105410/E1",
-      "horse_name": "ワインレッドハート",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022101032/C2",
-      "horse_name": "ワカミヤイリオス",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022101412/7F",
       "horse_name": "ワタシマツワ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023102669/D1",
-      "horse_name": "ワダツミ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102770/7A",
-      "horse_name": "ワンキャンパス",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022104180/2A",
       "horse_name": "ワンコールアウェイ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023107050/3B",
       "horse_name": "ワンダフルデイズ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103191/4A",
-      "horse_name": "ワンダーアスク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023100446/FF",
-      "horse_name": "ワンダーデリエール",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024105615/0E",
-      "horse_name": "ワンダーラヴグッド",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102024107239/FB",
       "horse_name": "ワールドエンジェル",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021110002/E5",
-      "horse_name": "ワールドシリーズ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002023106711/D6",
       "horse_name": "ヴァイヴァーイ",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023103356/C4",
-      "horse_name": "ヴァリスマリネリス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101693/60",
-      "horse_name": "ヴァルク",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106744/EB",
-      "horse_name": "ヴァンクライ",
-      "missing": [
-        "active_status",
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103758/55",
-      "horse_name": "ヴィスメンティス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022104391/0F",
-      "horse_name": "ヴィヴァシャス",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024101989/21",
-      "horse_name": "ヴィヴィアンリーチ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002024106976/63",
-      "horse_name": "ヴィヴェローネ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud002022104186/F5",
       "horse_name": "ヴェントゥーラ",
       "missing": [
-        "category",
-        "active_status"
+        "category"
       ]
     },
     {
       "horse_id": "pw01dud102022105708/57",
       "horse_name": "ヴェーヌドール",
       "missing": [
-        "category",
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023104766/87",
-      "horse_name": "ヴェールミューズ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud002023101810/E9",
-      "horse_name": "ヴォンドゥ",
-      "missing": [
-        "active_status"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023103783/46",
-      "horse_name": "ヴォーカライズ",
-      "missing": [
-        "active_status"
+        "category"
       ]
     }
   ]
