@@ -13,8 +13,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: horse-data-writes
-  cancel-in-progress: false
+  group: lightweight-horse-master
+  cancel-in-progress: true
 
 jobs:
   build:
