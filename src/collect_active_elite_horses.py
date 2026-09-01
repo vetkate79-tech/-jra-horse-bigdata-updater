@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Build active JRA graded/open horse catalogs from official horse profiles.
+"""Build active JRA graded/open horse catalogs from official JRA evidence.
 
-Truth rules:
-- active: no 抹消年月日 on JRA horse profile
-- flat classes: determined from JRA official 収得賞金（平地）
-- graded horse: active horse with at least one flat G1/G2/G3 start
-
-Candidate pool = 2025 runners + verified 2026-08-29/30 runners + any horse IDs
-recovered from the current JRA registered-horse roster PDFs.
+Primary source is JRA horse profiles. If the profile page layout prevents reliable
+class/grade parsing (for example a zero elite result across a large candidate
+pool), fall back to the already-built lightweight master. That master is derived
+only from recorded JRA official results plus JRA's official graded-race list.
+No inferred or third-party data is introduced.
 """
 from __future__ import annotations
 import csv,json,os,re,time,urllib.parse,urllib.request
@@ -59,9 +57,7 @@ def request_profile(hid,retries=4):
         try:
             with urllib.request.urlopen(req,timeout=45) as resp:raw=resp.read()
             if len(raw)<10_000:raise RuntimeError(f'short profile {len(raw)}')
-            # JRADB responses have historically been CP932, but tolerate UTF-8 if JRA changes encoding.
-            enc='cp932'
-            head=raw[:3000].lower()
+            enc='cp932';head=raw[:3000].lower()
             if b'charset=utf-8' in head or b'charset="utf-8"' in head:enc='utf-8'
             text=raw.decode(enc,'replace');path.write_text(text,encoding='utf-8');return text
         except Exception:
@@ -70,7 +66,6 @@ def request_profile(hid,retries=4):
     raise RuntimeError('unreachable')
 
 def html_with_image_labels(html):
-    """JRA uses image alt text for GⅠ/GⅡ/GⅢ labels; inject it into text/tables."""
     soup=BeautifulSoup(html,'html.parser')
     for img in soup.find_all('img'):
         label=clean(img.get('alt') or img.get('title'))
@@ -78,13 +73,9 @@ def html_with_image_labels(html):
     return str(soup)
 
 def money(text,label):
-    # Accept Japanese/full-width parentheses, optional separators and whitespace/newlines.
     bare=label.replace('（','').replace('）','').replace('(','').replace(')','')
-    pats=[
-      re.escape(label)+r'\s*([0-9０-９,，]+)\s*円',
-      r'収得賞金\s*[（(]?\s*平地\s*[）)]?\s*([0-9０-９,，]+)\s*円' if '平地' in bare else
-      r'収得賞金\s*[（(]?\s*障害\s*[）)]?\s*([0-9０-９,，]+)\s*円'
-    ]
+    pats=[re.escape(label)+r'\s*([0-9０-９,，]+)\s*円',
+      r'収得賞金\s*[（(]?\s*平地\s*[）)]?\s*([0-9０-９,，]+)\s*円' if '平地' in bare else r'収得賞金\s*[（(]?\s*障害\s*[）)]?\s*([0-9０-９,，]+)\s*円']
     trans=str.maketrans('０１２３４５６７８９，','0123456789,')
     for pat in pats:
         m=re.search(pat,text,re.I)
@@ -112,8 +103,7 @@ def profile_name(soup,text,fallback=''):
             if v and v!='競走馬情報':return v
     m=re.search(r'競走馬情報\s*(.*?)\s*[A-Za-z][A-Za-z .\'-]*[（(]JPN[）)]',text)
     if m:
-        raw=m.group(1);parts=re.findall(r'[一-龯々〆ヵヶぁ-んァ-ヶー・]+',raw)
-        parts=[p for p in parts if p!='競走馬情報']
+        parts=[p for p in re.findall(r'[一-龯々〆ヵヶぁ-んァ-ヶー・]+',m.group(1)) if p!='競走馬情報']
         if parts:return max(parts,key=len)
     return ''
 
@@ -157,15 +147,35 @@ def race_history(html):
 def parse_profile(candidate,html):
     labeled=html_with_image_labels(html);soup=BeautifulSoup(labeled,'html.parser');text=re.sub(r'\s+',' ',soup.get_text(' ',strip=True));erased=re.search(r'抹消年月日\s*(\d{4}年\d{1,2}月\d{1,2}日)',text)
     flat_prize=money(text,'収得賞金（平地）');obstacle_prize=money(text,'収得賞金（障害）');graded,open_history,race_count=race_history(labeled);name=profile_name(soup,text,candidate['horse_name'])
-    return {
-      'horse_name':name,'horse_id':candidate['horse_id'],'active':not bool(erased),'deregistered_at':erased.group(1) if erased else None,
+    return {'horse_name':name,'horse_id':candidate['horse_id'],'active':not bool(erased),'deregistered_at':erased.group(1) if erased else None,
       'sex':field_between(text,'性別',['馬主名','母']),'age':field_between(text,'馬齢',['調教師名','母の父']),'trainer':field_between(text,'調教師名',['母の父','生年月日']),
       'owner':field_between(text,'馬主名',['母','馬齢']),'sire':field_between(text,'父',['性別','馬主名']),'dam':field_between(text,'母',['馬齢','調教師名']),
-      'damsire':field_between(text,'母の父',['生年月日','生産牧場']),'birth_date':field_between(text,'生年月日',['生産牧場','母の母']),'breeder':field_between(text,'生産牧場',['母の母','毛色']),
-      'coat':field_between(text,'毛色',['産地','馬名意味']),'birthplace':field_between(text,'産地',['馬名意味','取引市場']),
+      'damsire':field_between(text,'母の父',['生年月日','生産牧場']),'birth_date':field_between(text,'生年月日',['生産牧場','母の母']),'breeder':field_between(text,'生産牧場',['母の母','毛色']),'coat':field_between(text,'毛色',['産地','馬名意味']),'birthplace':field_between(text,'産地',['馬名意味','取引市場']),
       'flat_acquired_prize_yen':flat_prize,'obstacle_acquired_prize_yen':obstacle_prize,'current_flat_class':flat_class_from_prize(flat_prize),
       'graded_experience':sorted({r['grade'] for r in graded}),'graded_starts':graded,'open_or_higher_history':open_history,'profile_race_rows':race_count,
       'profile_url':profile_url(candidate['horse_id']),'candidate_sources':sorted(candidate['candidate_sources'])}
+
+def verified_result_fallback():
+    """Use only the public master's JRA-official evidence when profile parsing is structurally empty."""
+    p=DOCS/'base_catalog.json'
+    if not p.exists():return [],[],[]
+    doc=json.loads(p.read_text(encoding='utf-8'));horses=doc.get('horses',[])
+    graded=[];opened=[]
+    for h in horses:
+        if not h.get('active',True):continue
+        tags=set(h.get('tags') or [])
+        item=dict(h);item['candidate_sources']=['JRA_OFFICIAL_RESULT_FALLBACK']
+        if 'GRADED' in tags:
+            if not item.get('graded_starts'):
+                item['graded_starts']=[{'source':'JRA_OFFICIAL_RESULT_HISTORY','race_names':item.get('graded_race_names',[])}]
+            graded.append(item)
+        if h.get('current_class')=='OPEN' or 'OPEN' in tags:
+            item['current_flat_class']='OPEN'
+            if not item.get('open_or_higher_history'):
+                item['open_or_higher_history']=[{'source':'JRA_OFFICIAL_LATEST_CLASS'}]
+            opened.append(item)
+    by={h.get('horse_id') or h.get('horse_name'):h for h in graded+opened}
+    return graded,opened,list(by.values())
 
 def main():
     candidates=candidate_pool();DOCS.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(exist_ok=True);profiles=[];errors=[]
@@ -180,10 +190,26 @@ def main():
             except Exception as e:errors.append({'horse_id':c['horse_id'],'horse_name':c['horse_name'],'error':repr(e)})
             if i%250==0:print(f'profiles {i}/{len(candidates)} ok={len(profiles)} errors={len(errors)}',flush=True)
     profiles.sort(key=lambda x:x['horse_name']);active=[x for x in profiles if x['active']];graded=[x for x in active if x['graded_starts']];opened=[x for x in active if x['current_flat_class']=='OPEN']
-    elite_ids={x['horse_id'] for x in graded+opened};elite=[x for x in active if x['horse_id'] in elite_ids]
-    meta={'source':'JRA_OFFICIAL_HORSE_PROFILE','candidate_count':len(candidates),'profiles_ok':len(profiles),'profiles_error':len(errors),'active_count':len(active),'active_graded_count':len(graded),'active_open_count':len(opened),'elite_union_count':len(elite),'open_definition':'JRA flat acquired prize > 16,000,000 yen','open_threshold_yen':OPEN_THRESHOLD_YEN,'graded_definition':'active JRA horse with at least one flat G1/G2/G3 start in profile history','registered_roster_candidates':sum('CURRENT_REGISTERED_ROSTER' in x['candidate_sources'] for x in candidates)}
-    for fn,hs in [('active_graded.json',graded),('active_open.json',opened),('active_elite.json',elite)]: (DOCS/fn).write_text(json.dumps({'summary':meta,'horses':hs},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+    fallback_used=False
+    # A large successfully fetched pool producing zero graded AND zero open horses is a parser-layout failure, not credible racing data.
+    if len(profiles)>=100 and not graded and not opened:
+        fg,fo,fe=verified_result_fallback()
+        if fe:
+            graded,opened=fg,fo;elite=fe;fallback_used=True
+        else: elite=[]
+    else:
+        elite_ids={x['horse_id'] for x in graded+opened};elite=[x for x in active if x['horse_id'] in elite_ids]
+    meta={'source':'JRA_OFFICIAL_HORSE_PROFILE' if not fallback_used else 'JRA_OFFICIAL_RESULTS_FALLBACK_AFTER_PROFILE_LAYOUT_FAILURE',
+      'candidate_count':len(candidates),'profiles_ok':len(profiles),'profiles_error':len(errors),'active_count':len(active),
+      'active_graded_count':len(graded),'active_open_count':len(opened),'elite_union_count':len(elite),
+      'open_definition':'JRA flat acquired prize > 16,000,000 yen; fallback uses latest recorded JRA OPEN class',
+      'open_threshold_yen':OPEN_THRESHOLD_YEN,'graded_definition':'active horse with recorded flat G1/G2/G3 start in JRA official evidence',
+      'registered_roster_candidates':sum('CURRENT_REGISTERED_ROSTER' in x['candidate_sources'] for x in candidates),
+      'profile_layout_fallback_used':fallback_used,'fallback_policy':'never infer; use only base_catalog evidence derived from JRA official results and official graded-race list'}
+    for fn,hs in [('active_graded.json',graded),('active_open.json',opened),('active_elite.json',elite)]:
+        (DOCS/fn).write_text(json.dumps({'summary':meta,'horses':hs},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     STATUS.write_text(json.dumps({'summary':meta,'errors':errors},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(meta,ensure_ascii=False,indent=2))
     if errors:raise SystemExit(f'profile collection incomplete: {len(errors)} errors')
+    if len(profiles)>=100 and not elite:raise SystemExit('elite catalog structurally empty after verified fallback')
 
 if __name__=='__main__':main()
