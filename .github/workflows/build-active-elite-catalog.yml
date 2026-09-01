@@ -1,12 +1,16 @@
 name: Build active elite horse catalog
 
 on:
+  schedule:
+    # Daily full retry so incomplete JRA profile parsing/caches keep progressing.
+    - cron: '45 17 * * *'
   push:
     branches: [main]
     paths:
       - 'src/discover_registered_horse_ids.py'
       - 'src/collect_active_elite_horses.py'
       - 'src/merge_active_elite_into_catalog.py'
+      - 'src/check_horse_master_completion.py'
       - '.github/workflows/build-active-elite-catalog.yml'
   workflow_dispatch:
 
@@ -14,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: active-elite-horse-catalog
+  group: horse-data-writes
   cancel-in-progress: false
 
 jobs:
@@ -23,6 +27,8 @@ jobs:
     timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -34,7 +40,7 @@ jobs:
           path: |
             cache/jra_horse_profiles
             cache/jra_registered_roster
-          key: jra-horse-data-${{ runner.os }}-v2-${{ hashFiles('data/horse_ids_2025.csv', 'data/race_results_html_2026_weekend.csv') }}
+          key: jra-horse-data-${{ runner.os }}-v2-${{ hashFiles('data/horse_ids_2025.csv', 'data/race_results_html_2026_weekend.csv', 'data/race_results_html_2026.csv') }}
           restore-keys: |
             jra-horse-data-${{ runner.os }}-v2-
             jra-horse-profiles-${{ runner.os }}-v1-
@@ -46,11 +52,17 @@ jobs:
         run: python src/collect_active_elite_horses.py
       - name: Merge elite horses into unified catalog
         run: python src/merge_active_elite_into_catalog.py
+      - name: Check horse master completion
+        run: python src/check_horse_master_completion.py
       - name: Commit generated active elite catalogs
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add data/current_registered_horse_ids.csv status/current_registered_roster.json docs/data/horses/catalog.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json
+          git add data/current_registered_horse_ids.csv status/current_registered_roster.json docs/data/horses/catalog.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json status/horse_master_completion.json || true
           git diff --cached --quiet || git commit -m 'data: publish active graded and open horse catalogs'
-          git pull --rebase origin main
-          git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            echo "push race detected; retry $i/5"
+            sleep $((i*5))
+          done
+          exit 1
