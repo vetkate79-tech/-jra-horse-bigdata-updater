@@ -1,0 +1,34 @@
+name: Diagnose oral profile fields
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/diagnose_oral_profile_fields.py'
+      - 'docs/data/oral-chat-golden-cases.json'
+      - '.github/workflows/diagnose-oral-profile-fields.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install parser dependencies
+        run: pip install pandas beautifulsoup4 lxml requests
+      - name: Inspect JRA profile history fields
+        run: python src/diagnose_oral_profile_fields.py
+      - name: Commit diagnostic
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-profile-field-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Inspect oral parity profile fields'
+          git pull --rebase origin main
+          git push origin HEAD:main
