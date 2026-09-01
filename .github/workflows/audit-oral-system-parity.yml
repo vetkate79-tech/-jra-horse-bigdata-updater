@@ -1,0 +1,52 @@
+name: Audit oral system parity
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/audit_oral_system_parity.py'
+      - 'src/oral_operational_layer.py'
+      - 'docs/data/replay-demo-2026-08-29-30.json'
+      - 'docs/data/replay-2026-08-29-30-sealed.json'
+      - 'docs/data/oral-integrated-v1-shadow-sealed.json'
+      - '.github/workflows/audit-oral-system-parity.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compare archived oral outputs with system outputs
+        run: python src/audit_oral_system_parity.py
+      - name: Verify audit artifact exists
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('docs/data/oral-system-parity-audit.json')
+          assert p.exists()
+          d=json.loads(p.read_text())
+          assert d['historical_chat_parity']['actual_pre_race_logs'] > 0
+          assert d['invariant_tests']['race_count'] == 72
+          print(json.dumps({
+            'verdict':d['verdict'],
+            'historical_chat_parity':d['historical_chat_parity'],
+            'invariant_tests':d['invariant_tests'],
+            'blockers':d['blockers'],
+          },ensure_ascii=False,indent=2))
+          PY
+      - name: Commit audit report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-system-parity-audit.json status/oral-system-parity-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Audit oral-system parity against archived predictions'
+          git pull --rebase origin main
+          git push origin HEAD:main
