@@ -1,27 +1,33 @@
 name: Refresh public horse categories
 
 on:
+  schedule:
+    # Retry category/profile completion four times a day until the catalog is complete.
+    - cron: '15 0,6,12,18 * * *'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - 'src/expand_horse_categories.py'
       - 'src/enrich_new_horse_entries.py'
+      - 'src/check_horse_master_completion.py'
       - '.github/workflows/refresh-horse-categories.yml'
 
 permissions:
   contents: write
 
 concurrency:
-  group: refresh-horse-categories
+  group: horse-data-writes
   cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -31,11 +37,17 @@ jobs:
         run: python src/expand_horse_categories.py
       - name: Enrich new horses
         run: python src/enrich_new_horse_entries.py
+      - name: Check horse master completion
+        run: python src/check_horse_master_completion.py
       - name: Commit refreshed public horse catalog
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/catalog.json
+          git add docs/data/horses/catalog.json status/horse_master_completion.json
           git diff --cached --quiet || git commit -m 'data: refresh public horse categories'
-          git pull --rebase origin main
-          git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            echo "push race detected; retry $i/5"
+            sleep $((i*5))
+          done
+          exit 1
