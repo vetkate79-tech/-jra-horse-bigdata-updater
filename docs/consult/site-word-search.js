@@ -22,6 +22,13 @@ const decorateAliases=x=>{
   const a=x.aliases||[];
   return a.length?`<div class="reading">関連：${a.map(esc).join('・')}</div>`:'';
 };
+const cleanCandidate=x=>{
+  const t=String(x?.term||'');
+  if(!t||t.length>10||Number(x.occurrences||0)<2)return false;
+  if(/[<>{}=]|(?:この|その|ます|です|する|され|http|class|function)/.test(t))return false;
+  if(/[ァ-ヶ]$/.test(t)&&t.length>4&&!/(ペース|クラス)$/.test(t))return false;
+  return true;
+};
 function install(){
   const original=window.renderWords||renderWords;
   renderWords=function(){
@@ -34,9 +41,11 @@ function install(){
   };
   Promise.all([
     fetch('../data/site-terms.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{terms:[]}).catch(()=>({terms:[]})),
+    fetch('../data/site-terms-extra.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{terms:[]}).catch(()=>({terms:[]})),
     fetch('../data/site-term-candidates.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{terms:[]}).catch(()=>({terms:[]}))
-  ]).then(([official,candidates])=>{
-    terms=mergeTerms(terms,[...(official.terms||[]),...(candidates.terms||[])]);
+  ]).then(([official,extra,candidates])=>{
+    const auto=(candidates.terms||[]).filter(cleanCandidate);
+    terms=mergeTerms(terms,[...(official.terms||[]),...(extra.terms||[]),...auto]);
     renderWords();
   });
 }
