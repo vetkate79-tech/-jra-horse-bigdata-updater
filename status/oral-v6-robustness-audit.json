@@ -1,0 +1,16 @@
+{
+  "version": "ORAL_V6_ROBUSTNESS_AUDIT",
+  "source_file": "src/build_oral_role_ticket_v6.py",
+  "race_specific_horse_names_found": [],
+  "golden_truth_import_found": true,
+  "suspicious_string_number_groups": [],
+  "no_identity_hardcode": false,
+  "declared_result_data_used": false,
+  "declared_odds_popularity_used": false,
+  "canonical_hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+  "irrelevant_field_injection_hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+  "clone_hash": "b00fabb4e30c6940297b3fd5dca2f66a4471b8e1ddfc00035c607e11d1a5e166",
+  "irrelevant_injection_invariant": true,
+  "deterministic_clone": true,
+  "passed": false
+}
