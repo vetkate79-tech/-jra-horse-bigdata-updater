@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/collect_active_elite_horses.py'
+      - 'src/merge_active_elite_into_catalog.py'
       - '.github/workflows/build-active-elite-catalog.yml'
   workflow_dispatch:
 
@@ -37,11 +38,13 @@ jobs:
         env:
           ELITE_PROFILE_WORKERS: '4'
         run: python src/collect_active_elite_horses.py
+      - name: Merge elite horses into unified catalog
+        run: python src/merge_active_elite_into_catalog.py
       - name: Commit generated active elite catalogs
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json
+          git add docs/data/horses/catalog.json docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json status/active_elite_catalog.json
           git diff --cached --quiet || git commit -m 'data: publish active graded and open horse catalogs'
           git pull --rebase origin main
           git push
