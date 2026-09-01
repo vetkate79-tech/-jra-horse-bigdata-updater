@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "api/consult.js": {
+      "memory": 512,
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/consult",
+      "headers": [
+        {"key": "Cache-Control", "value": "no-store"}
+      ]
+    }
+  ]
+}
