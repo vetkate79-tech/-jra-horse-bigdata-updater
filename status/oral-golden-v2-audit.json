@@ -1,0 +1,422 @@
+{
+  "audit_version": "ORAL_GOLDEN_V2_AUDIT",
+  "system_version": "ORAL_INTEGRATED_V2_RICH_HISTORY",
+  "golden_case_count": 3,
+  "axis_parity": false,
+  "decision_parity": false,
+  "partner_recall_gate": false,
+  "ticket_parity_verified_cases": false,
+  "certified": false,
+  "criteria": {
+    "axis": "100%",
+    "decision": "100%",
+    "partners": "at least 66% recall in every case",
+    "tickets": "100% exact on cases where original final tickets are verified"
+  },
+  "cases": [
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 6,
+      "race_name": "清洲特別",
+      "axis_actual": "4",
+      "axis_system": "12",
+      "axis_match": false,
+      "decision_actual": "BUY",
+      "decision_system": "BUY",
+      "decision_match": true,
+      "partner_actual": [
+        "5",
+        "12",
+        "6",
+        "1",
+        "3"
+      ],
+      "partner_system_top7": [
+        "5",
+        "4",
+        "6",
+        "10",
+        "1",
+        "2"
+      ],
+      "partner_recall": 0.6,
+      "tickets_verified": false,
+      "ticket_exact_match": null,
+      "ticket_count_actual": 8,
+      "ticket_count_system": 9,
+      "system_ticket_shape": "DUAL",
+      "system_classification": "B",
+      "system_ranked_top10": [
+        {
+          "n": "12",
+          "name": "バッハアルプゼー",
+          "score": 85.577,
+          "base_score_v1": 56.177,
+          "latest_finish": 1,
+          "latest_same_distance_finish": 1,
+          "same_distance_top3_rate": 0.8,
+          "structural_history_boost": 29.4
+        },
+        {
+          "n": "5",
+          "name": "ルクスレイモンド",
+          "score": 83.239,
+          "base_score_v1": 59.296,
+          "latest_finish": 3,
+          "latest_same_distance_finish": 3,
+          "same_distance_top3_rate": 0.7143,
+          "structural_history_boost": 23.943
+        },
+        {
+          "n": "4",
+          "name": "シルフズミスチーフ",
+          "score": 62.139,
+          "base_score_v1": 41.939,
+          "latest_finish": 2,
+          "latest_same_distance_finish": 2,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 20.2
+        },
+        {
+          "n": "6",
+          "name": "ダノンモンテローザ",
+          "score": 60.507,
+          "base_score_v1": 38.707,
+          "latest_finish": 3,
+          "latest_same_distance_finish": 3,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 21.8
+        },
+        {
+          "n": "10",
+          "name": "リードプリンシパル",
+          "score": 57.544,
+          "base_score_v1": 38.444,
+          "latest_finish": 1,
+          "latest_same_distance_finish": 1,
+          "same_distance_top3_rate": 0.25,
+          "structural_history_boost": 19.1
+        },
+        {
+          "n": "1",
+          "name": "フィドルファドル",
+          "score": 56.665,
+          "base_score_v1": 40.115,
+          "latest_finish": 12,
+          "latest_same_distance_finish": 3,
+          "same_distance_top3_rate": 0.375,
+          "structural_history_boost": 16.55
+        },
+        {
+          "n": "2",
+          "name": "ザウリ",
+          "score": 49.424,
+          "base_score_v1": 42.474,
+          "latest_finish": 6,
+          "latest_same_distance_finish": 6,
+          "same_distance_top3_rate": 0.375,
+          "structural_history_boost": 6.95
+        },
+        {
+          "n": "11",
+          "name": "アオイレーギーナ",
+          "score": 48.92,
+          "base_score_v1": 41.97,
+          "latest_finish": 15,
+          "latest_same_distance_finish": 15,
+          "same_distance_top3_rate": 0.375,
+          "structural_history_boost": 6.95
+        },
+        {
+          "n": "13",
+          "name": "ゲーベル",
+          "score": 37.638,
+          "base_score_v1": 30.688,
+          "latest_finish": 8,
+          "latest_same_distance_finish": 8,
+          "same_distance_top3_rate": 0.375,
+          "structural_history_boost": 6.95
+        },
+        {
+          "n": "3",
+          "name": "オコタンペ",
+          "score": 36.218,
+          "base_score_v1": 34.968,
+          "latest_finish": 4,
+          "latest_same_distance_finish": 4,
+          "same_distance_top3_rate": 0.125,
+          "structural_history_boost": 1.25
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 7,
+      "race_name": "長篠ステークス",
+      "axis_actual": "10",
+      "axis_system": "10",
+      "axis_match": true,
+      "decision_actual": "BUY",
+      "decision_system": "BUY",
+      "decision_match": true,
+      "partner_actual": [
+        "1",
+        "5",
+        "14"
+      ],
+      "partner_system_top7": [
+        "4",
+        "1",
+        "9",
+        "14",
+        "13",
+        "15"
+      ],
+      "partner_recall": 0.6667,
+      "tickets_verified": true,
+      "ticket_exact_match": false,
+      "ticket_count_actual": 9,
+      "ticket_count_system": 9,
+      "system_ticket_shape": "DUAL",
+      "system_classification": "B",
+      "system_ranked_top10": [
+        {
+          "n": "10",
+          "name": "ポッドロワール",
+          "score": 65.169,
+          "base_score_v1": 40.519,
+          "latest_finish": 2,
+          "latest_same_distance_finish": 2,
+          "same_distance_top3_rate": 0.625,
+          "structural_history_boost": 24.65
+        },
+        {
+          "n": "4",
+          "name": "ブルクトーア",
+          "score": 58.789,
+          "base_score_v1": 49.339,
+          "latest_finish": 7,
+          "latest_same_distance_finish": 7,
+          "same_distance_top3_rate": 0.625,
+          "structural_history_boost": 9.45
+        },
+        {
+          "n": "1",
+          "name": "ボンヌソワレ",
+          "score": 58.172,
+          "base_score_v1": 49.972,
+          "latest_finish": 5,
+          "latest_same_distance_finish": 5,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 8.2
+        },
+        {
+          "n": "9",
+          "name": "モジャーリオ",
+          "score": 56.173,
+          "base_score_v1": 47.973,
+          "latest_finish": 14,
+          "latest_same_distance_finish": 14,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 8.2
+        },
+        {
+          "n": "14",
+          "name": "ガンマジーティーピ",
+          "score": 54.121,
+          "base_score_v1": 42.721,
+          "latest_finish": 10,
+          "latest_same_distance_finish": 10,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 11.4
+        },
+        {
+          "n": "13",
+          "name": "ユハンヌス",
+          "score": 53.405,
+          "base_score_v1": 46.805,
+          "latest_finish": 11,
+          "latest_same_distance_finish": 11,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 6.6
+        },
+        {
+          "n": "15",
+          "name": "ユウファラオ",
+          "score": 48.222,
+          "base_score_v1": 42.872,
+          "latest_finish": 17,
+          "latest_same_distance_finish": 17,
+          "same_distance_top3_rate": 0.375,
+          "structural_history_boost": 5.35
+        },
+        {
+          "n": "5",
+          "name": "チャンネルトンネル",
+          "score": 44.871,
+          "base_score_v1": 39.521,
+          "latest_finish": 7,
+          "latest_same_distance_finish": 7,
+          "same_distance_top3_rate": 0.375,
+          "structural_history_boost": 5.35
+        },
+        {
+          "n": "12",
+          "name": "ポエットリー",
+          "score": 42.508,
+          "base_score_v1": 39.658,
+          "latest_finish": 9,
+          "latest_same_distance_finish": 9,
+          "same_distance_top3_rate": 0.125,
+          "structural_history_boost": 2.85
+        },
+        {
+          "n": "2",
+          "name": "ロードマイライフ",
+          "score": 41.521,
+          "base_score_v1": 40.271,
+          "latest_finish": 4,
+          "latest_same_distance_finish": 4,
+          "same_distance_top3_rate": 0.125,
+          "structural_history_boost": 1.25
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 7,
+      "race_name": "赤倉特別",
+      "axis_actual": "2",
+      "axis_system": "16",
+      "axis_match": false,
+      "decision_actual": "CAUTION",
+      "decision_system": "BUY",
+      "decision_match": false,
+      "partner_actual": [
+        "8",
+        "12",
+        "17"
+      ],
+      "partner_system_top7": [
+        "12",
+        "2",
+        "13",
+        "17",
+        "11",
+        "1"
+      ],
+      "partner_recall": 0.6667,
+      "tickets_verified": true,
+      "ticket_exact_match": false,
+      "ticket_count_actual": 9,
+      "ticket_count_system": 9,
+      "system_ticket_shape": "AXIS",
+      "system_classification": "A",
+      "system_ranked_top10": [
+        {
+          "n": "16",
+          "name": "ピエナフェーヴル",
+          "score": 92.805,
+          "base_score_v1": 59.805,
+          "latest_finish": 1,
+          "latest_same_distance_finish": 1,
+          "same_distance_top3_rate": 1.0,
+          "structural_history_boost": 33.0
+        },
+        {
+          "n": "12",
+          "name": "マイネルアズーロ",
+          "score": 80.868,
+          "base_score_v1": 50.718,
+          "latest_finish": 1,
+          "latest_same_distance_finish": 1,
+          "same_distance_top3_rate": 0.875,
+          "structural_history_boost": 30.15
+        },
+        {
+          "n": "2",
+          "name": "ボウウィンドウ",
+          "score": 75.067,
+          "base_score_v1": 61.167,
+          "latest_finish": 11,
+          "latest_same_distance_finish": 11,
+          "same_distance_top3_rate": 0.75,
+          "structural_history_boost": 13.9
+        },
+        {
+          "n": "13",
+          "name": "エリーナストーム",
+          "score": 71.572,
+          "base_score_v1": 60.872,
+          "latest_finish": 10,
+          "latest_same_distance_finish": 8,
+          "same_distance_top3_rate": 0.75,
+          "structural_history_boost": 10.7
+        },
+        {
+          "n": "17",
+          "name": "マイネルアレス",
+          "score": 65.453,
+          "base_score_v1": 42.053,
+          "latest_finish": 3,
+          "latest_same_distance_finish": 3,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 23.4
+        },
+        {
+          "n": "11",
+          "name": "ティムール",
+          "score": 65.166,
+          "base_score_v1": 48.966,
+          "latest_finish": 11,
+          "latest_same_distance_finish": 3,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 16.2
+        },
+        {
+          "n": "1",
+          "name": "ハギノコラソン",
+          "score": 62.097,
+          "base_score_v1": 48.197,
+          "latest_finish": 7,
+          "latest_same_distance_finish": 7,
+          "same_distance_top3_rate": 0.75,
+          "structural_history_boost": 13.9
+        },
+        {
+          "n": "6",
+          "name": "オリバナム",
+          "score": 58.307,
+          "base_score_v1": 50.107,
+          "latest_finish": 7,
+          "latest_same_distance_finish": null,
+          "same_distance_top3_rate": 0.5,
+          "structural_history_boost": 8.2
+        },
+        {
+          "n": "9",
+          "name": "バガン",
+          "score": 50.704,
+          "base_score_v1": 46.604,
+          "latest_finish": 8,
+          "latest_same_distance_finish": 6,
+          "same_distance_top3_rate": 0.25,
+          "structural_history_boost": 4.1
+        },
+        {
+          "n": "15",
+          "name": "スピンザブラッド",
+          "score": 47.603,
+          "base_score_v1": 42.253,
+          "latest_finish": 4,
+          "latest_same_distance_finish": 4,
+          "same_distance_top3_rate": 0.375,
+          "structural_history_boost": 5.35
+        }
+      ]
+    }
+  ]
+}
