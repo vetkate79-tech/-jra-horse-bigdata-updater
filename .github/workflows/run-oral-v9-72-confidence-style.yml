@@ -1,0 +1,55 @@
+name: Run oral V9 confidence-gated sealed replay
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/build_oral_v9_72_confidence_style.py'
+      - 'src/score_oral_v9_72_replay.py'
+      - '.github/workflows/run-oral-v9-72-confidence-style.yml'
+permissions:
+  contents: write
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build V9 predictions before opening target results
+        run: python src/build_oral_v9_72_confidence_style.py
+      - name: Verify seal and isolation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/oral-v9-72-confidence-style-predictions-sealed.json').read_text())
+          assert d['race_count']==72
+          assert d['result_data_used'] is False
+          assert d['odds_popularity_used'] is False
+          assert d['post_target_running_style_used'] is False
+          assert d['prediction_hash_sha256']
+          print({'hash':d['prediction_hash_sha256'],'applied':d['style_gate_applied_races'],'held':d['style_gate_held_races']})
+          PY
+      - name: Open results only after seal and score
+        run: python src/score_oral_v9_72_replay.py
+      - name: Verify result joins
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('status/oral-v9-72-confidence-style-scored.json').read_text())
+          assert d['race_count_scored']==72
+          assert not d['missing_result_joins']
+          assert d['result_opened_after_prediction_seal'] is True
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit V9 results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-v9-72-confidence-style-predictions-sealed.json docs/data/oral-v9-72-confidence-style-scored.json status/oral-v9-72-confidence-style-predictions-sealed.json status/oral-v9-72-confidence-style-scored.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Evaluate V9 confidence-gated role diversity'
+          git pull --rebase origin main
+          git push origin HEAD:main
