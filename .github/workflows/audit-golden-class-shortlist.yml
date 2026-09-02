@@ -1,0 +1,26 @@
+name: Audit Golden class shortlist
+on:
+  push:
+    paths:
+      - 'src/audit_golden_class_shortlist.py'
+      - '.github/workflows/audit-golden-class-shortlist.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/audit_golden_class_shortlist.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/golden-class-shortlist-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Audit Golden current-class shortlist features'
+          git pull --rebase origin main
+          git push origin HEAD:main
