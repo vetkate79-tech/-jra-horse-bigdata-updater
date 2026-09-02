@@ -49,11 +49,7 @@ def categories_at(unit: object, fallback: str) -> list[str]:
 
 
 def definition_at(unit: object) -> str:
-    """Extract the explanatory prose while excluding title, reading and category UI.
-
-    The original prose is only used as source material for a short on-site summary;
-    it is not stored verbatim in the generated JSON.
-    """
+    """Extract explanatory prose while excluding title, reading and category UI."""
     clone = deepcopy(unit)
     remove_xpaths = [
         './/h3',
@@ -70,7 +66,6 @@ def definition_at(unit: object) -> str:
                 parent.remove(node)
     text = clean(clone.text_content())
     text = re.sub(r"^(?:用語\s*)+", "", text)
-    # UI blocks after the explanation are not part of the meaning.
     for marker in ("関連リンク", "関連用語", "カテゴリー"):
         if marker in text:
             text = text.split(marker, 1)[0].strip()
@@ -79,11 +74,7 @@ def definition_at(unit: object) -> str:
 
 
 def summarize_definition(term: str, definition: str, categories: list[str]) -> str:
-    """Create a concise original summary from the official explanation.
-
-    Keep the core definition, drop long historical/examples, and normalize common
-    dictionary endings so the page works as a standalone quick reference.
-    """
+    """Create a concise original on-site meaning from the official explanation."""
     definition = clean(definition)
     if not definition:
         return f"{term}は、JRAの競馬用語辞典で扱われる競馬用語です。"
@@ -102,7 +93,6 @@ def summarize_definition(term: str, definition: str, categories: list[str]) -> s
             break
     summary = clean("".join(chosen)) or definition[:180]
 
-    # Light rewriting to avoid turning the site into a mirror of the source text.
     rewrites = (
         ("のことをいう。", "を指します。"),
         ("のことをいう", "を指します"),
@@ -124,6 +114,12 @@ def summarize_definition(term: str, definition: str, categories: list[str]) -> s
         summary = (cut[: last + 1] if last >= 80 else cut.rstrip("、。") + "。").strip()
     if not summary.endswith(("。", "！", "？")):
         summary += "。"
+
+    # Some JRA entries intentionally have very short definitions. Make those
+    # standalone without inventing extra facts.
+    if len(summary) < 8:
+        core = summary.rstrip("。！？」 ")
+        summary = f"{term}は、競馬で「{core}」を表す用語です。"
     return summary
 
 
