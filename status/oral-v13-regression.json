@@ -1,0 +1,2924 @@
+{
+  "model_version": "ORAL_INTEGRATED_V1_3_SHADOW",
+  "policy": "No odds/popularity/result fields are passed into analyze_race. These weekends are regression sets only; V1.3 still requires a future unseen holdout before promotion.",
+  "summary": [
+    {
+      "dataset": "2026-08-22-23_seen_regression",
+      "races": 72,
+      "buy_races": 18,
+      "caution_races": 8,
+      "pass_races": 46,
+      "axis_top3": 38,
+      "candidate_top3_complete": 21,
+      "trio_hits_buy": 1,
+      "stake_buy": 12600,
+      "return_buy": 2170,
+      "axis_top3_rate_pct": 52.78,
+      "candidate_top3_complete_pct": 29.17,
+      "buy_hit_rate_pct": 5.56,
+      "buy_roi_pct": 17.22
+    },
+    {
+      "dataset": "2026-08-29-30_development_regression",
+      "races": 72,
+      "buy_races": 8,
+      "caution_races": 10,
+      "pass_races": 54,
+      "axis_top3": 37,
+      "candidate_top3_complete": 19,
+      "trio_hits_buy": 0,
+      "stake_buy": 5600,
+      "return_buy": 0,
+      "axis_top3_rate_pct": 51.39,
+      "candidate_top3_complete_pct": 26.39,
+      "buy_hit_rate_pct": 0.0,
+      "buy_roi_pct": 0.0
+    }
+  ],
+  "details": {
+    "2026-08-22-23": [
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.671,
+          "top3_boundary_gap": 0.104,
+          "top6_spread": 1.424,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "9",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.133,
+          "top3_boundary_gap": 0.422,
+          "top6_spread": 1.224,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 3,
+        "classification": "B",
+        "decision": "BUY",
+        "axis": "3",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 9.988,
+          "top3_boundary_gap": 5.595,
+          "top6_spread": 33.676,
+          "avg_unc_top3": 0.3333,
+          "evidence_starts_top5": 15.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 4.63,
+          "top3_boundary_gap": 2.376,
+          "top6_spread": 10.134,
+          "avg_unc_top3": 0.6,
+          "evidence_starts_top5": 6.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "14",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 20.799,
+          "top3_boundary_gap": 0.495,
+          "top6_spread": 26.205,
+          "avg_unc_top3": 0.6667,
+          "evidence_starts_top5": 8.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 6,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "2",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.92,
+          "top3_boundary_gap": 0.418,
+          "top6_spread": 10.282,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 25.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 7,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "3",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 11.658,
+          "top3_boundary_gap": 2.78,
+          "top6_spread": 18.776,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 31.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 8,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "8",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.609,
+          "top3_boundary_gap": 1.22,
+          "top6_spread": 16.799,
+          "avg_unc_top3": 0.7333,
+          "evidence_starts_top5": 19.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 9,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "2",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.8,
+          "top3_boundary_gap": 10.423,
+          "top6_spread": 26.473,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 32.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 10,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 4.059,
+          "top3_boundary_gap": 0.216,
+          "top6_spread": 13.639,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 27.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 11,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "13",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.272,
+          "top3_boundary_gap": 1.461,
+          "top6_spread": 26.185,
+          "avg_unc_top3": 0.6667,
+          "evidence_starts_top5": 10.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "中京",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 19.435,
+          "top3_boundary_gap": 1.164,
+          "top6_spread": 22.238,
+          "avg_unc_top3": 0.4,
+          "evidence_starts_top5": 13.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "7",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.206,
+          "top3_boundary_gap": 0.336,
+          "top6_spread": 2.817,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.415,
+          "top3_boundary_gap": 0.047,
+          "top6_spread": 1.348,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.119,
+          "top3_boundary_gap": 0.243,
+          "top6_spread": 2.343,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.355,
+          "top3_boundary_gap": 1.872,
+          "top6_spread": 17.684,
+          "avg_unc_top3": 0.3333,
+          "evidence_starts_top5": 16.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "9",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.961,
+          "top3_boundary_gap": 12.473,
+          "top6_spread": 21.925,
+          "avg_unc_top3": 0.6667,
+          "evidence_starts_top5": 7.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 6,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "10",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 6.87,
+          "top3_boundary_gap": 5.237,
+          "top6_spread": 17.289,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 26.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 7,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.02,
+          "top3_boundary_gap": 5.302,
+          "top6_spread": 20.022,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 27.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 8,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "15",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 7,
+        "trio_hit": true,
+        "race_structure": {
+          "axis_gap": 2.461,
+          "top3_boundary_gap": 5.184,
+          "top6_spread": 15.506,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 25.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 9,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "11",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 11.853,
+          "top3_boundary_gap": 0.124,
+          "top6_spread": 24.307,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 25.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 10,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "14",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 9.675,
+          "top3_boundary_gap": 0.994,
+          "top6_spread": 20.794,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 21.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 11,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.623,
+          "top3_boundary_gap": 0.622,
+          "top6_spread": 9.157,
+          "avg_unc_top3": 0.8667,
+          "evidence_starts_top5": 2.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "新潟",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 11.675,
+          "top3_boundary_gap": 1.32,
+          "top6_spread": 17.226,
+          "avg_unc_top3": 0.6667,
+          "evidence_starts_top5": 7.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.457,
+          "top3_boundary_gap": 0.186,
+          "top6_spread": 2.544,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.696,
+          "top3_boundary_gap": 0.003,
+          "top6_spread": 1.159,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 16.816,
+          "top3_boundary_gap": 0.796,
+          "top6_spread": 23.235,
+          "avg_unc_top3": 0.7333,
+          "evidence_starts_top5": 9.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.275,
+          "top3_boundary_gap": 1.247,
+          "top6_spread": 9.801,
+          "avg_unc_top3": 0.4667,
+          "evidence_starts_top5": 12.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "7",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.164,
+          "top3_boundary_gap": 0.117,
+          "top6_spread": 2.509,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 6,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 14.22,
+          "top3_boundary_gap": 1.859,
+          "top6_spread": 21.159,
+          "avg_unc_top3": 0.4,
+          "evidence_starts_top5": 9.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 7,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 8.442,
+          "top3_boundary_gap": 1.51,
+          "top6_spread": 24.939,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 31.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 8,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 7.611,
+          "top3_boundary_gap": 2.927,
+          "top6_spread": 20.683,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 33.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 9,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.37,
+          "top3_boundary_gap": 0.29,
+          "top6_spread": 2.274,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 10,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "9",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 9.705,
+          "top3_boundary_gap": 1.104,
+          "top6_spread": 16.884,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 24.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 11,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "12",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.084,
+          "top3_boundary_gap": 1.229,
+          "top6_spread": 9.344,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 37.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-22",
+        "track": "札幌",
+        "race_no": 12,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "7",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.617,
+          "top3_boundary_gap": 0.463,
+          "top6_spread": 17.545,
+          "avg_unc_top3": 0.4667,
+          "evidence_starts_top5": 20.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.509,
+          "top3_boundary_gap": 0.021,
+          "top6_spread": 2.117,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.931,
+          "top3_boundary_gap": 0.139,
+          "top6_spread": 1.265,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.791,
+          "top3_boundary_gap": 0.182,
+          "top6_spread": 2.128,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 6.634,
+          "top3_boundary_gap": 5.563,
+          "top6_spread": 19.711,
+          "avg_unc_top3": 0.6667,
+          "evidence_starts_top5": 6.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 5,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.933,
+          "top3_boundary_gap": 5.315,
+          "top6_spread": 27.081,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 28.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 6,
+        "classification": "B",
+        "decision": "BUY",
+        "axis": "5",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.764,
+          "top3_boundary_gap": 0.312,
+          "top6_spread": 13.552,
+          "avg_unc_top3": 0.4,
+          "evidence_starts_top5": 22.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 7,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.234,
+          "top3_boundary_gap": 0.216,
+          "top6_spread": 19.473,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 29.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 8,
+        "classification": "B",
+        "decision": "BUY",
+        "axis": "8",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 10.782,
+          "top3_boundary_gap": 4.957,
+          "top6_spread": 28.213,
+          "avg_unc_top3": 0.3333,
+          "evidence_starts_top5": 19.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 9,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "8",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.768,
+          "top3_boundary_gap": 1.995,
+          "top6_spread": 11.152,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 20.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 10,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "13",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 7.163,
+          "top3_boundary_gap": 0.032,
+          "top6_spread": 22.726,
+          "avg_unc_top3": 0.5333,
+          "evidence_starts_top5": 11.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 11,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "9",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.682,
+          "top3_boundary_gap": 5.255,
+          "top6_spread": 13.012,
+          "avg_unc_top3": 0.6,
+          "evidence_starts_top5": 19.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "中京",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.645,
+          "top3_boundary_gap": 2.109,
+          "top6_spread": 19.906,
+          "avg_unc_top3": 0.2667,
+          "evidence_starts_top5": 15.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.584,
+          "top3_boundary_gap": 0.003,
+          "top6_spread": 1.178,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.313,
+          "top3_boundary_gap": 0.305,
+          "top6_spread": 1.177,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "9",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.503,
+          "top3_boundary_gap": 0.002,
+          "top6_spread": 1.852,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.193,
+          "top3_boundary_gap": 9.77,
+          "top6_spread": 22.755,
+          "avg_unc_top3": 0.6667,
+          "evidence_starts_top5": 9.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.66,
+          "top3_boundary_gap": 1.464,
+          "top6_spread": 33.44,
+          "avg_unc_top3": 0.5333,
+          "evidence_starts_top5": 7.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 6,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "14",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.296,
+          "top3_boundary_gap": 1.937,
+          "top6_spread": 9.749,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 34.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 7,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.673,
+          "top3_boundary_gap": 0.233,
+          "top6_spread": 2.145,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 8,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "8",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 8.804,
+          "top3_boundary_gap": 2.18,
+          "top6_spread": 15.785,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 28.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 9,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "12",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 7.363,
+          "top3_boundary_gap": 1.614,
+          "top6_spread": 15.515,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 23.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 10,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "3",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 10.28,
+          "top3_boundary_gap": 0.356,
+          "top6_spread": 30.175,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 25.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 11,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.708,
+          "top3_boundary_gap": 3.547,
+          "top6_spread": 14.495,
+          "avg_unc_top3": 0.0667,
+          "evidence_starts_top5": 35.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "新潟",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "8",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 8.397,
+          "top3_boundary_gap": 8.529,
+          "top6_spread": 21.561,
+          "avg_unc_top3": 0.4667,
+          "evidence_starts_top5": 10.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.282,
+          "top3_boundary_gap": 0.854,
+          "top6_spread": 3.302,
+          "avg_unc_top3": 0.6667,
+          "evidence_starts_top5": 6.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.893,
+          "top3_boundary_gap": 0.762,
+          "top6_spread": 3.106,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "13",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.947,
+          "top3_boundary_gap": 4.926,
+          "top6_spread": 17.371,
+          "avg_unc_top3": 0.4667,
+          "evidence_starts_top5": 8.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.412,
+          "top3_boundary_gap": 0.359,
+          "top6_spread": 15.627,
+          "avg_unc_top3": 0.4,
+          "evidence_starts_top5": 11.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.677,
+          "top3_boundary_gap": 0.656,
+          "top6_spread": 3.016,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 6,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 9.64,
+          "top3_boundary_gap": 0.087,
+          "top6_spread": 17.171,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 16.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 7,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "10",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.506,
+          "top3_boundary_gap": 2.826,
+          "top6_spread": 15.414,
+          "avg_unc_top3": 0.2667,
+          "evidence_starts_top5": 37.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 8,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.144,
+          "top3_boundary_gap": 2.93,
+          "top6_spread": 9.979,
+          "avg_unc_top3": 0.6,
+          "evidence_starts_top5": 17.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 9,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "5",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 7.415,
+          "top3_boundary_gap": 1.996,
+          "top6_spread": 15.813,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 29.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 10,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "10",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 10.203,
+          "top3_boundary_gap": 3.835,
+          "top6_spread": 22.204,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 40.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 11,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "16",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.709,
+          "top3_boundary_gap": 0.477,
+          "top6_spread": 6.745,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 27.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-23",
+        "track": "札幌",
+        "race_no": 12,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "9",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 5.655,
+          "top3_boundary_gap": 1.148,
+          "top6_spread": 12.787,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 33.0,
+          "compressed_field": false
+        }
+      }
+    ],
+    "2026-08-29-30": [
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.214,
+          "top3_boundary_gap": 0.156,
+          "top6_spread": 2.697,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.742,
+          "top3_boundary_gap": 0.03,
+          "top6_spread": 1.38,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.214,
+          "top3_boundary_gap": 0.156,
+          "top6_spread": 2.697,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 9.081,
+          "top3_boundary_gap": 0.156,
+          "top6_spread": 22.37,
+          "avg_unc_top3": 0.4667,
+          "evidence_starts_top5": 11.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.424,
+          "top3_boundary_gap": 5.206,
+          "top6_spread": 22.388,
+          "avg_unc_top3": 0.8,
+          "evidence_starts_top5": 5.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 6,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "5",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.119,
+          "top3_boundary_gap": 0.504,
+          "top6_spread": 19.181,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 30.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 7,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "1",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.633,
+          "top3_boundary_gap": 1.168,
+          "top6_spread": 7.251,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 41.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 8,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "13",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.324,
+          "top3_boundary_gap": 5.562,
+          "top6_spread": 24.096,
+          "avg_unc_top3": 0.0667,
+          "evidence_starts_top5": 29.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 9,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "6",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 5.882,
+          "top3_boundary_gap": 2.338,
+          "top6_spread": 27.134,
+          "avg_unc_top3": 0.2667,
+          "evidence_starts_top5": 30.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 10,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "4",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 7.936,
+          "top3_boundary_gap": 0.686,
+          "top6_spread": 17.336,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 37.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 11,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "10",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 6,
+        "trio_hit": true,
+        "race_structure": {
+          "axis_gap": 5.164,
+          "top3_boundary_gap": 7.857,
+          "top6_spread": 16.969,
+          "avg_unc_top3": 0.2667,
+          "evidence_starts_top5": 26.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "8",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.859,
+          "top3_boundary_gap": 0.03,
+          "top6_spread": 4.563,
+          "avg_unc_top3": 0.9333,
+          "evidence_starts_top5": 1.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 1,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 5.734,
+          "top3_boundary_gap": 4.384,
+          "top6_spread": 22.045,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 24.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "15",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 3.546,
+          "top3_boundary_gap": 5.811,
+          "top6_spread": 16.905,
+          "avg_unc_top3": 0.4,
+          "evidence_starts_top5": 11.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.535,
+          "top3_boundary_gap": 0.492,
+          "top6_spread": 1.918,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.004,
+          "top3_boundary_gap": 0.087,
+          "top6_spread": 2.926,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "2",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.323,
+          "top3_boundary_gap": 0.454,
+          "top6_spread": 3.531,
+          "avg_unc_top3": 0.7333,
+          "evidence_starts_top5": 5.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 6,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "6",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.705,
+          "top3_boundary_gap": 2.913,
+          "top6_spread": 17.301,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 33.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 7,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "2",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.295,
+          "top3_boundary_gap": 9.087,
+          "top6_spread": 12.201,
+          "avg_unc_top3": 0.0667,
+          "evidence_starts_top5": 26.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 8,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 6,
+        "trio_hit": true,
+        "race_structure": {
+          "axis_gap": 1.341,
+          "top3_boundary_gap": 1.529,
+          "top6_spread": 21.134,
+          "avg_unc_top3": 0.2,
+          "evidence_starts_top5": 29.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 9,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "2",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.152,
+          "top3_boundary_gap": 1.195,
+          "top6_spread": 10.956,
+          "avg_unc_top3": 0.4667,
+          "evidence_starts_top5": 26.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 10,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "9",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 6.06,
+          "top3_boundary_gap": 7.395,
+          "top6_spread": 17.58,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 27.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 11,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "15",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.469,
+          "top3_boundary_gap": 7.518,
+          "top6_spread": 23.842,
+          "avg_unc_top3": 0.5333,
+          "evidence_starts_top5": 12.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 21.073,
+          "top3_boundary_gap": 0.553,
+          "top6_spread": 23.424,
+          "avg_unc_top3": 0.6,
+          "evidence_starts_top5": 7.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 1,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "2",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 6.161,
+          "top3_boundary_gap": 6.409,
+          "top6_spread": 23.284,
+          "avg_unc_top3": 0.2667,
+          "evidence_starts_top5": 20.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.046,
+          "top3_boundary_gap": 0.072,
+          "top6_spread": 0.297,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.311,
+          "top3_boundary_gap": 0.046,
+          "top6_spread": 0.906,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 14.154,
+          "top3_boundary_gap": 5.665,
+          "top6_spread": 40.291,
+          "avg_unc_top3": 0.3333,
+          "evidence_starts_top5": 14.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "11",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.216,
+          "top6_spread": 0.829,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 6,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 5.093,
+          "top3_boundary_gap": 5.416,
+          "top6_spread": 25.184,
+          "avg_unc_top3": 0.5333,
+          "evidence_starts_top5": 11.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 7,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "8",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.524,
+          "top3_boundary_gap": 0.802,
+          "top6_spread": 13.423,
+          "avg_unc_top3": 0.1333,
+          "evidence_starts_top5": 27.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 8,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "8",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 5.147,
+          "top3_boundary_gap": 2.44,
+          "top6_spread": 20.805,
+          "avg_unc_top3": 0.2667,
+          "evidence_starts_top5": 18.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 9,
+        "classification": "C",
+        "decision": "CAUTION",
+        "axis": "7",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 6,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.461,
+          "top3_boundary_gap": 5.999,
+          "top6_spread": 11.0,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 26.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 10,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.316,
+          "top3_boundary_gap": 0.046,
+          "top6_spread": 1.288,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 11,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 9.09,
+          "top3_boundary_gap": 8.57,
+          "top6_spread": 21.128,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 39.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-29",
+        "track": "札幌",
+        "race_no": 12,
+        "classification": "A",
+        "decision": "BUY",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 7,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 9.599,
+          "top3_boundary_gap": 0.934,
+          "top6_spread": 24.13,
+          "avg_unc_top3": 0.0,
+          "evidence_starts_top5": 39.0,
+          "compressed_field": false
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "8",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.655,
+          "top3_boundary_gap": 0.512,
+          "top6_spread": 1.633,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "2",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.222,
+          "top3_boundary_gap": 0.234,
+          "top6_spread": 1.25,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.222,
+          "top3_boundary_gap": 0.163,
+          "top6_spread": 1.453,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "2",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.222,
+          "top3_boundary_gap": 0.163,
+          "top6_spread": 1.066,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.48,
+          "top3_boundary_gap": 0.234,
+          "top6_spread": 1.483,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 6,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.222,
+          "top3_boundary_gap": 0.163,
+          "top6_spread": 1.466,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 7,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "9",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.258,
+          "top3_boundary_gap": 0.234,
+          "top6_spread": 1.356,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 8,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "7",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.222,
+          "top3_boundary_gap": 0.163,
+          "top6_spread": 1.453,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 9,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.222,
+          "top3_boundary_gap": 0.163,
+          "top6_spread": 1.453,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 10,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.48,
+          "top3_boundary_gap": 0.189,
+          "top6_spread": 1.483,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 11,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "17",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.222,
+          "top3_boundary_gap": 0.397,
+          "top6_spread": 1.453,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "中京",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.421,
+          "top3_boundary_gap": 0.417,
+          "top6_spread": 1.423,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "13",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.333,
+          "top3_boundary_gap": 0.327,
+          "top6_spread": 1.795,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "9",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.538,
+          "top3_boundary_gap": 0.405,
+          "top6_spread": 2.28,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": false,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.703,
+          "top3_boundary_gap": 0.078,
+          "top6_spread": 1.431,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "2",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 2.106,
+          "top3_boundary_gap": 0.086,
+          "top6_spread": 3.576,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "1",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.538,
+          "top3_boundary_gap": 0.531,
+          "top6_spread": 2.28,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 6,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "2",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.568,
+          "top3_boundary_gap": 0.848,
+          "top6_spread": 2.809,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 7,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.568,
+          "top3_boundary_gap": 0.416,
+          "top6_spread": 2.317,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 8,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "3",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.568,
+          "top3_boundary_gap": 0.637,
+          "top6_spread": 2.722,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 9,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "18",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.211,
+          "top3_boundary_gap": 0.087,
+          "top6_spread": 0.82,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 10,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.637,
+          "top3_boundary_gap": 0.531,
+          "top6_spread": 1.379,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 11,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.637,
+          "top3_boundary_gap": 0.531,
+          "top6_spread": 1.457,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "新潟",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 1.538,
+          "top3_boundary_gap": 0.0,
+          "top6_spread": 2.969,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 1,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.262,
+          "top6_spread": 0.777,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 2,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.262,
+          "top6_spread": 0.777,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 3,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "14",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.023,
+          "top6_spread": 0.955,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 4,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "9",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.023,
+          "top6_spread": 0.829,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 5,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "6",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.023,
+          "top6_spread": 1.36,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 6,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.316,
+          "top3_boundary_gap": 0.052,
+          "top6_spread": 1.497,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 7,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "8",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.955,
+          "top3_boundary_gap": 0.418,
+          "top6_spread": 1.568,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 8,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "12",
+        "axis_top3": true,
+        "candidate_top3_complete": true,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.578,
+          "top3_boundary_gap": 0.282,
+          "top6_spread": 1.497,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 9,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "4",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.639,
+          "top6_spread": 1.568,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 10,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "16",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.113,
+          "top6_spread": 0.601,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 11,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "5",
+        "axis_top3": false,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.005,
+          "top3_boundary_gap": 0.262,
+          "top6_spread": 0.673,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      },
+      {
+        "date": "2026-08-30",
+        "track": "札幌",
+        "race_no": 12,
+        "classification": "PASS",
+        "decision": "PASS",
+        "axis": "10",
+        "axis_top3": true,
+        "candidate_top3_complete": false,
+        "ticket_count": 0,
+        "trio_hit": false,
+        "race_structure": {
+          "axis_gap": 0.578,
+          "top3_boundary_gap": 0.072,
+          "top6_spread": 1.271,
+          "avg_unc_top3": 1.0,
+          "evidence_starts_top5": 0.0,
+          "compressed_field": true
+        }
+      }
+    ]
+  }
+}
