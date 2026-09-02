@@ -1,0 +1,21 @@
+{
+  "version": "ORAL_V13_RELIABLE_HISTORY_ANCHOR",
+  "prediction_hash": "7a3b78e0158a4a42a8896de356c04f36ddd034faab732e1caf57bb344f2755fd",
+  "golden_parity_certified": false,
+  "override_count": 23,
+  "race_count_scored": 72,
+  "missing_result_joins": [],
+  "decision_counts": {
+    "PASS": 23,
+    "BUY": 47,
+    "CAUTION": 2
+  },
+  "axis_1st": 14,
+  "axis_2nd_3rd": 18,
+  "axis_outside_top3": 40,
+  "axis_top3_rate_pct": 44.44,
+  "trio_bought_races": 49,
+  "trio_hits": 9,
+  "trio_hit_rate_pct": 18.37,
+  "results_opened_after_prediction_seal": true
+}

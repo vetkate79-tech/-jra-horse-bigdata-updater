@@ -1,0 +1,47 @@
+{
+  "axis_all": false,
+  "decision_all": false,
+  "tickets_all_verified": false,
+  "cases": [
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 6,
+      "axis_match": false,
+      "decision_match": true,
+      "tickets_verified": false,
+      "ticket_exact_match": null,
+      "actual_axis": "4",
+      "system_axis": "6",
+      "actual_decision": "BUY",
+      "system_decision": "BUY"
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 7,
+      "axis_match": true,
+      "decision_match": true,
+      "tickets_verified": true,
+      "ticket_exact_match": false,
+      "actual_axis": "10",
+      "system_axis": "10",
+      "actual_decision": "BUY",
+      "system_decision": "BUY"
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 7,
+      "axis_match": false,
+      "decision_match": false,
+      "tickets_verified": true,
+      "ticket_exact_match": false,
+      "actual_axis": "2",
+      "system_axis": "16",
+      "actual_decision": "CAUTION",
+      "system_decision": "BUY"
+    }
+  ],
+  "certified": false
+}
