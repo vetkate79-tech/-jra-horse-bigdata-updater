@@ -1,0 +1,71 @@
+{
+  "schema_version": 2,
+  "name": "BIG_DATA_EVOLUTION_GOVERNANCE",
+  "purpose": "Prevent short-window overfitting while allowing bounded recent-context adaptation.",
+  "layers": {
+    "structural_big_data": {
+      "weight": 0.7,
+      "role": "Horse ability, class, surface/distance aptitude, running-style robustness and long-run jockey/trainer baselines.",
+      "minimum_unique_races_for_promotion": 500,
+      "minimum_independent_weeks": 8
+    },
+    "medium_term_form": {
+      "weight": 0.2,
+      "role": "Recent 3-5 starts and 30-90 day condition/form information. May reorder close candidates but may not erase structural evidence."
+    },
+    "short_term_context": {
+      "weight": 0.1,
+      "maximum_weight": 0.15,
+      "role": "Race-specific context correction only; never the base ability model.",
+      "allowed": [
+        "jockey_form_prior_14_30_days",
+        "trainer_form_prior_14_30_days",
+        "days_since_last_start",
+        "class_change",
+        "distance_change",
+        "surface_change",
+        "draw",
+        "declared_track_condition_before_seal",
+        "declared_weather_before_seal",
+        "pre_race_running_style_composition",
+        "pre_race_pace_pressure",
+        "venue_bias_from_prior_completed_meetings_only"
+      ],
+      "forbidden": [
+        "same_race_odds",
+        "same_race_popularity",
+        "same_race_result",
+        "same_race_payout",
+        "same_day_earlier_race_results_for_presealed_pure_prediction",
+        "future_profile_rows"
+      ]
+    }
+  },
+  "evolution": {
+    "unit": "36R report block",
+    "rule": "A 36R block is diagnostic evidence, not a training population by itself.",
+    "inheritance": {
+      "minimum_independent_positive_blocks": 2,
+      "require_positive_cumulative_gain": true,
+      "no_material_axis_degradation_pct_points": 3.0,
+      "no_material_candidate_degradation_pct_points": 3.0,
+      "single_block_roi_spike_cannot_promote": true
+    },
+    "promotion": {
+      "require_big_data_gate": true,
+      "require_final_unseen_block": true,
+      "require_nonnegative_unseen_fitness_delta": true,
+      "require_no_catastrophic_week": true,
+      "catastrophic_week_roi_floor_pct": 35.0,
+      "short_term_layer_cannot_promote_alone": true
+    },
+    "selection_priority": [
+      "axis_top3_rate",
+      "candidate_complete_rate",
+      "buy_hit_rate",
+      "roi_stability",
+      "total_roi"
+    ]
+  },
+  "leakage_policy": "Prediction inputs must be knowable before the prediction seal. Results, popularity, odds and payouts cannot affect pure prediction before SHA256 sealing."
+}
