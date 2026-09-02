@@ -14,6 +14,7 @@ on:
       - 'src/collect_upcoming_new_horses.py'
       - 'src/enrich_new_horse_entries.py'
       - 'src/collect_upcoming_runner_details.py'
+      - 'src/build_race_week_pre_race_features.py'
       - 'src/build_horse_base_catalog.py'
       - 'src/check_horse_master_completion.py'
       - '.github/workflows/register-upcoming-new-horses.yml'
@@ -52,6 +53,8 @@ jobs:
         run: python src/enrich_new_horse_entries.py
       - name: Expand details only for this week's runners
         run: python src/collect_upcoming_runner_details.py
+      - name: Build leakage-safe race-week pre-race features
+        run: python src/build_race_week_pre_race_features.py
       - name: Build lightweight public horse master
         run: python src/build_horse_base_catalog.py
       - name: Check horse master completion
@@ -60,7 +63,7 @@ jobs:
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json status/weekly_runner_details.json status/horse_master_completion.json
+          git add docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json docs/data/horses/pre_race_features.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json status/weekly_runner_details.json status/pre_race_features.json status/horse_master_completion.json
           git diff --cached --quiet || git commit -m 'data: refresh lightweight master and race-week runner details'
           for i in 1 2 3 4 5; do
             git pull --rebase --autostash origin main && git push && exit 0
