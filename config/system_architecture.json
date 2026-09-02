@@ -15,9 +15,10 @@
     "HORSE_MASTER_RESULT_MERGE"
   ],
   "active_workflows": {
-    "post-jra-meeting-update.yml": "RESULT_INGEST -> HORSE_MASTER_RESULT_MERGE",
+    "post-jra-meeting-update.yml": "RESULT_INGEST -> SCORING -> PDCA -> HORSE_MASTER_RESULT_MERGE",
     "register-upcoming-new-horses.yml": "RACE_WEEK_EXPANSION",
     "horse-master-maintenance.yml": "HORSE_MASTER_UPDATE",
+    "race-week-prediction-seal.yml": "PURE_PREDICTION -> PREDICTION_SEAL",
     "jra-market-timing.yml": "MARKET_EV_GATE_INDEPENDENT",
     "validate-jra-model.yml": "MODEL_VALIDATION_INDEPENDENT",
     "audit-oral-v6-certification.yml": "PRODUCTION_MODEL_CERTIFICATION_INDEPENDENT",
@@ -50,11 +51,12 @@
   },
   "single_writer_groups": {
     "horse_master": "horse-data-writes",
+    "live_prediction": "live-prediction-seal",
     "market": "market-status-writes",
     "dictionary": "site-dictionary-writes",
     "pages": "pages"
   },
-  "retired_workflow_policy": "Historical experiments, one-off diagnostics, backfills and V2-V13 replay calibration workflows must live outside .github/workflows so they cannot trigger automatically.",
+  "retired_workflow_policy": "Historical experiments, one-off diagnostics, backfills and V2-V14 replay calibration workflows live in .github/workflow-archive and cannot trigger automatically.",
   "no_mix_rules": [
     "PURE_PREDICTION must not read odds, popularity, payout or target result fields.",
     "MARKET_EV_GATE must not rewrite pure prediction rankings.",
