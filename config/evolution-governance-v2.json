@@ -1,7 +1,7 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "name": "BIG_DATA_EVOLUTION_GOVERNANCE",
-  "purpose": "Prevent short-window overfitting while allowing bounded recent-context adaptation.",
+  "purpose": "Prevent short-window overfitting while allowing bounded recent-context adaptation and explicit reproducibility learning.",
   "layers": {
     "structural_big_data": {
       "weight": 0.7,
@@ -51,8 +51,21 @@
       "no_material_candidate_degradation_pct_points": 3.0,
       "single_block_roi_spike_cannot_promote": true
     },
+    "repeatability": {
+      "same_block_repeats_count_as_independent": false,
+      "minimum_independent_validation_rounds": 3,
+      "recommended_independent_validation_rounds": 5,
+      "minimum_positive_round_ratio": 0.67,
+      "positive_round_roi_floor_pct": 80.0,
+      "maximum_axis_top3_stddev_pct_points": 10.0,
+      "maximum_candidate_complete_stddev_pct_points": 12.0,
+      "maximum_roi_coefficient_of_variation": 1.25,
+      "learning_rule": "Persist repeatability score, positive-round ratio, median, worst block and dispersion. Models with strong one-off results but weak independent replication are learned as unstable and cannot become the production parent.",
+      "retest_trigger": "Any model that wins an initial comparison must enter repeated independent validation before inheritance or production promotion."
+    },
     "promotion": {
       "require_big_data_gate": true,
+      "require_repeatability_gate": true,
       "require_final_unseen_block": true,
       "require_nonnegative_unseen_fitness_delta": true,
       "require_no_catastrophic_week": true,
@@ -63,9 +76,15 @@
       "axis_top3_rate",
       "candidate_complete_rate",
       "buy_hit_rate",
+      "repeatability",
       "roi_stability",
       "total_roi"
     ]
+  },
+  "optimization_targets": {
+    "axis_top3_rate_pct": 70,
+    "candidate_complete_rate_pct": 75,
+    "principle": "Improve trio capture through the shared horse-selection core so derived wager types improve together; do not optimize an isolated trio-only horse ranking."
   },
   "leakage_policy": "Prediction inputs must be knowable before the prediction seal. Results, popularity, odds and payouts cannot affect pure prediction before SHA256 sealing."
 }
