@@ -2,7 +2,7 @@
   "status": "ACTIVE_RESEARCH_PRODUCTION_CORE",
   "operational_layer": "ORAL_INTEGRATED_V1_2_SHADOW",
   "feature_layer": "JRA_MULTI_HORIZON_STRICT_CUTOFF_V2",
-  "updated_for": "2026-09-02 big-data anti-bias architecture",
+  "updated_for": "2026-09-02 big-data anti-bias and repeatability architecture",
   "market_isolation": {
     "odds_in_pure_prediction": false,
     "popularity_in_pure_prediction": false,
@@ -43,9 +43,26 @@
   "optimization_targets": {
     "axis_top3_rate_pct": 70,
     "top3_candidate_complete_capture_pct": 75,
-    "trio_policy": "Increase trifecta-box/trio hit capture only through improvements that preserve or improve axis and candidate coverage across large-sample and unseen validation.",
+    "trio_policy": "Increase trio hit capture only through improvements that preserve or improve the shared horse-selection core across large-sample and unseen validation.",
     "promotion_minimum_races": 500,
     "promotion_minimum_independent_weeks": 8
+  },
+  "repeatability_learning": {
+    "same_36r_rerun_counts_as_replication": false,
+    "minimum_independent_validation_rounds": 3,
+    "recommended_independent_validation_rounds": 5,
+    "minimum_positive_round_ratio": 0.67,
+    "recorded_metrics": [
+      "positive_round_ratio",
+      "median_performance",
+      "worst_independent_block",
+      "axis_top3_dispersion",
+      "candidate_complete_dispersion",
+      "roi_variation",
+      "repeatability_score",
+      "repeatability_grade"
+    ],
+    "rule": "A model that wins an initial comparison enters repeated independent validation. One-off winners are not inherited or promoted until reproducibility is demonstrated."
   },
   "shared_selection_core": {
     "rule": "All wager types share the same horse-selection core: axis durability, candidate pool, partner roles, third-place intrusion and failure scenarios.",
@@ -56,5 +73,12 @@
     "win": "Adds win-out requirements to the shared axis core.",
     "trifecta": "Adds finishing-order reproducibility to the shared three-horse core.",
     "coupling_policy": "Do not create an isolated trio-only horse ranking. Improvements to horse selection, candidate coverage or intrusion detection must feed every derived wager analysis before wager-specific conditions are applied."
+  },
+  "fixed_public_validation_archive": {
+    "month": "2026-08",
+    "dates": ["2026-08-01","2026-08-02","2026-08-08","2026-08-09","2026-08-15","2026-08-16","2026-08-22","2026-08-23","2026-08-29","2026-08-30"],
+    "race_count": 360,
+    "one_prediction_per_race": true,
+    "separate_from_actual_pre_race_archive": true
   }
 }
