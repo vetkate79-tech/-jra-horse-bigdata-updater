@@ -1,14 +1,16 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "mode": "LIVE_PURE_PREDICTION_SEAL",
   "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-  "generated_at": "2026-09-02T16:37:50.508442+09:00",
+  "generated_at": "2026-09-02T17:35:46.518596+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": null,
+  "situational_shadow_enabled": true,
+  "situational_shadow_production_override": false,
   "sealed_race_count": 0,
   "pending_race_count": 0,
   "races": [],
   "pending": [],
-  "prediction_hash_sha256": "111715f165097b098d0fc7c206be4cf6c5f2b3c625d5a22b76ccbcecc9a32af0"
+  "prediction_hash_sha256": "a4c5f7375ab6d19f85b7582970a9aea6598a5ba37de3d76b57993c9d30334095"
 }
