@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "status": "PASS",
-  "active_workflow_count": 11,
+  "status": "BLOCKED",
+  "active_workflow_count": 12,
   "required_workflow_count": 11,
   "active_workflows": [
     "audit-oral-v6-certification.yml",
@@ -13,6 +13,7 @@
     "race-week-prediction-seal.yml",
     "register-upcoming-new-horses.yml",
     "repair-horse-master-integrity.yml",
+    "research-v14-rank-profiles.yml",
     "system-architecture-audit.yml",
     "validate-jra-model.yml"
   ],
@@ -30,7 +31,9 @@
     "validate-jra-model.yml"
   ],
   "missing_required": [],
-  "unexpected_active_workflows": [],
+  "unexpected_active_workflows": [
+    "research-v14-rank-profiles.yml"
+  ],
   "checks": {
     "canonical_flow_complete": true,
     "horse_writer_serialized": true,
@@ -48,7 +51,7 @@
     "pdca_connected_and_non_mutating": true,
     "result_score_before_horse_merge": true,
     "validation_not_in_production_flow": true,
-    "active_workflow_scripts_explicitly_allowlisted": true,
+    "active_workflow_scripts_explicitly_allowlisted": false,
     "active_workflow_script_files_exist": true
   },
   "active_workflow_script_refs": {
@@ -104,6 +107,9 @@
       "merge_active_elite_into_catalog.py",
       "reconcile_elite_from_verified_master.py"
     ],
+    "research-v14-rank-profiles.yml": [
+      "research_v14_rank_profiles.py"
+    ],
     "system-architecture-audit.yml": [
       "audit_system_architecture.py"
     ],
@@ -114,8 +120,18 @@
       "manage_experiment_registry.py"
     ]
   },
-  "script_policy_mismatches": {},
-  "blockers": [],
+  "script_policy_mismatches": {
+    "research-v14-rank-profiles.yml": {
+      "expected": [],
+      "actual": [
+        "research_v14_rank_profiles.py"
+      ]
+    }
+  },
+  "blockers": [
+    "unexpected active workflows remain; archive or explicitly authorize them",
+    "check failed: active_workflow_scripts_explicitly_allowlisted"
+  ],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
