@@ -39,22 +39,22 @@ def text_at(unit, xpath: str) -> str:
     return clean(nodes[0].text_content()) if nodes else ""
 
 
-def category_at(unit: object, fallback: str) -> str:
+def categories_at(unit: object, fallback: str) -> list[str]:
     nodes = unit.xpath('.//div[contains(concat(" ",normalize-space(@class)," ")," category ")]')
     if not nodes:
-        return fallback
+        return [fallback]
     values = [clean(x.text_content()) for x in nodes[0].xpath('.//a')]
     values = [x for x in values if x]
-    return " / ".join(values) or fallback
+    return list(dict.fromkeys(values)) or [fallback]
 
 
 def parse_page(kind: str, code: str) -> list[dict]:
     if kind == "domestic":
         url = f"https://www.jra.go.jp/kouza/yougo/{code}_list.html"
-        fallback = "JRA競馬用語"
+        fallback = "その他"
     else:
         url = f"https://www.jra.go.jp/keiba/overseas/yougo/{code}_list.html"
-        fallback = "海外競馬英語"
+        fallback = "競走"
     page = html.fromstring(fetch(url).decode("shift_jis", "replace"))
     terms = []
     for unit in page.xpath(UNIT_XPATH):
@@ -63,17 +63,19 @@ def parse_page(kind: str, code: str) -> list[dict]:
             continue
         reading = text_at(unit, './/div[contains(concat(" ",normalize-space(@class)," ")," yomi ")]')
         reading = re.sub(r"^読み\s*", "", reading)
-        category = category_at(unit, fallback)
+        categories = categories_at(unit, fallback)
+        category_label = " / ".join(categories)
         if kind == "domestic":
-            summary = f"JRA公式競馬用語辞典に掲載されている「{category}」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。"
+            summary = f"JRA公式競馬用語辞典に掲載されている「{category_label}」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。"
             source_name = "JRA公式 競馬用語辞典"
         else:
-            summary = f"海外競馬で使われる英語表現。JRA公式海外競馬英和辞典では「{category}」分野に分類されています。"
+            summary = f"海外競馬で使われる英語表現。JRA公式海外競馬英和辞典では「{category_label}」分野に分類されています。"
             source_name = "JRA公式 海外競馬英和辞典"
         terms.append({
             "term": term,
             "reading": reading,
-            "category": category,
+            "category": categories[0],
+            "categories": categories,
             "summary": summary,
             "aliases": [],
             "source_name": source_name,
@@ -108,7 +110,7 @@ def main() -> None:
     terms = sorted(unique.values(), key=lambda item: (item["source_kind"], item["term"].casefold()))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({
-        "schema_version": 1,
+        "schema_version": 2,
         "authority": "Japan Racing Association",
         "policy": "Terms, readings and classifications are indexed as factual metadata. Explanations on this site are original summaries and do not reproduce JRA definition text.",
         "source_urls": ["https://www.jra.go.jp/kouza/yougo/", "https://www.jra.go.jp/keiba/overseas/yougo/"],
