@@ -2,7 +2,7 @@
 from __future__ import annotations
 import itertools
 
-MODEL_VERSION='ORAL_INTEGRATED_V1_1_SHADOW'
+MODEL_VERSION='ORAL_INTEGRATED_V1_2_SHADOW'
 
 def _f(v,d=0.0):
     try:return float(v)
@@ -82,7 +82,7 @@ def _scenarios(axis,roles,intrusion):
     same_side=[x for x in roles if any(k in x['roles'] for k in ('安定型','能力上位'))][:3]
     return [
         {'id':'BASE','label':'基本成立','covered_horses':[x['horse_no'] for x in same_side]},
-        {'id':'AXIS_FAIL','label':'軸だけ飛ぶ','covered_horses':[x['horse_no'] for x in roles[:5]],'note':'相手内完結を最低1組監査'},
+        {'id':'AXIS_FAIL','label':'軸だけ飛ぶ','covered_horses':[x['horse_no'] for x in roles[:5]],'note':'MIDは買い目の約半数を軸なしで監査'},
         {'id':'THIRD_INTRUSION','label':'3着低順位馬侵入','covered_horses':[x['horse_no'] for x in intrusion]},
         {'id':'STRUCTURE_FLIP','label':'想定展開反転','covered_horses':[x['horse_no'] for x in roles if '条件適性' in x['roles'] or '近走上昇' in x['roles']][:3]},
     ]
@@ -119,14 +119,24 @@ def _tickets(q,dur,roles,intrusion):
         for a,b in itertools.combinations(pool,2):out.append(_combo([axis,a,b]))
         shape='AXIS'; out=out[:9]
     elif dur['status']=='MID':
-        second=ns[1]; pool=list(dict.fromkeys(partners+intr))
-        pool=[x for x in pool if x not in (axis,second)][:5]
-        for x in pool:out.append(_combo([axis,second,x]))
-        for a,b in itertools.combinations(pool,2):
-            if len(out)>=8:break
-            out.append(_combo([axis,a,b]))
-        if len(pool)>=3:out.append(_combo(pool[:3]))
-        shape='DUAL'; out=list(dict.fromkeys(out))[:9]
+        # MIDは固定軸として扱わない。約半数を1位軸あり、約半数を1位軸なしにする。
+        alternatives=list(dict.fromkeys(partners+intr+ns[1:7]))
+        alternatives=[x for x in alternatives if x!=axis and x in ns][:6]
+        anchored=[]
+        for a,b in itertools.combinations(alternatives[:4],2):
+            anchored.append(_combo([axis,a,b]))
+            if len(anchored)>=4:break
+        axis_free=[]
+        triples=list(itertools.combinations(alternatives,3))
+        triples.sort(key=lambda c:(
+            0 if any(x in intr for x in c) else 1,
+            sum(alternatives.index(x) for x in c)
+        ))
+        for c in triples:
+            axis_free.append(_combo(c))
+            if len(axis_free)>=4:break
+        out=list(dict.fromkeys(anchored+axis_free))[:8]
+        shape='HEDGED'
     else:
         shape='GROUP'
         pool=list(dict.fromkeys(ns[:5]+intr))[:6]
@@ -140,7 +150,7 @@ def _classification(dur,q,tickets,data_quality):
     spread=_f(q[0].get('score'))-_f(q[min(4,len(q)-1)].get('score'))
     if dur['status']=='HIGH' and data_quality=='HIGH' and avg_unc<=.50:return 'A'
     if dur['status']=='HIGH' and avg_unc<=.60 and spread>=2.5:return 'B'
-    if dur['status']=='MID' and data_quality=='HIGH' and avg_unc<=.60 and spread>=4:return 'B'
+    # MIDは軸固定の信頼度が不足しているためBUYへ昇格させない。
     if dur['status']=='MID' and avg_unc<=.65 and spread>=2:return 'C'
     return 'PASS'
 
@@ -149,7 +159,7 @@ def _derived(axis,roles,dur,cls):
     second=roles[0] if roles else None
     return {
       'PLACE':{'decision':'BUY_CANDIDATE' if dur['status']=='HIGH' and cls!='PASS' else ('CAUTION' if dur['status']=='MID' and cls!='PASS' else 'PASS'),'primary_horses':[a],'reason':'軸耐久性を3着以内残存へ読み替える'},
-      'WIDE':{'decision':'BUY_CANDIDATE' if cls in ('A','B','C') and second else 'PASS','primary_horses':[a]+([{'horse_no':second['horse_no'],'horse_name':second['horse_name']}] if second else []),'reason':'軸と相手が同時に馬券内へ残る組合せを優先'},
+      'WIDE':{'decision':'BUY_CANDIDATE' if cls in ('A','B') and second else ('CAUTION' if cls=='C' and second else 'PASS'),'primary_horses':[a]+([{'horse_no':second['horse_no'],'horse_name':second['horse_name']}] if second else []),'reason':'軸と相手が同時に馬券内へ残る組合せを優先'},
       'QUINELLA':{'decision':'CAUTION' if cls in ('A','B') and second else 'PASS','primary_horses':[a]+([{'horse_no':second['horse_no'],'horse_name':second['horse_name']}] if second else []),'reason':'3着耐久性より1・2着到達力を要求'},
       'WIN':{'decision':'BUY_CANDIDATE' if cls=='A' and dur.get('gap_to_second',0)>=4 else 'PASS','primary_horses':[a],'reason':'安定性とは別に1着を取り切る評価差が必要'},
       'TRIFECTA':{'decision':'CAUTION' if cls=='A' and dur['status']=='HIGH' else 'PASS','primary_horses':[a],'reason':'三連複候補に加え着順再現性が必要'}
@@ -176,5 +186,5 @@ def analyze_race(race):
       'data_quality':data_quality,
       'derived_ticket_analysis':_derived(axis,roles,dur,cls),
       'market_isolation':'NO_ODDS_OR_POPULARITY_USED',
-      'implementation_note':'V1.1 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, and role-diversified partners.'
+      'implementation_note':'V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.'
     }
