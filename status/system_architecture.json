@@ -44,6 +44,9 @@
     "market_reads_only_sealed_races": true,
     "market_final_ticket_honesty": true,
     "market_does_not_run_prediction_engine": true,
+    "post_result_scoring_connected": true,
+    "pdca_connected_and_non_mutating": true,
+    "result_score_before_horse_merge": true,
     "validation_not_in_production_flow": true
   },
   "blockers": [],
