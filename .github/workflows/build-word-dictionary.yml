@@ -10,6 +10,8 @@ on:
       - 'docs/data/glossary.json'
       - 'docs/data/site-terms.json'
       - 'docs/data/site-terms-extra.json'
+      - 'docs/data/jra-official-terms.json'
+      - 'src/import_jra_official_glossary.py'
       - 'src/build_site_term_candidates.py'
       - 'src/build_word_dictionary_pages.py'
       - 'src/inject_global_word_links.py'
@@ -35,8 +37,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install glossary parser
+        run: python -m pip install 'lxml>=5,<7'
       - name: Audit uncovered site terminology
         run: python src/build_site_term_candidates.py
+      - name: Import JRA official domestic and overseas terminology
+        run: python src/import_jra_official_glossary.py
       - name: Build only curated self-contained dictionary pages
         run: python src/build_word_dictionary_pages.py
       - name: Inject global word linker

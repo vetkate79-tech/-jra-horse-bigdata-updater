@@ -40,6 +40,8 @@ PDCA
 - **辞書/サイト**: `build-word-dictionary.yml` / `deploy-management-erp.yml`。競馬モデル状態と分離します。
 - **緊急修復**: `repair-horse-master-integrity.yml`。通常フロー外の手動経路です。
 
+競馬ワードは、JRA公式「競馬用語辞典」と「海外競馬英和辞典」を最優先ソースとして定期取得します。用語・読み・分類・出典URLを保持し、JRAの説明文は大量転載せず、このサイト独自の短い案内文と公式出典リンクを表示します。トップページは自動用語リンクの対象外です。
+
 ## Active GitHub Actions
 
 Active Actionsは正規運用に必要な11本だけです。

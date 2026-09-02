@@ -58,7 +58,7 @@
   },
   "active_workflow_script_policy": {
     "audit-oral-v6-certification.yml": ["audit_oral_golden_v6.py", "audit_oral_v6_robustness.py"],
-    "build-word-dictionary.yml": ["build_site_term_candidates.py", "build_word_dictionary_pages.py", "inject_global_word_links.py"],
+    "build-word-dictionary.yml": ["build_site_term_candidates.py", "build_word_dictionary_pages.py", "import_jra_official_glossary.py", "inject_global_word_links.py"],
     "deploy-management-erp.yml": [],
     "horse-master-maintenance.yml": ["build_horse_base_catalog.py", "check_horse_master_completion.py", "collect_active_elite_horses.py", "discover_registered_horse_ids.py", "enrich_all_catalog_profiles.py", "enrich_new_horse_entries.py", "expand_horse_categories.py", "merge_active_elite_into_catalog.py"],
     "jra-market-timing.yml": ["market_timing_gate.py"],

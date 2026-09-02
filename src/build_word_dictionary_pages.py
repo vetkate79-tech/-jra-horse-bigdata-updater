@@ -5,7 +5,7 @@ from collections import defaultdict
 
 ROOT=Path('.')
 DOCS=ROOT/'docs'
-SOURCES=[DOCS/'data/glossary.json',DOCS/'data/site-terms.json',DOCS/'data/site-terms-extra.json']
+SOURCES=[DOCS/'data/glossary.json',DOCS/'data/site-terms.json',DOCS/'data/site-terms-extra.json',DOCS/'data/jra-official-terms.json']
 OUT=DOCS/'words'
 INDEX=DOCS/'data/word-index.json'
 CATEGORY_ORDER=['馬券','予想','脚質','展開','ペース','能力','成績','クラス','重賞','馬データ','血統・調教','市場','詳細分析','AI・機能','レース前','競馬用語','その他']

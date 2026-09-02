@@ -59,6 +59,7 @@
     "build-word-dictionary.yml": [
       "build_site_term_candidates.py",
       "build_word_dictionary_pages.py",
+      "import_jra_official_glossary.py",
       "inject_global_word_links.py"
     ],
     "deploy-management-erp.yml": [],
