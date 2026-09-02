@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'docs/**'
+      - 'validation/**'
+      - 'data/race_results_html_2026*.csv'
+      - 'src/build_august_validation_archive.py'
       - '.github/workflows/deploy-management-erp.yml'
   workflow_dispatch:
 
@@ -26,6 +29,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Build fixed August one-race-one-prediction archive
+        run: python src/build_august_validation_archive.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
