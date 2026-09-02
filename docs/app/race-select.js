@@ -1,82 +1,24 @@
 (()=>{
-const $=s=>document.querySelector(s);
-const DEMO_DATE='2026-08-30';
-let data={races:[]};
-let state={date:'',track:'',raceNo:null,selected:new Set()};
-const uniq=a=>[...new Set(a)];
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-function racesForDate(){return data.races.filter(r=>r.date===state.date)}
-function racesForTrack(){return data.races.filter(r=>r.date===state.date&&r.track===state.track)}
-function currentRace(){return data.races.find(r=>r.date===state.date&&r.track===state.track&&Number(r.race_no)===Number(state.raceNo))||null}
-function normalize(){
-  const dates=uniq(data.races.map(r=>r.date)).sort().reverse();
-  if(!dates.includes(state.date))state.date=dates[0]||'';
-  const tracks=uniq(racesForDate().map(r=>r.track));
-  if(!tracks.includes(state.track))state.track=tracks[0]||'';
-  const raceNos=uniq(racesForTrack().map(r=>Number(r.race_no))).sort((a,b)=>a-b);
-  if(!raceNos.includes(Number(state.raceNo)))state.raceNo=raceNos[0]??null;
-  const valid=new Set((currentRace()?.horses||[]).map(h=>String(h.n)));
-  state.selected=new Set([...state.selected].filter(n=>valid.has(n)));
-}
-function renderDates(){
-  const dates=uniq(data.races.map(r=>r.date)).sort().reverse();
-  $('#dateSeg').innerHTML=dates.map(d=>`<button class="${d===state.date?'on':''}" data-date="${esc(d)}"><b>翌週デモ</b><small>8/30データ使用</small></button>`).join('');
-  document.querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{state.date=b.dataset.date;state.track='';state.raceNo=null;state.selected.clear();normalize();render()});
-}
-function renderTracks(){
-  const tracks=uniq(racesForDate().map(r=>r.track));
-  $('#trackSeg').innerHTML=tracks.map(t=>`<button class="${t===state.track?'on':''}" data-track="${esc(t)}">${esc(t)}</button>`).join('');
-  document.querySelectorAll('[data-track]').forEach(b=>b.onclick=()=>{state.track=b.dataset.track;state.raceNo=null;state.selected.clear();normalize();render()});
-}
-function renderRaces(){
-  const rows=racesForTrack().slice().sort((a,b)=>Number(a.race_no)-Number(b.race_no));
-  $('#raceStrip').innerHTML=rows.map(r=>`<button class="${Number(r.race_no)===Number(state.raceNo)?'on':''}" data-race="${r.race_no}"><b>${r.race_no}</b><small>R</small></button>`).join('');
-  document.querySelectorAll('[data-race]').forEach(b=>b.onclick=()=>{state.raceNo=Number(b.dataset.race);state.selected.clear();render()});
-}
-function updateAction(selected){
-  const action=$('#selectedAction');
-  if(!action)return;
-  if(!selected.length){action.classList.add('disabled');action.removeAttribute('href');action.textContent='馬を選ぶと分析できます';return;}
-  const p=new URLSearchParams({date:state.date,track:state.track,race:String(state.raceNo||'')});
-  p.set('horses',selected.map(h=>h.n).join(','));
-  action.href=`../analysis/?${p.toString()}`;
-  action.classList.remove('disabled');
-  action.textContent=`選んだ${selected.length}頭で詳細分析 →`;
-}
-function renderRaceCard(){
-  const r=currentRace();
-  if(!r){
-    $('#raceTitle').textContent='レースを選択';
-    $('#raceMeta').textContent='';
-    $('#horses').innerHTML='<div class="empty-card"><b>出馬表取得待ち</b><span>このレースの馬名データはまだありません。</span></div>';
-    $('#selectedCount').textContent='0頭';
-    $('#selectedNames').textContent='気になる馬をタップしてください';
-    updateAction([]);
-    return;
-  }
-  $('#raceTitle').textContent=`${r.track} ${r.race_no}R ${r.race_name||''}`.trim();
-  $('#raceMeta').textContent=['翌週デモ',r.start_time,r.surface,r.distance_m?`${r.distance_m}m`:null].filter(Boolean).join(' ・ ');
-  const horses=(r.horses||[]).slice().sort((a,b)=>Number(a.n)-Number(b.n));
-  $('#horses').innerHTML=horses.length?horses.map(h=>`<button class="horse-row ${state.selected.has(String(h.n))?'selected':''}" data-horse="${esc(h.n)}"><span class="frame frame-${h.frame||''}">${h.frame||'—'}</span><span class="horse-no">${esc(h.n)}</span><span class="horse-info"><b>${esc(h.name)}</b><small>${[h.sex,h.weight?`${h.weight}kg`:null,h.jockey].filter(Boolean).join(' ・ ')}</small></span><span class="pick">${state.selected.has(String(h.n))?'✓':'＋'}</span></button>`).join(''):'<div class="empty-card"><b>出馬表取得待ち</b><span>このレースの馬名データはまだありません。</span></div>';
-  document.querySelectorAll('[data-horse]').forEach(b=>b.onclick=()=>{const n=b.dataset.horse;state.selected.has(n)?state.selected.delete(n):state.selected.add(n);renderRaceCard()});
-  const selected=horses.filter(h=>state.selected.has(String(h.n)));
-  $('#selectedCount').textContent=`${selected.length}頭`;
-  $('#selectedNames').textContent=selected.length?selected.map(h=>`${h.n} ${h.name}`).join(' / '):'気になる馬をタップしてください';
-  updateAction(selected);
-  document.body.dataset.date=state.date;document.body.dataset.track=state.track;document.body.dataset.race=String(state.raceNo||'');
-}
-function render(){normalize();renderDates();renderTracks();renderRaces();renderRaceCard()}
-function showError(){
-  $('#dateSeg').innerHTML='';$('#trackSeg').innerHTML='';$('#raceStrip').innerHTML='';
-  $('#raceTitle').textContent='出馬表を読み込めませんでした';
-  $('#raceMeta').textContent='';
-  $('#horses').innerHTML='<div class="empty-card"><b>データ読込エラー</b><span>ページを再読み込みしてください。</span></div>';
-  updateAction([]);
-}
-fetch('../data/race_cards.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(String(r.status));return r.json()}).then(d=>{
-  const all=Array.isArray(d.races)?d.races:[];
-  data={races:all.filter(r=>r.date===DEMO_DATE)};
-  if(!data.races.length)throw new Error('demo date empty');
-  render();
-}).catch(showError);
+const $=s=>document.querySelector(s);const DEMO_DATE='2026-08-30';
+const BETS={trio:{label:'三連複',need:3,ordered:false,hint:'3頭を選択'},place:{label:'複勝',need:1,ordered:false,hint:'1頭を選択'},wide:{label:'ワイド',need:2,ordered:false,hint:'2頭を選択'},quinella:{label:'馬連',need:2,ordered:false,hint:'2頭を選択'},win:{label:'単勝',need:1,ordered:false,hint:'1頭を選択'},trifecta:{label:'三連単',need:3,ordered:true,hint:'1着→2着→3着の順に選択'}};
+let data={races:[]},results={races:[]};let state={date:DEMO_DATE,track:'',raceNo:null,bet:'trio',selected:[]};
+const uniq=a=>[...new Set(a)],esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const racesForTrack=()=>data.races.filter(r=>r.track===state.track);const currentRace=()=>data.races.find(r=>r.track===state.track&&Number(r.race_no)===Number(state.raceNo))||null;
+function normalize(){const tracks=uniq(data.races.map(r=>r.track));if(!tracks.includes(state.track))state.track=tracks[0]||'';const nums=uniq(racesForTrack().map(r=>+r.race_no)).sort((a,b)=>a-b);if(!nums.includes(+state.raceNo))state.raceNo=nums[0]??null;const valid=new Set((currentRace()?.horses||[]).map(h=>String(h.n)));state.selected=state.selected.filter(n=>valid.has(n)).slice(0,BETS[state.bet].need)}
+function resetTicket(){state.selected=[];const d=$('#resultJudge');if(d)d.open=false}
+function renderTracks(){const tracks=uniq(data.races.map(r=>r.track));$('#trackSeg').innerHTML=tracks.map(t=>`<button class="${t===state.track?'on':''}" data-track="${esc(t)}">${esc(t)}</button>`).join('');document.querySelectorAll('[data-track]').forEach(b=>b.onclick=()=>{state.track=b.dataset.track;state.raceNo=null;resetTicket();render()})}
+function renderRaces(){const rows=racesForTrack().slice().sort((a,b)=>+a.race_no-+b.race_no);$('#raceStrip').innerHTML=rows.map(r=>`<button class="${+r.race_no===+state.raceNo?'on':''}" data-race="${r.race_no}"><b>${r.race_no}</b><small>R</small></button>`).join('');document.querySelectorAll('[data-race]').forEach(b=>b.onclick=()=>{state.raceNo=+b.dataset.race;resetTicket();render()})}
+function renderBets(){const b=BETS[state.bet];$('#betSeg').innerHTML=Object.entries(BETS).map(([k,v])=>`<button class="${k===state.bet?'on':''}" data-bet="${k}">${v.label}</button>`).join('');$('#betHint').textContent=b.ordered?`${b.hint}。選んだ順番を着順として扱います。`:`${b.hint}して馬券を作ります。`;$('#pickRule').textContent=b.hint;document.querySelectorAll('[data-bet]').forEach(x=>x.onclick=()=>{state.bet=x.dataset.bet;resetTicket();render()})}
+function ticketComplete(){return state.selected.length===BETS[state.bet].need}
+function selectedHorses(){const r=currentRace(),m=new Map((r?.horses||[]).map(h=>[String(h.n),h]));return state.selected.map(n=>m.get(n)).filter(Boolean)}
+function toggleHorse(n){n=String(n);const i=state.selected.indexOf(n);if(i>=0){state.selected.splice(i,1)}else{const need=BETS[state.bet].need;if(state.selected.length<need)state.selected.push(n)}renderRaceCard()}
+function buildParams(){const p=new URLSearchParams({date:DEMO_DATE,track:state.track,race:String(state.raceNo||''),bet:state.bet,horses:state.selected.join(',')});const r=currentRace();if(r)p.set('race_name',r.race_name||'');const hs=selectedHorses();p.set('horse_names',hs.map(h=>h.name).join(','));return p}
+function renderActions(){const ask=$('#askAction'),expert=$('#expertAction'),complete=ticketComplete();const p=buildParams();expert.href=`../analysis/?${p.toString()}`;if(complete){ask.href=`../consult/?${p.toString()}&ticket_mode=1`;ask.classList.remove('disabled');ask.textContent='この馬券をAIに聞く →'}else{ask.removeAttribute('href');ask.classList.add('disabled');ask.textContent='馬券を完成するとAIに聞けます'}renderResult()}
+function renderRaceCard(){const r=currentRace();if(!r)return;$('#raceTitle').textContent=`${r.track} ${r.race_no}R ${r.race_name||''}`.trim();$('#raceMeta').textContent=['翌週デモ',r.start_time,r.surface,r.distance_m?`${r.distance_m}m`:null].filter(Boolean).join(' ・ ');const horses=(r.horses||[]).slice().sort((a,b)=>+a.n-+b.n);$('#horses').innerHTML=horses.map(h=>{const pos=state.selected.indexOf(String(h.n));const picked=pos>=0;const ord=BETS[state.bet].ordered&&picked?`${pos+1}着`:picked?'✓':'＋';return `<button class="horse-row ${picked?'selected':''}" data-horse="${esc(h.n)}"><span class="frame frame-${h.frame||''}">${h.frame||'—'}</span><span class="horse-no">${esc(h.n)}</span><span class="horse-info"><b>${esc(h.name)}</b><small>${[h.sex,h.weight?`${h.weight}kg`:null,h.jockey].filter(Boolean).join(' ・ ')}</small></span><span class="pick ${BETS[state.bet].ordered&&picked?'order':''}">${ord}</span></button>`}).join('');document.querySelectorAll('[data-horse]').forEach(b=>b.onclick=()=>toggleHorse(b.dataset.horse));const hs=selectedHorses();$('#selectedCount').textContent=`${state.selected.length}/${BETS[state.bet].need}頭`;$('#selectedNames').textContent=hs.length?hs.map((h,i)=>`${BETS[state.bet].ordered?`${i+1}着 `:''}${h.n} ${h.name}`).join(' / '):'馬をタップしてください';renderActions()}
+function actualRace(){return results.races.find(r=>r.track===state.track&&+r.race_no===+state.raceNo)}
+function judge(){if(!ticketComplete())return null;const r=actualRace();if(!r)return null;const f=n=>r.finishes?.[String(n)]?.finish;const s=state.selected.map(String),top3=(r.top3||[]).slice().sort((a,b)=>a.finish-b.finish).map(x=>String(x.horse_no));let hit=false;if(state.bet==='win')hit=f(s[0])===1;else if(state.bet==='place')hit=f(s[0])<=3;else if(state.bet==='wide')hit=s.every(n=>f(n)<=3);else if(state.bet==='quinella')hit=new Set(s).size===2&&s.every(n=>top3.slice(0,2).includes(n));else if(state.bet==='trio')hit=s.length===3&&s.every(n=>top3.includes(n));else if(state.bet==='trifecta')hit=s.join(',')===top3.join(',');return{hit,r}}
+function renderResult(){const body=$('#resultBody'),j=judge();if(!ticketComplete()){body.innerHTML='馬券を完成すると判定できます。';return}if(!j){body.innerHTML='結果データを確認中です。';return}const top=j.r.top3.map(x=>`${x.finish}着 ${x.horse_no} ${esc(x.horse_name)}`).join(' / ');body.innerHTML=`<b class="${j.hit?'judge-hit':'judge-miss'}">${j.hit?'的中':'不的中'}</b><p>実結果：${top}</p>`}
+function render(){normalize();renderTracks();renderRaces();renderBets();renderRaceCard()}
+function showError(){$('#raceTitle').textContent='出馬表を読み込めませんでした';$('#horses').innerHTML='<div class="empty-card"><b>データ読込エラー</b><span>ページを再読み込みしてください。</span></div>'}
+Promise.all([fetch('../data/race_cards.json',{cache:'no-store'}).then(r=>r.json()),fetch('../data/demo-results-2026-08-30.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]}).catch(()=>({races:[]}))]).then(([cards,res])=>{data={races:(cards.races||[]).filter(r=>r.date===DEMO_DATE)};results=res;if(!data.races.length)throw Error('empty');render()}).catch(showError);
 })();
