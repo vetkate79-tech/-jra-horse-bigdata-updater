@@ -1,19 +1,13 @@
 {
   "schema_version": 1,
-  "status": "BLOCKED",
-  "active_workflow_count": 17,
+  "status": "PASS",
+  "active_workflow_count": 11,
   "required_workflow_count": 11,
   "active_workflows": [
-    "archive-final-diagnostics.yml",
     "audit-oral-v6-certification.yml",
     "build-word-dictionary.yml",
     "deploy-management-erp.yml",
-    "diagnose-v10-failure-groups.yml",
-    "diagnose-v12-v6-axis.yml",
-    "diagnose-v9-failure-groups.yml",
     "horse-master-maintenance.yml",
-    "inspect-2025-rolling-source.yml",
-    "inspect-target-race-class-fields.yml",
     "jra-market-timing.yml",
     "post-jra-meeting-update.yml",
     "race-week-prediction-seal.yml",
@@ -36,14 +30,7 @@
     "validate-jra-model.yml"
   ],
   "missing_required": [],
-  "unexpected_active_workflows": [
-    "archive-final-diagnostics.yml",
-    "diagnose-v10-failure-groups.yml",
-    "diagnose-v12-v6-axis.yml",
-    "diagnose-v9-failure-groups.yml",
-    "inspect-2025-rolling-source.yml",
-    "inspect-target-race-class-fields.yml"
-  ],
+  "unexpected_active_workflows": [],
   "checks": {
     "canonical_flow_complete": true,
     "horse_writer_serialized": true,
@@ -57,9 +44,7 @@
     "market_does_not_run_prediction_engine": true,
     "validation_not_in_production_flow": true
   },
-  "blockers": [
-    "unexpected active workflows remain; archive or explicitly authorize them"
-  ],
+  "blockers": [],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
