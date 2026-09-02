@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import json, os
-from datetime import datetime, timedelta
+import json
+from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -8,6 +8,15 @@ TZ=ZoneInfo('Asia/Tokyo')
 DATA=Path('docs/data/dashboard.json')
 OUT=Path('docs/data/market_watch_status.json')
 now=datetime.now(TZ)
+
+POLICY={
+    'thursday':'publish all races immediately without odds',
+    'friday_morning':'pure prediction only',
+    'after_friday_noon':'odds check every 12h',
+    'race_day':'odds check every 3h',
+    'race_relative':['T-60','T-30','T-10'],
+    'firewall':'odds never change ability ranking; only value/purchase judgment'
+}
 
 def parse_dt(r):
     d=r.get('race_date') or r.get('date')
@@ -19,7 +28,6 @@ def parse_dt(r):
 def phase_for(r):
     dt=parse_dt(r)
     if not dt:return 'DATA_PENDING'
-    # Thursday publication through Friday morning: pure prediction only
     if now.weekday()==3:return 'PURE_PREDICTION'
     if now.weekday()==4 and now.hour<12:return 'PURE_PREDICTION'
     if now.date()<dt.date():return 'VALUE_WATCH_12H'
@@ -47,6 +55,19 @@ raw=json.loads(DATA.read_text(encoding='utf-8')) if DATA.exists() else {'races':
 rows=[]
 for r in raw.get('races',[]):
     is_due,reason=due(r)
-    rows.append({'race_id':r.get('race_id'),'track':r.get('track'),'race_no':r.get('race_no'),'start_time':r.get('start_time'),'phase':phase_for(r),'odds_check_due':is_due,'checkpoint':reason})
-OUT.write_text(json.dumps({'checked_at':now.isoformat(),'policy':{'thursday':'publish all races immediately without odds','friday_morning':'pure prediction only','after_friday_noon':'odds check every 12h','race_day':'odds check every 3h','race_relative':['T-60','T-30','T-10'],'firewall':'odds never change ability ranking; only value/purchase judgment'},'races':rows},ensure_ascii=False,indent=2),encoding='utf-8')
-print(json.dumps({'checked_at':now.isoformat(),'races':len(rows),'due':sum(x['odds_check_due'] for x in rows)},ensure_ascii=False))
+    rows.append({
+        'race_id':r.get('race_id'),'track':r.get('track'),'race_no':r.get('race_no'),
+        'start_time':r.get('start_time'),'phase':phase_for(r),
+        'odds_check_due':is_due,'checkpoint':reason
+    })
+
+semantic={'policy':POLICY,'races':rows}
+old={}
+if OUT.exists():
+    try:old=json.loads(OUT.read_text(encoding='utf-8'))
+    except Exception:old={}
+old_semantic={'policy':old.get('policy'),'races':old.get('races')}
+changed=old_semantic!=semantic
+if changed:
+    OUT.write_text(json.dumps({'checked_at':now.isoformat(),**semantic},ensure_ascii=False,indent=2),encoding='utf-8')
+print(json.dumps({'checked_at':now.isoformat(),'races':len(rows),'due':sum(x['odds_check_due'] for x in rows),'state_changed':changed},ensure_ascii=False))
