@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "objective": "One clean production flow with explicitly independent subsystems",
+  "production_flow": [
+    "JRA_OFFICIAL_DATA_INGEST",
+    "HORSE_MASTER_UPDATE",
+    "RACE_WEEK_EXPANSION",
+    "PURE_PREDICTION",
+    "PREDICTION_SEAL",
+    "MARKET_EV_GATE",
+    "FINAL_TICKETS",
+    "RESULT_INGEST",
+    "SCORING",
+    "PDCA",
+    "HORSE_MASTER_RESULT_MERGE"
+  ],
+  "active_workflows": {
+    "post-jra-meeting-update.yml": "RESULT_INGEST -> HORSE_MASTER_RESULT_MERGE",
+    "register-upcoming-new-horses.yml": "RACE_WEEK_EXPANSION",
+    "horse-master-maintenance.yml": "HORSE_MASTER_UPDATE",
+    "jra-market-timing.yml": "MARKET_EV_GATE_INDEPENDENT",
+    "validate-jra-model.yml": "MODEL_VALIDATION_INDEPENDENT",
+    "audit-oral-v6-certification.yml": "PRODUCTION_MODEL_CERTIFICATION_INDEPENDENT",
+    "build-word-dictionary.yml": "SITE_DICTIONARY_INDEPENDENT",
+    "deploy-management-erp.yml": "SITE_DEPLOY_INDEPENDENT",
+    "repair-horse-master-integrity.yml": "EMERGENCY_REPAIR_INDEPENDENT",
+    "system-architecture-audit.yml": "GOVERNANCE_AUDIT"
+  },
+  "independent_subsystems": {
+    "market": {
+      "workflow": "jra-market-timing.yml",
+      "rule": "Odds/popularity may affect only value and purchase judgement after prediction seal; never pure ability ranking."
+    },
+    "validation": {
+      "workflow": "validate-jra-model.yml",
+      "rule": "Validation uses leakage-safe ledgers and cannot write into live prediction outputs."
+    },
+    "model_certification": {
+      "workflow": "audit-oral-v6-certification.yml",
+      "rule": "Golden-case parity and leakage checks are independent from race-day operation."
+    },
+    "site_dictionary": {
+      "workflow": "build-word-dictionary.yml",
+      "rule": "Terminology generation never changes horse ranking or betting logic."
+    },
+    "emergency_repair": {
+      "workflow": "repair-horse-master-integrity.yml",
+      "rule": "Manual-only repair path; not part of normal production sequence."
+    }
+  },
+  "single_writer_groups": {
+    "horse_master": "horse-data-writes",
+    "market": "market-status-writes",
+    "dictionary": "site-dictionary-writes",
+    "pages": "pages"
+  },
+  "retired_workflow_policy": "Historical experiments, one-off diagnostics, backfills and V2-V13 replay calibration workflows must live outside .github/workflows so they cannot trigger automatically.",
+  "no_mix_rules": [
+    "PURE_PREDICTION must not read odds, popularity, payout or target result fields.",
+    "MARKET_EV_GATE must not rewrite pure prediction rankings.",
+    "RESULT_INGEST starts only after races complete and must not modify sealed historical predictions.",
+    "MODEL_VALIDATION must remain separate from production writes.",
+    "SITE_DICTIONARY and SITE_DEPLOY must remain separate from racing model state."
+  ]
+}
