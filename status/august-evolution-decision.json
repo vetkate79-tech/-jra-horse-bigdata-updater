@@ -1,0 +1,8 @@
+{
+  "decision": "DO_NOT_PROMOTE",
+  "reason": "The mutations selected on 2026-08-15 did not reproduce an improvement on the untouched 2026-08-16 final 36R validation block. The final block had the same axis/candidate rates and zero BUY trio hits for both the evolved champion and V1.2 baseline. A one-block ROI spike is treated as non-generalizing and is rejected.",
+  "production_model_remains": "ORAL_INTEGRATED_V1_2_SHADOW",
+  "rejected_global_mutations": ["ticket:coverage", "gate:axis_strict"],
+  "next_policy": "Retain only mutations that improve on a subsequent untouched 36R block; use race-structure-specific genes rather than globally inheriting a mutation from one favorable block.",
+  "web_archive_policy": "Only actual pre-race conversation logs are public. Validation replays remain validation artifacts and are excluded from the past-prediction page."
+}
