@@ -3,10 +3,12 @@
   "today_jst": "2026-09-02",
   "sealed_race_count": 0,
   "pending_race_count": 0,
-  "prediction_hash_sha256": "a4c5f7375ab6d19f85b7582970a9aea6598a5ba37de3d76b57993c9d30334095",
+  "prediction_hash_sha256": "10d4f0ef6464751deded45e5aa0fc176244f62053a8c6f415aa17a4b8d67348d",
   "pre_race_feature_cutoff": null,
   "situational_shadow_enabled": true,
   "situational_shadow_production_override": false,
+  "ensemble_shadow_enabled": true,
+  "ensemble_shadow_production_override": false,
   "odds_popularity_used": false,
   "results_used": false
 }
