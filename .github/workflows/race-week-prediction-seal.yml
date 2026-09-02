@@ -12,6 +12,7 @@ on:
       - 'src/build_live_sealed_predictions.py'
       - 'src/oral_operational_layer.py'
       - 'docs/data/race_cards.json'
+      - 'docs/data/horses/pre_race_features.json'
       - 'docs/data/horses/catalog.json'
       - 'docs/data/horses/base_catalog.json'
       - '.github/workflows/race-week-prediction-seal.yml'
