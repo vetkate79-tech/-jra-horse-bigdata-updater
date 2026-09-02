@@ -5,6 +5,7 @@ import json
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from copy import deepcopy
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -47,6 +48,85 @@ def categories_at(unit: object, fallback: str) -> list[str]:
     return list(dict.fromkeys(values)) or [fallback]
 
 
+def definition_at(unit: object) -> str:
+    """Extract the explanatory prose while excluding title, reading and category UI.
+
+    The original prose is only used as source material for a short on-site summary;
+    it is not stored verbatim in the generated JSON.
+    """
+    clone = deepcopy(unit)
+    remove_xpaths = [
+        './/h3',
+        './/div[contains(concat(" ",normalize-space(@class)," ")," yomi ")]',
+        './/div[contains(concat(" ",normalize-space(@class)," ")," category ")]',
+        './/script',
+        './/style',
+        './/figure',
+    ]
+    for xpath in remove_xpaths:
+        for node in clone.xpath(xpath):
+            parent = node.getparent()
+            if parent is not None:
+                parent.remove(node)
+    text = clean(clone.text_content())
+    text = re.sub(r"^(?:用語\s*)+", "", text)
+    # UI blocks after the explanation are not part of the meaning.
+    for marker in ("関連リンク", "関連用語", "カテゴリー"):
+        if marker in text:
+            text = text.split(marker, 1)[0].strip()
+    text = re.sub(r"^読み\s*[^ ]+\s*", "", text)
+    return clean(text)
+
+
+def summarize_definition(term: str, definition: str, categories: list[str]) -> str:
+    """Create a concise original summary from the official explanation.
+
+    Keep the core definition, drop long historical/examples, and normalize common
+    dictionary endings so the page works as a standalone quick reference.
+    """
+    definition = clean(definition)
+    if not definition:
+        return f"{term}は、JRAの競馬用語辞典で扱われる競馬用語です。"
+
+    sentences = [clean(x) for x in re.split(r"(?<=。)", definition) if clean(x)]
+    chosen: list[str] = []
+    total = 0
+    for sentence in sentences:
+        if not sentence:
+            continue
+        if total and total + len(sentence) > 180:
+            break
+        chosen.append(sentence)
+        total += len(sentence)
+        if total >= 70 or len(chosen) >= 2:
+            break
+    summary = clean("".join(chosen)) or definition[:180]
+
+    # Light rewriting to avoid turning the site into a mirror of the source text.
+    rewrites = (
+        ("のことをいう。", "を指します。"),
+        ("のことをいう", "を指します"),
+        ("のこと。", "を指します。"),
+        ("のこと", "を指します"),
+        ("と呼ぶ。", "という呼び方です。"),
+        ("と呼ばれる。", "と呼ばれます。"),
+        ("という。", "といいます。"),
+        ("一般に", "主に"),
+        ("競馬では", "競馬で"),
+    )
+    for old, new in rewrites:
+        summary = summary.replace(old, new)
+    summary = clean(summary)
+
+    if len(summary) > 190:
+        cut = summary[:190]
+        last = max(cut.rfind("。"), cut.rfind("、"))
+        summary = (cut[: last + 1] if last >= 80 else cut.rstrip("、。") + "。").strip()
+    if not summary.endswith(("。", "！", "？")):
+        summary += "。"
+    return summary
+
+
 def parse_page(code: str) -> list[dict]:
     url = f"https://www.jra.go.jp/kouza/yougo/{code}_list.html"
     fallback = "その他"
@@ -59,8 +139,8 @@ def parse_page(code: str) -> list[dict]:
         reading = text_at(unit, './/div[contains(concat(" ",normalize-space(@class)," ")," yomi ")]')
         reading = re.sub(r"^読み\s*", "", reading)
         categories = categories_at(unit, fallback)
-        category_label = " / ".join(categories)
-        summary = f"JRA公式競馬用語辞典に掲載されている「{category_label}」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。"
+        definition = definition_at(unit)
+        summary = summarize_definition(term, definition, categories)
         source_name = "JRA公式 競馬用語辞典"
         terms.append({
             "term": term,
@@ -99,11 +179,21 @@ def main() -> None:
     for item in collected:
         unique.setdefault(key(item["term"]), item)
     terms = sorted(unique.values(), key=lambda item: item["term"].casefold())
+
+    generic = [
+        item["term"] for item in terms
+        if "詳しい意味はJRA公式" in item["summary"]
+        or "分野の用語" in item["summary"]
+    ]
+    weak = [item["term"] for item in terms if len(item["summary"]) < 8]
+    if generic or weak:
+        raise RuntimeError(json.dumps({"generic_summaries": generic[:20], "weak_summaries": weak[:20]}, ensure_ascii=False))
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({
-        "schema_version": 2,
+        "schema_version": 3,
         "authority": "Japan Racing Association",
-        "policy": "Terms, readings and classifications are indexed as factual metadata. Explanations on this site are original summaries and do not reproduce JRA definition text.",
+        "policy": "Terms, readings and classifications follow JRA factual metadata. Meanings are concise on-site summaries derived from JRA explanations; the original definition text is not stored verbatim.",
         "source_urls": ["https://www.jra.go.jp/kouza/yougo/"],
         "count": len(terms),
         "terms": terms,
@@ -111,6 +201,7 @@ def main() -> None:
     print(json.dumps({
         "count": len(terms),
         "domestic": len(terms),
+        "meaning_summaries": len(terms),
         "output": str(OUT),
     }, ensure_ascii=False))
 
