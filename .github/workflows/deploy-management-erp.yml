@@ -8,6 +8,7 @@ on:
       - 'validation/**'
       - 'data/race_results_html_2026*.csv'
       - 'src/build_august_validation_archive.py'
+      - 'src/build_demo_0830_results.py'
       - '.github/workflows/deploy-management-erp.yml'
   workflow_dispatch:
 
@@ -31,6 +32,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Build fixed August one-race-one-prediction archive
         run: python src/build_august_validation_archive.py
+      - name: Build isolated 8/30 demo result judgement
+        run: python src/build_demo_0830_results.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
