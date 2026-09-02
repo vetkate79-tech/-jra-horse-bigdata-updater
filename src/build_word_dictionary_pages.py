@@ -19,6 +19,28 @@ DOMESTIC_CATEGORY_ORDER=[
 ]
 CATEGORY_ORDER=DOMESTIC_CATEGORY_ORDER
 OFFICIAL_CATEGORIES=set(CATEGORY_ORDER)
+CATEGORY_DISPLAY_LABELS={
+    'レース、騎乗技術など':'レース・騎乗',
+    'レースの種類、条件など':'レース条件',
+    '馬の癖':'馬の癖',
+    '競馬で使用する様々な道具':'競馬道具',
+    '勝馬投票券関係、投票関係':'馬券・投票',
+    '調教関係':'調教',
+    '生産、育成関係、飼糧など':'生産・育成',
+    '血統、馬の種類など':'血統・馬種',
+    '競馬場などの施設、設備':'競馬場・施設',
+    '競馬関係の組織、団体、会議など':'組織・団体',
+    '競馬史上のもの（現存のものは除く）':'競馬史',
+    '競馬に関わる人々':'競馬関係者',
+    '競馬関係の法律、施行規程、公正確保など':'法律・公正',
+    '厩舎ことば':'厩舎用語',
+    '馬体の各部位、特徴、個体の分類など':'馬体・特徴',
+    '馬の病気、ケガ、能力をそこなうものなど':'病気・ケガ',
+    '資格・成績・ランキング・表彰など':'成績・表彰',
+    '馬の脚質、あしいろ、歩様、距離特性など':'脚質・歩様',
+    'JRA主催のイベント、ファンサービスなど':'JRAイベント',
+    'その他':'その他',
+}
 LOCAL_CATEGORY_MAP={
     '馬券':'勝馬投票券関係、投票関係','市場':'勝馬投票券関係、投票関係',
     'クラス':'レースの種類、条件など','レース条件':'レースの種類、条件など',
@@ -63,7 +85,8 @@ def categories(t):
         if official not in mapped: mapped.append(official)
     return mapped or ['その他']
 
-def category_label(t): return ' / '.join(categories(t))
+def display_category(category): return CATEGORY_DISPLAY_LABELS[category]
+def category_label(t): return ' / '.join(display_category(c) for c in categories(t))
 
 def base_css():
     return '''<style>:root{--bg:#f7f8fb;--paper:#fff;--ink:#17202a;--muted:#6d7784;--line:#e2e7ee;--blue:#2563a8;--soft:#eef5ff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}.wrap{max-width:900px;margin:auto;padding:18px 15px 80px}.top{display:flex;justify-content:space-between;align-items:center;padding:10px 0}.top a{text-decoration:none;color:var(--ink);font-weight:900}.hero{padding:20px 0}.hero h1{font-size:30px;margin:0 0 8px;color:var(--ink)}.hero p{color:var(--muted);font-size:13px;line-height:1.7}.search{width:100%;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--paper);font-size:16px}.cats{display:flex;gap:7px;overflow:auto;padding:12px 0}.chip{border:1px solid #cbd9eb;background:#fff;color:var(--ink);border-radius:999px;padding:8px 11px;white-space:nowrap;font-weight:800;font-size:12px}.group{margin-top:20px}.group h2{font-size:17px;margin:0 0 9px;color:var(--ink)}.grid{display:grid;gap:8px}.term{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:13px}.term b{color:var(--ink)}.term small{display:block;color:var(--muted);margin-top:4px}.empty{color:var(--muted);font-size:13px;margin:0;padding:12px 0}.reading{color:var(--muted);font-size:11px}.summary{font-size:14px;line-height:1.85}.aliases{background:var(--soft);padding:10px 12px;border-radius:12px;color:#345b83;font-size:12px}.back{display:inline-block;color:var(--blue);font-weight:800;text-decoration:none;margin-top:18px}@media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}</style>'''
@@ -79,8 +102,8 @@ def write_index(terms):
     for c in ordered:
         items=''.join(f'<a class="term" data-term="{html.escape(norm(t["term"]))}" data-cat="{html.escape(c)}" href="./{slug(t["term"])}/"><b>{html.escape(t["term"])}</b><small>{html.escape(t.get("reading") or "")}　{html.escape(t.get("summary") or "")}</small></a>' for t in groups[c])
         if not items: items='<p class="empty">現在登録されている用語はありません</p>'
-        cards.append(f'<section class="group" data-group="{html.escape(c)}"><h2>{html.escape(c)} <small>{len(groups[c])}語</small></h2><div class="grid">{items}</div></section>')
-    chips=''.join(f'<button class="chip" data-filter="{html.escape(c)}">{html.escape(c)} {len(groups[c])}</button>' for c in ordered)
+        cards.append(f'<section class="group" data-group="{html.escape(c)}"><h2 title="{html.escape(c)}">{html.escape(display_category(c))} <small>{len(groups[c])}語</small></h2><div class="grid">{items}</div></section>')
+    chips=''.join(f'<button class="chip" data-filter="{html.escape(c)}" title="{html.escape(c)}">{html.escape(display_category(c))} {len(groups[c])}</button>' for c in ordered)
     page=f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>競馬ワード索引｜JRA AI</title>{base_css()}</head><body><main class="wrap"><header class="top"><a href="../">JRA AI</a><a href="../consult/">AIに相談</a></header><section class="hero"><h1>競馬ワード索引</h1><p>JRA公式「競馬用語辞典」のカテゴリーに準拠して探せます。</p></section><input id="q" class="search" type="search" placeholder="ワード・読み方・関連語を検索"><div class="cats"><button class="chip" data-filter="ALL">すべて {len(terms)}</button>{chips}</div><div id="groups">{''.join(cards)}</div></main><script>const q=document.querySelector('#q');let cat='ALL';function n(s){{return String(s||'').normalize('NFKC').toLowerCase().replace(/[\\s・･._\\-ー()（）]/g,'')}}function run(){{const z=n(q.value);document.querySelectorAll('.term').forEach(a=>{{const okCat=cat==='ALL'||a.dataset.cat===cat;const okQ=!z||n(a.textContent).includes(z);a.style.display=okCat&&okQ?'block':'none'}});document.querySelectorAll('.group').forEach(g=>{{const has=[...g.querySelectorAll('.term')].some(a=>a.style.display!=='none');const empty=g.querySelector('.empty');const showEmpty=!!empty&&!z&&(cat==='ALL'||g.dataset.group===cat);g.style.display=has||showEmpty?'block':'none'}})}}q.oninput=run;document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{{cat=b.dataset.filter;run()}})</script></body></html>'''
     OUT.mkdir(parents=True,exist_ok=True);(OUT/'index.html').write_text(page,encoding='utf-8')
 
@@ -100,7 +123,7 @@ def write_term_pages(terms):
 def main():
     terms=load_terms();write_index(terms);write_term_pages(terms)
     INDEX.parent.mkdir(parents=True,exist_ok=True)
-    INDEX.write_text(json.dumps({'count':len(terms),'category_standard':'JRA','category_order':CATEGORY_ORDER,'terms':[{'term':t['term'],'reading':t.get('reading'),'category':categories(t)[0],'categories':categories(t),'aliases':t.get('aliases') or [],'url':f'words/{slug(t["term"])}/'} for t in terms]},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+    INDEX.write_text(json.dumps({'count':len(terms),'category_standard':'JRA','category_order':CATEGORY_ORDER,'category_display_labels':CATEGORY_DISPLAY_LABELS,'terms':[{'term':t['term'],'reading':t.get('reading'),'category':categories(t)[0],'categories':categories(t),'aliases':t.get('aliases') or [],'url':f'words/{slug(t["term"])}/'} for t in terms]},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     generated={d.name for d in OUT.iterdir() if d.is_dir() and (d/'index.html').exists()}
     expected={slug(t['term']) for t in terms}
     if generated!=expected:
