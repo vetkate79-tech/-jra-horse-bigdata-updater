@@ -38,6 +38,7 @@ def main():
  market=Path('src/market_timing_gate.py').read_text(encoding='utf-8') if Path('src/market_timing_gate.py').exists() else ''
  scorer=Path('src/score_live_sealed_predictions.py').read_text(encoding='utf-8') if Path('src/score_live_sealed_predictions.py').exists() else ''
  pdca=Path('src/build_live_pdca.py').read_text(encoding='utf-8') if Path('src/build_live_pdca.py').exists() else ''
+ replay=Path('docs/replay/index.html').read_text(encoding='utf-8') if Path('docs/replay/index.html').exists() else ''
  checks['live_prediction_seal_exists']=bool(seal and builder)
  checks['live_seal_market_firewall']=all(x in builder for x in ("'odds_popularity_used':False","'results_used':False","FORBIDDEN_KEYS"))
  checks['market_reads_only_sealed_races']='live_predictions_sealed.json' in market and "'prediction_sealed':True" in market
@@ -47,6 +48,7 @@ def main():
  checks['pdca_connected_and_non_mutating']=bool(pdca) and 'build_live_pdca.py' in post and 'does not automatically rewrite the certified production model' in pdca
  checks['result_score_before_horse_merge']=post.find('score_live_sealed_predictions.py') < post.find('merge_latest_results_into_catalog.py')
  checks['validation_not_in_production_flow']='validate-jra-model.yml' not in post and 'validate-jra-model.yml' not in text('race-week-prediction-seal.yml')
+ checks['replay_feature_contract']=all(x in replay for x in ('過去レースのAI予測','data-month="2026-08"','data-month="2026-07"','class="locked"','<details class="result','結果を見る'))
  policy=cfg.get('active_workflow_script_policy',{})
  actual_refs={
    name:sorted(set(re.findall(r'src/([A-Za-z0-9_.-]+\.py)',text(name))))
@@ -66,7 +68,7 @@ def main():
  if unexpected:blockers.append('unexpected active workflows remain; archive or explicitly authorize them')
  blockers += [f'check failed: {k}' for k,v in checks.items() if not v]
  status='PASS' if not blockers else 'BLOCKED'
- report={'schema_version':1,'status':status,'active_workflow_count':len(active),'required_workflow_count':len(REQUIRED),'active_workflows':sorted(active),'required_workflows':sorted(REQUIRED),'missing_required':missing,'unexpected_active_workflows':unexpected,'checks':checks,'active_workflow_script_refs':actual_refs,'script_policy_mismatches':script_policy_mismatches,'blockers':blockers,'independent_subsystems':cfg.get('independent_subsystems'),'production_flow':cfg.get('production_flow'),'known_external_boundary':'Real market odds/EV acquisition is an external-data boundary. Until actual market data is connected, final tickets remain MARKET_DATA_PENDING rather than fabricated.','note':'PASS means orchestration shape, handoffs and subsystem boundaries are clean. It does not claim model predictive accuracy or live odds availability.'}
+ report={'schema_version':1,'status':status,'active_workflow_count':len(active),'required_workflow_count':len(REQUIRED),'active_workflows':sorted(active),'required_workflows':sorted(REQUIRED),'missing_required':missing,'unexpected_active_workflows':unexpected,'checks':checks,'active_workflow_script_refs':actual_refs,'script_policy_mismatches':script_policy_mismatches,'blockers':blockers,'independent_subsystems':cfg.get('independent_subsystems'),'production_flow':cfg.get('production_flow'),'known_external_boundary':'Real market odds/EV acquisition is an external-data boundary. Until actual market data is connected, final tickets remain MARKET_DATA_PENDING rather than fabricated.','note':'PASS means orchestration shape, handoffs, subsystem boundaries, and protected replay-site features are intact. It does not claim model predictive accuracy or live odds availability.'}
  OUT.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))
  if status!='PASS':raise SystemExit(2)
