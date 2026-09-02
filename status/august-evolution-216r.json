@@ -1,0 +1,389 @@
+{
+  "mode": "SEQUENTIAL_36R_EVOLUTION",
+  "dates": [
+    "2026-08-01",
+    "2026-08-02",
+    "2026-08-08",
+    "2026-08-09",
+    "2026-08-15",
+    "2026-08-16"
+  ],
+  "race_count": 216,
+  "base_prediction_hash_sha256": "fc5e340c9e6c993b3bdfd7466d2215f152c57fa6e1d8a0f91f2cf67f64718482",
+  "leakage_policy": "Target results, popularity, odds and payouts are unread by predict stage. Profile histories filtered strictly before target race date.",
+  "evolution_policy": "Each 36R block compares champion vs one-gene mutations. Only mutations improving fitness with axis/candidate guardrails are inherited. Final 8/16 block is unseen validation and cannot mutate model.",
+  "reports": [
+    {
+      "generation": 1,
+      "date": "2026-08-01",
+      "role": "DEVELOPMENT_AND_SELECTION",
+      "genes_entering": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "base"
+      },
+      "baseline_v12": {
+        "races": 36,
+        "axis_top3": 17,
+        "candidate_complete": 13,
+        "buy_races": 10,
+        "hits_buy": 2,
+        "stake": 9000,
+        "return": 14300,
+        "axis_top3_pct": 47.22,
+        "candidate_complete_pct": 36.11,
+        "buy_hit_pct": 20.0,
+        "roi_pct": 158.89,
+        "fitness": 59.554
+      },
+      "champion_entering": {
+        "races": 36,
+        "axis_top3": 17,
+        "candidate_complete": 13,
+        "buy_races": 10,
+        "hits_buy": 2,
+        "stake": 9000,
+        "return": 14300,
+        "axis_top3_pct": 47.22,
+        "candidate_complete_pct": 36.11,
+        "buy_hit_pct": 20.0,
+        "roi_pct": 158.89,
+        "fitness": 59.554
+      },
+      "selected_mutations": [],
+      "genes_leaving": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "base"
+      },
+      "champion_after_selection": {
+        "races": 36,
+        "axis_top3": 17,
+        "candidate_complete": 13,
+        "buy_races": 10,
+        "hits_buy": 2,
+        "stake": 9000,
+        "return": 14300,
+        "axis_top3_pct": 47.22,
+        "candidate_complete_pct": 36.11,
+        "buy_hit_pct": 20.0,
+        "roi_pct": 158.89,
+        "fitness": 59.554
+      }
+    },
+    {
+      "generation": 2,
+      "date": "2026-08-02",
+      "role": "DEVELOPMENT_AND_SELECTION",
+      "genes_entering": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "base"
+      },
+      "baseline_v12": {
+        "races": 36,
+        "axis_top3": 18,
+        "candidate_complete": 16,
+        "buy_races": 14,
+        "hits_buy": 4,
+        "stake": 12600,
+        "return": 10800,
+        "axis_top3_pct": 50.0,
+        "candidate_complete_pct": 44.44,
+        "buy_hit_pct": 28.57,
+        "roi_pct": 85.71,
+        "fitness": 51.466
+      },
+      "champion_entering": {
+        "races": 36,
+        "axis_top3": 18,
+        "candidate_complete": 16,
+        "buy_races": 14,
+        "hits_buy": 4,
+        "stake": 12600,
+        "return": 10800,
+        "axis_top3_pct": 50.0,
+        "candidate_complete_pct": 44.44,
+        "buy_hit_pct": 28.57,
+        "roi_pct": 85.71,
+        "fitness": 51.466
+      },
+      "selected_mutations": [],
+      "genes_leaving": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "base"
+      },
+      "champion_after_selection": {
+        "races": 36,
+        "axis_top3": 18,
+        "candidate_complete": 16,
+        "buy_races": 14,
+        "hits_buy": 4,
+        "stake": 12600,
+        "return": 10800,
+        "axis_top3_pct": 50.0,
+        "candidate_complete_pct": 44.44,
+        "buy_hit_pct": 28.57,
+        "roi_pct": 85.71,
+        "fitness": 51.466
+      }
+    },
+    {
+      "generation": 3,
+      "date": "2026-08-08",
+      "role": "DEVELOPMENT_AND_SELECTION",
+      "genes_entering": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "base"
+      },
+      "baseline_v12": {
+        "races": 36,
+        "axis_top3": 16,
+        "candidate_complete": 7,
+        "buy_races": 11,
+        "hits_buy": 0,
+        "stake": 9900,
+        "return": 0,
+        "axis_top3_pct": 44.44,
+        "candidate_complete_pct": 19.44,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 20.414
+      },
+      "champion_entering": {
+        "races": 36,
+        "axis_top3": 16,
+        "candidate_complete": 7,
+        "buy_races": 11,
+        "hits_buy": 0,
+        "stake": 9900,
+        "return": 0,
+        "axis_top3_pct": 44.44,
+        "candidate_complete_pct": 19.44,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 20.414
+      },
+      "selected_mutations": [],
+      "genes_leaving": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "base"
+      },
+      "champion_after_selection": {
+        "races": 36,
+        "axis_top3": 16,
+        "candidate_complete": 7,
+        "buy_races": 11,
+        "hits_buy": 0,
+        "stake": 9900,
+        "return": 0,
+        "axis_top3_pct": 44.44,
+        "candidate_complete_pct": 19.44,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 20.414
+      }
+    },
+    {
+      "generation": 4,
+      "date": "2026-08-09",
+      "role": "DEVELOPMENT_AND_SELECTION",
+      "genes_entering": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "base"
+      },
+      "baseline_v12": {
+        "races": 36,
+        "axis_top3": 20,
+        "candidate_complete": 14,
+        "buy_races": 8,
+        "hits_buy": 1,
+        "stake": 7200,
+        "return": 1770,
+        "axis_top3_pct": 55.56,
+        "candidate_complete_pct": 38.89,
+        "buy_hit_pct": 12.5,
+        "roi_pct": 24.58,
+        "fitness": 36.584
+      },
+      "champion_entering": {
+        "races": 36,
+        "axis_top3": 20,
+        "candidate_complete": 14,
+        "buy_races": 8,
+        "hits_buy": 1,
+        "stake": 7200,
+        "return": 1770,
+        "axis_top3_pct": 55.56,
+        "candidate_complete_pct": 38.89,
+        "buy_hit_pct": 12.5,
+        "roi_pct": 24.58,
+        "fitness": 36.584
+      },
+      "selected_mutations": [
+        "gate:base->structure"
+      ],
+      "genes_leaving": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "structure"
+      },
+      "champion_after_selection": {
+        "races": 36,
+        "axis_top3": 20,
+        "candidate_complete": 14,
+        "buy_races": 7,
+        "hits_buy": 1,
+        "stake": 6300,
+        "return": 1770,
+        "axis_top3_pct": 55.56,
+        "candidate_complete_pct": 38.89,
+        "buy_hit_pct": 14.29,
+        "roi_pct": 28.1,
+        "fitness": 37.647
+      }
+    },
+    {
+      "generation": 5,
+      "date": "2026-08-15",
+      "role": "DEVELOPMENT_AND_SELECTION",
+      "genes_entering": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "base",
+        "gate": "structure"
+      },
+      "baseline_v12": {
+        "races": 36,
+        "axis_top3": 10,
+        "candidate_complete": 10,
+        "buy_races": 8,
+        "hits_buy": 0,
+        "stake": 7200,
+        "return": 0,
+        "axis_top3_pct": 27.78,
+        "candidate_complete_pct": 27.78,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 16.668
+      },
+      "champion_entering": {
+        "races": 36,
+        "axis_top3": 10,
+        "candidate_complete": 10,
+        "buy_races": 8,
+        "hits_buy": 0,
+        "stake": 7200,
+        "return": 0,
+        "axis_top3_pct": 27.78,
+        "candidate_complete_pct": 27.78,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 16.668
+      },
+      "selected_mutations": [
+        "ticket:base->coverage",
+        "gate:structure->axis_strict"
+      ],
+      "genes_leaving": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "coverage",
+        "gate": "axis_strict"
+      },
+      "champion_after_selection": {
+        "races": 36,
+        "axis_top3": 10,
+        "candidate_complete": 10,
+        "buy_races": 6,
+        "hits_buy": 1,
+        "stake": 5400,
+        "return": 10670,
+        "axis_top3_pct": 27.78,
+        "candidate_complete_pct": 27.78,
+        "buy_hit_pct": 16.67,
+        "roi_pct": 197.59,
+        "fitness": 50.002
+      }
+    },
+    {
+      "generation": 6,
+      "date": "2026-08-16",
+      "role": "FINAL_UNSEEN_VALIDATION",
+      "genes_entering": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "coverage",
+        "gate": "axis_strict"
+      },
+      "baseline_v12": {
+        "races": 36,
+        "axis_top3": 8,
+        "candidate_complete": 6,
+        "buy_races": 9,
+        "hits_buy": 0,
+        "stake": 8100,
+        "return": 0,
+        "axis_top3_pct": 22.22,
+        "candidate_complete_pct": 16.67,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 11.944
+      },
+      "champion_entering": {
+        "races": 36,
+        "axis_top3": 8,
+        "candidate_complete": 6,
+        "buy_races": 8,
+        "hits_buy": 0,
+        "stake": 7200,
+        "return": 0,
+        "axis_top3_pct": 22.22,
+        "candidate_complete_pct": 16.67,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 11.944
+      },
+      "selected_mutations": [],
+      "genes_leaving": {
+        "axis": "rank1",
+        "intrusion": "base",
+        "ticket": "coverage",
+        "gate": "axis_strict"
+      },
+      "champion_after_selection": {
+        "races": 36,
+        "axis_top3": 8,
+        "candidate_complete": 6,
+        "buy_races": 8,
+        "hits_buy": 0,
+        "stake": 7200,
+        "return": 0,
+        "axis_top3_pct": 22.22,
+        "candidate_complete_pct": 16.67,
+        "buy_hit_pct": 0.0,
+        "roi_pct": 0.0,
+        "fitness": 11.944
+      }
+    }
+  ],
+  "final_genes": {
+    "axis": "rank1",
+    "intrusion": "base",
+    "ticket": "coverage",
+    "gate": "axis_strict"
+  },
+  "promotion_recommended": true
+}
