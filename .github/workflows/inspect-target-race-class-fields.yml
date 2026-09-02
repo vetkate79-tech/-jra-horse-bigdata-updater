@@ -1,0 +1,26 @@
+name: Inspect target race class fields
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/inspect_target_race_class_fields.py'
+      - '.github/workflows/inspect-target-race-class-fields.yml'
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/inspect_target_race_class_fields.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/target-race-class-field-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Inspect target race class fields'
+          git pull --rebase origin main
+          git push origin HEAD:main
