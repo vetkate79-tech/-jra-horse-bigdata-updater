@@ -1,0 +1,83 @@
+name: Horse master maintenance
+
+on:
+  schedule:
+    # Daily 02:15 JST. This replaces separate elite/category/lightweight retries.
+    - cron: '15 17 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/discover_registered_horse_ids.py'
+      - 'src/collect_active_elite_horses.py'
+      - 'src/merge_active_elite_into_catalog.py'
+      - 'src/enrich_all_catalog_profiles.py'
+      - 'src/expand_horse_categories.py'
+      - 'src/enrich_new_horse_entries.py'
+      - 'src/build_horse_base_catalog.py'
+      - 'src/check_horse_master_completion.py'
+      - '.github/workflows/horse-master-maintenance.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: horse-data-writes
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt && pip install pypdf
+      - name: Restore shared JRA caches
+        uses: actions/cache@v4
+        with:
+          path: |
+            cache/jra_horse_profiles
+            cache/jra_registered_roster
+          key: jra-horse-master-${{ runner.os }}-${{ hashFiles('data/race_results_html_2026.csv', 'docs/data/horses/catalog.json') }}
+          restore-keys: |
+            jra-horse-master-${{ runner.os }}-
+            jra-horse-data-${{ runner.os }}-v2-
+            jra-profile-incremental-${{ runner.os }}-
+            jra-new-horse-${{ runner.os }}-
+      - name: Discover current registered horses
+        run: python src/discover_registered_horse_ids.py
+      - name: Refresh active graded and open catalogs
+        env:
+          ELITE_PROFILE_WORKERS: '4'
+        run: python src/collect_active_elite_horses.py
+      - name: Merge elite catalog
+        run: python src/merge_active_elite_into_catalog.py
+      - name: Enrich all discovered horse profiles once
+        run: python src/enrich_all_catalog_profiles.py
+      - name: Expand verified class categories
+        run: python src/expand_horse_categories.py
+      - name: Enrich only new horses
+        run: python src/enrich_new_horse_entries.py
+      - name: Rebuild lightweight public horse master
+        run: python src/build_horse_base_catalog.py
+      - name: Audit horse master completion
+        run: python src/check_horse_master_completion.py
+      - name: Commit one coherent horse-master update
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/current_registered_horse_ids.csv docs/data/horses status/current_registered_roster.json status/active_elite_catalog.json status/all_catalog_profile_enrichment.json status/horse_master_completion.json || true
+          git diff --cached --quiet && exit 0
+          git commit -m 'data: maintain unified horse master'
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            echo "push race detected; retry $i/5"
+            sleep $((i*4))
+          done
+          exit 1
