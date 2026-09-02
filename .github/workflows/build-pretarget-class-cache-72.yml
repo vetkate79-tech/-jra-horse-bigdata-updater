@@ -1,0 +1,38 @@
+name: Build pretarget class cache 72
+on:
+  push:
+    paths:
+      - 'src/build_pretarget_class_cache_72.py'
+      - '.github/workflows/build-pretarget-class-cache-72.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas beautifulsoup4 lxml requests
+      - run: python src/build_pretarget_class_cache_72.py
+      - name: Verify isolation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('status/pretarget-class-feature-cache-72.json').read_text())
+          assert d['race_count']==72 and d['horse_count']==973
+          assert d['isolation']['target_result_rows_used'] is False
+          assert d['isolation']['odds_popularity_used'] is False
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/pretarget-class-feature-cache-72.json status/pretarget-class-feature-cache-72.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build pretarget current-class feature cache'
+          git pull --rebase origin main
+          git push origin HEAD:main
