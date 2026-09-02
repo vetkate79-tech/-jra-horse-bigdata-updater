@@ -1,9 +1,10 @@
 {
   "schema_version": 1,
   "status": "BLOCKED",
-  "active_workflow_count": 16,
+  "active_workflow_count": 17,
   "required_workflow_count": 11,
   "active_workflows": [
+    "archive-final-diagnostics.yml",
     "audit-oral-v6-certification.yml",
     "build-word-dictionary.yml",
     "deploy-management-erp.yml",
@@ -36,6 +37,7 @@
   ],
   "missing_required": [],
   "unexpected_active_workflows": [
+    "archive-final-diagnostics.yml",
     "diagnose-v10-failure-groups.yml",
     "diagnose-v12-v6-axis.yml",
     "diagnose-v9-failure-groups.yml",
