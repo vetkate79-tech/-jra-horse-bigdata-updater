@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "PASS",
+  "status": "BLOCKED",
   "active_workflow_count": 11,
   "required_workflow_count": 11,
   "active_workflows": [
@@ -48,7 +48,7 @@
     "pdca_connected_and_non_mutating": true,
     "result_score_before_horse_merge": true,
     "validation_not_in_production_flow": true,
-    "active_workflow_scripts_explicitly_allowlisted": true,
+    "active_workflow_scripts_explicitly_allowlisted": false,
     "active_workflow_script_files_exist": true
   },
   "active_workflow_script_refs": {
@@ -62,7 +62,9 @@
       "import_jra_official_glossary.py",
       "inject_global_word_links.py"
     ],
-    "deploy-management-erp.yml": [],
+    "deploy-management-erp.yml": [
+      "build_august_validation_archive.py"
+    ],
     "horse-master-maintenance.yml": [
       "build_horse_base_catalog.py",
       "check_horse_master_completion.py",
@@ -115,8 +117,17 @@
       "manage_experiment_registry.py"
     ]
   },
-  "script_policy_mismatches": {},
-  "blockers": [],
+  "script_policy_mismatches": {
+    "deploy-management-erp.yml": {
+      "expected": [],
+      "actual": [
+        "build_august_validation_archive.py"
+      ]
+    }
+  },
+  "blockers": [
+    "check failed: active_workflow_scripts_explicitly_allowlisted"
+  ],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
