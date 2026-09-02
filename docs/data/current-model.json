@@ -1,0 +1,60 @@
+{
+  "status": "ACTIVE_RESEARCH_PRODUCTION_CORE",
+  "operational_layer": "ORAL_INTEGRATED_V1_2_SHADOW",
+  "feature_layer": "JRA_MULTI_HORIZON_STRICT_CUTOFF_V2",
+  "updated_for": "2026-09-02 big-data anti-bias architecture",
+  "market_isolation": {
+    "odds_in_pure_prediction": false,
+    "popularity_in_pure_prediction": false,
+    "target_results_before_seal": false
+  },
+  "horse_ranking": {
+    "structural_big_data_weight": 0.70,
+    "medium_term_weight": 0.20,
+    "short_term_weight": 0.10,
+    "short_term_weight_cap": 0.15,
+    "structural_breakdown": {
+      "historical_top3_rate": 0.65,
+      "condition_fit": 0.25,
+      "long_term_jockey_top3_rate": 0.05,
+      "long_term_trainer_top3_rate": 0.05
+    },
+    "medium_term_breakdown": {
+      "recent_form": 0.70,
+      "last3f_signal": 0.30
+    },
+    "short_term_breakdown": {
+      "jockey_30d": 0.30,
+      "trainer_30d": 0.30,
+      "rest_fit": 0.20,
+      "surface_continuity": 0.10,
+      "distance_continuity": 0.10
+    },
+    "uncertainty_penalty_points": 8
+  },
+  "axis_durability": {
+    "historical_top3_rate": 0.30,
+    "condition_fit": 0.22,
+    "recent_form": 0.18,
+    "gap_to_second": 0.10,
+    "low_uncertainty": 0.12,
+    "evidence_volume": 0.08
+  },
+  "optimization_targets": {
+    "axis_top3_rate_pct": 70,
+    "top3_candidate_complete_capture_pct": 75,
+    "trio_policy": "Increase trifecta-box/trio hit capture only through improvements that preserve or improve axis and candidate coverage across large-sample and unseen validation.",
+    "promotion_minimum_races": 500,
+    "promotion_minimum_independent_weeks": 8
+  },
+  "shared_selection_core": {
+    "rule": "All wager types share the same horse-selection core: axis durability, candidate pool, partner roles, third-place intrusion and failure scenarios.",
+    "trio": "Primary development surface for 3-horse combination coverage.",
+    "place": "Reads axis 3rd-place durability from the shared core.",
+    "wide": "Reads two-horse simultaneous survival from the shared core.",
+    "quinella": "Adds 1st/2nd-place reach requirements to the shared core.",
+    "win": "Adds win-out requirements to the shared axis core.",
+    "trifecta": "Adds finishing-order reproducibility to the shared three-horse core.",
+    "coupling_policy": "Do not create an isolated trio-only horse ranking. Improvements to horse selection, candidate coverage or intrusion detection must feed every derived wager analysis before wager-specific conditions are applied."
+  }
+}
