@@ -1,0 +1,42 @@
+{
+  "races": 72,
+  "A": 20,
+  "B": 2,
+  "C": 13,
+  "PASS": 37,
+  "buy_races": 22,
+  "caution_races": 13,
+  "axis_top3": 38,
+  "axis_first": 16,
+  "trio_hits_all_nonpass": 5,
+  "trio_hits_buy": 2,
+  "stake_buy": 19800,
+  "return_buy": 4640,
+  "hedged_axis_fail_rescues": 1,
+  "candidate_top3_complete": 21,
+  "ticket_conversion_failures": 3,
+  "axis_top3_rate_pct": 52.78,
+  "buy_hit_rate_pct": 9.09,
+  "buy_roi_pct": 23.43,
+  "venue_breakdown": {
+    "中京": {
+      "races": 24,
+      "axis_top3": 14,
+      "buy_races": 7,
+      "trio_hits_buy": 0
+    },
+    "新潟": {
+      "races": 24,
+      "axis_top3": 13,
+      "buy_races": 7,
+      "trio_hits_buy": 2
+    },
+    "札幌": {
+      "races": 24,
+      "axis_top3": 11,
+      "buy_races": 8,
+      "trio_hits_buy": 0
+    }
+  },
+  "model_tuned_after_holdout": false
+}
