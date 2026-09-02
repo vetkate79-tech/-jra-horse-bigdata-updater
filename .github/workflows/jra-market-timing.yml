@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: market-status-writes
+  cancel-in-progress: true
+
 jobs:
   timing-gate:
     runs-on: ubuntu-latest
@@ -16,14 +20,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Evaluate prediction and odds checkpoints
+      - name: Evaluate independent odds checkpoints
         env:
           TZ: Asia/Tokyo
         run: python src/market_timing_gate.py
-      - name: Commit timing status
+      - name: Commit only semantic market-state changes
         run: |
           git config user.name 'jra-market-bot'
           git config user.email 'actions@users.noreply.github.com'
           git add docs/data/market_watch_status.json
-          git diff --cached --quiet || git commit -m 'data: update market timing status'
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m 'data: update market timing state'
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep $((i*2))
+          done
+          exit 1
