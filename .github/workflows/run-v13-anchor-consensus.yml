@@ -1,0 +1,37 @@
+name: Run V13 anchor consensus
+on:
+  push:
+    paths:
+      - 'src/build_score_oral_v13_anchor_consensus.py'
+      - '.github/workflows/run-v13-anchor-consensus.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  v13:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/build_score_oral_v13_anchor_consensus.py
+      - name: Verify artifacts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('status/oral-v13-72-anchor-consensus-scored.json').read_text())
+          g=json.loads(Path('status/oral-v13-golden-parity.json').read_text())
+          assert s['race_count_scored']==72 and not s['missing_result_joins']
+          assert s['results_opened_after_prediction_seal'] is True
+          print(json.dumps({'score':s,'golden':g},ensure_ascii=False,indent=2))
+          PY
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-v13-72-anchor-consensus-sealed.json docs/data/oral-v13-72-anchor-consensus-scored.json status/oral-v13-72-anchor-consensus-scored.json status/oral-v13-golden-parity.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Evaluate V13 reliable-history anchor consensus'
+          git pull --rebase origin main
+          git push origin HEAD:main
