@@ -1,0 +1,38 @@
+name: Rolling validate axis on 2025 JRA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/rolling_validate_axis_2025.py'
+      - '.github/workflows/rolling-validate-axis-2025.yml'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run chronological no-market validation
+        run: python src/rolling_validate_axis_2025.py
+      - name: Verify holdout isolation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('status/rolling-axis-validation-2025.json').read_text())
+          assert d['market_features_used'] is False
+          assert d['target_result_used_in_features'] is False
+          assert d['holdout_result']['races']>0
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/rolling-axis-validation-2025.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Validate no-market axis model on 2025 holdout'
+          git pull --rebase origin main
+          git push origin HEAD:main
