@@ -1,13 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "word_index_count": 549,
   "jra_official_terms": 456,
   "category_standard": "JRA",
   "domestic_categories": 20,
+  "category_display_labels": "simplified",
   "overseas_glossary_terms": 0,
   "multi_category_terms": 66,
   "legacy_categories": 0,
   "homepage_auto_word_links": false,
-  "source_commit": "3d6d6799a404ec4a5ab547c6d1de2a9874bf6d4a",
-  "published_at": "2026-09-02T05:46:00Z"
+  "source_commit": "9eb3d283e7783acd981f8daf895b184bd176f790",
+  "published_at": "2026-09-02T05:54:00Z"
 }
