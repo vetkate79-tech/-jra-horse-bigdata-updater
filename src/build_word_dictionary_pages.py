@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json,re,html
+import json,re,html,shutil
 from pathlib import Path
 from collections import defaultdict
 
@@ -50,6 +50,11 @@ def write_index(terms):
     OUT.mkdir(parents=True,exist_ok=True);(OUT/'index.html').write_text(page,encoding='utf-8')
 
 def write_term_pages(terms):
+    expected={slug(t['term']) for t in terms}
+    if OUT.exists():
+        for d in OUT.iterdir():
+            if d.is_dir() and d.name not in expected:
+                shutil.rmtree(d)
     for t in terms:
         d=OUT/slug(t['term']); d.mkdir(parents=True,exist_ok=True)
         aliases=t.get('aliases') or [];source=''
@@ -61,5 +66,9 @@ def main():
     terms=load_terms();write_index(terms);write_term_pages(terms)
     INDEX.parent.mkdir(parents=True,exist_ok=True)
     INDEX.write_text(json.dumps({'count':len(terms),'terms':[{'term':t['term'],'reading':t.get('reading'),'category':category(t),'aliases':t.get('aliases') or [],'url':f'words/{slug(t["term"])}/'} for t in terms]},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-    print(json.dumps({'terms':len(terms),'categories':len(set(category(t) for t in terms))},ensure_ascii=False))
+    generated={d.name for d in OUT.iterdir() if d.is_dir() and (d/'index.html').exists()}
+    expected={slug(t['term']) for t in terms}
+    if generated!=expected:
+        raise RuntimeError(f'dictionary page mismatch: expected={len(expected)} generated={len(generated)}')
+    print(json.dumps({'terms':len(terms),'categories':len(set(category(t) for t in terms)),'generated_pages':len(generated),'stale_pages':0},ensure_ascii=False))
 if __name__=='__main__':main()
