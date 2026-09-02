@@ -1,0 +1,52 @@
+name: Run oral V12 rank consensus
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/run_oral_v12_72_rank_consensus.py'
+      - 'src/audit_score_oral_v12.py'
+      - '.github/workflows/run-oral-v12-rank-consensus.yml'
+permissions:
+  contents: write
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas beautifulsoup4 lxml requests
+      - name: Build V12 predictions before results
+        run: python src/run_oral_v12_72_rank_consensus.py
+      - name: Verify sealed isolation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/oral-v12-72-rank-consensus-sealed.json').read_text())
+          assert d['race_count']==72
+          assert d['result_data_used'] is False and d['odds_popularity_used'] is False and d['post_target_running_style_used'] is False
+          assert d['prediction_hash_sha256']
+          print({'hash':d['prediction_hash_sha256']})
+          PY
+      - name: Audit golden parity then score results
+        run: python src/audit_score_oral_v12.py
+      - name: Verify complete scoring
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('status/oral-v12-72-rank-consensus-scored.json').read_text())
+          assert d['race_count_scored']==72 and not d['missing_result_joins'] and d['results_opened_after_seal'] is True
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit V12 artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/oral-v12-72-rank-consensus-sealed.json docs/data/oral-v12-72-rank-consensus-scored.json status/oral-v12-72-rank-consensus-sealed.json status/oral-v12-72-rank-consensus-scored.json status/oral-v12-golden-parity.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Evaluate V12 two-engine rank consensus'
+          git pull --rebase origin main
+          git push origin HEAD:main
