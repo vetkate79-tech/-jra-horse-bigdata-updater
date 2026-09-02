@@ -64,7 +64,7 @@
     "jra-market-timing.yml": ["market_timing_gate.py"],
     "post-jra-meeting-update.yml": ["build_horse_base_catalog.py", "build_live_pdca.py", "check_horse_master_completion.py", "collect_jra_recent_completed.py", "expand_horse_categories.py", "expire_weekly_runner_details.py", "merge_active_elite_into_catalog.py", "merge_latest_results_into_catalog.py", "score_live_sealed_predictions.py", "update_recent_runner_elite.py"],
     "race-week-prediction-seal.yml": ["build_live_sealed_predictions.py", "oral_operational_layer.py"],
-    "register-upcoming-new-horses.yml": ["build_horse_base_catalog.py", "check_horse_master_completion.py", "collect_upcoming_new_horses.py", "collect_upcoming_runner_details.py", "enrich_new_horse_entries.py"],
+    "register-upcoming-new-horses.yml": ["build_horse_base_catalog.py", "build_race_week_pre_race_features.py", "check_horse_master_completion.py", "collect_upcoming_new_horses.py", "collect_upcoming_runner_details.py", "enrich_new_horse_entries.py"],
     "repair-horse-master-integrity.yml": ["check_horse_master_completion.py", "merge_active_elite_into_catalog.py", "reconcile_elite_from_verified_master.py"],
     "system-architecture-audit.yml": ["audit_system_architecture.py"],
     "validate-jra-model.yml": ["audit_validation_prerequisites.py", "build_validation_dataset.py", "evaluate_backtest.py", "manage_experiment_registry.py"]
