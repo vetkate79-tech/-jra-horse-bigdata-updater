@@ -1,7 +1,7 @@
 {
   "files_scanned": 22,
   "registered_keys": 149,
-  "uncovered_candidates": 71,
+  "uncovered_candidates": 72,
   "top_candidates": [
     {
       "term": "展開",
@@ -310,6 +310,16 @@
       ]
     },
     {
+      "term": "候補",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "replay/index.html"
+      ]
+    },
+    {
       "term": "券型・買い目構造",
       "category": "サイト内候補",
       "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
@@ -497,16 +507,6 @@
       "occurrences": 1,
       "pages": [
         "about/index.html"
-      ]
-    },
-    {
-      "term": "本命候補",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "analysis/index.html"
       ]
     }
   ]
