@@ -1,7 +1,7 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "authority": "Japan Racing Association",
-  "policy": "Terms, readings and classifications are indexed as factual metadata. Explanations on this site are original summaries and do not reproduce JRA definition text.",
+  "policy": "Terms, readings and classifications follow JRA factual metadata. Meanings are concise on-site summaries derived from JRA explanations; the original definition text is not stored verbatim.",
   "source_urls": [
     "https://www.jra.go.jp/kouza/yougo/"
   ],
@@ -14,7 +14,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "正式名称は、馬番号三連勝単式勝馬投票法。1着、2着、3着となる馬の馬番号を着順通りに的中させる投票法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -28,7 +28,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "正式名称は、馬番号三連勝複式勝馬投票法。1着、2着、3着となる馬の馬番号の組合せを的中させる投票法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -42,7 +42,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ARCは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/e_list.html",
@@ -56,7 +56,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "Association of Racing Commissioners International（州競馬委員会全国協会）の略。ARCIの総会は米・加・メキシコ各州の競馬委員会委員が競馬の諸問題を全米的な視野で話し合う会合であるが、毎年、南米やアジア、ヨーロッパからもオブザーバー参加があって、重要な情報交換の場となっている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/e_list.html",
@@ -70,7 +70,7 @@
       "categories": [
         "JRA主催のイベント、ファンサービスなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「JRA主催のイベント、ファンサービスなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "日本中央競馬会が1987年4月に新しく制定した同会の略称。Japan Racing Association（ジャパン・レーシング・アソシエーション）の頭文字を取ったものである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -84,7 +84,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRAキャッシュレス投票用ICカードの名称。2018年9月からサービスを開始したキャッシュレス投票サービス「UMACA投票」の利用には「JRA-UMACA」が必要となる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -98,7 +98,7 @@
       "categories": [
         "JRA主催のイベント、ファンサービスなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「JRA主催のイベント、ファンサービスなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬場の指定席をインターネットで事前に予約する際に使用するクレジットカードが「JRAカード」である。「JRA・NICOSカード」「JRA・DCカード」の2種類から選択できる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -112,7 +112,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRAが指定するクレジットカードを持っていれば、スマートフォン・パソコンからインターネットを通して簡単な利用者登録後、クレジットカードで勝馬投票券が購入できるインターネット投票方法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -126,7 +126,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬法附則第5条における「2号給付金」の通称。通常の払戻金が「100円元返し」となる場合に、10円を上乗せして110円で払戻しするもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -140,7 +140,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬法附則第5条における「1号給付金」の通称。対象レースや投票法で、通常の払戻金に「売上げの5パーセント相当額」を上乗せして払戻しするもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -154,7 +154,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "地方競馬が共同で構築した「地方競馬共同トータリゼータシステム」により、JRAの勝馬投票券の発売・払戻を実施する地方競馬施設を指します。地方競馬施設であっても、JRAの発売システムを利用した発売を「WINS」、地方競馬共同トータリゼータシステム経由の発売を「J−PLACE」という呼び方です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -168,7 +168,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "The National Thoroughbred Racing Association（全国サラブレッド競馬協会）の略。NTRAは、北米の競馬場および競馬関係団体の任意加盟団体で、サラブレッド競馬のマーケティングおよびプロモーション活動を行う。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/e_list.html",
@@ -182,7 +182,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "UMACAは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -196,7 +196,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRA-UMACA専用の勝馬投票券を購入するための機械。利用には「JRA-UMACA」が必要となる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -210,7 +210,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "キャッシュレス投票用ICカード「JRA-UMACA」と連動した情報照会端末。オッズ印刷サービス機能のほか、UMACA会員限定のお得なクーポンや投票内容確認機能を備えている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -224,7 +224,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "5つの対象レースの勝馬を予想する「5重勝単勝式勝馬投票法」の愛称。対象となるレースは、原則として当日開催しているすべての競馬場の「各競馬場メインレースのうち発走予定時刻の最も遅いレース」を「WIN5」最後の対象レースとし、そのレースから遡っての5レースとなる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -238,7 +238,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ゲート内で立ちあがった時、あるいは開いた瞬間に前肢をあげて発走すること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -252,7 +252,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ある馬にひとりの騎手がずっと騎乗していてその馬の癖、性質等を熟知している場合、その馬をお手馬といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -266,7 +266,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "勝馬投票券の買い方の一種で、あるレースの払戻金全額をその次のレースに充て、その払戻金額全額をまたその次のレースに充てるような購入方法。複勝など的中確率が高いと思われる投票法に使われることが多い。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -280,7 +280,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースや調教中に突然内に斜行すること。これに対して外に斜行するのは「ふくれる」といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -295,7 +295,7 @@
         "厩舎ことば",
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば / 馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "背中の線がたるんでいる馬を指します。軽度のものは能力には影響ない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -309,7 +309,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の売買形態の一つで、公開で買い手にせらせて売買する方式。売り手は最も高い価格を提示した買い手に売却するが、その価格が売り手の希望価格に達しない場合や、上場馬に対し声がかからなかった時は「主取り」となり売り主本人が引き取ることになる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -323,7 +323,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "去勢された馬を指しますである。競走能力はあるが気が悪く、成績の上がらない牡馬は、去勢すると従順になって成績が上がることがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -337,7 +337,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "「足をためる」などと使われる。レースの途中でペースを落としてスタミナを温存すること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -351,7 +351,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬体を大きく2つに分けて前躯（ぜんく）、後躯（こうく）と呼ぶが、その後躯のうちの腰部、臀部、後肢を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -365,7 +365,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ながし投票の略称。軸となる馬（枠）番を、3連単もしくは3連複なら1から2頭、その他の連勝式なら1頭（枠）選択して、その軸から相手の馬（枠）番に「ながし」て購入する投票方法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/na_list.html",
@@ -380,7 +380,7 @@
         "レースの種類、条件など",
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など / 競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "「ばんえい」の漢字表記は「輓曳」。現在ばんえい競馬は北海道帯広市のみが主催する地方競馬（ばんえい十勝）。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -394,7 +394,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "コーナーで外側にふくらんで、大回りすること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -408,7 +408,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "「脚元に熱があったので休ませたら、ゆるんだ」などといいます。病気などで調教を休み、馬体の調子が下がっていること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/yu_list.html",
@@ -422,7 +422,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "直線で急激に内または外に斜行すること。「ささる」、「ふくれる」はどちらかというと気性的問題とされているのに対し、「よれる」という言葉は、一杯になって脚どりがしっかりしなくなった時に使われる場合が多い。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/yo_list.html",
@@ -437,7 +437,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "サラブレッドは、全体的に近親交配をもとに作られてきた動物であるが、血統の5代前までに同一の祖先を持たないような配合をアウトブリードといいます。異系交配ともいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -451,7 +451,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "アジア競馬会議（略称ARC：Asian Racing Conference ）は、アジア諸国間の親善と相互理解の促進、加盟国間の競馬交流を目的として、日本の提唱により創設された国際会議で、第1回アジア競馬会議は1960年に東京で開催された。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -465,7 +465,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "アラビア半島の原産馬で、何千年もの間注意深く育種が行われてきている点で、馬の全ての品種の中で最も純粋で最も古いものとすることができる。1884年にはフランスで「アラブとして血統登録する馬は、北はチグリス川、トロス山脈、および地中海でくぎられた、全アラビア半島地域に生産された馬」と定められた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -479,7 +479,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "マメ科の多年生牧草で、粗蛋白質を多く含み、馬の嗜好性が高い牧草。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -494,7 +494,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "アラブとサラブレッドの交雑種。両馬の特質を備えた騎兵乗馬用としてフランスで造成され、世界各国で生産されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -509,7 +509,7 @@
         "レース、騎乗技術など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "種牡馬の優劣を判定するためのめやす。出走馬1頭当たりが獲得した賞金の平均値を1.00として各々の種牡馬の産駒の平均獲得賞金の割合を数値で表したもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -524,7 +524,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "血統表で5代前までに同一の祖先を持っているような配合を指します。近親交配ともいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -538,7 +538,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "優勝馬表彰区画を指します。従来はスタンド内で表彰を行なっていたが、ヨーロッパ流に観客が優勝馬やその関係者と身近に接することができるように設置された。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -552,7 +552,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "従来の場外勝馬投票券発売所をファンにより親しみやすくするために、1987年度から名づけられた愛称。WINning SpotとWeekend IN Spotの2つの意味から、呼びやすく、覚えやすい名をと命名された。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -566,7 +566,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "走路の基盤の上に、粉砕された木片を敷きつめた馬場で、日本でも調教用馬場として多く用いられている。この馬場はダートコースに比べてクッションが数段よく、脚への負担が少ない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -580,7 +580,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ウッド式発馬機は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -594,7 +594,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "場外勝馬投票券発売所のうち、有料の指定席を購入することで利用が可能な施設。なお、一部のエクセルでは買い帰り型のエリアを設けている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/e_list.html",
@@ -608,7 +608,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "屈腱炎の俗称で単にエビと呼ばれることもある。前肢に多く発症する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/e_list.html",
@@ -622,7 +622,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "勝馬投票券が的中した場合の概算払戻率を指します。中央競馬でトータリゼータシステムのコンピューターに直結して、100円に対する倍率で掲示されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -636,7 +636,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "情報照会端末「UMAポート」のオッズ印刷サービスを利用するためのチケット。施設内のインフォメーション等で2度数券10枚セットを100円で販売している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -650,7 +650,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "代表的な寒地型牧草だが耐寒性はチモシーにやや劣る。多年生で大きく育つので牛の放牧草として利用されることが多い。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -664,7 +664,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "生産者兼馬主。生産者あるいは生産牧場が馬主資格を取得し生産した馬を競走馬として走らせること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -678,7 +678,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "すべての馬が出走できる競走をオープン競走といいます。一般的にはオープン馬が出走し、オープン馬以外の下級条件の馬が出走する場合は「格上挑戦」といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -692,7 +692,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "収得賞金を加算し、オープン競走にしか出走できなくなった最高クラスに属する馬をオープン馬といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -706,7 +706,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "カンカンというのは負担重量を指しますをいい、負担重量を計る検量室を指します。騎手はここで、鞍、鉛などを持ち、定められた重量かどうかを‘はかり’に乗って計量する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -721,7 +721,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "発走委員が真正な発走でないと認めた場合に発走をやり直すこと。ゲートの前方200メートルの地点に白旗を持った係員がいて、発走委員の合図を受け白旗を振り騎手に発走のやり直しを知らせる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -736,7 +736,7 @@
         "調教関係",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係 / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "体重が減り、毛づやが悪く体調が低下している状態を指します。何かの理由で飼葉（かいば）を食べなくなり、体が細くなったときに「体がガレている」といったように使う。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -750,7 +750,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "キャンターは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -764,7 +764,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ギャロップは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -778,7 +778,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "コンピュータに馬番号・組番号の選択を“おまかせ”する投票方法「JRAクイックピック投票」の略称。「場名・レース番号・式別・1点あたりの金額・購入点数」は指定する必要があるが、馬番号・枠番号についてはコンピュータがランダムに自動選択する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -793,7 +793,7 @@
         "レース、騎乗技術など",
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "桜花賞、皐月賞、優駿牝馬（オークス）、東京優駿（日本ダービー）、菊花賞の総称。3歳馬が出走できるレースで、イギリスの体系にならって創設された。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -808,7 +808,7 @@
         "レース、騎乗技術など",
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "重賞競走の位置づけを明確にするため、1984年より格付けされた。「格」を表わす記号として「GRADE」の頭文字である「G」を使用して、GⅠ、GⅡ、GⅢの3グループに分類されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -822,7 +822,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スターティングゲートを指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -836,7 +836,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "筋炎や筋肉痛の俗称である。軽症の場合は指で圧すると痛がる程度であるが、重症の場合は跛行を呈する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -850,7 +850,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRAの競馬場は、主に2つの直線と4つのコーナーで形成されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -864,7 +864,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手がレースで着用する防砂・防風メガネを指します。馬場状態の悪いレースでは土砂がゴーグルについてしまうため、騎手は数枚を重ねて装着しており、レースの途中で汚れたゴーグルから順次はずして騎乗している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -878,7 +878,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "決勝線延長線上の内柵側に立てられた板状の鏡を指します。馬が重なり合って入線した場合、内側の馬の鼻端が決勝写真に写らずに判定が困難になる場合があるため、ゴール板として鏡を設置しておくことにより内側から見た像を鏡に写しこむことができ、判定の参考となっている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -892,7 +892,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の品種のひとつで、競馬の主流はサラブレッドである。イギリスで長い間かかって競走馬として作り出されたもので、「純血」という意味があり、「完全に育てあげられた」ということを表わす。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -906,7 +906,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "頭絡の鼻革にボア状のものを装着したもの。芝の切れ目や物の影などに驚く馬に対し、下方を見えにくくして前方に意識を集中させる効果を期待して用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -920,7 +920,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬の世界では主に種牡馬について組織される株主の集まりを指しますで、1頭の種牡馬を数十株に分けて分配し、その保有株数に応じて種付けの権利を得る。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -936,7 +936,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "種牡馬の産駒の平均勝ち距離を指しますで、短距離戦主体の2歳レースと障害レースを除いて計算される。その結果、その種牡馬の産駒の距離に対する適応性を判別することができる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/su_list.html",
@@ -950,7 +950,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スタミナ豊富で、長距離レースの得意な馬を指します。ふつう2400メートル以上の距離に強い馬を呼ぶ。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/su_list.html",
@@ -964,7 +964,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "本来は、出走馬の馬主が賞金を拠出して、所有馬の着順に応じてその賞金を取り合うレースを指しますであったが、現在では本賞金の全額をJRAが拠出しており、特別登録料の総額を付加賞として1着から3着までの馬主に7：2：1の割合で配分する形となっている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/su_list.html",
@@ -978,7 +978,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スピードを身上とし、短距離レースの得意な馬を指します。ふつう1600メートル未満の距離に強い馬を呼ぶ。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/su_list.html",
@@ -992,7 +992,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "投票用QRを用いた購入ツールで、2018年サービスを開始。名称は、「スマートフォンで”スマート”に”ピッ”と買える」ことから。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/su_list.html",
@@ -1006,7 +1006,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "エンジンのかかりの遅い馬で、騎手が追いどうしでないと追走に苦労するような馬を指します。ペースの速い短距離戦には不向きである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/su_list.html",
@@ -1020,7 +1020,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走や調教の際に、馬を識別するために鞍の下に装着する布。競馬場で回収されたペットボトルをリサイクルした再生ポリエステルを主原料としている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -1034,7 +1034,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ソエは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -1048,7 +1048,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の癖のひとつで、レースや調教時にふとしたことから馬の気が散り、走ることに集中力を欠くこと。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -1062,7 +1062,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "重賞競走、騎手招待競走、その他競馬番組で特に定めた競走以外の平地競走に出走した馬または平地重賞競走に出走した未出走馬および未勝利馬が、当該競走の第1着馬の競走に要した時間より、下表1に定める時間を超えて決勝線に到達したとき、当該競走の実施日の翌日から起算して下表2に定める期間平地競走に出走できないこと。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -1076,7 +1076,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "タッチパネル操作で自動発売機の画面上に投票内容を入力し、勝馬投票券を購入する機能。マークカード“レス”で手軽に勝馬投票券を購入できる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -1090,7 +1090,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "連勝複式の勝馬投票券で1―2、1―3と買ったが、結果が2―3となった場合の2―3をタテ目といい、「タテ目をくった」などといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -1104,7 +1104,7 @@
       "categories": [
         "JRA主催のイベント、ファンサービスなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「JRA主催のイベント、ファンサービスなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬場内に設置された大型映像ディスプレイ装置を指します。東京競馬場と京都競馬場には、大型の三面マルチ・ターフビジョンが設置されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -1118,7 +1118,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ダクは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -1132,7 +1132,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "本来は能力のよく分からない馬という意味から出ているが、勝てば好配当が期待できる馬。穴馬ともいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -1146,7 +1146,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "フルネームでシープスキン・チークピーシーズといいます。頭絡の頬革にボア状のものを装着したもので、左右を見えにくくして前方に意識を集中させる効果を期待して用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -1160,7 +1160,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "パドックなどで歩いているとき、長い頸をツルのように曲げている状態をいう。レースが間近に迫っていることを察知し、神経をたかぶらせている馬によく見かける。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/tu_list.html",
@@ -1174,7 +1174,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "多年生のイネ科牧草で、耐寒性が強く馬の嗜好性も非常に良いため日本でも多く栽培されている。草丈は80から110センチメートルで穂は円筒形で、5から12センチメートルとなる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -1188,7 +1188,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬社会にのみ使われている隠語のひとつで調教師を指します。騎手や厩務員等が自分の調教師を指しますを「うちのテキが」というように使う。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -1203,7 +1203,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "最初、真っ先の意。テンの半マイル、テンに追う、など。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -1217,7 +1217,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レース名に「○○トライアル」と記載されているレースを指します。このレースで所定の着順を得た馬に対しては、指定する3歳GⅠレースへの優先出走権が付与される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -1231,7 +1231,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "トラッキングシステムとは、レースに出走する競走馬のゼッケンにセンサーを装着し、衛星測位により得られた位置情報を低遅延・高頻度で取得することで各馬の走行位置を追跡するシステムです。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -1245,7 +1245,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "美浦・栗東の両トレーニング・センターで取材している競馬新聞の記者を指します。調教スタンドから調教内容を確認し、計測した調教タイムや厩舎関係者を取材したコメントなどのデータをまとめ、二重丸（◎）、丸（〇）といった予想印を付けて勝馬予想を提供している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -1259,7 +1259,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走馬を調教する施設で、中央競馬で滋賀県栗東にある栗東トレーニング・センター（1969年開設）と茨城県美浦村にある美浦トレーニング・センター（1978年開設）の2か所がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -1273,7 +1273,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "トロットは、競馬で「⇒速歩」を表す用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -1287,7 +1287,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "電線被覆材、ポリエステル不織布、ポリウレタン繊維、硅砂、ワックス等を混合した調教コースで栗東、美浦の両トレーニング・センターにある。優れた排水性を持ち、降雨による馬場の悪化や走行時のキックバックが少ない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ni_list.html",
@@ -1301,7 +1301,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "私設馬券屋を指します。競馬法では、勝馬投票類似の行為をした者は、5年以下の懲役若しくは500万円以下の罰金に処せられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/no_list.html",
@@ -1315,7 +1315,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "軽めのキャンター、ゆっくりとしたスピードのキャンター。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1329,7 +1329,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "「ハロン」（furlong）はイギリスで使用されている距離を示す用語。日本では1ハロン＝200メートルに換算する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1343,7 +1343,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースの200メートルごとの所要タイムを指します。その時点で先頭の馬が基準となって計測される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1357,7 +1357,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ゴールから1ハロンごとにたてられた標識を指します。日本では1ハロンを200メートルに換算している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1371,7 +1371,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ハローと呼ばれる整地用の器具を車両で引くことにより、馬の走行によりダートコースやウッドチップコース等についた馬の蹄跡を均す作業。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1385,7 +1385,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ハンデキャップ競走で各馬が負担する重量をいう。これはハンデキャッパーが、各馬に等しく勝機を与えようと決定するもので、競走成績や最近の調子などを資料とし、馬の能力に応じ重量を増減させる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1399,7 +1399,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "登り下りの坂を指しますで、福島競馬場や小倉競馬場の障害コースと、京都競馬場の大障害コースにある。なお、中山競馬場の障害コースの坂路（谷）もバンケットと呼ばれることがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1413,7 +1413,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "日本語では肢巻き（しまき）。バンデージは英語のbandageつまり包帯を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1427,7 +1427,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "年間レースレーティングの直近3年間の平均値。競走の質を表すこの数値は、年間レースレーティングとともに格付審査等に用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1441,7 +1441,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "走路の各コーナーの外側に設けられた監視塔。競走中にインターフェア（妨害）があったかどうか、騎手の騎乗ぶりはどうかなどを監視する走路監視員が執務している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1455,7 +1455,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースに出走する馬が、装鞍所からここに入り、この中をスタッフにひかれて周回する場所で、下見所ともいう。馬の状態を観察できる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1469,7 +1469,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "⇒パリ国際競馬会議。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1483,7 +1483,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "1967年、仏国馬種改良奨励協会の主唱によりパリで第1回大会が開催された。この会議は、1961年に創設された4ヶ国連絡委員会（英・米・仏・愛）を母体としており、世界中の競馬統轄機関の事務局長クラスが集まって競馬の政策、運営上の規則の統一、情報・経験の交換、相互援助、共同研究の推進を目的としている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1497,7 +1497,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬開催を行っていない競馬場での場外発売について、2001年9月から名付けられた愛称。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -1511,7 +1511,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "軸に対する相手を指します。以前は、頭（1着馬）が堅いと思われるレースで、その本命馬の2着に入ると思われる馬を指しますをいった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hi_list.html",
@@ -1525,7 +1525,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "サラブレッドの血統をその牝系統別にまとめ、成績、生年等を付記し根幹馬までたどったもの。よく知られているものに、1953年に英国で刊行されたボビンスキとザモイスキの共編による『競走馬ファミリーテーブル』がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1539,7 +1539,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ブルース・ロウという人が、ダービー、セントレジャー、オークスの第1回からの勝ち馬の牝系を調べたところ、43頭の馬にたどりついた。その中で3大レースの勝ち馬を多く出している順番に第1族から43に分類し、各々の番号の直系牝馬と直仔をその番号で示したものがファミリーナンバーである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1553,7 +1553,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ファンファーレは、レースの発走にあたって流れる音楽で、競馬場やレースの条件によって異なるファンファーレが使用される。競馬場別では「札幌・函館」「福島・新潟」「東京・中山」「京都・阪神」「小倉・中京」用があり、それぞれレース条件別（一般レース、特別レース、重賞レース）に異なるものが使用される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1567,7 +1567,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "フォーメーション投票の略称。1着馬、2着馬、3着馬（連複の場合は1頭（枠）目、2頭（枠）目、3頭目）を、それぞれ1頭（枠）以上選択して、購入可能な組合せのすべてを購入する投票方法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1584,7 +1584,7 @@
         "厩舎ことば",
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 生産、育成関係、飼糧など / 厩舎ことば / 馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "フケは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1598,7 +1598,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "その年度の競走馬を負担重量によって格付けしていたもの。現在は、ランキングとして発表されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1612,7 +1612,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "厩舎に所属していない騎手をいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1626,7 +1626,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "皮下の組織に見られる急性の化膿性疾患である。化膿を起こす細菌は、外傷部位から侵入することが大半である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1640,7 +1640,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "主催者のほかに、私設の投票券を発売する者。勝馬投票方式にはパリミュチュエル方式とブックメーキング方式がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1654,7 +1654,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ブリンカーは「遮眼革」ともいい、視界の一部を直接遮ることにより馬の意識を競走や調教に集中させ、周囲からの影響に惑わされずに走らせるために用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1668,7 +1668,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬が特に好む牧草。大きくならず、地下茎をはり巡らせるためクッション性があり放牧地用草種として最適である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1682,7 +1682,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "母馬の父を指します。ブルードメアは繁殖牝馬、サイヤーは種牡馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1696,7 +1696,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "フルネームでシープスキン・ブローバンドと言う。頭絡の額革にボア状のものを装着したもので、上後方を見えにくくして馬の意識を前方に集中させる効果を期待して用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1710,7 +1710,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "その競走馬が、その年に示したレーティングの最高値（ベスト・パフォーマンス）を示すことが多い。上半期の場合には、前年度のランキングの数値を用いることもある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1725,7 +1725,7 @@
         "競馬場などの施設、設備",
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備 / 馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "福島県いわき市の「競走馬リハビリテーションセンター」内にある施設で、骨折や屈腱炎などの脚の故障で十分にトレーニングを積めない療養馬の運動不足を、脚に負担のかけない水泳を用いて解消させ、少しでも早く第一線に復帰させる目的で用いられている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -1739,7 +1739,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手がかぶる保護帽を指します。騎手が事故で落馬した時、頭部の負傷を防ぐために着用する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/he_list.html",
@@ -1753,7 +1753,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "メンコの目穴部分をネットで覆ったもの。前を走る馬が跳ね上げる砂が眼にかかるのを嫌がる馬に用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -1767,7 +1767,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "クローバーの一種で放牧地に繁殖する一般的な豆科の多年生牧草。大きくならず、イネ科と混ってよくなじむが、根粒菌により空気中の窒素固定を行い、生命力が強いので土地の状態が悪くなった時にはびこりすぎることがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -1781,7 +1781,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ボックス投票の略称。いくつか選択した馬（枠）番について、その全ての組合せを購入する投票方法を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -1795,7 +1795,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬糞を指します。この状態により好不調の判断がある程度できる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -1809,7 +1809,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬場のコースの中で、コーナーから引きこんだポケット状の地点をさす。たとえば東京2000メートルは1コーナーのポケットからのスタートである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -1823,7 +1823,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "1マイル（1600メートル）前後の距離の競走を得意とする馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ma_list.html",
@@ -1837,7 +1837,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "マルタンガールは、頭を上げすぎる馬に使用する調教付属馬具。目的に応じてスタンディング、ランニング、アイリッシュ、ビッブのそれぞれマルタンガールがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ma_list.html",
@@ -1851,7 +1851,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "マルチ投票の略称。3連単、馬単の「ながし投票」において、マルチ欄をマークするだけで、軸と相手の着順を入れ替えた組合せも同時に購入できる投票方法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ma_list.html",
@@ -1865,7 +1865,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "中距離（2000メートル前後）の競走を得意とする馬を指します。距離に対する融通性は、マイラー、ステイヤーと比べると高い。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mi_list.html",
@@ -1879,7 +1879,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "2008年6月21日（土）以降の「新馬競走」の愛称。「メイクデビュー○○」は、「They make their debut in ○○」の省略形を表す。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/me_list.html",
@@ -1894,7 +1894,7 @@
         "競馬で使用する様々な道具",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具 / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の覆面を指します。主に耳おおいがついたものを使い、音に驚いたり、砂をかぶるのを嫌がる馬に使う。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/me_list.html",
@@ -1908,7 +1908,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "鐙（あぶみ）を短くして、膝を前に出し、尻を鞍から離し、前傾姿勢で追う騎乗フォーム。木の枝にモンキー（猿）がまたがったように見えるところからこう呼ばれる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mo_list.html",
@@ -1923,7 +1923,7 @@
         "厩舎ことば",
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば / 馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬が牧場での育成時に負った傷を指します。競走馬となってからその傷痕が残っている場合、そう呼ぶ。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ya_list.html",
@@ -1937,7 +1937,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スタートからその地点までの所要タイムを指します。スタートから1000メートル地点の通過タイムや200メートルごとのハロンタイムを指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ra_list.html",
@@ -1951,7 +1951,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "年度単位で発表される競走馬の「格付け」。競走馬のレーティングを年齢（2歳・3歳・4歳以上）や芝・ダートで分類し、距離区分とともに発表される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ra_list.html",
@@ -1965,7 +1965,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "特別競走の中でも競走体系上重賞競走に次ぐ重要なレース。レース名の後ろに（Ｌ）と表記する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ri_list.html",
@@ -1979,7 +1979,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ルーサンは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ru_list.html",
@@ -1993,7 +1993,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "新記録の走破タイムを指します。競馬場別、コース別（芝・ダート）、距離別、年齢別（2歳・3歳以上）のレコードをコースレコード、全競馬場の同条件のコースレコードの中で一番速いものを中央競馬レコードといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/re_list.html",
@@ -2007,7 +2007,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走してから次回出走するまでの間隔を指します。次週に出走する場合は「連闘」といい、次々週に出走する場合は「中1週」などどいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/re_list.html",
@@ -2021,7 +2021,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走馬がそれぞれのレースで発揮したパフォーマンスを客観的に示す指標で、着差・負担重量などをもとに、国際的に統一された基準により、数値化したもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/re_list.html",
@@ -2035,7 +2035,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "正式名称は、拡大馬番号二連勝複式勝馬投票法。3着までに入る2頭の組合せを馬番号で的中させる投票法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/wa_list.html",
@@ -2050,7 +2050,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の歩幅を指しますで、レース時のそれは約7メートルから8メートルといわれている。1ハロン（200メートル）の歩数を数えると、個体差、またスピードによる差はあるがサラブレッド競走馬の場合は28から30完歩を要するといわれている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -2064,7 +2064,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ある馬の単勝、もしくはある組み合わせの式別の勝馬投票券が圧倒的な人気になること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -2079,7 +2079,7 @@
         "レース、騎乗技術など",
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "余力を出しきった結果、バテて失速すること。「4コーナーで一杯になった」などといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -2093,7 +2093,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "勝馬投票券を1レースで1点しか買わないこと。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -2107,7 +2107,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "特別競走以外のレース。平場戦ともいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -2121,7 +2121,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "現代の世界中のサラブレッドは父系の血統をたどっていくと、すべて3頭の馬にさかのぼることができる。この3頭の馬をサラブレッドの三大始祖（三大父祖）といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -2135,7 +2135,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "三大根幹種牡馬は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -2149,7 +2149,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースや調教で、最初を「テン」、中盤を「なか」、終盤を「しまい」または「上がり」といいます。「上がり3ハロン」といえばゴールから逆算して3ハロン(600メートル)を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -2163,7 +2163,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "鞍の破損、ズレを防止するため、鞍を保定する腹帯の上にもう一本しめる帯を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -2177,7 +2177,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "それまで下級条件に低迷していたのに、急激に調子をあげたり、実力を身につけて、短期間のうちに数段上の条件に勝ちあがってきた馬を指します。上昇馬ともいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -2191,7 +2191,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "下見所は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2205,7 +2205,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRAが開催する競馬を指します。札幌、函館、福島、新潟、中山、東京、中京、京都、阪神、小倉の10競馬場で行なわれている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -2219,7 +2219,7 @@
       "categories": [
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "厩舎の周りをスタッフが乗って、馬を歩かせたり、角馬場で馬を軽く走らせたりするトレーニングを指します。乗り運動して十分に体をほぐした後に、コースの調教に移る。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/no_list.html",
@@ -2233,7 +2233,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "休養明けを好走して人気になった馬が、二走めで凡走すること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ni_list.html",
@@ -2247,7 +2247,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レース中、勝負どころと判断した騎手が、馬に気合を入れてスパートすること。調教では、馬なりでまわってきてゴール前で軽く気合をつけることを、仕掛けるといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2261,7 +2261,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "特別登録料の総額を、1着から3着までの馬に対し、7・2・1の割合で配分した賞金。競馬法によりJRAは300万円以下の特別登録料を徴収することができる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -2275,7 +2275,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "台風や降雪など天災地変等の影響により、全てのレースを取り止めた場合には、開催日を変更して「代替競馬」を行う。この場合、『前日発売』など前売り分の勝馬投票券は全て返還（買戻し）となり、出馬投票をやり直して｢代替競馬｣を行う。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -2289,7 +2289,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "内ラチから5メートル、10メートルなど一定の距離に柵を設けることによって、内側の芝の過度の消耗を防ぐ。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -2303,7 +2303,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬特有の伝染病である馬伝染性貧血の略語である。感染馬は、発熱を繰り返し（回帰熱）、徐々に貧血と削痩が進行し死に至る。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -2317,7 +2317,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の毛色の種類で被毛、長毛は象牙色で、眼は青色、皮膚はピンクである。北海道和種にいくつか見られる程度で、頭数は少ない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -2331,7 +2331,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の背の高さを指します。厳密には、き甲の頂点と地表との垂直距離である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -2345,7 +2345,7 @@
       "categories": [
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "調教のときに2頭以上の馬で並んで走ること。単走と違い、併走させることによって競走馬の闘争本能を引き出し、それをかき立てる効果がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -2359,7 +2359,7 @@
       "categories": [
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "併せ馬で走ること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/he_list.html",
@@ -2373,7 +2373,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "左前−左後、右前−右後と、同じ側の前後の肢が、それぞれ1組ずつ地面に着いたり、離れたりする歩法。昔行われていた繋駕速歩競走では、斜対歩にくわえてこの歩法で行われていた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -2387,7 +2387,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "同じ厩舎に所属する馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ri_list.html",
@@ -2402,7 +2402,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "人間でいう兄弟と異なり、サラブレッドの場合同じ母親から生まれた馬たちを兄弟といいます。父親も同じ場合は全兄弟、異なる場合は半兄弟といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -2416,7 +2416,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "日本中央競馬会が調教師、騎手に対して行う免許を指します。この免許を受けた調教師又は騎手でなければ、中央競馬の競走のために馬を調教し、又は騎乗することができない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/me_list.html",
@@ -2430,7 +2430,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レース前に極度に興奮し、落ち着かない様子。ひどい発汗をしたり口角に泡が溜まったりする。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -2444,7 +2444,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRA-UMACAにお金を入金(チャージ)・出金するための機械。利用には「JRA-UMACA」が必要となる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ni_list.html",
@@ -2458,7 +2458,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "本賞金が支給される5着までに入ること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ni_list.html",
@@ -2472,7 +2472,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "全国サラブレッド競馬協会は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -2487,7 +2487,7 @@
         "競馬関係の法律、施行規程、公正確保など",
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など / レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "中央競馬で、レースの公正確保を最重要業務のひとつとし、競走馬の入厩から、レース終了後の理化学検査まで、厳重なチェック体制をとっている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -2502,7 +2502,7 @@
         "競馬に関わる人々",
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々 / 競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "登録された馬主が1頭の競走馬を共有すること。中央競馬で最大10名まで認められている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -2518,7 +2518,7 @@
         "厩舎ことば",
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 厩舎ことば / 資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "外国産馬以外の馬。つまり日本で生まれた馬である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/na_list.html",
@@ -2533,7 +2533,7 @@
         "競馬関係の法律、施行規程、公正確保など",
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など / レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "調教が十分でない馬、または健康に支障があると認められる馬に対し、裁決委員が科す調教状況または馬体の審査を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -2547,7 +2547,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走の公正を確保するため、馬が次の各項に当たる時は期間を定めて、その馬の出走を停止する。（1）競走において他の馬に危害を及ぼすおそれがあるとき。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2561,7 +2561,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出馬投票後、装鞍所入所までの間に出走予定馬が疾病などの理由により、裁決委員の許可を受けて出走を取りやめること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2575,7 +2575,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースに出走できる馬を決定するための賞金を指します。古馬オープン競走においては、以下の1から3を合算して算出する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2589,7 +2589,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スタート時のダッシュがつかないときや先行したいときに、騎手がスタート直後から鞭を使って馬に合図を送ること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -2603,7 +2603,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走するための最終的な申し込みを指します。通常はレースが行われる週の木曜日の15時に締め切られる（GⅠレースは14時）。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2617,7 +2617,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出馬投票締め切りの結果、競走の取りやめがあった場合、他の1競走への申し込み馬を2つに分割して2競走行うことをいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -2631,7 +2631,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "基礎重量を定めて、これに過去の収得賞金額、勝利度数または特定の競走の勝利等によって加増する方法で、重賞競走、特別競走、条件競走などに用いられている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/he_list.html",
@@ -2646,7 +2646,7 @@
         "レース、騎乗技術など",
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "人間でも、例えば左脚が利き脚なら左脚を先に出して歩くように、馬も利き脚によって左右どちらかを先行させる体勢で走る。左脚が先の場合を左手前、右脚が先の場合を右手前と呼んでいる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -2660,7 +2660,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "前哨戦とは、GⅠレースの概ね1から1か月半前に行われる、競馬場や距離など、本番のGⅠレースと類似した条件のレースを指します。ステップレースともいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -2674,7 +2674,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "重賞レースおよびJRAが指定したレースの勝馬投票券をレース前日（夜間発売時間帯を含む）から発売すること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -2689,7 +2689,7 @@
         "レース、騎乗技術など",
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースでの勝ち馬は1着馬を指します。勝馬投票での勝ち馬はそれぞれの投票法の的中対象となる馬を指すため、複勝や3連単などでは3着馬までが勝ち馬となる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -2703,7 +2703,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "勝負服は、競馬で「⇒服色」を表す用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2717,7 +2717,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "一般的には「馬券」と呼ばれるが、正式名称は「勝馬投票券」である。明治時代には「馬券」という語が公用語であり、主には「あな札」「賭け札」ともいわれていた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -2731,7 +2731,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "1着馬を当てる勝馬投票券で、1923年から発売されている最も歴史のある投票法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -2745,7 +2745,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "9頭立て以上のレースで、1頭あるいは数頭に、特に人気が集中しそうな時、その馬を単枠（1枠1頭）に指定する制度。これは、同枠馬が取り消した場合におこる問題の発生を極力防止するための一措置として競馬法のもとで関連規定を改正して実施しされたが現在は廃止されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -2759,7 +2759,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "トレーニング・センター場長の承認の上で、調教師との間に雇用契約を結び、厩舎で競走馬の世話をする人をいう。原則として1人あたり2頭を担当している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -2773,7 +2773,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走条件（クラス）を区分するための賞金を指します。中央競馬のレースの場合、レースで第1着（重賞競走は2着まで）となったときに、出走したレースの競走条件に応じて下表の金額が算入される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -2788,7 +2788,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の口をとって発馬機内に誘導したり、暴れそうな馬を抑さえていること。また勝った馬がウイナーズ・サークルで行う記念撮影を指しますをさす場合もある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -2804,7 +2804,7 @@
         "調教関係",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 調教関係 / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬銜受けの状態を指します。馬銜は手綱を通して騎手の意志を馬に伝える一方、馬の意志を騎手が感知する接点でもある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -2818,7 +2818,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "厩舎用具の一つで馬の口につける籠を指します。昔は竹製であったが今はビニール、布や金網製のものがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -2833,7 +2833,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "休養明けにレースに出走することを「叩く」といいます。「休み明けを一度叩く」といったように使われる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -2847,7 +2847,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ノドナリ、ぜいめいしょうともいわれる。喉頭部を支配する神経が麻痺し、喉頭口が狭くなって、呼吸のたびに「ヒュウ、ヒュウ」、「ゼイゼイ」と音を発する病気である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -2861,7 +2861,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬場の障害コースに、常時設けてある障害物。普通は土塁、生籬（いけがき）、竹柵の3種類で、このうち土塁と生籬を組み合わせたものもある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -2875,7 +2875,7 @@
       "categories": [
         "競馬史上のもの（現存のものは除く）"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬史上のもの（現存のものは除く）」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "1937年に各地の「競馬倶楽部」を統合して「日本競馬会」が設立され1948年まで続いたが、占領下、GHQの解体命令の対象となり日本競馬会そのものの存続が危うくなった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -2890,7 +2890,7 @@
         "勝馬投票券関係、投票関係",
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係 / 競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRAは、国庫納付金を納付している。国庫納付の仕組みは、例えば、100円の勝馬投票券を買えば、10円が国庫に納付される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -2906,7 +2906,7 @@
         "競馬に関わる人々",
         "JRA主催のイベント、ファンサービスなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 競馬に関わる人々 / JRA主催のイベント、ファンサービスなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRAは、スポーツを通じて国際親善に貢献するため、欧米先進国をはじめオーストラリアなど各国と、馬、騎手の交流を行なっている。1955年に英国ジョッキークラブと騎手に対する制裁の相互実施協定を結んだのを皮切りに、米国の州競馬委員全国協会年次総会、パリ国際競馬会議など多くの海外競馬会議に参加。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -2920,7 +2920,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "外国の競馬に所属している馬や騎手がそれぞれ所属したままに出走および騎乗できる競走。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -2934,7 +2934,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "国際競馬統括機関連盟は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -2948,7 +2948,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "地方競馬から中央競馬に転籍してきた馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -2963,7 +2963,7 @@
         "競馬関係の法律、施行規程、公正確保など",
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など / その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "都道府県や指定市町村（特別区を含む）が主催する競馬で、15競馬場で開催されている（2022年現在）。馬主、競走馬の登録や騎手、調教師の免許の交付は「地方競馬全国協会」が行なっている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -2977,7 +2977,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "都道府県あるいは指定市町村の行なう競馬を地方競馬というが、その公正かつ円滑な実施の推進を図るための協会。主な業務は、馬主および馬の登録、騎手の養成、訓練、免許交付審判員その他の地方競馬の実施に関する事務を行なう者の養成、訓練、派遣などである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -2991,7 +2991,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "傾斜がつけられた調教コースで、1985年に栗東トレーニング・センター、1993年には美浦トレーニング・センターに作られた。馬場材にはウッドチップを使用している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -3005,7 +3005,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "各競馬場、各コースの柵を指します。内側の柵を内ラチ、外側の柵を外ラチといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ra_list.html",
@@ -3020,7 +3020,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "同じ牝系に属する馬のグループ（ファミリー）から多くの優れた馬が輩出されている場合、そのファミリーの原点となった牝馬を基礎牝馬といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -3034,7 +3034,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "国営競馬時代の1948年12月、銀座に初めての場外勝馬投票券発売所がオープン。1987年4月に、ウインズ（WINS）という愛称になった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3048,7 +3048,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "勝馬投票券の発売金から返還金を引いたもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -3063,7 +3063,7 @@
         "調教関係",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係 / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "休養明けを一度出走した馬が、次のレースで好走した場合、「変わり身があった」といいます。一度出走したことでレース感を取り戻すことがあり、休養明け2戦目は「変わり身期待」という意味で、人気になることがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -3077,7 +3077,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ゲートの当該枠が破損等で使用できなくなった場合や、ゲート内で暴れる癖があって他馬に影響を及ぼすと認められた馬を出走馬の一番外側から発走させること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -3091,7 +3091,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "前膊部（人と比較すれば手首と肘の間）の内面及び飛節の内後面に付着する褐色の塊をいう。学名は附蝉（ふぜん）といい、蝉（せみ）が木にとまっている姿に似ているところから出たといわれる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/yo_list.html",
@@ -3105,7 +3105,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "指定された「前夜の発売開始時間」から「レース当日の午前7時」までの間、ネット馬券で発売を行うこと。なお、一部のレースの前日発売も対象となります。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ya_list.html",
@@ -3119,7 +3119,7 @@
       "categories": [
         "JRA主催のイベント、ファンサービスなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「JRA主催のイベント、ファンサービスなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "大型映像ディスプレイ装置は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -3133,7 +3133,7 @@
       "categories": [
         "競馬史上のもの（現存のものは除く）"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬史上のもの（現存のものは除く）」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手の乗り方のひとつで、モンキー乗りと対比して呼ばれることが多い。アブミを長く持ち背筋を伸ばして馬の背と垂直にまたがった騎乗スタイルとなる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -3147,7 +3147,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "入線した順位が取り消されて着を失うこと。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3162,7 +3162,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "3代前と4代前に同一の祖先を持つと血量がその祖先の18.75パーセントとなるが、こうした馬が過去の名馬に不思議と多く、奇跡の血量とよばれている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -3176,7 +3176,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "繁殖牝馬を所有している馬主が、それを生産者に預けた場合、生産した子馬を馬主、生産者の共用物として売却代金を一定歩合で分け合う制度をいう。馬主自身が、その子馬を競馬に使うのであれば、評価した価格を基礎にして、定められた歩合の金額を生産者に支払うというケースが多いようである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -3191,7 +3191,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "完歩は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -3205,7 +3205,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "別定重量のうち、収得賞金に関係なく、馬の年齢または性別により、出走馬の全馬に一定の負担重量を定める方法。有馬記念などもこの方法で行われる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -3219,7 +3219,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "寝起きの際に発生する事故を総称したもので、いわゆる「病気」とは異なる。寝ワラのかたまった場所や馬房壁の近くで寝た場合、不自然な姿勢となるが、この状態から無理に起きようとすると、関節や筋肉に故障を起こしやすく、また、外傷を負うこともある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ne_list.html",
@@ -3233,7 +3233,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走中の走行妨害により第5位までの着順を変更する可能性があると裁決委員が判断した場合、失格または降着の裁決の申立てがあった場合、競走を不成立とする可能性がある場合、競走後の検量により着順変更（失格）の可能性があると認めた場合等に、着順掲示板に青地に白文字で「審議」と表示する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3247,7 +3247,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の毛色の一種で、栗毛の中でも、まえがみ、たてがみ、尾毛が白いものをいう。尾がススキの穂（尾花）のように見えるためこう呼ばれる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -3261,7 +3261,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "屈腱炎は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -3275,7 +3275,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手を指します。別称に鞍上（あんじょう）、乗り役といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ya_list.html",
@@ -3289,7 +3289,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の特徴のひとつで、体表の一部が凹陥を呈すものをいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -3303,7 +3303,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "州競馬委員会全国協会は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3317,7 +3317,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "脚質で“差す”といえば、主にレース中、後方の一団に位置し最後の直線走路やレースの後半で速い脚を使って、前にいる馬を交わすこと。先手する馬が後方から差してきた馬に並ばれ、あるいは交わされて負けたと感じたとき、再び相手馬を交わして勝つことを“差し返した”といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -3331,7 +3331,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "第4コーナーから直線にかけて、中団以下から好位に上がり、先行する馬たちを交わすレースぶりをする馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -3345,7 +3345,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "速度は普通1分間に110メートル位で、これは時速6.6キロメートルにあたる。人間の通常の歩く速度は時速4キロメートルだから、人間よりかなり速いことがわかる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/na_list.html",
@@ -3360,7 +3360,7 @@
         "競馬で使用する様々な道具",
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具 / レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手がレースの際かぶるヘルメットの色を指します。それぞれ1枠＝白、2枠＝黒、3枠＝赤、4枠＝青、5枠＝黄、6枠＝緑、7枠＝橙、8枠＝桃と決められている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -3374,7 +3374,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "障害レース以外の競走を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/he_list.html",
@@ -3388,7 +3388,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "一般条件戦など、特別競走以外のレースをいう。一般レースともいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hi_list.html",
@@ -3402,7 +3402,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "当該年度の中央競馬を代表する競走馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ne_list.html",
@@ -3416,7 +3416,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "当該競走における上位4着までの馬の公式レーティング（注記）の平均値。競走の質を表すこの数値は、格付審査等に用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ne_list.html",
@@ -3430,7 +3430,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "心臓に異常な電気信号が起こり、心房が規則正しいリズムを失う不整脈の一種。競走馬がレース中に発症すると、血液を全身に上手く送り出せなくなるため、急激に失速する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3444,7 +3444,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "任意の1頭の単勝式・複勝式の馬券を、セットで同額購入できる馬券。「馬名」と「がんばれ」の文字が馬券に印字される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -3458,7 +3458,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "主に逃げ馬に対して使われる言葉で、道中ペースを落としてラストスパートのためのスタミナを温存すること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -3472,7 +3472,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "いわゆる風邪を指します。馬の風邪は、通常この呼称を用いる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -3487,7 +3487,7 @@
         "レース、騎乗技術など",
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースやその前後の過程で、公正かつ安全な競馬に対する注意義務を怠った騎手または調教師に科せられる制裁のひとつ。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -3502,7 +3502,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースで、それまで騎乗していた騎手から他の騎手に乗り替わること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -3516,7 +3516,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の走り方を指しますで、右前脚よりも左前脚を前に出す「左手前」とその逆の「右手前」がある。右回りのコースは右手前、左回りのコースは左手前で走らないとコーナーを回る際、遠心力で外側にふくれてしまう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -3531,7 +3531,7 @@
         "レース、騎乗技術など",
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースで、好スタートを切った馬を、手綱を握る両方の手を、クビのつけ根あたりを“おさえるように”してマイペースにペースダウンすること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -3545,7 +3545,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRA-UMACAの残高のうち、勝馬投票券の購入にのみ使用できる金額を指します。入金したお金は「投票専用残高」として管理され、出金することができない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -3559,7 +3559,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手と馬の呼吸の調和状態を指します。人馬の呼吸が合致しているときには、「うまく折り合う」などといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -3573,7 +3573,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "腹帯から’はみ環’を通した手綱。これは、頭を上げる悪癖のある馬に、その癖を出させないために使うもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -3587,7 +3587,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "かつてJRAが各生産地で開催される軽種馬の市場で購買し、抽せんによって均一価格で馬主に売却、配布した競走馬を指します。競走馬の資源確保と新規馬主の開拓などの目的のため行われてきた日本独特の制度。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -3601,7 +3601,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手の脚による扶助を強化する目的で靴のかかとに取りつけ、馬の腹部を刺激（圧迫）して前進気勢を促す馬具。2020年よりすべての競走において使用が禁止されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -3615,7 +3615,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "同じ距離のレースでその馬がこれまでに記録した最も速いタイムを指します。「芝1600メートルの持ちタイムは1分35秒5」などといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mo_list.html",
@@ -3629,7 +3629,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "牝馬を輸入するとき、すでに受胎しており、日本に来てから生まれた馬を指します。以前は外国産馬と同様、いろいろ制限を受けていたが、現在は内国産馬扱いになった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mo_list.html",
@@ -3643,7 +3643,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "地方競馬に所属している馬や騎手がそれぞれ所属したままに出走および騎乗できる競走。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3657,7 +3657,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "走行中に後肢の蹄の先端で前肢の蹄底を打撲した時、あるいは石などの硬いものを踏んだ時などに、蹄底におきる炎症（内出血）をいう。肢勢の悪い馬、蹄底の浅い馬、時として踏み込みの良い馬に発症しやすい。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -3671,7 +3671,7 @@
       "categories": [
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の調教を指します。競走馬は攻め馬によってコンディションを上げ、レースに臨む。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -3686,7 +3686,7 @@
         "調教関係",
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係 / 生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "2つの意味で用いられる。まず、生産育成過程の馬の管理形態の一つとして舎飼いなどと対を成して用いる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -3701,7 +3701,7 @@
         "レース、騎乗技術など",
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "興奮した馬が、騎手をふり落としたりして、逸走してしまうこと。返し馬の時などに特に起こりやすい。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -3715,7 +3715,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ふつう、競走馬の速歩は、斜対歩といって左前−右後、右前−左後と対角線に結ばれた2本の肢がそれぞれ1組ずつ地面に着いたり、離れたりする歩法で歩く。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3729,7 +3729,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走中、馬が斜めに走ること。騎手が注意義務を怠ったものと認められ、他馬の走行に影響を及ぼした場合には制裁を科される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3744,7 +3744,7 @@
         "レース、騎乗技術など",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "負担重量を指します。現在はキロ制が採用されているが、初期の競馬は80斤、90斤といった斤（0.6キロ）が単位だったので、これが現在でも負担重量の言葉として残っている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -3758,7 +3758,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "未出走の2・3歳馬で、新馬戦の出走資格を持つ馬。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3772,7 +3772,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走馬のデビュー戦を指します。新馬戦に勝てば1勝クラスに進み、勝てなかった馬は未勝利戦に出走する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3786,7 +3786,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬のつむじを指します。馬の被毛は直立して生えないで傾斜して生えるために、体表にいわゆる毛流ができて、その起始部や終止部がうず巻き状に巻き込んで、左回りまたは右回りに流れを作るか、また左と右、上と下など反対方向からきた毛流がぶつかり合って毛が立ってくるために生ずるものが旋毛である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -3800,7 +3800,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "1954年7月1日に、国営競馬を民営化するために公布された法律で、全額政府出資の特殊法人として日本中央競馬会が誕生。農林水産大臣の監督下におかれ、理事長及び監事は農林水産大臣が任命し、副理事長及び理事は、経営委員会の同意を得て、理事長が任命する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ni_list.html",
@@ -3814,7 +3814,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "日本中央競馬会より調教師免許を交付されている調教師の組織で、関東と関西の両本部に分かれる。役員任期は2年で、理事の互選により、会長・副会長、東西本部長、監事を選出する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ni_list.html",
@@ -3828,7 +3828,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "日本中央競馬会より騎手免許を交付されている騎手の組織で、関東と関西の両支部に分かれる。役員任期は2年で、理事の互選により会長・副会長・支部長を選出する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ni_list.html",
@@ -3842,7 +3842,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "前走を勝ってクラスがひとつあがった初戦を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -3856,7 +3856,7 @@
       "categories": [
         "JRA主催のイベント、ファンサービスなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「JRA主催のイベント、ファンサービスなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "全国の競馬場とウインズ等を、光回線等で結び、レース・パドックの映像や、オッズ、馬体重、払戻金等のデータ情報をリアルタイムでモニターテレビに放映するシステム。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/e_list.html",
@@ -3870,7 +3870,7 @@
       "categories": [
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "乗り運動と同様に、馬にとって欠かすことのできないトレーニングで、乗り運動やコース調教の前後に行なわれる、引き綱で曳いて歩かせる運動を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hi_list.html",
@@ -3884,7 +3884,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の毛色の種類で国内では北海道和種によく見られる。被毛はクリーム色から淡い黄白色のものまであり、長毛は被毛と同色から白色に近いものまである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/tu_list.html",
@@ -3898,7 +3898,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースのとき騎手が着用する服を指しますで、一般的には「勝負服」と呼ばれている。これは、馬主によって決まっているもので、現在登録してある数は約2,000種。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -3913,7 +3913,7 @@
         "レースの種類、条件など",
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など / 資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースに出走したことがない馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mi_list.html",
@@ -3928,7 +3928,7 @@
         "レースの種類、条件など",
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など / 資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "（1）出走して第1着になったことがなく、（2）重賞競走の第2着にもなったことのない馬をいう。なお、未勝利競走には未出走馬も出走することができる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mi_list.html",
@@ -3942,7 +3942,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ゴール前での馬の伸び脚を指します。一般的にゴール前で鋭く伸びる馬を“末脚の切れる馬”その逆にゴール前での粘りに欠ける馬を“末脚が甘い馬”などという表現を用いる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/su_list.html",
@@ -3956,7 +3956,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "そのレースで最も勝つであろうと思われる馬を指します。競馬新聞などでは◎で表示される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -3970,7 +3970,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走馬のうち、「1着馬から5着馬」に対して交付される賞金です。本賞の金額はクラス等によって異なり、競馬番組表に記載されています。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -3984,7 +3984,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "平地競走用の馬場で、観覧席にもっとも近い最外側に設けられている。JRAの競馬場の本馬場は芝である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -3998,7 +3998,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "収得賞金によるクラス分けの結果、1勝クラス、2勝クラス、3勝クラスに区分されたレースを指しますである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -4012,7 +4012,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "正式名称は、枠番号二連勝複式勝馬投票法。1着と2着になる馬の枠番号の組合せを的中させる投票法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/wa_list.html",
@@ -4027,7 +4027,7 @@
         "レース、騎乗技術など",
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出馬投票締め切り後に、抽選で決められる発走する際のゲート順を指します。インコースから番号の小さい順に並べる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/wa_list.html",
@@ -4041,7 +4041,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "被毛は黒味がかった黄褐色から黒味の非常に濃いものまであるが黒色にはならない。長毛は被毛より濃いものから、白色に近いものまである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -4055,7 +4055,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRAで最初のトレーニング・センターとして、1969年11月に滋賀県栗東市に誕生。広大な敷地の中に、6つのコースを持つトラック型調教コース、1085メートルの坂路調教馬場、競走馬スイミングプール、逍遥馬道といった様々な調教施設があり、2000頭を超える競走馬（主に関西馬）が、レースへ向けてトレーニングを行っている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ri_list.html",
@@ -4069,7 +4069,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "被毛は黄褐色で、長毛は被毛より濃いものから淡く白色に近いものまである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -4084,7 +4084,7 @@
         "厩舎ことば",
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば / 資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "格上げは、競馬で「⇒昇級戦」を表す用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -4098,7 +4098,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手は出走馬毎に定められた負担重量（騎手、鞍等の総重量）で騎乗しなくてはならないため、競走毎に検量室で計量を行う。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4112,7 +4112,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "デジタル計量秤を用いて出走馬毎に定められた負担重量（騎手、鞍等の総重量）を計量するところ。また、騎手は鞍やムチなどの騎乗に必要な道具を置いており、レースに向けた準備をする場所でもある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4126,7 +4126,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の歩き方を指します。後肢の踏み込みの強さや前肢の出方のスムーズさなどの、全体的な感じをいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -4140,7 +4140,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の前進の仕方すなわち歩法（gait）は、歩行運動に用いられる四肢の協調運動パターンであり、主には常歩、速歩、駈歩、襲歩の4種の歩法を馬の基本歩法（principal gaits）と呼んでいる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -4154,7 +4154,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の栄養、健康状態が端的に現われるのが毛づやである。つやつや光って見えるのは栄養十分、運動状態もよいし内臓の疾患もなく、健康状態であることを示している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4168,7 +4168,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "サラブレッドの毛色は、8種（栗毛、栃栗毛、鹿毛、黒鹿毛、青鹿毛、青毛、芦毛、白毛）と決められている。白毛は非常に珍しく、日本には数頭しかいない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4182,7 +4182,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の動き、仕上がり度合や、気合いが入っているかどうかなどが漠然と感じられる様子。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4197,7 +4197,7 @@
         "調教関係",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係 / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手が減量するためにサウナ風呂（調整ルーム内にある）に入ること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -4211,7 +4211,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "決勝審判委員が到達順位の判定の参考とした写真で、決勝写真撮影カメラにより撮影した写真。2013年天皇賞（秋）。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4225,7 +4225,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "デジタルで被写体を撮影する際にはセンサーが必要になるが、一般的なデジタルカメラは「エリアセンサー」を用いて、シャッターを押した瞬間の画を撮影しているのに対し、JRAで使用している決勝写真撮影カメラはレンズの焦点面の前に特殊な「ラインセンサー（幅0.02ミリメートル）」を設け、これを一定の場所、つまり決勝線（ゴール板の真ん中にある鏡）に合わせておき、。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4240,7 +4240,7 @@
         "競馬関係の組織、団体、会議など",
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など / 競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "到達順位の判定、到達差及び決勝線に到達した馬の競走に要した時間を決定する執務員を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4254,7 +4254,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の毛色の種類で被毛は淡い黄褐色から艶のない亜麻色まであって、長毛と四肢の下部は黒色のもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -4268,7 +4268,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "株式会社や有限会社等の法人組織をもつ馬主を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ho_list.html",
@@ -4282,7 +4282,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "女性騎手・見習騎手・障害競走新規騎乗騎手が特別競走とハンデキャップ競走以外のレースに騎乗する場合、各負担重量を減量する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4296,7 +4296,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "アラブ血量が25パーセント以下のものはアラブ系種としての資格がなく、準サラとなる。計算例としては、サラとアラブを交配してできた馬はアラブ血量50パーセント、さらにこれにサラを交配すると25パーセント、またこれにサラを交配すると12.5パーセントとなり、25パーセント以下なので準サラとなり、アラブ系競走には出走できなかった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -4311,7 +4311,7 @@
         "レース、騎乗技術など",
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レース当日以前に、あらかじめ当該競馬場に入厩してレースに臨むこと。距離的に美浦あるいは栗東のトレーニング・センターから当日の輸送が不可能なローカル競馬のほかは、輸送に弱くてレースで能力を出せない馬を、早めに入厩させて落ち着かせるために行う場合がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -4325,7 +4325,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スポーツ新聞や競馬新聞などの予想欄で、人気の印がほとんどついていない、ノーマークの馬を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mu_list.html",
@@ -4339,7 +4339,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "無口頭絡の略称で、馬銜のついていない頭絡を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mu_list.html",
@@ -4353,7 +4353,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "不意に些細な何かの物に驚いて騒いだり、止まってしまったり、また横に飛んだりする動作や癖をいう。レースのときにハロン棒の影や芝の切れ目に驚く馬も稀にいる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mo_list.html",
@@ -4367,7 +4367,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "中央競馬の特別競走に出走するために必要な登録。競馬番組で定められた日時に特別登録料とともに申し込む。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -4381,7 +4381,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "一般競走と違って、特別登録を必要とする競走。特別競走には、現在の中央競馬ですべてレース名がつけられている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -4395,7 +4395,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "投票法毎に勝馬投票の的中者がいない場合には、競馬法により、その投票法に投票した購入者全員に対して、特払いとして払戻率70パーセント台の投票法では100円につき70円、払戻率80パーセントの投票法では100円につき80円の払戻を行うことをいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -4409,7 +4409,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "額にある旋毛を指します。眼の上線と下線の間にあるものを珠目正、それより上なら珠目上、下なら珠目下といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -4423,7 +4423,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬に出走した馬の尿または血液を検体とし、分析機器を用いて禁止薬物検査を行うことをいう。現在、114薬物の禁止薬物が定められており、これらの禁止薬物を公正な第三者的立場に立って検査する機関として、1965年に競走馬理化学研究所が設立され、中央競馬、地方競馬の検体について理化学検査を行っている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ri_list.html",
@@ -4439,7 +4439,7 @@
         "競馬場などの施設、設備",
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 競馬場などの施設、設備 / 競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "サラブレッドを生産、育成して、せり市場か、個人の購買に応じて売却することを目的にしている牧場。サラブレッド繁殖用の牝馬を数頭または多数所有あるいは預託されて、種牡馬を交配し、子馬を産ませ、1歳の秋ごろまで育てる（初期・中期育成）牧場。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -4453,7 +4453,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の腹痛を伴う病気を総称していう。疝痛には便秘疝、風気疝、変位疝などがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -4469,7 +4469,7 @@
         "生産、育成関係、飼糧など",
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 生産、育成関係、飼糧など / 馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬は長日性の季節繁殖動物で、北半球では夏至を中心に4-9月に卵巣機能が最も発達し、発情が起こる。健康な牝馬の発情は、約21日周期で起こり、約7日間ほど継続する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -4483,7 +4483,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スタートを指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -4497,7 +4497,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走馬が、スターターの合図で、一斉にスタートを切ることができるように考案されたもの。日本では、最初は旗を振ったりしていたが、1926年から濠州式バリヤーという、綱をコースの内外にわたし、バネで斜め前上方にはね上げるタイプのものを使っていた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -4511,7 +4511,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "スタートの時、ゲートの前方200メートルの地点に立っている係が持っている旗。発走委員が真正な発走でないと認めた場合に振る赤旗を受けて、この白旗を大きく左右に振る。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -4525,7 +4525,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "この毛色の産駒は白色または全身の大半が白色で生まれるが、眼には色素があり、ピンク色の皮膚の一部に有色の斑点があることから、いわゆるアルビノではない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -4539,7 +4539,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬を評価する基準。馬の体型、外観、特徴、性格などからその馬の能力や資質を見抜く技術。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -4553,7 +4553,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "先に入線した馬の鼻先（鼻端）と次に入線した馬の鼻先（鼻端）の間隔を指します。ハナ、アタマ、クビ、それ以上は馬身を単位に表示するが、10馬身を超える場合は「大差」と表示する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -4567,7 +4567,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "確定した順位を指します。ゴールに到達した順番は入線順位である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -4581,7 +4581,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "失格になった馬がいた場合、その馬の着順を取り消し、また、降着になった馬がいた場合は着順を変更して、順次着順を繰り上げること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -4595,7 +4595,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "着順（勝馬）が決定されること。着順掲示板の到達順位が点滅から点灯にかわり、赤地に白文字で「確定」と表示される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -4609,7 +4609,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬施行規程に「馬の競走能力を一時的にたかめ、または減ずる薬品または薬剤」、およびこれらを含有するものを禁止薬物と定め、出走馬への投与、その影響下にある馬の出馬投票を禁じている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -4623,7 +4623,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "繁殖のために血統や成績のよい牡馬を種牡馬として繁殖牝馬に交配させること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ta_list.html",
@@ -4638,7 +4638,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "父馬を指しますで、より速く、強い馬を作り出すために競走成績のすぐれた馬、血統のよい馬が選定される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -4652,7 +4652,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "単独で先頭に立って逃げること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -4666,7 +4666,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走馬が装鞍所に入ってから、発走時刻までに病気やケガ等の理由により、裁決委員の判断で当該馬を競走から除外すること（但し、発走に関することは発走委員の判断による）。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -4681,7 +4681,7 @@
         "競馬場などの施設、設備",
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備 / 競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "「競走馬のふるさと案内所」は（公社）日本軽種馬協会が全国6か所に設置している案内所。引退して馬産地の牧場へと帰った競走馬たちのふるさとを訪ねる競馬ファンのために、種牡馬や繁殖牝馬の所在や、見学の可否、見学時間、地域の交通など、さまざまな情報を提供している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -4695,7 +4695,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬主が中央競馬の競走に出走させるために、自己の所有する競走馬をＪＲＡに登録すること。通常、初入厩時に行う競走馬登録申請書類の審査および馬体の検査に合格することで登録される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -4710,7 +4710,7 @@
         "競馬関係の組織、団体、会議など",
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など / 競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬主、生産者、厩舎関係者（調教師、調教助手、騎手、厩務員など）、獣医師、装蹄師、JRAとその関係団体のスタッフなどの競馬関係者を指しますを「競馬サークル」という呼び方です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4724,7 +4724,7 @@
       "categories": [
         "競馬史上のもの（現存のものは除く）"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬史上のもの（現存のものは除く）」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "1862年（文久2年）、横浜の居留地で行なわれた競馬が日本近代競馬の幕開けとされている。日本最初の競馬倶楽部も同年に横浜にできた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4738,7 +4738,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "その週に行われる競馬の情報が掲載されている競馬専門の新聞を指します。出走する各馬の近走成績、調教タイム、陣営のコメント、各記者の予想印などが掲載されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4752,7 +4752,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "日本における競馬の施行を定めた法律。日本中央競馬会はこの法律に基づいて競馬を行っている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4766,7 +4766,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "体高、胸囲とともに、馬の大きさを測る基準の一つで、前脚の膝と、球節の中間の周囲をいう。平均18から20センチが普通で、馬体を四肢によって支えるので細いより太い方が丈夫といえる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -4780,7 +4780,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "主として前肢に発生し、ムコウズネ、ムコウゾエ、ソエとも呼ばれる。骨が完全に化骨していない若馬に急激な強い調教を行なったり、硬い走路で調教を行なうと、管骨（第3中手骨）の前面に炎症を起こす。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -4794,7 +4794,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の毛色の種類で、原毛色は栗毛、鹿毛または青毛等であるが、主に頸、躯幹、四肢の上部に原毛色と白毛が混生するもので、その色合いは年齢の進度にかかわらず、白色の度合いが変わらない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -4808,7 +4808,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "JRA-UMACAの残高のうち、出金することができる金額を指します。払戻金・返還金は「精算可能残高」として管理され、開催日に専用の入出金機から出金できる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/se_list.html",
@@ -4822,7 +4822,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "個人馬主、法人馬主に次ぐものとして、2001年に新たに出来た馬主の形態。組合契約により3名以上10名以下により結成された団体を一つの馬主として登録するもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -4836,7 +4836,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "台風や降雪など天災地変等の影響により、当日に予定していたレースの半数以上を取り止めた場合には、出馬投票をやり直すとともに、開催日を変更して「続行競馬」を行う。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -4850,7 +4850,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "連勝式勝馬投票券の買い方の一種。1頭の軸（3連複・3連単の場合は2頭の軸も可）とする馬を選び、その馬からすべての馬（もしくは枠）に流す買い方。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -4864,7 +4864,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "子馬を生産することを目的として飼養される牝馬。生産者はその牝馬の血統、成績、能力等を熟考した上で、強い産駒の生産を目指し適切な種牡馬を選んで配合する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -4878,7 +4878,7 @@
       "categories": [
         "競馬史上のもの（現存のものは除く）"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬史上のもの（現存のものは除く）」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "斜対歩および側対歩という歩法で行われていた競走の種類。4本の肢のうちどれかが地面についてないと失格となる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -4892,7 +4892,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "障害レースの時に、コースに置く障害を指します。可動式障害。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -4906,7 +4906,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "一定の自然環境の中で競走馬の育成・調教に専念する施設として、1978年4月に茨城県稲敷郡美浦村に開設。約223万平方メートルの広大な敷地の中に、南北2つのトラック型調教コース、1200メートルの坂路調教馬場、競走馬スイミングプール、森林馬道といった様々な調教施設があり、2000頭を超える競走馬（主に関東馬）が、レースへ向けてトレーニングを行っている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mi_list.html",
@@ -4920,7 +4920,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "肌馬は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -4934,7 +4934,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "肢巻きは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -4950,7 +4950,7 @@
         "競馬場などの施設、設備",
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 競馬場などの施設、設備 / 競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走馬のサイクルは、大きく生産、育成、競走のそれぞれのステージに分けられるが、さらに育成のステージは、生まれてから離乳までの初期育成、騎乗馴致前までの中期育成、騎乗馴致から入厩までの後期育成に分けられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -4964,7 +4964,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "鞍の位置が変わらないようにするために用いる補助具。革紐等で胸前から鞍に連結させて鞍ずれ防止を目的に使用する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mu_list.html",
@@ -4978,7 +4978,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "厳密には肩甲骨（けんこうこつ）の真後ろの胸の周囲を測る。帯道の部分。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -4992,7 +4992,7 @@
       "categories": [
         "競馬史上のもの（現存のものは除く）"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬史上のもの（現存のものは除く）」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "軍部の命令により1944年春から、馬券を発売する競走を一切禁じられたため、同年の春秋2期は「能力検定競走」として競馬が行なわれた。クリヤマトの皐月賞、カイソウのダービー、ヤマイワイの桜花賞などがこの能力検定競走にあたる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/no_list.html",
@@ -5006,7 +5006,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の走りっぷりを指します。余力十分に走っているときは「脚色が良い」、余力がなくなってバテ気味のときは「脚色一杯」などといわれる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -5020,7 +5020,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "逃げ、先行、差し、追い込みなど、その馬が得意とするレース戦術。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -5034,7 +5034,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "鞍の附属具で馬の胸に回して締める帯。腹帯は1本ではなく“上腹”を鞍の上から締める。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -5048,7 +5048,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬がものをみたり、異常に緊張したりして、動かなくなってしまった状態をいう。馬場に出た後、騎手の指示にもかかわらず動かなくなったり、ゲートが開いても発進しないケースなどがある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -5062,7 +5062,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬銜吊りなどを用いても馬銜を越して舌を出す（「舌を越す」という）癖を直すことができない馬などに使用する。舌縛りの際には舌の損傷を避けるため適度に幅の広い包帯を使用したり、専用の装具などを使用したりする。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5076,7 +5076,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "原毛色は栗色（栃栗色を含む）、鹿毛（黒鹿毛、青鹿毛を含む）、青毛等であるが、被毛全体に白色毛が混生し、年齢が進むにつれて白色の度合いが強くなるが、その進度は個体によりまちまちで、その色合いも純白になるものから原毛色をわずかに残したままのものまである。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -5090,7 +5090,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "若手騎手は、騎手免許取得後7年未満の騎手をいう。若手騎手競走に騎乗することができる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/wa_list.html",
@@ -5104,7 +5104,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "「若手騎手競走」とは、騎手免許取得してから間もない若手の騎手がレースに騎乗する機会を増やすために導入された競走であり、この競走に騎乗できる騎手を「若手騎手」といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/wa_list.html",
@@ -5118,7 +5118,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "蹄鉄が外れ落ちること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ra_list.html",
@@ -5132,7 +5132,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レース中、馬がつまずいたり転倒したりして、騎手が馬から落ちること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ra_list.html",
@@ -5146,7 +5146,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "それぞれの馬の父母の系統を指します。競馬で優秀な血統の馬でなければ好成績をあげる確率が低いとされる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -5160,7 +5160,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "サラブレッドの血統を記した本。1793年に初めての血統書ともいうべきゼネラル・スタッドブック第1巻がイギリスのジェームス・ウェザビィによって刊行され、その後4年ごとに出版されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -5174,7 +5174,7 @@
       "categories": [
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "生まれてきた子馬について、母馬に種付けをした父馬を確認し、品種、血統を登録し、毛色や特徴を記録すること。人間で言えば、戸籍に当たる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -5189,7 +5189,7 @@
         "競馬関係の組織、団体、会議など",
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など / 競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬開催中に発生した事由に関する騎乗停止、馬の出走停止及び調教停止の処分は、30日以内であれば裁決委員の権限で行なうが、30日を超える処分の必要があると裁決委員が認めるときは、裁定委員会が議定する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -5205,7 +5205,7 @@
         "レース、騎乗技術など",
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々 / レース、騎乗技術など / 競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "着順の確定、失格または降着の裁決の申立ての裁決、出走馬または騎手に対する保安措置と制裁及び競馬の公正を害すべき行為の取締りに関する事務を行う執務委員。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -5219,7 +5219,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "蹄の異常のひとつで蹄壁が割れて亀裂が入ったものをいう。縦に割れるものと横に割れるものがあるが、原因が異なるのでそれぞれ縦裂蹄と横裂蹄に区別する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/re_list.html",
@@ -5233,7 +5233,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走馬は指定された時刻（通常のレースは発走の60分前）までに装鞍所に集合し、馬体検査、蹄鉄の検査、馬体重の測定を受ける。その後、指定されたつなぎ馬房において装鞍などの馬装の整備が行われ、パドックに向かう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -5247,7 +5247,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走頭数によるが、1着から3着までの入着馬を勝馬とする勝馬投票法を指します。出走頭数が8頭以上の場合は3着まで、7頭以下では2着までに入着すれば的中となる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -5261,7 +5261,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "駈歩からさらに歩行速度を速めると、襲歩と呼ばれる歩法に変わる。襲歩は競馬などで馬が疾走しているときにみられる歩法で、速度は最も速い。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5275,7 +5275,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "実際に鞭を使用すると逆に走る気をなくす馬に対して、目先で鞭をちらつかせることだけにとどめて走る気をうながすこと。また素直な馬でも急に鞭を使うとよれたりする可能性があるので、馬に使うことを予告するために行う場合もある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mi_list.html",
@@ -5289,7 +5289,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "免許の通算取得期間が5年未満で、平地競走の勝利度数が100回以下、または障害競走の勝利度数が20回以下の騎手。技術が未熟な見習騎手に騎乗機会を与えて育成を図るために、特別競走とハンデキャップ競走以外のレースで、見習騎手の負担重量を軽減する減量制度がとられている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mi_list.html",
@@ -5303,7 +5303,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走能力には影響を与えないものの、馬の福祉および事故防止の観点から出走前の使用に制限のある薬物を指し、馬がその影響下にある期間は出走できない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -5318,7 +5318,7 @@
         "厩舎ことば",
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば / 勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "同じレースに同じ馬主、もしくは同じ厩舎の馬が2頭以上出走していて、レースの結果それらの馬で1、2着を独占した場合、○○（馬主、厩舎の名前）の親子どんぶり、といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -5332,7 +5332,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "周囲や走路を柵で囲った1周200から600メートルほどの追い運動用の砂馬場で、主に準備運動に用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -5346,7 +5346,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "調教師に対する処分の一つ。競馬施行規程に規定されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -5360,7 +5360,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "各競馬場、栗東、美浦両トレーニング・センターに設けられた、騎手の宿泊施設。競馬の公正の確保と心身の調整を図ることを目的として競馬開催の前日に、騎乗予定騎手全員が入室することが原則として義務付けられている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -5374,7 +5374,7 @@
       "categories": [
         "競馬史上のもの（現存のものは除く）"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬史上のもの（現存のものは除く）」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "調教師と騎手の免許をはっきりと分けること。1937年の「日本競馬会」設立以前の「競馬倶楽部」時代は、騎手という名称のみが登録されており、騎手になれば厩舎をかまえ調教師の仕事を行なうことができた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ti_list.html",
@@ -5388,7 +5388,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "買い戻しは、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -5402,7 +5402,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走馬の馬主が登録した服色（勝負服）をレース当日に準備できなかった場合や、馬主が服色を登録していない場合に使用する服色を指します。色は帽色と同じ色を地色に使用している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -5416,7 +5416,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "発走態勢に入ることを知らせるためにスターターが振る旗。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -5430,7 +5430,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "⇒パトロールタワー。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/so_list.html",
@@ -5444,7 +5444,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "歩様に異常をきたしている状態をいう。負重するときに疼痛を示すもの（支柱跛行）、肢の挙楊時および前進時に疼痛を示すもの（懸垂跛行）、両方が混在する跛行（混合跛行）がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -5458,7 +5458,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "古くは皮爪（ひづめ）が語源とされる。肢端の硬い角質部分だけでなく、角質に含まれる軟組織や骨、腱、じん帯の全てを含んだ名称である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hi_list.html",
@@ -5472,7 +5472,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "蹄底の下面にある蹄叉の凹部につまった汚物が原因で蹄叉角質が腐食し、悪臭をはなつ状態であり、腐食が進行して肉質な組織にまで達すると疼痛 が生じて跛行を呈する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -5486,7 +5486,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の蹄の内部にある葉状層の病気だが、その発症のメカニズムは一つではない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -5500,7 +5500,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の蹄（蹄負面）に装着して蹄を保護する人の靴に相当するものである。競走馬では、調教時と競走時に頻繁に打ち換える必要のない兼用蹄鉄と呼ばれるアルミニウム合金製のものが使用されているが、乗馬では鉄製のものもよく使われている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -5515,7 +5515,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "サラブレッド、アラブ、アングロアラブ（アア）など軽快で競走または乗用に適するもの。1974年6月1日の軽種馬の品種の改訂でサラブレッド、アラブ、アングロアラブ（アア）、サラブレッド系種、アラブ系種の5種となり、それまでの準サラという品種はなくなった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -5529,7 +5529,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "速歩（はやあし）のとき騎手が馬の動きに合わせて鐙に立つ、鞍に座る、を繰り返す乗り方を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -5543,7 +5543,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "ゲートの後方に集合した各馬が、枠入りの合図がかかるまで輪を描くように歩きながら待機すること。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/wa_list.html",
@@ -5557,7 +5557,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "家畜伝染病予防法で定められた制度である。国内に伝染病を持ち込まない、あるいは国外に伝染病を持ち出さないために、外国馬や日本からの遠征馬に対して、一定期間の他馬からの隔離や検査が行われる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/yu_list.html",
@@ -5572,7 +5572,7 @@
         "生産、育成関係、飼糧など",
         "血統、馬の種類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など / 血統、馬の種類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "近親交配は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -5586,7 +5586,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "パドックからコースに入場してきた馬が、コースを走るウォーミングアップを指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -5600,7 +5600,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "勝馬投票券が発売された後、ある馬が出走取消・競走除外となった場合、その馬もしくはその馬（枠）の組み合わせの投票券の全てが同額で投票者に返還金として返される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/he_list.html",
@@ -5614,7 +5614,7 @@
       "categories": [
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レース直前週の速いタイムの調教を指します。レースに向けて馬の状態を最高に持っていくため、レースの3、4日前の調教で、十分に調教で追い切ることから、この言葉が生まれた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -5628,7 +5628,7 @@
       "categories": [
         "調教関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "離乳した後の育成馬の運動のひとつ。放牧地等で集団的に馬を追う運動をいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/o_list.html",
@@ -5642,7 +5642,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "皐月賞、桜花賞、優駿牝馬（オークス）、東京優駿（日本ダービー）、菊花賞の「3歳馬5大特別競走」では各競走で計3回の特別登録を行う必要があるが、第1回（2歳10月）・第2回（3歳1月）の特別登録を行わなかった場合に、各競走の第3回特別登録申込締切日（原則として各レースの2週前の日曜日）に追加登録料とともに申し込む、特別登録を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/tu_list.html",
@@ -5656,7 +5656,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "速度は普通1分間に220メートル位である。四肢の動く順は（1）右後肢と左前肢（2）左後肢と右前肢が対になっての2ビートで、頭、頸の動きは小さいが、弾発がある歩法で上下動の反撞は大きい。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -5670,7 +5670,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "連勝複式がウラ目も的中するのに対して、連勝単式は着順どおり的中させるもの。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/re_list.html",
@@ -5684,7 +5684,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "枠連・馬連では1着と2着に入着した馬を、ワイドでは1着と2着・1着と3着・2着と3着に入着した馬を、3連複では1着と2着と3着に入着した馬を、その入着順位にかかわらず1組としたものを勝ち馬とする投票法をいう。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/re_list.html",
@@ -5698,7 +5698,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "連闘は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/re_list.html",
@@ -5713,7 +5713,7 @@
         "レース、騎乗技術など",
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬主の預託馬が競走に出走して賞金を取得した時に、馬主が管理調教師や騎乗騎手等、厩舎関係者に支払う成功報酬的な金員を指します。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5727,7 +5727,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "文字どおり馬が走路から大きくはずれて走路外に疾走してしまうこと。競走を続行するためには、逸走し始めた地点に引き返してからにしなければならない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/i_list.html",
@@ -5741,7 +5741,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "骨、腱、関節、蹄、筋肉等の運動に関わる部位の疾病を総称していう。競走馬の病気全体の55パーセント前後を占め、主なものとして骨折、屈腱炎、繋靭帯炎、関節炎がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -5755,7 +5755,7 @@
       "categories": [
         "競馬関係の組織、団体、会議など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の組織、団体、会議など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "日本中央競馬会法に基づいて設置された理事長の諮問機関で、日本中央競馬会の運営について審議する。運営審議会のメンバーは有識者、並びに馬主、生産者、騎手及び調教師の代表である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -5769,7 +5769,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬場状態の表示には良、稍重、重、不良の4段階があるが、重以上の状態をひと口で「みちわる」といいます。道悪の上手、下手で人気が大きく変わる場合がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mi_list.html",
@@ -5783,7 +5783,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "遮眼革は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5797,7 +5797,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "特別競走の中でも特に賞金が高額で、重要な意義をもったレース。賞金や歴史と伝統・競走内容等により格付けされている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5811,7 +5811,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "比較的長期の休養明けでレースに使うこと。このような場合にレースに使うことを「鉄砲使い」、また鉄砲使いでレースで好走するような馬を、「鉄砲の利く馬」といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -5825,7 +5825,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "負担重量調整のため鉛板を使用する。鉛板は100グラムから500グラムまで5種類あり、100グラムを一分（いちぶ）と呼んでいる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/na_list.html",
@@ -5839,7 +5839,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬銜（はみ）を上顎に引き上げる作用があり、馬銜を越して舌を出す（「舌を越す」という）癖を防ぎ、馬銜の位置を正しく保つ効果がある。一端を頭絡の項革に固定し、馬の鼻梁上を通じて両側の馬銜鐶内側の馬銜身部分に連結して使用する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -5853,7 +5853,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎乗時に足を乗せる馬具。「鐙を履く」といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -5867,7 +5867,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競馬施行規程138条に規定されている馬主、調教師、騎手、調教助手、騎手候補者、厩務員に対する処罰の一種。この処分を受けると、一切競馬に関係することができなくなる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -5881,7 +5881,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "入線した馬について、「その走行妨害がなければ被害馬が加害馬に先着していた」と裁決委員が判断した場合、加害馬を被害馬のすぐ後の着順に置くこと。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -5895,7 +5895,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "障害は、JRAの競馬用語辞典で扱われる競馬用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5909,7 +5909,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "障害競走とは、コース中に設置されたいくつかの障害物を越えて、いかに早くゴールに到達するかを競うレースで、その障害物には、竹柵、生籬（いけがき）、水濠、土塁等がある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5923,7 +5923,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "初めて障害競走に騎乗した日から5年を経過しておらず、障害競走における勝利度数が20回以下の騎手。平地競走のみ騎乗していた騎手が新たに障害競走に参入しやすい環境とするために、特別競走以外の障害競走で、障害競走新規騎乗騎手の負担重量を軽減する減量制度がとられている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/si_list.html",
@@ -5937,7 +5937,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "パソコン・スマートフォン（ネット投票）や、固定電話等（プッシュホン投票）を利用して、勝馬投票券を購入できるサービスで現在「即PAT」「A-PAT」「JRAダイレクト」の3種類の会員を募集している。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/te_list.html",
@@ -5951,7 +5951,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "被毛、長毛共に黒色である。軽種馬には比較的少ない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -5965,7 +5965,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "全身ほとんど黒色で眼や鼻の周辺、腋、ひばら等がわずかに褐色である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/a_list.html",
@@ -5979,7 +5979,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出馬投票締切りの結果、出走申込頭数が、出走可能頭数を超過した競走については、選定基準の下位の競走馬から除外され、「出走できる馬」、「非当選馬」、「非抽選馬」が決定される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hi_list.html",
@@ -5993,7 +5993,7 @@
       "categories": [
         "レース、騎乗技術など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出馬投票締切りの結果、出走申込頭数が、出走可能頭数を超過した競走については、選定基準の下位の競走馬から除外され、「出走できる馬」、「非当選馬」、「非抽選馬」が決定される。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hi_list.html",
@@ -6007,7 +6007,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の背に置いて、人や荷物をのせる馬具。競走用の鞍は軽量化されており、レースではこの鞍の重さも負担重量に含まれる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -6021,7 +6021,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手が馬に合図を送るために使用する。競走騎乗では、長さ77センチ未満で、衝撃吸収素材を用いたパッドを装着したものでなければ使用できない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/mu_list.html",
@@ -6035,7 +6035,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の頭から顎（あご）、頬、鼻の上、そしてうなじにわたって細い幅の革でできた馬具で、馬銜を吊って馬の口の内に入れ、適当な位置を保たせるために使用する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/to_list.html",
@@ -6049,7 +6049,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "頸の状態を指します。「あの馬は頸差しが良い」などといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -6063,7 +6063,7 @@
       "categories": [
         "資格・成績・ランキング・表彰など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「資格・成績・ランキング・表彰など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "1985年に日本中央競馬会創立30周年記念事業の一環として、中央競馬の発展に多大な貢献のあった過去の名馬の功績をたたえ、顕彰して、後世に伝えていくようになった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -6078,7 +6078,7 @@
         "調教関係",
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「調教関係 / 厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "食欲を指します。「飼い食いが良い」とか「悪い」というように使われる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -6092,7 +6092,7 @@
       "categories": [
         "生産、育成関係、飼糧など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「生産、育成関係、飼糧など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "人が馬に給与する餌の総称であり、濃厚飼料、粗飼料、サプリメント等の補助飼料がある。濃厚飼料は穀類（日本では主にエン麦）、穀類副作物（ぬか類）、マメ類、油粕（あぶらかす）類など。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -6106,7 +6106,7 @@
       "categories": [
         "厩舎ことば"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「厩舎ことば」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "牡馬の発情を指します。馬っ気を出すと競走に集中力を欠き、能力を出し切れなくなることが多いと言われている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -6121,7 +6121,7 @@
         "レース、騎乗技術など",
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "レースや調教で、追わない(鞭を使ったり手綱をしごいたりしない)で馬の走る気にまかせること。「持ったまま」ともいい、基本的には余力を十分残している状態をさす。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -6136,7 +6136,7 @@
         "競馬場などの施設、設備",
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備 / 馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "温泉を利用して馬の疾病を治療するための施設。JRAでは福島県いわき市の競走馬リハビリテーションセンターと函館競馬場にある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -6150,7 +6150,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬インフルエンザウイルスの感染による非常に伝染力の強い馬の呼吸器感染症。国内では2007年8月に36年ぶりに流行し、競馬開催が1節中止となった。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -6164,7 +6164,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬券は、競馬で「⇒勝馬投票券」を表す用語です。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -6178,7 +6178,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "正式名称は、馬番号二連勝単式勝馬投票法。1着と2着になる馬の馬番号を着順通りに的中させる投票法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -6192,7 +6192,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走馬が競走したり、調教をしたりする場所をいう。用途別に分類すると本馬場、調教馬場、障害馬場、障害調教馬場、発走調教馬場、追馬場等となり、築造材料別に分類すると芝馬場、ダート馬場、ウッドチップ馬場、ゴムチップ混合馬場、ポリトラック馬場等となる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -6207,7 +6207,7 @@
         "レース、騎乗技術など",
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レース、騎乗技術など / 勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "出走馬1頭ずつにつけられた番号を指します。馬がつけるゼッケンは馬番号。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -6221,7 +6221,7 @@
       "categories": [
         "勝馬投票券関係、投票関係"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「勝馬投票券関係、投票関係」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "正式名称は、普通馬番号二連勝複式勝馬投票法。1着と2着になる馬の馬番号の組合せを的中させる投票法。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/u_list.html",
@@ -6235,7 +6235,7 @@
       "categories": [
         "競馬場などの施設、設備"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走馬を競馬場や牧場に輸送するための車両。最大で4頭積載できる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -6249,7 +6249,7 @@
       "categories": [
         "競馬で使用する様々な道具"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬で使用する様々な道具」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬銜（はみ）とは、馬の口に噛ませる棒状の金具である。馬の口には前に上下12本の切歯があり、切歯のうしろはかなり広い歯のない部分（歯槽間縁）があり、その奥に臼歯（奥歯）が並んでいて、ちょうどこの歯のない部分に馬銜をかける。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -6263,7 +6263,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の年齢を指します。従来は数え年で数えられていたが、2001年度から、国際化の一環として、数え年から満年齢に変更された。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -6277,7 +6277,7 @@
       "categories": [
         "レースの種類、条件など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「レースの種類、条件など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "負担重量を馬の年齢によって定める方法。2歳時と3歳時の、同一年齢の馬だけのレースに用いられる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ha_list.html",
@@ -6291,7 +6291,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の毛色の種類で体に大きな白斑のあるもので、原毛色により駁栗毛、鹿駁毛などといいます。また、白色部が有色部より多い場合は、駁栗毛、駁鹿毛といいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hu_list.html",
@@ -6305,7 +6305,7 @@
       "categories": [
         "馬の脚質、あしいろ、歩様、距離特性など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の脚質、あしいろ、歩様、距離特性など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "駆歩と表記することもある。速度は普通1分間に340メートル位である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -6319,7 +6319,7 @@
       "categories": [
         "競馬に関わる人々"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬に関わる人々」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "競走に関し、騎手が馬主又は調教師から騎乗依頼を受けるにあたり、騎手本人に代わって騎乗依頼の受付や承諾等を行なう者を指します。1名の騎乗依頼仲介者が担当できる騎手の人数に、制限（3名＋若手騎手1名）を設けている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -6333,7 +6333,7 @@
       "categories": [
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手に対する処分の一つ。競馬施行規程に規定されている。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -6347,7 +6347,7 @@
       "categories": [
         "競馬史上のもの（現存のものは除く）"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬史上のもの（現存のものは除く）」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "右前肢が出ると同時に、左後肢が出る歩様で行なわれる競馬で、4本の肢のうちどれかが地面についてないと失格となる。陸上競技でいえば競歩にあたる。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -6361,7 +6361,7 @@
       "categories": [
         "その他"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「その他」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "騎手が馬に跨った時の脚部を指します。騎座が安定すると騎手も安定する。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -6377,7 +6377,7 @@
         "競馬に関わる人々",
         "競馬関係の法律、施行規程、公正確保など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「競馬場などの施設、設備 / 競馬に関わる人々 / 競馬関係の法律、施行規程、公正確保など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "乗り役ともいう。戦前は調教師の門を叩いて修行し、騎手となっていったが、戦後は、調教師のもとで修行した者が一週間ほどの講習を2、3回受講したうえで騎手免許試験を受ける短期講習制度（1948年から）と、日本中央競馬会馬事公苑で募集する2年課程の講習を終了してから騎手免許試験を受ける長期講習制度(1950年から)に分かれていた。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ki_list.html",
@@ -6391,7 +6391,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬はその脚を動かす原動力となる筋肉、内臓が丈夫でなくてはならないがそのためには、骨格がしっかりしていることが望ましい。骨が太く、骨格がしっかりしている大きいことを骨量が富んでいるといいます。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ko_list.html",
@@ -6405,7 +6405,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "馬の眼の虹彩は、普通は暗黒色であるが、虹彩の色素が少なく、外観からは黒目の部分が青色に見えるもの。視力に障害はない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/sa_list.html",
@@ -6419,7 +6419,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "パドックでもまれに見受けられる歩様で、鶏の歩く様に似ているところからこの名がある。後肢が地面を離れる時に急激に肢を上げる歩様が特徴的である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ke_list.html",
@@ -6433,7 +6433,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "被毛は明るい赤褐色から暗い赤褐色まであるが長毛と四肢の下部は黒色である。栗毛との違いは長毛と四肢の下部の色で栗毛は黒くならない。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ka_list.html",
@@ -6447,7 +6447,7 @@
       "categories": [
         "馬体の各部位、特徴、個体の分類など"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬体の各部位、特徴、個体の分類など」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "被毛の色合いが黒味がかった赤褐色で、黒味の程度により相当黒く見えるものまであるが、眼の周辺、腋、ひばら、下腹及び内股は褐色で長毛と四肢の下部の色は被毛の色の濃淡にかかわらず黒色である。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/ku_list.html",
@@ -6461,7 +6461,7 @@
       "categories": [
         "馬の病気、ケガ、能力をそこなうものなど"
       ],
-      "summary": "JRA公式競馬用語辞典に掲載されている「馬の病気、ケガ、能力をそこなうものなど」分野の用語。詳しい意味はJRA公式の出典ページで確認できます。",
+      "summary": "鼻出血には打撲等の外傷性のものと内因性のものがある。外傷性の鼻出血は短期間で治り、再発しないが、気道や肺胞粘膜の毛細血管の破綻（はたん）による内因性の鼻出血は習慣性となることもある。",
       "aliases": [],
       "source_name": "JRA公式 競馬用語辞典",
       "source_url": "https://www.jra.go.jp/kouza/yougo/hi_list.html",
