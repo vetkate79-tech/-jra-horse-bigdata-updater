@@ -2,7 +2,7 @@
   "status": "ACTIVE_RESEARCH_PRODUCTION_CORE",
   "operational_layer": "ORAL_INTEGRATED_V1_2_SHADOW",
   "feature_layer": "JRA_MULTI_HORIZON_STRICT_CUTOFF_V2",
-  "updated_for": "2026-09-02 big-data anti-bias and repeatability architecture",
+  "updated_for": "2026-09-02 big-data anti-bias, repeatability and situational-race architecture",
   "market_isolation": {
     "odds_in_pure_prediction": false,
     "popularity_in_pure_prediction": false,
@@ -63,6 +63,23 @@
       "repeatability_grade"
     ],
     "rule": "A model that wins an initial comparison enters repeated independent validation. One-off winners are not inherited or promoted until reproducibility is demonstrated."
+  },
+  "situational_race_shadow": {
+    "status": "RESEARCH_ONLY",
+    "production_override_applied": false,
+    "patterns": [
+      "LOW_EVIDENCE",
+      "DOMINANT_AXIS",
+      "FLAT_CHAOS",
+      "FRONT_PRESSURE",
+      "LOW_PACE_FRONT",
+      "THIRD_PLACE_VOLATILE",
+      "STABLE_TOP_CLUSTER",
+      "STANDARD"
+    ],
+    "concept": "Each race is first classified by its pre-race structure. A pattern-specific strategy is evaluated in parallel with the general model instead of forcing every race into one prediction shape.",
+    "integration_gate": "A pattern-specific gene can be integrated only after at least 3 independent positive validations (5 recommended), at least 300 races for that pattern, preserved/improved axis and candidate capture, and a final unseen validation pass.",
+    "partial_integration_rule": "Only the pattern where the strategy repeatedly wins is integrated. Other race patterns remain on the general production core."
   },
   "shared_selection_core": {
     "rule": "All wager types share the same horse-selection core: axis durability, candidate pool, partner roles, third-place intrusion and failure scenarios.",
