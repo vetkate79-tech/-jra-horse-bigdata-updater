@@ -1,0 +1,16 @@
+{
+  "source_report": "status/august-evolution-216r.json",
+  "decision": "REJECT_PROMOTION",
+  "promotion_recommended": false,
+  "reason": "The final unseen 2026-08-16 block did not improve over baseline: 0 BUY hits, 0% ROI, identical fitness 11.944. Development-only gains on 2026-08-15 are treated as non-generalizing until independently repeated.",
+  "production_model_unchanged": true,
+  "retained_research_genes": {
+    "ticket": "coverage",
+    "gate": "axis_strict"
+  },
+  "next_evolution_rule": {
+    "inheritance": "A gene may enter the research champion only after improvement on at least two independent 36R blocks or positive cumulative development gain with no material degradation in axis/candidate coverage.",
+    "promotion": "Production promotion requires positive performance on a final unseen 36R block; a development-only win is insufficient.",
+    "leakage": "Target results, popularity, odds and payouts remain unavailable before SHA256 prediction sealing."
+  }
+}
