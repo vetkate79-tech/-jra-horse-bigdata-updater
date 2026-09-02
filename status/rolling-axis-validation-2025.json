@@ -1,0 +1,64 @@
+{
+  "version": "ROLLING_AXIS_VALIDATION_2025_V1",
+  "market_features_used": false,
+  "target_result_used_in_features": false,
+  "train_period": [
+    "2025-05-01",
+    "2025-08-31"
+  ],
+  "holdout_start": "2025-09-01",
+  "feature_names": [
+    "recent_top3",
+    "recent_win",
+    "near_distance_top3",
+    "same_course_top3",
+    "same_surface_top3",
+    "latest_strength",
+    "recent_strength",
+    "last3f_strength",
+    "position_stability",
+    "history_confidence"
+  ],
+  "candidate_weight_vectors": 1503,
+  "best_weights": {
+    "recent_top3": 0.6,
+    "recent_win": 0.2,
+    "near_distance_top3": 0.4,
+    "same_course_top3": 0.0,
+    "same_surface_top3": 0.9,
+    "latest_strength": 0.7,
+    "recent_strength": 1.0,
+    "last3f_strength": 0.3,
+    "position_stability": 0.2,
+    "history_confidence": 0.1
+  },
+  "train_result": {
+    "races": 1247,
+    "top3": 662,
+    "wins": 274,
+    "top3_rate": 0.5308740978348035,
+    "win_rate": 0.21972734562951082
+  },
+  "holdout_result": {
+    "races": 1080,
+    "top3": 530,
+    "wins": 227,
+    "top3_rate": 0.49074074074074076,
+    "win_rate": 0.2101851851851852
+  },
+  "holdout_baseline_recent_top3": {
+    "races": 1080,
+    "top3": 505,
+    "wins": 215,
+    "top3_rate": 0.4675925925925926,
+    "win_rate": 0.19907407407407407
+  },
+  "holdout_baseline_recent_strength": {
+    "races": 1080,
+    "top3": 509,
+    "wins": 203,
+    "top3_rate": 0.47129629629629627,
+    "win_rate": 0.18796296296296297
+  },
+  "policy": "Every target row is featurized before its race result is appended to horse history. Popularity is never read by this script."
+}
