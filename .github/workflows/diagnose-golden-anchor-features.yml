@@ -1,0 +1,26 @@
+name: Diagnose Golden anchor features
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/diagnose_golden_anchor_features.py'
+      - '.github/workflows/diagnose-golden-anchor-features.yml'
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python src/diagnose_golden_anchor_features.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/golden-anchor-feature-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Diagnose Golden oral anchor features'
+          git pull --rebase origin main
+          git push origin HEAD:main
