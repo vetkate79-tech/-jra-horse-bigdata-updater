@@ -1,0 +1,45 @@
+name: System architecture audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'config/system_architecture.json'
+      - 'src/audit_system_architecture.py'
+      - '.github/workflows/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: architecture-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit canonical flow and independent subsystems
+        id: audit
+        continue-on-error: true
+        run: python src/audit_system_architecture.py
+      - name: Commit architecture status even when blocked
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/system_architecture.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'audit: update system architecture status'
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
+      - name: Enforce clean architecture
+        if: steps.audit.outcome != 'success'
+        run: exit 1
