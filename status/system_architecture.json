@@ -41,6 +41,8 @@
     "repair_not_scheduled": true,
     "live_prediction_seal_exists": true,
     "live_seal_market_firewall": true,
+    "market_reads_only_sealed_races": true,
+    "market_final_ticket_honesty": true,
     "market_does_not_run_prediction_engine": true,
     "validation_not_in_production_flow": true
   },
@@ -80,5 +82,6 @@
     "PDCA",
     "HORSE_MASTER_RESULT_MERGE"
   ],
-  "note": "PASS means orchestration shape and subsystem boundaries are clean. It does not claim model predictive accuracy."
+  "known_external_boundary": "Real market odds/EV acquisition is an external-data boundary. Until actual market data is connected, final tickets remain MARKET_DATA_PENDING rather than fabricated.",
+  "note": "PASS means orchestration shape, handoffs and subsystem boundaries are clean. It does not claim model predictive accuracy or live odds availability."
 }
