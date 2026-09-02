@@ -1,0 +1,67 @@
+name: One-off August 216R evolutionary validation
+on:
+  push:
+    paths:
+      - '.github/workflows/oneoff-august-evolution-216r.yml'
+permissions:
+  contents: write
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt && pip install pandas lxml html5lib beautifulsoup4
+      - name: Restore JRA profile cache
+        uses: actions/cache@v4
+        with:
+          path: cache/jra_horse_profiles
+          key: august-evolution-profiles-${{ runner.os }}-v1
+          restore-keys: |
+            jra-horse-master-${{ runner.os }}-
+            jra-profile-incremental-${{ runner.os }}-
+      - name: Collect 8/1-2 official JRA results
+        env:
+          TARGET_DATES: '2026-08-01,2026-08-02'
+          TARGET_OUT: 'data/race_results_html_2026_evo_0801_02.csv'
+          JRA_TARGET_RACE_SEEDS: 'pw01sde1004202602030120260801/5E,pw01sde1007202602030120260801/3C,pw01sde0101202601030120260801/70,pw01sde0104202602040120260802/AF,pw01sde1007202602040120260802/6C,pw01sde0101202601040120260802/A0'
+        run: |
+          python src/collect_jra_target_dates.py
+          cp data/race_payouts_2026_weekend.csv data/race_payouts_2026_evo_0801_02.csv
+      - name: Collect 8/8-9 official JRA results
+        env:
+          TARGET_DATES: '2026-08-08,2026-08-09'
+          TARGET_OUT: 'data/race_results_html_2026_evo_0808_09.csv'
+          JRA_TARGET_RACE_SEEDS: 'pw01sde1004202602050120260808/6F,pw01sde0107202602050120260808/6E,pw01sde1001202601050120260808/60,pw01sde0104202602060120260809/C0,pw01sde0107202602060120260809/9E,pw01sde0101202601060120260809/B1'
+        run: |
+          python src/collect_jra_target_dates.py
+          cp data/race_payouts_2026_weekend.csv data/race_payouts_2026_evo_0808_09.csv
+      - name: Collect 8/15-16 official JRA results
+        env:
+          TARGET_DATES: '2026-08-15,2026-08-16'
+          TARGET_OUT: 'data/race_results_html_2026_evo_0815_16.csv'
+          JRA_TARGET_RACE_SEEDS: 'pw01sde1004202602070120260815/78,pw01sde0107202602070120260815/77,pw01sde0101202601070120260815/8A,pw01sde0104202602080120260816/C9,pw01sde1007202602080120260816/86,pw01sde0101202601080120260816/BA'
+        run: |
+          python src/collect_jra_target_dates.py
+          cp data/race_payouts_2026_weekend.csv data/race_payouts_2026_evo_0815_16.csv
+      - name: Sanitize 216 racecards
+        run: python src/run_august_evolution_216r.py prepare
+      - name: Predict and SHA256 seal with results unreadable
+        run: python src/run_august_evolution_216r.py predict
+      - name: Open results and evolve in 36R generations
+        run: python src/run_august_evolution_216r.py score
+      - name: Commit immutable validation artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/race_results_html_2026_evo_*.csv data/race_payouts_2026_evo_*.csv validation/august_evolution_216r_cards.json validation/august_evolution_216r_base_sealed.json validation/august_evolution_216r_scored.json status/august-evolution-216r.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'validation: record sequential August 216R evolution'
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep $((i*4))
+          done
+          exit 1
