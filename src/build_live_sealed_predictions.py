@@ -6,6 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from oral_operational_layer import analyze_race, MODEL_VERSION
+from situational_race_pattern_shadow import classify_situation
 
 TZ=ZoneInfo('Asia/Tokyo')
 CARDS=Path('docs/data/race_cards.json')
@@ -48,7 +49,6 @@ def _load_pre_features():
 def _safe_horse(card_h,master,pre=None):
     h=master.get(str(card_h.get('horse_id') or ''),{})
     p=pre or {}
-    # Race-week strict-cutoff features take precedence; stable master values are fallback only.
     starts=_num(p.get('starts_before'),_num(h.get('starts_before') or h.get('running_style_sample_starts'),0))
     show=_num(p.get('show_rate_prior'),_num(h.get('show_rate_prior'),0.30))
     recent=_num(p.get('recent_form'),_num(h.get('recent_form'),0.35))
@@ -90,7 +90,6 @@ def main():
         evidence=sum(1 for x in q if _num(x.get('starts_before'))>0)
         spread=(max(scores)-min(scores)) if scores else 0.0
         differentiated=len({round(x,3) for x in scores})
-        # No fabricated ranking: require both historical evidence and actual score separation.
         if len(q)<3 or len(scores)<3 or evidence<3 or differentiated<3 or spread<0.50:
             pending.append({'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'status':'DATA_PENDING','reason':'at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed','evidence_horses':evidence,'score_spread':round(spread,3)})
             continue
@@ -98,13 +97,14 @@ def main():
         safe={'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'surface':r.get('surface'),'distance_m':r.get('distance_m'),'ranked_snapshot':q}
         if _contains_forbidden(safe):raise RuntimeError('forbidden market/result field entered pure prediction input')
         analysis=analyze_race(safe)
+        analysis['situational_shadow']=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or [])
         races.append({**{k:safe.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'analysis':analysis})
-    core={'schema_version':2,'mode':'LIVE_PURE_PREDICTION_SEAL','model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
+    core={'schema_version':3,'mode':'LIVE_PURE_PREDICTION_SEAL','model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
     hash_input=json.dumps({k:v for k,v in core.items() if k!='generated_at'},ensure_ascii=False,sort_keys=True,separators=(',',':'))
     core['prediction_hash_sha256']=hashlib.sha256(hash_input.encode()).hexdigest()
     OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(core,ensure_ascii=False,indent=2),encoding='utf-8')
-    status={'status':'SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES'),'today_jst':today,'sealed_race_count':len(races),'pending_race_count':len(pending),'prediction_hash_sha256':core['prediction_hash_sha256'],'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'odds_popularity_used':False,'results_used':False}
+    status={'status':'SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES'),'today_jst':today,'sealed_race_count':len(races),'pending_race_count':len(pending),'prediction_hash_sha256':core['prediction_hash_sha256'],'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'odds_popularity_used':False,'results_used':False}
     STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(status,ensure_ascii=False))
 
