@@ -1,0 +1,45 @@
+name: Archive legacy experimental workflows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/archive_legacy_workflows.py'
+      - '.github/workflows/archive-legacy-workflows.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Move legacy workflows out of active Actions directory
+        run: python src/archive_legacy_workflows.py
+      - name: Add archive documentation and retire this one-shot workflow
+        run: |
+          mkdir -p .github/workflow-archive
+          cat > .github/workflow-archive/README.md <<'EOF'
+          # Archived GitHub Actions workflows
+
+          Historical replay, calibration, diagnostic, backfill and superseded workflows live here so their implementation history remains inspectable without being triggerable as active GitHub Actions.
+
+          Production orchestration is defined in `config/system_architecture.json` and audited by `system-architecture-audit.yml`.
+          EOF
+          mv .github/workflows/archive-legacy-workflows.yml .github/workflow-archive/archive-legacy-workflows.yml
+      - name: Commit workflow cleanup
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A .github status/workflow_cleanup.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'chore: archive superseded JRA workflows'
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
