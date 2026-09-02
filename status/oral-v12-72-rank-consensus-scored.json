@@ -1,0 +1,20 @@
+{
+  "version": "ORAL_V12_TWO_ENGINE_RANK_CONSENSUS",
+  "prediction_hash": "f6d6576077db8bb72ee36d84801a81db5c1ad713e78e85a57f0185c8eb11a39f",
+  "golden_parity_certified": false,
+  "race_count_scored": 72,
+  "missing_result_joins": [],
+  "decision_counts": {
+    "PASS": 29,
+    "BUY": 37,
+    "CAUTION": 6
+  },
+  "axis_1st": 19,
+  "axis_2nd_3rd": 22,
+  "axis_outside_top3": 31,
+  "axis_top3_rate_pct": 56.94,
+  "trio_bought_races": 43,
+  "trio_hits": 9,
+  "trio_hit_rate_pct": 20.93,
+  "results_opened_after_seal": true
+}

@@ -1,0 +1,744 @@
+{
+  "summary": {
+    "version": "ORAL_V12_TWO_ENGINE_RANK_CONSENSUS",
+    "prediction_hash": "f6d6576077db8bb72ee36d84801a81db5c1ad713e78e85a57f0185c8eb11a39f",
+    "golden_parity_certified": false,
+    "race_count_scored": 72,
+    "missing_result_joins": [],
+    "decision_counts": {
+      "PASS": 29,
+      "BUY": 37,
+      "CAUTION": 6
+    },
+    "axis_1st": 19,
+    "axis_2nd_3rd": 22,
+    "axis_outside_top3": 31,
+    "axis_top3_rate_pct": 56.94,
+    "trio_bought_races": 43,
+    "trio_hits": 9,
+    "trio_hit_rate_pct": 20.93,
+    "results_opened_after_seal": true
+  },
+  "races": [
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 1,
+      "decision": "PASS",
+      "axis": "7",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 2,
+      "decision": "PASS",
+      "axis": "3",
+      "axis_finish": 5,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 3,
+      "decision": "PASS",
+      "axis": "4",
+      "axis_finish": 7,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 4,
+      "decision": "BUY",
+      "axis": "7",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 5,
+      "decision": "BUY",
+      "axis": "10",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 6,
+      "decision": "BUY",
+      "axis": "5",
+      "axis_finish": 9,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 7,
+      "decision": "CAUTION",
+      "axis": "1",
+      "axis_finish": 3,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 8,
+      "decision": "BUY",
+      "axis": "10",
+      "axis_finish": 9,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 9,
+      "decision": "BUY",
+      "axis": "5",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 10,
+      "decision": "BUY",
+      "axis": "4",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 11,
+      "decision": "BUY",
+      "axis": "9",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-29",
+      "track": "中京",
+      "race_no": 12,
+      "decision": "PASS",
+      "axis": "8",
+      "axis_finish": 11,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 1,
+      "decision": "PASS",
+      "axis": "9",
+      "axis_finish": 4,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 2,
+      "decision": "BUY",
+      "axis": "15",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 3,
+      "decision": "PASS",
+      "axis": "6",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 4,
+      "decision": "PASS",
+      "axis": "4",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 5,
+      "decision": "BUY",
+      "axis": "7",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 6,
+      "decision": "BUY",
+      "axis": "4",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 7,
+      "decision": "BUY",
+      "axis": "12",
+      "axis_finish": 4,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 8,
+      "decision": "PASS",
+      "axis": "3",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 9,
+      "decision": "BUY",
+      "axis": "2",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 10,
+      "decision": "CAUTION",
+      "axis": "9",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 11,
+      "decision": "BUY",
+      "axis": "15",
+      "axis_finish": 6,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "新潟",
+      "race_no": 12,
+      "decision": "PASS",
+      "axis": "4",
+      "axis_finish": 8,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 1,
+      "decision": "BUY",
+      "axis": "9",
+      "axis_finish": 5,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 2,
+      "decision": "BUY",
+      "axis": "6",
+      "axis_finish": 3,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 3,
+      "decision": "BUY",
+      "axis": "1",
+      "axis_finish": 4,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 4,
+      "decision": "BUY",
+      "axis": "5",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 5,
+      "decision": "PASS",
+      "axis": "11",
+      "axis_finish": 4,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 6,
+      "decision": "PASS",
+      "axis": "7",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 7,
+      "decision": "BUY",
+      "axis": "8",
+      "axis_finish": 7,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 8,
+      "decision": "BUY",
+      "axis": "6",
+      "axis_finish": 3,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 9,
+      "decision": "BUY",
+      "axis": "7",
+      "axis_finish": 5,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 10,
+      "decision": "BUY",
+      "axis": "3",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 11,
+      "decision": "BUY",
+      "axis": "6",
+      "axis_finish": 12,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-29",
+      "track": "札幌",
+      "race_no": 12,
+      "decision": "CAUTION",
+      "axis": "3",
+      "axis_finish": 8,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 1,
+      "decision": "BUY",
+      "axis": "8",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 2,
+      "decision": "PASS",
+      "axis": "2",
+      "axis_finish": 5,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 3,
+      "decision": "PASS",
+      "axis": "7",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 4,
+      "decision": "PASS",
+      "axis": "2",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 5,
+      "decision": "BUY",
+      "axis": "3",
+      "axis_finish": 4,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 6,
+      "decision": "BUY",
+      "axis": "6",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 7,
+      "decision": "BUY",
+      "axis": "9",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 8,
+      "decision": "PASS",
+      "axis": "2",
+      "axis_finish": 10,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 9,
+      "decision": "PASS",
+      "axis": "6",
+      "axis_finish": 4,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 10,
+      "decision": "CAUTION",
+      "axis": "10",
+      "axis_finish": 5,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 11,
+      "decision": "PASS",
+      "axis": "17",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "中京",
+      "race_no": 12,
+      "decision": "BUY",
+      "axis": "12",
+      "axis_finish": 11,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 1,
+      "decision": "BUY",
+      "axis": "13",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 2,
+      "decision": "PASS",
+      "axis": "9",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 3,
+      "decision": "PASS",
+      "axis": "3",
+      "axis_finish": 6,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 4,
+      "decision": "PASS",
+      "axis": "2",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 5,
+      "decision": "PASS",
+      "axis": "1",
+      "axis_finish": 7,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 6,
+      "decision": "BUY",
+      "axis": "2",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 7,
+      "decision": "BUY",
+      "axis": "10",
+      "axis_finish": 6,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 8,
+      "decision": "BUY",
+      "axis": "8",
+      "axis_finish": 3,
+      "axis_grade": "PLACE",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 9,
+      "decision": "BUY",
+      "axis": "11",
+      "axis_finish": 3,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 10,
+      "decision": "PASS",
+      "axis": "6",
+      "axis_finish": 6,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 11,
+      "decision": "BUY",
+      "axis": "10",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-30",
+      "track": "新潟",
+      "race_no": 12,
+      "decision": "CAUTION",
+      "axis": "6",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 1,
+      "decision": "PASS",
+      "axis": "6",
+      "axis_finish": 12,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 2,
+      "decision": "BUY",
+      "axis": "12",
+      "axis_finish": 4,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 3,
+      "decision": "PASS",
+      "axis": "14",
+      "axis_finish": 8,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 4,
+      "decision": "PASS",
+      "axis": "9",
+      "axis_finish": 10,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 5,
+      "decision": "PASS",
+      "axis": "6",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 6,
+      "decision": "BUY",
+      "axis": "12",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": true
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 7,
+      "decision": "CAUTION",
+      "axis": "8",
+      "axis_finish": 3,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 8,
+      "decision": "PASS",
+      "axis": "14",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 9,
+      "decision": "PASS",
+      "axis": "10",
+      "axis_finish": 2,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 10,
+      "decision": "BUY",
+      "axis": "16",
+      "axis_finish": 1,
+      "axis_grade": "HIT",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 11,
+      "decision": "PASS",
+      "axis": "4",
+      "axis_finish": 3,
+      "axis_grade": "PLACE",
+      "trio_hit": false
+    },
+    {
+      "date": "2026-08-30",
+      "track": "札幌",
+      "race_no": 12,
+      "decision": "BUY",
+      "axis": "1",
+      "axis_finish": 7,
+      "axis_grade": "MISS",
+      "trio_hit": false
+    }
+  ]
+}
