@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "BLOCKED",
+  "active_workflow_count": 16,
+  "required_workflow_count": 11,
+  "active_workflows": [
+    "audit-oral-v6-certification.yml",
+    "build-word-dictionary.yml",
+    "deploy-management-erp.yml",
+    "diagnose-v10-failure-groups.yml",
+    "diagnose-v12-v6-axis.yml",
+    "diagnose-v9-failure-groups.yml",
+    "horse-master-maintenance.yml",
+    "inspect-2025-rolling-source.yml",
+    "inspect-target-race-class-fields.yml",
+    "jra-market-timing.yml",
+    "post-jra-meeting-update.yml",
+    "race-week-prediction-seal.yml",
+    "register-upcoming-new-horses.yml",
+    "repair-horse-master-integrity.yml",
+    "system-architecture-audit.yml",
+    "validate-jra-model.yml"
+  ],
+  "required_workflows": [
+    "audit-oral-v6-certification.yml",
+    "build-word-dictionary.yml",
+    "deploy-management-erp.yml",
+    "horse-master-maintenance.yml",
+    "jra-market-timing.yml",
+    "post-jra-meeting-update.yml",
+    "race-week-prediction-seal.yml",
+    "register-upcoming-new-horses.yml",
+    "repair-horse-master-integrity.yml",
+    "system-architecture-audit.yml",
+    "validate-jra-model.yml"
+  ],
+  "missing_required": [],
+  "unexpected_active_workflows": [
+    "diagnose-v10-failure-groups.yml",
+    "diagnose-v12-v6-axis.yml",
+    "diagnose-v9-failure-groups.yml",
+    "inspect-2025-rolling-source.yml",
+    "inspect-target-race-class-fields.yml"
+  ],
+  "checks": {
+    "canonical_flow_complete": true,
+    "horse_writer_serialized": true,
+    "market_independent_group": true,
+    "dictionary_independent_group": true,
+    "pages_independent_group": true,
+    "validation_read_only": true,
+    "repair_not_scheduled": true,
+    "live_prediction_seal_exists": true,
+    "live_seal_market_firewall": true,
+    "market_does_not_run_prediction_engine": true,
+    "validation_not_in_production_flow": true
+  },
+  "blockers": [
+    "unexpected active workflows remain; archive or explicitly authorize them"
+  ],
+  "independent_subsystems": {
+    "market": {
+      "workflow": "jra-market-timing.yml",
+      "rule": "Odds/popularity may affect only value and purchase judgement after prediction seal; never pure ability ranking."
+    },
+    "validation": {
+      "workflow": "validate-jra-model.yml",
+      "rule": "Validation uses leakage-safe ledgers and cannot write into live prediction outputs."
+    },
+    "model_certification": {
+      "workflow": "audit-oral-v6-certification.yml",
+      "rule": "Golden-case parity and leakage checks are independent from race-day operation."
+    },
+    "site_dictionary": {
+      "workflow": "build-word-dictionary.yml",
+      "rule": "Terminology generation never changes horse ranking or betting logic."
+    },
+    "emergency_repair": {
+      "workflow": "repair-horse-master-integrity.yml",
+      "rule": "Manual-only repair path; not part of normal production sequence."
+    }
+  },
+  "production_flow": [
+    "JRA_OFFICIAL_DATA_INGEST",
+    "HORSE_MASTER_UPDATE",
+    "RACE_WEEK_EXPANSION",
+    "PURE_PREDICTION",
+    "PREDICTION_SEAL",
+    "MARKET_EV_GATE",
+    "FINAL_TICKETS",
+    "RESULT_INGEST",
+    "SCORING",
+    "PDCA",
+    "HORSE_MASTER_RESULT_MERGE"
+  ],
+  "note": "PASS means orchestration shape and subsystem boundaries are clean. It does not claim model predictive accuracy."
+}
