@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import json
+import re
 from pathlib import Path
 
 CFG=Path('config/system_architecture.json')
@@ -46,12 +47,26 @@ def main():
  checks['pdca_connected_and_non_mutating']=bool(pdca) and 'build_live_pdca.py' in post and 'does not automatically rewrite the certified production model' in pdca
  checks['result_score_before_horse_merge']=post.find('score_live_sealed_predictions.py') < post.find('merge_latest_results_into_catalog.py')
  checks['validation_not_in_production_flow']='validate-jra-model.yml' not in post and 'validate-jra-model.yml' not in text('race-week-prediction-seal.yml')
+ policy=cfg.get('active_workflow_script_policy',{})
+ actual_refs={
+   name:sorted(set(re.findall(r'src/([A-Za-z0-9_.-]+\.py)',text(name))))
+   for name in sorted(active)
+ }
+ expected_refs={name:sorted(policy.get(name,[])) for name in sorted(active)}
+ script_policy_mismatches={
+   name:{'expected':expected_refs[name],'actual':actual_refs[name]}
+   for name in sorted(active) if expected_refs[name]!=actual_refs[name]
+ }
+ checks['active_workflow_scripts_explicitly_allowlisted']=not script_policy_mismatches and set(policy)==REQUIRED
+ checks['active_workflow_script_files_exist']=all(
+   (Path('src')/script).is_file() for scripts in actual_refs.values() for script in scripts
+ )
  blockers=[]
  if missing:blockers.append('required active workflows missing')
  if unexpected:blockers.append('unexpected active workflows remain; archive or explicitly authorize them')
  blockers += [f'check failed: {k}' for k,v in checks.items() if not v]
  status='PASS' if not blockers else 'BLOCKED'
- report={'schema_version':1,'status':status,'active_workflow_count':len(active),'required_workflow_count':len(REQUIRED),'active_workflows':sorted(active),'required_workflows':sorted(REQUIRED),'missing_required':missing,'unexpected_active_workflows':unexpected,'checks':checks,'blockers':blockers,'independent_subsystems':cfg.get('independent_subsystems'),'production_flow':cfg.get('production_flow'),'known_external_boundary':'Real market odds/EV acquisition is an external-data boundary. Until actual market data is connected, final tickets remain MARKET_DATA_PENDING rather than fabricated.','note':'PASS means orchestration shape, handoffs and subsystem boundaries are clean. It does not claim model predictive accuracy or live odds availability.'}
+ report={'schema_version':1,'status':status,'active_workflow_count':len(active),'required_workflow_count':len(REQUIRED),'active_workflows':sorted(active),'required_workflows':sorted(REQUIRED),'missing_required':missing,'unexpected_active_workflows':unexpected,'checks':checks,'active_workflow_script_refs':actual_refs,'script_policy_mismatches':script_policy_mismatches,'blockers':blockers,'independent_subsystems':cfg.get('independent_subsystems'),'production_flow':cfg.get('production_flow'),'known_external_boundary':'Real market odds/EV acquisition is an external-data boundary. Until actual market data is connected, final tickets remain MARKET_DATA_PENDING rather than fabricated.','note':'PASS means orchestration shape, handoffs and subsystem boundaries are clean. It does not claim model predictive accuracy or live odds availability.'}
  OUT.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))
  if status!='PASS':raise SystemExit(2)
