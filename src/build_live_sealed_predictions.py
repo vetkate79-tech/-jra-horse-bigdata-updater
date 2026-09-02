@@ -7,6 +7,7 @@ from zoneinfo import ZoneInfo
 
 from oral_operational_layer import analyze_race, MODEL_VERSION
 from situational_race_pattern_shadow import classify_situation
+from ensemble_prediction_shadow import route_ensemble
 
 TZ=ZoneInfo('Asia/Tokyo')
 CARDS=Path('docs/data/race_cards.json')
@@ -97,14 +98,16 @@ def main():
         safe={'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'surface':r.get('surface'),'distance_m':r.get('distance_m'),'ranked_snapshot':q}
         if _contains_forbidden(safe):raise RuntimeError('forbidden market/result field entered pure prediction input')
         analysis=analyze_race(safe)
-        analysis['situational_shadow']=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or [])
+        situation=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or [])
+        analysis['situational_shadow']=situation
+        analysis['ensemble_shadow']=route_ensemble(situation)
         races.append({**{k:safe.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'analysis':analysis})
-    core={'schema_version':3,'mode':'LIVE_PURE_PREDICTION_SEAL','model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
+    core={'schema_version':4,'mode':'LIVE_PURE_PREDICTION_SEAL','model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
     hash_input=json.dumps({k:v for k,v in core.items() if k!='generated_at'},ensure_ascii=False,sort_keys=True,separators=(',',':'))
     core['prediction_hash_sha256']=hashlib.sha256(hash_input.encode()).hexdigest()
     OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(core,ensure_ascii=False,indent=2),encoding='utf-8')
-    status={'status':'SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES'),'today_jst':today,'sealed_race_count':len(races),'pending_race_count':len(pending),'prediction_hash_sha256':core['prediction_hash_sha256'],'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'odds_popularity_used':False,'results_used':False}
+    status={'status':'SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES'),'today_jst':today,'sealed_race_count':len(races),'pending_race_count':len(pending),'prediction_hash_sha256':core['prediction_hash_sha256'],'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'odds_popularity_used':False,'results_used':False}
     STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(status,ensure_ascii=False))
 
