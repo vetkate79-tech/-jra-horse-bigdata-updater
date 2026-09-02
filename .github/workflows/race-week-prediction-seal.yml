@@ -1,0 +1,58 @@
+name: Race-week pure prediction seal
+
+on:
+  schedule:
+    # Thursday 20:10 JST and Friday 10:10 JST, after race-week data expansion.
+    - cron: '10 11 * * 4'
+    - cron: '10 1 * * 5'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/build_live_sealed_predictions.py'
+      - 'src/oral_operational_layer.py'
+      - 'docs/data/race_cards.json'
+      - 'docs/data/horses/catalog.json'
+      - 'docs/data/horses/base_catalog.json'
+      - '.github/workflows/race-week-prediction-seal.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-prediction-seal
+  cancel-in-progress: true
+
+jobs:
+  seal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build leakage-safe live pure predictions
+        run: python src/build_live_sealed_predictions.py
+      - name: Verify market and result firewall
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('status/live_prediction_seal.json').read_text())
+          assert s['odds_popularity_used'] is False
+          assert s['results_used'] is False
+          assert s['status'] in ('SEALED','DATA_PENDING','NO_UPCOMING_RACES')
+          print(json.dumps(s,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit immutable-style seal artifact
+        run: |
+          git config user.name 'jra-prediction-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/data/live_predictions_sealed.json status/live_prediction_seal.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'prediction: seal race-week pure predictions'
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep $((i*3))
+          done
+          exit 1
