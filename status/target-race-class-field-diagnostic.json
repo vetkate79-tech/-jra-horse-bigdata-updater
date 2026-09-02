@@ -1,0 +1,97 @@
+{
+  "cases": [
+    {
+      "key": [
+        "2026-08-29",
+        "中京",
+        6
+      ],
+      "race_fields": {
+        "race_id": "pw01sde1007202603030620260829",
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 6,
+        "race_name": "清洲特別",
+        "start_time": "15時01分",
+        "surface": "ダート",
+        "distance_m": 1200,
+        "field_size": 13,
+        "source_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1007202603030620260829%2F92",
+        "source": "JRA_OFFICIAL_RESULT_HTML",
+        "quality": "RACECARD_MINIMAL_VERIFIED"
+      },
+      "horse_field_names": [
+        "frame",
+        "horse_id",
+        "jockey",
+        "n",
+        "name",
+        "recent",
+        "sex",
+        "weight"
+      ]
+    },
+    {
+      "key": [
+        "2026-08-29",
+        "中京",
+        7
+      ],
+      "race_fields": {
+        "race_id": "pw01sde1007202603030720260829",
+        "date": "2026-08-29",
+        "track": "中京",
+        "race_no": 7,
+        "race_name": "長篠ステークス",
+        "start_time": "15時35分",
+        "surface": "芝",
+        "distance_m": 1400,
+        "field_size": 15,
+        "source_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1007202603030720260829%2F47",
+        "source": "JRA_OFFICIAL_RESULT_HTML",
+        "quality": "STRICT_PASS"
+      },
+      "horse_field_names": [
+        "frame",
+        "horse_id",
+        "jockey",
+        "n",
+        "name",
+        "recent",
+        "sex",
+        "weight"
+      ]
+    },
+    {
+      "key": [
+        "2026-08-29",
+        "新潟",
+        7
+      ],
+      "race_fields": {
+        "race_id": "pw01sde1004202603030720260829",
+        "date": "2026-08-29",
+        "track": "新潟",
+        "race_no": 7,
+        "race_name": "赤倉特別",
+        "start_time": "15時10分",
+        "surface": "芝",
+        "distance_m": 2000,
+        "field_size": 17,
+        "source_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1004202603030720260829%2F69",
+        "source": "JRA_OFFICIAL_RESULT_HTML",
+        "quality": "STRICT_PASS"
+      },
+      "horse_field_names": [
+        "frame",
+        "horse_id",
+        "jockey",
+        "n",
+        "name",
+        "recent",
+        "sex",
+        "weight"
+      ]
+    }
+  ]
+}
