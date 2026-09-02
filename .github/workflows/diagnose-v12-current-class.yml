@@ -1,0 +1,32 @@
+name: Diagnose V12 current class
+on:
+  push:
+    paths:
+      - 'docs/data/pretarget-class-feature-cache-72.json'
+      - 'src/diagnose_v12_current_class_candidates.py'
+      - '.github/workflows/diagnose-v12-current-class.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Wait safely if class cache not ready
+        run: |
+          if [ ! -f docs/data/pretarget-class-feature-cache-72.json ]; then echo 'cache not ready'; exit 0; fi
+          python src/diagnose_v12_current_class_candidates.py
+      - name: Commit only when produced
+        run: |
+          if [ ! -f status/oral-v12-current-class-candidate-diagnostic.json ]; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status/oral-v12-current-class-candidate-diagnostic.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Diagnose V12 current-class alternatives'
+          git pull --rebase origin main
+          git push origin HEAD:main
