@@ -1,0 +1,17 @@
+{
+  "version": "PRETARGET_CLASS_FEATURE_CACHE_72_V1",
+  "race_count": 72,
+  "horse_count": 973,
+  "profile_count": 973,
+  "profile_errors": [],
+  "historical_result_urls": 5547,
+  "class_resolved_urls": 418,
+  "horses_with_same_class_history": 174,
+  "isolation": {
+    "target_class_source": "pre-race race_context_2026.csv",
+    "historical_class_source": "JRA official result pages dated before each target race",
+    "target_result_rows_used": false,
+    "odds_popularity_used": false
+  },
+  "cache_hash_sha256": "d5406a5df330b1173031fffe61ceef866c55ea572b2a4af422063713750a12f2"
+}
