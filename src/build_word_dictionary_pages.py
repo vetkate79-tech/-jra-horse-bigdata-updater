@@ -17,10 +17,7 @@ DOMESTIC_CATEGORY_ORDER=[
     '資格・成績・ランキング・表彰など','馬の脚質、あしいろ、歩様、距離特性など',
     'JRA主催のイベント、ファンサービスなど','その他',
 ]
-OVERSEAS_CATEGORY_ORDER=[
-    '競馬場施設','牧場、厩舎','競走馬','出馬表','馬、獣医','競走','調教','馬券関係','騎手装具他','馬装具',
-]
-CATEGORY_ORDER=DOMESTIC_CATEGORY_ORDER+OVERSEAS_CATEGORY_ORDER
+CATEGORY_ORDER=DOMESTIC_CATEGORY_ORDER
 OFFICIAL_CATEGORIES=set(CATEGORY_ORDER)
 LOCAL_CATEGORY_MAP={
     '馬券':'勝馬投票券関係、投票関係','市場':'勝馬投票券関係、投票関係',
@@ -45,6 +42,7 @@ def load_terms():
         if not src.exists(): continue
         doc=json.loads(src.read_text(encoding='utf-8'))
         for x in doc.get('terms',[]):
+            if x.get('source_kind')=='overseas' or '海外競馬英和辞典' in str(x.get('source_name') or ''): continue
             if not x.get('term'): continue
             summary=(x.get('summary') or x.get('short_definition') or '').strip()
             if not summary or 'AIに聞' in summary: continue
@@ -83,7 +81,7 @@ def write_index(terms):
         if not items: items='<p class="empty">現在登録されている用語はありません</p>'
         cards.append(f'<section class="group" data-group="{html.escape(c)}"><h2>{html.escape(c)} <small>{len(groups[c])}語</small></h2><div class="grid">{items}</div></section>')
     chips=''.join(f'<button class="chip" data-filter="{html.escape(c)}">{html.escape(c)} {len(groups[c])}</button>' for c in ordered)
-    page=f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>競馬ワード索引｜JRA AI</title>{base_css()}</head><body><main class="wrap"><header class="top"><a href="../">JRA AI</a><a href="../consult/">AIに相談</a></header><section class="hero"><h1>競馬ワード索引</h1><p>JRA公式「競馬用語辞典」と「海外競馬英和辞典」のカテゴリーに準拠して探せます。</p></section><input id="q" class="search" type="search" placeholder="ワード・読み方・関連語を検索"><div class="cats"><button class="chip" data-filter="ALL">すべて {len(terms)}</button>{chips}</div><div id="groups">{''.join(cards)}</div></main><script>const q=document.querySelector('#q');let cat='ALL';function n(s){{return String(s||'').normalize('NFKC').toLowerCase().replace(/[\\s・･._\\-ー()（）]/g,'')}}function run(){{const z=n(q.value);document.querySelectorAll('.term').forEach(a=>{{const okCat=cat==='ALL'||a.dataset.cat===cat;const okQ=!z||n(a.textContent).includes(z);a.style.display=okCat&&okQ?'block':'none'}});document.querySelectorAll('.group').forEach(g=>{{const has=[...g.querySelectorAll('.term')].some(a=>a.style.display!=='none');const empty=g.querySelector('.empty');const showEmpty=!!empty&&!z&&(cat==='ALL'||g.dataset.group===cat);g.style.display=has||showEmpty?'block':'none'}})}}q.oninput=run;document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{{cat=b.dataset.filter;run()}})</script></body></html>'''
+    page=f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>競馬ワード索引｜JRA AI</title>{base_css()}</head><body><main class="wrap"><header class="top"><a href="../">JRA AI</a><a href="../consult/">AIに相談</a></header><section class="hero"><h1>競馬ワード索引</h1><p>JRA公式「競馬用語辞典」のカテゴリーに準拠して探せます。</p></section><input id="q" class="search" type="search" placeholder="ワード・読み方・関連語を検索"><div class="cats"><button class="chip" data-filter="ALL">すべて {len(terms)}</button>{chips}</div><div id="groups">{''.join(cards)}</div></main><script>const q=document.querySelector('#q');let cat='ALL';function n(s){{return String(s||'').normalize('NFKC').toLowerCase().replace(/[\\s・･._\\-ー()（）]/g,'')}}function run(){{const z=n(q.value);document.querySelectorAll('.term').forEach(a=>{{const okCat=cat==='ALL'||a.dataset.cat===cat;const okQ=!z||n(a.textContent).includes(z);a.style.display=okCat&&okQ?'block':'none'}});document.querySelectorAll('.group').forEach(g=>{{const has=[...g.querySelectorAll('.term')].some(a=>a.style.display!=='none');const empty=g.querySelector('.empty');const showEmpty=!!empty&&!z&&(cat==='ALL'||g.dataset.group===cat);g.style.display=has||showEmpty?'block':'none'}})}}q.oninput=run;document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{{cat=b.dataset.filter;run()}})</script></body></html>'''
     OUT.mkdir(parents=True,exist_ok=True);(OUT/'index.html').write_text(page,encoding='utf-8')
 
 def write_term_pages(terms):

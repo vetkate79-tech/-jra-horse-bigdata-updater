@@ -41,7 +41,7 @@ jobs:
         run: python -m pip install 'lxml>=5,<7'
       - name: Audit uncovered site terminology
         run: python src/build_site_term_candidates.py
-      - name: Import JRA official domestic and overseas terminology
+      - name: Import JRA official domestic terminology
         run: python src/import_jra_official_glossary.py
       - name: Build only curated self-contained dictionary pages
         run: python src/build_word_dictionary_pages.py
