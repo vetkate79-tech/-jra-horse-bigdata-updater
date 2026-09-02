@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build race-week detail data only for horses actually on upcoming JRA cards.
 
-This deliberately does not expand the full horse master.  It discovers verified
+This deliberately does not expand the full horse master. It discovers verified
 current-week JRA racecards, then joins those runners to the lossless internal
-catalog.  Missing data stays missing; no odds, popularity or inferred values are
+catalog. Missing data stays missing; no odds, popularity or inferred values are
 created here.
 """
 from __future__ import annotations
@@ -33,14 +33,23 @@ def race_title(soup):
             if t:return t
     return ''
 
+def race_condition(soup):
+    text=' '.join(soup.stripped_strings)
+    m=re.search(r'(芝|ダート|ダ)\s*([0-9]{3,4})\s*[mｍ]?',text)
+    if not m:return '',None
+    surface='芝' if m.group(1)=='芝' else 'ダート'
+    return surface,int(m.group(2))
+
 def parse_card(cname,raw):
     m=META.search(cname)
     if not m:return None
     soup=BeautifulSoup(raw,'html.parser')
     d=m.group('date'); date=f'{d[:4]}-{d[4:6]}-{d[6:]}'
+    surface,distance_m=race_condition(soup)
     race={
         'race_id':m.group(0),'date':date,'track':COURSE.get(m.group('course'),m.group('course')),
-        'race_no':int(m.group('race')),'race_name':race_title(soup),'source_url':cname_url(cname),'runners':[]
+        'race_no':int(m.group('race')),'race_name':race_title(soup),'surface':surface,
+        'distance_m':distance_m,'source_url':cname_url(cname),'runners':[]
     }
     seen=set()
     for a in soup.find_all('a'):
@@ -66,13 +75,13 @@ def runner_detail(race,row,h):
     recent=(h.get('recent_starts') or [])[:5]
     detail={
         'horse_id':row['horse_id'],'horse_name':row['horse_name'],'horse_no':row.get('horse_no',''),
-        'race':{k:race[k] for k in ('race_id','date','track','race_no','race_name','source_url')},
+        'race':{k:race.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m','source_url')},
         'sex_age':h.get('sex_age'),'trainer':h.get('trainer'),'current_class':h.get('current_class'),
         'current_class_label':h.get('current_class_label'),'recent_starts':recent,
         'official_racecard_text':row.get('official_row_text',''),
         'detail_scope':'RACE_WEEK_ONLY','source_policy':'JRA_OFFICIAL_RACECARD_PLUS_STORED_JRA_HISTORY'
     }
-    # Reuse factual stored fields only when they already exist.  Do not infer.
+    # Reuse factual stored fields only when they already exist. Do not infer.
     for k in ('win_rate','quinella_rate','show_rate','sire','dam','damsire','pedigree_summary','training_summary'):
         if h.get(k) not in (None,''):detail[k]=h[k]
     return detail
