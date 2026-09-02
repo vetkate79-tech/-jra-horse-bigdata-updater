@@ -48,6 +48,7 @@
     "pdca_connected_and_non_mutating": true,
     "result_score_before_horse_merge": true,
     "validation_not_in_production_flow": true,
+    "replay_feature_contract": true,
     "active_workflow_scripts_explicitly_allowlisted": true,
     "active_workflow_script_files_exist": true
   },
@@ -155,5 +156,5 @@
     "HORSE_MASTER_RESULT_MERGE"
   ],
   "known_external_boundary": "Real market odds/EV acquisition is an external-data boundary. Until actual market data is connected, final tickets remain MARKET_DATA_PENDING rather than fabricated.",
-  "note": "PASS means orchestration shape, handoffs and subsystem boundaries are clean. It does not claim model predictive accuracy or live odds availability."
+  "note": "PASS means orchestration shape, handoffs, subsystem boundaries, and protected replay-site features are intact. It does not claim model predictive accuracy or live odds availability."
 }
