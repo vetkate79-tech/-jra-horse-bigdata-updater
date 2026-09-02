@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "name": "SITUATIONAL_RACE_PATTERN_SHADOW",
+  "status": "RESEARCH_ONLY",
+  "purpose": "Classify each race by pre-race structure and test situation-specific prediction strategies without forcing every race into one prediction shape.",
+  "patterns": {
+    "LOW_EVIDENCE": {
+      "description": "Many runners have little or no prior evidence; standard historical ranking is unreliable.",
+      "research_strategy": "Reduce axis confidence, widen uncertainty handling, emphasize pedigree/training/new-horse modules when available, and prefer PASS until evidence quality improves."
+    },
+    "DOMINANT_AXIS": {
+      "description": "One horse has strong durability, evidence and separation from the field.",
+      "research_strategy": "Permit axis-centered structures while diversifying second/third-place roles."
+    },
+    "FLAT_CHAOS": {
+      "description": "Top scores are compressed and uncertainty is high.",
+      "research_strategy": "Avoid forced single-axis prediction; use group survival, scenario diversity and stronger PASS/CAUTION control."
+    },
+    "FRONT_PRESSURE": {
+      "description": "Escape/front styles are concentrated and pace pressure may invalidate simple ability order.",
+      "research_strategy": "Increase pace-resilience and stalker/closer survival analysis; reduce confidence in mutually conflicting front-runners."
+    },
+    "LOW_PACE_FRONT": {
+      "description": "Few obvious leaders are present and an uncontested forward position may persist.",
+      "research_strategy": "Increase position-taking and front/stalk persistence value while retaining ability guardrails."
+    },
+    "THIRD_PLACE_VOLATILE": {
+      "description": "Several rank-5-to-10 runners have plausible intrusion signals.",
+      "research_strategy": "Expand third-place candidate diversity and test trio coverage changes without changing the shared horse-selection core for other wager types."
+    },
+    "STABLE_TOP_CLUSTER": {
+      "description": "Several top-ranked horses have strong evidence and relatively low uncertainty.",
+      "research_strategy": "Treat the top cluster as the main survival set; focus optimization on internal ordering and ticket conversion."
+    },
+    "STANDARD": {
+      "description": "No strong structural regime dominates.",
+      "research_strategy": "Use the production shared-selection core without situational override."
+    }
+  },
+  "integration_governance": {
+    "production_override_allowed_now": false,
+    "minimum_independent_positive_validation_rounds": 3,
+    "recommended_independent_positive_validation_rounds": 5,
+    "minimum_large_sample_races_per_pattern_before_integration": 300,
+    "must_preserve_or_improve_axis_top3": true,
+    "must_preserve_or_improve_candidate_complete": true,
+    "must_pass_final_unseen_validation": true,
+    "same_block_reruns_do_not_count_as_replication": true,
+    "rule": "A pattern-specific strategy remains shadow-only until repeated independent validation shows reproducible gains. Only the proven pattern-specific gene is integrated; losing pattern behavior stays on the general model."
+  },
+  "leakage_policy": "Pattern classification may use only information knowable before prediction sealing. Same-race odds, popularity, result and payout are forbidden."
+}
