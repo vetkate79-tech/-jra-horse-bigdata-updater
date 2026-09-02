@@ -5,9 +5,12 @@ on:
   push:
     branches: [main]
     paths:
+      - 'docs/**/*.html'
+      - 'docs/**/*.js'
       - 'docs/data/glossary.json'
       - 'docs/data/site-terms.json'
-      - 'docs/data/site-term-candidates.json'
+      - 'docs/data/site-terms-extra.json'
+      - 'src/build_site_term_candidates.py'
       - 'src/build_word_dictionary_pages.py'
       - 'src/inject_global_word_links.py'
       - 'docs/word-links.js'
@@ -32,23 +35,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Build dictionary index and term pages
+      - name: Audit uncovered site terminology
+        run: python src/build_site_term_candidates.py
+      - name: Build only curated self-contained dictionary pages
         run: python src/build_word_dictionary_pages.py
       - name: Inject global word linker
         run: python src/inject_global_word_links.py
-      - name: Commit dictionary site updates
+      - name: Commit terminology and public site updates together
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          # Generated word pages and every public HTML touched by the linker
-          # must be committed together. Staging docs/ avoids leaving injected
-          # HTML unstaged, which previously made rebase fail and discarded the
-          # generated dictionary site.
-          git add -A docs/
+          git add -A docs/ status/site_term_coverage.json
           git diff --cached --quiet && exit 0
-          git commit -m 'site: publish dictionary index and global term links'
+          git commit -m 'site: audit terms and publish dictionary in one pass'
           for i in 1 2 3 4 5; do
-            git pull --rebase --autostash origin main && git push && exit 0
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
             sleep $((i*2))
           done
           exit 1
