@@ -22,6 +22,7 @@ def main():
  cfg=json.loads(CFG.read_text(encoding='utf-8'))
  active={p.name for p in WF.glob('*.yml')}|{p.name for p in WF.glob('*.yaml')}
  missing=sorted(REQUIRED-active);unexpected=sorted(active-REQUIRED)
+ post=text('post-jra-meeting-update.yml')
  checks={}
  checks['canonical_flow_complete']=cfg.get('production_flow')==[
    'JRA_OFFICIAL_DATA_INGEST','HORSE_MASTER_UPDATE','RACE_WEEK_EXPANSION','PURE_PREDICTION','PREDICTION_SEAL','MARKET_EV_GATE','FINAL_TICKETS','RESULT_INGEST','SCORING','PDCA','HORSE_MASTER_RESULT_MERGE']
@@ -34,12 +35,17 @@ def main():
  seal=text('race-week-prediction-seal.yml')
  builder=Path('src/build_live_sealed_predictions.py').read_text(encoding='utf-8') if Path('src/build_live_sealed_predictions.py').exists() else ''
  market=Path('src/market_timing_gate.py').read_text(encoding='utf-8') if Path('src/market_timing_gate.py').exists() else ''
+ scorer=Path('src/score_live_sealed_predictions.py').read_text(encoding='utf-8') if Path('src/score_live_sealed_predictions.py').exists() else ''
+ pdca=Path('src/build_live_pdca.py').read_text(encoding='utf-8') if Path('src/build_live_pdca.py').exists() else ''
  checks['live_prediction_seal_exists']=bool(seal and builder)
  checks['live_seal_market_firewall']=all(x in builder for x in ("'odds_popularity_used':False","'results_used':False","FORBIDDEN_KEYS"))
  checks['market_reads_only_sealed_races']='live_predictions_sealed.json' in market and "'prediction_sealed':True" in market
  checks['market_final_ticket_honesty']='MARKET_DATA_PENDING' in market and 'never fabricate odds or EV' in market
  checks['market_does_not_run_prediction_engine']='oral_operational_layer' not in text('jra-market-timing.yml') and 'analyze_race' not in text('jra-market-timing.yml')
- checks['validation_not_in_production_flow']='validate-jra-model.yml' not in text('post-jra-meeting-update.yml') and 'validate-jra-model.yml' not in text('race-week-prediction-seal.yml')
+ checks['post_result_scoring_connected']=bool(scorer) and 'score_live_sealed_predictions.py' in post and 'sealed_predictions_immutable' in scorer
+ checks['pdca_connected_and_non_mutating']=bool(pdca) and 'build_live_pdca.py' in post and 'does not automatically rewrite the certified production model' in pdca
+ checks['result_score_before_horse_merge']=post.find('score_live_sealed_predictions.py') < post.find('merge_latest_results_into_catalog.py')
+ checks['validation_not_in_production_flow']='validate-jra-model.yml' not in post and 'validate-jra-model.yml' not in text('race-week-prediction-seal.yml')
  blockers=[]
  if missing:blockers.append('required active workflows missing')
  if unexpected:blockers.append('unexpected active workflows remain; archive or explicitly authorize them')
