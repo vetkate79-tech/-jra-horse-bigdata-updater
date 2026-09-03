@@ -30,10 +30,6 @@ META=re.compile(r'pw01dde(?:01|10)(?P<course>\d{2})(?P<year>\d{4})(?P<meeting>\d
 LINK=re.compile(r'pw01dde(?:01|10)\d{20}/[A-Fa-f0-9]{2}')
 HORSE_ID=re.compile(r'pw01dud\d{12}/[A-Fa-f0-9]{2}')
 COURSE={'01':'札幌','02':'函館','03':'福島','04':'新潟','05':'東京','06':'中山','07':'中京','08':'京都','09':'阪神','10':'小倉'}
-
-# Verified JRA official racecard known for 2026-09-05 中山.
-# It is accepted only while its embedded date is inside the normal upcoming window,
-# so it automatically becomes inert after this race week.
 FALLBACK_SEEDS=('pw01dde0106202604010920260905/EA',)
 
 def fetch(url,retries=4):
@@ -55,6 +51,11 @@ def extract_links(text):
     x=urllib.parse.unquote(html_lib.unescape(text))
     return list(dict.fromkeys(LINK.findall(x)))
 
+def normalize_horse_id(hid):
+    """Map accessD horse links (pw01dud00...) to the history/profile canonical pw01dud10... id."""
+    hid=str(hid or '')
+    return 'pw01dud10'+hid[len('pw01dud00'):] if hid.startswith('pw01dud00') else hid
+
 def date_of(c):
     m=META.search(c)
     if not m:return None
@@ -65,40 +66,29 @@ def current_week_seeds():
     today=dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date()
     end=today+dt.timedelta(days=7)
     seeds={}
-
     def accept(c):
         m=META.search(c); d=date_of(c)
         if not m or not d or not(today<=d<=end):return False
         key=(m.group('date'),m.group('course'))
         if key not in seeds:
-            seeds[key]=c
-            return True
+            seeds[key]=c;return True
         return False
-
-    # The JRA home page does not always expose accessD CNAMEs directly.
-    # Inspect both normal entry points first.
     for source in (HOME,ENTRY):
-        try: raw=fetch(source)
-        except Exception: continue
+        try:raw=fetch(source)
+        except Exception:continue
         for c in extract_links(raw):accept(c)
-
-    # Emergency/bootstrap seed: only valid while its embedded date is upcoming.
     if not seeds:
         for c in FALLBACK_SEEDS:accept(c)
-
-    # Racecard pages contain navigation to other races/venues/days. Crawl discovered
-    # current-week cards breadth-first so one valid seed can recover the full meeting.
-    queue=list(seeds.values()); visited=set()
+    queue=list(seeds.values());visited=set()
     while queue and len(visited)<30:
         c=queue.pop(0)
         if c in visited:continue
         visited.add(c)
-        try: raw=fetch(cname_url(c))
-        except Exception: continue
+        try:raw=fetch(cname_url(c))
+        except Exception:continue
         before=set(seeds)
         for x in extract_links(raw):
             if accept(x):queue.append(x)
-        # Also revisit newly discovered seed values if page navigation only exposed a key once.
         for key,val in seeds.items():
             if key not in before and val not in visited and val not in queue:queue.append(val)
     return seeds
@@ -123,7 +113,7 @@ def horse_rows(cname,html):
         href=urllib.parse.unquote(html_lib.unescape(a.get('href','')))
         hm=HORSE_ID.search(href)
         if not hm:continue
-        hid=hm.group(0); name=' '.join(a.stripped_strings).strip()
+        hid=normalize_horse_id(hm.group(0)); name=' '.join(a.stripped_strings).strip()
         if not name or hid in seen:continue
         seen.add(hid);tr=a.find_parent('tr');rowtxt=' '.join(tr.stripped_strings) if tr else ''
         no=''
@@ -140,14 +130,14 @@ def load_catalog():
     return json.loads(CAT.read_text(encoding='utf-8'))
 
 def merge(races):
-    doc=load_catalog();hs=doc.get('horses',[]);by_id={h.get('horse_id'):h for h in hs if h.get('horse_id')};added=updated=0;profile_errors=[]
+    doc=load_catalog();hs=doc.get('horses',[]);by_id={normalize_horse_id(h.get('horse_id')):h for h in hs if h.get('horse_id')};added=updated=0;profile_errors=[]
     for r in races:
         for x in r['horses']:
             h=by_id.get(x['horse_id'])
             if h is None:
                 h={'horse_name':x['horse_name'],'horse_id':x['horse_id'],'sex_age':'','trainer':'','win_rate':None,'quinella_rate':None,'show_rate':None,'target_starts':[],'tags':[]}
                 hs.append(h);by_id[x['horse_id']]=h;added+=1
-            else:updated+=1
+            else:updated+=1;h['horse_id']=x['horse_id']
             h['horse_name']=x['horse_name'] or h.get('horse_name','')
             h['current_class']='NEW';h['current_class_label']='新馬'
             tags=set(h.get('tags') or []);tags.update({'NEW','NEW_ENTRY'});h['tags']=sorted(tags)
