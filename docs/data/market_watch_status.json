@@ -1,16 +1,19 @@
 {
-  "checked_at": "2026-08-31T08:53:03.677509+09:00",
+  "checked_at": "2026-09-03T09:08:07.824094+09:00",
   "policy": {
-    "thursday": "publish all races immediately without odds",
+    "prerequisite": "market layer starts only for races present in the pure-prediction seal",
+    "thursday": "pure prediction/seal first; no market influence on ability ranking",
     "friday_morning": "pure prediction only",
-    "after_friday_noon": "odds check every 12h",
-    "race_day": "odds check every 3h",
+    "after_friday_noon": "market checkpoint every 12h",
+    "race_day": "market checkpoint every 3h",
     "race_relative": [
       "T-60",
       "T-30",
       "T-10"
     ],
-    "firewall": "odds never change ability ranking; only value/purchase judgment"
+    "firewall": "odds never change ability ranking; only value/purchase judgment",
+    "final_ticket_rule": "final ticket status stays MARKET_DATA_PENDING until real market data is connected; never fabricate odds or EV"
   },
+  "sealed_prediction_hash": "10d4f0ef6464751deded45e5aa0fc176244f62053a8c6f415aa17a4b8d67348d",
   "races": []
 }
