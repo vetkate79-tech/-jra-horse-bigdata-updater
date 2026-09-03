@@ -97,6 +97,7 @@
       "oral_operational_layer.py"
     ],
     "register-upcoming-new-horses.yml": [
+      "audit_horse_master_uniqueness.py",
       "build_horse_base_catalog.py",
       "build_live_sealed_predictions.py",
       "build_race_week_pre_race_features.py",
@@ -131,6 +132,7 @@
         "enrich_new_horse_entries.py"
       ],
       "actual": [
+        "audit_horse_master_uniqueness.py",
         "build_horse_base_catalog.py",
         "build_live_sealed_predictions.py",
         "build_race_week_pre_race_features.py",
