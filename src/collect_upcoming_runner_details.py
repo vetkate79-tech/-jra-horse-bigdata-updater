@@ -43,6 +43,25 @@ def start_time(soup):
     text=' '.join(soup.stripped_strings);m=re.search(r'発走時刻[:：]\s*(\d{1,2})時(\d{2})分',text)
     return f'{int(m.group(1)):02d}:{m.group(2)}' if m else ''
 
+def class_from_page(soup,title):
+    """Resolve the JRA class from the current official card, never from odds/results."""
+    text=' '.join(soup.stripped_strings)
+    probes=[str(title or ''),text[:7000]]
+    for s in probes:
+        if 'メイクデビュー' in s or re.search(r'\b新馬\b',s):return 'NEW','新馬'
+        if '未勝利' in s:return 'MAIDEN','未勝利'
+        if re.search(r'3勝クラス',s):return '3WIN','3勝クラス'
+        if re.search(r'2勝クラス',s):return '2WIN','2勝クラス'
+        if re.search(r'1勝クラス',s):return '1WIN','1勝クラス'
+        if any(x in s for x in ('オープン','リステッド','重賞','G1','G2','G3','ＧⅠ','ＧⅡ','ＧⅢ')):return 'OPEN','オープン以上'
+    # JRA named special races usually expose the underlying class elsewhere in the card.
+    m=re.search(r'([123])勝クラス',text)
+    if m:return {'1':'1WIN','2':'2WIN','3':'3WIN'}[m.group(1)],m.group(0)
+    if '未勝利' in text:return 'MAIDEN','未勝利'
+    if '新馬' in text or 'メイクデビュー' in text:return 'NEW','新馬'
+    if any(x in text for x in ('オープン','リステッド','重賞')):return 'OPEN','オープン以上'
+    return '', ''
+
 def frame_and_horse_no(cells):
     nums=[x.strip() for x in cells[:5] if re.fullmatch(r'\d{1,2}',x.strip())]
     if len(nums)>=2:return nums[0],nums[1]
@@ -71,8 +90,8 @@ def prior_starts(row_text):
 def parse_card(cname,raw):
     m=META.search(cname)
     if not m:return None
-    soup=BeautifulSoup(raw,'html.parser');d=m.group('date');date=f'{d[:4]}-{d[4:6]}-{d[6:]}';surface,distance_m=race_condition(soup)
-    race={'race_id':m.group(0),'date':date,'track':COURSE.get(m.group('course'),m.group('course')),'race_no':int(m.group('race')),'race_name':race_title(soup),'surface':surface,'distance_m':distance_m,'start_time':start_time(soup),'source_url':cname_url(cname),'runners':[]};seen=set()
+    soup=BeautifulSoup(raw,'html.parser');d=m.group('date');date=f'{d[:4]}-{d[4:6]}-{d[6:]}';surface,distance_m=race_condition(soup);title=race_title(soup);cls,cls_label=class_from_page(soup,title)
+    race={'race_id':m.group(0),'date':date,'track':COURSE.get(m.group('course'),m.group('course')),'race_no':int(m.group('race')),'race_name':title,'surface':surface,'distance_m':distance_m,'start_time':start_time(soup),'current_class':cls,'current_class_label':cls_label,'source_url':cname_url(cname),'runners':[]};seen=set()
     for a,hid,name,row_text in runner_rows(soup):
         hid=canonical_id(hid)
         if hid in seen:continue
@@ -118,7 +137,7 @@ def upsert_catalog(cards):
         if hid in by_id:
             merge_duplicate_records(by_id[hid],h);merged_duplicates+=1;continue
         by_id[hid]=h;deduped.append(h)
-    added=updated=0
+    added=updated=0;unresolved_class=0
     for race in cards:
         for row in race['runners']:
             hid=canonical_id(row.get('horse_id'));row['horse_id']=hid;h=by_id.get(hid)
@@ -127,16 +146,21 @@ def upsert_catalog(cards):
             else:updated+=1
             if row.get('horse_name'):h['horse_name']=row['horse_name']
             if row.get('sex_age'):h['sex_age']=row['sex_age']
-            hist=merge_history((row.get('recent_starts_from_card') or [])+(h.get('recent_starts') or []))
-            h['recent_starts']=hist[:20]
+            h['active']=True
+            if race.get('current_class'):
+                h['current_class']=race['current_class'];h['current_class_label']=race.get('current_class_label') or race['current_class']
+            elif not h.get('current_class'):
+                unresolved_class+=1
+            hist=merge_history((row.get('recent_starts_from_card') or [])+(h.get('recent_starts') or []));h['recent_starts']=hist[:20]
+            if hist and not h.get('latest_race_date'):h['latest_race_date']=hist[0].get('race_date')
             starts=h.setdefault('upcoming_starts',[]);item={k:race.get(k) for k in ('race_id','date','track','race_no','race_name','source_url')};item['horse_no']=row.get('horse_no','');item['frame_no']=row.get('frame_no','')
             pos=next((i for i,x in enumerate(starts) if isinstance(x,dict) and x.get('race_id')==item['race_id']),None)
             if pos is None:starts.append(item)
             else:starts[pos]={**starts[pos],**item}
     deduped.sort(key=lambda h:(h.get('horse_name',''),h.get('horse_id','')))
-    s=dict(doc.get('summary') or {});s.update({'unified_horse_count':len(deduped),'weekly_runner_master_added':added,'weekly_runner_master_updated':updated,'canonical_duplicate_records_merged':merged_duplicates,'horse_identity_policy':'ONE_CANONICAL_JRA_HORSE_ID_ONE_RECORD'})
+    s=dict(doc.get('summary') or {});s.update({'unified_horse_count':len(deduped),'weekly_runner_master_added':added,'weekly_runner_master_updated':updated,'canonical_duplicate_records_merged':merged_duplicates,'weekly_runner_unresolved_class':unresolved_class,'horse_identity_policy':'ONE_CANONICAL_JRA_HORSE_ID_ONE_RECORD'})
     doc['summary']=s;doc['horses']=deduped;CAT.write_text(json.dumps(doc,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-    return by_id,added,updated,merged_duplicates
+    return by_id,added,updated,merged_duplicates,unresolved_class
 
 def runner_detail(race,row,h):
     card_recent=row.get('recent_starts_from_card') or [];master_recent=(h.get('recent_starts') or [])[:20];recent=merge_history(card_recent+master_recent)
@@ -162,12 +186,12 @@ def main():
                 except Exception as e:errors.append({'race':c,'error':repr(e)})
         except Exception as e:errors.append({'seed':seed,'error':repr(e)})
     cards=sorted({c['race_id']:c for c in cards}.values(),key=lambda x:(x['date'],x['track'],x['race_no']))
-    by_id,added,updated,merged_duplicates=upsert_catalog(cards) if cards else ({},0,0,0);runners=[];missing=[]
+    by_id,added,updated,merged_duplicates,unresolved_class=upsert_catalog(cards) if cards else ({},0,0,0,0);runners=[];missing=[]
     for race in cards:
         for row in race['runners']:
             h=by_id.get(row['horse_id'])
             if h is None:missing.append(row['horse_id']);h={'horse_id':row['horse_id'],'horse_name':row['horse_name']}
             runners.append(runner_detail(race,row,h))
     dates=sorted({r['race']['date'] for r in runners});frame_known=sum(1 for r in runners if r.get('frame_no'));prior_rows=sum(len(r.get('recent_starts') or []) for r in runners)
-    payload={'summary':{'status':'READY' if runners else 'NO_UPCOMING_RACECARDS','race_count':len(cards),'runner_count':len(runners),'dates':dates,'race_name_resolved_count':sum(1 for c in cards if c.get('race_name') and c.get('race_name')!='検索ウィンドウ'),'race_condition_resolved_count':sum(1 for c in cards if c.get('surface') and c.get('distance_m')),'card_prior_start_rows':prior_rows,'frame_known_count':frame_known,'frame_pending_count':len(runners)-frame_known,'master_added_count':added,'master_updated_count':updated,'canonical_duplicate_records_merged':merged_duplicates,'missing_master_count':len(set(missing)),'policy':'heavy detail exists only for verified upcoming JRA runners; persistent master is canonical horse-id upsert'},'runners':runners};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
+    payload={'summary':{'status':'READY' if runners else 'NO_UPCOMING_RACECARDS','race_count':len(cards),'runner_count':len(runners),'dates':dates,'race_name_resolved_count':sum(1 for c in cards if c.get('race_name') and c.get('race_name')!='検索ウィンドウ'),'race_condition_resolved_count':sum(1 for c in cards if c.get('surface') and c.get('distance_m')),'class_resolved_race_count':sum(1 for c in cards if c.get('current_class')),'card_prior_start_rows':prior_rows,'frame_known_count':frame_known,'frame_pending_count':len(runners)-frame_known,'master_added_count':added,'master_updated_count':updated,'canonical_duplicate_records_merged':merged_duplicates,'unresolved_class_runner_count':unresolved_class,'missing_master_count':len(set(missing)),'policy':'heavy detail exists only for verified upcoming JRA runners; persistent master is canonical horse-id upsert'},'runners':runners};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
 if __name__=='__main__':main()
