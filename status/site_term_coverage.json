@@ -1,7 +1,7 @@
 {
   "files_scanned": 22,
   "registered_keys": 149,
-  "uncovered_candidates": 87,
+  "uncovered_candidates": 88,
   "top_candidates": [
     {
       "term": "候補",
@@ -199,6 +199,16 @@
       "occurrences": 1,
       "pages": [
         "app/app.js"
+      ]
+    },
+    {
+      "term": "AI分析中",
+      "category": "サイト内候補",
+      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
+      "source_name": "JRA AI サイト内自動検出",
+      "occurrences": 1,
+      "pages": [
+        "app/index.html"
       ]
     },
     {
@@ -499,16 +509,6 @@
       "occurrences": 1,
       "pages": [
         "app/wizard.js"
-      ]
-    },
-    {
-      "term": "成立確率",
-      "category": "サイト内候補",
-      "summary": "サイト内で使われている用語です。詳しい意味は「AIに聞く」から確認できます。",
-      "source_name": "JRA AI サイト内自動検出",
-      "occurrences": 1,
-      "pages": [
-        "app/app.js"
       ]
     }
   ]
