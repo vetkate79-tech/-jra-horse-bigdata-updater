@@ -2,11 +2,17 @@ name: Register upcoming JRA debut horses and race-week details
 
 on:
   schedule:
-    # Thursday 16:30 / 19:30 JST, Friday 09:30 JST, Saturday 07:30 JST.
-    - cron: '30 7 * * 4'
-    - cron: '30 10 * * 4'
-    - cron: '30 0 * * 5'
-    - cron: '30 22 * * 5'
+    # JRA official race-card publication timing (JST):
+    # Thu 16:00 = Sat/Sun cards without horse numbers
+    # Fri 10:00 = Sat cards with horse numbers
+    # Sat 10:00 = Sun cards with horse numbers
+    # Fetch just after publication, then retry shortly after in case posting is delayed.
+    - cron: '5 7 * * 4'   # Thu 16:05 JST
+    - cron: '20 7 * * 4'  # Thu 16:20 JST retry
+    - cron: '5 1 * * 5'   # Fri 10:05 JST
+    - cron: '20 1 * * 5'  # Fri 10:20 JST retry
+    - cron: '5 1 * * 6'   # Sat 10:05 JST
+    - cron: '20 1 * * 6'  # Sat 10:20 JST retry
   workflow_dispatch:
   push:
     branches: [main]
