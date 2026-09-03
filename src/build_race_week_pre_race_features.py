@@ -3,7 +3,9 @@
 
 Structural big-data evidence dominates. Medium-term form and short-term context are
 bounded corrections only. The cutoff is the earliest upcoming race date, so no
-result on/after the seal week can enter pure prediction.
+result on/after the seal week can enter pure prediction. Frame/draw information
+is neutral until officially published; once known, a historical JRA draw prior is
+used as a small short-term correction only.
 """
 from __future__ import annotations
 import csv, json, re
@@ -71,6 +73,19 @@ def people_rates(rows,cutoff):
         n,x=bucket.get(str(name or '').strip(),[0,0]);return (x+prior*8)/(n+8) if n else prior
     return (lambda n:rate(all_j,n)),(lambda n:rate(all_t,n)),(lambda n:rate(rec_j,n)),(lambda n:rate(rec_t,n))
 
+def draw_priors(rows):
+    buckets=defaultdict(lambda:[0,0])
+    for r in rows:
+        finish=integer(r.get('finish_position'));frame=integer(r.get('枠'));dist=integer(r.get('distance_m'));track=str(r.get('course') or '').strip();surface=norm_surface(r.get('surface'))
+        if finish is None or frame is None or not track or not surface or not dist:continue
+        band=int(round(dist/200.0)*200)
+        k=(track,surface,band,frame);buckets[k][0]+=1;buckets[k][1]+=int(finish<=3)
+    def prior(track,surface,dist,frame):
+        if not frame or not track or not surface or not dist:return .30,0
+        n,x=buckets.get((track,surface,int(round(dist/200.0)*200),frame),[0,0])
+        return ((x+.30*12)/(n+12) if n else .30),n
+    return prior
+
 def continuity(hist,race):
     if not hist:return .5,.5,None
     last=hist[0];target_surface=norm_surface(race.get('surface'));last_surface=norm_surface(last.get('surface'))
@@ -84,7 +99,7 @@ def continuity(hist,race):
     else:rest=.5
     return surface_score,distance_score,(days,rest)
 
-def feature_for(runner,hist,rates,field_sizes):
+def feature_for(runner,hist,rates,field_sizes,draw_rate):
     race=runner.get('race') or {};starts=len(hist);top3=sum(integer(x.get('finish_position'),99)<=3 for x in hist);show=(top3+1.5)/(starts+5) if starts else .30
     recent=hist[:5]
     if recent:
@@ -99,16 +114,18 @@ def feature_for(runner,hist,rates,field_sizes):
     last3f=[num(x.get('last3f')) for x in recent];last3f=[x for x in last3f if x is not None];l3=.5 if not last3f else max(0,min(1,(40-min(last3f))/8));uncertainty=1-min(1,starts/5)
     j_all,t_all,j30,t30=rates;jockey=runner.get('jockey') or '';trainer=runner.get('trainer') or '';ja=j_all(jockey);ta=t_all(trainer);jr=j30(jockey);tr=t30(trainer)
     style,style_starts=style_from_history(hist,field_sizes);surf_cont,dist_cont,rest_info=continuity(hist,race);days_since,rest_fit=rest_info if rest_info else (None,.5)
+    frame=integer(runner.get('frame_no'));draw,draw_n=draw_rate(str(race.get('track') or ''),target_surface,target_distance,frame);frame_known=frame is not None
     structural=100*(.65*show+.25*cond+.05*ja+.05*ta)
     medium=100*(.70*rec+.30*l3)
-    short=100*(.30*jr+.30*tr+.20*rest_fit+.10*surf_cont+.10*dist_cont)
+    short=100*(.25*jr+.25*tr+.20*rest_fit+.10*surf_cont+.10*dist_cont+.10*draw)
     score=STRUCTURAL_WEIGHT*structural+MEDIUM_WEIGHT*medium+SHORT_WEIGHT*short-8*uncertainty
     return {'starts_before':starts,'show_rate_prior':round(show,4),'recent_form':round(rec,4),'condition_fit':round(cond,4),'uncertainty':round(uncertainty,4),
       'jockey_show_prior':round(ja,4),'trainer_show_prior':round(ta,4),'jockey_show_30d':round(jr,4),'trainer_show_30d':round(tr,4),'last3f_signal':round(l3,4),
-      'days_since_last_start':days_since,'surface_continuity':round(surf_cont,4),'distance_continuity':round(dist_cont,4),'pre_race_running_style':style,'running_style_sample_starts':style_starts,
+      'days_since_last_start':days_since,'surface_continuity':round(surf_cont,4),'distance_continuity':round(dist_cont,4),'frame_no':str(frame) if frame_known else '','frame_known':frame_known,'draw_show_prior':round(draw,4),'draw_history_starts':draw_n,
+      'pre_race_running_style':style,'running_style_sample_starts':style_starts,
       'structural_big_data_score':round(structural,3),'medium_term_form_score':round(medium,3),'short_term_context_score':round(short,3),
       'structural_weight':STRUCTURAL_WEIGHT,'medium_weight':MEDIUM_WEIGHT,'short_term_weight':SHORT_WEIGHT,'short_term_weight_cap':SHORT_WEIGHT_MAX,
-      'pre_race_score':round(score,3),'pre_race_score_source':'JRA_MULTI_HORIZON_STRICT_CUTOFF_V2'}
+      'pre_race_score':round(score,3),'pre_race_score_source':'JRA_MULTI_HORIZON_STRICT_CUTOFF_V3_DRAW_SAFE'}
 
 def main():
     weekly=json.loads(WEEKLY.read_text(encoding='utf-8')) if WEEKLY.exists() else {'runners':[]};runners=weekly.get('runners') or [];dates=sorted({str((x.get('race') or {}).get('date') or '') for x in runners if (x.get('race') or {}).get('date')})
@@ -120,11 +137,11 @@ def main():
         hid=str(r.get('horse_id') or '');rid=str(r.get('race_id') or '')
         if hid:by_horse[hid].append(r)
         if hid and rid:field_sizes[rid]+=1
-    rates=people_rates(rows,cutoff);feats=[]
+    rates=people_rates(rows,cutoff);draw_rate=draw_priors(rows);feats=[]
     for x in runners:
-        race=x.get('race') or {};hid=str(x.get('horse_id') or '');f=feature_for(x,by_horse.get(hid,[]),rates,field_sizes)
-        feats.append({'race_id':race.get('race_id'),'date':race.get('date'),'track':race.get('track'),'race_no':race.get('race_no'),'horse_id':hid,'horse_name':x.get('horse_name'),'horse_no':x.get('horse_no'),**f})
-    evidence=sum(1 for x in feats if x['starts_before']>0);summary={'status':'READY','cutoff_date':cutoff,'runner_count':len(feats),'history_rows_before_cutoff':len(rows),'runners_with_history':evidence,'runners_without_history':len(feats)-evidence,'results_on_or_after_cutoff_used':False,'odds_popularity_used':False,'multi_horizon_weights':{'structural':STRUCTURAL_WEIGHT,'medium':MEDIUM_WEIGHT,'short':SHORT_WEIGHT,'short_cap':SHORT_WEIGHT_MAX}}
+        race=x.get('race') or {};hid=str(x.get('horse_id') or '');f=feature_for(x,by_horse.get(hid,[]),rates,field_sizes,draw_rate)
+        feats.append({'race_id':race.get('race_id'),'date':race.get('date'),'track':race.get('track'),'race_no':race.get('race_no'),'horse_id':hid,'horse_name':x.get('horse_name'),'frame_no':x.get('frame_no'),'horse_no':x.get('horse_no'),**f})
+    evidence=sum(1 for x in feats if x['starts_before']>0);frame_known=sum(1 for x in feats if x['frame_known']);summary={'status':'READY','cutoff_date':cutoff,'runner_count':len(feats),'history_rows_before_cutoff':len(rows),'runners_with_history':evidence,'runners_without_history':len(feats)-evidence,'frame_known_count':frame_known,'frame_pending_count':len(feats)-frame_known,'draw_feature_applied':frame_known>0,'results_on_or_after_cutoff_used':False,'odds_popularity_used':False,'multi_horizon_weights':{'structural':STRUCTURAL_WEIGHT,'medium':MEDIUM_WEIGHT,'short':SHORT_WEIGHT,'short_cap':SHORT_WEIGHT_MAX}}
     payload={'summary':summary,'features':feats};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(summary,ensure_ascii=False))
 
 if __name__=='__main__':main()
