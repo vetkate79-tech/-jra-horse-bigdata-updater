@@ -1,18 +1,743 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "mode": "LIVE_PURE_PREDICTION_SEAL",
+  "seal_stage": "PRELIMINARY_NO_FRAME",
   "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-  "generated_at": "2026-09-03T18:35:14.906250+09:00",
+  "generated_at": "2026-09-03T20:46:35.208178+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-05",
+  "frame_known_count": 0,
+  "frame_total_count": 946,
+  "draw_feature_applied": false,
   "situational_shadow_enabled": true,
   "situational_shadow_production_override": false,
   "ensemble_shadow_enabled": true,
   "ensemble_shadow_production_override": false,
   "sealed_race_count": 0,
-  "pending_race_count": 0,
+  "pending_race_count": 72,
   "races": [],
-  "pending": [],
-  "prediction_hash_sha256": "2166ea7d256f69c9b7672b5a5c7e4e91867cedfde5b48fb1b21f1c55e17eea86"
+  "pending": [
+    {
+      "race_id": "pw01dde0106202604010120260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 1,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010220260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 2,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010320260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 3,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010420260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 4,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010520260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 5,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010620260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 6,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010720260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 7,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010820260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 8,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604010920260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 9,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604011020260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 10,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604011120260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 11,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604011220260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 12,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050120260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 1,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050220260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 2,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050320260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 3,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050420260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 4,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050520260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 5,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050620260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 6,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050720260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 7,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050820260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 8,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602050920260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 9,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602051020260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 10,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602051120260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 11,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602051220260905",
+      "date": "2026-09-05",
+      "track": "札幌",
+      "race_no": 12,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010120260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 1,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010220260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 2,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010320260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 3,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010420260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 4,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010520260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 5,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010620260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 6,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010720260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 7,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010820260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 8,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604010920260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 9,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604011020260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 10,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604011120260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 11,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604011220260905",
+      "date": "2026-09-05",
+      "track": "阪神",
+      "race_no": 12,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020120260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 1,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020220260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 2,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020320260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 3,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020420260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 4,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020520260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 5,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020620260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 6,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020720260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 7,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020820260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 8,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604020920260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 9,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604021020260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 10,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604021120260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 11,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0106202604021220260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 12,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060120260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 1,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060220260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 2,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060320260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 3,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060420260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 4,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060520260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 5,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060620260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 6,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060720260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 7,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060820260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 8,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602060920260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 9,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602061020260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 10,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602061120260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 11,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0101202602061220260906",
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 12,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020120260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 1,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020220260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 2,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020320260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 3,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020420260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 4,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020520260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 5,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020620260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 6,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020720260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 7,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020820260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 8,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604020920260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 9,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604021020260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 10,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604021120260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 11,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    },
+    {
+      "race_id": "pw01dde0109202604021220260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 12,
+      "status": "DATA_PENDING",
+      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
+      "evidence_horses": 0,
+      "score_spread": 0.0
+    }
+  ],
+  "prediction_hash_sha256": "11b8ecdb2579efd1c157470ca2054f19c9c7566d3e22d44ff01f0968ba9ae718"
 }
