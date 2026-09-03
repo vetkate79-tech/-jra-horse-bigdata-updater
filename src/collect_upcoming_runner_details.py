@@ -27,6 +27,15 @@ def race_condition(soup):
     if not m:return '',None
     return ('芝' if m.group(1)=='芝' else 'ダート'),int(m.group(2))
 
+def frame_and_horse_no(cells):
+    nums=[]
+    for x in cells[:5]:
+        s=x.strip()
+        if re.fullmatch(r'\d{1,2}',s):nums.append(s)
+    if len(nums)>=2:return nums[0],nums[1]
+    if len(nums)==1:return '',nums[0]
+    return '',''
+
 def parse_card(cname,raw):
     m=META.search(cname)
     if not m:return None
@@ -34,14 +43,13 @@ def parse_card(cname,raw):
     race={'race_id':m.group(0),'date':date,'track':COURSE.get(m.group('course'),m.group('course')),'race_no':int(m.group('race')),'race_name':race_title(soup),'surface':surface,'distance_m':distance_m,'source_url':cname_url(cname),'runners':[]};seen=set()
     for a,hid,name,row_text in runner_rows(soup):
         if hid in seen:continue
-        seen.add(hid);tr=a.find_parent('tr');cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])] if tr else [];horse_no=''
-        for x in cells[:4]:
-            if re.fullmatch(r'\d{1,2}',x.strip()):horse_no=x.strip()
-        race['runners'].append({'horse_id':hid,'horse_name':name,'horse_no':horse_no,'official_row_text':row_text})
+        seen.add(hid);tr=a.find_parent('tr');cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])] if tr else []
+        frame_no,horse_no=frame_and_horse_no(cells)
+        race['runners'].append({'horse_id':hid,'horse_name':name,'frame_no':frame_no,'horse_no':horse_no,'official_row_text':row_text})
     return race if race['runners'] else None
 
 def runner_detail(race,row,h):
-    recent=(h.get('recent_starts') or [])[:5];detail={'horse_id':row['horse_id'],'horse_name':row['horse_name'],'horse_no':row.get('horse_no',''),'race':{k:race.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m','source_url')},'sex_age':h.get('sex_age'),'trainer':h.get('trainer'),'current_class':h.get('current_class'),'current_class_label':h.get('current_class_label'),'recent_starts':recent,'official_racecard_text':row.get('official_row_text',''),'detail_scope':'RACE_WEEK_ONLY','source_policy':'JRA_OFFICIAL_RACECARD_PLUS_STORED_JRA_HISTORY'}
+    recent=(h.get('recent_starts') or [])[:5];detail={'horse_id':row['horse_id'],'horse_name':row['horse_name'],'frame_no':row.get('frame_no',''),'horse_no':row.get('horse_no',''),'race':{k:race.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m','source_url')},'sex_age':h.get('sex_age'),'trainer':h.get('trainer'),'current_class':h.get('current_class'),'current_class_label':h.get('current_class_label'),'recent_starts':recent,'official_racecard_text':row.get('official_row_text',''),'detail_scope':'RACE_WEEK_ONLY','source_policy':'JRA_OFFICIAL_RACECARD_PLUS_STORED_JRA_HISTORY'}
     for k in ('win_rate','quinella_rate','show_rate','sire','dam','damsire','pedigree_summary','training_summary'):
         if h.get(k) not in (None,''):detail[k]=h[k]
     return detail
@@ -68,5 +76,6 @@ def main():
             h=by_id.get(row['horse_id'])
             if h is None:h={'horse_id':row['horse_id'],'horse_name':row['horse_name']};missing.append(row['horse_id'])
             runners.append(runner_detail(race,row,h))
-    dates=sorted({r['race']['date'] for r in runners});payload={'summary':{'status':'READY' if runners else 'NO_UPCOMING_RACECARDS','race_count':len(cards),'runner_count':len(runners),'dates':dates,'missing_master_count':len(set(missing)),'policy':'heavy detail exists only for verified upcoming JRA runners'},'runners':runners};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
+    dates=sorted({r['race']['date'] for r in runners});frame_known=sum(1 for r in runners if r.get('frame_no'))
+    payload={'summary':{'status':'READY' if runners else 'NO_UPCOMING_RACECARDS','race_count':len(cards),'runner_count':len(runners),'dates':dates,'frame_known_count':frame_known,'frame_pending_count':len(runners)-frame_known,'missing_master_count':len(set(missing)),'policy':'heavy detail exists only for verified upcoming JRA runners'},'runners':runners};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
 if __name__=='__main__':main()
