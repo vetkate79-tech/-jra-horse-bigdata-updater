@@ -13,7 +13,8 @@ from bs4 import BeautifulSoup
 import sys
 sys.path.insert(0,'src')
 from collect_upcoming_new_horses import (
-    current_week_seeds, fetch, cname_url, extract_links, META, COURSE, HORSE_ID
+    current_week_seeds, fetch, cname_url, extract_links, META, COURSE, HORSE_ID,
+    normalize_horse_id
 )
 
 CAT=Path('docs/data/horses/catalog.json')
@@ -23,7 +24,7 @@ STATUS=Path('status/weekly_runner_details.json')
 def load_catalog():
     if not CAT.exists():return {}
     d=json.loads(CAT.read_text(encoding='utf-8'))
-    return {h.get('horse_id'):h for h in d.get('horses',[]) if h.get('horse_id')}
+    return {normalize_horse_id(h.get('horse_id')):h for h in d.get('horses',[]) if h.get('horse_id')}
 
 def race_title(soup):
     for sel in ('main h2','#main h2','.race_num + h2','h2'):
@@ -56,7 +57,7 @@ def parse_card(cname,raw):
         href=urllib.parse.unquote(html_lib.unescape(a.get('href','')))
         hm=HORSE_ID.search(href)
         if not hm:continue
-        hid=hm.group(0)
+        hid=normalize_horse_id(hm.group(0))
         if hid in seen:continue
         seen.add(hid)
         name=' '.join(a.stripped_strings).strip()
@@ -81,7 +82,6 @@ def runner_detail(race,row,h):
         'official_racecard_text':row.get('official_row_text',''),
         'detail_scope':'RACE_WEEK_ONLY','source_policy':'JRA_OFFICIAL_RACECARD_PLUS_STORED_JRA_HISTORY'
     }
-    # Reuse factual stored fields only when they already exist. Do not infer.
     for k in ('win_rate','quinella_rate','show_rate','sire','dam','damsire','pedigree_summary','training_summary'):
         if h.get(k) not in (None,''):detail[k]=h[k]
     return detail
