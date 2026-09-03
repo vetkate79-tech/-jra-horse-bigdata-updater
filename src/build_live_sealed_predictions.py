@@ -17,7 +17,6 @@ BASE=Path('docs/data/horses/base_catalog.json')
 PRE=Path('docs/data/horses/pre_race_features.json')
 OUT=Path('docs/data/live_predictions_sealed.json')
 STATUS=Path('status/live_prediction_seal.json')
-
 FORBIDDEN_KEYS={'odds','popularity','market_rank','payout','return_amount','result','finish_position','trio_result','trio_payout'}
 
 def _num(v,d=0.0):
@@ -72,23 +71,22 @@ def _contains_forbidden(obj):
     return False
 
 def main():
-    now=datetime.now(TZ);today=now.date().isoformat();cards=_load_weekly_cards();master=_load_horses();pre_by_key,pre_summary=_load_pre_features();races=[];pending=[]
-    frame_total=frame_known=0
+    now=datetime.now(TZ);today=now.date().isoformat();cards=_load_weekly_cards();master=_load_horses();pre_by_key,pre_summary=_load_pre_features();races=[];pending=[];frame_total=frame_known=0
     for r in cards:
         date=str(r.get('date') or '')
         if not date or date<today:continue
         q=[]
         for x in (r.get('horses') or []):
-            frame_total+=1;frame_known+=int(bool(str(x.get('frame_no') or '')))
-            key=(str(r.get('race_id') or ''),str(x.get('horse_id') or ''));q.append(_safe_horse(x,master,pre_by_key.get(key)))
+            frame_total+=1;frame_known+=int(bool(str(x.get('frame_no') or '')));key=(str(r.get('race_id') or ''),str(x.get('horse_id') or ''));q.append(_safe_horse(x,master,pre_by_key.get(key)))
         scores=[_num(x.get('score')) for x in q if _num(x.get('score'))!=0];evidence=sum(1 for x in q if _num(x.get('starts_before'))>0);spread=(max(scores)-min(scores)) if scores else 0.0;differentiated=len({round(x,3) for x in scores})
         if len(q)<3 or len(scores)<3 or evidence<3 or differentiated<3 or spread<0.50:
             pending.append({'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'status':'DATA_PENDING','reason':'at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed','evidence_horses':evidence,'score_spread':round(spread,3)});continue
         q.sort(key=lambda x:(-_num(x.get('score')),int(x['n']) if x['n'].isdigit() else 999));safe={'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'surface':r.get('surface'),'distance_m':r.get('distance_m'),'ranked_snapshot':q}
         if _contains_forbidden(safe):raise RuntimeError('forbidden market/result field entered pure prediction input')
-        analysis=analyze_race(safe);situation=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or []);analysis['situational_shadow']=situation;analysis['ensemble_shadow']=route_ensemble(situation);races.append({**{k:safe.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'analysis':analysis})
+        analysis=analyze_race(safe);situation=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or []);analysis['situational_shadow']=situation;analysis['ensemble_shadow']=route_ensemble(situation)
+        races.append({**{k:safe.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'ranked_snapshot':q,'analysis':analysis})
     seal_stage='FINAL_WITH_FRAME' if frame_total>0 and frame_known==frame_total else ('PARTIAL_FRAME_RESEAL' if frame_known else 'PRELIMINARY_NO_FRAME')
-    core={'schema_version':5,'mode':'LIVE_PURE_PREDICTION_SEAL','seal_stage':seal_stage,'model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
+    core={'schema_version':6,'mode':'LIVE_PURE_PREDICTION_SEAL','seal_stage':seal_stage,'model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
     hash_input=json.dumps({k:v for k,v in core.items() if k!='generated_at'},ensure_ascii=False,sort_keys=True,separators=(',',':'));core['prediction_hash_sha256']=hashlib.sha256(hash_input.encode()).hexdigest();OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(core,ensure_ascii=False,indent=2),encoding='utf-8')
     status={'status':'SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES'),'seal_stage':seal_stage,'today_jst':today,'sealed_race_count':len(races),'pending_race_count':len(pending),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'prediction_hash_sha256':core['prediction_hash_sha256'],'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'odds_popularity_used':False,'results_used':False};STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(status,ensure_ascii=False))
 
