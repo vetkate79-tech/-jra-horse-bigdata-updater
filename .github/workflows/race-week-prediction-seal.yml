@@ -2,9 +2,11 @@ name: Race-week pure prediction seal
 
 on:
   schedule:
-    # Thursday 20:10 JST and Friday 10:10 JST, after race-week data expansion.
-    - cron: '10 11 * * 4'
-    - cron: '10 1 * * 5'
+    # Fallback reseals shortly after JRA official card publication.
+    # Primary path is immediate push-triggered sealing after race-week data refresh.
+    - cron: '30 7 * * 4'   # Thursday 16:30 JST
+    - cron: '30 1 * * 5'   # Friday 10:30 JST
+    - cron: '30 1 * * 6'   # Saturday 10:30 JST
   workflow_dispatch:
   push:
     branches: [main]
