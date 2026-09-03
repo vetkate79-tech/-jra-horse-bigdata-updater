@@ -24,6 +24,7 @@ on:
       - 'src/build_live_sealed_predictions.py'
       - 'src/build_horse_base_catalog.py'
       - 'src/check_horse_master_completion.py'
+      - 'src/audit_horse_master_uniqueness.py'
       - '.github/workflows/register-upcoming-new-horses.yml'
 
 permissions:
@@ -66,6 +67,8 @@ jobs:
         run: python src/build_horse_base_catalog.py
       - name: Check horse master completion
         run: python src/check_horse_master_completion.py
+      - name: Enforce horse identity uniqueness
+        run: python src/audit_horse_master_uniqueness.py
       - name: Seal pure predictions immediately from refreshed cards
         run: python src/build_live_sealed_predictions.py
       - name: Verify prediction firewall
@@ -83,7 +86,7 @@ jobs:
         run: |
           git config user.name 'jra-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json docs/data/horses/pre_race_features.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json status/weekly_runner_details.json status/pre_race_features.json status/horse_master_completion.json docs/data/live_predictions_sealed.json status/live_prediction_seal.json
+          git add docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json docs/data/horses/pre_race_features.json docs/data/upcoming_new_horses.json status/upcoming_new_horses.json status/weekly_runner_details.json status/pre_race_features.json status/horse_master_completion.json status/horse_identity_uniqueness.json docs/data/live_predictions_sealed.json status/live_prediction_seal.json
           git diff --cached --quiet || git commit -m 'data: refresh race-week runners and seal predictions'
           for i in 1 2 3 4 5; do
             git pull --rebase --autostash origin main && git push && exit 0
