@@ -1,4 +1,16 @@
 {
-  "status": "NO_UPCOMING_RACECARDS",
-  "runner_count": 0
+  "status": "READY",
+  "cutoff_date": "2026-09-05",
+  "runner_count": 1055,
+  "history_rows_before_cutoff": 48857,
+  "runners_with_history": 0,
+  "runners_without_history": 1055,
+  "results_on_or_after_cutoff_used": false,
+  "odds_popularity_used": false,
+  "multi_horizon_weights": {
+    "structural": 0.7,
+    "medium": 0.2,
+    "short": 0.1,
+    "short_cap": 0.15
+  }
 }
