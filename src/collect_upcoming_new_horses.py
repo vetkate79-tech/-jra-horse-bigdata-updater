@@ -2,17 +2,17 @@
 """Discover upcoming JRA racecards and register debut horses before racing.
 
 Discovery strategy:
-- inspect the JRA home page for current-week accessD racecard links
-- use one discovered race as a seed per venue/day
-- expand to all race links exposed by that racecard page
-- keep only 新馬 / メイクデビュー races
+- inspect multiple JRA entry points for current-week accessD racecard links
+- expand from discovered racecards to find every venue/day seed
+- use a date-bounded official fallback seed only when normal discovery is empty
+- expand to all race links exposed by each racecard page
+- keep only 新馬 / メイクデビュー races for debut-horse registration
 - merge horse IDs/names into the unified public catalog before debut
 
 No prediction, odds or inferred training state is created here.
 """
 from __future__ import annotations
 import datetime as dt, html as html_lib, json, re, time, urllib.parse, urllib.request
-from collections import defaultdict
 from pathlib import Path
 from bs4 import BeautifulSoup
 import sys
@@ -30,6 +30,11 @@ META=re.compile(r'pw01dde(?:01|10)(?P<course>\d{2})(?P<year>\d{4})(?P<meeting>\d
 LINK=re.compile(r'pw01dde(?:01|10)\d{20}/[A-Fa-f0-9]{2}')
 HORSE_ID=re.compile(r'pw01dud\d{12}/[A-Fa-f0-9]{2}')
 COURSE={'01':'札幌','02':'函館','03':'福島','04':'新潟','05':'東京','06':'中山','07':'中京','08':'京都','09':'阪神','10':'小倉'}
+
+# Verified JRA official racecard known for 2026-09-05 中山.
+# It is accepted only while its embedded date is inside the normal upcoming window,
+# so it automatically becomes inert after this race week.
+FALLBACK_SEEDS=('pw01dde0106202604010920260905/EA',)
 
 def fetch(url,retries=4):
     req=urllib.request.Request(url,headers={'User-Agent':UA,'Referer':HOME,'Accept-Language':'ja,en-US;q=0.7'})
@@ -57,15 +62,45 @@ def date_of(c):
     return dt.date(int(d[:4]),int(d[4:6]),int(d[6:]))
 
 def current_week_seeds():
-    raw=fetch(HOME)
     today=dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date()
     end=today+dt.timedelta(days=7)
     seeds={}
-    for c in extract_links(raw):
+
+    def accept(c):
         m=META.search(c); d=date_of(c)
-        if not m or not d or not(today<=d<=end):continue
+        if not m or not d or not(today<=d<=end):return False
         key=(m.group('date'),m.group('course'))
-        seeds.setdefault(key,c)
+        if key not in seeds:
+            seeds[key]=c
+            return True
+        return False
+
+    # The JRA home page does not always expose accessD CNAMEs directly.
+    # Inspect both normal entry points first.
+    for source in (HOME,ENTRY):
+        try: raw=fetch(source)
+        except Exception: continue
+        for c in extract_links(raw):accept(c)
+
+    # Emergency/bootstrap seed: only valid while its embedded date is upcoming.
+    if not seeds:
+        for c in FALLBACK_SEEDS:accept(c)
+
+    # Racecard pages contain navigation to other races/venues/days. Crawl discovered
+    # current-week cards breadth-first so one valid seed can recover the full meeting.
+    queue=list(seeds.values()); visited=set()
+    while queue and len(visited)<30:
+        c=queue.pop(0)
+        if c in visited:continue
+        visited.add(c)
+        try: raw=fetch(cname_url(c))
+        except Exception: continue
+        before=set(seeds)
+        for x in extract_links(raw):
+            if accept(x):queue.append(x)
+        # Also revisit newly discovered seed values if page navigation only exposed a key once.
+        for key,val in seeds.items():
+            if key not in before and val not in visited and val not in queue:queue.append(val)
     return seeds
 
 def race_title(soup):
