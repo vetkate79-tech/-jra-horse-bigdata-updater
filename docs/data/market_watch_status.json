@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-03T18:37:22.224983+09:00",
+  "checked_at": "2026-09-03T20:53:28.840819+09:00",
   "policy": {
     "prerequisite": "market layer starts only for races present in the pure-prediction seal",
     "thursday": "pure prediction/seal first; no market influence on ability ranking",
@@ -14,6 +14,6 @@
     "firewall": "odds never change ability ranking; only value/purchase judgment",
     "final_ticket_rule": "final ticket status stays MARKET_DATA_PENDING until real market data is connected; never fabricate odds or EV"
   },
-  "sealed_prediction_hash": "2166ea7d256f69c9b7672b5a5c7e4e91867cedfde5b48fb1b21f1c55e17eea86",
+  "sealed_prediction_hash": "11b8ecdb2579efd1c157470ca2054f19c9c7566d3e22d44ff01f0968ba9ae718",
   "races": []
 }
