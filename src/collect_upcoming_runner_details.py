@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Build race-week detail data only for horses actually on upcoming JRA cards."""
 from __future__ import annotations
-import json, urllib.parse, html as html_lib, re
+import json,re
 from pathlib import Path
 from bs4 import BeautifulSoup
 import sys
 sys.path.insert(0,'src')
-from collect_upcoming_new_horses import current_week_seeds,fetch,cname_url,extract_links,META,COURSE,HORSE_ID,normalize_horse_id,runner_rows
+from collect_upcoming_new_horses import current_week_seeds,fetch,cname_url,extract_links,META,COURSE,normalize_horse_id,runner_rows
 
 CAT=Path('docs/data/horses/catalog.json');OUT=Path('docs/data/horses/weekly_runner_details.json');STATUS=Path('status/weekly_runner_details.json')
 
@@ -15,17 +15,31 @@ def load_catalog():
     d=json.loads(CAT.read_text(encoding='utf-8'));return {normalize_horse_id(h.get('horse_id')):h for h in d.get('horses',[]) if h.get('horse_id')}
 
 def race_title(soup):
-    for sel in ('main h2','#main h2','.race_num + h2','h2'):
-        n=soup.select_one(sel)
-        if n:
-            t=' '.join(n.stripped_strings)
-            if t:return t
+    heads=[]
+    for n in soup.find_all(['h1','h2','h3']):
+        t=' '.join(n.stripped_strings).strip()
+        if not t:continue
+        if any(x in t for x in ('検索ウィンドウ','関連メニュー','開催選択','レース選択','ここから本文','本賞金','出馬表')):continue
+        heads.append(t)
+    # JRA race title heading. Prefer explicit race/grade patterns over generic page headings.
+    pat=re.compile(r'(未勝利|メイクデビュー|新馬|オープン|特別|ステークス|カップ|賞|記念|クラス|障害|リステッド|重賞|G[123])')
+    for t in heads:
+        if pat.search(t) and len(t)<=60:return t
+    for t in heads:
+        if len(t)<=40 and not re.search(r'\d{4}年\d{1,2}月\d{1,2}日',t):return t
     return ''
 
 def race_condition(soup):
-    text=' '.join(soup.stripped_strings);m=re.search(r'(芝|ダート|ダ)\s*([0-9]{3,4})\s*[mｍ]?',text)
+    text=' '.join(soup.stripped_strings)
+    m=re.search(r'コース[:：]\s*([0-9,]+)\s*メートル\s*[（(]\s*(芝|ダート)',text)
+    if m:return m.group(2),int(m.group(1).replace(',',''))
+    m=re.search(r'(芝|ダート|ダ)\s*([0-9]{3,4})\s*[mｍ]?',text)
     if not m:return '',None
     return ('芝' if m.group(1)=='芝' else 'ダート'),int(m.group(2))
+
+def start_time(soup):
+    text=' '.join(soup.stripped_strings);m=re.search(r'発走時刻[:：]\s*(\d{1,2})時(\d{2})分',text)
+    return f'{int(m.group(1)):02d}:{m.group(2)}' if m else ''
 
 def frame_and_horse_no(cells):
     nums=[]
@@ -36,20 +50,31 @@ def frame_and_horse_no(cells):
     if len(nums)==1:return '',nums[0]
     return '',''
 
+def row_meta(row_text):
+    sex_age='';carried='';jockey=''
+    m=re.search(r'(牡|牝|せん)\s*(\d+)',row_text)
+    if m:sex_age=f'{m.group(1)}{m.group(2)}'
+    m=re.search(r'(\d{2}(?:\.\d)?)\s*kg\s*([▲△★☆◇]?[^0-9]+?)(?=\s+20\d{2}年|\s*$)',row_text)
+    if m:
+        carried=m.group(1);jockey=' '.join(m.group(2).split()).strip()
+        jockey=re.sub(r'\s+(前走|前々走|3走前|4走前).*$', '', jockey).strip()
+    return sex_age,carried,jockey
+
 def parse_card(cname,raw):
     m=META.search(cname)
     if not m:return None
     soup=BeautifulSoup(raw,'html.parser');d=m.group('date');date=f'{d[:4]}-{d[4:6]}-{d[6:]}';surface,distance_m=race_condition(soup)
-    race={'race_id':m.group(0),'date':date,'track':COURSE.get(m.group('course'),m.group('course')),'race_no':int(m.group('race')),'race_name':race_title(soup),'surface':surface,'distance_m':distance_m,'source_url':cname_url(cname),'runners':[]};seen=set()
+    race={'race_id':m.group(0),'date':date,'track':COURSE.get(m.group('course'),m.group('course')),'race_no':int(m.group('race')),'race_name':race_title(soup),'surface':surface,'distance_m':distance_m,'start_time':start_time(soup),'source_url':cname_url(cname),'runners':[]};seen=set()
     for a,hid,name,row_text in runner_rows(soup):
         if hid in seen:continue
         seen.add(hid);tr=a.find_parent('tr');cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])] if tr else []
-        frame_no,horse_no=frame_and_horse_no(cells)
-        race['runners'].append({'horse_id':hid,'horse_name':name,'frame_no':frame_no,'horse_no':horse_no,'official_row_text':row_text})
+        frame_no,horse_no=frame_and_horse_no(cells);sex_age,carried,jockey=row_meta(row_text)
+        race['runners'].append({'horse_id':hid,'horse_name':name,'frame_no':frame_no,'horse_no':horse_no,'sex_age':sex_age,'carried_weight':carried,'jockey':jockey,'official_row_text':row_text})
     return race if race['runners'] else None
 
 def runner_detail(race,row,h):
-    recent=(h.get('recent_starts') or [])[:5];detail={'horse_id':row['horse_id'],'horse_name':row['horse_name'],'frame_no':row.get('frame_no',''),'horse_no':row.get('horse_no',''),'race':{k:race.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m','source_url')},'sex_age':h.get('sex_age'),'trainer':h.get('trainer'),'current_class':h.get('current_class'),'current_class_label':h.get('current_class_label'),'recent_starts':recent,'official_racecard_text':row.get('official_row_text',''),'detail_scope':'RACE_WEEK_ONLY','source_policy':'JRA_OFFICIAL_RACECARD_PLUS_STORED_JRA_HISTORY'}
+    recent=(h.get('recent_starts') or [])[:5]
+    detail={'horse_id':row['horse_id'],'horse_name':row['horse_name'],'frame_no':row.get('frame_no',''),'horse_no':row.get('horse_no',''),'jockey':row.get('jockey',''),'carried_weight':row.get('carried_weight',''),'race':{k:race.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m','start_time','source_url')},'sex_age':row.get('sex_age') or h.get('sex_age'),'trainer':h.get('trainer'),'current_class':h.get('current_class'),'current_class_label':h.get('current_class_label'),'recent_starts':recent,'official_racecard_text':row.get('official_row_text',''),'detail_scope':'RACE_WEEK_ONLY','source_policy':'JRA_OFFICIAL_RACECARD_PLUS_STORED_JRA_HISTORY'}
     for k in ('win_rate','quinella_rate','show_rate','sire','dam','damsire','pedigree_summary','training_summary'):
         if h.get(k) not in (None,''):detail[k]=h[k]
     return detail
@@ -77,5 +102,7 @@ def main():
             if h is None:h={'horse_id':row['horse_id'],'horse_name':row['horse_name']};missing.append(row['horse_id'])
             runners.append(runner_detail(race,row,h))
     dates=sorted({r['race']['date'] for r in runners});frame_known=sum(1 for r in runners if r.get('frame_no'))
-    payload={'summary':{'status':'READY' if runners else 'NO_UPCOMING_RACECARDS','race_count':len(cards),'runner_count':len(runners),'dates':dates,'frame_known_count':frame_known,'frame_pending_count':len(runners)-frame_known,'missing_master_count':len(set(missing)),'policy':'heavy detail exists only for verified upcoming JRA runners'},'runners':runners};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
+    valid_names=sum(1 for c in cards if c.get('race_name') and c.get('race_name')!='検索ウィンドウ')
+    conditions=sum(1 for c in cards if c.get('surface') and c.get('distance_m'))
+    payload={'summary':{'status':'READY' if runners else 'NO_UPCOMING_RACECARDS','race_count':len(cards),'runner_count':len(runners),'dates':dates,'race_name_resolved_count':valid_names,'race_condition_resolved_count':conditions,'frame_known_count':frame_known,'frame_pending_count':len(runners)-frame_known,'missing_master_count':len(set(missing)),'policy':'heavy detail exists only for verified upcoming JRA runners'},'runners':runners};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
 if __name__=='__main__':main()
