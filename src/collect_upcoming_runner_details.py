@@ -46,19 +46,21 @@ def frame_and_horse_no(cells):
 def row_meta(row_text):
     sex_age='';carried='';jockey='';m=re.search(r'(牡|牝|せん)\s*(\d+)',row_text)
     if m:sex_age=f'{m.group(1)}{m.group(2)}'
-    m=re.search(r'(\d{2}(?:\.\d)?)\s*kg\s*([▲△★☆◇]?[^0-9]+?)(?=\s+20\d{2}年|\s*$)',row_text)
+    m=re.search(r'(\d{2}(?:\.\d)?)\s*kg\s*([▲△★☆◇]?[^0-9]+?)(?=\s*20\d{2}年|\s*$)',row_text)
     if m:carried=m.group(1);jockey=' '.join(m.group(2).split()).strip()
     return sex_age,carried,jockey
 
 def prior_starts(row_text):
     out=[]
-    parts=re.split(r'(?=20\d{2}年\d{1,2}月\d{1,2}日)',row_text)
+    parts=re.split(r'(?=20\d{2}年\s*\d{1,2}月\s*\d{1,2}日)',row_text)
     for p in parts:
-        dm=re.match(r'(20\d{2})年(\d{1,2})月(\d{1,2})日\s+([^\s]+)',p)
-        fm=re.search(r'(\d+)着',p);cm=re.search(r'(\d{3,4})(芝|ダ)',p)
+        dm=re.match(r'(20\d{2})年\s*(\d{1,2})月\s*(\d{1,2})日\s*([^\s]+)',p)
+        fm=re.search(r'(\d+)\s*着',p);cm=re.search(r'([0-9,]{3,5})\s*(芝|ダ)',p)
         if not dm or not fm or not cm:continue
         lm=re.search(r'3F\s*(\d+(?:\.\d+)?)',p)
-        out.append({'race_date':f'{dm.group(1)}-{int(dm.group(2)):02d}-{int(dm.group(3)):02d}','course':dm.group(4),'finish_position':int(fm.group(1)),'distance_m':int(cm.group(1)),'surface':'芝' if cm.group(2)=='芝' else 'ダート','last3f':float(lm.group(1)) if lm else None,'source':'JRA_CURRENT_RACECARD_PRIOR_START'})
+        dist=int(cm.group(1).replace(',',''))
+        if dist<800 or dist>4000:continue
+        out.append({'race_date':f'{dm.group(1)}-{int(dm.group(2)):02d}-{int(dm.group(3)):02d}','course':dm.group(4),'finish_position':int(fm.group(1)),'distance_m':dist,'surface':'芝' if cm.group(2)=='芝' else 'ダート','last3f':float(lm.group(1)) if lm else None,'source':'JRA_CURRENT_RACECARD_PRIOR_START'})
     out.sort(key=lambda x:x['race_date'],reverse=True);return out[:4]
 
 def parse_card(cname,raw):
