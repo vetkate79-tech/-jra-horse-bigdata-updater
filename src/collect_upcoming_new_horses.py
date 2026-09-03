@@ -6,6 +6,7 @@ Discovery strategy:
 - expand from discovered racecards to find every venue/day seed
 - use a date-bounded official fallback seed only when normal discovery is empty
 - expand to all race links exposed by each racecard page
+- parse only actual runner table rows, not pedigree/other horse links
 - keep only 新馬 / メイクデビュー races for debut-horse registration
 - merge horse IDs/names into the unified public catalog before debut
 
@@ -52,7 +53,7 @@ def extract_links(text):
     return list(dict.fromkeys(LINK.findall(x)))
 
 def normalize_horse_id(hid):
-    """Map accessD horse links (pw01dud00...) to the history/profile canonical pw01dud10... id."""
+    """Map accessD horse links (pw01dud00...) to history/profile canonical pw01dud10... id."""
     hid=str(hid or '')
     return 'pw01dud10'+hid[len('pw01dud00'):] if hid.startswith('pw01dud00') else hid
 
@@ -63,15 +64,12 @@ def date_of(c):
     return dt.date(int(d[:4]),int(d[4:6]),int(d[6:]))
 
 def current_week_seeds():
-    today=dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date()
-    end=today+dt.timedelta(days=7)
-    seeds={}
+    today=dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date();end=today+dt.timedelta(days=7);seeds={}
     def accept(c):
-        m=META.search(c); d=date_of(c)
+        m=META.search(c);d=date_of(c)
         if not m or not d or not(today<=d<=end):return False
         key=(m.group('date'),m.group('course'))
-        if key not in seeds:
-            seeds[key]=c;return True
+        if key not in seeds:seeds[key]=c;return True
         return False
     for source in (HOME,ENTRY):
         try:raw=fetch(source)
@@ -99,29 +97,41 @@ def race_title(soup):
         if n:
             t=' '.join(n.stripped_strings)
             if t:return t
-    text=' '.join(soup.stripped_strings)
-    m=re.search(r'(メイクデビュー[^ ]*|\d歳新馬|新馬)',text)
+    text=' '.join(soup.stripped_strings);m=re.search(r'(メイクデビュー[^ ]*|\d歳新馬|新馬)',text)
     return m.group(1) if m else ''
 
+def runner_rows(soup):
+    """Return one current-horse anchor per actual runner row.
+
+    accessD contains many pw01dud links (pedigree and historical references). Actual
+    runner rows carry sex/age and assigned weight; selecting the first horse link in
+    those rows prevents pedigree links from entering the weekly runner set.
+    """
+    out=[]
+    for tr in soup.find_all('tr'):
+        rowtxt=' '.join(tr.stripped_strings)
+        if not re.search(r'(?:牡|牝|せん)\s*\d+',rowtxt):continue
+        if not re.search(r'\d+(?:\.\d+)?\s*kg',rowtxt,re.I):continue
+        picked=None
+        for a in tr.find_all('a'):
+            href=urllib.parse.unquote(html_lib.unescape(a.get('href','')));hm=HORSE_ID.search(href)
+            if not hm:continue
+            name=' '.join(a.stripped_strings).strip()
+            if name:picked=(a,normalize_horse_id(hm.group(0)),name,rowtxt);break
+        if picked:out.append(picked)
+    return out
+
 def horse_rows(cname,html):
-    soup=BeautifulSoup(html,'html.parser'); title=race_title(soup)
+    soup=BeautifulSoup(html,'html.parser');title=race_title(soup)
     if '新馬' not in title and 'メイクデビュー' not in title:return None
-    m=META.search(cname); date=m.group('date'); date=f'{date[:4]}-{date[4:6]}-{date[6:]}'
-    race_no=int(m.group('race')); track=COURSE.get(m.group('course'),m.group('course'))
-    horses=[];seen=set()
-    for a in soup.find_all('a'):
-        href=urllib.parse.unquote(html_lib.unescape(a.get('href','')))
-        hm=HORSE_ID.search(href)
-        if not hm:continue
-        hid=normalize_horse_id(hm.group(0)); name=' '.join(a.stripped_strings).strip()
-        if not name or hid in seen:continue
-        seen.add(hid);tr=a.find_parent('tr');rowtxt=' '.join(tr.stripped_strings) if tr else ''
-        no=''
-        if tr:
-            cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])]
-            for x in cells[:3]:
-                mm=re.fullmatch(r'\d{1,2}',x.strip())
-                if mm:no=mm.group(0)
+    m=META.search(cname);date=m.group('date');date=f'{date[:4]}-{date[4:6]}-{date[6:]}'
+    race_no=int(m.group('race'));track=COURSE.get(m.group('course'),m.group('course'));horses=[];seen=set()
+    for a,hid,name,rowtxt in runner_rows(soup):
+        if hid in seen:continue
+        seen.add(hid);tr=a.find_parent('tr');no='';cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])] if tr else []
+        for x in cells[:4]:
+            mm=re.fullmatch(r'\d{1,2}',x.strip())
+            if mm:no=mm.group(0)
         horses.append({'horse_id':hid,'horse_name':name,'horse_no':no,'row_text':rowtxt})
     return {'race_id':META.search(cname).group(0),'date':date,'track':track,'race_no':race_no,'race_name':title,'source_url':cname_url(cname),'horses':horses}
 
@@ -135,34 +145,24 @@ def merge(races):
         for x in r['horses']:
             h=by_id.get(x['horse_id'])
             if h is None:
-                h={'horse_name':x['horse_name'],'horse_id':x['horse_id'],'sex_age':'','trainer':'','win_rate':None,'quinella_rate':None,'show_rate':None,'target_starts':[],'tags':[]}
-                hs.append(h);by_id[x['horse_id']]=h;added+=1
+                h={'horse_name':x['horse_name'],'horse_id':x['horse_id'],'sex_age':'','trainer':'','win_rate':None,'quinella_rate':None,'show_rate':None,'target_starts':[],'tags':[]};hs.append(h);by_id[x['horse_id']]=h;added+=1
             else:updated+=1;h['horse_id']=x['horse_id']
-            h['horse_name']=x['horse_name'] or h.get('horse_name','')
-            h['current_class']='NEW';h['current_class_label']='新馬'
-            tags=set(h.get('tags') or []);tags.update({'NEW','NEW_ENTRY'});h['tags']=sorted(tags)
-            starts=h.setdefault('upcoming_starts',[])
-            item={k:r[k] for k in ('race_id','date','track','race_no','race_name','source_url')};item['horse_no']=x.get('horse_no','')
+            h['horse_name']=x['horse_name'] or h.get('horse_name','');h['current_class']='NEW';h['current_class_label']='新馬';tags=set(h.get('tags') or []);tags.update({'NEW','NEW_ENTRY'});h['tags']=sorted(tags)
+            starts=h.setdefault('upcoming_starts',[]);item={k:r[k] for k in ('race_id','date','track','race_no','race_name','source_url')};item['horse_no']=x.get('horse_no','')
             if not any(s.get('race_id')==item['race_id'] for s in starts):starts.append(item)
             try:
-                p=parse_profile({'horse_id':x['horse_id'],'horse_name':x['horse_name'],'candidate_sources':{'NEW_ENTRY'}},request_profile(x['horse_id']))
-                h['pedigree_summary']={'sire':p.get('sire') or None,'damsire':p.get('damsire') or None,'dam':p.get('dam') or None}
+                p=parse_profile({'horse_id':x['horse_id'],'horse_name':x['horse_name'],'candidate_sources':{'NEW_ENTRY'}},request_profile(x['horse_id']));h['pedigree_summary']={'sire':p.get('sire') or None,'damsire':p.get('damsire') or None,'dam':p.get('dam') or None}
                 for k in ('birth_date','breeder','trainer','owner','coat'):
                     if p.get(k):h[k]=p[k]
             except Exception as e:profile_errors.append({'horse_id':x['horse_id'],'horse_name':x['horse_name'],'error':repr(e)})
             h.setdefault('training_summary',None)
-    hs.sort(key=lambda h:h.get('horse_name',''))
-    s=dict(doc.get('summary') or {});s.update({'unified_horse_count':len(hs),'upcoming_new_horse_added':added,'upcoming_new_horse_updated':updated,'new_horse_registration_policy':'register from verified JRA racecard before debut'})
-    doc['summary']=s;doc['horses']=hs;CAT.write_text(json.dumps(doc,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-    return added,updated,profile_errors
+    hs.sort(key=lambda h:h.get('horse_name',''));s=dict(doc.get('summary') or {});s.update({'unified_horse_count':len(hs),'upcoming_new_horse_added':added,'upcoming_new_horse_updated':updated,'new_horse_registration_policy':'register from verified JRA racecard before debut'});doc['summary']=s;doc['horses']=hs;CAT.write_text(json.dumps(doc,ensure_ascii=False,separators=(',',':')),encoding='utf-8');return added,updated,profile_errors
 
 def main():
-    STATUS.parent.mkdir(exist_ok=True);OUT.parent.mkdir(parents=True,exist_ok=True)
-    seeds=current_week_seeds();races=[];errors=[]
+    STATUS.parent.mkdir(exist_ok=True);OUT.parent.mkdir(parents=True,exist_ok=True);seeds=current_week_seeds();races=[];errors=[]
     for key,seed in seeds.items():
         try:
-            seed_html=fetch(cname_url(seed));links=extract_links(seed_html)+[seed]
-            target=[];seen=set()
+            seed_html=fetch(cname_url(seed));links=extract_links(seed_html)+[seed];target=[];seen=set()
             for c in links:
                 m=META.search(c)
                 if not m or (m.group('date'),m.group('course'))!=key:continue
@@ -175,11 +175,7 @@ def main():
                     if rr and rr['horses']:races.append(rr)
                 except Exception as e:errors.append({'race':c,'error':repr(e)})
         except Exception as e:errors.append({'seed':seed,'error':repr(e)})
-    uniq={r['race_id']:r for r in races};races=sorted(uniq.values(),key=lambda r:(r['date'],r['track'],r['race_no']))
-    added=updated=0;profile_errors=[]
+    races=sorted({r['race_id']:r for r in races}.values(),key=lambda r:(r['date'],r['track'],r['race_no']));added=updated=0;profile_errors=[]
     if races:added,updated,profile_errors=merge(races)
-    payload={'source':'JRA_OFFICIAL_UPCOMING_RACECARD','status':'UPDATED' if races else 'NO_UPCOMING_RACECARDS','seed_count':len(seeds),'new_race_count':len(races),'new_runner_rows':sum(len(r['horses']) for r in races),'added_to_master':added,'updated_in_master':updated,'races':races}
-    OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-    STATUS.write_text(json.dumps({**{k:v for k,v in payload.items() if k!='races'},'errors':errors,'profile_errors':profile_errors},ensure_ascii=False,indent=2),encoding='utf-8')
-    print(json.dumps({k:v for k,v in payload.items() if k!='races'},ensure_ascii=False,indent=2))
+    payload={'source':'JRA_OFFICIAL_UPCOMING_RACECARD','status':'UPDATED' if races else 'NO_UPCOMING_RACECARDS','seed_count':len(seeds),'new_race_count':len(races),'new_runner_rows':sum(len(r['horses']) for r in races),'added_to_master':added,'updated_in_master':updated,'races':races};OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**{k:v for k,v in payload.items() if k!='races'},'errors':errors,'profile_errors':profile_errors},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps({k:v for k,v in payload.items() if k!='races'},ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
