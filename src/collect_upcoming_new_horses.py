@@ -1,16 +1,7 @@
 #!/usr/bin/env python3
 """Discover upcoming JRA racecards and register debut horses before racing.
 
-Discovery strategy:
-- inspect multiple JRA entry points for current-week accessD racecard links
-- expand from discovered racecards to find every venue/day seed
-- use a date-bounded official fallback seed only when normal discovery is empty
-- expand to all race links exposed by each racecard page
-- parse only actual runner table rows, not pedigree/other horse links
-- keep only 新馬 / メイクデビュー races for debut-horse registration
-- merge horse IDs/names into the unified public catalog before debut
-
-No prediction, odds or inferred training state is created here.
+No odds, popularity or result data is used here.
 """
 from __future__ import annotations
 import datetime as dt, html as html_lib, json, re, time, urllib.parse, urllib.request
@@ -53,9 +44,12 @@ def extract_links(text):
     return list(dict.fromkeys(LINK.findall(x)))
 
 def normalize_horse_id(hid):
-    """Map accessD horse links (pw01dud00...) to history/profile canonical pw01dud10... id."""
-    hid=str(hid or '')
-    return 'pw01dud10'+hid[len('pw01dud00'):] if hid.startswith('pw01dud00') else hid
+    """Return the single persisted JRA horse-id representation."""
+    s=str(hid or '').strip()
+    if s.startswith('pw01dud00'):s='pw01dud10'+s[len('pw01dud00'):]
+    if '/' in s:
+        head,tail=s.rsplit('/',1);s=head.lower()+'/'+tail.upper()
+    return s
 
 def date_of(c):
     m=META.search(c)
@@ -92,21 +86,20 @@ def current_week_seeds():
     return seeds
 
 def race_title(soup):
-    for sel in ('main h2','#main h2','.race_num + h2','h2'):
-        n=soup.select_one(sel)
-        if n:
-            t=' '.join(n.stripped_strings)
-            if t:return t
-    text=' '.join(soup.stripped_strings);m=re.search(r'(メイクデビュー[^ ]*|\d歳新馬|新馬)',text)
+    heads=[]
+    for n in soup.find_all(['h1','h2','h3']):
+        t=' '.join(n.stripped_strings).strip()
+        if not t or any(x in t for x in ('検索ウィンドウ','関連メニュー','開催選択','レース選択','ここから本文','本賞金','出馬表')):continue
+        heads.append(t)
+    pat=re.compile(r'(未勝利|メイクデビュー|新馬|オープン|特別|ステークス|カップ|賞|記念|クラス|障害|リステッド|重賞|G[123])')
+    for t in heads:
+        if pat.search(t) and len(t)<=60:return t
+    text=' '.join(soup.stripped_strings)
+    m=re.search(r'(メイクデビュー[^ ]*|\d歳新馬|新馬)',text)
     return m.group(1) if m else ''
 
 def runner_rows(soup):
-    """Return one current-horse anchor per actual runner row.
-
-    accessD contains many pw01dud links (pedigree and historical references). Actual
-    runner rows carry sex/age and assigned weight; selecting the first horse link in
-    those rows prevents pedigree links from entering the weekly runner set.
-    """
+    """Return one current-horse anchor per actual runner row."""
     out=[]
     for tr in soup.find_all('tr'):
         rowtxt=' '.join(tr.stripped_strings)
@@ -140,23 +133,28 @@ def load_catalog():
     return json.loads(CAT.read_text(encoding='utf-8'))
 
 def merge(races):
-    doc=load_catalog();hs=doc.get('horses',[]);by_id={normalize_horse_id(h.get('horse_id')):h for h in hs if h.get('horse_id')};added=updated=0;profile_errors=[]
+    doc=load_catalog();hs=doc.get('horses',[])
+    for h in hs:
+        if h.get('horse_id'):h['horse_id']=normalize_horse_id(h['horse_id'])
+    by_id={h.get('horse_id'):h for h in hs if h.get('horse_id')};added=updated=0;profile_errors=[]
     for r in races:
         for x in r['horses']:
-            h=by_id.get(x['horse_id'])
+            x['horse_id']=normalize_horse_id(x['horse_id']);h=by_id.get(x['horse_id'])
             if h is None:
                 h={'horse_name':x['horse_name'],'horse_id':x['horse_id'],'sex_age':'','trainer':'','win_rate':None,'quinella_rate':None,'show_rate':None,'target_starts':[],'tags':[]};hs.append(h);by_id[x['horse_id']]=h;added+=1
-            else:updated+=1;h['horse_id']=x['horse_id']
+            else:updated+=1
             h['horse_name']=x['horse_name'] or h.get('horse_name','');h['current_class']='NEW';h['current_class_label']='新馬';tags=set(h.get('tags') or []);tags.update({'NEW','NEW_ENTRY'});h['tags']=sorted(tags)
             starts=h.setdefault('upcoming_starts',[]);item={k:r[k] for k in ('race_id','date','track','race_no','race_name','source_url')};item['horse_no']=x.get('horse_no','')
-            if not any(s.get('race_id')==item['race_id'] for s in starts):starts.append(item)
+            pos=next((i for i,s in enumerate(starts) if isinstance(s,dict) and s.get('race_id')==item['race_id']),None)
+            if pos is None:starts.append(item)
+            else:starts[pos]={**starts[pos],**item}
             try:
                 p=parse_profile({'horse_id':x['horse_id'],'horse_name':x['horse_name'],'candidate_sources':{'NEW_ENTRY'}},request_profile(x['horse_id']));h['pedigree_summary']={'sire':p.get('sire') or None,'damsire':p.get('damsire') or None,'dam':p.get('dam') or None}
                 for k in ('birth_date','breeder','trainer','owner','coat'):
                     if p.get(k):h[k]=p[k]
             except Exception as e:profile_errors.append({'horse_id':x['horse_id'],'horse_name':x['horse_name'],'error':repr(e)})
             h.setdefault('training_summary',None)
-    hs.sort(key=lambda h:h.get('horse_name',''));s=dict(doc.get('summary') or {});s.update({'unified_horse_count':len(hs),'upcoming_new_horse_added':added,'upcoming_new_horse_updated':updated,'new_horse_registration_policy':'register from verified JRA racecard before debut'});doc['summary']=s;doc['horses']=hs;CAT.write_text(json.dumps(doc,ensure_ascii=False,separators=(',',':')),encoding='utf-8');return added,updated,profile_errors
+    hs.sort(key=lambda h:(h.get('horse_name',''),h.get('horse_id','')));s=dict(doc.get('summary') or {});s.update({'unified_horse_count':len(hs),'upcoming_new_horse_added':added,'upcoming_new_horse_updated':updated,'new_horse_registration_policy':'register from verified JRA racecard before debut'});doc['summary']=s;doc['horses']=hs;CAT.write_text(json.dumps(doc,ensure_ascii=False,separators=(',',':')),encoding='utf-8');return added,updated,profile_errors
 
 def main():
     STATUS.parent.mkdir(exist_ok=True);OUT.parent.mkdir(parents=True,exist_ok=True);seeds=current_week_seeds();races=[];errors=[]
