@@ -1,0 +1,118 @@
+{
+  "source": "JRA_OFFICIAL",
+  "market_layer_only": true,
+  "pure_prediction_mutated": false,
+  "odds_type": "WIN",
+  "captured_at": "2026-09-05T08:45:00+09:00",
+  "capture_mode": "MANUAL_OFFICIAL_BOOTSTRAP",
+  "race_count": 1,
+  "runner_odds_count": 16,
+  "races": [
+    {
+      "race_id": "pw01dde0106202604011120260905",
+      "date": "2026-09-05",
+      "track": "中山",
+      "race_no": 11,
+      "race_name": "第71回 京成杯オータムハンデキャップ",
+      "source_url": "https://app.jra.jp/JRADB/accessD.html?CNAME=sw01ddd0106202604011120260905%2F5B",
+      "win_odds": [
+        {
+          "horse_no": "4",
+          "horse_name": "フォルテアンジェロ",
+          "win_odds": 5.3,
+          "market_rank": 1
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ヴァルキリーバース",
+          "win_odds": 6.5,
+          "market_rank": 2
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "エコロブルーム",
+          "win_odds": 7.1,
+          "market_rank": 3
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "レザベーション",
+          "win_odds": 7.1,
+          "market_rank": 4
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ファンダム",
+          "win_odds": 7.8,
+          "market_rank": 5
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ディールメーカー",
+          "win_odds": 9.9,
+          "market_rank": 6
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "クランフォード",
+          "win_odds": 10.7,
+          "market_rank": 7
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ミナデオロ",
+          "win_odds": 15.1,
+          "market_rank": 8
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "サイルーン",
+          "win_odds": 16.2,
+          "market_rank": 9
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ピコローズ",
+          "win_odds": 17.5,
+          "market_rank": 10
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ドロップオブライト",
+          "win_odds": 22.5,
+          "market_rank": 11
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "メタルスピード",
+          "win_odds": 26.4,
+          "market_rank": 12
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "テレサ",
+          "win_odds": 61.2,
+          "market_rank": 13
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "リラボニート",
+          "win_odds": 68,
+          "market_rank": 14
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "クルゼイロドスル",
+          "win_odds": 112.4,
+          "market_rank": 15
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "ラケマーダ",
+          "win_odds": 248.4,
+          "market_rank": 16
+        }
+      ]
+    }
+  ]
+}
