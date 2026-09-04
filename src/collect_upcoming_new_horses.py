@@ -89,9 +89,9 @@ def race_title(soup):
     heads=[]
     for n in soup.find_all(['h1','h2','h3']):
         t=' '.join(n.stripped_strings).strip()
-        if not t or any(x in t for x in ('検索ウィンドウ','関連メニュー','開催選択','レース選択','ここから本文','本賞金','出馬表')):continue
+        if not t or any(x in t for x in ('検索ウィンドウ','関連メニュー','開催選択','レース選択','ここから本文','本賞金','出馬表','緊急情報','お知らせ','インフォメーション')):continue
         heads.append(t)
-    pat=re.compile(r'(未勝利|メイクデビュー|新馬|オープン|特別|ステークス|カップ|賞|記念|クラス|障害|リステッド|重賞|G[123])')
+    pat=re.compile(r'(未勝利|メイクデビュー|新馬|オープン|特別|ステークス|カップ|杯|賞|記念|クラス|障害|リステッド|重賞|ハンデキャップ|G[123]|Ｇ[ⅠⅡⅢ])')
     for t in heads:
         if pat.search(t) and len(t)<=60:return t
     text=' '.join(soup.stripped_strings)
