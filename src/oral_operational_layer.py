@@ -68,14 +68,43 @@ def _roles(q):
         out.append({'horse_no':str(h.get('n')),'horse_name':h.get('name',''),'rank':i,'roles':roles,'uncertainty':unc,'running_style':style or 'UNKNOWN'})
     return out
 
+def _axis_win_flow(q):
+    if not q:return {'axis_style':'UNKNOWN','front_count':0,'flow':'標準','favored_styles':[],'reason':'脚質データ不足'}
+    axis_style=str(q[0].get('running_style') or q[0].get('style') or 'UNKNOWN')
+    top=q[:8]
+    styles=[str(x.get('running_style') or x.get('style') or 'UNKNOWN') for x in top]
+    front=sum(s in ('ESCAPE','FRONT') for s in styles)
+    if axis_style in ('ESCAPE','FRONT'):
+        if front<=2:return {'axis_style':axis_style,'front_count':front,'flow':'前残り','favored_styles':['FRONT','STALK'],'reason':'軸が前で勝ち切るなら、前受け・好位の残存を重視'}
+        return {'axis_style':axis_style,'front_count':front,'flow':'前競合を軸が耐える','favored_styles':['CLOSER','STALK'],'reason':'前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい'}
+    if axis_style=='STALK':
+        if front>=3:return {'axis_style':axis_style,'front_count':front,'flow':'先行勢を好位軸が差す','favored_styles':['CLOSER','STALK'],'reason':'前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視'}
+        return {'axis_style':axis_style,'front_count':front,'flow':'好位前残り','favored_styles':['FRONT','STALK'],'reason':'前が少なく好位の軸が勝つなら、前受け組の残存を重視'}
+    if axis_style in ('CLOSER','DEEP_CLOSER'):
+        return {'axis_style':axis_style,'front_count':front,'flow':'差し決着','favored_styles':['CLOSER','DEEP_CLOSER','STALK'],'reason':'差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視'}
+    return {'axis_style':axis_style,'front_count':front,'flow':'標準','favored_styles':['STALK','CLOSER','FRONT'],'reason':'脚質確度が低いため条件・近走を優先'}
+
 def _intrusion(q,roles):
-    rs={x['horse_no']:x for x in roles};out=[]
-    for rank,h in enumerate(q[4:10],start=5):
+    rs={x['horse_no']:x for x in roles};out=[];flow=_axis_win_flow(q)
+    favored=set(flow['favored_styles'])
+    # 能力順位そのものではなく、軸勝利シナリオへの適合度を独立加点する。
+    for rank,h in enumerate(q[3:12],start=4):
         n=str(h.get('n')); r=rs.get(n,{}); cond=_f(h.get('condition_fit'),.3); rec=_f(h.get('recent_form'),.35); unc=_f(h.get('uncertainty'),1); show=_f(h.get('show_rate_prior'),.3); starts=_f(h.get('starts_before'))
-        merit=(cond-.3)*1.8+(rec-.35)*1.3+(show-.3)*.8+(1-unc)*.30+min(starts,5)*.015
-        if '3着侵入' in r.get('roles',[]) or merit>=.20:
-            out.append({'horse_no':n,'horse_name':h.get('name',''),'rank':rank,'reason':'5〜10番手から条件・近走・安定性で3着侵入余地','intrusion_score':round(merit,3)})
-    out.sort(key=lambda x:(-x['intrusion_score'],x['rank']))
+        style=str(h.get('running_style') or h.get('style') or 'UNKNOWN')
+        scenario_fit=.0
+        if style in favored:scenario_fit+=.24
+        if style!='UNKNOWN' and style!=flow['axis_style']:scenario_fit+=.05
+        if flow['flow']=='差し決着' and style in ('CLOSER','DEEP_CLOSER'):scenario_fit+=.08
+        if flow['flow'] in ('前残り','好位前残り') and style in ('FRONT','STALK'):scenario_fit+=.08
+        if cond>=.42:scenario_fit+=.08
+        if rec>=.50:scenario_fit+=.07
+        if unc<=.55:scenario_fit+=.05
+        base=(cond-.3)*1.15+(rec-.35)*.95+(show-.3)*.45+(1-unc)*.18+min(starts,5)*.010
+        merit=base+scenario_fit
+        if merit>=.22 or ('3着侵入' in r.get('roles',[]) and scenario_fit>=.20):
+            reason=f"{flow['reason']}。{style if style!='UNKNOWN' else '脚質不明'}・条件適性・近走から展開穴として評価"
+            out.append({'horse_no':n,'horse_name':h.get('name',''),'rank':rank,'running_style':style,'axis_win_flow':flow['flow'],'scenario_fit':round(scenario_fit,3),'reason':reason,'intrusion_score':round(merit,3)})
+    out.sort(key=lambda x:(-x['intrusion_score'],-x.get('scenario_fit',0)))
     return out[:3]
 
 def _scenarios(axis,roles,intrusion):
@@ -168,7 +197,7 @@ def _derived(axis,roles,dur,cls):
 def analyze_race(race):
     q=_rank(race);axis=q[0] if q else {}
     data_quality=_data_quality(q)
-    dur=_axis_durability(q); roles=_roles(q); intrusion=_intrusion(q,roles); scenarios=_scenarios(axis,roles,intrusion)
+    dur=_axis_durability(q); roles=_roles(q); intrusion=_intrusion(q,roles); scenarios=_scenarios(axis,roles,intrusion); axis_win_flow=_axis_win_flow(q)
     shape,tickets=_tickets(q,dur,roles,intrusion); cls=_classification(dur,q,tickets,data_quality)
     if cls=='PASS':tickets=[];shape='PASS'
     return {
@@ -177,6 +206,7 @@ def analyze_race(race):
       'axis_durability':dur,
       'partner_roles':roles,
       'third_place_intrusion':intrusion,
+      'axis_win_flow':axis_win_flow,
       'failure_scenarios':scenarios,
       'ticket_shape':shape,
       'trio_tickets':tickets,
@@ -186,5 +216,5 @@ def analyze_race(race):
       'data_quality':data_quality,
       'derived_ticket_analysis':_derived(axis,roles,dur,cls),
       'market_isolation':'NO_ODDS_OR_POPULARITY_USED',
-      'implementation_note':'V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.'
+      'implementation_note':'V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.'
     }
