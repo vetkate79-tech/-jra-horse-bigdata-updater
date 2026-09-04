@@ -78,6 +78,7 @@
       "merge_active_elite_into_catalog.py"
     ],
     "jra-market-timing.yml": [
+      "collect_current_market_odds.py",
       "market_timing_gate.py"
     ],
     "post-jra-meeting-update.yml": [
@@ -122,6 +123,15 @@
     ]
   },
   "script_policy_mismatches": {
+    "jra-market-timing.yml": {
+      "expected": [
+        "market_timing_gate.py"
+      ],
+      "actual": [
+        "collect_current_market_odds.py",
+        "market_timing_gate.py"
+      ]
+    },
     "register-upcoming-new-horses.yml": {
       "expected": [
         "build_horse_base_catalog.py",
