@@ -3,7 +3,7 @@
   "mode": "LIVE_PURE_PREDICTION_SEAL",
   "seal_stage": "PRELIMINARY_NO_FRAME",
   "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-  "generated_at": "2026-09-04T23:43:33.024225+09:00",
+  "generated_at": "2026-09-04T23:51:06.667524+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-05",
@@ -258,27 +258,46 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "8",
+            "horse_name": "アクロスザリバー",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.17,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.9
+          },
+          {
             "horse_no": "6",
             "horse_name": "ヒットアンドロール",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.887
+            "running_style": "CLOSER",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.17,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.797
           },
           {
             "horse_no": "1",
             "horse_name": "バニーラビット",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.801
-          },
-          {
-            "horse_no": "3",
-            "horse_name": "メイショウアツイタ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.722
+            "running_style": "CLOSER",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.17,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.76
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 2,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -304,9 +323,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "8",
               "6",
-              "1",
-              "3"
+              "1"
             ]
           },
           {
@@ -322,13 +341,13 @@
         "ticket_shape": "HEDGED",
         "trio_tickets": [
           "2-4-7",
-          "3-4-7",
+          "4-7-8",
           "1-4-7",
-          "2-3-4",
-          "2-3-7",
+          "2-4-8",
+          "2-7-8",
           "1-2-7",
           "2-6-7",
-          "1-3-7"
+          "1-7-8"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -395,7 +414,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -823,27 +842,46 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "7",
+            "horse_name": "ミスティユニバンス",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.52,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.095
+          },
+          {
+            "horse_no": "15",
+            "horse_name": "ルージュフローラ",
+            "rank": 9,
+            "running_style": "FRONT",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.49,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.923
+          },
+          {
             "horse_no": "10",
             "horse_name": "マイネルヴェーゼン",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.811
-          },
-          {
-            "horse_no": "14",
-            "horse_name": "ヘクトルテソーロ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.774
-          },
-          {
-            "horse_no": "3",
-            "horse_name": "フクオトコ",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.773
+            "running_style": "CLOSER",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.18,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.702
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 1,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -869,9 +907,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "10",
-              "14",
-              "3"
+              "7",
+              "15",
+              "10"
             ]
           },
           {
@@ -961,7 +999,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -1278,6 +1316,17 @@
           }
         ],
         "third_place_intrusion": [],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -1388,7 +1437,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "STANDARD",
@@ -1732,13 +1781,47 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "5",
+            "horse_name": "コウサイリクリ",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.15,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.096
+          },
+          {
             "horse_no": "6",
             "horse_name": "ロジグローリー",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.322
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.312
+          },
+          {
+            "horse_no": "4",
+            "horse_name": "ビップルーチェ",
+            "rank": 9,
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.29,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.291
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -1764,7 +1847,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "6"
+              "5",
+              "6",
+              "4"
             ]
           },
           {
@@ -1844,7 +1929,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_EVIDENCE",
@@ -1853,7 +1938,7 @@
             "avg_uncertainty=0.775",
             "top5_score_spread=19.077",
             "front_style_count_top8=0",
-            "intrusion_candidates=1",
+            "intrusion_candidates=3",
             "stable_top5_count=0"
           ],
           "proposed_strategy": "軸信頼度を下げ、証拠不足ならPASSを優先。新馬・少出走専用情報が揃う場合だけ別機構で補う。",
@@ -2278,24 +2363,44 @@
             "horse_no": "10",
             "horse_name": "マイネルオランチア",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.397
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.49,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.435
+          },
+          {
+            "horse_no": "15",
+            "horse_name": "ホウオウファミリー",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.12,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.077
           },
           {
             "horse_no": "16",
             "horse_name": "ピュアクローム",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.26
-          },
-          {
-            "horse_no": "8",
-            "horse_name": "ピードモント",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.619
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.2,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.056
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -2323,8 +2428,8 @@
             "label": "3着低順位馬侵入",
             "covered_horses": [
               "10",
-              "16",
-              "8"
+              "15",
+              "16"
             ]
           },
           {
@@ -2343,10 +2448,10 @@
           "3-12-15",
           "3-10-12",
           "3-5-15",
+          "5-12-15",
           "5-10-12",
           "5-12-16",
-          "10-12-15",
-          "5-8-12"
+          "10-12-15"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -2413,7 +2518,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_PACE_FRONT",
@@ -2843,27 +2948,47 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "2",
-            "horse_name": "ローズブーケ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.26
+            "horse_no": "8",
+            "horse_name": "ベルヴィヴァン",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.335
           },
           {
             "horse_no": "6",
             "horse_name": "カンレイスター",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.115
+            "running_style": "STALK",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.175
           },
           {
             "horse_no": "7",
             "horse_name": "マーガレットクレア",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.955
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.084
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 1,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -2889,7 +3014,7 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "2",
+              "8",
               "6",
               "7"
             ]
@@ -2910,7 +3035,7 @@
           "1-3-8",
           "1-2-3",
           "3-5-8",
-          "1-2-5",
+          "1-5-8",
           "1-5-6",
           "1-2-8",
           "1-5-7"
@@ -2980,7 +3105,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_PACE_FRONT",
@@ -3394,27 +3519,46 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "12",
-            "horse_name": "ゴディアーモ",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.14
+            "horse_no": "8",
+            "horse_name": "ルンベーラ",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.49,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.524
           },
           {
             "horse_no": "15",
             "horse_name": "コーディアリー",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.09
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.177
           },
           {
             "horse_no": "5",
             "horse_name": "スタニングヴュー",
             "rank": 9,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.02
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.136
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 3,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -3440,7 +3584,7 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "12",
+              "8",
               "15",
               "5"
             ]
@@ -3532,7 +3676,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -3914,27 +4058,47 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "1",
+            "horse_name": "トラスコンガーデン",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.266
+          },
+          {
             "horse_no": "7",
             "horse_name": "パーティーガール",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.327
+            "running_style": "FRONT",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.17,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.091
           },
           {
-            "horse_no": "12",
-            "horse_name": "ウチュウノセカイ",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.819
-          },
-          {
-            "horse_no": "10",
-            "horse_name": "キープサインオン",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.778
+            "horse_no": "3",
+            "horse_name": "サクセスカラー",
+            "rank": 9,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.44,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.874
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 6,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -3961,9 +4125,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "1",
               "7",
-              "12",
-              "10"
+              "3"
             ]
           },
           {
@@ -3981,12 +4145,12 @@
           "5-8-11",
           "1-5-8",
           "5-7-8",
-          "5-8-10",
+          "5-6-8",
           "1-8-11",
           "7-8-11",
-          "8-10-11",
+          "6-8-11",
           "1-7-8",
-          "1-8-10"
+          "1-6-8"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -4053,7 +4217,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -4488,27 +4652,47 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "2",
-            "horse_name": "ミナデオロ",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.46
-          },
-          {
-            "horse_no": "9",
-            "horse_name": "レザベーション",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.46
+            "horse_no": "4",
+            "horse_name": "フォルテアンジェロ",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.635
           },
           {
             "horse_no": "7",
             "horse_name": "エコロブルーム",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.448
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.479
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "レザベーション",
+            "rank": 8,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.44,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.436
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 1,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -4535,9 +4719,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "2",
-              "9",
-              "7"
+              "4",
+              "7",
+              "9"
             ]
           },
           {
@@ -4553,14 +4737,14 @@
         "ticket_shape": "AXIS",
         "trio_tickets": [
           "8-10-12",
+          "4-8-12",
           "2-8-12",
           "7-8-12",
-          "8-9-12",
+          "4-10-12",
           "2-10-12",
           "7-10-12",
-          "9-10-12",
-          "2-7-12",
-          "2-9-12"
+          "2-4-12",
+          "4-7-12"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -4627,7 +4811,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -5021,27 +5205,47 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "11",
-            "horse_name": "ザクシス",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.14
-          },
-          {
             "horse_no": "14",
             "horse_name": "トモジャシーマ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.015
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.13
           },
           {
             "horse_no": "2",
             "horse_name": "ピュール",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.76
+            "running_style": "STALK",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.931
+          },
+          {
+            "horse_no": "11",
+            "horse_name": "ザクシス",
+            "rank": 6,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.12,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.919
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 2,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -5067,9 +5271,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "11",
               "14",
-              "2"
+              "2",
+              "11"
             ]
           },
           {
@@ -5159,7 +5363,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -5509,7 +5713,29 @@
             "running_style": "UNKNOWN"
           }
         ],
-        "third_place_intrusion": [],
+        "third_place_intrusion": [
+          {
+            "horse_no": "7",
+            "horse_name": "キュータンチャン",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.296
+          }
+        ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -5534,7 +5760,9 @@
           {
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
-            "covered_horses": []
+            "covered_horses": [
+              "7"
+            ]
           },
           {
             "id": "STRUCTURE_FLIP",
@@ -5552,9 +5780,9 @@
           "2-5-9",
           "2-4-7",
           "4-7-9",
-          "4-5-9",
-          "4-9-11",
-          "5-7-9"
+          "5-7-9",
+          "7-9-11",
+          "4-5-7"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -5621,7 +5849,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "STANDARD",
@@ -5630,7 +5858,7 @@
             "avg_uncertainty=0.600",
             "top5_score_spread=20.357",
             "front_style_count_top8=0",
-            "intrusion_candidates=0",
+            "intrusion_candidates=1",
             "stable_top5_count=1"
           ],
           "proposed_strategy": "現行の共通予想コアをそのまま使用し、状況別上書きは行わない。",
@@ -5963,27 +6191,47 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "3",
+            "horse_name": "リーディンアクター",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.59
+          },
+          {
             "horse_no": "2",
             "horse_name": "ゴートゥービッツン",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.643
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.12,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.56
           },
           {
             "horse_no": "8",
             "horse_name": "リアルクウカイ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.612
-          },
-          {
-            "horse_no": "6",
-            "horse_name": "ハミングリップス",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.322
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.12,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.547
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 1,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -6009,9 +6257,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "3",
               "2",
-              "8",
-              "6"
+              "8"
             ]
           },
           {
@@ -6030,10 +6278,10 @@
           "3-10-11",
           "2-10-11",
           "1-3-10",
+          "1-3-11",
           "1-2-11",
           "1-8-11",
-          "2-3-11",
-          "1-6-11"
+          "2-3-11"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -6100,7 +6348,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_PACE_FRONT",
@@ -6466,27 +6714,47 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "1",
+            "horse_name": "ニンジャトットリ",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.49,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.588
+          },
+          {
             "horse_no": "3",
             "horse_name": "チョウスター",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.244
-          },
-          {
-            "horse_no": "2",
-            "horse_name": "ペイシャクロス",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.842
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.49,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.331
           },
           {
             "horse_no": "8",
             "horse_name": "ハイティー",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.742
+            "running_style": "FRONT",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.933
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 3,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -6512,8 +6780,8 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "1",
               "3",
-              "2",
               "8"
             ]
           },
@@ -6604,7 +6872,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -6995,27 +7263,47 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "9",
-            "horse_name": "エイシンリーガル",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.766
-          },
-          {
-            "horse_no": "11",
-            "horse_name": "サトノフレア",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.554
+            "horse_no": "2",
+            "horse_name": "テンユウ",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.44,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.879
           },
           {
             "horse_no": "8",
             "horse_name": "フィーユレアル",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.545
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.781
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "エイシンリーガル",
+            "rank": 6,
+            "running_style": "ESCAPE",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.17,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.702
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 3,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -7041,9 +7329,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "9",
-              "11",
-              "8"
+              "2",
+              "8",
+              "9"
             ]
           },
           {
@@ -7059,12 +7347,12 @@
         "ticket_shape": "HEDGED",
         "trio_tickets": [
           "5-6-13",
+          "2-5-13",
           "5-11-13",
-          "5-9-13",
-          "5-6-11",
-          "6-11-13",
+          "2-5-6",
+          "2-6-13",
           "6-9-13",
-          "9-11-13",
+          "2-11-13",
           "6-8-13"
         ],
         "ticket_count": 8,
@@ -7132,7 +7420,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -7558,24 +7846,44 @@
             "horse_no": "13",
             "horse_name": "デルマバンダイサン",
             "rank": 9,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.502
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.44,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.781
           },
           {
-            "horse_no": "11",
-            "horse_name": "レットミーテイク",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.489
+            "horse_no": "2",
+            "horse_name": "ショウナンアワード",
+            "rank": 6,
+            "running_style": "DEEP_CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.42,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。DEEP_CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.727
           },
           {
-            "horse_no": "15",
-            "horse_name": "マジックファイヤー",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.472
+            "horse_no": "4",
+            "horse_name": "ワダツミ",
+            "rank": 11,
+            "running_style": "DEEP_CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。DEEP_CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.689
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 1,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -7602,8 +7910,8 @@
             "label": "3着低順位馬侵入",
             "covered_horses": [
               "13",
-              "11",
-              "15"
+              "2",
+              "4"
             ]
           },
           {
@@ -7693,7 +8001,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -8060,24 +8368,44 @@
             "horse_no": "9",
             "horse_name": "グロリアス",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.415
+            "running_style": "STALK",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.377
           },
           {
             "horse_no": "2",
             "horse_name": "ベネディクション",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.294
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.304
           },
           {
-            "horse_no": "12",
-            "horse_name": "ユメシルベ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.569
+            "horse_no": "6",
+            "horse_name": "ジェルブロア",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.241
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -8105,7 +8433,7 @@
             "covered_horses": [
               "9",
               "2",
-              "12"
+              "6"
             ]
           },
           {
@@ -8195,7 +8523,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -8585,24 +8913,43 @@
             "horse_no": "10",
             "horse_name": "ピエナオルカ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.469
-          },
-          {
-            "horse_no": "7",
-            "horse_name": "ベルアズーロ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.448
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.52,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.516
           },
           {
             "horse_no": "12",
             "horse_name": "ノースミソロジー",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.448
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.52,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.509
+          },
+          {
+            "horse_no": "13",
+            "horse_name": "ブランヴァンダイク",
+            "rank": 6,
+            "running_style": "FRONT",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.49,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.417
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 2,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -8630,8 +8977,8 @@
             "label": "3着低順位馬侵入",
             "covered_horses": [
               "10",
-              "7",
-              "12"
+              "12",
+              "13"
             ]
           },
           {
@@ -8649,12 +8996,12 @@
           "1-3-11",
           "3-10-11",
           "3-11-13",
-          "3-7-11",
+          "3-11-12",
           "1-3-10",
           "1-3-13",
-          "1-3-7",
+          "1-3-12",
           "3-10-13",
-          "3-7-10"
+          "3-10-12"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -8721,7 +9068,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -9122,27 +9469,46 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "2",
+            "horse_name": "カージオイド",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.25,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.438
+          },
+          {
+            "horse_no": "10",
+            "horse_name": "マイネルマスター",
+            "rank": 8,
+            "running_style": "FRONT",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.44,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.073
+          },
+          {
             "horse_no": "3",
             "horse_name": "ディヒターリーベ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.26
-          },
-          {
-            "horse_no": "11",
-            "horse_name": "デルシエロ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.21
-          },
-          {
-            "horse_no": "5",
-            "horse_name": "メイショウテンク",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.136
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.12,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.996
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 2,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -9169,9 +9535,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "3",
-              "11",
-              "5"
+              "2",
+              "10",
+              "3"
             ]
           },
           {
@@ -9261,7 +9627,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -9691,27 +10057,46 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "6",
-            "horse_name": "ツルノマイハシ",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.417
+            "horse_no": "16",
+            "horse_name": "セイプリーズ",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.57,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.651
           },
           {
             "horse_no": "10",
             "horse_name": "ストレイトアスク",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.342
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.364
           },
           {
-            "horse_no": "14",
-            "horse_name": "ファビュラススター",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.228
+            "horse_no": "8",
+            "horse_name": "エスカレイト",
+            "rank": 10,
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.208
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 1,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -9738,9 +10123,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "6",
+              "16",
               "10",
-              "14"
+              "8"
             ]
           },
           {
@@ -9758,12 +10143,12 @@
           "5-7-11",
           "5-7-16",
           "5-7-10",
-          "5-6-7",
+          "4-5-7",
           "5-11-16",
           "5-10-11",
-          "5-6-11",
+          "4-5-11",
           "5-10-16",
-          "5-6-16"
+          "4-5-16"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -9830,7 +10215,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -10146,27 +10531,47 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "6",
-            "horse_name": "ハヤブサカツオー",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.373
-          },
-          {
             "horse_no": "7",
             "horse_name": "イドム",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.221
+            "running_style": "FRONT",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.36,
+            "reason": "脚質確度が低いため条件・近走を優先。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.21
           },
           {
-            "horse_no": "5",
-            "horse_name": "ランダムナンバー",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.24
+            "horse_no": "8",
+            "horse_name": "テンカタイヘイ",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.15,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.096
+          },
+          {
+            "horse_no": "6",
+            "horse_name": "ハヤブサカツオー",
+            "rank": 5,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.15,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.096
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 1,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -10192,9 +10597,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "6",
               "7",
-              "5"
+              "8",
+              "6"
             ]
           },
           {
@@ -10274,7 +10679,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -10653,27 +11058,47 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "4",
-            "horse_name": "ララオウ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.103
-          },
-          {
-            "horse_no": "9",
-            "horse_name": "ローゾフィア",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.022
+            "horse_no": "1",
+            "horse_name": "クラインシュミット",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.273
           },
           {
             "horse_no": "13",
             "horse_name": "ピラニアキッス",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.921
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.035
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "ヴェールミューズ",
+            "rank": 10,
+            "running_style": "FRONT",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.938
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 1,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -10699,9 +11124,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "4",
-              "9",
-              "13"
+              "1",
+              "13",
+              "12"
             ]
           },
           {
@@ -10717,14 +11142,14 @@
         "ticket_shape": "AXIS",
         "trio_tickets": [
           "3-5-8",
+          "1-3-5",
           "3-4-5",
           "3-5-13",
-          "3-5-10",
+          "1-3-8",
           "3-4-8",
           "3-8-13",
-          "3-8-10",
-          "3-4-13",
-          "3-4-10"
+          "1-3-4",
+          "1-3-13"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -10791,7 +11216,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -11136,27 +11561,47 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "3",
+            "horse_name": "ビバームス",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.653
+          },
+          {
             "horse_no": "11",
             "horse_name": "ベルヴェール",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.53
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.464
           },
           {
             "horse_no": "8",
             "horse_name": "スクワミッシュ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.53
-          },
-          {
-            "horse_no": "5",
-            "horse_name": "ベルメサージュ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.322
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.464
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -11182,9 +11627,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "3",
               "11",
-              "8",
-              "5"
+              "8"
             ]
           },
           {
@@ -11203,10 +11648,10 @@
           "3-4-7",
           "4-7-11",
           "3-4-9",
+          "3-7-9",
           "7-9-11",
           "7-8-9",
-          "3-7-11",
-          "5-7-9"
+          "3-7-11"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -11273,7 +11718,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -11478,13 +11923,37 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "5",
+            "horse_name": "ドミナント",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.312
+          },
+          {
             "horse_no": "1",
             "horse_name": "コパノマハロ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.322
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.312
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -11509,6 +11978,7 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "5",
               "1"
             ]
           },
@@ -11589,7 +12059,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_EVIDENCE",
@@ -11598,7 +12068,7 @@
             "avg_uncertainty=0.800",
             "top5_score_spread=17.981",
             "front_style_count_top8=0",
-            "intrusion_candidates=1",
+            "intrusion_candidates=2",
             "stable_top5_count=0"
           ],
           "proposed_strategy": "軸信頼度を下げ、証拠不足ならPASSを優先。新馬・少出走専用情報が揃う場合だけ別機構で補う。",
@@ -11968,27 +12438,46 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "12",
-            "horse_name": "アルムランプシー",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.14
+            "horse_no": "4",
+            "horse_name": "ジャスティンゴッホ",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.207
           },
           {
             "horse_no": "10",
             "horse_name": "スターチューン",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.822
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.057
           },
           {
-            "horse_no": "13",
-            "horse_name": "ロードファイター",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.587
+            "horse_no": "12",
+            "horse_name": "アルムランプシー",
+            "rank": 5,
+            "running_style": "ESCAPE",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.17,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.969
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 2,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -12014,9 +12503,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "12",
+              "4",
               "10",
-              "13"
+              "12"
             ]
           },
           {
@@ -12035,10 +12524,10 @@
           "1-4-11",
           "1-11-12",
           "4-9-11",
+          "1-4-9",
           "1-9-12",
           "1-9-10",
-          "1-4-12",
-          "1-9-13"
+          "1-4-12"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -12105,7 +12594,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -12563,27 +13052,46 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "6",
-            "horse_name": "メイショウプレマ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.927
-          },
-          {
-            "horse_no": "12",
-            "horse_name": "バロッカネーラ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.826
-          },
-          {
             "horse_no": "15",
             "horse_name": "カステッロトゥーレ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.703
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.925
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "コースタルロード",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.07,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.871
+          },
+          {
+            "horse_no": "6",
+            "horse_name": "メイショウプレマ",
+            "rank": 7,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.12,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.749
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 1,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -12609,9 +13117,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "6",
-              "12",
-              "15"
+              "15",
+              "9",
+              "6"
             ]
           },
           {
@@ -12701,7 +13209,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -13134,27 +13642,46 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "6",
-            "horse_name": "ワイドシュテルケ",
-            "rank": 9,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.221
+            "horse_no": "5",
+            "horse_name": "ニシノトリビュート",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.36,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.331
           },
           {
             "horse_no": "2",
             "horse_name": "モルティフレーバー",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.158
+            "running_style": "ESCAPE",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.25,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.038
           },
           {
-            "horse_no": "11",
-            "horse_name": "モズレイラココナ",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.133
+            "horse_no": "14",
+            "horse_name": "マーゴットミスト",
+            "rank": 5,
+            "running_style": "STALK",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.36,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.008
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 5,
+          "flow": "先行勢を好位軸が差す",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -13181,9 +13708,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "6",
+              "5",
               "2",
-              "11"
+              "14"
             ]
           },
           {
@@ -13199,13 +13726,13 @@
         "ticket_shape": "HEDGED",
         "trio_tickets": [
           "4-5-7",
-          "4-7-11",
+          "4-7-14",
           "2-4-7",
-          "4-5-11",
-          "5-7-11",
+          "4-5-14",
+          "5-7-14",
           "2-5-7",
-          "5-6-7",
-          "2-7-11"
+          "5-7-16",
+          "2-7-14"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -13272,7 +13799,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "FRONT_PRESSURE",
@@ -13589,27 +14116,47 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "9",
+            "horse_name": "アグレイビューティ",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.52,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.665
+          },
+          {
             "horse_no": "7",
             "horse_name": "シュプリームレルム",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.37
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.352
           },
           {
             "horse_no": "5",
             "horse_name": "メイショウアゴナス",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.212
-          },
-          {
-            "horse_no": "8",
-            "horse_name": "オモイヲノセテ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.102
+            "running_style": "DEEP_CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。DEEP_CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.325
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 1,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -13636,9 +14183,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "9",
               "7",
-              "5",
-              "8"
+              "5"
             ]
           },
           {
@@ -13654,14 +14201,14 @@
         "ticket_shape": "AXIS",
         "trio_tickets": [
           "1-3-4",
+          "3-4-9",
           "3-4-7",
           "3-4-5",
-          "3-4-8",
+          "1-4-9",
           "1-4-7",
           "1-4-5",
-          "1-4-8",
-          "4-5-7",
-          "4-7-8"
+          "4-7-9",
+          "4-5-9"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -13728,7 +14275,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -14080,24 +14627,44 @@
             "horse_no": "1",
             "horse_name": "ストラーダ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.37
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.352
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "リヒトミューレ",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.44,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.335
           },
           {
             "horse_no": "5",
             "horse_name": "ソニックステップ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.273
-          },
-          {
-            "horse_no": "11",
-            "horse_name": "テイエムパイロット",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.229
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.292
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 0,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -14124,8 +14691,8 @@
             "label": "3着低順位馬侵入",
             "covered_horses": [
               "1",
-              "5",
-              "11"
+              "9",
+              "5"
             ]
           },
           {
@@ -14215,7 +14782,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -14469,13 +15036,46 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "3",
+            "horse_name": "コルレオニス",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.014
+          },
+          {
             "horse_no": "6",
             "horse_name": "レディーミコノス",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.519
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.37,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.697
+          },
+          {
+            "horse_no": "2",
+            "horse_name": "エイカイマッケンロ",
+            "rank": 7,
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.37,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.312
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 0,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -14501,7 +15101,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "6"
+              "3",
+              "6",
+              "2"
             ]
           },
           {
@@ -14519,10 +15121,10 @@
           "3-5-7",
           "5-6-7",
           "3-4-5",
+          "3-4-7",
           "4-6-7",
           "3-6-7",
-          "3-4-6",
-          "1-6-7"
+          "2-4-7"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -14589,7 +15191,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_PACE_FRONT",
@@ -14598,7 +15200,7 @@
             "avg_uncertainty=0.000",
             "top5_score_spread=15.930",
             "front_style_count_top8=0",
-            "intrusion_candidates=1",
+            "intrusion_candidates=3",
             "stable_top5_count=2"
           ],
           "proposed_strategy": "能力ガードを維持しながら前受け・位置取り再現性を上乗せする。",
@@ -14957,24 +15559,44 @@
             "horse_no": "2",
             "horse_name": "ノーブルロジャー",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.112
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.25
           },
           {
-            "horse_no": "11",
-            "horse_name": "リジル",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.969
+            "horse_no": "4",
+            "horse_name": "ゴッドブルービー",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.17,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.065
           },
           {
             "horse_no": "3",
             "horse_name": "フェルヴェンテ",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.782
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.942
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "DEEP_CLOSER",
+          "front_count": 3,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -15001,7 +15623,7 @@
             "label": "3着低順位馬侵入",
             "covered_horses": [
               "2",
-              "11",
+              "4",
               "3"
             ]
           },
@@ -15020,12 +15642,12 @@
           "6-7-10",
           "4-6-10",
           "2-6-10",
-          "6-10-11",
+          "6-8-10",
           "4-6-7",
           "2-6-7",
-          "6-7-11",
+          "6-7-8",
           "2-4-6",
-          "4-6-11"
+          "4-6-8"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -15092,7 +15714,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -15463,24 +16085,43 @@
             "horse_no": "9",
             "horse_name": "モズプリフォール",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.372
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.353
           },
           {
             "horse_no": "11",
             "horse_name": "エンヴェロップ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.35
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.337
           },
           {
-            "horse_no": "6",
-            "horse_name": "ロイヤルテール",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.195
+            "horse_no": "12",
+            "horse_name": "エイシンティザー",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.301
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 5,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -15509,7 +16150,7 @@
             "covered_horses": [
               "9",
               "11",
-              "6"
+              "12"
             ]
           },
           {
@@ -15524,15 +16165,15 @@
         ],
         "ticket_shape": "AXIS",
         "trio_tickets": [
+          "2-8-12",
           "2-8-11",
           "2-8-9",
-          "2-6-8",
           "2-3-8",
+          "2-11-12",
+          "2-9-12",
+          "2-3-12",
           "2-9-11",
-          "2-6-11",
-          "2-3-11",
-          "2-6-9",
-          "2-3-9"
+          "2-3-11"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -15599,7 +16240,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -15847,7 +16488,28 @@
             "running_style": "CLOSER"
           }
         ],
-        "third_place_intrusion": [],
+        "third_place_intrusion": [
+          {
+            "horse_no": "",
+            "horse_name": "グロッシェン",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.17,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.346
+          }
+        ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 2,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -15872,7 +16534,9 @@
           {
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
-            "covered_horses": []
+            "covered_horses": [
+              ""
+            ]
           },
           {
             "id": "STRUCTURE_FLIP",
@@ -15947,7 +16611,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "STANDARD",
@@ -15956,7 +16620,7 @@
             "avg_uncertainty=0.029",
             "top5_score_spread=6.521",
             "front_style_count_top8=2",
-            "intrusion_candidates=0",
+            "intrusion_candidates=1",
             "stable_top5_count=0"
           ],
           "proposed_strategy": "現行の共通予想コアをそのまま使用し、状況別上書きは行わない。",
@@ -16333,7 +16997,29 @@
             "running_style": "UNKNOWN"
           }
         ],
-        "third_place_intrusion": [],
+        "third_place_intrusion": [
+          {
+            "horse_no": "",
+            "horse_name": "ワイズジュエル",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.312
+          }
+        ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -16358,7 +17044,9 @@
           {
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
-            "covered_horses": []
+            "covered_horses": [
+              ""
+            ]
           },
           {
             "id": "STRUCTURE_FLIP",
@@ -16437,7 +17125,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "STANDARD",
@@ -16446,7 +17134,7 @@
             "avg_uncertainty=0.700",
             "top5_score_spread=19.756",
             "front_style_count_top8=0",
-            "intrusion_candidates=0",
+            "intrusion_candidates=1",
             "stable_top5_count=0"
           ],
           "proposed_strategy": "現行の共通予想コアをそのまま使用し、状況別上書きは行わない。",
@@ -16848,24 +17536,44 @@
             "horse_no": "",
             "horse_name": "ユイノサダハル",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.849
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.44,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.042
           },
           {
             "horse_no": "",
             "horse_name": "アルティソナンテ",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.538
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.777
           },
           {
             "horse_no": "",
             "horse_name": "オートカリテ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.42
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.37,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.648
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 2,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -16973,7 +17681,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -17404,26 +18112,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "テリオスレイ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.988
-          },
-          {
-            "horse_no": "",
-            "horse_name": "ロジザボード",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.794
+            "horse_name": "フォルナカリア",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.3
           },
           {
             "horse_no": "",
             "horse_name": "サリーアン",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.761
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.937
+          },
+          {
+            "horse_no": "",
+            "horse_name": "テリオスレイ",
+            "rank": 5,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.12,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.798
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 3,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -17531,7 +18258,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -17991,26 +18718,46 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "ディエスルージュ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.784
+            "horse_name": "ワイズファミリア",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.986
           },
           {
             "horse_no": "",
             "horse_name": "ハルノアメ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.704
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.972
           },
           {
             "horse_no": "",
             "horse_name": "ブリックアブラック",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.577
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.882
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "DEEP_CLOSER",
+          "front_count": 1,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -18118,7 +18865,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_PACE_FRONT",
@@ -18552,26 +19299,46 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "シンギュラリティ",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.401
-          },
-          {
-            "horse_no": "",
             "horse_name": "ソニックキャット",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.24
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.273
           },
           {
             "horse_no": "",
-            "horse_name": "カフェシューター",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.223
+            "horse_name": "ジーティーブラック",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.2,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.272
+          },
+          {
+            "horse_no": "",
+            "horse_name": "ボニープリンス",
+            "rank": 8,
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.176
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 1,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -18680,7 +19447,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_PACE_FRONT",
@@ -19109,24 +19876,43 @@
             "horse_no": "",
             "horse_name": "ルーフオブヘヴン",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.273
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.292
           },
           {
             "horse_no": "",
             "horse_name": "イノキ",
             "rank": 10,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.997
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.119
           },
           {
             "horse_no": "",
-            "horse_name": "サードウインド",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.82
+            "horse_name": "ホウオウプレミア",
+            "rank": 7,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.909
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 4,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -19234,7 +20020,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "FRONT_PRESSURE",
@@ -19552,26 +20338,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "トーセントラム",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.079
+            "horse_name": "パクスロマーナ",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.49,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.165
           },
           {
             "horse_no": "",
             "horse_name": "ルーフ",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.85
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.026
           },
           {
             "horse_no": "",
             "horse_name": "メイショウピース",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.792
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.976
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 1,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -19679,7 +20484,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -20039,27 +20844,46 @@
         ],
         "third_place_intrusion": [
           {
-            "horse_no": "1",
-            "horse_name": "ジワタネホ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.794
+            "horse_no": "3",
+            "horse_name": "リアライズルミナス",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.44,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.69
           },
           {
             "horse_no": "2",
             "horse_name": "サムシングスイート",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.7
+            "running_style": "CLOSER",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.49,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.635
           },
           {
-            "horse_no": "11",
-            "horse_name": "ベンヴェヌータ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.695
+            "horse_no": "1",
+            "horse_name": "ジワタネホ",
+            "rank": 5,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.2,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.404
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 3,
+          "flow": "先行勢を好位軸が差す",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -20086,9 +20910,9 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
-              "1",
+              "3",
               "2",
-              "11"
+              "1"
             ]
           },
           {
@@ -20104,13 +20928,13 @@
         "ticket_shape": "HEDGED",
         "trio_tickets": [
           "6-9-10",
+          "3-6-9",
           "1-6-9",
-          "2-6-9",
-          "1-9-10",
+          "3-9-10",
+          "3-6-10",
           "1-6-10",
           "2-6-10",
-          "6-10-11",
-          "1-2-6"
+          "1-3-6"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -20177,7 +21001,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -20611,24 +21435,43 @@
             "horse_no": "",
             "horse_name": "ダイユウヴェンティ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.555
-          },
-          {
-            "horse_no": "",
-            "horse_name": "ブライティアブーケ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.305
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.49,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.554
           },
           {
             "horse_no": "",
             "horse_name": "エバーラスト",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.154
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.219
+          },
+          {
+            "horse_no": "",
+            "horse_name": "カシオペア",
+            "rank": 4,
+            "running_style": "DEEP_CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.17,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。DEEP_CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.054
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "ESCAPE",
+          "front_count": 4,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -20737,7 +21580,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -21124,24 +21967,43 @@
             "horse_no": "",
             "horse_name": "クリコイーコ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.301
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.57,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.456
+          },
+          {
+            "horse_no": "",
+            "horse_name": "セラサイト",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.334
           },
           {
             "horse_no": "",
             "horse_name": "ウォータースパウト",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.227
-          },
-          {
-            "horse_no": "",
-            "horse_name": "ワンダーアスク",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.733
+            "running_style": "CLOSER",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.17,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.015
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 1,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -21249,7 +22111,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -21586,24 +22448,44 @@
             "horse_no": "",
             "horse_name": "マイネルリコルディ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.822
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.12,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.687
+          },
+          {
+            "horse_no": "",
+            "horse_name": "アオイノリプー",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.632
           },
           {
             "horse_no": "",
             "horse_name": "バトルナイト",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.53
-          },
-          {
-            "horse_no": "",
-            "horse_name": "マサノブルスカイ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.322
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.464
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -21711,7 +22593,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -22114,24 +22996,44 @@
             "horse_no": "",
             "horse_name": "アオイミズホ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.092
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.165
           },
           {
             "horse_no": "",
             "horse_name": "シンエンドーツダ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.074
+            "running_style": "STALK",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.142
           },
           {
             "horse_no": "",
             "horse_name": "ジャストグレース",
             "rank": 9,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.761
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.929
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 3,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -22240,7 +23142,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -22672,26 +23574,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
+            "horse_name": "ブラックジャック",
+            "rank": 8,
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.981
+          },
+          {
+            "horse_no": "",
             "horse_name": "ヒルノボローニャ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.039
+            "running_style": "CLOSER",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.25,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.944
           },
           {
             "horse_no": "",
             "horse_name": "メイショウテンジン",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.901
-          },
-          {
-            "horse_no": "",
-            "horse_name": "エンジェルサン",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.842
+            "running_style": "CLOSER",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.17,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.789
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 0,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -22799,7 +23720,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "LOW_PACE_FRONT",
@@ -23226,26 +24147,46 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "デイズインザサン",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.084
+            "horse_name": "サクセスブルー",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.187
           },
           {
             "horse_no": "",
             "horse_name": "インテンスゲイズ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.858
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.096
           },
           {
             "horse_no": "",
-            "horse_name": "ラッキーシグネチャ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.74
+            "horse_name": "デイズインザサン",
+            "rank": 5,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.12,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.875
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "DEEP_CLOSER",
+          "front_count": 1,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -23353,7 +24294,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -23721,26 +24662,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "シェイプオブユー",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.348
+            "horse_name": "レストプレドゥモア",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.25,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.297
           },
           {
             "horse_no": "",
             "horse_name": "キャンドルマス",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.158
+            "running_style": "STALK",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.36,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.154
           },
           {
             "horse_no": "",
-            "horse_name": "ディアフリーゼ",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.909
+            "horse_name": "シェイプオブユー",
+            "rank": 6,
+            "running_style": "ESCAPE",
+            "axis_win_flow": "先行勢を好位軸が差す",
+            "scenario_fit": 0.17,
+            "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.1
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 4,
+          "flow": "先行勢を好位軸が差す",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が流れて好位の軸が抜ける展開では、差し・好位の連動を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -23848,7 +24808,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -24282,26 +25242,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
+            "horse_name": "ディーズメンフィス",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.49,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.508
+          },
+          {
+            "horse_no": "",
             "horse_name": "ライトニングロッド",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.62
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.3
           },
           {
             "horse_no": "",
             "horse_name": "コスモファーブロス",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.131
-          },
-          {
-            "horse_no": "",
-            "horse_name": "ラヴノー",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.024
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.204
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 4,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -24410,7 +25389,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "FRONT_PRESSURE",
@@ -24806,26 +25785,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "タイキプレジール",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.188
+            "horse_name": "グロリアスマーチ",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.42,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.02
           },
           {
             "horse_no": "",
             "horse_name": "クラウンアールシー",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.853
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.018
           },
           {
             "horse_no": "",
-            "horse_name": "ゴーゴーリチャード",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.81
+            "horse_name": "タイキプレジール",
+            "rank": 5,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.17,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.997
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "ESCAPE",
+          "front_count": 4,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -24934,7 +25932,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "FRONT_PRESSURE",
@@ -25339,24 +26337,44 @@
             "horse_no": "",
             "horse_name": "ユージュアーナ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.536
-          },
-          {
-            "horse_no": "",
-            "horse_name": "アラナコア",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.46
+            "running_style": "FRONT",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.49,
+            "reason": "脚質確度が低いため条件・近走を優先。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.533
           },
           {
             "horse_no": "",
             "horse_name": "リメンバーヒム",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.443
+            "running_style": "STALK",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.49,
+            "reason": "脚質確度が低いため条件・近走を優先。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.447
+          },
+          {
+            "horse_no": "",
+            "horse_name": "アラナコア",
+            "rank": 7,
+            "running_style": "CLOSER",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.41,
+            "reason": "脚質確度が低いため条件・近走を優先。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.406
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 3,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -25465,7 +26483,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -25870,26 +26888,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "ダノンフィオーレ",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.567
+            "horse_name": "グレーヌドジョワ",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.559
           },
           {
             "horse_no": "",
             "horse_name": "サンセットゴールド",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.466
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.49,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.494
           },
           {
             "horse_no": "",
-            "horse_name": "ワザモノ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.119
+            "horse_name": "ダノンフィオーレ",
+            "rank": 5,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.263
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 5,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -25998,7 +27035,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -26401,26 +27438,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "ボンドロア",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.284
+            "horse_name": "ゴールデンスナップ",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.52,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.333
           },
           {
             "horse_no": "",
             "horse_name": "ギャンブルルーム",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.237
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.297
           },
           {
             "horse_no": "",
-            "horse_name": "サクソンジェンヌ",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.15
+            "horse_name": "マイネルカンパーナ",
+            "rank": 7,
+            "running_style": "FRONT",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.57,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.295
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 2,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -26529,7 +27585,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -26902,24 +27958,43 @@
             "horse_no": "",
             "horse_name": "ザハント",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.633
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.57,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.673
           },
           {
             "horse_no": "",
             "horse_name": "クルビデンス",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.595
+            "running_style": "CLOSER",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.25,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.336
           },
           {
             "horse_no": "",
-            "horse_name": "チェイサー",
-            "rank": 9,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.411
+            "horse_name": "ホウオウバローロ",
+            "rank": 7,
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.224
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "ESCAPE",
+          "front_count": 2,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -27028,7 +28103,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -27361,26 +28436,46 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
+            "horse_name": "テラレガル",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.464
+          },
+          {
+            "horse_no": "",
             "horse_name": "マッセート",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.53
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.464
           },
           {
             "horse_no": "",
             "horse_name": "エイダンバローズ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.53
-          },
-          {
-            "horse_no": "",
-            "horse_name": "ニクスルーナ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.322
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "標準",
+            "scenario_fit": 0.07,
+            "reason": "脚質確度が低いため条件・近走を優先。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.464
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "標準",
+          "favored_styles": [
+            "STALK",
+            "CLOSER",
+            "FRONT"
+          ],
+          "reason": "脚質確度が低いため条件・近走を優先"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -27488,7 +28583,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -27923,26 +29018,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "ユウトザイシン",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.186
+            "horse_name": "エバイダンス",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.57,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.517
           },
           {
             "horse_no": "",
             "horse_name": "アンガーザガール",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.04
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.218
           },
           {
             "horse_no": "",
-            "horse_name": "ガルディエンヌ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.033
+            "horse_name": "マイベスティー",
+            "rank": 8,
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.104
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 2,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -28050,7 +29164,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "THIRD_PLACE_VOLATILE",
@@ -28466,26 +29580,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "カセノコンコルド",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.903
-          },
-          {
-            "horse_no": "",
             "horse_name": "レッドセドナ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.822
+            "running_style": "STALK",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.046
           },
           {
             "horse_no": "",
-            "horse_name": "ジューンマーチ",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.805
+            "horse_name": "ジーティーピカソ",
+            "rank": 8,
+            "running_style": "FRONT",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.49,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.869
+          },
+          {
+            "horse_no": "",
+            "horse_name": "キタノトレボーネ",
+            "rank": 4,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "前残り",
+            "scenario_fit": 0.12,
+            "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.847
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "ESCAPE",
+          "front_count": 2,
+          "flow": "前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "軸が前で勝ち切るなら、前受け・好位の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -28593,7 +29726,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -29015,12 +30148,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
+            "horse_name": "パンキー",
+            "rank": 4,
+            "running_style": "ESCAPE",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.17,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.67
+          },
+          {
+            "horse_no": "",
+            "horse_name": "オーマイラッキーン",
+            "rank": 7,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.12,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.274
+          },
+          {
+            "horse_no": "",
             "horse_name": "ウィスピア",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.268
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.05,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.237
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 1,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -29046,6 +30212,8 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "",
+              "",
               ""
             ]
           },
@@ -29126,7 +30294,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -29135,7 +30303,7 @@
             "avg_uncertainty=0.075",
             "top5_score_spread=35.743",
             "front_style_count_top8=1",
-            "intrusion_candidates=1",
+            "intrusion_candidates=3",
             "stable_top5_count=1"
           ],
           "proposed_strategy": "軸中心を許容しつつ、相手は脚質・条件・3着侵入の役割分散を強める。",
@@ -29496,26 +30664,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "アルビオン",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.54
-          },
-          {
-            "horse_no": "",
             "horse_name": "ヴェントステラーレ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.348
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.37
           },
           {
             "horse_no": "",
-            "horse_name": "インマイポケット",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.814
+            "horse_name": "ミティリーニ",
+            "rank": 4,
+            "running_style": "STALK",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.44,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.353
+          },
+          {
+            "horse_no": "",
+            "horse_name": "アルビオン",
+            "rank": 5,
+            "running_style": "DEEP_CLOSER",
+            "axis_win_flow": "好位前残り",
+            "scenario_fit": 0.25,
+            "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視。DEEP_CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.305
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "STALK",
+          "front_count": 0,
+          "flow": "好位前残り",
+          "favored_styles": [
+            "FRONT",
+            "STALK"
+          ],
+          "reason": "前が少なく好位の軸が勝つなら、前受け組の残存を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -29623,7 +30810,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -30024,24 +31211,43 @@
             "horse_no": "",
             "horse_name": "ビーチェマーレ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.307
-          },
-          {
-            "horse_no": "",
-            "horse_name": "エレガンスアスク",
-            "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.14
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.317
           },
           {
             "horse_no": "",
             "horse_name": "マイコンチェルト",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.09
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.177
+          },
+          {
+            "horse_no": "",
+            "horse_name": "ロードレジェロ",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.17,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.176
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "ESCAPE",
+          "front_count": 3,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -30150,7 +31356,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -30416,26 +31622,46 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
+            "horse_name": "ショウナンバルドル",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.52,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.451
+          },
+          {
+            "horse_no": "",
             "horse_name": "ツーネサーン",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.139
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.49,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.252
           },
           {
             "horse_no": "",
             "horse_name": "ダノンカゼルタ",
             "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.105
-          },
-          {
-            "horse_no": "",
-            "horse_name": "クイックバイオ",
-            "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 0.901
+            "running_style": "STALK",
+            "axis_win_flow": "差し決着",
+            "scenario_fit": 0.41,
+            "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.176
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "CLOSER",
+          "front_count": 1,
+          "flow": "差し決着",
+          "favored_styles": [
+            "CLOSER",
+            "DEEP_CLOSER",
+            "STALK"
+          ],
+          "reason": "差し・追込の軸が勝つ展開では、同じ流れを使える差し勢を重視"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -30543,7 +31769,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -30985,26 +32211,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
-            "horse_name": "タイセイサーブル",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.571
+            "horse_name": "ブラックレジェンド",
+            "rank": 4,
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.327
           },
           {
             "horse_no": "",
             "horse_name": "アメリカンコール",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.54
+            "running_style": "ESCAPE",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.25,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.297
           },
           {
             "horse_no": "",
-            "horse_name": "ドウジャスティ",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.396
+            "horse_name": "タイセイサーブル",
+            "rank": 6,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.268
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 4,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -31113,7 +32358,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "FRONT_PRESSURE",
@@ -31496,26 +32741,45 @@
         "third_place_intrusion": [
           {
             "horse_no": "",
+            "horse_name": "スペシャルナンバー",
+            "rank": 4,
+            "running_style": "DEEP_CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.17,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。DEEP_CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.103
+          },
+          {
+            "horse_no": "",
+            "horse_name": "エムズマインド",
+            "rank": 7,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.011
+          },
+          {
+            "horse_no": "",
             "horse_name": "クリノオリーブ",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.179
-          },
-          {
-            "horse_no": "",
-            "horse_name": "ボディブロー",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.072
-          },
-          {
-            "horse_no": "",
-            "horse_name": "ランウインディ",
-            "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.042
+            "running_style": "FRONT",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.12,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。FRONT・条件適性・近走から展開穴として評価",
+            "intrusion_score": 0.943
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 4,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -31623,7 +32887,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "DOMINANT_AXIS",
@@ -32061,27 +33325,46 @@
         ],
         "third_place_intrusion": [
           {
+            "horse_no": "7",
+            "horse_name": "メイショウヨゾラ",
+            "rank": 4,
+            "running_style": "ESCAPE",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.25,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.401
+          },
+          {
             "horse_no": "8",
             "horse_name": "ファストネットワー",
             "rank": 8,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.576
-          },
-          {
-            "horse_no": "2",
-            "horse_name": "クラスペディア",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.504
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.2,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。脚質不明・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.272
           },
           {
             "horse_no": "9",
             "horse_name": "ピューロマジック",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.46
+            "running_style": "ESCAPE",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.17,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。ESCAPE・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.166
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "FRONT",
+          "front_count": 6,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -32108,8 +33391,8 @@
             "id": "THIRD_INTRUSION",
             "label": "3着低順位馬侵入",
             "covered_horses": [
+              "7",
               "8",
-              "2",
               "9"
             ]
           },
@@ -32126,13 +33409,13 @@
         "ticket_shape": "HEDGED",
         "trio_tickets": [
           "3-5-16",
+          "5-7-16",
           "5-9-16",
-          "2-5-16",
-          "3-5-9",
+          "3-5-7",
+          "3-7-16",
           "3-9-16",
-          "2-3-16",
-          "3-8-16",
-          "2-9-16"
+          "7-9-16",
+          "3-8-16"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -32199,7 +33482,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "FRONT_PRESSURE",
@@ -32639,24 +33922,43 @@
             "horse_no": "",
             "horse_name": "フェスティヴドレス",
             "rank": 5,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.779
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.49,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.687
+          },
+          {
+            "horse_no": "",
+            "horse_name": "ヴリトラハン",
+            "rank": 4,
+            "running_style": "CLOSER",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.49,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。CLOSER・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.583
           },
           {
             "horse_no": "",
             "horse_name": "ミルミナーヴァ",
             "rank": 7,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.358
-          },
-          {
-            "horse_no": "",
-            "horse_name": "モンシェリ",
-            "rank": 6,
-            "reason": "5〜10番手から条件・近走・安定性で3着侵入余地",
-            "intrusion_score": 1.354
+            "running_style": "STALK",
+            "axis_win_flow": "前競合を軸が耐える",
+            "scenario_fit": 0.41,
+            "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい。STALK・条件適性・近走から展開穴として評価",
+            "intrusion_score": 1.343
           }
         ],
+        "axis_win_flow": {
+          "axis_style": "ESCAPE",
+          "front_count": 4,
+          "flow": "前競合を軸が耐える",
+          "favored_styles": [
+            "CLOSER",
+            "STALK"
+          ],
+          "reason": "前が多い中で軸が勝つなら、後方から差す馬と好位耐久馬が連動しやすい"
+        },
         "failure_scenarios": [
           {
             "id": "BASE",
@@ -32765,7 +34067,7 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.2 shadow: evidence-gated axis durability, rank-5-to-10 third-place intrusion, role-diversified partners, and hedged MID ticket structure.",
+        "implementation_note": "V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.",
         "situational_shadow": {
           "status": "RESEARCH_ONLY",
           "pattern": "FRONT_PRESSURE",
@@ -32892,5 +34194,5 @@
       "score_spread": 1.493
     }
   ],
-  "prediction_hash_sha256": "026b3fc545f845540012d9f7fa040906db26d44cda8201d0b23d110640d2953d"
+  "prediction_hash_sha256": "c966e092b8c222bf1d7d045d588c4fdd180436591edd47ca15191a1d76c6b6f1"
 }
