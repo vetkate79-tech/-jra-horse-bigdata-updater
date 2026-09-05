@@ -13,11 +13,12 @@ PDCA = Path("docs/data/live_pdca.json")
 UPGRADE_LOG = Path("docs/data/model_upgrade_log.json")
 CONTEXT = Path("data/race_context_2026.csv")
 PAYOUTS = Path("data/race_payouts_2026.csv")
+RESULTS = Path("data/race_results_html_2026.csv")
 OUT = Path("docs/data/dashboard.json")
 DETAIL = Path("docs/data/management_analytics.json")
 STATUS = Path("status/management_erp.json")
 JST = timezone(timedelta(hours=9))
-REPLAY_GLOB = "replay-????-??-??.json"
+PRED_ARCHIVE_GLOB = "prediction-archive-????-??-??.json"
 
 def load_json(path, default):
     try:
@@ -83,14 +84,37 @@ def yen_int(v):
     s="".join(ch for ch in str(v or "") if ch.isdigit())
     return int(s) if s else 0
 
-def load_replay_archive():
+def load_prediction_archives():
     out={}
-    for p in Path("docs/data").glob(REPLAY_GLOB):
+    dates=set()
+    for p in Path("docs/data").glob(PRED_ARCHIVE_GLOB):
         d=load_json(p,{})
+        date=str(d.get("date") or p.stem.removeprefix("prediction-archive-"))
+        if d.get("mode")!="IMMUTABLE_PREDICTION_ARCHIVE" or not date:
+            continue
+        dates.add(date)
         for r in d.get("races") or []:
-            k=race_key(r.get("date") or d.get("date"),r.get("track"),r.get("race_no"))
-            if all((k[0],k[1],k[2] is not None)):
-                out[k]=r
+            k=race_key(r.get("date") or date,r.get("track"),r.get("race_no"))
+            if k[0] and k[1] and k[2] is not None:
+                out[k]={
+                    "prediction":r,
+                    "prediction_hash_sha256":d.get("prediction_hash_sha256"),
+                    "model_version":d.get("model_version"),
+                }
+    return out,dates
+
+def build_result_top3(rows):
+    grouped=defaultdict(list)
+    for r in rows:
+        k=race_key(r.get("race_date"),r.get("course") or r.get("track"),r.get("race_no"))
+        finish=iv(r.get("finish_position"))
+        if k[0] and k[1] and k[2] is not None and finish in (1,2,3):
+            grouped[k].append(r)
+    out={}
+    for k,xs in grouped.items():
+        xs=sorted(xs,key=lambda x:iv(x.get("finish_position")) or 99)
+        if len(xs)==3:
+            out[k]=xs
     return out
 
 def trio_combo(xs):
@@ -139,7 +163,9 @@ def main():
     upgrade_log=load_json(UPGRADE_LOG, {"schema_version":1,"upgrades":[]})
     contexts=read_csv(CONTEXT)
     payouts=read_csv(PAYOUTS)
-    replay_by=load_replay_archive()
+    results=read_csv(RESULTS)
+    archive_pred_by,archive_dates=load_prediction_archives()
+    result_top3_by=build_result_top3(results)
 
     ctx_by={}
     race_id_by={}
@@ -224,42 +250,65 @@ def main():
         }
         rows.append(row)
 
-    # Include scored rows not present in the current seal so management never silently loses completed history.
+    # Historical ERP rows are rebuilt from the same canonical upstream sources as the public replay:
+    # immutable pre-race prediction archives + JRA official result/payout CSVs.
+    # The ERP never reads the public replay JSON as an input source.
     known={(r["date"],r["track"],r["race_no"]) for r in rows}
-    for s in scores.get("races") or []:
-        k=race_key(s.get("date"),s.get("track"),s.get("race_no"))
-        if k in known: continue
-        c=ctx_by.get(k,{})
-        rid=race_id_by.get(k) or c.get("race_id")
+    historical_keys=sorted(
+        (k for k in result_top3_by if k[0] in archive_dates and k not in known),
+        key=lambda k:(k[0],k[1],k[2] or 0)
+    )
+    for k in historical_keys:
+        top=result_top3_by[k]
+        archived=archive_pred_by.get(k) or {}
+        pred=archived.get("prediction") or {}
+        a=pred.get("analysis") or {}
+        cctx=ctx_by.get(k,{})
+        rid=race_id_by.get(k) or cctx.get("race_id") or (top[0].get("race_id") if top else None)
         pay=payout_by_race.get(str(rid or ""),{})
-        replay=replay_by.get(k) or {}
-        rp=replay.get("prediction") or {}
-        rr=replay.get("result") or {}
-        tickets=[str(x) for x in (rp.get("tickets") or []) if x]
-        decision=rp.get("decision") or s.get("decision")
-        bought=bool(decision!="PASS" and tickets)
-        trio_hit=bool(rr.get("trio_hit")) if replay else bool(s.get("trio_hit"))
+        tickets=[str(x) for x in (a.get("trio_tickets") or []) if x]
+        decision=str(a.get("pre_market_decision") or pred.get("decision") or ("NO_PREDICTION" if not pred else "UNKNOWN"))
+        actual_nums=[str(iv(x.get("horse_no"))) for x in top]
+        actual_combo=trio_combo(actual_nums)
+        has_prediction=bool(pred)
+        trio_hit=bool(has_prediction and actual_combo and actual_combo in set(tickets))
+        bought=bool(has_prediction and decision!="PASS" and tickets)
         stake=100*len(tickets) if bought else 0
-        replay_return=yen_int(rr.get("trio_payout")) if trio_hit else 0
-        ret=replay_return or ((pay.get("payout_per_100_yen") or 0) if trio_hit else 0)
+        ret=(pay.get("payout_per_100_yen") or 0) if trio_hit else 0
+        axis=a.get("axis") or {}
+        axis_no=str(axis.get("horse_no") or "")
+        axis_finish=None
+        if axis_no:
+            axis_finish=next((i+1 for i,n in enumerate(actual_nums) if n==axis_no),4)
+        axis_grade=("HIT" if axis_finish==1 else ("PLACE" if axis_finish in (2,3) else ("MISS" if axis_finish else None)))
         rows.append({
             "date":k[0],"track":k[1],"race_no":k[2],"race_id":rid,
-            "race_name":s.get("race_name") or replay.get("race_name") or c.get("race_name"),
-            "race_category":c.get("race_category"),"race_class":c.get("race_class"),
-            "surface":c.get("surface"),"distance_m":iv(c.get("distance_m")),
-            "distance_band":dist_band(c.get("distance_m")),
-            "track_condition":c.get("track_condition") or "不明",
-            "weather":c.get("weather") or "不明",
-            "field_size":iv(c.get("field_size")),"field_size_band":field_band(c.get("field_size")),
-            "scheduled_start":c.get("scheduled_start"),"decision":decision,
-            "race_state":"SCORED","axis_horse_no":s.get("axis_horse_no"),"axis_horse_name":s.get("axis_horse_name"),
-            "axis_durability":None,"predicted_scenario":None,"role_tags":[],"third_place_intrusion_candidates":[],
-            "trio_tickets":tickets,"ticket_count":len(tickets),"scored":True,"bought":bought,
-            "axis_finish":s.get("axis_finish"),"axis_grade":s.get("axis_grade"),
-            "actual_top3":s.get("actual_top3") or rr.get("top3") or [],"trio_hit":trio_hit,
-            "winning_trio":pay.get("winning_selection"),"stake_yen":stake,"return_yen":ret,"profit_yen":ret-stake,"roi":percent(ret,stake),
-            "prediction_hash_sha256":s.get("prediction_hash_sha256"),"ticket_value_regime_shadow":{},"actual_trio_payout_yen":yen_int(rr.get("trio_payout")) or (pay.get("payout_per_100_yen") or 0),"data_status":c.get("data_status"),
-            "payout_data_status":pay.get("data_status"),
+            "race_name":pred.get("race_name") or cctx.get("race_name") or (top[0].get("race_name") if top else None),
+            "race_category":cctx.get("race_category"),"race_class":cctx.get("race_class"),
+            "surface":cctx.get("surface"),"distance_m":iv(cctx.get("distance_m")),
+            "distance_band":dist_band(cctx.get("distance_m")),
+            "track_condition":cctx.get("track_condition") or "不明",
+            "weather":cctx.get("weather") or "不明",
+            "field_size":iv(cctx.get("field_size")),"field_size_band":field_band(cctx.get("field_size")),
+            "scheduled_start":cctx.get("scheduled_start"),"decision":decision,
+            "race_state":"SCORED" if has_prediction else "RESULT_ONLY",
+            "axis_horse_no":axis_no,"axis_horse_name":axis.get("horse_name"),
+            "axis_durability":a.get("axis_durability") or a.get("axis_durability_label") or a.get("axis_confidence"),
+            "predicted_scenario":a.get("predicted_scenario") or a.get("scenario"),
+            "role_tags":a.get("role_tags") or [],
+            "third_place_intrusion_candidates":a.get("third_place_intrusion_candidates") or [],
+            "trio_tickets":tickets,"ticket_count":len(tickets),
+            "scored":has_prediction,"bought":bought,
+            "axis_finish":axis_finish,"axis_grade":axis_grade,
+            "actual_top3":actual_nums,"trio_hit":trio_hit,
+            "winning_trio":pay.get("winning_selection") or actual_combo,
+            "stake_yen":stake,"return_yen":ret,"profit_yen":ret-stake,"roi":percent(ret,stake),
+            "prediction_hash_sha256":archived.get("prediction_hash_sha256"),
+            "ticket_value_regime_shadow":a.get("ticket_value_regime_shadow") or {},
+            "actual_trio_payout_yen":pay.get("payout_per_100_yen") or 0,
+            "data_status":cctx.get("data_status"),"payout_data_status":pay.get("data_status"),
+            "result_source":"JRA_OFFICIAL_RESULTS_DB",
+            "prediction_source":"IMMUTABLE_PREDICTION_ARCHIVE" if has_prediction else None,
         })
 
     rows.sort(key=lambda x:(x.get("date") or "",x.get("track") or "",x.get("race_no") or 0))
