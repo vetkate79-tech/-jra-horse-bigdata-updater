@@ -65,6 +65,10 @@ def main():
    'build_live_sealed_predictions.py' in text('race-week-prediction-seal.yml')
    and 'build_live_sealed_predictions.py' not in text('register-upcoming-new-horses.yml')
  )
+ checks['management_erp_single_owner']=(
+   'build_management_erp.py' in text('race-week-prediction-seal.yml')
+   and 'build_management_erp.py' not in text('post-jra-meeting-update.yml')
+ )
  checks['post_archive_date_generic']=(
    "TARGET_DATE: '2026-09-05'" not in post
    and 'COMPLETE_DATES' in post
