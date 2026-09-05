@@ -84,7 +84,7 @@ function selectMonth(m,b){
 $$('#months [data-month]').forEach(b=>b.onclick=()=>selectMonth(b.dataset.month,b));
 Promise.all([
   fetch('../data/august-validation-archive.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]}),
-  fetch('../data/live_predictions_sealed.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]}),
+  fetch('../data/prediction-archive-2026-09-05.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]}),
   fetch('../data/today-results-2026-09-05.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]})
 ]).then(([aug,live,res])=>{
   archives['2026-08']=aug.races||[];
