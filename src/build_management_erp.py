@@ -217,6 +217,8 @@ def main():
             "profit_yen":ret-stake,
             "roi":percent(ret,stake),
             "prediction_hash_sha256":(s or {}).get("prediction_hash_sha256") or sealed.get("prediction_hash_sha256"),
+            "ticket_value_regime_shadow":a.get("ticket_value_regime_shadow") or {},
+            "actual_trio_payout_yen":(pay.get("payout_per_100_yen") or 0) if scored else 0,
             "data_status":c.get("data_status"),
             "payout_data_status":pay.get("data_status"),
         }
@@ -256,7 +258,7 @@ def main():
             "axis_finish":s.get("axis_finish"),"axis_grade":s.get("axis_grade"),
             "actual_top3":s.get("actual_top3") or rr.get("top3") or [],"trio_hit":trio_hit,
             "winning_trio":pay.get("winning_selection"),"stake_yen":stake,"return_yen":ret,"profit_yen":ret-stake,"roi":percent(ret,stake),
-            "prediction_hash_sha256":s.get("prediction_hash_sha256"),"data_status":c.get("data_status"),
+            "prediction_hash_sha256":s.get("prediction_hash_sha256"),"ticket_value_regime_shadow":{},"actual_trio_payout_yen":yen_int(rr.get("trio_payout")) or (pay.get("payout_per_100_yen") or 0),"data_status":c.get("data_status"),
             "payout_data_status":pay.get("data_status"),
         })
 
@@ -270,6 +272,11 @@ def main():
     combo_miss=sum(1 for x in bought if x.get("axis_finish") in (1,2,3) and not x.get("trio_hit"))
     returns=sorted((x["return_yen"] for x in bought), reverse=True)
     ret_ex_top=ret-(returns[0] if returns else 0)
+    manbaken_opportunities=[x for x in bought if (x.get("actual_trio_payout_yen") or 0)>=10000]
+    manbaken_hits=[x for x in manbaken_opportunities if x.get("trio_hit")]
+    sub10k_opportunities=[x for x in bought if 0<(x.get("actual_trio_payout_yen") or 0)<10000]
+    concentrated_shadow=[x for x in rows if ((x.get("ticket_value_regime_shadow") or {}).get("regime")=="CONCENTRATED")]
+    high_payout_shadow=[x for x in rows if ((x.get("ticket_value_regime_shadow") or {}).get("regime")=="HIGH_PAYOUT_CAPTURE")]
 
     dims=[
         "date","track","race_no","race_category","race_class","surface","distance_m","distance_band",
@@ -301,7 +308,19 @@ def main():
                     "action":"再現性確認用の強条件候補。単独ROIで本番昇格しない",
                     "status":"SHADOW_ONLY"
                 })
-    candidates=sorted(candidates,key=lambda x:(0 if x["type"]=="WEAK_SEGMENT" else 1,-x["sample"]))[:40]
+    candidates.append({
+        "type":"TICKET_VALUE_REGIME_SHADOW",
+        "dimension":"ticket_policy",
+        "value":"CONCENTRATED / BALANCED / HIGH_PAYOUT_CAPTURE / PASS_BIASED",
+        "sample":len(rows),
+        "roi":percent(ret,stake),
+        "axis_top3_rate":percent(axis_top3,len(scored)),
+        "combo_miss_rate":percent(combo_miss,len(bought)),
+        "action":"固いレースは3〜5点へ圧縮して厚く、荒れレースは万馬券捕捉を優先。軸飛び保険だけの軸なし増加は禁止。券種別実オッズ接続後はトリガミ/低EVを除外。",
+        "status":"SHADOW_ONLY",
+        "promotion_metrics":["万馬券捕捉率","ROI","最大払戻除外ROI","平均点数","固い群の的中率","軸飛び時の無駄打ち率"]
+    })
+    candidates=sorted(candidates,key=lambda x:(0 if x["type"]=="WEAK_SEGMENT" else 1,-x.get("sample",0)))[:40]
 
     failure_counts=(pdca.get("failure_counts") or {})
     error_types=[
@@ -335,6 +354,10 @@ def main():
         "elimination_miss_rate":0,
         "max_drawdown":0,
         "purchase_rate":percent(len(bought),len(scored)) or 0,
+        "manbaken_opportunities":len(manbaken_opportunities),
+        "manbaken_hits":len(manbaken_hits),
+        "manbaken_capture_rate":percent(len(manbaken_hits),len(manbaken_opportunities)) or 0,
+        "sub10k_opportunities":len(sub10k_opportunities),
     }
 
     live_health_metrics={
@@ -430,6 +453,7 @@ def main():
             {"name":"3着侵入","status":"ACTIVE","note":"候補を保存・検証"},
             {"name":"買い目変換PDCA","status":"ACTIVE","note":"組合せ漏れ率を自動監査"},
             {"name":"条件別Challenger生成","status":"ACTIVE","note":"SHADOW_ONLYで自動候補化"},
+            {"name":"券価値レジーム","status":"SHADOW","note":"固い=圧縮/厚張り、荒れ=万馬券捕捉、軸飛び保険の点数水増し禁止"},
         ],
         "error_types":error_types,
         "role_distribution":[],
@@ -450,6 +474,8 @@ def main():
             "optimization_candidates":candidates,
             "latest_races":today_rows,
             "all_race_count":len(rows),
+            "ticket_value_regime_shadow_counts":dict(Counter((x.get("ticket_value_regime_shadow") or {}).get("regime") or "NO_SHADOW" for x in rows)),
+            "manbaken":{"opportunities":len(manbaken_opportunities),"hits":len(manbaken_hits),"capture_rate":percent(len(manbaken_hits),len(manbaken_opportunities)),"threshold_yen":10000},
         }
     }
     detail={
