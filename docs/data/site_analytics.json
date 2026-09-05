@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "NOT_CONNECTED",
+  "updated_at": null,
+  "traffic": {
+    "pageviews": null,
+    "users": null,
+    "sessions": null
+  },
+  "affiliate": {
+    "clicks": null,
+    "conversions": null,
+    "revenue_yen": null
+  },
+  "traffic_dimensions": [
+    {"label": "人気ページ", "status": "準備済み", "detail": "URL別のページ表示・利用者・滞在を表示する領域。計測サービス接続後に自動反映。"},
+    {"label": "流入元", "status": "準備済み", "detail": "検索・SNS・直接流入・参照サイトを分離する領域。"},
+    {"label": "端末", "status": "準備済み", "detail": "スマートフォン・PC・タブレット別に利用状況を確認する領域。"}
+  ],
+  "affiliate_dimensions": [
+    {"label": "広告枠別クリック", "status": "将来接続", "detail": "掲載位置と案件ごとのクリック数・クリック率を管理。"},
+    {"label": "成果・承認", "status": "将来接続", "detail": "発生成果、承認成果、否認、確定報酬を案件別に管理。"},
+    {"label": "収益性", "status": "将来接続", "detail": "ページ別収益、1,000表示あたり収益、クリック単価を管理。"}
+  ],
+  "roadmap": [
+    {"name": "閲覧計測データ源", "status": "接続待ち", "detail": "解析サービスを選定後、公開画面から独立した計測データをこの管理画面へ連携する。"},
+    {"name": "個人情報保護", "status": "設計済み", "detail": "予想モデル入力と閲覧者計測を分離し、不要な個人情報を保存しない。"},
+    {"name": "アフィリエイト台帳", "status": "拡張可能", "detail": "案件・掲載位置・クリック・成果・承認・報酬を同一IDで追跡できる構造を確保。"}
+  ]
+}
