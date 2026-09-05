@@ -401,15 +401,26 @@ def main():
         {"label":"候補内組合せ漏れ","value":combo_miss},
     ]
     state_counts=dict(Counter(r["race_state"] for r in rows))
-    today=max((r["date"] for r in rows if r.get("date")), default="")
-    today_rows=[r for r in rows if r.get("date")==today] if today else rows
+    actual_today=datetime.now(JST).date().isoformat()
+    available_dates=sorted({r.get("date") for r in rows if r.get("date")})
+    if actual_today in available_dates:
+        display_date=actual_today
+    else:
+        future_dates=[d for d in available_dates if d>actual_today]
+        display_date=future_dates[0] if future_dates else (available_dates[-1] if available_dates else "")
+    today_rows=[r for r in rows if r.get("date")==display_date] if display_date else []
 
-    summary={
-        "model_version":sealed.get("model_version") or sealed.get("schema_version") or "JRA-LIVE",
-        "snapshot_time":datetime.now(JST).isoformat(timespec="seconds"),
-        "total_races":len(today_rows),
-        "buy_races":sum(1 for r in today_rows if r.get("decision") in ("BUY","CAUTION")),
-        "pass_races":sum(1 for r in today_rows if r.get("decision")=="PASS"),
+    snapshot_time=datetime.now(JST).isoformat(timespec="seconds")
+    model_version=sealed.get("model_version") or sealed.get("schema_version") or "JRA-LIVE"
+
+    cumulative_summary={
+        "model_version":model_version,
+        "snapshot_time":snapshot_time,
+        "display_date":display_date,
+        "actual_today_jst":actual_today,
+        "total_races":len(rows),
+        "buy_races":sum(1 for r in rows if r.get("decision") in ("BUY","CAUTION")),
+        "pass_races":sum(1 for r in rows if r.get("decision")=="PASS"),
         "scored_races":len(scored),
         "roi":percent(ret,stake) or 0,
         "stake_amount":stake,
@@ -417,8 +428,6 @@ def main():
         "profit_amount":ret-stake,
         "hit_rate":percent(hits,len(bought)) or 0,
         "hits":hits,
-        "daily_budget":10000,
-        "remaining_budget":10000,
         "roi_ex_top":percent(ret_ex_top,stake) or 0,
         "axis_survival":percent(axis_top3,len(scored)) or 0,
         "third_column_miss_rate":percent(combo_miss,len(bought)) or 0,
@@ -437,15 +446,60 @@ def main():
         "sub10k_roi_target_status":sub10k_target_status,
     }
 
+    today_scored=[x for x in today_rows if x.get("scored")]
+    today_bought=[x for x in today_scored if x.get("bought")]
+    today_stake=sum(x.get("stake_yen") or 0 for x in today_bought)
+    today_ret=sum(x.get("return_yen") or 0 for x in today_bought)
+    today_hits=sum(1 for x in today_bought if x.get("trio_hit"))
+    today_axis_top3=sum(1 for x in today_scored if x.get("axis_finish") in (1,2,3))
+    today_combo_miss=sum(1 for x in today_bought if x.get("axis_finish") in (1,2,3) and not x.get("trio_hit"))
+    today_returns=sorted((x.get("return_yen") or 0 for x in today_bought), reverse=True)
+    today_ret_ex_top=today_ret-(today_returns[0] if today_returns else 0)
+
+    summary={
+        "model_version":model_version,
+        "snapshot_time":snapshot_time,
+        "display_date":display_date,
+        "actual_today_jst":actual_today,
+        "total_races":len(today_rows),
+        "buy_races":sum(1 for r in today_rows if r.get("decision") in ("BUY","CAUTION")),
+        "pass_races":sum(1 for r in today_rows if r.get("decision")=="PASS"),
+        "scored_races":len(today_scored),
+        "roi":percent(today_ret,today_stake) or 0,
+        "stake_amount":today_stake,
+        "return_amount":today_ret,
+        "profit_amount":today_ret-today_stake,
+        "hit_rate":percent(today_hits,len(today_bought)) or 0,
+        "hits":today_hits,
+        "daily_budget":10000,
+        "remaining_budget":max(0,10000-today_stake),
+        "roi_ex_top":percent(today_ret_ex_top,today_stake) or 0,
+        "axis_survival":percent(today_axis_top3,len(today_scored)) or 0,
+        "third_column_miss_rate":percent(today_combo_miss,len(today_bought)) or 0,
+        "elimination_miss_rate":0,
+        "max_drawdown":0,
+        "purchase_rate":percent(len(today_bought),len(today_scored)) or 0,
+        "manbaken_opportunities":0,
+        "manbaken_hits":0,
+        "manbaken_capture_rate":0,
+        "sub10k_opportunities":0,
+        "sub10k_stake_amount":0,
+        "sub10k_return_amount":0,
+        "sub10k_roi":0,
+        "sub10k_roi_target_low":sub10k_target_low,
+        "sub10k_roi_target_high":sub10k_target_high,
+        "sub10k_roi_target_status":"NO_DATA",
+    }
+
     live_health_metrics={
         "sample_scored_races":len(scored),
         "sample_bought_races":len(bought),
-        "roi":summary["roi"],
-        "hit_rate":summary["hit_rate"],
-        "axis_survival":summary["axis_survival"],
-        "combo_miss_rate":summary["third_column_miss_rate"],
-        "roi_ex_top":summary["roi_ex_top"],
-        "profit_amount":summary["profit_amount"],
+        "roi":cumulative_summary["roi"],
+        "hit_rate":cumulative_summary["hit_rate"],
+        "axis_survival":cumulative_summary["axis_survival"],
+        "combo_miss_rate":cumulative_summary["third_column_miss_rate"],
+        "roi_ex_top":cumulative_summary["roi_ex_top"],
+        "profit_amount":cumulative_summary["profit_amount"],
     }
     upgrade_rows=[]
     for raw in upgrade_log.get("upgrades") or []:
@@ -519,7 +573,7 @@ def main():
         ],
         "models":[
             {"name":"A3/B5/C7 FROZEN v1.0","status":"CHAMPION / READ ONLY","roi":0,"hit_rate":0,"note":"上書き禁止の比較基準"},
-            {"name":"Current Integrated","status":"CURRENT","roi":summary["roi"],"hit_rate":summary["hit_rate"],"note":"現行ライブ実績を自動集計"},
+            {"name":"Current Integrated","status":"CURRENT","roi":cumulative_summary["roi"],"hit_rate":cumulative_summary["hit_rate"],"note":"現行ライブ実績を自動集計"},
         ],
         "mechanisms":[
             {"name":"基礎能力","status":"ACTIVE","note":"人気・オッズ不使用"},
@@ -546,6 +600,7 @@ def main():
         ],
         "upgrade_log":{"tracking_started_at":upgrade_log.get("tracking_started_at"),"baseline":upgrade_log.get("baseline"),"policy":upgrade_log.get("policy"),"upgrades":upgrade_rows},
         "analytics":{
+            "summary":cumulative_summary,
             "filters":filters,
             "breakdowns":breakdowns,
             "optimization_candidates":candidates,
@@ -566,7 +621,7 @@ def main():
             "leakage_rule":"結果・払戻は封印後の分析だけに使用",
             "purchase_stability_target":{"metric":"万馬券除外ROI","definition":"実際の三連複払戻が10,000円以上だったレースを投資・払戻ともに除外","target_range_pct":[80,90],"role":"実購入検討の主要安定性KPI"},
         },
-        "summary":summary,
+        "summary":cumulative_summary,
         "filters":filters,
         "breakdowns":breakdowns,
         "optimization_candidates":candidates,
