@@ -104,6 +104,27 @@ def main():
    and 'immutable prediction archive changed' in post
    and 'prediction-archive-' in post
  )
+ expire=Path('src/expire_weekly_runner_details.py').read_text(encoding='utf-8') if Path('src/expire_weekly_runner_details.py').exists() else ''
+ checks['race_week_rollover_preserves_detail']=(
+   'weekly_runner_archive' in expire
+   and 'archive count mismatch' in expire
+   and 'weekly_runner_archive/*.json' in post
+ )
+ checks['live_seal_history_preserved']=(
+   'prediction-seal-history' in builder
+   and '_archive_seal_payload' in builder
+   and 'prediction-seal-history' in seal
+ )
+ checks['score_history_preserved']=(
+   'prediction-score-history' in scorer
+   and 'score history verification failed' in scorer
+   and 'prediction-score-history' in post
+ )
+ checks['pdca_history_preserved']=(
+   'pdca-history' in pdca
+   and 'pdca history verification failed' in pdca
+   and 'pdca-history' in post
+ )
  repair=cfg.get('repair_constitution') or {}
  checks['root_cause_repair_constitution_locked']=(
    repair.get('status')=='USER_LOCKED'
