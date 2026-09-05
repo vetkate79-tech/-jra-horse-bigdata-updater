@@ -31,6 +31,16 @@ def main():
  checks['market_independent_group']='group: market-status-writes' in text('jra-market-timing.yml')
  checks['dictionary_independent_group']='group: site-dictionary-writes' in text('build-word-dictionary.yml')
  checks['pages_independent_group']='group: pages' in text('deploy-management-erp.yml')
+ deploy=text('deploy-management-erp.yml')
+ checks['producer_to_pages_redeploy_connected']=(
+   'workflow_run:' in deploy
+   and 'Race-week pure prediction seal' in deploy
+   and 'JRA market timing monitor' in deploy
+   and 'Post JRA meeting data update' in deploy
+   and 'Register upcoming JRA debut horses and race-week details' in deploy
+   and 'Build word dictionary and global links' in deploy
+   and "ref: main" in deploy
+ )
  checks['validation_read_only']='contents: read' in text('validate-jra-model.yml') and 'contents: write' not in text('validate-jra-model.yml')
  checks['repair_not_scheduled']='schedule:' not in text('repair-horse-master-integrity.yml')
  seal=text('race-week-prediction-seal.yml')
