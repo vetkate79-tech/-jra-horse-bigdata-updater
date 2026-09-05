@@ -198,5 +198,17 @@
       "temporary date-specific production logic when a generic path is available",
       "declaring completion from a deploy log alone when user-visible behavior has not been verified"
     ]
+  },
+  "performance_objectives": {
+    "non_manbaken_roi": {
+      "status": "USER_LOCKED_TARGET",
+      "definition": "実際の三連複払戻が10,000円以上だったレースを投資・払戻ともに除外したROI",
+      "target_range_pct": [
+        80,
+        90
+      ],
+      "purpose": "万馬券に依存しない基礎回収力の安定性を確認し、実購入検討の主要条件とする",
+      "companion_objective": "万馬券以上の高配当は積極的に捕捉し、基礎ROIの上に収益を上乗せする"
+    }
   }
 }
