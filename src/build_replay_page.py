@@ -19,56 +19,101 @@ def esc(x):
     return html.escape(str(x if x is not None else ""), quote=True)
 
 def result_class(z):
-    try:f=int(z.get("axis_finish"))
-    except Exception:return ""
-    if f==1:return "win"
-    if f in (2,3):return "place"
-    if f>=4:return "miss"
-    return ""
+    try:
+        f=int(z.get("axis_finish"))
+    except Exception:
+        return ""
+    if f==1:
+        return "win"
+    if f in (2,3):
+        return "place"
+    return "miss" if f>=4 else ""
 
 def result_label(z):
-    try:f=int(z.get("axis_finish"))
-    except Exception:return "結果照合待ち"
+    try:
+        f=int(z.get("axis_finish"))
+    except Exception:
+        return "結果照合待ち"
     return {1:"1着・的中",2:"2着・馬券内",3:"3着・馬券内"}.get(f,"4着以下・馬券外（軸不的中）")
 
-def card(r):
+def normalize_aug(r):
+    p=dict(r.get("prediction") or {})
+    p.setdefault("sealed",True)
+    return {
+        "date":r.get("date"),
+        "track":r.get("track"),
+        "race_no":r.get("race_no"),
+        "race_name":r.get("race_name",""),
+        "prediction":p,
+        "result":r.get("result") or {}
+    }
+
+def card(r, open_month):
     p=r.get("prediction") or {}
     z=r.get("result") or {}
-    top=" / ".join(f'{x.get("finish")}着 {x.get("horse_no")} {x.get("horse_name","")}' for x in (z.get("top3") or []))
+    date=str(r.get("date") or "")
+    month=date[:7]
+    top=" / ".join(
+        f'{x.get("finish")}着 {x.get("horse_no")} {x.get("horse_name","")}'
+        for x in (z.get("top3") or [])
+    )
     sealed=p.get("sealed",True) is not False
     axis=" ".join(str(x) for x in (p.get("axis_no"),p.get("axis_name")) if x not in (None,""))
     cand="・".join(str(x) for x in (p.get("candidate") or [])) or "—"
     tickets=[str(x) for x in (p.get("tickets") or [])]
-    has_result=len(z.get("top3") or [])>0
+
     if sealed:
         pred=f'<div class="axis">軸 {esc(axis or "—")}</div><div class="line">判定：{esc(p.get("decision") or "—")}</div><div class="line">候補：{esc(cand)}</div>'
-        if tickets: pred+=f'<div class="tickets">推奨三連複：{" / ".join(esc(x) for x in tickets)}</div>'
+        if tickets:
+            pred+=f'<div class="tickets">推奨三連複：{" / ".join(esc(x) for x in tickets)}</div>'
     else:
         pred='<div class="line">このレースは発走前の正式封印がないため、予想成績の判定対象外です。</div>'
-    if tickets:
+
+    has_result=len(z.get("top3") or [])>0
+    if not tickets:
+        trio='<details class="trio-result"><summary>推奨三連複の判定を見る ▼</summary><div class="trio-box"><div class="line">推奨三連複の発行なし</div></div></details>'
+    else:
         if has_result and z.get("trio_hit") is True:
             status="◎ 推奨三連複 的中"
             payout=z.get("trio_payout")
             payout_html=f'<div class="trio-payout">払戻 {esc(payout)}</div>' if payout else ""
         elif has_result and z.get("trio_hit") is False:
-            status="× 推奨三連複 不的中"; payout_html=""
+            status="× 推奨三連複 不的中"
+            payout_html=""
         else:
-            status="結果確定待ち"; payout_html=""
+            status="結果確定待ち"
+            payout_html=""
         trio=f'<details class="trio-result"><summary>推奨三連複の判定を見る ▼</summary><div class="trio-box"><div class="trio-status">{status}</div>{payout_html}<div class="tickets">推奨買い目：{" / ".join(esc(x) for x in tickets)}</div></div></details>'
-    else:
-        trio='<details class="trio-result"><summary>推奨三連複の判定を見る ▼</summary><div class="trio-box"><div class="line">推奨三連複の発行なし</div></div></details>'
+
     source=z.get("source")
     source_html=f'<div class="line"><a href="{esc(source)}" target="_blank" rel="noreferrer">JRA公式結果</a></div>' if source else ""
-    return f'''<article class="race" data-date="{esc(r.get("date"))}" data-track="{esc(r.get("track"))}">
-<div class="head"><div><b>{esc(r.get("track"))} {esc(r.get("race_no"))}R {esc(r.get("race_name") or "")}</b><small>{esc(str(r.get("date") or "").replace("-","/"))}</small></div><span class="badge">{"封印AI予測" if sealed else "事前封印なし"}</span></div>
+    hidden="" if month==open_month else " hidden"
+    return f'''<article class="race" data-month="{esc(month)}" data-date="{esc(date)}" data-track="{esc(r.get("track"))}"{hidden}>
+<div class="head"><div><b>{esc(r.get("track"))} {esc(r.get("race_no"))}R {esc(r.get("race_name") or "")}</b><small>{esc(date.replace("-","/"))}</small></div><span class="badge">{"封印AI予測" if sealed else "事前封印なし"}</span></div>
 <div class="section"><div class="label">AI予測</div>{pred}</div>
 <details class="result {result_class(z)}"><summary>{"軸の結果を見る ▼" if has_result else "結果確定待ち"}</summary><div class="label">JRA公式結果</div><div class="top3">{esc(top or "結果データなし")}</div><div class="line">軸結果：{esc(result_label(z))}</div>{source_html}{trio}</details>
 </article>'''
 
-def normalize_aug(r):
-    p=dict(r.get("prediction") or {})
-    p.setdefault("sealed",True)
-    return {"date":r.get("date"),"track":r.get("track"),"race_no":r.get("race_no"),"race_name":r.get("race_name",""),"prediction":p,"result":r.get("result") or {}}
+def date_group(month, rows, locks, open_month):
+    dates=sorted({str(r.get("date")) for r in rows},reverse=True)
+    buttons=[f'<button class="active" data-select-date="ALL">全{len(rows)}R</button>']
+    buttons += [
+        f'<button data-select-date="{esc(d)}">{int(d[5:7])}/{int(d[8:10])}</button>'
+        for d in dates
+    ]
+    buttons += [
+        f'<button class="locked-day" type="button" disabled>🔒 {int(d[5:7])}/{int(d[8:10])}</button>'
+        for d in locks.get(month,[])
+    ]
+    hidden="" if month==open_month else " hidden"
+    return f'<div class="dates date-group" data-month="{esc(month)}"{hidden}>{"".join(buttons)}</div>'
+
+def track_group(month, date, rows, open_month):
+    tracks=sorted({str(r.get("track")) for r in rows if date=="ALL" or str(r.get("date"))==date})
+    buttons=['<button class="active" data-select-track="ALL">全競馬場</button>']
+    buttons += [f'<button data-select-track="{esc(t)}">{esc(t)}</button>' for t in tracks]
+    hidden="" if (month==open_month and date=="ALL") else " hidden"
+    return f'<div class="dates track-group" data-month="{esc(month)}" data-date="{esc(date)}"{hidden}>{"".join(buttons)}</div>'
 
 def main():
     aug=load(AUGUST)
@@ -78,6 +123,7 @@ def main():
 
     exact_re=re.compile(r"^replay-(\d{4}-\d{2}-\d{2})\.json$")
     completed=[]
+    canonical_dates=[]
     for path in sorted(Path("docs/data").glob("replay-*.json")):
         m=exact_re.match(path.name)
         if not m:
@@ -93,111 +139,143 @@ def main():
         if result_count!=len(rows):
             raise SystemExit(f"{path} contains incomplete replay rows: {result_count}/{len(rows)}")
         completed.extend(rows)
+        canonical_dates.append(date)
 
     if not completed:
         raise SystemExit("No canonical replay-YYYY-MM-DD.json archives found")
 
     data={"2026-08":aug_rows}
     for r in completed:
-        month=str(r.get("date") or "")[:7]
-        data.setdefault(month,[]).append(r)
+        data.setdefault(str(r.get("date"))[:7],[]).append(r)
     for month in data:
         data[month]=sorted(data[month],key=lambda r:(str(r.get("date")),str(r.get("track")),int(r.get("race_no") or 0)))
 
     open_month=max(data)
-    initial=data[open_month]
-    initial_cards="".join(card(r) for r in initial)
-
     live=load(LIVE) if LIVE.exists() else {"races":[],"pending":[]}
     completed_dates={str(r.get("date")) for r in completed}
-    future_dates=sorted({
-        str(r.get("date")) for r in ((live.get("races") or [])+(live.get("pending") or []))
-        if r.get("date") and str(r.get("date")) not in completed_dates
-    })
     locks={}
-    for d in future_dates:
-        locks.setdefault(d[:7],[]).append(d)
+    for r in (live.get("races") or [])+(live.get("pending") or []):
+        d=str(r.get("date") or "")
+        if d and d not in completed_dates:
+            locks.setdefault(d[:7],set()).add(d)
+    locks={m:sorted(ds) for m,ds in locks.items()}
 
-    embedded=json.dumps(data,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
-    lock_embedded=json.dumps(locks,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
+    open_months=sorted(data,reverse=True)
+    month_buttons="".join(
+        f'<button{" class=\"active\"" if m==open_month else ""} data-month="{esc(m)}">{int(m[5:7])}月</button>'
+        for m in open_months
+    )
+    locked_months="".join(
+        f'<button class="locked" data-month="2026-{m:02d}">🔒 {m}月</button>'
+        for m in range(7,3,-1)
+        if f"2026-{m:02d}" not in data
+    )
+
+    date_groups="".join(date_group(m,data[m],locks,open_month) for m in open_months)
+    track_groups=[]
+    for m in open_months:
+        dates=["ALL"]+sorted({str(r.get("date")) for r in data[m]},reverse=True)
+        track_groups.extend(track_group(m,d,data[m],open_month) for d in dates)
+
+    all_rows=[]
+    for m in open_months:
+        all_rows.extend(data[m])
+    cards="".join(card(r,open_month) for r in all_rows)
+    initial_count=len(data[open_month])
+    lock_note_hidden="" if locks.get(open_month) else " hidden"
 
     js=r'''
 (function(){
 "use strict";
-var DATA=JSON.parse(document.getElementById("replay-data").textContent);
-var LOCKS=JSON.parse(document.getElementById("replay-locks").textContent);
-var month=document.getElementById("replay-root").getAttribute("data-open-month"), date="ALL", track="ALL";
-function q(s){return document.querySelector(s)}
+var month=document.getElementById("replay-root").getAttribute("data-open-month");
+var date="ALL",track="ALL";
 function qa(s){return Array.prototype.slice.call(document.querySelectorAll(s))}
-function e(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]})}
-function rclass(z){var f=Number(z.axis_finish);if(f===1)return"win";if(f===2||f===3)return"place";if(isFinite(f)&&f>=4)return"miss";return""}
-function rlabel(z){var f=Number(z.axis_finish);if(f===1)return"1着・的中";if(f===2)return"2着・馬券内";if(f===3)return"3着・馬券内";if(isFinite(f)&&f>=4)return"4着以下・馬券外（軸不的中）";return"結果照合待ち"}
-function card(r){
- var p=r.prediction||{},z=r.result||{},sealed=p.sealed!==false,t=z.top3||[],tickets=p.tickets||[];
- var top=t.map(function(x){return x.finish+"着 "+x.horse_no+" "+(x.horse_name||"")}).join(" / ");
- var axis=[p.axis_no,p.axis_name].filter(function(x){return x!==undefined&&x!==null&&x!==""}).join(" ");
- var cand=(p.candidate||[]).join("・")||"—";
- var pred=sealed?'<div class="axis">軸 '+e(axis||"—")+'</div><div class="line">判定：'+e(p.decision||"—")+'</div><div class="line">候補：'+e(cand)+'</div>':'<div class="line">このレースは発走前の正式封印がないため、予想成績の判定対象外です。</div>';
- if(sealed&&tickets.length)pred+='<div class="tickets">推奨三連複：'+tickets.map(e).join(" / ")+'</div>';
- var trio='<details class="trio-result"><summary>推奨三連複の判定を見る ▼</summary><div class="trio-box">';
- if(!tickets.length)trio+='<div class="line">推奨三連複の発行なし</div>';
- else{
-   var st=(t.length&&z.trio_hit===true)?"◎ 推奨三連複 的中":(t.length&&z.trio_hit===false)?"× 推奨三連複 不的中":"結果確定待ち";
-   trio+='<div class="trio-status">'+st+'</div>';
-   if(t.length&&z.trio_hit===true&&z.trio_payout)trio+='<div class="trio-payout">払戻 '+e(z.trio_payout)+'</div>';
-   trio+='<div class="tickets">推奨買い目：'+tickets.map(e).join(" / ")+'</div>';
- }
- trio+='</div></details>';
- var src=z.source?'<div class="line"><a href="'+e(z.source)+'" target="_blank" rel="noreferrer">JRA公式結果</a></div>':"";
- return '<article class="race"><div class="head"><div><b>'+e(r.track)+' '+e(r.race_no)+'R '+e(r.race_name||"")+'</b><small>'+e(String(r.date||"").replace(/-/g,"/"))+'</small></div><span class="badge">'+(sealed?"封印AI予測":"事前封印なし")+'</span></div><div class="section"><div class="label">AI予測</div>'+pred+'</div><details class="result '+rclass(z)+'"><summary>'+((t.length)?"軸の結果を見る ▼":"結果確定待ち")+'</summary><div class="label">JRA公式結果</div><div class="top3">'+e(top||"結果データなし")+'</div><div class="line">軸結果：'+e(rlabel(z))+'</div>'+src+trio+'</details></article>';
+function show(el,on){el.hidden=!on}
+function setActive(nodes,target,attr){
+  nodes.forEach(function(b){b.classList.toggle("active",b.getAttribute(attr)===target)})
 }
-function base(){return DATA[month]||[]}
-function dates(){
- var ds=[];base().forEach(function(r){if(ds.indexOf(r.date)<0)ds.push(r.date)});ds.sort().reverse();
- var locked=(LOCKS[month]||[]).map(function(d){return '<button class="locked-day" type="button" disabled>🔒 '+Number(d.slice(5,7))+'/'+Number(d.slice(8))+'</button>'}).join("");
- q("#dates").innerHTML='<button class="'+(date==="ALL"?"active":"")+'" data-date="ALL">全'+base().length+'R</button>'+ds.map(function(d){return '<button class="'+(date===d?"active":"")+'" data-date="'+e(d)+'">'+Number(d.slice(5,7))+'/'+Number(d.slice(8))+'</button>'}).join("")+locked;
- qa("#dates [data-date]").forEach(function(b){b.onclick=function(){date=b.getAttribute("data-date");track="ALL";dates();tracks();render()}})
+function currentDateGroup(){
+  return document.querySelector('.date-group[data-month="'+month+'"]')
 }
-function tracks(){
- var ts=[],rows=base().filter(function(r){return date==="ALL"||r.date===date});
- rows.forEach(function(r){if(ts.indexOf(r.track)<0)ts.push(r.track)});ts.sort();
- q("#tracks").innerHTML='<button class="'+(track==="ALL"?"active":"")+'" data-track="ALL">全競馬場</button>'+ts.map(function(t){return '<button class="'+(track===t?"active":"")+'" data-track="'+e(t)+'">'+e(t)+'</button>'}).join("");
- qa("#tracks [data-track]").forEach(function(b){b.onclick=function(){track=b.getAttribute("data-track");tracks();render()}})
+function currentTrackGroup(){
+  return document.querySelector('.track-group[data-month="'+month+'"][data-date="'+date+'"]')
 }
-function render(){
- var rows=base().filter(function(r){return (date==="ALL"||r.date===date)&&(track==="ALL"||r.track===track)}).sort(function(a,b){return String(b.date).localeCompare(String(a.date))||String(a.track).localeCompare(String(b.track))||Number(a.race_no)-Number(b.race_no)});
- q("#count").textContent=rows.length+"レース表示";
- var lockNote=(LOCKS[month]||[]).length?'<div class="day-lock-note">🔒 未終了日の予想は全レース終了までロック。終了後に封印済み予測と結果を過去レースへ移動します。</div>':"";
- q("#content").innerHTML=lockNote+'<div class="list">'+rows.map(card).join("")+'</div>';
+function refreshGroups(){
+  qa(".date-group").forEach(function(g){show(g,g.getAttribute("data-month")===month)})
+  qa(".track-group").forEach(function(g){show(g,g.getAttribute("data-month")===month&&g.getAttribute("data-date")===date)})
 }
-qa("#months [data-month]").forEach(function(b){b.onclick=function(){
- var m=b.getAttribute("data-month");
- qa("#months button").forEach(function(x){x.classList.remove("active")});b.classList.add("active");
- var locked=b.classList.contains("locked");q("#lockedView").hidden=!locked;q("#openView").hidden=locked;
- if(locked)return;
- month=m;date="ALL";track="ALL";dates();tracks();render();
-}});
-dates();tracks();
+function refreshCards(){
+  var count=0;
+  qa(".race").forEach(function(r){
+    var on=r.getAttribute("data-month")===month&&(date==="ALL"||r.getAttribute("data-date")===date)&&(track==="ALL"||r.getAttribute("data-track")===track);
+    show(r,on); if(on)count++;
+  });
+  document.getElementById("count").textContent=count+"レース表示";
+  var hasLocked=!!document.querySelector('.date-group[data-month="'+month+'"] .locked-day');
+  show(document.getElementById("day-lock-note"),hasLocked);
+}
+qa("#months [data-month]").forEach(function(b){
+  b.onclick=function(){
+    var locked=b.classList.contains("locked");
+    qa("#months button").forEach(function(x){x.classList.remove("active")});
+    b.classList.add("active");
+    show(document.getElementById("lockedView"),locked);
+    show(document.getElementById("openView"),!locked);
+    if(locked)return;
+    month=b.getAttribute("data-month");date="ALL";track="ALL";
+    refreshGroups();refreshCards();
+  };
+});
+qa(".date-group [data-select-date]").forEach(function(b){
+  b.onclick=function(){
+    var g=b.closest(".date-group");
+    date=b.getAttribute("data-select-date");track="ALL";
+    setActive(qa('.date-group[data-month="'+month+'"] [data-select-date]'),date,"data-select-date");
+    refreshGroups();refreshCards();
+  };
+});
+qa(".track-group [data-select-track]").forEach(function(b){
+  b.onclick=function(){
+    track=b.getAttribute("data-select-track");
+    setActive(qa('.track-group[data-month="'+month+'"][data-date="'+date+'"] [data-select-track]'),track,"data-select-track");
+    refreshCards();
+  };
+});
+refreshGroups();refreshCards();
 })();
 '''
+
     page=f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>過去レースのAI予測｜JRA AI</title><meta name="robots" content="noindex,nofollow"><style>{CSS}</style></head><body>
 <header class="top"><a href="../">JRA AI</a><a href="../app/">最新予想</a></header>
 <main class="wrap"><section class="hero"><small>AI RACE ARCHIVE</small><h1>過去レースのAI予測</h1><p>各レース1つのAI予測を固定して保存。予測内容を見たあと、タップして実際の結果を確認できます。</p></section>
-<div class="notice"><b>9/5 全36Rの結果反映済み</b><br>9月・8月を公開中。9/5はページ生成時点で36Rを固定表示します。7月以前はロック表示を維持します。</div>
-<div class="months" id="months"><button class="active" data-month="2026-09">9月</button><button data-month="2026-08">8月</button><button class="locked" data-month="2026-07">🔒 7月</button><button class="locked" data-month="2026-06">🔒 6月</button><button class="locked" data-month="2026-05">🔒 5月</button><button class="locked" data-month="2026-04">🔒 4月</button></div>
-<div id="lockedView" class="locked-panel" hidden><div class="blur">札幌 11R　軸 7　候補 2・5・9<br>新潟 10R　軸 4　候補 1・6・12<br>中京 9R　軸 3　候補 5・8・11</div><div class="lock-message"><span>🔒</span><div>7月以前のAI予測は現在ロック中</div></div></div>
-<div id="replay-root" data-open-month="{open_month}"><div id="openView"><div id="dates" class="dates"><button class="active">全{len(initial)}R</button></div><div id="tracks" class="dates"><button class="active">全競馬場</button></div><div id="count" class="count">{len(initial)}レース表示</div><div id="content"><div class="list">{initial_cards}</div></div></div></div></main>
+<div class="notice"><b>結果反映済みの過去予想</b><br>公開済みの日付はページ生成時点で固定表示します。未終了日はロックし、全レース終了後に封印済み予測と結果を移動します。</div>
+<div class="months" id="months">{month_buttons}{locked_months}</div>
+<div id="lockedView" class="locked-panel" hidden><div class="blur">札幌 11R　軸 7　候補 2・5・9<br>新潟 10R　軸 4　候補 1・6・12<br>中京 9R　軸 3　候補 5・8・11</div><div class="lock-message"><span>🔒</span><div>ロック中の過去予想</div></div></div>
+<div id="replay-root" data-open-month="{open_month}"><div id="openView">{date_groups}{"".join(track_groups)}<div id="count" class="count">{initial_count}レース表示</div><div id="day-lock-note" class="day-lock-note"{lock_note_hidden}>🔒 未終了日の予想は全レース終了までロック。終了後に封印済み予測と結果を過去レースへ移動します。</div><div id="content"><div class="list">{cards}</div></div></div></div></main>
 <nav class="mobile-nav"><a href="../">ホーム</a><a href="../app/">最新予想</a><a href="../horses/">データ</a><a href="../consult/">相談</a></nav>
-<script type="application/json" id="replay-data">{embedded}</script><script type="application/json" id="replay-locks">{lock_embedded}</script><script>{js}</script><script src="/-jra-horse-bigdata-updater/word-links.js"></script></body></html>'''
-    if "読込中" in page:
-        raise SystemExit("generated replay page must not contain 読込中")
-    if page.count('class="race"') < len(initial):
-        raise SystemExit("generated replay page must contain all initial static race cards")
-    if page.count('id="replay-data"') != 1 or page.count('id="replay-locks"') != 1:
-        raise SystemExit("replay data and locks must each be embedded exactly once")
+<script>{js}</script><script src="/-jra-horse-bigdata-updater/word-links.js"></script></body></html>'''
+
+    checks={
+        "no_loading_placeholder":"読込中" not in page,
+        "no_dynamic_card_render":"innerHTML" not in js and "JSON.parse" not in js,
+        "single_card_renderer":page.count('function card(')==0,
+        "all_cards_static":page.count('class="race"')==len(all_rows),
+        "initial_cards_visible":sum(1 for r in all_rows if str(r.get("date"))[:7]==open_month)==initial_count,
+        "canonical_dates_present":all(d in page for d in canonical_dates)
+    }
+    if not all(checks.values()):
+        raise SystemExit(f"replay generator verification failed: {checks}")
+
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(page,encoding="utf-8")
-    print(json.dumps({"status":"PASS","open_month":open_month,"initial_static_cards":len(initial),"canonical_completed_dates":sorted(completed_dates),"august_races":len(aug_rows),"single_embedded_data":True,"loading_placeholder":False},ensure_ascii=False))
+    print(json.dumps({
+        "status":"PASS",
+        "open_month":open_month,
+        "initial_visible_cards":initial_count,
+        "total_static_cards":len(all_rows),
+        "canonical_completed_dates":sorted(canonical_dates),
+        "checks":checks
+    },ensure_ascii=False))
 
 if __name__=="__main__":
     main()
