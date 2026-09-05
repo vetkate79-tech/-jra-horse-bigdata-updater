@@ -104,7 +104,6 @@
     "register-upcoming-new-horses.yml": [
       "audit_horse_master_uniqueness.py",
       "build_horse_base_catalog.py",
-      "build_live_sealed_predictions.py",
       "build_race_week_pre_race_features.py",
       "check_horse_master_completion.py",
       "collect_upcoming_new_horses.py",
@@ -148,7 +147,6 @@
       "actual": [
         "audit_horse_master_uniqueness.py",
         "build_horse_base_catalog.py",
-        "build_live_sealed_predictions.py",
         "build_race_week_pre_race_features.py",
         "check_horse_master_completion.py",
         "collect_upcoming_new_horses.py",
