@@ -60,6 +60,33 @@ function render(data){
 
   qs('#sourceList').innerHTML=(data.sources||[]).map(x=>`<div class="risk"><div class="risk-row"><strong>${esc(x.name)}</strong><span class="dot ${x.status==='ok'?'ok':x.status==='bad'?'bad':'warn'}"></span></div><p>${esc(x.detail)}</p></div>`).join('');
   renderAnalysis(data);
+  renderUpgradeLog(data);
+}
+
+function renderUpgradeLog(data){
+  const d=data.upgrade_log||{}, rows=d.upgrades||[];
+  const tracking=d.tracking_started_at||'-';
+  qs('#upgradeTrackingStatus').textContent=`追跡開始 ${tracking}`;
+  if(!rows.length){
+    qs('#upgradeLogList').innerHTML=`<div class="pdca-rule"><b>正式アップグレード履歴なし</b><br>追跡開始以降、完全アップグレードが実施された時だけここへ記録します。過去履歴は根拠なしで後付けしません。</div>`;
+    return;
+  }
+  qs('#upgradeLogList').innerHTML=[...rows].reverse().map(x=>{
+    const h=x.post_upgrade_health||{}, cmp=x.comparison_at_promotion||{}, health=h.label||h.status||'未評価';
+    const validation=Array.isArray(x.validation_path)?x.validation_path.join(' → '):String(x.validation_path||'');
+    const gate=typeof x.promotion_gate==='string'?x.promotion_gate:JSON.stringify(x.promotion_gate||{});
+    const promotion=typeof cmp==='string'?cmp:JSON.stringify(cmp);
+    return `<article class="pdca-item upgrade-item">
+      <div class="pdca-item-head"><strong>${esc(x.from_model||'-')} → ${esc(x.to_model||'-')}</strong><span>${esc(x.promoted_at||'')}</span></div>
+      <p><b>改善した理由</b> ${esc(x.reason_for_change||'-')}</p>
+      <p><b>変更内容</b> ${esc(x.change_summary||'-')}</p>
+      <p><b>検証経路</b> ${esc(validation||'-')}</p>
+      <p><b>昇格条件</b> ${esc(gate||'-')}</p>
+      <p><b>昇格時の旧モデル比較</b> ${esc(promotion||'-')}</p>
+      <p><b>昇格後の現在</b> ${esc(health)}</p>
+      ${h.current_model_metrics?`<p><b>現在値</b> ROI ${pct(h.current_model_metrics.roi)} / 的中 ${pct(h.current_model_metrics.hit_rate)} / 軸生存 ${pct(h.current_model_metrics.axis_survival)} / 組合せ漏れ ${pct(h.current_model_metrics.combo_miss_rate)} / ${esc(h.current_model_metrics.sample_scored_races)}R</p>`:''}
+    </article>`;
+  }).join('');
 }
 
 function renderAnalysis(data){
