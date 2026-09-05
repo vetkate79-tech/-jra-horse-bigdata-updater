@@ -10,6 +10,7 @@ from oral_operational_layer import analyze_race, MODEL_VERSION
 from situational_race_pattern_shadow import classify_situation
 from ensemble_prediction_shadow import route_ensemble
 from ticket_value_regime_shadow import classify_ticket_policy
+from axis_survival_shadow import select_survival_axis
 
 TZ=ZoneInfo('Asia/Tokyo')
 WEEKLY=Path('docs/data/horses/weekly_runner_details.json')
@@ -103,7 +104,7 @@ def main():
             pending.append({'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'status':'DATA_PENDING','reason':'at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed','evidence_horses':evidence,'score_spread':round(spread,3)});continue
         q.sort(key=lambda x:(-_num(x.get('score')),int(x['n']) if x['n'].isdigit() else 999));safe={'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'surface':r.get('surface'),'distance_m':r.get('distance_m'),'ranked_snapshot':q}
         if _contains_forbidden(safe):raise RuntimeError('forbidden market/result field entered pure prediction input')
-        analysis=analyze_race(safe);situation=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or []);analysis['situational_shadow']=situation;analysis['ensemble_shadow']=route_ensemble(situation);analysis['ticket_value_regime_shadow']=classify_ticket_policy(safe,q,analysis)
+        analysis=analyze_race(safe);situation=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or []);analysis['situational_shadow']=situation;analysis['ensemble_shadow']=route_ensemble(situation);analysis['axis_survival_shadow']=select_survival_axis(q);analysis['ticket_value_regime_shadow']=classify_ticket_policy(safe,q,analysis)
         races.append({**{k:safe.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'ranked_snapshot':q,'analysis':analysis})
     seal_stage='FINAL_WITH_FRAME' if frame_total>0 and frame_known==frame_total else ('PARTIAL_FRAME_RESEAL' if frame_known else 'PRELIMINARY_NO_FRAME')
     core={'schema_version':6,'mode':'LIVE_PURE_PREDICTION_SEAL','seal_stage':seal_stage,'model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'ticket_value_regime_shadow_enabled':True,'ticket_value_regime_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
