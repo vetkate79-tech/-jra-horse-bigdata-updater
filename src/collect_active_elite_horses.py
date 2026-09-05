@@ -125,34 +125,78 @@ def grade_name(text):
     return ''
 
 def race_history(html):
-    graded=[];open_rows=[];all_count=0
-    for table in normalized_tables(html):
-        if not any('レース名' in c for c in table.columns):continue
-        for _,row in table.iterrows():
-            vals={c:clean(v) for c,v in row.items()};joined=' '.join(vals.values())
-            race_name=next((v for c,v in vals.items() if 'レース名' in c),'');date=next((v for c,v in vals.items() if '年月日' in c or c=='日付'),'');venue=next((v for c,v in vals.items() if c in ('場','競馬場')),'');finish=next((v for c,v in vals.items() if '着順' in c),'')
+    graded=[];open_rows=[];all_count=0;flat_starts=0;flat_wins=0
+    parsed=[]
+
+    # Primary parser: JRA's official "出走レース" HTML table. This does not
+    # depend on pandas' inferred headers and survives the current profile layout.
+    soup=BeautifulSoup(html_with_image_labels(html),'html.parser')
+    for table in soup.find_all('table'):
+        trs=table.find_all('tr')
+        if not trs:continue
+        headers=[]
+        header_i=None
+        for i,tr in enumerate(trs[:4]):
+            hs=[clean(x.get_text(' ',strip=True)).replace(' ','') for x in tr.find_all(['th','td'])]
+            if any('レース名' in h for h in hs) and any(('着順' in h or h=='着') for h in hs):
+                headers=hs;header_i=i;break
+        if header_i is None:continue
+        for tr in trs[header_i+1:]:
+            cells=[clean(x.get_text(' ',strip=True)) for x in tr.find_all(['th','td'])]
+            if not cells:continue
+            vals={headers[i]:cells[i] for i in range(min(len(headers),len(cells)))}
+            race_name=next((v for k,v in vals.items() if 'レース名' in k),'')
             if not race_name:continue
-            all_count+=1;grade=grade_name(joined);is_jump=('障害' in race_name) or ('J・G' in joined) or ('J-G' in joined)
-            item={'date':date,'venue':venue,'race_name':race_name,'grade':grade,'finish':finish}
-            if grade and not is_jump:graded.append(item)
-            if ('オープン' in race_name or 'リステッド' in joined or 'Listed' in joined or grade) and not is_jump:open_rows.append(item)
-    def dedup(rows):
-        seen=set();out=[]
-        for r in rows:
-            k=tuple(r.values())
-            if k not in seen:seen.add(k);out.append(r)
-        return out
-    return dedup(graded),dedup(open_rows),all_count
+            date=next((v for k,v in vals.items() if '年月日' in k or k=='日付'),'')
+            venue=next((v for k,v in vals.items() if k in ('場','競馬場')),'')
+            finish=next((v for k,v in vals.items() if '着順' in k or k=='着'),'')
+            distance=next((v for k,v in vals.items() if '距離' in k),'')
+            joined=' '.join(cells)
+            parsed.append((date,venue,race_name,finish,distance,joined))
+
+    # Fallback for historical/cached layouts that pandas can still normalize.
+    if not parsed:
+        for table in normalized_tables(html):
+            if not any('レース名' in col for col in table.columns):continue
+            for _,row in table.iterrows():
+                vals={col:clean(v) for col,v in row.items()};joined=' '.join(vals.values())
+                race_name=next((v for col,v in vals.items() if 'レース名' in col),'')
+                if not race_name:continue
+                date=next((v for col,v in vals.items() if '年月日' in col or col=='日付'),'')
+                venue=next((v for col,v in vals.items() if col in ('場','競馬場')),'')
+                finish=next((v for col,v in vals.items() if '着順' in col),'')
+                distance=next((v for col,v in vals.items() if '距離' in col),'')
+                parsed.append((date,venue,race_name,finish,distance,joined))
+
+    seen=set()
+    for date,venue,race_name,finish,distance,joined in parsed:
+        k=(date,venue,race_name,distance,finish)
+        if k in seen:continue
+        seen.add(k);all_count+=1
+        grade=grade_name(joined)
+        is_jump=('障害' in race_name) or ('障' in distance) or ('J・G' in joined) or ('J-G' in joined)
+        item={'date':date,'venue':venue,'race_name':race_name,'grade':grade,'finish':finish}
+        if not is_jump:
+            flat_starts+=1
+            try:
+                if int(float(str(finish).strip()))==1:flat_wins+=1
+            except Exception:
+                pass
+            if grade:graded.append(item)
+            if ('オープン' in race_name or 'リステッド' in joined or 'Listed' in joined or grade):open_rows.append(item)
+
+    return graded,open_rows,all_count,flat_starts,flat_wins
 
 def parse_profile(candidate,html):
     labeled=html_with_image_labels(html);soup=BeautifulSoup(labeled,'html.parser');text=re.sub(r'\s+',' ',soup.get_text(' ',strip=True));erased=re.search(r'抹消年月日\s*(\d{4}年\d{1,2}月\d{1,2}日)',text)
-    flat_prize=money(text,'収得賞金（平地）');obstacle_prize=money(text,'収得賞金（障害）');graded,open_history,race_count=race_history(labeled);name=profile_name(soup,text,candidate['horse_name'])
+    flat_prize=money(text,'収得賞金（平地）');obstacle_prize=money(text,'収得賞金（障害）');graded,open_history,race_count,flat_starts,flat_wins=race_history(labeled);name=profile_name(soup,text,candidate['horse_name'])
     return {'horse_name':name,'horse_id':candidate['horse_id'],'active':not bool(erased),'deregistered_at':erased.group(1) if erased else None,
       'sex':field_between(text,'性別',['馬主名','母']),'age':field_between(text,'馬齢',['調教師名','母の父']),'trainer':field_between(text,'調教師名',['母の父','生年月日']),
       'owner':field_between(text,'馬主名',['母','馬齢']),'sire':field_between(text,'父',['性別','馬主名']),'dam':field_between(text,'母',['馬齢','調教師名']),
       'damsire':field_between(text,'母の父',['生年月日','生産牧場']),'birth_date':field_between(text,'生年月日',['生産牧場','母の母']),'breeder':field_between(text,'生産牧場',['母の母','毛色']),'coat':field_between(text,'毛色',['産地','馬名意味']),'birthplace':field_between(text,'産地',['馬名意味','取引市場']),
       'flat_acquired_prize_yen':flat_prize,'obstacle_acquired_prize_yen':obstacle_prize,'current_flat_class':flat_class_from_prize(flat_prize),
       'graded_experience':sorted({r['grade'] for r in graded}),'graded_starts':graded,'open_or_higher_history':open_history,'profile_race_rows':race_count,
+      'flat_career_starts':flat_starts,'flat_career_wins':flat_wins,'flat_unbeaten':bool(flat_starts>=2 and flat_wins==flat_starts),
       'profile_url':profile_url(candidate['horse_id']),'candidate_sources':sorted(candidate['candidate_sources'])}
 
 def verified_result_fallback():
