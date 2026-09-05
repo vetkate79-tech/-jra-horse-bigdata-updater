@@ -80,6 +80,12 @@ def main():
    'build_live_sealed_predictions.py' in text('race-week-prediction-seal.yml')
    and 'build_live_sealed_predictions.py' not in text('register-upcoming-new-horses.yml')
  )
+ seal=text('race-week-prediction-seal.yml')
+ checks['runner_refresh_to_prediction_seal_connected']=(
+   'workflow_run:' in seal
+   and 'Register upcoming JRA debut horses and race-week details' in seal
+   and "ref: main" in seal
+ )
  checks['management_erp_single_owner']=(
    'build_management_erp.py' in text('race-week-prediction-seal.yml')
    and 'build_management_erp.py' not in text('post-jra-meeting-update.yml')
