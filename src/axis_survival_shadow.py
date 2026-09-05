@@ -55,7 +55,7 @@ def select_survival_axis(ranked_snapshot, search_depth=3):
     chosen=best if switch_allowed else original
     return {
         "status":"RESEARCH_ONLY",
-        "architecture":"TOP3_SURVIVAL_AXIS_SHADOW_V2_CONSERVATIVE",
+        "architecture":"TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
         "objective":"MAXIMIZE_TOP3_SURVIVAL",
         "axis":chosen,
         "original_axis":original,
@@ -66,7 +66,7 @@ def select_survival_axis(ranked_snapshot, search_depth=3):
             "weak_original":weak_original,
             "survival_score_delta":round(delta,3),
             "allowed":switch_allowed,
-            "rule":"元軸の不確実性>=0.70 または能力1-2位差<=1.0、かつ残存スコア差1〜10の場合のみ上位3頭内で変更",
+            "rule":"元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更",
         },
         "changed_from_ability_rank1":chosen["rank"]!=1,
         "production_override_applied":False,
