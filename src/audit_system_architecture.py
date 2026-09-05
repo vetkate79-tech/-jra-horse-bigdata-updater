@@ -49,6 +49,14 @@ def main():
  checks['result_score_before_horse_merge']=post.find('score_live_sealed_predictions.py') < post.find('merge_latest_results_into_catalog.py')
  checks['validation_not_in_production_flow']='validate-jra-model.yml' not in post and 'validate-jra-model.yml' not in text('race-week-prediction-seal.yml')
  checks['replay_feature_contract']=all(x in replay for x in ('過去レースのAI予測','data-month="2026-08"','data-month="2026-07"','class="locked"','<details class="result','結果を見る'))
+ ui=cfg.get('ui_constitution') or {}
+ checks['ui_constitution_locked']=(
+   ui.get('status')=='USER_LOCKED'
+   and ui.get('priority')=='CONSTITUTIONAL'
+   and ui.get('explicit_user_override_required') is True
+   and 'display format must never be changed' in str(ui.get('rule',''))
+ )
+ checks['replay_canonical_format_pinned']=str(ui.get('canonical_replay_format_ref','')).endswith(':docs/replay/index.html')
  policy=cfg.get('active_workflow_script_policy',{})
  actual_refs={
    name:sorted(set(re.findall(r'src/([A-Za-z0-9_.-]+\.py)',text(name))))
