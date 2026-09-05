@@ -4,8 +4,8 @@ let races=[],date='ALL',month='2026-09',archives={};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 const axis=p=>[p.axis_no||p.axis?.horse_no,p.axis_name||p.axis?.horse_name].filter(Boolean).join(' ');
 function resultClass(z){const f=Number(z.axis_finish);if(f===1)return'win';if(f===2||f===3)return'place';if(Number.isFinite(f)&&f>=4)return'miss';return''}
-function resultLabel(z){const f=Number(z.axis_finish);if(f===1)return'1着・的中';if(f===2)return'2着・馬券内';if(f===3)return'3着・馬券内';if(Number.isFinite(f)&&f>=4)return f+'着・馬券外';return'結果照合待ち'}
-function toNums(top3){const map={'⓪':'0','①':'1','②':'2','③':'3','④':'4','⑤':'5','⑥':'6','⑦':'7','⑧':'8','⑨':'9'};return String(top3||'').split('－').map(x=>{let s='';for(const ch of x.trim())s+=map[ch]??ch;return s.replace(/\D/g,'')}).filter(Boolean)}
+function resultLabel(z){const f=Number(z.axis_finish);if(f===1)return'1着・的中';if(f===2)return'2着・馬券内';if(f===3)return'3着・馬券内';if(Number.isFinite(f)&&f>=4)return '4着以下・馬券外（軸不的中）';return'結果照合待ち'}
+function toNums(top3){const map={'⓪':'0','①':'1','②':'2','③':'3','④':'4','⑤':'5','⑥':'6','⑦':'7','⑧':'8','⑨':'9','⑩':'10','⑪':'11','⑫':'12','⑬':'13','⑭':'14','⑮':'15','⑯':'16','⑰':'17','⑱':'18','⑲':'19','⑳':'20'};return String(top3||'').split('－').map(x=>{let s='';for(const ch of x.trim())s+=map[ch]??ch;return s.replace(/\D/g,'')}).filter(Boolean)}
 function liveArchive(live,res){
   const resultBy=new Map((res.races||[]).map(x=>[[x.date,x.track,+x.race_no].join('|'),x]));
   return (live.races||[]).filter(x=>x.date==='2026-09-05').map(x=>{
@@ -13,7 +13,7 @@ function liveArchive(live,res){
     const nums=(rr?.top3_rows||[]).length?rr.top3_rows.map(y=>String(y.horse_no||'')):toNums(rr?.top3);
     const names=(rr?.top3_rows||[]).length?rr.top3_rows.map(y=>y.horse_name||''):nums.map(()=> '');
     const ax=String(a.axis?.horse_no||'');
-    const finish=nums.indexOf(ax)>=0?nums.indexOf(ax)+1:null;
+    const finish=nums.indexOf(ax)>=0?nums.indexOf(ax)+1:(nums.length===3?4:null);
     const tickets=a.trio_tickets||[];
     const actual=nums.length===3?[...nums].map(Number).sort((a,b)=>a-b).join('-'):null;
     const trioHit=rr?.trio_hit===true?true:rr?.trio_hit===false?false:(actual?tickets.includes(actual):null);
