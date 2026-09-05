@@ -8,6 +8,7 @@ PRED=Path('docs/data/live_predictions_sealed.json')
 RES=Path('data/race_results_html_2026.csv')
 OUT=Path('docs/data/live_prediction_scores.json')
 STATUS=Path('status/live_prediction_scoring.json')
+HISTORY=Path('docs/data/prediction-score-history')
 
 def i(v):
     try:return int(float(str(v).strip()))
@@ -49,7 +50,14 @@ def main():
     summary={'source_prediction_hash_sha256':pred.get('prediction_hash_sha256'),'sealed_predictions_immutable':True,'scored_race_count':scored,'pending_race_count':len(pending),'axis_1st':grade['HIT'],'axis_2nd_3rd':grade['PLACE'],'axis_outside_top3':grade['MISS'],'axis_top3_rate_pct':round(top3/scored*100,2) if scored else None,'decision_counts':dict(decisions),'trio_bought_races':trio_buys,'trio_hits':trio_hits,'trio_hit_rate_pct':round(trio_hits/trio_buys*100,2) if trio_buys else None,'result_fields_used_only_after_seal':True}
     payload={'summary':summary,'pending':pending,'races':rows}
     OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True)
-    OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
+    dates=sorted({str(x.get('date') or '') for x in rows+pending if str(x.get('date') or '')}) or ['undated']
+    digest=str(summary.get('source_prediction_hash_sha256') or 'missing-hash')
+    raw=json.dumps(payload,ensure_ascii=False,indent=2)
+    for date in dates:
+        d=HISTORY/date;d.mkdir(parents=True,exist_ok=True);p=d/(digest+'.json')
+        if not p.exists():p.write_text(raw,encoding='utf-8')
+        if p.read_text(encoding='utf-8')!=raw:raise RuntimeError('score history verification failed: '+str(p))
+    OUT.write_text(raw,encoding='utf-8')
     STATUS.write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(summary,ensure_ascii=False))
 if __name__=='__main__':main()
