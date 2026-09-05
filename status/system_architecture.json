@@ -118,10 +118,8 @@
       "update_recent_runner_elite.py"
     ],
     "race-week-prediction-seal.yml": [
-      "axis_survival_shadow.py",
       "build_live_sealed_predictions.py",
-      "build_management_erp.py",
-      "oral_operational_layer.py"
+      "build_management_erp.py"
     ],
     "register-upcoming-new-horses.yml": [
       "audit_horse_master_uniqueness.py",
@@ -138,14 +136,7 @@
       "reconcile_elite_from_verified_master.py"
     ],
     "system-architecture-audit.yml": [
-      "audit_system_architecture.py",
-      "build_live_pdca.py",
-      "build_live_sealed_predictions.py",
-      "build_management_erp.py",
-      "build_replay_page.py",
-      "collect_current_market_odds.py",
-      "expire_weekly_runner_details.py",
-      "score_live_sealed_predictions.py"
+      "audit_system_architecture.py"
     ],
     "validate-jra-model.yml": [
       "audit_validation_prerequisites.py",
@@ -155,19 +146,16 @@
     ]
   },
   "script_policy_mismatches": {
-    "system-architecture-audit.yml": {
+    "race-week-prediction-seal.yml": {
       "expected": [
-        "audit_system_architecture.py"
-      ],
-      "actual": [
-        "audit_system_architecture.py",
-        "build_live_pdca.py",
+        "axis_survival_shadow.py",
         "build_live_sealed_predictions.py",
         "build_management_erp.py",
-        "build_replay_page.py",
-        "collect_current_market_odds.py",
-        "expire_weekly_runner_details.py",
-        "score_live_sealed_predictions.py"
+        "oral_operational_layer.py"
+      ],
+      "actual": [
+        "build_live_sealed_predictions.py",
+        "build_management_erp.py"
       ]
     }
   },
