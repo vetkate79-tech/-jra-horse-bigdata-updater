@@ -13,12 +13,12 @@ PDCA = Path("docs/data/live_pdca.json")
 UPGRADE_LOG = Path("docs/data/model_upgrade_log.json")
 CONTEXT = Path("data/race_context_2026.csv")
 PAYOUTS = Path("data/race_payouts_2026.csv")
-RESULTS = Path("data/race_results_html_2026.csv")
 OUT = Path("docs/data/dashboard.json")
 DETAIL = Path("docs/data/management_analytics.json")
 STATUS = Path("status/management_erp.json")
 JST = timezone(timedelta(hours=9))
 PRED_ARCHIVE_GLOB = "prediction-archive-????-??-??.json"
+RESULT_ARCHIVE_GLOB = "today-results-????-??-??.json"
 
 def load_json(path, default):
     try:
@@ -103,19 +103,29 @@ def load_prediction_archives():
                 }
     return out,dates
 
-def build_result_top3(rows):
-    grouped=defaultdict(list)
-    for r in rows:
-        k=race_key(r.get("race_date"),r.get("course") or r.get("track"),r.get("race_no"))
-        finish=iv(r.get("finish_position"))
-        if k[0] and k[1] and k[2] is not None and finish in (1,2,3):
-            grouped[k].append(r)
+def load_canonical_result_archives():
     out={}
-    for k,xs in grouped.items():
-        xs=sorted(xs,key=lambda x:iv(x.get("finish_position")) or 99)
-        if len(xs)==3:
-            out[k]=xs
-    return out
+    dates=set()
+    for p in Path("docs/data").glob(RESULT_ARCHIVE_GLOB):
+        d=load_json(p,{})
+        date=str(d.get("date") or p.stem.removeprefix("today-results-"))
+        summary=d.get("summary") or {}
+        if not date or summary.get("complete") is not True:
+            continue
+        rows=d.get("races") or []
+        if not rows:
+            continue
+        dates.add(date)
+        for r in rows:
+            k=race_key(r.get("date") or date,r.get("track"),r.get("race_no"))
+            top=r.get("top3_rows") or []
+            if k[0] and k[1] and k[2] is not None and len(top)==3:
+                out[k]={
+                    "race":r,
+                    "top3":top,
+                    "source":d.get("source") or "JRA_OFFICIAL_RESULTS_DB",
+                }
+    return out,dates
 
 def trio_combo(xs):
     vals=[]
@@ -165,9 +175,8 @@ def main():
     upgrade_log=load_json(UPGRADE_LOG, {"schema_version":1,"upgrades":[]})
     contexts=read_csv(CONTEXT)
     payouts=read_csv(PAYOUTS)
-    results=read_csv(RESULTS)
     archive_pred_by,archive_dates=load_prediction_archives()
-    result_top3_by=build_result_top3(results)
+    canonical_results,result_dates=load_canonical_result_archives()
 
     ctx_by={}
     race_id_by={}
@@ -257,16 +266,18 @@ def main():
     # The ERP never reads the public replay JSON as an input source.
     known={(r["date"],r["track"],r["race_no"]) for r in rows}
     historical_keys=sorted(
-        (k for k in result_top3_by if k[0] in archive_dates and k not in known),
+        (k for k in canonical_results if k[0] in archive_dates and k[0] in result_dates and k not in known),
         key=lambda k:(k[0],k[1],k[2] or 0)
     )
     for k in historical_keys:
-        top=result_top3_by[k]
+        result_entry=canonical_results[k]
+        result_row=result_entry.get("race") or {}
+        top=result_entry.get("top3") or []
         archived=archive_pred_by.get(k) or {}
         pred=archived.get("prediction") or {}
         a=pred.get("analysis") or {}
         cctx=ctx_by.get(k,{})
-        rid=race_id_by.get(k) or cctx.get("race_id") or (top[0].get("race_id") if top else None)
+        rid=race_id_by.get(k) or cctx.get("race_id")
         pay=payout_by_race.get(str(rid or ""),{})
         tickets=[str(x) for x in (a.get("trio_tickets") or []) if x]
         decision=str(a.get("pre_market_decision") or pred.get("decision") or ("NO_PREDICTION" if not pred else "UNKNOWN"))
@@ -285,7 +296,7 @@ def main():
         axis_grade=("HIT" if axis_finish==1 else ("PLACE" if axis_finish in (2,3) else ("MISS" if axis_finish else None)))
         rows.append({
             "date":k[0],"track":k[1],"race_no":k[2],"race_id":rid,
-            "race_name":pred.get("race_name") or cctx.get("race_name") or (top[0].get("race_name") if top else None),
+            "race_name":pred.get("race_name") or result_row.get("race_name") or cctx.get("race_name"),
             "race_category":cctx.get("race_category"),"race_class":cctx.get("race_class"),
             "surface":cctx.get("surface"),"distance_m":iv(cctx.get("distance_m")),
             "distance_band":dist_band(cctx.get("distance_m")),
@@ -309,7 +320,7 @@ def main():
             "ticket_value_regime_shadow":a.get("ticket_value_regime_shadow") or {},
             "actual_trio_payout_yen":pay.get("payout_per_100_yen") or 0,
             "data_status":cctx.get("data_status"),"payout_data_status":pay.get("data_status"),
-            "result_source":"JRA_OFFICIAL_RESULTS_DB",
+            "result_source":result_entry.get("source") or "JRA_OFFICIAL_RESULTS_DB",
             "prediction_source":"IMMUTABLE_PREDICTION_ARCHIVE" if has_prediction else None,
         })
 
