@@ -17,6 +17,7 @@ BASE=Path('docs/data/horses/base_catalog.json')
 PRE=Path('docs/data/horses/pre_race_features.json')
 OUT=Path('docs/data/live_predictions_sealed.json')
 STATUS=Path('status/live_prediction_seal.json')
+UPGRADE_LOG=Path('docs/data/model_upgrade_log.json')
 FORBIDDEN_KEYS={'odds','popularity','market_rank','payout','return_amount','result','finish_position','trio_result','trio_payout'}
 
 def _num(v,d=0.0):
@@ -62,6 +63,23 @@ def _safe_horse(card_h,master,pre=None):
     starts=_num(p.get('starts_before'),_num(h.get('starts_before') or h.get('running_style_sample_starts'),0));show=_num(p.get('show_rate_prior'),_num(h.get('show_rate_prior'),0.30));recent=_num(p.get('recent_form'),_num(h.get('recent_form'),0.35));cond=_num(p.get('condition_fit'),_num(h.get('condition_fit'),0.30));unc=_num(p.get('uncertainty'),_num(h.get('uncertainty'),1.0 if starts<1 else (0.75 if starts<3 else 0.5)));explicit_score=p.get('pre_race_score') if p.get('pre_race_score') is not None else h.get('pre_race_score');score=_num(explicit_score,0.0) if explicit_score is not None else 0.0;style=p.get('pre_race_running_style') or h.get('pre_race_running_style') or h.get('running_style') or None
     return {'n':str(card_h.get('n') or ''),'frame_no':str(card_h.get('frame_no') or ''),'name':card_h.get('name') or '','horse_id':card_h.get('horse_id'),'score':score,'starts_before':starts,'show_rate_prior':show,'recent_form':recent,'condition_fit':cond,'uncertainty':unc,'running_style':style,'draw_show_prior':p.get('draw_show_prior'),'draw_history_starts':p.get('draw_history_starts'),'score_source':p.get('pre_race_score_source') or ('HORSE_MASTER' if explicit_score is not None else 'MISSING')}
 
+def _assert_registered_model_version():
+    if not UPGRADE_LOG.exists():
+        raise RuntimeError('model upgrade log is missing; production seal is blocked')
+    d=json.loads(UPGRADE_LOG.read_text(encoding='utf-8'))
+    baseline=str((d.get('baseline') or {}).get('model_version') or '')
+    upgrades=d.get('upgrades') or []
+    allowed=baseline
+    if upgrades:
+        latest=upgrades[-1]
+        required=('upgrade_id','promoted_at','from_model','to_model','reason_for_change','validation_path','change_summary','promotion_gate','comparison_at_promotion','post_upgrade_health')
+        missing=[k for k in required if not latest.get(k)]
+        if missing:
+            raise RuntimeError('latest complete upgrade log is incomplete: '+','.join(missing))
+        allowed=str(latest.get('to_model') or '')
+    if str(MODEL_VERSION)!=allowed:
+        raise RuntimeError(f'unregistered production model version: {MODEL_VERSION}; expected {allowed}. Complete upgrade evidence must be registered before sealing')
+
 def _contains_forbidden(obj):
     if isinstance(obj,dict):
         for k,v in obj.items():
@@ -71,6 +89,7 @@ def _contains_forbidden(obj):
     return False
 
 def main():
+    _assert_registered_model_version()
     now=datetime.now(TZ);today=now.date().isoformat();cards=_load_weekly_cards();master=_load_horses();pre_by_key,pre_summary=_load_pre_features();races=[];pending=[];frame_total=frame_known=0
     for r in cards:
         date=str(r.get('date') or '')
