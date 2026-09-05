@@ -1,6 +1,14 @@
 name: Deploy JRA Management ERP
 
 on:
+  workflow_run:
+    workflows:
+      - Race-week pure prediction seal
+      - JRA market timing monitor
+      - Post JRA meeting data update
+      - Register upcoming JRA debut horses and race-week details
+      - Build word dictionary and global links
+    types: [completed]
   push:
     branches: [main]
     paths:
@@ -24,13 +32,16 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Build fixed August one-race-one-prediction archive
         run: python src/build_august_validation_archive.py
       - name: Build canonical replay page
