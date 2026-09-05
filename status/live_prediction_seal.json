@@ -7,12 +7,14 @@
   "frame_known_count": 0,
   "frame_total_count": 491,
   "draw_feature_applied": false,
-  "prediction_hash_sha256": "b97c43e16e9bb0c1a6047c10137cad1c887dc678329852dc905dd632a9a701c2",
+  "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
   "pre_race_feature_cutoff": "2026-09-05",
   "situational_shadow_enabled": true,
   "situational_shadow_production_override": false,
   "ensemble_shadow_enabled": true,
   "ensemble_shadow_production_override": false,
+  "ticket_value_regime_shadow_enabled": true,
+  "ticket_value_regime_shadow_production_override": false,
   "odds_popularity_used": false,
   "results_used": false
 }
