@@ -115,7 +115,7 @@ def predict():
         for h in r['horses']:
             rawhist=histories.get(h.get('horse_id',''),[]);hist=[x for x in rawhist if x['date']<r['date']];excluded+=sum(x['date']>=r['date'] for x in rawhist)
             rank.append({'n':h['n'],'name':h['name'],'horse_id':h.get('horse_id',''),'running_style':'UNKNOWN',**features(h,r,hist,base.get(h.get('horse_id',''),{}),jr,tr)})
-        rank.sort(key=lambda x:(-x['score'],int(x['n'])));pred.append({**{k:r[k] for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'ranked_snapshot':rank[:10]})
+        rank.sort(key=lambda x:(-x['score'],int(x['n'])));pred.append({**{k:r[k] for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'ranked_snapshot':rank,'legacy_top10_snapshot':rank[:10]})
         if i%36==0:print(f'prediction {i}/216',flush=True)
     core={'mode':'STRICT_EVOLUTION_PRE_RESULT','dates':DATES,'race_count':216,'base_model_version':MODEL_VERSION,'leakage_policy':'Target results, popularity, odds and payouts are unread by predict stage. Profile histories filtered strictly before target race date.','profile_fetch_errors':errors,'excluded_profile_rows_at_or_after_target':excluded,'races':pred}
     raw=json.dumps(core,ensure_ascii=False,separators=(',',':'));core['prediction_hash_sha256']=hashlib.sha256(raw.encode()).hexdigest();SEALED.parent.mkdir(parents=True,exist_ok=True);SEALED.write_text(json.dumps(core,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
