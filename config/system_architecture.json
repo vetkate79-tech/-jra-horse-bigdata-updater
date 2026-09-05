@@ -103,7 +103,8 @@
     "race-week-prediction-seal.yml": [
       "build_live_sealed_predictions.py",
       "build_management_erp.py",
-      "oral_operational_layer.py"
+      "oral_operational_layer.py",
+      "ticket_value_regime_shadow.py"
     ],
     "register-upcoming-new-horses.yml": [
       "audit_horse_master_uniqueness.py",
