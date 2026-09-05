@@ -14,6 +14,7 @@ PAY=Path(f'data/race_payouts_{year}.csv')
 PRED=Path('docs/data/live_predictions_sealed.json')
 OUT=Path(f'docs/data/today-results-{target}.json')
 PRED_ARCHIVE=Path(f'docs/data/prediction-archive-{target}.json')
+REPLAY=Path(f'docs/data/replay-{target}.json')
 
 def i(v):
     try:return int(float(str(v).strip()))
@@ -81,5 +82,60 @@ def main():
         'pending':archived_pending
     }
     PRED_ARCHIVE.write_text(json.dumps(pred_archive,ensure_ascii=False,indent=2),encoding='utf-8')
-    print(json.dumps(payload['summary'],ensure_ascii=False))
+
+    # One canonical public replay artifact per completed date.
+    pred_map={(str(p.get('track','')).replace('競馬場',''),i(p.get('race_no'))):p for p in archived_races}
+    replay_rows=[]
+    for r in out:
+        key=(r['track'],i(r['race_no']))
+        p=pred_map.get(key)
+        a=(p or {}).get('analysis') or {}
+        axis_no=str((a.get('axis') or {}).get('horse_no') or r.get('axis_horse_no') or '')
+        axis_name=str((a.get('axis') or {}).get('horse_name') or r.get('axis_horse_name') or '')
+        top3_rows=r.get('top3_rows') or []
+        finish=None
+        if axis_no:
+            for row in top3_rows:
+                if str(row.get('horse_no'))==axis_no:
+                    finish=i(row.get('finish'))
+                    break
+            if finish is None and len(top3_rows)==3:
+                finish=4
+        replay_rows.append({
+            'date':target,
+            'track':r['track'],
+            'race_no':r['race_no'],
+            'race_name':r.get('race_name') or '',
+            'prediction':({
+                'sealed':True,
+                'axis_no':axis_no,
+                'axis_name':axis_name,
+                'decision':a.get('pre_market_decision') or a.get('classification') or '—',
+                'candidate':[
+                    ' '.join(str(v) for v in (x.get('horse_no'),x.get('horse_name')) if v not in (None,''))
+                    for x in (a.get('partner_roles') or [])[:5]
+                ],
+                'tickets':a.get('trio_tickets') or []
+            } if p else {'sealed':False}),
+            'result':{
+                'axis_finish':finish,
+                'top3':top3_rows,
+                'trio_hit':r.get('trio_hit'),
+                'trio_payout':r.get('trio_payout') or '',
+                'source':r.get('source') or ''
+            }
+        })
+    replay_payload={
+        'schema_version':1,
+        'mode':'CANONICAL_REPLAY_DATE',
+        'date':target,
+        'summary':{
+            'races':len(replay_rows),
+            'sealed':sum(1 for x in replay_rows if x['prediction'].get('sealed') is not False),
+            'results':sum(1 for x in replay_rows if len(x['result'].get('top3') or [])==3)
+        },
+        'races':replay_rows
+    }
+    REPLAY.write_text(json.dumps(replay_payload,ensure_ascii=False,indent=2),encoding='utf-8')
+    print(json.dumps({'results':payload['summary'],'replay':replay_payload['summary']},ensure_ascii=False))
 if __name__=='__main__':main()
