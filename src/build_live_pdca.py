@@ -122,7 +122,7 @@ def main():
     payload={'mode':'POST_RESULT_PDCA_ONLY','source_prediction_hash_sha256':(d.get('summary') or {}).get('source_prediction_hash_sha256'),'sealed_predictions_mutated':False,'scored_race_count':len(races),'pending_race_count':len(d.get('pending') or []),'failure_counts':failure_counts,'by_decision':by_decision,'recommended_actions':actions,'axis_learning_objective':'TOP3_SURVIVAL_FIRST','failure_taxonomy':failure_taxonomy,'detailed_failure_counts':dict(detailed_failure_counts),'missed_opponent_position_counts':dict(missed_position_counts),'detailed_failure_audits':detailed_failure_audits,'axis_scenario_audits':scenario_audits,'axis_scenario_quality_counts':dict(scenario_quality),'governance':'PDCA output is diagnostic only; it does not automatically rewrite the certified production model.'}
     OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True)
     txt=json.dumps(payload,ensure_ascii=False,indent=2)
-    dates=sorted({str(x.get('date') or '') for x in races if str(x.get('date') or '')}) or ['undated']
+    dates=sorted({str(x.get('date') or '') for x in races+(d.get('pending') or []) if str(x.get('date') or '')}) or ['undated']
     digest=str(payload.get('source_prediction_hash_sha256') or 'missing-hash')
     for date in dates:
         d=HISTORY/date;d.mkdir(parents=True,exist_ok=True);p=d/(digest+'.json')
