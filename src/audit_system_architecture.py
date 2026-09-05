@@ -125,6 +125,20 @@ def main():
    and 'pdca history verification failed' in pdca
    and 'pdca-history' in post
  )
+ erp_builder=Path('src/build_management_erp.py').read_text(encoding='utf-8') if Path('src/build_management_erp.py').exists() else ''
+ public_app=Path('docs/app/race-select-current.js').read_text(encoding='utf-8') if Path('docs/app/race-select-current.js').exists() else ''
+ replay_builder=Path('src/build_replay_page.py').read_text(encoding='utf-8') if Path('src/build_replay_page.py').exists() else ''
+ checks['jst_date_rollover_display_guard']=(
+   'actual_today=datetime.now(JST).date().isoformat()' in erp_builder
+   and 'display_date' in erp_builder
+   and 'preferredDate' in public_app
+   and "timeZone:'Asia/Tokyo'" in public_app
+   and 'latest_completed_date=max(canonical_dates)' in replay_builder
+ )
+ checks['active_runtime_has_no_fixed_weekend_date']=all(
+   token not in (builder+erp_builder+public_app+post+seal)
+   for token in ('2026-09-05','2026-09-06')
+ )
  repair=cfg.get('repair_constitution') or {}
  checks['root_cause_repair_constitution_locked']=(
    repair.get('status')=='USER_LOCKED'
