@@ -80,6 +80,17 @@ def main():
    '[hidden]{display:none!important}' in Path('src/build_replay_page.py').read_text(encoding='utf-8')
    and "assert '[hidden]{display:none!important}' in p" in text('deploy-management-erp.yml')
  )
+ admin_css=Path('docs/admin/styles.css').read_text(encoding='utf-8') if Path('docs/admin/styles.css').exists() else ''
+ admin_html=Path('docs/admin/index.html').read_text(encoding='utf-8') if Path('docs/admin/index.html').exists() else ''
+ admin_js=Path('docs/admin/app.js').read_text(encoding='utf-8') if Path('docs/admin/app.js').exists() else ''
+ checks['erp_date_filter_ui_guard']=(
+   '[hidden]{display:none!important}' in admin_css
+   and 'analysisDateMode' in admin_html
+   and 'analysisDateFrom' in admin_html
+   and 'analysisDateTo' in admin_html
+   and 'analysisDateDay' in admin_html
+   and '来週のレース終了までお待ちください' in admin_js
+ )
  checks['prediction_seal_single_owner']=(
    'build_live_sealed_predictions.py' in text('race-week-prediction-seal.yml')
    and 'build_live_sealed_predictions.py' not in text('register-upcoming-new-horses.yml')
