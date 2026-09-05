@@ -95,7 +95,7 @@ def career_unbeaten_stats(rows):
                 if hid:baseline_by_id[hid]=item
                 if name:baseline_by_name[name]=item
 
-    current=defaultdict(dict)
+    current=defaultdict(dict);current_name={}
     for r in rows:
         hid=clean(r.get('horse_id'));name=clean(r.get('horse_name'))
         if not hid and not name:continue
@@ -107,24 +107,26 @@ def career_unbeaten_stats(rows):
         if not rid:continue
         key=hid or ('NAME:'+name)
         current[key][rid]=finish_i
+        if name:current_name[key]=name
 
     out={}
-    horse_keys=set(current)
-    for key in horse_keys:
+    for key,starts_by_race in current.items():
         hid='' if key.startswith('NAME:') else key
-        name=key[5:] if key.startswith('NAME:') else ''
-        base=baseline_by_id.get(hid) if hid else baseline_by_name.get(name)
+        name=current_name.get(key) or (key[5:] if key.startswith('NAME:') else '')
+        base=baseline_by_id.get(hid) or baseline_by_name.get(name)
         starts=(base or {}).get('starts',0)
         wins=(base or {}).get('wins',0)
-        finishes=list(current[key].values())
+        finishes=list(starts_by_race.values())
         starts+=len(finishes)
         wins+=sum(1 for x in finishes if x==1)
-        out[key]={
+        item={
             'starts':starts,
             'wins':wins,
             'unbeaten':bool(starts>=2 and wins==starts),
             'unbeaten_source':'JRA_PROFILE_2025_PLUS_OFFICIAL_2026_RESULTS' if base else 'JRA_OFFICIAL_2026_RESULTS_ONLY',
         }
+        out[key]=item
+        if name:out['NAME:'+name]=item
     return out
 
 def parse_corners(value): return [int(x) for x in re.findall(r'\d+',str(value or ''))]
