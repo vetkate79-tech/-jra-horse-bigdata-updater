@@ -16,6 +16,7 @@ on:
     branches: [main]
     paths:
       - 'src/build_live_sealed_predictions.py'
+      - 'src/axis_survival_shadow.py'
       - 'src/oral_operational_layer.py'
       - 'src/build_management_erp.py'
       - 'docs/data/race_cards.json'
@@ -61,7 +62,7 @@ jobs:
         run: |
           git config user.name 'jra-prediction-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/live_predictions_sealed.json docs/data/dashboard.json docs/data/management_analytics.json status/live_prediction_seal.json status/management_erp.json
+          git add docs/data/live_predictions_sealed.json docs/data/live_predictions_champion_2026-09-06.json docs/data/dashboard.json docs/data/management_analytics.json status/live_prediction_seal.json status/management_erp.json
           git diff --cached --quiet && exit 0
           git commit -m 'prediction: seal race-week pure predictions'
           for i in 1 2 3; do
