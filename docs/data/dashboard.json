@@ -1,38 +1,37 @@
 {
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-    "snapshot_time": "2026-09-06T00:18:16+09:00",
+    "snapshot_time": "2026-09-06T00:39:09+09:00",
     "total_races": 33,
     "buy_races": 30,
     "pass_races": 3,
-    "scored_races": 31,
-    "roi": 141.04,
-    "stake_amount": 24100,
-    "return_amount": 33990,
-    "profit_amount": 9890,
-    "hit_rate": 28.57,
-    "hits": 8,
+    "scored_races": 0,
+    "roi": 0,
+    "stake_amount": 0,
+    "return_amount": 0,
+    "profit_amount": 0,
+    "hit_rate": 0,
+    "hits": 0,
     "daily_budget": 10000,
     "remaining_budget": 10000,
-    "roi_ex_top": 77.22,
-    "axis_survival": 51.61,
-    "third_column_miss_rate": 25.0,
+    "roi_ex_top": 0,
+    "axis_survival": 0,
+    "third_column_miss_rate": 0,
     "elimination_miss_rate": 0,
     "max_drawdown": 0,
-    "purchase_rate": 90.32,
-    "manbaken_opportunities": 6,
-    "manbaken_hits": 1,
-    "manbaken_capture_rate": 16.67,
-    "sub10k_opportunities": 22,
-    "sub10k_stake_amount": 18800,
-    "sub10k_return_amount": 18610,
-    "sub10k_roi": 98.99,
+    "purchase_rate": 0,
+    "manbaken_opportunities": 0,
+    "manbaken_hits": 0,
+    "manbaken_capture_rate": 0,
+    "sub10k_opportunities": 0,
+    "sub10k_stake_amount": 0,
+    "sub10k_return_amount": 0,
+    "sub10k_roi": 0,
     "sub10k_roi_target_low": 80.0,
     "sub10k_roi_target_high": 90.0,
-    "sub10k_roi_target_status": "ABOVE_TARGET"
+    "sub10k_roi_target_status": "NO_DATA"
   },
   "state_counts": {
-    "SCORED": 31,
     "RESULT_PENDING": 33
   },
   "races": [
@@ -79,9 +78,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 46.9,
+        "score": 47.3,
         "status": "LOW",
-        "gap_to_second": 1.135,
+        "gap_to_second": 1.43,
         "uncertainty": 0.8,
         "starts_before": 1.0,
         "reasons": [
@@ -113,7 +112,7 @@
       "axis_durability": {
         "score": 72.9,
         "status": "HIGH",
-        "gap_to_second": 11.182,
+        "gap_to_second": 11.081,
         "uncertainty": 0.0,
         "starts_before": 9.0,
         "reasons": [
@@ -142,9 +141,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 74.0,
+        "score": 74.5,
         "status": "HIGH",
-        "gap_to_second": 4.614,
+        "gap_to_second": 4.984,
         "uncertainty": 0.0,
         "starts_before": 5.0,
         "reasons": [
@@ -173,9 +172,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 71.7,
+        "score": 71.5,
         "status": "MID",
-        "gap_to_second": 1.195,
+        "gap_to_second": 0.99,
         "uncertainty": 0.0,
         "starts_before": 5.0,
         "reasons": [
@@ -204,9 +203,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 62.1,
+        "score": 62.2,
         "status": "MID",
-        "gap_to_second": 0.406,
+        "gap_to_second": 0.542,
         "uncertainty": 0.2,
         "starts_before": 4.0,
         "reasons": [
@@ -235,9 +234,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 67.6,
+        "score": 67.7,
         "status": "MID",
-        "gap_to_second": 1.155,
+        "gap_to_second": 1.256,
         "uncertainty": 0.0,
         "starts_before": 13.0,
         "reasons": [
@@ -268,7 +267,7 @@
       "axis_durability": {
         "score": 78.8,
         "status": "HIGH",
-        "gap_to_second": 7.964,
+        "gap_to_second": 8.039,
         "uncertainty": 0.0,
         "starts_before": 7.0,
         "reasons": [
@@ -290,16 +289,16 @@
       "race_no": 11,
       "start_time": "",
       "classification": "CAUTION",
-      "axis": "9 ドリームコア",
+      "axis": "6 アストリル",
       "race_state": "RESULT_PENDING",
       "ev": null,
       "stake": 0,
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 69.1,
+        "score": 70.0,
         "status": "MID",
-        "gap_to_second": 0.273,
+        "gap_to_second": 0.443,
         "uncertainty": 0.0,
         "starts_before": 6.0,
         "reasons": [
@@ -328,9 +327,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 70.8,
+        "score": 70.9,
         "status": "HIGH",
-        "gap_to_second": 7.417,
+        "gap_to_second": 7.487,
         "uncertainty": 0.2,
         "starts_before": 4.0,
         "reasons": [
@@ -361,7 +360,7 @@
       "axis_durability": {
         "score": 78.3,
         "status": "HIGH",
-        "gap_to_second": 8.394,
+        "gap_to_second": 8.494,
         "uncertainty": 0.0,
         "starts_before": 6.0,
         "reasons": [
@@ -390,9 +389,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 59.3,
+        "score": 59.7,
         "status": "MID",
-        "gap_to_second": 4.111,
+        "gap_to_second": 4.437,
         "uncertainty": 0.4,
         "starts_before": 3.0,
         "reasons": [
@@ -421,9 +420,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 69.3,
+        "score": 68.9,
         "status": "HIGH",
-        "gap_to_second": 6.179,
+        "gap_to_second": 5.855,
         "uncertainty": 0.4,
         "starts_before": 3.0,
         "reasons": [
@@ -445,18 +444,18 @@
       "race_no": 4,
       "start_time": "",
       "classification": "CAUTION",
-      "axis": "7 フルムーン",
+      "axis": "14 ルージュフィーリア",
       "race_state": "RESULT_PENDING",
       "ev": null,
       "stake": 0,
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 58.0,
+        "score": 54.5,
         "status": "MID",
-        "gap_to_second": 0.115,
-        "uncertainty": 0.0,
-        "starts_before": 5.0,
+        "gap_to_second": 0.278,
+        "uncertainty": 0.4,
+        "starts_before": 3.0,
         "reasons": [
           "上位評価差が小さい",
           "事前データの不確実性が低い",
@@ -483,9 +482,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 59.2,
+        "score": 59.1,
         "status": "MID",
-        "gap_to_second": 0.897,
+        "gap_to_second": 0.831,
         "uncertainty": 0.0,
         "starts_before": 7.0,
         "reasons": [
@@ -545,7 +544,7 @@
       "axis_durability": {
         "score": 66.6,
         "status": "MID",
-        "gap_to_second": 1.336,
+        "gap_to_second": 1.3,
         "uncertainty": 0.0,
         "starts_before": 11.0,
         "reasons": [
@@ -574,9 +573,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 71.0,
+        "score": 70.6,
         "status": "HIGH",
-        "gap_to_second": 2.216,
+        "gap_to_second": 1.841,
         "uncertainty": 0.0,
         "starts_before": 5.0,
         "reasons": [
@@ -604,9 +603,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 73.8,
+        "score": 74.3,
         "status": "HIGH",
-        "gap_to_second": 4.617,
+        "gap_to_second": 4.993,
         "uncertainty": 0.2,
         "starts_before": 4.0,
         "reasons": [
@@ -635,9 +634,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 85.5,
+        "score": 85.3,
         "status": "HIGH",
-        "gap_to_second": 7.959,
+        "gap_to_second": 7.823,
         "uncertainty": 0.0,
         "starts_before": 6.0,
         "reasons": [
@@ -668,7 +667,7 @@
       "axis_durability": {
         "score": 79.6,
         "status": "HIGH",
-        "gap_to_second": 11.643,
+        "gap_to_second": 11.201,
         "uncertainty": 0.0,
         "starts_before": 10.0,
         "reasons": [
@@ -699,7 +698,7 @@
       "axis_durability": {
         "score": 62.9,
         "status": "MID",
-        "gap_to_second": 1.099,
+        "gap_to_second": 1.064,
         "uncertainty": 0.2,
         "starts_before": 4.0,
         "reasons": [
@@ -730,7 +729,7 @@
       "axis_durability": {
         "score": 64.2,
         "status": "MID",
-        "gap_to_second": 10.837,
+        "gap_to_second": 10.877,
         "uncertainty": 0.6,
         "starts_before": 2.0,
         "reasons": [
@@ -791,7 +790,7 @@
       "axis_durability": {
         "score": 79.5,
         "status": "HIGH",
-        "gap_to_second": 17.237,
+        "gap_to_second": 17.233,
         "uncertainty": 0.0,
         "starts_before": 6.0,
         "reasons": [
@@ -822,7 +821,7 @@
       "axis_durability": {
         "score": 79.5,
         "status": "HIGH",
-        "gap_to_second": 23.082,
+        "gap_to_second": 23.085,
         "uncertainty": 0.0,
         "starts_before": 6.0,
         "reasons": [
@@ -851,9 +850,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 77.3,
+        "score": 77.1,
         "status": "HIGH",
-        "gap_to_second": 7.207,
+        "gap_to_second": 7.091,
         "uncertainty": 0.0,
         "starts_before": 5.0,
         "reasons": [
@@ -884,7 +883,7 @@
       "axis_durability": {
         "score": 74.9,
         "status": "HIGH",
-        "gap_to_second": 5.519,
+        "gap_to_second": 5.465,
         "uncertainty": 0.2,
         "starts_before": 4.0,
         "reasons": [
@@ -913,9 +912,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 76.2,
+        "score": 75.7,
         "status": "HIGH",
-        "gap_to_second": 7.546,
+        "gap_to_second": 7.158,
         "uncertainty": 0.0,
         "starts_before": 6.0,
         "reasons": [
@@ -944,9 +943,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 63.8,
+        "score": 63.9,
         "status": "MID",
-        "gap_to_second": 0.709,
+        "gap_to_second": 0.752,
         "uncertainty": 0.0,
         "starts_before": 9.0,
         "reasons": [
@@ -975,9 +974,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 79.7,
+        "score": 80.1,
         "status": "HIGH",
-        "gap_to_second": 4.883,
+        "gap_to_second": 5.216,
         "uncertainty": 0.0,
         "starts_before": 8.0,
         "reasons": [
@@ -1006,9 +1005,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 71.5,
+        "score": 71.3,
         "status": "MID",
-        "gap_to_second": 1.24,
+        "gap_to_second": 1.055,
         "uncertainty": 0.0,
         "starts_before": 8.0,
         "reasons": [
@@ -1037,9 +1036,9 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 72.6,
+        "score": 73.1,
         "status": "MID",
-        "gap_to_second": 0.281,
+        "gap_to_second": 0.669,
         "uncertainty": 0.0,
         "starts_before": 10.0,
         "reasons": [
@@ -1084,8 +1083,8 @@
     {
       "name": "Current Integrated",
       "status": "CURRENT",
-      "roi": 141.04,
-      "hit_rate": 28.57,
+      "roi": 0,
+      "hit_rate": 0,
       "note": "現行ライブ実績を自動集計"
     }
   ],
@@ -1139,28 +1138,28 @@
   "error_types": [
     {
       "label": "軸飛び型",
-      "value": 15
+      "value": 0
     },
     {
       "label": "軸生存・三連複漏れ",
-      "value": 7
+      "value": 0
     },
     {
       "label": "軸＋三連複的中",
-      "value": 6
+      "value": 0
     },
     {
       "label": "候補内組合せ漏れ",
-      "value": 7
+      "value": 0
     }
   ],
   "role_distribution": [],
   "audit": [
     {
-      "time": "2026-09-06T00:18:16+09:00",
+      "time": "2026-09-06T00:39:09+09:00",
       "level": "INFO",
       "title": "管理分析データ更新",
-      "detail": "64Rを正規化。31R結果接続、28R購入評価。"
+      "detail": "33Rを正規化。0R結果接続、0R購入評価。"
     }
   ],
   "sources": [
@@ -1218,7 +1217,6 @@
   "analytics": {
     "filters": {
       "date": [
-        "2026-09-05",
         "2026-09-06"
       ],
       "track": [
@@ -1240,70 +1238,21 @@
         "8",
         "9"
       ],
-      "race_category": [
-        "2歳",
-        "3歳",
-        "3歳以上",
-        "障害3歳以上"
-      ],
-      "race_class": [
-        "1勝クラス",
-        "2勝クラス",
-        "3勝クラス",
-        "オープン",
-        "未勝利"
-      ],
-      "surface": [
-        "ダート",
-        "芝",
-        "障害"
-      ],
-      "distance_m": [
-        "1000",
-        "1200",
-        "1400",
-        "1600",
-        "1700",
-        "1800",
-        "2000",
-        "3200"
-      ],
+      "race_category": [],
+      "race_class": [],
+      "surface": [],
+      "distance_m": [],
       "distance_band": [
-        "1200以下",
-        "1300-1600",
-        "1700-2000",
-        "2500以上",
         "不明"
       ],
       "track_condition": [
-        "不明",
-        "稍重",
-        "良"
+        "不明"
       ],
       "weather": [
-        "不明",
-        "晴",
-        "曇"
+        "不明"
       ],
-      "field_size": [
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "18",
-        "5",
-        "7",
-        "8",
-        "9"
-      ],
+      "field_size": [],
       "field_size_band": [
-        "10頭以下",
-        "11-13頭",
-        "14-16頭",
-        "17頭以上",
         "不明"
       ],
       "decision": [
@@ -1311,32 +1260,13 @@
         "CAUTION",
         "PASS"
       ],
-      "axis_grade": [
-        "HIT",
-        "MISS",
-        "PLACE"
-      ],
+      "axis_grade": [],
       "race_state": [
-        "RESULT_PENDING",
-        "SCORED"
+        "RESULT_PENDING"
       ]
     },
     "breakdowns": {
       "date": [
-        {
-          "value": "2026-09-05",
-          "races": 31,
-          "scored_races": 31,
-          "bought_races": 28,
-          "trio_hits": 8,
-          "hit_rate": 28.57,
-          "axis_top3_rate": 51.61,
-          "combo_miss_rate": 25.0,
-          "stake_yen": 24100,
-          "return_yen": 33990,
-          "profit_yen": 9890,
-          "roi": 141.04
-        },
         {
           "value": "2026-09-06",
           "races": 33,
@@ -1354,202 +1284,146 @@
       ],
       "track": [
         {
-          "value": "札幌",
-          "races": 23,
-          "scored_races": 11,
-          "bought_races": 10,
-          "trio_hits": 2,
-          "hit_rate": 20.0,
-          "axis_top3_rate": 36.36,
-          "combo_miss_rate": 10.0,
-          "stake_yen": 8700,
-          "return_yen": 19440,
-          "profit_yen": 10740,
-          "roi": 223.45
+          "value": "中山",
+          "races": 10,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         },
         {
-          "value": "中山",
-          "races": 20,
-          "scored_races": 10,
-          "bought_races": 9,
-          "trio_hits": 4,
-          "hit_rate": 44.44,
-          "axis_top3_rate": 60.0,
-          "combo_miss_rate": 22.22,
-          "stake_yen": 7700,
-          "return_yen": 13020,
-          "profit_yen": 5320,
-          "roi": 169.09
+          "value": "札幌",
+          "races": 12,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "阪神",
-          "races": 21,
-          "scored_races": 10,
-          "bought_races": 9,
-          "trio_hits": 2,
-          "hit_rate": 22.22,
-          "axis_top3_rate": 60.0,
-          "combo_miss_rate": 44.44,
-          "stake_yen": 7700,
-          "return_yen": 1530,
-          "profit_yen": -6170,
-          "roi": 19.87
+          "races": 11,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         }
       ],
       "race_no": [
         {
           "value": "1",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 3,
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
           "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 33.33,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2400,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
           "return_yen": 0,
-          "profit_yen": -2400,
-          "roi": 0.0
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "10",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 2,
-          "hit_rate": 66.67,
-          "axis_top3_rate": 33.33,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 2600,
-          "return_yen": 2640,
-          "profit_yen": 40,
-          "roi": 101.54
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "11",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 2,
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
           "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 33.33,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 1800,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
           "return_yen": 0,
-          "profit_yen": -1800,
-          "roi": 0.0
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "12",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 3,
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
           "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 0.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 2700,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
           "return_yen": 0,
-          "profit_yen": -2700,
-          "roi": 0.0
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "2",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 2,
-          "trio_hits": 1,
-          "hit_rate": 50.0,
-          "axis_top3_rate": 66.67,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 1700,
-          "return_yen": 4440,
-          "profit_yen": 2740,
-          "roi": 261.18
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "3",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 3,
-          "hit_rate": 100.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 2500,
-          "return_yen": 17070,
-          "profit_yen": 14570,
-          "roi": 682.8
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "4",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 2,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 1700,
-          "return_yen": 0,
-          "profit_yen": -1700,
-          "roi": 0.0
-        },
-        {
-          "value": "7",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 33.33,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2500,
-          "return_yen": 0,
-          "profit_yen": -2500,
-          "roi": 0.0
-        },
-        {
-          "value": "8",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 1,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 33.33,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2600,
-          "return_yen": 5780,
-          "profit_yen": 3180,
-          "roi": 222.31
-        },
-        {
-          "value": "9",
-          "races": 6,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 1,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 66.67,
-          "stake_yen": 2700,
-          "return_yen": 4060,
-          "profit_yen": 1360,
-          "roi": 150.37
-        },
-        {
-          "value": "6",
           "races": 3,
-          "scored_races": 1,
-          "bought_races": 1,
+          "scored_races": 0,
+          "bought_races": 0,
           "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 0.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 900,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
           "return_yen": 0,
-          "profit_yen": -900,
-          "roi": 0.0
+          "profit_yen": 0,
+          "roi": null
         },
         {
           "value": "5",
@@ -1564,65 +1438,65 @@
           "return_yen": 0,
           "profit_yen": 0,
           "roi": null
+        },
+        {
+          "value": "6",
+          "races": 2,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "7",
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "8",
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "9",
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         }
       ],
       "race_category": [
-        {
-          "value": "3歳以上",
-          "races": 16,
-          "scored_races": 16,
-          "bought_races": 16,
-          "trio_hits": 4,
-          "hit_rate": 25.0,
-          "axis_top3_rate": 37.5,
-          "combo_miss_rate": 25.0,
-          "stake_yen": 14100,
-          "return_yen": 12480,
-          "profit_yen": -1620,
-          "roi": 88.51
-        },
-        {
-          "value": "2歳",
-          "races": 7,
-          "scored_races": 7,
-          "bought_races": 4,
-          "trio_hits": 1,
-          "hit_rate": 25.0,
-          "axis_top3_rate": 57.14,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 3200,
-          "return_yen": 850,
-          "profit_yen": -2350,
-          "roi": 26.56
-        },
-        {
-          "value": "3歳",
-          "races": 7,
-          "scored_races": 7,
-          "bought_races": 7,
-          "trio_hits": 3,
-          "hit_rate": 42.86,
-          "axis_top3_rate": 71.43,
-          "combo_miss_rate": 28.57,
-          "stake_yen": 6000,
-          "return_yen": 20660,
-          "profit_yen": 14660,
-          "roi": 344.33
-        },
-        {
-          "value": "障害3歳以上",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 800,
-          "return_yen": 0,
-          "profit_yen": -800,
-          "roi": 0.0
-        },
         {
           "value": "不明",
           "races": 33,
@@ -1640,76 +1514,6 @@
       ],
       "race_class": [
         {
-          "value": "未勝利",
-          "races": 13,
-          "scored_races": 13,
-          "bought_races": 11,
-          "trio_hits": 4,
-          "hit_rate": 36.36,
-          "axis_top3_rate": 61.54,
-          "combo_miss_rate": 18.18,
-          "stake_yen": 9200,
-          "return_yen": 21510,
-          "profit_yen": 12310,
-          "roi": 233.8
-        },
-        {
-          "value": "1勝クラス",
-          "races": 10,
-          "scored_races": 10,
-          "bought_races": 10,
-          "trio_hits": 2,
-          "hit_rate": 20.0,
-          "axis_top3_rate": 40.0,
-          "combo_miss_rate": 30.0,
-          "stake_yen": 8800,
-          "return_yen": 9840,
-          "profit_yen": 1040,
-          "roi": 111.82
-        },
-        {
-          "value": "オープン",
-          "races": 4,
-          "scored_races": 4,
-          "bought_races": 3,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 50.0,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2600,
-          "return_yen": 0,
-          "profit_yen": -2600,
-          "roi": 0.0
-        },
-        {
-          "value": "2勝クラス",
-          "races": 3,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 1,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 66.67,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2700,
-          "return_yen": 1950,
-          "profit_yen": -750,
-          "roi": 72.22
-        },
-        {
-          "value": "3勝クラス",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 1,
-          "hit_rate": 100.0,
-          "axis_top3_rate": 0.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 800,
-          "return_yen": 690,
-          "profit_yen": -110,
-          "roi": 86.25
-        },
-        {
           "value": "不明",
           "races": 33,
           "scored_races": 0,
@@ -1725,48 +1529,6 @@
         }
       ],
       "surface": [
-        {
-          "value": "芝",
-          "races": 16,
-          "scored_races": 16,
-          "bought_races": 13,
-          "trio_hits": 4,
-          "hit_rate": 30.77,
-          "axis_top3_rate": 62.5,
-          "combo_miss_rate": 30.77,
-          "stake_yen": 11400,
-          "return_yen": 11140,
-          "profit_yen": -260,
-          "roi": 97.72
-        },
-        {
-          "value": "ダート",
-          "races": 14,
-          "scored_races": 14,
-          "bought_races": 14,
-          "trio_hits": 4,
-          "hit_rate": 28.57,
-          "axis_top3_rate": 35.71,
-          "combo_miss_rate": 14.29,
-          "stake_yen": 11900,
-          "return_yen": 22850,
-          "profit_yen": 10950,
-          "roi": 192.02
-        },
-        {
-          "value": "障害",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 800,
-          "return_yen": 0,
-          "profit_yen": -800,
-          "roi": 0.0
-        },
         {
           "value": "不明",
           "races": 33,
@@ -1784,118 +1546,6 @@
       ],
       "distance_m": [
         {
-          "value": "1800",
-          "races": 10,
-          "scored_races": 10,
-          "bought_races": 7,
-          "trio_hits": 3,
-          "hit_rate": 42.86,
-          "axis_top3_rate": 70.0,
-          "combo_miss_rate": 28.57,
-          "stake_yen": 5900,
-          "return_yen": 2380,
-          "profit_yen": -3520,
-          "roi": 40.34
-        },
-        {
-          "value": "1200",
-          "races": 6,
-          "scored_races": 6,
-          "bought_races": 6,
-          "trio_hits": 2,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 33.33,
-          "combo_miss_rate": 16.67,
-          "stake_yen": 5100,
-          "return_yen": 7730,
-          "profit_yen": 2630,
-          "roi": 151.57
-        },
-        {
-          "value": "1700",
-          "races": 4,
-          "scored_races": 4,
-          "bought_races": 4,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 25.0,
-          "combo_miss_rate": 25.0,
-          "stake_yen": 3400,
-          "return_yen": 0,
-          "profit_yen": -3400,
-          "roi": 0.0
-        },
-        {
-          "value": "1400",
-          "races": 3,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 0.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 2600,
-          "return_yen": 0,
-          "profit_yen": -2600,
-          "roi": 0.0
-        },
-        {
-          "value": "1600",
-          "races": 3,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 1,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 66.67,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2700,
-          "return_yen": 4440,
-          "profit_yen": 1740,
-          "roi": 164.44
-        },
-        {
-          "value": "2000",
-          "races": 3,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 1,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 66.67,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2700,
-          "return_yen": 4060,
-          "profit_yen": 1360,
-          "roi": 150.37
-        },
-        {
-          "value": "1000",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 1,
-          "hit_rate": 100.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 900,
-          "return_yen": 15380,
-          "profit_yen": 14480,
-          "roi": 1708.89
-        },
-        {
-          "value": "3200",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 800,
-          "return_yen": 0,
-          "profit_yen": -800,
-          "roi": 0.0
-        },
-        {
           "value": "不明",
           "races": 33,
           "scored_races": 0,
@@ -1911,62 +1561,6 @@
         }
       ],
       "distance_band": [
-        {
-          "value": "1700-2000",
-          "races": 17,
-          "scored_races": 17,
-          "bought_races": 14,
-          "trio_hits": 4,
-          "hit_rate": 28.57,
-          "axis_top3_rate": 58.82,
-          "combo_miss_rate": 28.57,
-          "stake_yen": 12000,
-          "return_yen": 6440,
-          "profit_yen": -5560,
-          "roi": 53.67
-        },
-        {
-          "value": "1200以下",
-          "races": 7,
-          "scored_races": 7,
-          "bought_races": 7,
-          "trio_hits": 3,
-          "hit_rate": 42.86,
-          "axis_top3_rate": 42.86,
-          "combo_miss_rate": 14.29,
-          "stake_yen": 6000,
-          "return_yen": 23110,
-          "profit_yen": 17110,
-          "roi": 385.17
-        },
-        {
-          "value": "1300-1600",
-          "races": 6,
-          "scored_races": 6,
-          "bought_races": 6,
-          "trio_hits": 1,
-          "hit_rate": 16.67,
-          "axis_top3_rate": 33.33,
-          "combo_miss_rate": 16.67,
-          "stake_yen": 5300,
-          "return_yen": 4440,
-          "profit_yen": -860,
-          "roi": 83.77
-        },
-        {
-          "value": "2500以上",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 800,
-          "return_yen": 0,
-          "profit_yen": -800,
-          "roi": 0.0
-        },
         {
           "value": "不明",
           "races": 33,
@@ -1985,76 +1579,20 @@
       "track_condition": [
         {
           "value": "不明",
-          "races": 47,
-          "scored_races": 14,
-          "bought_races": 14,
-          "trio_hits": 4,
-          "hit_rate": 28.57,
-          "axis_top3_rate": 35.71,
-          "combo_miss_rate": 14.29,
-          "stake_yen": 11900,
-          "return_yen": 22850,
-          "profit_yen": 10950,
-          "roi": 192.02
-        },
-        {
-          "value": "稍重",
-          "races": 11,
-          "scored_races": 11,
-          "bought_races": 8,
-          "trio_hits": 2,
-          "hit_rate": 25.0,
-          "axis_top3_rate": 63.64,
-          "combo_miss_rate": 25.0,
-          "stake_yen": 7000,
-          "return_yen": 8500,
-          "profit_yen": 1500,
-          "roi": 121.43
-        },
-        {
-          "value": "良",
-          "races": 6,
-          "scored_races": 6,
-          "bought_races": 6,
-          "trio_hits": 2,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 66.67,
-          "combo_miss_rate": 50.0,
-          "stake_yen": 5200,
-          "return_yen": 2640,
-          "profit_yen": -2560,
-          "roi": 50.77
+          "races": 33,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
         }
       ],
       "weather": [
-        {
-          "value": "晴",
-          "races": 22,
-          "scored_races": 22,
-          "bought_races": 20,
-          "trio_hits": 4,
-          "hit_rate": 20.0,
-          "axis_top3_rate": 54.55,
-          "combo_miss_rate": 30.0,
-          "stake_yen": 17400,
-          "return_yen": 22230,
-          "profit_yen": 4830,
-          "roi": 127.76
-        },
-        {
-          "value": "曇",
-          "races": 9,
-          "scored_races": 9,
-          "bought_races": 8,
-          "trio_hits": 4,
-          "hit_rate": 50.0,
-          "axis_top3_rate": 44.44,
-          "combo_miss_rate": 12.5,
-          "stake_yen": 6700,
-          "return_yen": 11760,
-          "profit_yen": 5060,
-          "roi": 175.52
-        },
         {
           "value": "不明",
           "races": 33,
@@ -2072,174 +1610,6 @@
       ],
       "field_size": [
         {
-          "value": "16",
-          "races": 7,
-          "scored_races": 7,
-          "bought_races": 7,
-          "trio_hits": 2,
-          "hit_rate": 28.57,
-          "axis_top3_rate": 28.57,
-          "combo_miss_rate": 14.29,
-          "stake_yen": 6000,
-          "return_yen": 10220,
-          "profit_yen": 4220,
-          "roi": 170.33
-        },
-        {
-          "value": "12",
-          "races": 5,
-          "scored_races": 5,
-          "bought_races": 5,
-          "trio_hits": 1,
-          "hit_rate": 20.0,
-          "axis_top3_rate": 20.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 4400,
-          "return_yen": 15380,
-          "profit_yen": 10980,
-          "roi": 349.55
-        },
-        {
-          "value": "11",
-          "races": 4,
-          "scored_races": 4,
-          "bought_races": 3,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 50.0,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2500,
-          "return_yen": 0,
-          "profit_yen": -2500,
-          "roi": 0.0
-        },
-        {
-          "value": "13",
-          "races": 4,
-          "scored_races": 4,
-          "bought_races": 4,
-          "trio_hits": 2,
-          "hit_rate": 50.0,
-          "axis_top3_rate": 50.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 3500,
-          "return_yen": 2790,
-          "profit_yen": -710,
-          "roi": 79.71
-        },
-        {
-          "value": "14",
-          "races": 3,
-          "scored_races": 3,
-          "bought_races": 3,
-          "trio_hits": 1,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 66.67,
-          "combo_miss_rate": 33.33,
-          "stake_yen": 2600,
-          "return_yen": 4060,
-          "profit_yen": 1460,
-          "roi": 156.15
-        },
-        {
-          "value": "9",
-          "races": 2,
-          "scored_races": 2,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 900,
-          "return_yen": 0,
-          "profit_yen": -900,
-          "roi": 0.0
-        },
-        {
-          "value": "10",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 1,
-          "hit_rate": 100.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 800,
-          "return_yen": 850,
-          "profit_yen": 50,
-          "roi": 106.25
-        },
-        {
-          "value": "15",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 900,
-          "return_yen": 0,
-          "profit_yen": -900,
-          "roi": 0.0
-        },
-        {
-          "value": "18",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 900,
-          "return_yen": 0,
-          "profit_yen": -900,
-          "roi": 0.0
-        },
-        {
-          "value": "5",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 0,
-          "trio_hits": 0,
-          "hit_rate": null,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": null,
-          "stake_yen": 0,
-          "return_yen": 0,
-          "profit_yen": 0,
-          "roi": null
-        },
-        {
-          "value": "7",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 1,
-          "hit_rate": 100.0,
-          "axis_top3_rate": 0.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 800,
-          "return_yen": 690,
-          "profit_yen": -110,
-          "roi": 86.25
-        },
-        {
-          "value": "8",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 800,
-          "return_yen": 0,
-          "profit_yen": -800,
-          "roi": 0.0
-        },
-        {
           "value": "不明",
           "races": 33,
           "scored_races": 0,
@@ -2255,62 +1625,6 @@
         }
       ],
       "field_size_band": [
-        {
-          "value": "11-13頭",
-          "races": 13,
-          "scored_races": 13,
-          "bought_races": 12,
-          "trio_hits": 3,
-          "hit_rate": 25.0,
-          "axis_top3_rate": 38.46,
-          "combo_miss_rate": 8.33,
-          "stake_yen": 10400,
-          "return_yen": 18170,
-          "profit_yen": 7770,
-          "roi": 174.71
-        },
-        {
-          "value": "14-16頭",
-          "races": 11,
-          "scored_races": 11,
-          "bought_races": 11,
-          "trio_hits": 3,
-          "hit_rate": 27.27,
-          "axis_top3_rate": 45.45,
-          "combo_miss_rate": 27.27,
-          "stake_yen": 9500,
-          "return_yen": 14280,
-          "profit_yen": 4780,
-          "roi": 150.32
-        },
-        {
-          "value": "10頭以下",
-          "races": 6,
-          "scored_races": 6,
-          "bought_races": 4,
-          "trio_hits": 2,
-          "hit_rate": 50.0,
-          "axis_top3_rate": 83.33,
-          "combo_miss_rate": 50.0,
-          "stake_yen": 3300,
-          "return_yen": 1540,
-          "profit_yen": -1760,
-          "roi": 46.67
-        },
-        {
-          "value": "17頭以上",
-          "races": 1,
-          "scored_races": 1,
-          "bought_races": 1,
-          "trio_hits": 0,
-          "hit_rate": 0.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 100.0,
-          "stake_yen": 900,
-          "return_yen": 0,
-          "profit_yen": -900,
-          "roi": 0.0
-        },
         {
           "value": "不明",
           "races": 33,
@@ -2329,40 +1643,40 @@
       "decision": [
         {
           "value": "BUY",
-          "races": 34,
-          "scored_races": 17,
-          "bought_races": 17,
-          "trio_hits": 4,
-          "hit_rate": 23.53,
-          "axis_top3_rate": 47.06,
-          "combo_miss_rate": 23.53,
-          "stake_yen": 15300,
-          "return_yen": 25830,
-          "profit_yen": 10530,
-          "roi": 168.82
-        },
-        {
-          "value": "CAUTION",
-          "races": 24,
-          "scored_races": 11,
-          "bought_races": 11,
-          "trio_hits": 4,
-          "hit_rate": 36.36,
-          "axis_top3_rate": 45.45,
-          "combo_miss_rate": 27.27,
-          "stake_yen": 8800,
-          "return_yen": 8160,
-          "profit_yen": -640,
-          "roi": 92.73
-        },
-        {
-          "value": "PASS",
-          "races": 6,
-          "scored_races": 3,
+          "races": 17,
+          "scored_races": 0,
           "bought_races": 0,
           "trio_hits": 0,
           "hit_rate": null,
-          "axis_top3_rate": 100.0,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "CAUTION",
+          "races": 13,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "PASS",
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
           "combo_miss_rate": null,
           "stake_yen": 0,
           "return_yen": 0,
@@ -2371,48 +1685,6 @@
         }
       ],
       "axis_grade": [
-        {
-          "value": "MISS",
-          "races": 15,
-          "scored_races": 15,
-          "bought_races": 15,
-          "trio_hits": 2,
-          "hit_rate": 13.33,
-          "axis_top3_rate": 0.0,
-          "combo_miss_rate": 0.0,
-          "stake_yen": 12900,
-          "return_yen": 6470,
-          "profit_yen": -6430,
-          "roi": 50.16
-        },
-        {
-          "value": "PLACE",
-          "races": 11,
-          "scored_races": 11,
-          "bought_races": 10,
-          "trio_hits": 5,
-          "hit_rate": 50.0,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 50.0,
-          "stake_yen": 8700,
-          "return_yen": 23080,
-          "profit_yen": 14380,
-          "roi": 265.29
-        },
-        {
-          "value": "HIT",
-          "races": 5,
-          "scored_races": 5,
-          "bought_races": 3,
-          "trio_hits": 1,
-          "hit_rate": 33.33,
-          "axis_top3_rate": 100.0,
-          "combo_miss_rate": 66.67,
-          "stake_yen": 2500,
-          "return_yen": 4440,
-          "profit_yen": 1940,
-          "roi": 177.6
-        },
         {
           "value": "不明",
           "races": 33,
@@ -2429,20 +1701,6 @@
         }
       ],
       "race_state": [
-        {
-          "value": "SCORED",
-          "races": 31,
-          "scored_races": 31,
-          "bought_races": 28,
-          "trio_hits": 8,
-          "hit_rate": 28.57,
-          "axis_top3_rate": 51.61,
-          "combo_miss_rate": 25.0,
-          "stake_yen": 24100,
-          "return_yen": 33990,
-          "profit_yen": 9890,
-          "roi": 141.04
-        },
         {
           "value": "RESULT_PENDING",
           "races": 33,
@@ -2461,46 +1719,13 @@
     },
     "optimization_candidates": [
       {
-        "type": "WEAK_SEGMENT",
-        "dimension": "distance_band",
-        "value": "1700-2000",
-        "sample": 14,
-        "roi": 53.67,
-        "axis_top3_rate": 58.82,
-        "combo_miss_rate": 28.57,
-        "action": "PASS閾値・軸耐久性・買い目変換をChallengerでshadow比較",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "WEAK_SEGMENT",
-        "dimension": "track",
-        "value": "阪神",
-        "sample": 9,
-        "roi": 19.87,
-        "axis_top3_rate": 60.0,
-        "combo_miss_rate": 44.44,
-        "action": "PASS閾値・軸耐久性・買い目変換をChallengerでshadow比較",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "WEAK_SEGMENT",
-        "dimension": "track_condition",
-        "value": "良",
-        "sample": 6,
-        "roi": 50.77,
-        "axis_top3_rate": 66.67,
-        "combo_miss_rate": 50.0,
-        "action": "PASS閾値・軸耐久性・買い目変換をChallengerでshadow比較",
-        "status": "SHADOW_ONLY"
-      },
-      {
         "type": "TICKET_VALUE_REGIME_SHADOW",
         "dimension": "ticket_policy",
         "value": "CONCENTRATED / BALANCED / HIGH_PAYOUT_CAPTURE / PASS_BIASED",
-        "sample": 64,
-        "roi": 141.04,
-        "axis_top3_rate": 51.61,
-        "combo_miss_rate": 25.0,
+        "sample": 33,
+        "roi": null,
+        "axis_top3_rate": null,
+        "combo_miss_rate": null,
         "action": "固いレースは3〜5点へ圧縮して厚く、荒れレースは万馬券捕捉を優先。軸飛び保険だけの軸なし増加は禁止。券種別実オッズ接続後はトリガミ/低EVを除外。",
         "status": "SHADOW_ONLY",
         "promotion_metrics": [
@@ -2520,116 +1745,6 @@
           ],
           "meaning": "実際の三連複払戻が10,000円以上だったレースを投資・払戻ともに除外した基礎回収率。安定域到達を実購入検討の主要条件とする"
         }
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "decision",
-        "value": "BUY",
-        "sample": 17,
-        "roi": 168.82,
-        "axis_top3_rate": 47.06,
-        "combo_miss_rate": 23.53,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "surface",
-        "value": "ダート",
-        "sample": 14,
-        "roi": 192.02,
-        "axis_top3_rate": 35.71,
-        "combo_miss_rate": 14.29,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "track_condition",
-        "value": "不明",
-        "sample": 14,
-        "roi": 192.02,
-        "axis_top3_rate": 35.71,
-        "combo_miss_rate": 14.29,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "field_size_band",
-        "value": "11-13頭",
-        "sample": 12,
-        "roi": 174.71,
-        "axis_top3_rate": 38.46,
-        "combo_miss_rate": 8.33,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "race_class",
-        "value": "未勝利",
-        "sample": 11,
-        "roi": 233.8,
-        "axis_top3_rate": 61.54,
-        "combo_miss_rate": 18.18,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "field_size_band",
-        "value": "14-16頭",
-        "sample": 11,
-        "roi": 150.32,
-        "axis_top3_rate": 45.45,
-        "combo_miss_rate": 27.27,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "track",
-        "value": "札幌",
-        "sample": 10,
-        "roi": 223.45,
-        "axis_top3_rate": 36.36,
-        "combo_miss_rate": 10.0,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "track",
-        "value": "中山",
-        "sample": 9,
-        "roi": 169.09,
-        "axis_top3_rate": 60.0,
-        "combo_miss_rate": 22.22,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "track_condition",
-        "value": "稍重",
-        "sample": 8,
-        "roi": 121.43,
-        "axis_top3_rate": 63.64,
-        "combo_miss_rate": 25.0,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
-      },
-      {
-        "type": "STRONG_SEGMENT",
-        "dimension": "distance_band",
-        "value": "1200以下",
-        "sample": 7,
-        "roi": 385.17,
-        "axis_top3_rate": 42.86,
-        "combo_miss_rate": 14.29,
-        "action": "再現性確認用の強条件候補。単独ROIで本番昇格しない",
-        "status": "SHADOW_ONLY"
       }
     ],
     "latest_races": [
@@ -2681,10 +1796,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "PASS_BIASED",
           "hard_score": 5,
           "volatile_score": 5,
@@ -2694,6 +1809,8 @@
             "上位の不確実性が低い"
           ],
           "proposed_policy": "軸なし点数を増やして救済しない。軸耐久不足ならPASSを優先し、買う場合も根拠のある役割分散だけに限定。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -2726,9 +1843,9 @@
         "axis_horse_no": "1",
         "axis_horse_name": "アルデラッシュ",
         "axis_durability": {
-          "score": 46.9,
+          "score": 47.3,
           "status": "LOW",
-          "gap_to_second": 1.135,
+          "gap_to_second": 1.43,
           "uncertainty": 0.8,
           "starts_before": 1.0,
           "reasons": [
@@ -2755,10 +1872,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "PASS_BIASED",
           "hard_score": 2,
           "volatile_score": 9,
@@ -2768,6 +1885,8 @@
             "上位の不確実性が高い"
           ],
           "proposed_policy": "軸なし点数を増やして救済しない。軸耐久不足ならPASSを優先し、買う場合も根拠のある役割分散だけに限定。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -2802,7 +1921,7 @@
         "axis_durability": {
           "score": 72.9,
           "status": "HIGH",
-          "gap_to_second": 11.182,
+          "gap_to_second": 11.081,
           "uncertainty": 0.0,
           "starts_before": 9.0,
           "reasons": [
@@ -2838,10 +1957,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -2852,6 +1971,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -2884,9 +2005,9 @@
         "axis_horse_no": "3",
         "axis_horse_name": "メビウスロマンス",
         "axis_durability": {
-          "score": 74.0,
+          "score": 74.5,
           "status": "HIGH",
-          "gap_to_second": 4.614,
+          "gap_to_second": 4.984,
           "uncertainty": 0.0,
           "starts_before": 5.0,
           "reasons": [
@@ -2922,10 +2043,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -2936,6 +2057,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -2968,9 +2091,9 @@
         "axis_horse_no": "9",
         "axis_horse_name": "クリスタルドレス",
         "axis_durability": {
-          "score": 71.7,
+          "score": 71.5,
           "status": "MID",
-          "gap_to_second": 1.195,
+          "gap_to_second": 0.99,
           "uncertainty": 0.0,
           "starts_before": 5.0,
           "reasons": [
@@ -3005,10 +2128,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 5,
@@ -3019,6 +2142,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3051,9 +2176,9 @@
         "axis_horse_no": "3",
         "axis_horse_name": "アイビーチーキー",
         "axis_durability": {
-          "score": 62.1,
+          "score": 62.2,
           "status": "MID",
-          "gap_to_second": 0.406,
+          "gap_to_second": 0.542,
           "uncertainty": 0.2,
           "starts_before": 4.0,
           "reasons": [
@@ -3088,10 +2213,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 5,
@@ -3102,6 +2227,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3134,9 +2261,9 @@
         "axis_horse_no": "13",
         "axis_horse_name": "キタノライブリー",
         "axis_durability": {
-          "score": 67.6,
+          "score": 67.7,
           "status": "MID",
-          "gap_to_second": 1.155,
+          "gap_to_second": 1.256,
           "uncertainty": 0.0,
           "starts_before": 13.0,
           "reasons": [
@@ -3171,10 +2298,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -3185,6 +2312,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3219,7 +2348,7 @@
         "axis_durability": {
           "score": 78.8,
           "status": "HIGH",
-          "gap_to_second": 7.964,
+          "gap_to_second": 8.039,
           "uncertainty": 0.0,
           "starts_before": 7.0,
           "reasons": [
@@ -3255,10 +2384,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -3269,6 +2398,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3298,12 +2429,12 @@
         "scheduled_start": null,
         "decision": "CAUTION",
         "race_state": "RESULT_PENDING",
-        "axis_horse_no": "9",
-        "axis_horse_name": "ドリームコア",
+        "axis_horse_no": "6",
+        "axis_horse_name": "アストリル",
         "axis_durability": {
-          "score": 69.1,
+          "score": 70.0,
           "status": "MID",
-          "gap_to_second": 0.273,
+          "gap_to_second": 0.443,
           "uncertainty": 0.0,
           "starts_before": 6.0,
           "reasons": [
@@ -3320,11 +2451,11 @@
           "6-9-10",
           "3-6-9",
           "1-6-9",
-          "3-9-10",
           "3-6-10",
-          "1-6-10",
-          "2-6-10",
-          "1-3-6"
+          "3-9-10",
+          "1-9-10",
+          "2-9-10",
+          "1-3-9"
         ],
         "ticket_count": 8,
         "scored": false,
@@ -3338,20 +2469,22 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
-          "regime": "HIGH_PAYOUT_CAPTURE",
-          "hard_score": 4,
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "regime": "BALANCED",
+          "hard_score": 6,
           "volatile_score": 7,
-          "target_points": "7-10",
+          "target_points": "5-8",
           "reason": [
             "上位評価差が小さい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
-          "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+          "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3384,9 +2517,9 @@
         "axis_horse_no": "2",
         "axis_horse_name": "ファインサマーデイ",
         "axis_durability": {
-          "score": 70.8,
+          "score": 70.9,
           "status": "HIGH",
-          "gap_to_second": 7.417,
+          "gap_to_second": 7.487,
           "uncertainty": 0.2,
           "starts_before": 4.0,
           "reasons": [
@@ -3422,10 +2555,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -3436,6 +2569,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3470,7 +2605,7 @@
         "axis_durability": {
           "score": 78.3,
           "status": "HIGH",
-          "gap_to_second": 8.394,
+          "gap_to_second": 8.494,
           "uncertainty": 0.0,
           "starts_before": 6.0,
           "reasons": [
@@ -3506,10 +2641,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -3520,6 +2655,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3552,9 +2689,9 @@
         "axis_horse_no": "6",
         "axis_horse_name": "イッペイ",
         "axis_durability": {
-          "score": 59.3,
+          "score": 59.7,
           "status": "MID",
-          "gap_to_second": 4.111,
+          "gap_to_second": 4.437,
           "uncertainty": 0.4,
           "starts_before": 3.0,
           "reasons": [
@@ -3580,10 +2717,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "HIGH_PAYOUT_CAPTURE",
           "hard_score": 6,
           "volatile_score": 9,
@@ -3594,6 +2731,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3626,9 +2765,9 @@
         "axis_horse_no": "3",
         "axis_horse_name": "ゴンフィンガー",
         "axis_durability": {
-          "score": 69.3,
+          "score": 68.9,
           "status": "HIGH",
-          "gap_to_second": 6.179,
+          "gap_to_second": 5.855,
           "uncertainty": 0.4,
           "starts_before": 3.0,
           "reasons": [
@@ -3664,10 +2803,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -3678,6 +2817,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3707,14 +2848,14 @@
         "scheduled_start": null,
         "decision": "CAUTION",
         "race_state": "RESULT_PENDING",
-        "axis_horse_no": "7",
-        "axis_horse_name": "フルムーン",
+        "axis_horse_no": "14",
+        "axis_horse_name": "ルージュフィーリア",
         "axis_durability": {
-          "score": 58.0,
+          "score": 54.5,
           "status": "MID",
-          "gap_to_second": 0.115,
-          "uncertainty": 0.0,
-          "starts_before": 5.0,
+          "gap_to_second": 0.278,
+          "uncertainty": 0.4,
+          "starts_before": 3.0,
           "reasons": [
             "上位評価差が小さい",
             "事前データの不確実性が低い",
@@ -3729,10 +2870,10 @@
           "7-8-14",
           "7-14-15",
           "7-10-14",
-          "7-8-15",
-          "8-10-14",
-          "10-14-15",
-          "4-8-14",
+          "8-14-15",
+          "7-8-10",
+          "7-10-15",
+          "2-7-8",
           "8-10-15"
         ],
         "ticket_count": 8,
@@ -3747,10 +2888,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 5,
@@ -3761,6 +2902,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3793,9 +2936,9 @@
         "axis_horse_no": "10",
         "axis_horse_name": "ゴコウコイコイ",
         "axis_durability": {
-          "score": 59.2,
+          "score": 59.1,
           "status": "MID",
-          "gap_to_second": 0.897,
+          "gap_to_second": 0.831,
           "uncertainty": 0.0,
           "starts_before": 7.0,
           "reasons": [
@@ -3829,10 +2972,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -3843,6 +2986,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3912,10 +3057,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 10,
           "volatile_score": 2,
@@ -3925,6 +3070,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -3959,7 +3106,7 @@
         "axis_durability": {
           "score": 66.6,
           "status": "MID",
-          "gap_to_second": 1.336,
+          "gap_to_second": 1.3,
           "uncertainty": 0.0,
           "starts_before": 11.0,
           "reasons": [
@@ -3994,10 +3141,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -4008,6 +3155,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4040,9 +3189,9 @@
         "axis_horse_no": "11",
         "axis_horse_name": "ルールザウェイヴ",
         "axis_durability": {
-          "score": 71.0,
+          "score": 70.6,
           "status": "HIGH",
-          "gap_to_second": 2.216,
+          "gap_to_second": 1.841,
           "uncertainty": 0.0,
           "starts_before": 5.0,
           "reasons": [
@@ -4077,10 +3226,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 8,
           "volatile_score": 4,
@@ -4090,6 +3239,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4122,9 +3273,9 @@
         "axis_horse_no": "10",
         "axis_horse_name": "エスシービクトリア",
         "axis_durability": {
-          "score": 73.8,
+          "score": 74.3,
           "status": "HIGH",
-          "gap_to_second": 4.617,
+          "gap_to_second": 4.993,
           "uncertainty": 0.2,
           "starts_before": 4.0,
           "reasons": [
@@ -4160,10 +3311,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -4174,6 +3325,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4206,9 +3359,9 @@
         "axis_horse_no": "9",
         "axis_horse_name": "ハヤブササキチャン",
         "axis_durability": {
-          "score": 85.5,
+          "score": 85.3,
           "status": "HIGH",
-          "gap_to_second": 7.959,
+          "gap_to_second": 7.823,
           "uncertainty": 0.0,
           "starts_before": 6.0,
           "reasons": [
@@ -4244,10 +3397,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -4258,6 +3411,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4292,7 +3447,7 @@
         "axis_durability": {
           "score": 79.6,
           "status": "HIGH",
-          "gap_to_second": 11.643,
+          "gap_to_second": 11.201,
           "uncertainty": 0.0,
           "starts_before": 10.0,
           "reasons": [
@@ -4328,10 +3483,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -4342,6 +3497,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4376,7 +3533,7 @@
         "axis_durability": {
           "score": 62.9,
           "status": "MID",
-          "gap_to_second": 1.099,
+          "gap_to_second": 1.064,
           "uncertainty": 0.2,
           "starts_before": 4.0,
           "reasons": [
@@ -4411,10 +3568,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "HIGH_PAYOUT_CAPTURE",
           "hard_score": 4,
           "volatile_score": 7,
@@ -4425,6 +3582,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4459,7 +3618,7 @@
         "axis_durability": {
           "score": 64.2,
           "status": "MID",
-          "gap_to_second": 10.837,
+          "gap_to_second": 10.877,
           "uncertainty": 0.6,
           "starts_before": 2.0,
           "reasons": [
@@ -4493,10 +3652,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "HIGH_PAYOUT_CAPTURE",
           "hard_score": 6,
           "volatile_score": 9,
@@ -4507,6 +3666,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4576,10 +3737,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -4590,6 +3751,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4624,7 +3787,7 @@
         "axis_durability": {
           "score": 79.5,
           "status": "HIGH",
-          "gap_to_second": 17.237,
+          "gap_to_second": 17.233,
           "uncertainty": 0.0,
           "starts_before": 6.0,
           "reasons": [
@@ -4660,10 +3823,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -4674,6 +3837,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4708,7 +3873,7 @@
         "axis_durability": {
           "score": 79.5,
           "status": "HIGH",
-          "gap_to_second": 23.082,
+          "gap_to_second": 23.085,
           "uncertainty": 0.0,
           "starts_before": 6.0,
           "reasons": [
@@ -4744,10 +3909,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -4758,6 +3923,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4790,9 +3957,9 @@
         "axis_horse_no": "9",
         "axis_horse_name": "シュネルアンジュ",
         "axis_durability": {
-          "score": 77.3,
+          "score": 77.1,
           "status": "HIGH",
-          "gap_to_second": 7.207,
+          "gap_to_second": 7.091,
           "uncertainty": 0.0,
           "starts_before": 5.0,
           "reasons": [
@@ -4828,10 +3995,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -4842,6 +4009,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4876,7 +4045,7 @@
         "axis_durability": {
           "score": 74.9,
           "status": "HIGH",
-          "gap_to_second": 5.519,
+          "gap_to_second": 5.465,
           "uncertainty": 0.2,
           "starts_before": 4.0,
           "reasons": [
@@ -4912,10 +4081,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -4926,6 +4095,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -4958,9 +4129,9 @@
         "axis_horse_no": "6",
         "axis_horse_name": "バルセシート",
         "axis_durability": {
-          "score": 76.2,
+          "score": 75.7,
           "status": "HIGH",
-          "gap_to_second": 7.546,
+          "gap_to_second": 7.158,
           "uncertainty": 0.0,
           "starts_before": 6.0,
           "reasons": [
@@ -4974,15 +4145,15 @@
         "role_tags": [],
         "third_place_intrusion_candidates": [],
         "trio_tickets": [
-          "1-2-6",
           "1-5-6",
+          "1-2-6",
           "1-3-6",
           "1-4-6",
           "2-5-6",
-          "2-3-6",
-          "2-4-6",
           "3-5-6",
-          "4-5-6"
+          "4-5-6",
+          "2-3-6",
+          "2-4-6"
         ],
         "ticket_count": 9,
         "scored": false,
@@ -4996,10 +4167,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -5010,6 +4181,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -5042,9 +4215,9 @@
         "axis_horse_no": "14",
         "axis_horse_name": "パイオニアスクエア",
         "axis_durability": {
-          "score": 63.8,
+          "score": 63.9,
           "status": "MID",
-          "gap_to_second": 0.709,
+          "gap_to_second": 0.752,
           "uncertainty": 0.0,
           "starts_before": 9.0,
           "reasons": [
@@ -5079,10 +4252,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -5093,6 +4266,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -5125,9 +4300,9 @@
         "axis_horse_no": "5",
         "axis_horse_name": "テーオーグレーザー",
         "axis_durability": {
-          "score": 79.7,
+          "score": 80.1,
           "status": "HIGH",
-          "gap_to_second": 4.883,
+          "gap_to_second": 5.216,
           "uncertainty": 0.0,
           "starts_before": 8.0,
           "reasons": [
@@ -5163,10 +4338,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "CONCENTRATED",
           "hard_score": 13,
           "volatile_score": 2,
@@ -5177,6 +4352,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -5209,9 +4386,9 @@
         "axis_horse_no": "5",
         "axis_horse_name": "ダイヤモンドノット",
         "axis_durability": {
-          "score": 71.5,
+          "score": 71.3,
           "status": "MID",
-          "gap_to_second": 1.24,
+          "gap_to_second": 1.055,
           "uncertainty": 0.0,
           "starts_before": 8.0,
           "reasons": [
@@ -5246,10 +4423,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -5260,6 +4437,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -5292,9 +4471,9 @@
         "axis_horse_no": "15",
         "axis_horse_name": "ランスオブセヘル",
         "axis_durability": {
-          "score": 72.6,
+          "score": 73.1,
           "status": "MID",
-          "gap_to_second": 0.281,
+          "gap_to_second": 0.669,
           "uncertainty": 0.0,
           "starts_before": 10.0,
           "reasons": [
@@ -5329,10 +4508,10 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+        "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -5343,6 +4522,8 @@
             "3着侵入候補が複数"
           ],
           "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+          "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
+          "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
@@ -5355,28 +4536,27 @@
         "payout_data_status": null
       }
     ],
-    "all_race_count": 64,
+    "all_race_count": 33,
     "ticket_value_regime_shadow_counts": {
-      "NO_SHADOW": 31,
       "PASS_BIASED": 2,
       "CONCENTRATED": 17,
-      "BALANCED": 10,
-      "HIGH_PAYOUT_CAPTURE": 4
+      "BALANCED": 11,
+      "HIGH_PAYOUT_CAPTURE": 3
     },
     "manbaken": {
-      "opportunities": 6,
-      "hits": 1,
-      "capture_rate": 16.67,
+      "opportunities": 0,
+      "hits": 0,
+      "capture_rate": null,
       "threshold_yen": 10000
     },
     "sub10k_baseline": {
-      "eligible_races": 22,
-      "stake_yen": 18800,
-      "return_yen": 18610,
-      "roi": 98.99,
+      "eligible_races": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "roi": null,
       "target_low": 80.0,
       "target_high": 90.0,
-      "status": "ABOVE_TARGET",
+      "status": "NO_DATA",
       "purchase_consideration_rule": "80〜90%の範囲で一定期間安定し、万馬券捕捉が上乗せされる状態を実購入検討ラインとする"
     }
   }
