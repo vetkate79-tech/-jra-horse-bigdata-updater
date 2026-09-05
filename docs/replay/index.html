@@ -7,24 +7,28 @@ function resultClass(z){const f=Number(z.axis_finish);if(f===1)return'win';if(f=
 function resultLabel(z){const f=Number(z.axis_finish);if(f===1)return'1着・的中';if(f===2)return'2着・馬券内';if(f===3)return'3着・馬券内';if(Number.isFinite(f)&&f>=4)return '4着以下・馬券外（軸不的中）';return'結果照合待ち'}
 function toNums(top3){const map={'⓪':'0','①':'1','②':'2','③':'3','④':'4','⑤':'5','⑥':'6','⑦':'7','⑧':'8','⑨':'9','⑩':'10','⑪':'11','⑫':'12','⑬':'13','⑭':'14','⑮':'15','⑯':'16','⑰':'17','⑱':'18','⑲':'19','⑳':'20'};return String(top3||'').split('－').map(x=>{let s='';for(const ch of x.trim())s+=map[ch]??ch;return s.replace(/\D/g,'')}).filter(Boolean)}
 function liveArchive(live,res){
-  const resultBy=new Map((res.races||[]).map(x=>[[x.date,x.track,+x.race_no].join('|'),x]));
-  return (live.races||[]).filter(x=>x.date==='2026-09-05').map(x=>{
-    const a=x.analysis||{},rr=resultBy.get([x.date,x.track,+x.race_no].join('|'));
+  const resultBy=new Map((res.races||[]).filter(x=>x.date==='2026-09-05').map(x=>[[x.date,x.track,+x.race_no].join('|'),x]));
+  const predBy=new Map((live.races||[]).filter(x=>x.date==='2026-09-05').map(x=>[[x.date,x.track,+x.race_no].join('|'),x]));
+  const keys=[...new Set([...resultBy.keys(),...predBy.keys()])];
+  return keys.map(key=>{
+    const rr=resultBy.get(key),x=predBy.get(key);
+    const [d,t,rn]=key.split('|'),a=x?.analysis||{};
     const nums=(rr?.top3_rows||[]).length?rr.top3_rows.map(y=>String(y.horse_no||'')):toNums(rr?.top3);
     const names=(rr?.top3_rows||[]).length?rr.top3_rows.map(y=>y.horse_name||''):nums.map(()=> '');
-    const ax=String(a.axis?.horse_no||'');
-    const finish=nums.indexOf(ax)>=0?nums.indexOf(ax)+1:(nums.length===3?4:null);
+    const ax=String(a.axis?.horse_no||rr?.axis_horse_no||'');
+    const finish=ax?(nums.indexOf(ax)>=0?nums.indexOf(ax)+1:(nums.length===3?4:null)):null;
     const tickets=a.trio_tickets||[];
     const actual=nums.length===3?[...nums].map(Number).sort((a,b)=>a-b).join('-'):null;
-    const trioHit=rr?.trio_hit===true?true:rr?.trio_hit===false?false:(actual?tickets.includes(actual):null);
+    const trioHit=rr?.trio_hit===true?true:rr?.trio_hit===false?false:(x&&actual?tickets.includes(actual):null);
     return {
-      date:x.date,track:x.track,race_no:+x.race_no,race_name:x.race_name||'',
-      prediction:{
-        axis_no:ax,axis_name:a.axis?.horse_name||'',
+      date:d,track:t,race_no:+rn,race_name:x?.race_name||rr?.race_name||'',
+      prediction:x?{
+        sealed:true,
+        axis_no:ax,axis_name:a.axis?.horse_name||rr?.axis_horse_name||'',
         decision:a.pre_market_decision||a.classification||'—',
         candidate:(a.partner_roles||[]).slice(0,5).map(y=>[y.horse_no,y.horse_name].filter(Boolean).join(' ')),
         tickets
-      },
+      }:{sealed:false},
       result:rr?{
         axis_finish:finish,
         top3:nums.map((n,i)=>({finish:i+1,horse_no:n,horse_name:names[i]||''})),
@@ -61,8 +65,8 @@ function card(r){
     top=(z.top3||[]).map(x=>`${x.finish}着 ${x.horse_no} ${x.horse_name||''}`).join(' / '),
     cand=(p.candidate||[]).join('・')||'—',
     tickets=p.tickets||[],cls=resultClass(z),hasResult=(z.top3||[]).length>0;
-  return `<article class="race"><div class="head"><div><b>${esc(r.track)} ${r.race_no}R ${esc(r.race_name||'')}</b><small>${esc(r.date).replaceAll('-','/')}</small></div><span class="badge">封印AI予測</span></div>
-  <div class="section"><div class="label">AI予測</div><div class="axis">軸 ${esc(axis(p)||'—')}</div><div class="line">判定：${esc(p.decision||'—')}</div><div class="line">候補：${esc(cand)}</div>${tickets.length?`<div class="tickets">推奨三連複：${tickets.map(esc).join(' / ')}</div>`:''}</div>
+  return `<article class="race"><div class="head"><div><b>${esc(r.track)} ${r.race_no}R ${esc(r.race_name||'')}</b><small>${esc(r.date).replaceAll('-','/')}</small></div><span class="badge">${p.sealed===false?'事前封印なし':'封印AI予測'}</span></div>
+  <div class="section"><div class="label">AI予測</div>${p.sealed===false?'<div class="line">このレースは発走前の正式封印がないため、予想成績の判定対象外です。</div>':`<div class="axis">軸 ${esc(axis(p)||'—')}</div><div class="line">判定：${esc(p.decision||'—')}</div><div class="line">候補：${esc(cand)}</div>${tickets.length?`<div class="tickets">推奨三連複：${tickets.map(esc).join(' / ')}</div>`:''}`}</div>
   <details class="result ${cls}"><summary>${hasResult?'軸の結果を見る ▼':'結果確定待ち'}</summary><div class="label">JRA公式結果</div><div class="top3">${esc(top||'結果データなし')}</div><div class="line">軸結果：${esc(resultLabel(z))}</div>${z.source?`<div class="line"><a href="${esc(z.source)}" target="_blank" rel="noreferrer">JRA公式結果</a></div>`:''}${trioDetails(p,z,hasResult)}</details></article>`
 }
 function render(){
