@@ -90,7 +90,7 @@ function renderUpgradeLog(data){
 }
 
 function renderAnalysis(data){
-  const a=data.analytics||{}, s=data.summary||{}, breakdowns=a.breakdowns||{};
+  const a=data.analytics||{}, s=a.summary||data.summary||{}, breakdowns=a.breakdowns||{};
   renderKpis(qs('#analysisKpis'),[
     {label:'累計投資',value:yen(s.stake_amount),sub:'結果接続済み購入分'},
     {label:'累計払戻',value:yen(s.return_amount),sub:'公式3連複払戻'},
