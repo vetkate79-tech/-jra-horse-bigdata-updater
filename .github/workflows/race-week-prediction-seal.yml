@@ -1,6 +1,10 @@
 name: Race-week pure prediction seal
 
 on:
+  workflow_run:
+    workflows:
+      - Register upcoming JRA debut horses and race-week details
+    types: [completed]
   schedule:
     # Fallback reseals shortly after JRA official card publication.
     # Primary path is immediate push-triggered sealing after race-week data refresh.
@@ -29,9 +33,12 @@ concurrency:
 
 jobs:
   seal:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
