@@ -1,12 +1,34 @@
 #!/usr/bin/env python3
 """Build leakage-safe multi-horizon pre-race features for upcoming JRA runners."""
 from __future__ import annotations
-import csv,json,re
+import csv,hashlib,json,re
 from collections import defaultdict
 from datetime import datetime,timedelta
 from pathlib import Path
 WEEKLY=Path('docs/data/horses/weekly_runner_details.json');OUT=Path('docs/data/horses/pre_race_features.json');STATUS=Path('status/pre_race_features.json');RESULT_SOURCES=(Path('data/race_results_html_2025.csv'),Path('data/race_results_html_2026.csv'))
+HISTORY=Path('docs/data/horses/pre_race_feature_history')
 STRUCTURAL_WEIGHT=.70;MEDIUM_WEIGHT=.20;SHORT_WEIGHT=.10;SHORT_WEIGHT_MAX=.15
+
+def archive_existing_features():
+    if not OUT.exists():
+        return None
+    raw=OUT.read_bytes()
+    if not raw:
+        return None
+    try:
+        d=json.loads(raw.decode('utf-8'))
+    except Exception:
+        return None
+    dates=sorted({str(x.get('date') or '') for x in d.get('features') or [] if x.get('date')})
+    if not dates:
+        cutoff=str((d.get('summary') or {}).get('cutoff_date') or 'undated');dates=[cutoff]
+    digest=hashlib.sha256(raw).hexdigest()
+    for date in dates:
+        p=HISTORY/date/(digest+'.json');p.parent.mkdir(parents=True,exist_ok=True)
+        if not p.exists():p.write_bytes(raw)
+        if hashlib.sha256(p.read_bytes()).hexdigest()!=digest:
+            raise RuntimeError('pre-race feature history verification failed: '+str(p))
+    return digest
 
 def num(v,d=None):
     try:return float(str(v).replace(',',''))
@@ -111,7 +133,7 @@ def merge_history(primary,card_rows,cutoff):
 def main():
     weekly=json.loads(WEEKLY.read_text(encoding='utf-8')) if WEEKLY.exists() else {'runners':[]};runners=weekly.get('runners') or [];dates=sorted({str((x.get('race') or {}).get('date') or '') for x in runners if (x.get('race') or {}).get('date')})
     if not dates:
-        payload={'summary':{'status':'NO_UPCOMING_RACECARDS','runner_count':0},'features':[]};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps(payload['summary'],ensure_ascii=False,indent=2),encoding='utf-8');return
+        payload={'summary':{'status':'NO_UPCOMING_RACECARDS','runner_count':0},'features':[]};archive_existing_features();OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps(payload['summary'],ensure_ascii=False,indent=2),encoding='utf-8');return
     cutoff=dates[0];rows=[r for r in load_rows() if str(r.get('race_date') or '') and str(r.get('race_date'))<cutoff];rows.sort(key=lambda r:str(r.get('race_date') or ''),reverse=True);by_horse=defaultdict(list);by_name=defaultdict(list);name_ids=defaultdict(set);field_sizes=defaultdict(int)
     for r in rows:
         hid=str(r.get('horse_id') or '');rid=str(r.get('race_id') or '');name=clean_name(r.get('horse_name'))
@@ -129,5 +151,5 @@ def main():
         elif base and card_rows:join_source=join_source+'+JRA_CURRENT_RACECARD_PRIOR_STARTS'
         f=feature_for(x,hist,rates,field_sizes,draw_rate);feats.append({'race_id':race.get('race_id'),'date':race.get('date'),'track':race.get('track'),'race_no':race.get('race_no'),'horse_id':hid,'horse_name':x.get('horse_name'),'history_join_source':join_source,'frame_no':x.get('frame_no'),'horse_no':x.get('horse_no'),**f})
     evidence=sum(1 for x in feats if x['starts_before']>0);frame_known=sum(1 for x in feats if x['frame_known']);summary={'status':'READY','cutoff_date':cutoff,'runner_count':len(feats),'history_rows_before_cutoff':len(rows),'runners_with_history':evidence,'runners_without_history':len(feats)-evidence,'history_join_by_id_count':id_joins,'history_join_by_exact_name_count':name_joins,'history_from_current_card_horse_count':card_history_horses,'frame_known_count':frame_known,'frame_pending_count':len(feats)-frame_known,'draw_feature_applied':frame_known>0,'results_on_or_after_cutoff_used':False,'odds_popularity_used':False,'multi_horizon_weights':{'structural':STRUCTURAL_WEIGHT,'medium':MEDIUM_WEIGHT,'short':SHORT_WEIGHT,'short_cap':SHORT_WEIGHT_MAX}}
-    payload={'summary':summary,'features':feats};OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(summary,ensure_ascii=False))
+    payload={'summary':summary,'features':feats};archive_existing_features();OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(summary,ensure_ascii=False))
 if __name__=='__main__':main()
