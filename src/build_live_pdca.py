@@ -13,6 +13,7 @@ OUT=Path('docs/data/live_pdca.json')
 STATUS=Path('status/live_pdca.json')
 SEALED=Path('docs/data/live_predictions_sealed.json')
 RESULTS=Path('data/race_results_html_2026.csv')
+HISTORY=Path('docs/data/pdca-history')
 
 def _load_json(path,default):
     try:return json.loads(path.read_text(encoding='utf-8'))
@@ -120,5 +121,12 @@ def main():
     scenario_quality=Counter((x.get('audit') or {}).get('prediction_quality') for x in scenario_audits)
     payload={'mode':'POST_RESULT_PDCA_ONLY','source_prediction_hash_sha256':(d.get('summary') or {}).get('source_prediction_hash_sha256'),'sealed_predictions_mutated':False,'scored_race_count':len(races),'pending_race_count':len(d.get('pending') or []),'failure_counts':failure_counts,'by_decision':by_decision,'recommended_actions':actions,'axis_learning_objective':'TOP3_SURVIVAL_FIRST','failure_taxonomy':failure_taxonomy,'detailed_failure_counts':dict(detailed_failure_counts),'missed_opponent_position_counts':dict(missed_position_counts),'detailed_failure_audits':detailed_failure_audits,'axis_scenario_audits':scenario_audits,'axis_scenario_quality_counts':dict(scenario_quality),'governance':'PDCA output is diagnostic only; it does not automatically rewrite the certified production model.'}
     OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True)
-    txt=json.dumps(payload,ensure_ascii=False,indent=2);OUT.write_text(txt,encoding='utf-8');STATUS.write_text(txt,encoding='utf-8');print(json.dumps(payload,ensure_ascii=False))
+    txt=json.dumps(payload,ensure_ascii=False,indent=2)
+    dates=sorted({str(x.get('date') or '') for x in races if str(x.get('date') or '')}) or ['undated']
+    digest=str(payload.get('source_prediction_hash_sha256') or 'missing-hash')
+    for date in dates:
+        d=HISTORY/date;d.mkdir(parents=True,exist_ok=True);p=d/(digest+'.json')
+        if not p.exists():p.write_text(txt,encoding='utf-8')
+        if p.read_text(encoding='utf-8')!=txt:raise RuntimeError('pdca history verification failed: '+str(p))
+    OUT.write_text(txt,encoding='utf-8');STATUS.write_text(txt,encoding='utf-8');print(json.dumps(payload,ensure_ascii=False))
 if __name__=='__main__':main()
