@@ -33,7 +33,7 @@ permissions:
 
 concurrency:
   group: horse-data-writes
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update:
