@@ -3,7 +3,7 @@
   "mode": "LIVE_PURE_PREDICTION_SEAL",
   "seal_stage": "PRELIMINARY_NO_FRAME",
   "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-  "generated_at": "2026-09-06T00:47:23.530673+09:00",
+  "generated_at": "2026-09-06T01:11:55.586147+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-06",
@@ -390,76 +390,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "6",
             "horse_name": "エンジョイドライブ",
-            "survival_score": 52.555,
+            "survival_score": 72.8,
             "show_rate_prior": 0.3235,
             "recent_form": 0.5422,
             "condition_fit": 0.1667,
             "uncertainty": 0.0,
             "starts_before": 12.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 32.595
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "エンジョイドライブ",
+            "survival_score": 72.8,
+            "show_rate_prior": 0.3235,
+            "recent_form": 0.5422,
+            "condition_fit": 0.1667,
+            "uncertainty": 0.0,
+            "starts_before": 12.0,
+            "running_style": "FRONT",
+            "ability_score": 32.595
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "エンジョイドライブ",
+            "survival_score": 72.8,
+            "show_rate_prior": 0.3235,
+            "recent_form": 0.5422,
+            "condition_fit": 0.1667,
+            "uncertainty": 0.0,
+            "starts_before": 12.0,
+            "running_style": "FRONT",
+            "ability_score": 32.595
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "6",
               "horse_name": "エンジョイドライブ",
-              "survival_score": 52.555,
+              "survival_score": 72.8,
               "show_rate_prior": 0.3235,
               "recent_form": 0.5422,
               "condition_fit": 0.1667,
               "uncertainty": 0.0,
               "starts_before": 12.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 32.595
             },
             {
               "rank": 2,
               "horse_no": "4",
               "horse_name": "シグムンド",
-              "survival_score": 48.977,
+              "survival_score": 67.191,
               "show_rate_prior": 0.2647,
               "recent_form": 0.4622,
               "condition_fit": 0.25,
               "uncertainty": 0.0,
               "starts_before": 12.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 32.141
             },
             {
               "rank": 3,
               "horse_no": "2",
               "horse_name": "エーオーキング",
-              "survival_score": 41.575,
+              "survival_score": 57.596,
               "show_rate_prior": 0.1786,
               "recent_form": 0.3313,
               "condition_fit": 0.25,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "3",
-              "horse_name": "グロッシェン",
-              "survival_score": 40.657,
-              "show_rate_prior": 0.1071,
-              "recent_form": 0.5456,
-              "condition_fit": 0.1667,
-              "uncertainty": 0.0,
-              "starts_before": 9.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 29.058
             }
           ],
+          "ability_gap_to_second": 0.454,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "PASS_BIASED",
           "hard_score": 5,
           "volatile_score": 5,
@@ -474,8 +506,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -994,76 +1028,116 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
+            "rank": 2,
+            "horse_no": "9",
+            "horse_name": "フォーエバーブルー",
+            "survival_score": 66.832,
+            "show_rate_prior": 0.3571,
+            "recent_form": 1.0,
+            "condition_fit": 0.4,
+            "uncertainty": 0.6,
+            "starts_before": 2.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 44.33
+          },
+          "original_axis": {
             "rank": 1,
             "horse_no": "1",
             "horse_name": "アルデラッシュ",
-            "survival_score": 56.568,
+            "survival_score": 64.751,
             "show_rate_prior": 0.4167,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.8,
             "starts_before": 1.0,
-            "running_style": "UNKNOWN"
+            "running_style": "UNKNOWN",
+            "ability_score": 45.76
+          },
+          "best_alternative": {
+            "rank": 2,
+            "horse_no": "9",
+            "horse_name": "フォーエバーブルー",
+            "survival_score": 66.832,
+            "show_rate_prior": 0.3571,
+            "recent_form": 1.0,
+            "condition_fit": 0.4,
+            "uncertainty": 0.6,
+            "starts_before": 2.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 44.33
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "1",
               "horse_name": "アルデラッシュ",
-              "survival_score": 56.568,
+              "survival_score": 64.751,
               "show_rate_prior": 0.4167,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.8,
               "starts_before": 1.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 45.76
             },
             {
               "rank": 2,
               "horse_no": "9",
               "horse_name": "フォーエバーブルー",
-              "survival_score": 54.786,
+              "survival_score": 66.832,
               "show_rate_prior": 0.3571,
               "recent_form": 1.0,
               "condition_fit": 0.4,
               "uncertainty": 0.6,
               "starts_before": 2.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 44.33
             },
             {
               "rank": 3,
               "horse_no": "12",
               "horse_name": "スペシャルサンクス",
-              "survival_score": 47.552,
+              "survival_score": 55.312,
               "show_rate_prior": 0.3571,
               "recent_form": 0.728,
               "condition_fit": 0.4,
               "uncertainty": 0.6,
               "starts_before": 2.0,
-              "running_style": "UNKNOWN"
-            },
-            {
-              "rank": 4,
-              "horse_no": "10",
-              "horse_name": "ワイズジュエル",
-              "survival_score": 33.563,
-              "show_rate_prior": 0.25,
-              "recent_form": 0.64,
-              "condition_fit": 0.25,
-              "uncertainty": 0.8,
-              "starts_before": 1.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 39.83
             }
           ],
-          "changed_from_ability_rank1": false,
+          "ability_gap_to_second": 1.43,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 2.081,
+            "allowed": true,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
+          "changed_from_ability_rank1": true,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "14",
+            "horse_name": "イヴナンバーフォー",
+            "rank": 7,
+            "intrusion_score": 34.347
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "PASS_BIASED",
           "hard_score": 2,
           "volatile_score": 9,
@@ -1078,8 +1152,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -1650,82 +1726,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "4",
             "horse_name": "トルネードアイル",
-            "survival_score": 74.643,
+            "survival_score": 98.751,
             "show_rate_prior": 0.4643,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 9.0,
-            "running_style": "CLOSER"
+            "running_style": "CLOSER",
+            "ability_score": 54.202
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "4",
+            "horse_name": "トルネードアイル",
+            "survival_score": 98.751,
+            "show_rate_prior": 0.4643,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 9.0,
+            "running_style": "CLOSER",
+            "ability_score": 54.202
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "4",
+            "horse_name": "トルネードアイル",
+            "survival_score": 98.751,
+            "show_rate_prior": 0.4643,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 9.0,
+            "running_style": "CLOSER",
+            "ability_score": 54.202
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "4",
               "horse_name": "トルネードアイル",
-              "survival_score": 74.643,
+              "survival_score": 98.751,
               "show_rate_prior": 0.4643,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 54.202
             },
             {
               "rank": 2,
               "horse_no": "15",
               "horse_name": "イサチルクイーン",
-              "survival_score": 63.789,
+              "survival_score": 86.937,
               "show_rate_prior": 0.35,
               "recent_form": 0.9351,
               "condition_fit": 0.375,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 43.121
             },
             {
               "rank": 3,
               "horse_no": "2",
               "horse_name": "マイネルトレマーズ",
-              "survival_score": 54.245,
+              "survival_score": 71.196,
               "show_rate_prior": 0.3182,
               "recent_form": 0.5037,
               "condition_fit": 0.4286,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "11",
-              "horse_name": "ルシアージュ",
-              "survival_score": 46.324,
-              "show_rate_prior": 0.2778,
-              "recent_form": 0.6629,
-              "condition_fit": 0.25,
-              "uncertainty": 0.2,
-              "starts_before": 4.0,
-              "running_style": "UNKNOWN"
+              "running_style": "FRONT",
+              "ability_score": 38.242
             }
           ],
+          "ability_gap_to_second": 11.081,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -1735,8 +1842,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -2328,82 +2437,121 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "3",
             "horse_name": "メビウスロマンス",
-            "survival_score": 79.067,
+            "survival_score": 101.958,
             "show_rate_prior": 0.55,
             "recent_form": 1.0,
             "condition_fit": 0.625,
             "uncertainty": 0.0,
             "starts_before": 5.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 60.05
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "メビウスロマンス",
+            "survival_score": 101.958,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "FRONT",
+            "ability_score": 60.05
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "メビウスロマンス",
+            "survival_score": 101.958,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "FRONT",
+            "ability_score": 60.05
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "3",
               "horse_name": "メビウスロマンス",
-              "survival_score": 79.067,
+              "survival_score": 101.958,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.625,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 60.05
             },
             {
               "rank": 2,
               "horse_no": "12",
               "horse_name": "ハンナパール",
-              "survival_score": 71.111,
+              "survival_score": 89.738,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 55.066
             },
             {
               "rank": 3,
               "horse_no": "5",
               "horse_name": "ハングローズ",
-              "survival_score": 70.178,
+              "survival_score": 92.696,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "4",
-              "horse_name": "フォルナカリア",
-              "survival_score": 65.217,
-              "show_rate_prior": 0.35,
-              "recent_form": 1.0,
-              "condition_fit": 0.5,
-              "uncertainty": 0.0,
-              "starts_before": 5.0,
-              "running_style": "FRONT"
+              "running_style": "CLOSER",
+              "ability_score": 51.392
             }
           ],
+          "ability_gap_to_second": 4.984,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "11",
+            "horse_name": "サリーアン",
+            "rank": 7,
+            "intrusion_score": 66.664
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -2413,8 +2561,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -3035,76 +3185,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "9",
             "horse_name": "クリスタルドレス",
-            "survival_score": 80.853,
+            "survival_score": 103.298,
             "show_rate_prior": 0.55,
             "recent_form": 1.0,
             "condition_fit": 0.7143,
             "uncertainty": 0.0,
             "starts_before": 5.0,
-            "running_style": "DEEP_CLOSER"
+            "running_style": "DEEP_CLOSER",
+            "ability_score": 62.588
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "9",
+            "horse_name": "クリスタルドレス",
+            "survival_score": 103.298,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.7143,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "DEEP_CLOSER",
+            "ability_score": 62.588
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "9",
+            "horse_name": "クリスタルドレス",
+            "survival_score": 103.298,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.7143,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "DEEP_CLOSER",
+            "ability_score": 62.588
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "9",
               "horse_name": "クリスタルドレス",
-              "survival_score": 80.853,
+              "survival_score": 103.298,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.7143,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "DEEP_CLOSER"
-            },
-            {
-              "rank": 3,
-              "horse_no": "2",
-              "horse_name": "セキテイリノ",
-              "survival_score": 71.915,
-              "show_rate_prior": 0.4583,
-              "recent_form": 1.0,
-              "condition_fit": 0.5,
-              "uncertainty": 0.0,
-              "starts_before": 7.0,
-              "running_style": "ESCAPE"
+              "running_style": "DEEP_CLOSER",
+              "ability_score": 62.588
             },
             {
               "rank": 2,
               "horse_no": "8",
               "horse_name": "ブラッキッシュ",
-              "survival_score": 71.659,
+              "survival_score": 85.688,
               "show_rate_prior": 0.5625,
               "recent_form": 1.0,
               "condition_fit": 0.6667,
               "uncertainty": 0.4,
               "starts_before": 3.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 61.598
             },
             {
-              "rank": 4,
-              "horse_no": "15",
-              "horse_name": "ワイズファミリア",
-              "survival_score": 54.914,
-              "show_rate_prior": 0.375,
-              "recent_form": 0.6552,
-              "condition_fit": 0.25,
+              "rank": 3,
+              "horse_no": "2",
+              "horse_name": "セキテイリノ",
+              "survival_score": 94.54,
+              "show_rate_prior": 0.4583,
+              "recent_form": 1.0,
+              "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "CLOSER"
+              "running_style": "ESCAPE",
+              "ability_score": 53.802
             }
           ],
+          "ability_gap_to_second": 0.99,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 5,
@@ -3120,8 +3302,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -3717,76 +3901,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 2,
             "horse_no": "14",
             "horse_name": "ラヴアンドライク",
-            "survival_score": 73.165,
+            "survival_score": 96.54,
             "show_rate_prior": 0.4583,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 7.0,
-            "running_style": "ESCAPE"
+            "running_style": "ESCAPE",
+            "ability_score": 52.483
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "アイビーチーキー",
+            "survival_score": 91.738,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 53.025
+          },
+          "best_alternative": {
+            "rank": 2,
+            "horse_no": "14",
+            "horse_name": "ラヴアンドライク",
+            "survival_score": 96.54,
+            "show_rate_prior": 0.4583,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 7.0,
+            "running_style": "ESCAPE",
+            "ability_score": 52.483
           },
           "candidates": [
-            {
-              "rank": 2,
-              "horse_no": "14",
-              "horse_name": "ラヴアンドライク",
-              "survival_score": 73.165,
-              "show_rate_prior": 0.4583,
-              "recent_form": 1.0,
-              "condition_fit": 0.5,
-              "uncertainty": 0.0,
-              "starts_before": 7.0,
-              "running_style": "ESCAPE"
-            },
             {
               "rank": 1,
               "horse_no": "3",
               "horse_name": "アイビーチーキー",
-              "survival_score": 72.361,
+              "survival_score": 91.738,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 53.025
+            },
+            {
+              "rank": 2,
+              "horse_no": "14",
+              "horse_name": "ラヴアンドライク",
+              "survival_score": 96.54,
+              "show_rate_prior": 0.4583,
+              "recent_form": 1.0,
+              "condition_fit": 0.5,
+              "uncertainty": 0.0,
+              "starts_before": 7.0,
+              "running_style": "ESCAPE",
+              "ability_score": 52.483
             },
             {
               "rank": 3,
               "horse_no": "16",
               "horse_name": "メディチパワー",
-              "survival_score": 68.934,
+              "survival_score": 91.984,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "1",
-              "horse_name": "ジーティーブラック",
-              "survival_score": 62.962,
-              "show_rate_prior": 0.3889,
-              "recent_form": 1.0,
-              "condition_fit": 0.5,
-              "uncertainty": 0.2,
-              "starts_before": 4.0,
-              "running_style": "UNKNOWN"
+              "running_style": "CLOSER",
+              "ability_score": 50.843
             }
           ],
+          "ability_gap_to_second": 0.542,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 4.802,
+            "allowed": true,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": true,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 5,
@@ -3802,8 +4018,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -4390,76 +4608,116 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "13",
             "horse_name": "キタノライブリー",
-            "survival_score": 78.249,
+            "survival_score": 101.82,
             "show_rate_prior": 0.5278,
             "recent_form": 0.9974,
             "condition_fit": 0.5625,
             "uncertainty": 0.0,
             "starts_before": 13.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 57.988
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "13",
+            "horse_name": "キタノライブリー",
+            "survival_score": 101.82,
+            "show_rate_prior": 0.5278,
+            "recent_form": 0.9974,
+            "condition_fit": 0.5625,
+            "uncertainty": 0.0,
+            "starts_before": 13.0,
+            "running_style": "FRONT",
+            "ability_score": 57.988
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "13",
+            "horse_name": "キタノライブリー",
+            "survival_score": 101.82,
+            "show_rate_prior": 0.5278,
+            "recent_form": 0.9974,
+            "condition_fit": 0.5625,
+            "uncertainty": 0.0,
+            "starts_before": 13.0,
+            "running_style": "FRONT",
+            "ability_score": 57.988
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "13",
               "horse_name": "キタノライブリー",
-              "survival_score": 78.249,
+              "survival_score": 101.82,
               "show_rate_prior": 0.5278,
               "recent_form": 0.9974,
               "condition_fit": 0.5625,
               "uncertainty": 0.0,
               "starts_before": 13.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 57.988
             },
             {
               "rank": 2,
               "horse_no": "6",
               "horse_name": "アスタールフナ",
-              "survival_score": 73.712,
+              "survival_score": 94.591,
               "show_rate_prior": 0.5278,
               "recent_form": 0.848,
               "condition_fit": 0.5625,
               "uncertainty": 0.0,
               "starts_before": 13.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 56.732
             },
             {
               "rank": 3,
               "horse_no": "10",
               "horse_name": "モーゲンセン",
-              "survival_score": 66.75,
+              "survival_score": 90.125,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.4,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "STALK"
-            },
-            {
-              "rank": 4,
-              "horse_no": "2",
-              "horse_name": "キョウエイカンフ",
-              "survival_score": 57.06,
-              "show_rate_prior": 0.3182,
-              "recent_form": 0.7751,
-              "condition_fit": 0.3333,
-              "uncertainty": 0.0,
-              "starts_before": 6.0,
-              "running_style": "DEEP_CLOSER"
+              "running_style": "STALK",
+              "ability_score": 47.34
             }
           ],
+          "ability_gap_to_second": 1.256,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "14",
+            "horse_name": "イノキ",
+            "rank": 10,
+            "intrusion_score": 74.678
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -4475,8 +4733,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -4955,82 +5215,121 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "5",
             "horse_name": "フクチャンショウ",
-            "survival_score": 80.822,
+            "survival_score": 103.806,
             "show_rate_prior": 0.5417,
             "recent_form": 0.9956,
             "condition_fit": 0.6667,
             "uncertainty": 0.0,
             "starts_before": 7.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 61.327
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "5",
+            "horse_name": "フクチャンショウ",
+            "survival_score": 103.806,
+            "show_rate_prior": 0.5417,
+            "recent_form": 0.9956,
+            "condition_fit": 0.6667,
+            "uncertainty": 0.0,
+            "starts_before": 7.0,
+            "running_style": "STALK",
+            "ability_score": 61.327
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "5",
+            "horse_name": "フクチャンショウ",
+            "survival_score": 103.806,
+            "show_rate_prior": 0.5417,
+            "recent_form": 0.9956,
+            "condition_fit": 0.6667,
+            "uncertainty": 0.0,
+            "starts_before": 7.0,
+            "running_style": "STALK",
+            "ability_score": 61.327
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "5",
               "horse_name": "フクチャンショウ",
-              "survival_score": 80.822,
+              "survival_score": 103.806,
               "show_rate_prior": 0.5417,
               "recent_form": 0.9956,
               "condition_fit": 0.6667,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 61.327
             },
             {
               "rank": 2,
               "horse_no": "8",
               "horse_name": "カーヌスティ",
-              "survival_score": 70.906,
+              "survival_score": 94.117,
               "show_rate_prior": 0.3462,
               "recent_form": 1.0,
               "condition_fit": 0.6,
               "uncertainty": 0.0,
               "starts_before": 8.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 53.288
             },
             {
               "rank": 3,
               "horse_no": "9",
               "horse_name": "ポッドロワール",
-              "survival_score": 69.031,
+              "survival_score": 91.884,
               "show_rate_prior": 0.3824,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 12.0,
-              "running_style": "STALK"
-            },
-            {
-              "rank": 4,
-              "horse_no": "6",
-              "horse_name": "パクスロマーナ",
-              "survival_score": 57.848,
-              "show_rate_prior": 0.3611,
-              "recent_form": 0.6989,
-              "condition_fit": 0.375,
-              "uncertainty": 0.0,
-              "starts_before": 13.0,
-              "running_style": "FRONT"
+              "running_style": "STALK",
+              "ability_score": 51.424
             }
           ],
+          "ability_gap_to_second": 8.039,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "7",
+            "horse_name": "ルーフ",
+            "rank": 8,
+            "intrusion_score": 69.18
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -5040,8 +5339,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -5563,76 +5864,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "6",
             "horse_name": "アストリル",
-            "survival_score": 81.954,
+            "survival_score": 105.056,
             "show_rate_prior": 0.5909,
             "recent_form": 1.0,
             "condition_fit": 0.625,
             "uncertainty": 0.0,
             "starts_before": 6.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 63.933
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "アストリル",
+            "survival_score": 105.056,
+            "show_rate_prior": 0.5909,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "STALK",
+            "ability_score": 63.933
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "アストリル",
+            "survival_score": 105.056,
+            "show_rate_prior": 0.5909,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "STALK",
+            "ability_score": 63.933
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "6",
               "horse_name": "アストリル",
-              "survival_score": 81.954,
+              "survival_score": 105.056,
               "show_rate_prior": 0.5909,
               "recent_form": 1.0,
               "condition_fit": 0.625,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 63.933
             },
             {
               "rank": 2,
               "horse_no": "9",
               "horse_name": "ドリームコア",
-              "survival_score": 80.022,
+              "survival_score": 102.545,
               "show_rate_prior": 0.5909,
               "recent_form": 1.0,
               "condition_fit": 0.5909,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 63.49
             },
             {
               "rank": 3,
               "horse_no": "10",
               "horse_name": "ジッピーチューン",
-              "survival_score": 74.877,
+              "survival_score": 92.222,
               "show_rate_prior": 0.6111,
               "recent_form": 1.0,
               "condition_fit": 0.6111,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "3",
-              "horse_name": "リアライズルミナス",
-              "survival_score": 73.678,
-              "show_rate_prior": 0.5,
-              "recent_form": 1.0,
-              "condition_fit": 0.5714,
-              "uncertainty": 0.0,
-              "starts_before": 6.0,
-              "running_style": "STALK"
+              "running_style": "FRONT",
+              "ability_score": 62.052
             }
           ],
+          "ability_gap_to_second": 0.443,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -5648,8 +5981,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -6243,82 +6578,121 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "2",
             "horse_name": "ファインサマーデイ",
-            "survival_score": 72.361,
+            "survival_score": 91.738,
             "show_rate_prior": 0.5,
             "recent_form": 1.0,
             "condition_fit": 0.5714,
             "uncertainty": 0.2,
             "starts_before": 4.0,
-            "running_style": "ESCAPE"
+            "running_style": "ESCAPE",
+            "ability_score": 56.74
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "2",
+            "horse_name": "ファインサマーデイ",
+            "survival_score": 91.738,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "ESCAPE",
+            "ability_score": 56.74
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "2",
+            "horse_name": "ファインサマーデイ",
+            "survival_score": 91.738,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "ESCAPE",
+            "ability_score": 56.74
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "2",
               "horse_name": "ファインサマーデイ",
-              "survival_score": 72.361,
+              "survival_score": 91.738,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 56.74
             },
             {
               "rank": 2,
               "horse_no": "6",
               "horse_name": "ホウオウショコラ",
-              "survival_score": 67.614,
+              "survival_score": 90.562,
               "show_rate_prior": 0.3462,
               "recent_form": 0.9413,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 8.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 49.253
             },
             {
               "rank": 3,
               "horse_no": "10",
               "horse_name": "マイネルユーゲント",
-              "survival_score": 66.75,
+              "survival_score": 90.125,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.4,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "7",
-              "horse_name": "カシオペア",
-              "survival_score": 61.053,
-              "show_rate_prior": 0.35,
-              "recent_form": 0.9244,
-              "condition_fit": 0.375,
-              "uncertainty": 0.0,
-              "starts_before": 5.0,
-              "running_style": "DEEP_CLOSER"
+              "running_style": "FRONT",
+              "ability_score": 48.463
             }
           ],
+          "ability_gap_to_second": 7.487,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "4",
+            "horse_name": "ブライティアブーケ",
+            "rank": 7,
+            "intrusion_score": 80.225
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -6328,8 +6702,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -6875,82 +7251,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "3",
             "horse_name": "エリカビアリッツ",
-            "survival_score": 80.882,
+            "survival_score": 104.252,
             "show_rate_prior": 0.5909,
             "recent_form": 1.0,
             "condition_fit": 0.5714,
             "uncertainty": 0.0,
             "starts_before": 6.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 60.269
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "エリカビアリッツ",
+            "survival_score": 104.252,
+            "show_rate_prior": 0.5909,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "FRONT",
+            "ability_score": 60.269
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "エリカビアリッツ",
+            "survival_score": 104.252,
+            "show_rate_prior": 0.5909,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "FRONT",
+            "ability_score": 60.269
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "3",
               "horse_name": "エリカビアリッツ",
-              "survival_score": 80.882,
+              "survival_score": 104.252,
               "show_rate_prior": 0.5909,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 60.269
             },
             {
               "rank": 2,
               "horse_no": "4",
               "horse_name": "ルージュリヴィエラ",
-              "survival_score": 71.517,
+              "survival_score": 94.583,
               "show_rate_prior": 0.45,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 51.775
             },
             {
               "rank": 3,
               "horse_no": "2",
               "horse_name": "テンレッドサン",
-              "survival_score": 68.934,
+              "survival_score": 91.984,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "STALK"
-            },
-            {
-              "rank": 4,
-              "horse_no": "10",
-              "horse_name": "セラサイト",
-              "survival_score": 60.335,
-              "show_rate_prior": 0.2917,
-              "recent_form": 1.0,
-              "condition_fit": 0.3,
-              "uncertainty": 0.0,
-              "starts_before": 7.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 48.383
             }
           ],
+          "ability_gap_to_second": 8.494,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -6960,8 +7367,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -7448,82 +7857,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "6",
             "horse_name": "イッペイ",
-            "survival_score": 64.825,
+            "survival_score": 80.812,
             "show_rate_prior": 0.4375,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.4,
             "starts_before": 3.0,
-            "running_style": "UNKNOWN"
+            "running_style": "UNKNOWN",
+            "ability_score": 50.669
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "イッペイ",
+            "survival_score": 80.812,
+            "show_rate_prior": 0.4375,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.4,
+            "starts_before": 3.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 50.669
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "イッペイ",
+            "survival_score": 80.812,
+            "show_rate_prior": 0.4375,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.4,
+            "starts_before": 3.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 50.669
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "6",
               "horse_name": "イッペイ",
-              "survival_score": 64.825,
+              "survival_score": 80.812,
               "show_rate_prior": 0.4375,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.4,
               "starts_before": 3.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 50.669
             },
             {
               "rank": 2,
               "horse_no": "4",
               "horse_name": "アオイゲート",
-              "survival_score": 55.318,
+              "survival_score": 62.751,
               "show_rate_prior": 0.4167,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.8,
               "starts_before": 1.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 46.232
             },
             {
               "rank": 3,
               "horse_no": "2",
               "horse_name": "ロゼプレミア",
-              "survival_score": 54.068,
+              "survival_score": 60.751,
               "show_rate_prior": 0.4167,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.8,
               "starts_before": 1.0,
-              "running_style": "UNKNOWN"
-            },
-            {
-              "rank": 4,
-              "horse_no": "9",
-              "horse_name": "アオイノリプー",
-              "survival_score": 45.605,
-              "show_rate_prior": 0.3571,
-              "recent_form": 0.6963,
-              "condition_fit": 0.4,
-              "uncertainty": 0.6,
-              "starts_before": 2.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 45.891
             }
           ],
+          "ability_gap_to_second": 4.437,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "HIGH_PAYOUT_CAPTURE",
-          "hard_score": 6,
+          "hard_score": 3,
           "volatile_score": 9,
           "target_points": "7-10",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が高い",
             "3着侵入候補が複数"
           ],
@@ -7533,8 +7973,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -8098,82 +8540,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "3",
             "horse_name": "ゴンフィンガー",
-            "survival_score": 72.909,
+            "survival_score": 87.688,
             "show_rate_prior": 0.5625,
             "recent_form": 1.0,
             "condition_fit": 0.6667,
             "uncertainty": 0.4,
             "starts_before": 3.0,
-            "running_style": "UNKNOWN"
+            "running_style": "UNKNOWN",
+            "ability_score": 56.217
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "ゴンフィンガー",
+            "survival_score": 87.688,
+            "show_rate_prior": 0.5625,
+            "recent_form": 1.0,
+            "condition_fit": 0.6667,
+            "uncertainty": 0.4,
+            "starts_before": 3.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 56.217
+          },
+          "best_alternative": {
+            "rank": 2,
+            "horse_no": "6",
+            "horse_name": "ツクバヴァンガード",
+            "survival_score": 90.298,
+            "show_rate_prior": 0.45,
+            "recent_form": 0.899,
+            "condition_fit": 0.45,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "ESCAPE",
+            "ability_score": 50.362
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "3",
               "horse_name": "ゴンフィンガー",
-              "survival_score": 72.909,
+              "survival_score": 87.688,
               "show_rate_prior": 0.5625,
               "recent_form": 1.0,
               "condition_fit": 0.6667,
               "uncertainty": 0.4,
               "starts_before": 3.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 56.217
             },
             {
               "rank": 2,
               "horse_no": "6",
               "horse_name": "ツクバヴァンガード",
-              "survival_score": 68.295,
+              "survival_score": 90.298,
               "show_rate_prior": 0.45,
               "recent_form": 0.899,
               "condition_fit": 0.45,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 50.362
             },
             {
               "rank": 3,
               "horse_no": "14",
               "horse_name": "ロードステラート",
-              "survival_score": 65.813,
+              "survival_score": 86.498,
               "show_rate_prior": 0.3929,
               "recent_form": 0.8356,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "12",
-              "horse_name": "ヘイジュード",
-              "survival_score": 56.663,
-              "show_rate_prior": 0.3889,
-              "recent_form": 0.8147,
-              "condition_fit": 0.3889,
-              "uncertainty": 0.2,
-              "starts_before": 4.0,
-              "running_style": "UNKNOWN"
+              "running_style": "FRONT",
+              "ability_score": 47.086
             }
           ],
+          "ability_gap_to_second": 5.855,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 2.61,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -8183,8 +8656,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -8777,76 +9252,116 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 2,
             "horse_no": "7",
             "horse_name": "フルムーン",
-            "survival_score": 65.845,
+            "survival_score": 85.56,
             "show_rate_prior": 0.45,
             "recent_form": 0.7422,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 5.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 51.066
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "14",
+            "horse_name": "ルージュフィーリア",
+            "survival_score": 80.812,
+            "show_rate_prior": 0.4375,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.4,
+            "starts_before": 3.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 51.344
+          },
+          "best_alternative": {
+            "rank": 2,
+            "horse_no": "7",
+            "horse_name": "フルムーン",
+            "survival_score": 85.56,
+            "show_rate_prior": 0.45,
+            "recent_form": 0.7422,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "STALK",
+            "ability_score": 51.066
           },
           "candidates": [
-            {
-              "rank": 2,
-              "horse_no": "7",
-              "horse_name": "フルムーン",
-              "survival_score": 65.845,
-              "show_rate_prior": 0.45,
-              "recent_form": 0.7422,
-              "condition_fit": 0.5,
-              "uncertainty": 0.0,
-              "starts_before": 5.0,
-              "running_style": "STALK"
-            },
             {
               "rank": 1,
               "horse_no": "14",
               "horse_name": "ルージュフィーリア",
-              "survival_score": 64.825,
+              "survival_score": 80.812,
               "show_rate_prior": 0.4375,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.4,
               "starts_before": 3.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 51.344
+            },
+            {
+              "rank": 2,
+              "horse_no": "7",
+              "horse_name": "フルムーン",
+              "survival_score": 85.56,
+              "show_rate_prior": 0.45,
+              "recent_form": 0.7422,
+              "condition_fit": 0.5,
+              "uncertainty": 0.0,
+              "starts_before": 5.0,
+              "running_style": "STALK",
+              "ability_score": 51.066
             },
             {
               "rank": 3,
               "horse_no": "8",
               "horse_name": "リアララ",
-              "survival_score": 53.536,
+              "survival_score": 64.832,
               "show_rate_prior": 0.3571,
               "recent_form": 1.0,
               "condition_fit": 0.4,
               "uncertainty": 0.6,
               "starts_before": 2.0,
-              "running_style": "UNKNOWN"
-            },
-            {
-              "rank": 4,
-              "horse_no": "15",
-              "horse_name": "アドマイヤパープル",
-              "survival_score": 49.006,
-              "show_rate_prior": 0.2778,
-              "recent_form": 0.7091,
-              "condition_fit": 0.3333,
-              "uncertainty": 0.2,
-              "starts_before": 4.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 43.756
             }
           ],
+          "ability_gap_to_second": 0.278,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 4.748,
+            "allowed": true,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": true,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "2",
+            "horse_name": "メイショウテンジン",
+            "rank": 7,
+            "intrusion_score": 69.064
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 5,
@@ -8862,8 +9377,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -9451,76 +9968,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "10",
             "horse_name": "ゴコウコイコイ",
-            "survival_score": 69.23,
+            "survival_score": 94.094,
             "show_rate_prior": 0.375,
             "recent_form": 0.9991,
             "condition_fit": 0.4,
             "uncertainty": 0.0,
             "starts_before": 7.0,
-            "running_style": "DEEP_CLOSER"
+            "running_style": "DEEP_CLOSER",
+            "ability_score": 49.724
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "10",
+            "horse_name": "ゴコウコイコイ",
+            "survival_score": 94.094,
+            "show_rate_prior": 0.375,
+            "recent_form": 0.9991,
+            "condition_fit": 0.4,
+            "uncertainty": 0.0,
+            "starts_before": 7.0,
+            "running_style": "DEEP_CLOSER",
+            "ability_score": 49.724
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "10",
+            "horse_name": "ゴコウコイコイ",
+            "survival_score": 94.094,
+            "show_rate_prior": 0.375,
+            "recent_form": 0.9991,
+            "condition_fit": 0.4,
+            "uncertainty": 0.0,
+            "starts_before": 7.0,
+            "running_style": "DEEP_CLOSER",
+            "ability_score": 49.724
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "10",
               "horse_name": "ゴコウコイコイ",
-              "survival_score": 69.23,
+              "survival_score": 94.094,
               "show_rate_prior": 0.375,
               "recent_form": 0.9991,
               "condition_fit": 0.4,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "DEEP_CLOSER"
+              "running_style": "DEEP_CLOSER",
+              "ability_score": 49.724
             },
             {
               "rank": 2,
               "horse_no": "9",
               "horse_name": "ブライスフェアリー",
-              "survival_score": 66.666,
+              "survival_score": 89.256,
               "show_rate_prior": 0.375,
               "recent_form": 0.899,
               "condition_fit": 0.4444,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "DEEP_CLOSER"
+              "running_style": "DEEP_CLOSER",
+              "ability_score": 48.893
             },
             {
               "rank": 3,
               "horse_no": "3",
               "horse_name": "ゴールドエンバー",
-              "survival_score": 63.161,
+              "survival_score": 86.983,
               "show_rate_prior": 0.3182,
               "recent_form": 0.9956,
               "condition_fit": 0.3333,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "DEEP_CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "14",
-              "horse_name": "サクセスブルー",
-              "survival_score": 57.537,
-              "show_rate_prior": 0.35,
-              "recent_form": 0.8782,
-              "condition_fit": 0.25,
-              "uncertainty": 0.0,
-              "starts_before": 5.0,
-              "running_style": "CLOSER"
+              "running_style": "DEEP_CLOSER",
+              "ability_score": 44.998
             }
           ],
+          "ability_gap_to_second": 0.831,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -9536,8 +10085,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -10066,76 +10617,116 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "2",
             "horse_name": "ステラノヴァ",
-            "survival_score": 76.837,
+            "survival_score": 97.734,
             "show_rate_prior": 0.5312,
             "recent_form": 0.8326,
             "condition_fit": 0.6667,
             "uncertainty": 0.0,
             "starts_before": 11.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 57.545
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "2",
+            "horse_name": "ステラノヴァ",
+            "survival_score": 97.734,
+            "show_rate_prior": 0.5312,
+            "recent_form": 0.8326,
+            "condition_fit": 0.6667,
+            "uncertainty": 0.0,
+            "starts_before": 11.0,
+            "running_style": "STALK",
+            "ability_score": 57.545
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "2",
+            "horse_name": "ステラノヴァ",
+            "survival_score": 97.734,
+            "show_rate_prior": 0.5312,
+            "recent_form": 0.8326,
+            "condition_fit": 0.6667,
+            "uncertainty": 0.0,
+            "starts_before": 11.0,
+            "running_style": "STALK",
+            "ability_score": 57.545
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "2",
               "horse_name": "ステラノヴァ",
-              "survival_score": 76.837,
+              "survival_score": 97.734,
               "show_rate_prior": 0.5312,
               "recent_form": 0.8326,
               "condition_fit": 0.6667,
               "uncertainty": 0.0,
               "starts_before": 11.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 57.545
             },
             {
               "rank": 2,
               "horse_no": "11",
               "horse_name": "ドリームガッサン",
-              "survival_score": 73.165,
+              "survival_score": 96.54,
               "show_rate_prior": 0.4583,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 54.279
             },
             {
               "rank": 3,
               "horse_no": "4",
               "horse_name": "アドリアフレイバー",
-              "survival_score": 70.267,
+              "survival_score": 92.583,
               "show_rate_prior": 0.45,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "ESCAPE"
-            },
-            {
-              "rank": 4,
-              "horse_no": "7",
-              "horse_name": "レストプレドゥモア",
-              "survival_score": 66.388,
-              "show_rate_prior": 0.375,
-              "recent_form": 1.0,
-              "condition_fit": 0.4444,
-              "uncertainty": 0.0,
-              "starts_before": 7.0,
-              "running_style": "FRONT"
+              "running_style": "ESCAPE",
+              "ability_score": 51.549
             }
           ],
+          "ability_gap_to_second": 3.266,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "10",
+            "horse_name": "ロードヴィゴラス",
+            "rank": 7,
+            "intrusion_score": 64.599
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
           "hard_score": 10,
           "volatile_score": 2,
@@ -10150,8 +10741,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -10746,76 +11339,116 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "12",
             "horse_name": "ウィングブルー",
-            "survival_score": 77.186,
+            "survival_score": 101.092,
             "show_rate_prior": 0.5312,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 11.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 58.945
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "12",
+            "horse_name": "ウィングブルー",
+            "survival_score": 101.092,
+            "show_rate_prior": 0.5312,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 11.0,
+            "running_style": "FRONT",
+            "ability_score": 58.945
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "12",
+            "horse_name": "ウィングブルー",
+            "survival_score": 101.092,
+            "show_rate_prior": 0.5312,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 11.0,
+            "running_style": "FRONT",
+            "ability_score": 58.945
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "12",
               "horse_name": "ウィングブルー",
-              "survival_score": 77.186,
+              "survival_score": 101.092,
               "show_rate_prior": 0.5312,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 11.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 58.945
             },
             {
               "rank": 2,
               "horse_no": "9",
               "horse_name": "レッドアイスピア",
-              "survival_score": 75.66,
+              "survival_score": 98.683,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5455,
               "uncertainty": 0.0,
               "starts_before": 8.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 57.645
             },
             {
               "rank": 3,
               "horse_no": "6",
               "horse_name": "バレンタインビスタ",
-              "survival_score": 67.322,
+              "survival_score": 90.554,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.4286,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "STALK"
-            },
-            {
-              "rank": 4,
-              "horse_no": "14",
-              "horse_name": "ディーズメンフィス",
-              "survival_score": 63.789,
-              "show_rate_prior": 0.35,
-              "recent_form": 1.0,
-              "condition_fit": 0.4286,
-              "uncertainty": 0.0,
-              "starts_before": 5.0,
-              "running_style": "CLOSER"
+              "running_style": "STALK",
+              "ability_score": 49.537
             }
           ],
+          "ability_gap_to_second": 1.3,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "8",
+            "horse_name": "コスモファーブロス",
+            "rank": 7,
+            "intrusion_score": 80.862
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -10831,8 +11464,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -11390,76 +12025,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "11",
             "horse_name": "ルールザウェイヴ",
-            "survival_score": 79.067,
+            "survival_score": 101.958,
             "show_rate_prior": 0.55,
             "recent_form": 1.0,
             "condition_fit": 0.625,
             "uncertainty": 0.0,
             "starts_before": 5.0,
-            "running_style": "ESCAPE"
+            "running_style": "ESCAPE",
+            "ability_score": 61.429
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "11",
+            "horse_name": "ルールザウェイヴ",
+            "survival_score": 101.958,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "ESCAPE",
+            "ability_score": 61.429
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "11",
+            "horse_name": "ルールザウェイヴ",
+            "survival_score": 101.958,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "ESCAPE",
+            "ability_score": 61.429
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "11",
               "horse_name": "ルールザウェイヴ",
-              "survival_score": 79.067,
+              "survival_score": 101.958,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.625,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 61.429
             },
             {
               "rank": 2,
               "horse_no": "7",
               "horse_name": "アクアアイ",
-              "survival_score": 76.745,
+              "survival_score": 99.154,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 59.588
             },
             {
               "rank": 3,
               "horse_no": "14",
               "horse_name": "クリスレジーナ",
-              "survival_score": 68.224,
+              "survival_score": 86.334,
               "show_rate_prior": 0.5,
               "recent_form": 0.9905,
               "condition_fit": 0.5,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "UNKNOWN"
-            },
-            {
-              "rank": 4,
-              "horse_no": "5",
-              "horse_name": "グロリアスマーチ",
-              "survival_score": 57.53,
-              "show_rate_prior": 0.4333,
-              "recent_form": 0.4811,
-              "condition_fit": 0.4615,
-              "uncertainty": 0.0,
-              "starts_before": 10.0,
-              "running_style": "STALK"
+              "running_style": "UNKNOWN",
+              "ability_score": 54.765
             }
           ],
+          "ability_gap_to_second": 1.841,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
           "hard_score": 8,
           "volatile_score": 4,
@@ -11474,8 +12141,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -12041,82 +12710,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "10",
             "horse_name": "エスシービクトリア",
-            "survival_score": 79.441,
+            "survival_score": 97.77,
             "show_rate_prior": 0.6111,
             "recent_form": 1.0,
             "condition_fit": 0.7143,
             "uncertainty": 0.2,
             "starts_before": 4.0,
-            "running_style": "UNKNOWN"
+            "running_style": "UNKNOWN",
+            "ability_score": 63.094
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "10",
+            "horse_name": "エスシービクトリア",
+            "survival_score": 97.77,
+            "show_rate_prior": 0.6111,
+            "recent_form": 1.0,
+            "condition_fit": 0.7143,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 63.094
+          },
+          "best_alternative": {
+            "rank": 2,
+            "horse_no": "3",
+            "horse_name": "ライフゲート",
+            "survival_score": 99.709,
+            "show_rate_prior": 0.525,
+            "recent_form": 1.0,
+            "condition_fit": 0.5556,
+            "uncertainty": 0.0,
+            "starts_before": 15.0,
+            "running_style": "FRONT",
+            "ability_score": 58.101
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "10",
               "horse_name": "エスシービクトリア",
-              "survival_score": 79.441,
+              "survival_score": 97.77,
               "show_rate_prior": 0.6111,
               "recent_form": 1.0,
               "condition_fit": 0.7143,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 63.094
             },
             {
               "rank": 2,
               "horse_no": "3",
               "horse_name": "ライフゲート",
-              "survival_score": 76.812,
+              "survival_score": 99.709,
               "show_rate_prior": 0.525,
               "recent_form": 1.0,
               "condition_fit": 0.5556,
               "uncertainty": 0.0,
               "starts_before": 15.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 58.101
             },
             {
               "rank": 3,
               "horse_no": "9",
               "horse_name": "アオハルブルース",
-              "survival_score": 71.915,
+              "survival_score": 94.54,
               "show_rate_prior": 0.4583,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "6",
-              "horse_name": "ロードアマルフィ",
-              "survival_score": 68.418,
-              "show_rate_prior": 0.4231,
-              "recent_form": 1.0,
-              "condition_fit": 0.4545,
-              "uncertainty": 0.0,
-              "starts_before": 8.0,
-              "running_style": "ESCAPE"
+              "running_style": "CLOSER",
+              "ability_score": 53.403
             }
           ],
+          "ability_gap_to_second": 4.993,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 1.939,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -12126,8 +12826,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -12694,82 +13396,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "9",
             "horse_name": "ハヤブササキチャン",
-            "survival_score": 88.464,
+            "survival_score": 110.53,
             "show_rate_prior": 0.6818,
             "recent_form": 1.0,
             "condition_fit": 0.7778,
             "uncertainty": 0.0,
             "starts_before": 6.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 69.751
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "9",
+            "horse_name": "ハヤブササキチャン",
+            "survival_score": 110.53,
+            "show_rate_prior": 0.6818,
+            "recent_form": 1.0,
+            "condition_fit": 0.7778,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "FRONT",
+            "ability_score": 69.751
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "9",
+            "horse_name": "ハヤブササキチャン",
+            "survival_score": 110.53,
+            "show_rate_prior": 0.6818,
+            "recent_form": 1.0,
+            "condition_fit": 0.7778,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "FRONT",
+            "ability_score": 69.751
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "9",
               "horse_name": "ハヤブササキチャン",
-              "survival_score": 88.464,
+              "survival_score": 110.53,
               "show_rate_prior": 0.6818,
               "recent_form": 1.0,
               "condition_fit": 0.7778,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 69.751
             },
             {
               "rank": 2,
               "horse_no": "10",
               "horse_name": "コッツォリーノ",
-              "survival_score": 78.335,
+              "survival_score": 100.959,
               "show_rate_prior": 0.5417,
               "recent_form": 1.0,
               "condition_fit": 0.6,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 61.928
             },
             {
               "rank": 3,
               "horse_no": "3",
               "horse_name": "ドッグウッド",
-              "survival_score": 76.567,
+              "survival_score": 97.958,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.625,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "6",
-              "horse_name": "グレーヌドジョワ",
-              "survival_score": 75.584,
-              "show_rate_prior": 0.5,
-              "recent_form": 1.0,
-              "condition_fit": 0.6667,
-              "uncertainty": 0.0,
-              "starts_before": 8.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 60.936
             }
           ],
+          "ability_gap_to_second": 7.823,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -12779,8 +13512,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -13345,82 +14080,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "1",
             "horse_name": "レクスノヴァス",
-            "survival_score": 82.493,
+            "survival_score": 105.736,
             "show_rate_prior": 0.6333,
             "recent_form": 1.0,
             "condition_fit": 0.5714,
             "uncertainty": 0.0,
             "starts_before": 10.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 65.69
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "1",
+            "horse_name": "レクスノヴァス",
+            "survival_score": 105.736,
+            "show_rate_prior": 0.6333,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.0,
+            "starts_before": 10.0,
+            "running_style": "STALK",
+            "ability_score": 65.69
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "1",
+            "horse_name": "レクスノヴァス",
+            "survival_score": 105.736,
+            "show_rate_prior": 0.6333,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.0,
+            "starts_before": 10.0,
+            "running_style": "STALK",
+            "ability_score": 65.69
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "1",
               "horse_name": "レクスノヴァス",
-              "survival_score": 82.493,
+              "survival_score": 105.736,
               "show_rate_prior": 0.6333,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 10.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 65.69
             },
             {
               "rank": 2,
               "horse_no": "7",
               "horse_name": "コーチェラバレー",
-              "survival_score": 71.485,
+              "survival_score": 94.504,
               "show_rate_prior": 0.4333,
               "recent_form": 0.9668,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 10.0,
-              "running_style": "DEEP_CLOSER"
+              "running_style": "DEEP_CLOSER",
+              "ability_score": 54.489
             },
             {
               "rank": 3,
               "horse_no": "4",
               "horse_name": "ヨヒーン",
-              "survival_score": 69.556,
+              "survival_score": 93.223,
               "show_rate_prior": 0.5278,
               "recent_form": 1.0,
               "condition_fit": 0.25,
               "uncertainty": 0.0,
               "starts_before": 13.0,
-              "running_style": "CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "12",
-              "horse_name": "ゴールデンスナップ",
-              "survival_score": 62.017,
-              "show_rate_prior": 0.4091,
-              "recent_form": 0.7568,
-              "condition_fit": 0.4286,
-              "uncertainty": 0.0,
-              "starts_before": 6.0,
-              "running_style": "STALK"
+              "running_style": "CLOSER",
+              "ability_score": 53.296
             }
           ],
+          "ability_gap_to_second": 11.201,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -13430,8 +14196,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -13963,76 +14731,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
+            "rank": 1,
+            "horse_no": "8",
+            "horse_name": "アチーヴァー",
+            "survival_score": 91.738,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "ESCAPE",
+            "ability_score": 54.541
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "8",
+            "horse_name": "アチーヴァー",
+            "survival_score": 91.738,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.5714,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "ESCAPE",
+            "ability_score": 54.541
+          },
+          "best_alternative": {
             "rank": 2,
             "horse_no": "5",
             "horse_name": "グレイスフルマーチ",
-            "survival_score": 73.564,
+            "survival_score": 96.908,
             "show_rate_prior": 0.4688,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 11.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 53.477
           },
           "candidates": [
-            {
-              "rank": 2,
-              "horse_no": "5",
-              "horse_name": "グレイスフルマーチ",
-              "survival_score": 73.564,
-              "show_rate_prior": 0.4688,
-              "recent_form": 1.0,
-              "condition_fit": 0.5,
-              "uncertainty": 0.0,
-              "starts_before": 11.0,
-              "running_style": "STALK"
-            },
             {
               "rank": 1,
               "horse_no": "8",
               "horse_name": "アチーヴァー",
-              "survival_score": 72.361,
+              "survival_score": 91.738,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 54.541
+            },
+            {
+              "rank": 2,
+              "horse_no": "5",
+              "horse_name": "グレイスフルマーチ",
+              "survival_score": 96.908,
+              "show_rate_prior": 0.4688,
+              "recent_form": 1.0,
+              "condition_fit": 0.5,
+              "uncertainty": 0.0,
+              "starts_before": 11.0,
+              "running_style": "STALK",
+              "ability_score": 53.477
             },
             {
               "rank": 3,
               "horse_no": "7",
               "horse_name": "ファイアリービート",
-              "survival_score": 68.934,
+              "survival_score": 91.984,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "DEEP_CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "1",
-              "horse_name": "エチゴドラゴン",
-              "survival_score": 66.201,
-              "show_rate_prior": 0.4583,
-              "recent_form": 0.835,
-              "condition_fit": 0.4583,
-              "uncertainty": 0.0,
-              "starts_before": 7.0,
-              "running_style": "ESCAPE"
+              "running_style": "DEEP_CLOSER",
+              "ability_score": 50.691
             }
           ],
-          "changed_from_ability_rank1": true,
+          "ability_gap_to_second": 1.064,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 5.17,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
+          "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "HIGH_PAYOUT_CAPTURE",
           "hard_score": 4,
           "volatile_score": 7,
@@ -14048,8 +14848,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -14541,82 +15343,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "1",
             "horse_name": "ルースソラール",
-            "survival_score": 65.467,
+            "survival_score": 76.833,
             "show_rate_prior": 0.5,
             "recent_form": 1.0,
             "condition_fit": 0.6,
             "uncertainty": 0.6,
             "starts_before": 2.0,
-            "running_style": "UNKNOWN"
+            "running_style": "UNKNOWN",
+            "ability_score": 55.264
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "1",
+            "horse_name": "ルースソラール",
+            "survival_score": 76.833,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.6,
+            "uncertainty": 0.6,
+            "starts_before": 2.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 55.264
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "1",
+            "horse_name": "ルースソラール",
+            "survival_score": 76.833,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.6,
+            "uncertainty": 0.6,
+            "starts_before": 2.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 55.264
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "1",
               "horse_name": "ルースソラール",
-              "survival_score": 65.467,
+              "survival_score": 76.833,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.6,
               "uncertainty": 0.6,
               "starts_before": 2.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 55.264
             },
             {
               "rank": 2,
               "horse_no": "8",
               "horse_name": "シュプレヒコール",
-              "survival_score": 55.645,
+              "survival_score": 66.515,
               "show_rate_prior": 0.3571,
               "recent_form": 0.9481,
               "condition_fit": 0.5,
               "uncertainty": 0.6,
               "starts_before": 2.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 44.387
             },
             {
               "rank": 3,
               "horse_no": "7",
               "horse_name": "スマートメモリー",
-              "survival_score": 54.241,
+              "survival_score": 69.937,
               "show_rate_prior": 0.3125,
               "recent_form": 1.0,
               "condition_fit": 0.3333,
               "uncertainty": 0.4,
               "starts_before": 3.0,
-              "running_style": "UNKNOWN"
-            },
-            {
-              "rank": 4,
-              "horse_no": "5",
-              "horse_name": "テラレガル",
-              "survival_score": 37.083,
-              "show_rate_prior": 0.25,
-              "recent_form": 0.8,
-              "condition_fit": 0.25,
-              "uncertainty": 0.8,
-              "starts_before": 1.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 43.35
             }
           ],
+          "ability_gap_to_second": 10.877,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "HIGH_PAYOUT_CAPTURE",
-          "hard_score": 6,
+          "hard_score": 3,
           "volatile_score": 9,
           "target_points": "7-10",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が高い",
             "3着侵入候補が複数"
           ],
@@ -14626,8 +15459,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -15222,76 +16057,116 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "16",
             "horse_name": "マカロンブルー",
-            "survival_score": 76.0,
+            "survival_score": 100.0,
             "show_rate_prior": 0.5,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 6.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 53.45
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "16",
+            "horse_name": "マカロンブルー",
+            "survival_score": 100.0,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "FRONT",
+            "ability_score": 53.45
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "16",
+            "horse_name": "マカロンブルー",
+            "survival_score": 100.0,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "FRONT",
+            "ability_score": 53.45
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "16",
               "horse_name": "マカロンブルー",
-              "survival_score": 76.0,
+              "survival_score": 100.0,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 53.45
             },
             {
               "rank": 2,
               "horse_no": "8",
               "horse_name": "ナムラロダン",
-              "survival_score": 72.724,
+              "survival_score": 95.889,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "9",
-              "horse_name": "エバイダンス",
-              "survival_score": 63.38,
-              "show_rate_prior": 0.3462,
-              "recent_form": 0.9274,
-              "condition_fit": 0.4286,
-              "uncertainty": 0.0,
-              "starts_before": 8.0,
-              "running_style": "STALK"
+              "running_style": "FRONT",
+              "ability_score": 52.389
             },
             {
               "rank": 3,
               "horse_no": "14",
               "horse_name": "ペプチドアロン",
-              "survival_score": 62.325,
+              "survival_score": 76.812,
               "show_rate_prior": 0.4375,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.4,
               "starts_before": 3.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 49.394
             }
           ],
+          "ability_gap_to_second": 1.061,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "13",
+            "horse_name": "ガルディエンヌ",
+            "rank": 7,
+            "intrusion_score": 70.647
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -15307,8 +16182,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -15885,82 +16762,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "14",
             "horse_name": "アラムシャピラス",
-            "survival_score": 82.908,
+            "survival_score": 106.363,
             "show_rate_prior": 0.6818,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 6.0,
-            "running_style": "ESCAPE"
+            "running_style": "ESCAPE",
+            "ability_score": 67.009
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "14",
+            "horse_name": "アラムシャピラス",
+            "survival_score": 106.363,
+            "show_rate_prior": 0.6818,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "ESCAPE",
+            "ability_score": 67.009
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "14",
+            "horse_name": "アラムシャピラス",
+            "survival_score": 106.363,
+            "show_rate_prior": 0.6818,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "ESCAPE",
+            "ability_score": 67.009
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "14",
               "horse_name": "アラムシャピラス",
-              "survival_score": 82.908,
+              "survival_score": 106.363,
               "show_rate_prior": 0.6818,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 67.009
             },
             {
               "rank": 2,
               "horse_no": "1",
               "horse_name": "キミガスキダ",
-              "survival_score": 72.724,
+              "survival_score": 95.889,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 49.776
             },
             {
               "rank": 3,
               "horse_no": "15",
               "horse_name": "アスクハッピーマン",
-              "survival_score": 61.316,
+              "survival_score": 79.373,
               "show_rate_prior": 0.3889,
               "recent_form": 0.9333,
               "condition_fit": 0.4286,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "UNKNOWN"
-            },
-            {
-              "rank": 4,
-              "horse_no": "2",
-              "horse_name": "キタノトレボーネ",
-              "survival_score": 51.315,
-              "show_rate_prior": 0.3125,
-              "recent_form": 0.9238,
-              "condition_fit": 0.3333,
-              "uncertainty": 0.4,
-              "starts_before": 3.0,
-              "running_style": "UNKNOWN"
+              "running_style": "UNKNOWN",
+              "ability_score": 46.861
             }
           ],
+          "ability_gap_to_second": 17.233,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -15970,8 +16878,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -16554,82 +17464,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "3",
             "horse_name": "ティタノマキア",
-            "survival_score": 81.954,
+            "survival_score": 105.056,
             "show_rate_prior": 0.5909,
             "recent_form": 1.0,
             "condition_fit": 0.625,
             "uncertainty": 0.0,
             "starts_before": 6.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 64.338
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "ティタノマキア",
+            "survival_score": 105.056,
+            "show_rate_prior": 0.5909,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "STALK",
+            "ability_score": 64.338
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "ティタノマキア",
+            "survival_score": 105.056,
+            "show_rate_prior": 0.5909,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "STALK",
+            "ability_score": 64.338
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "3",
               "horse_name": "ティタノマキア",
-              "survival_score": 81.954,
+              "survival_score": 105.056,
               "show_rate_prior": 0.5909,
               "recent_form": 1.0,
               "condition_fit": 0.625,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 64.338
             },
             {
               "rank": 2,
               "horse_no": "11",
               "horse_name": "ライツェントライゼ",
-              "survival_score": 57.248,
+              "survival_score": 76.364,
               "show_rate_prior": 0.3462,
               "recent_form": 0.5941,
               "condition_fit": 0.3636,
               "uncertainty": 0.0,
               "starts_before": 8.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 41.253
             },
             {
               "rank": 3,
               "horse_no": "15",
               "horse_name": "クロスボーダー",
-              "survival_score": 55.073,
+              "survival_score": 76.913,
               "show_rate_prior": 0.2083,
               "recent_form": 0.8178,
               "condition_fit": 0.3333,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "STALK"
-            },
-            {
-              "rank": 4,
-              "horse_no": "4",
-              "horse_name": "パンキー",
-              "survival_score": 50.217,
-              "show_rate_prior": 0.25,
-              "recent_form": 0.7182,
-              "condition_fit": 0.25,
-              "uncertainty": 0.0,
-              "starts_before": 5.0,
-              "running_style": "ESCAPE"
+              "running_style": "STALK",
+              "ability_score": 40.373
             }
           ],
+          "ability_gap_to_second": 23.085,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -16639,8 +17580,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -17171,82 +18114,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "9",
             "horse_name": "シュネルアンジュ",
-            "survival_score": 79.067,
+            "survival_score": 101.958,
             "show_rate_prior": 0.55,
             "recent_form": 1.0,
             "condition_fit": 0.625,
             "uncertainty": 0.0,
             "starts_before": 5.0,
-            "running_style": "STALK"
+            "running_style": "STALK",
+            "ability_score": 59.311
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "9",
+            "horse_name": "シュネルアンジュ",
+            "survival_score": 101.958,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "STALK",
+            "ability_score": 59.311
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "9",
+            "horse_name": "シュネルアンジュ",
+            "survival_score": 101.958,
+            "show_rate_prior": 0.55,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 5.0,
+            "running_style": "STALK",
+            "ability_score": 59.311
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "9",
               "horse_name": "シュネルアンジュ",
-              "survival_score": 79.067,
+              "survival_score": 101.958,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.625,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 59.311
             },
             {
               "rank": 2,
               "horse_no": "7",
               "horse_name": "マクノス",
-              "survival_score": 72.945,
+              "survival_score": 95.654,
               "show_rate_prior": 0.45,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 5.0,
-              "running_style": "DEEP_CLOSER"
+              "running_style": "DEEP_CLOSER",
+              "ability_score": 52.22
             },
             {
               "rank": 3,
               "horse_no": "6",
               "horse_name": "ガールズデイアウト",
-              "survival_score": 67.69,
+              "survival_score": 89.483,
               "show_rate_prior": 0.3929,
               "recent_form": 0.9209,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "STALK"
-            },
-            {
-              "rank": 4,
-              "horse_no": "12",
-              "horse_name": "ミティリーニ",
-              "survival_score": 62.015,
-              "show_rate_prior": 0.3182,
-              "recent_form": 0.9397,
-              "condition_fit": 0.4,
-              "uncertainty": 0.0,
-              "starts_before": 6.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 49.839
             }
           ],
+          "ability_gap_to_second": 7.091,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -17256,8 +18230,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -17818,82 +18794,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "3",
             "horse_name": "マゲバスピード",
-            "survival_score": 79.441,
+            "survival_score": 97.77,
             "show_rate_prior": 0.6111,
             "recent_form": 1.0,
             "condition_fit": 0.7143,
             "uncertainty": 0.2,
             "starts_before": 4.0,
-            "running_style": "ESCAPE"
+            "running_style": "ESCAPE",
+            "ability_score": 62.655
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "マゲバスピード",
+            "survival_score": 97.77,
+            "show_rate_prior": 0.6111,
+            "recent_form": 1.0,
+            "condition_fit": 0.7143,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "ESCAPE",
+            "ability_score": 62.655
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "マゲバスピード",
+            "survival_score": 97.77,
+            "show_rate_prior": 0.6111,
+            "recent_form": 1.0,
+            "condition_fit": 0.7143,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "ESCAPE",
+            "ability_score": 62.655
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "3",
               "horse_name": "マゲバスピード",
-              "survival_score": 79.441,
+              "survival_score": 97.77,
               "show_rate_prior": 0.6111,
               "recent_form": 1.0,
               "condition_fit": 0.7143,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 62.655
             },
             {
               "rank": 2,
               "horse_no": "4",
               "horse_name": "バースデイフライト",
-              "survival_score": 74.303,
+              "survival_score": 97.433,
               "show_rate_prior": 0.4643,
               "recent_form": 1.0,
               "condition_fit": 0.5455,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 57.19
             },
             {
               "rank": 3,
               "horse_no": "12",
               "horse_name": "ファニーバニー",
-              "survival_score": 65.476,
+              "survival_score": 81.125,
               "show_rate_prior": 0.5357,
               "recent_form": 0.5087,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "13",
-              "horse_name": "ロードレジェロ",
-              "survival_score": 65.183,
-              "show_rate_prior": 0.5,
-              "recent_form": 1.0,
-              "condition_fit": 0.4,
-              "uncertainty": 0.2,
-              "starts_before": 4.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 52.534
             }
           ],
+          "ability_gap_to_second": 5.465,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -17903,8 +18910,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -18333,82 +19342,113 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "6",
             "horse_name": "バルセシート",
-            "survival_score": 78.5,
+            "survival_score": 101.875,
             "show_rate_prior": 0.5,
             "recent_form": 1.0,
             "condition_fit": 0.625,
             "uncertainty": 0.0,
             "starts_before": 6.0,
-            "running_style": "CLOSER"
+            "running_style": "CLOSER",
+            "ability_score": 60.587
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "バルセシート",
+            "survival_score": 101.875,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "CLOSER",
+            "ability_score": 60.587
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "6",
+            "horse_name": "バルセシート",
+            "survival_score": 101.875,
+            "show_rate_prior": 0.5,
+            "recent_form": 1.0,
+            "condition_fit": 0.625,
+            "uncertainty": 0.0,
+            "starts_before": 6.0,
+            "running_style": "CLOSER",
+            "ability_score": 60.587
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "6",
               "horse_name": "バルセシート",
-              "survival_score": 78.5,
+              "survival_score": 101.875,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.625,
               "uncertainty": 0.0,
               "starts_before": 6.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 60.587
             },
             {
               "rank": 2,
               "horse_no": "1",
               "horse_name": "テーオーアルアイン",
-              "survival_score": 69.77,
+              "survival_score": 93.569,
               "show_rate_prior": 0.3929,
               "recent_form": 1.0,
               "condition_fit": 0.4545,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 53.429
             },
             {
               "rank": 3,
               "horse_no": "5",
               "horse_name": "ショウナンバルドル",
-              "survival_score": 64.083,
+              "survival_score": 85.93,
               "show_rate_prior": 0.3438,
               "recent_form": 0.8923,
               "condition_fit": 0.4444,
               "uncertainty": 0.0,
               "starts_before": 11.0,
-              "running_style": "CLOSER"
-            },
-            {
-              "rank": 4,
-              "horse_no": "2",
-              "horse_name": "ストップザタイム",
-              "survival_score": 62.183,
-              "show_rate_prior": 0.5,
-              "recent_form": 1.0,
-              "condition_fit": 0.25,
-              "uncertainty": 0.2,
-              "starts_before": 4.0,
-              "running_style": "ESCAPE"
+              "running_style": "CLOSER",
+              "ability_score": 48.465
             }
           ],
+          "ability_gap_to_second": 7.158,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -18418,8 +19458,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -19022,76 +20064,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "14",
             "horse_name": "パイオニアスクエア",
-            "survival_score": 74.643,
+            "survival_score": 98.751,
             "show_rate_prior": 0.4643,
             "recent_form": 1.0,
             "condition_fit": 0.5,
             "uncertainty": 0.0,
             "starts_before": 9.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 55.489
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "14",
+            "horse_name": "パイオニアスクエア",
+            "survival_score": 98.751,
+            "show_rate_prior": 0.4643,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 9.0,
+            "running_style": "FRONT",
+            "ability_score": 55.489
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "14",
+            "horse_name": "パイオニアスクエア",
+            "survival_score": 98.751,
+            "show_rate_prior": 0.4643,
+            "recent_form": 1.0,
+            "condition_fit": 0.5,
+            "uncertainty": 0.0,
+            "starts_before": 9.0,
+            "running_style": "FRONT",
+            "ability_score": 55.489
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "14",
               "horse_name": "パイオニアスクエア",
-              "survival_score": 74.643,
+              "survival_score": 98.751,
               "show_rate_prior": 0.4643,
               "recent_form": 1.0,
               "condition_fit": 0.5,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 55.489
             },
             {
               "rank": 2,
               "horse_no": "6",
               "horse_name": "アスクチャンスマン",
-              "survival_score": 72.108,
+              "survival_score": 95.322,
               "show_rate_prior": 0.3929,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "CLOSER"
+              "running_style": "CLOSER",
+              "ability_score": 54.737
             },
             {
               "rank": 3,
               "horse_no": "4",
               "horse_name": "ロードヴェリタス",
-              "survival_score": 69.861,
+              "survival_score": 87.738,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
               "uncertainty": 0.2,
               "starts_before": 4.0,
-              "running_style": "UNKNOWN"
-            },
-            {
-              "rank": 4,
-              "horse_no": "10",
-              "horse_name": "ブラックレジェンド",
-              "survival_score": 68.796,
-              "show_rate_prior": 0.4091,
-              "recent_form": 1.0,
-              "condition_fit": 0.5,
-              "uncertainty": 0.0,
-              "starts_before": 6.0,
-              "running_style": "FRONT"
+              "running_style": "UNKNOWN",
+              "ability_score": 53.096
             }
           ],
+          "ability_gap_to_second": 0.752,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -19107,8 +20181,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -19652,82 +20728,121 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "5",
             "horse_name": "テーオーグレーザー",
-            "survival_score": 86.39,
+            "survival_score": 108.793,
             "show_rate_prior": 0.6538,
             "recent_form": 1.0,
             "condition_fit": 0.7273,
             "uncertainty": 0.0,
             "starts_before": 8.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 67.627
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "5",
+            "horse_name": "テーオーグレーザー",
+            "survival_score": 108.793,
+            "show_rate_prior": 0.6538,
+            "recent_form": 1.0,
+            "condition_fit": 0.7273,
+            "uncertainty": 0.0,
+            "starts_before": 8.0,
+            "running_style": "FRONT",
+            "ability_score": 67.627
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "5",
+            "horse_name": "テーオーグレーザー",
+            "survival_score": 108.793,
+            "show_rate_prior": 0.6538,
+            "recent_form": 1.0,
+            "condition_fit": 0.7273,
+            "uncertainty": 0.0,
+            "starts_before": 8.0,
+            "running_style": "FRONT",
+            "ability_score": 67.627
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "5",
               "horse_name": "テーオーグレーザー",
-              "survival_score": 86.39,
+              "survival_score": 108.793,
               "show_rate_prior": 0.6538,
               "recent_form": 1.0,
               "condition_fit": 0.7273,
               "uncertainty": 0.0,
               "starts_before": 8.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 67.627
             },
             {
               "rank": 2,
               "horse_no": "10",
               "horse_name": "ウルスクローム",
-              "survival_score": 81.172,
+              "survival_score": 103.427,
               "show_rate_prior": 0.5938,
               "recent_form": 1.0,
               "condition_fit": 0.6429,
               "uncertainty": 0.0,
               "starts_before": 11.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 62.411
             },
             {
               "rank": 3,
               "horse_no": "4",
               "horse_name": "ヨリノレジェンド",
-              "survival_score": 71.202,
+              "survival_score": 94.074,
               "show_rate_prior": 0.4688,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
               "uncertainty": 0.0,
               "starts_before": 11.0,
-              "running_style": "STALK"
-            },
-            {
-              "rank": 4,
-              "horse_no": "11",
-              "horse_name": "スペシャルナンバー",
-              "survival_score": 63.456,
-              "show_rate_prior": 0.3438,
-              "recent_form": 1.0,
-              "condition_fit": 0.3571,
-              "uncertainty": 0.0,
-              "starts_before": 11.0,
-              "running_style": "DEEP_CLOSER"
+              "running_style": "STALK",
+              "ability_score": 54.479
             }
           ],
+          "ability_gap_to_second": 5.216,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "2",
+            "horse_name": "ランウインディ",
+            "rank": 9,
+            "intrusion_score": 77.022
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "CONCENTRATED",
-          "hard_score": 13,
+          "hard_score": 10,
           "volatile_score": 2,
           "target_points": "3-5",
           "reason": [
-            "軸と2位の事前能力差が大きい",
             "上位の不確実性が低い",
             "3着侵入候補が複数"
           ],
@@ -19737,8 +20852,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -20338,76 +21455,116 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "5",
             "horse_name": "ダイヤモンドノット",
-            "survival_score": 82.256,
+            "survival_score": 105.192,
             "show_rate_prior": 0.5769,
             "recent_form": 1.0,
             "condition_fit": 0.6667,
             "uncertainty": 0.0,
             "starts_before": 8.0,
-            "running_style": "FRONT"
+            "running_style": "FRONT",
+            "ability_score": 64.328
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "5",
+            "horse_name": "ダイヤモンドノット",
+            "survival_score": 105.192,
+            "show_rate_prior": 0.5769,
+            "recent_form": 1.0,
+            "condition_fit": 0.6667,
+            "uncertainty": 0.0,
+            "starts_before": 8.0,
+            "running_style": "FRONT",
+            "ability_score": 64.328
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "5",
+            "horse_name": "ダイヤモンドノット",
+            "survival_score": 105.192,
+            "show_rate_prior": 0.5769,
+            "recent_form": 1.0,
+            "condition_fit": 0.6667,
+            "uncertainty": 0.0,
+            "starts_before": 8.0,
+            "running_style": "FRONT",
+            "ability_score": 64.328
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "5",
               "horse_name": "ダイヤモンドノット",
-              "survival_score": 82.256,
+              "survival_score": 105.192,
               "show_rate_prior": 0.5769,
               "recent_form": 1.0,
               "condition_fit": 0.6667,
               "uncertainty": 0.0,
               "starts_before": 8.0,
-              "running_style": "FRONT"
+              "running_style": "FRONT",
+              "ability_score": 64.328
             },
             {
               "rank": 2,
               "horse_no": "16",
               "horse_name": "タマモイカロス",
-              "survival_score": 79.593,
+              "survival_score": 102.066,
               "show_rate_prior": 0.5667,
               "recent_form": 1.0,
               "condition_fit": 0.6154,
               "uncertainty": 0.0,
               "starts_before": 10.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 63.273
             },
             {
               "rank": 3,
               "horse_no": "3",
               "horse_name": "フリッカージャブ",
-              "survival_score": 74.143,
+              "survival_score": 96.251,
               "show_rate_prior": 0.4643,
               "recent_form": 1.0,
               "condition_fit": 0.6,
               "uncertainty": 0.0,
               "starts_before": 9.0,
-              "running_style": "ESCAPE"
-            },
-            {
-              "rank": 4,
-              "horse_no": "7",
-              "horse_name": "メイショウヨゾラ",
-              "survival_score": 70.893,
-              "show_rate_prior": 0.4643,
-              "recent_form": 1.0,
-              "condition_fit": 0.5,
-              "uncertainty": 0.0,
-              "starts_before": 9.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 58.164
             }
           ],
+          "ability_gap_to_second": 1.055,
+          "switch_gate": {
+            "weak_original": false,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
+          "production_override_applied": false,
+          "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+        },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": {
+            "horse_no": "12",
+            "horse_name": "レッドモンレーヴ",
+            "rank": 10,
+            "intrusion_score": 79.438
+          },
+          "eligible_for_ticket_swap": true,
+          "scope": "CAUTION_ONLY",
+          "rule": "BUYは崩さない。CAUTIONかつ1400m未満で強い7〜10位侵入候補が出た時だけ、点数据え置きの1点入替候補にする。",
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -20423,8 +21580,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -21023,76 +22182,108 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
             "horse_no": "15",
             "horse_name": "ランスオブセヘル",
-            "survival_score": 84.911,
+            "survival_score": 107.55,
             "show_rate_prior": 0.6333,
             "recent_form": 1.0,
             "condition_fit": 0.6923,
             "uncertainty": 0.0,
             "starts_before": 10.0,
-            "running_style": "ESCAPE"
+            "running_style": "ESCAPE",
+            "ability_score": 66.156
+          },
+          "original_axis": {
+            "rank": 1,
+            "horse_no": "15",
+            "horse_name": "ランスオブセヘル",
+            "survival_score": 107.55,
+            "show_rate_prior": 0.6333,
+            "recent_form": 1.0,
+            "condition_fit": 0.6923,
+            "uncertainty": 0.0,
+            "starts_before": 10.0,
+            "running_style": "ESCAPE",
+            "ability_score": 66.156
+          },
+          "best_alternative": {
+            "rank": 1,
+            "horse_no": "15",
+            "horse_name": "ランスオブセヘル",
+            "survival_score": 107.55,
+            "show_rate_prior": 0.6333,
+            "recent_form": 1.0,
+            "condition_fit": 0.6923,
+            "uncertainty": 0.0,
+            "starts_before": 10.0,
+            "running_style": "ESCAPE",
+            "ability_score": 66.156
           },
           "candidates": [
             {
               "rank": 1,
               "horse_no": "15",
               "horse_name": "ランスオブセヘル",
-              "survival_score": 84.911,
+              "survival_score": 107.55,
               "show_rate_prior": 0.6333,
               "recent_form": 1.0,
               "condition_fit": 0.6923,
               "uncertainty": 0.0,
               "starts_before": 10.0,
-              "running_style": "ESCAPE"
+              "running_style": "ESCAPE",
+              "ability_score": 66.156
             },
             {
               "rank": 2,
               "horse_no": "4",
               "horse_name": "ザックザク",
-              "survival_score": 83.5,
+              "survival_score": 105.375,
               "show_rate_prior": 0.625,
               "recent_form": 1.0,
               "condition_fit": 0.7,
               "uncertainty": 0.0,
               "starts_before": 7.0,
-              "running_style": "STALK"
+              "running_style": "STALK",
+              "ability_score": 65.487
             },
             {
               "rank": 3,
               "horse_no": "10",
               "horse_name": "ピカラ",
-              "survival_score": 70.409,
+              "survival_score": 83.688,
               "show_rate_prior": 0.5625,
               "recent_form": 1.0,
               "condition_fit": 0.6667,
               "uncertainty": 0.4,
               "starts_before": 3.0,
-              "running_style": "FRONT"
-            },
-            {
-              "rank": 4,
-              "horse_no": "2",
-              "horse_name": "ヴリトラハン",
-              "survival_score": 68.945,
-              "show_rate_prior": 0.4333,
-              "recent_form": 1.0,
-              "condition_fit": 0.4615,
-              "uncertainty": 0.0,
-              "starts_before": 10.0,
-              "running_style": "CLOSER"
+              "running_style": "FRONT",
+              "ability_score": 57.757
             }
           ],
+          "ability_gap_to_second": 0.669,
+          "switch_gate": {
+            "weak_original": true,
+            "survival_score_delta": 0.0,
+            "allowed": false,
+            "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
+          },
           "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
+        "partner_intrusion_shadow": {
+          "status": "RESEARCH_ONLY",
+          "candidate": null,
+          "reason": "August PDCA: low-rank intrusion replacement is not enabled outside sprint races",
+          "production_override_applied": false
+        },
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+          "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
           "regime": "BALANCED",
           "hard_score": 6,
           "volatile_score": 7,
@@ -21108,8 +22299,10 @@
           "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+          "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
           "production_override_applied": false,
-          "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+          "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
       }
@@ -21147,5 +22340,5 @@
       "score_spread": 1.898
     }
   ],
-  "prediction_hash_sha256": "7e35d75f6b43831a49b28713c314109f2e1e7855ce47b8da64a8c05be8d62d41"
+  "prediction_hash_sha256": "a8ecc3fc55e72a0e13d414515c8f6c9c3e6e40932376aa8556e49ed019cd18ba"
 }
