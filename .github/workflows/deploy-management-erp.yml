@@ -9,6 +9,7 @@ on:
       - 'data/race_results_html_2026*.csv'
       - 'src/build_august_validation_archive.py'
       - 'src/build_demo_0830_results.py'
+      - 'src/build_replay_page.py'
       - '.github/workflows/deploy-management-erp.yml'
   workflow_dispatch:
 
@@ -34,6 +35,19 @@ jobs:
         run: python src/build_august_validation_archive.py
       - name: Build isolated 8/30 demo result judgement
         run: python src/build_demo_0830_results.py
+      - name: Build canonical replay page
+        run: python src/build_replay_page.py
+      - name: Verify canonical replay page is immediately visible
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('docs/replay/index.html').read_text(encoding='utf-8')
+          assert '読込中' not in p
+          assert p.count('class="race"') >= 36
+          assert '36レース表示' in p
+          assert p.count('id="replay-data"') == 1
+          print('REPLAY_STATIC_RENDER_PASS')
+          PY
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
