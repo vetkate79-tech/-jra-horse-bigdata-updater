@@ -11,7 +11,6 @@ from situational_race_pattern_shadow import classify_situation
 from ensemble_prediction_shadow import route_ensemble
 from ticket_value_regime_shadow import classify_ticket_policy
 from axis_survival_shadow import select_survival_axis
-from opponent_intrusion_shadow import select_low_rank_intrusion
 from partner_intrusion_shadow import score_low_rank_intrusion
 
 TZ=ZoneInfo('Asia/Tokyo')
