@@ -22,7 +22,6 @@ function tagHtml(h){
  if((h.tags||[]).includes('GRADED'))tags.push('重賞出走馬');
  if((h.tags||[]).includes('OPEN'))tags.push('オープン馬');
  if(h.unbeaten===true&&Number(h.wins||0)>=2)tags.push(`無敗 ${Number(h.starts||h.wins||0)}戦${Number(h.wins||0)}勝`);
- if(h.unbeaten===true&&Number(h.wins||0)>=2)tags.push(`無敗 ${Number(h.starts||h.wins||0)}戦${Number(h.wins||0)}勝`);
  if(h.current_class_label)tags.push(h.current_class_label);else if(h.current_class)tags.push(h.current_class);
  if(h.running_style_label&&h.running_style!=='UNKNOWN')tags.push(h.running_style_label);
  if((h.tags||[]).includes('NEW_ENTRY'))tags.push('出走前登録');
