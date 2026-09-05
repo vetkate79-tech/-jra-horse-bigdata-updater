@@ -11,6 +11,7 @@ from situational_race_pattern_shadow import classify_situation
 from ensemble_prediction_shadow import route_ensemble
 from ticket_value_regime_shadow import classify_ticket_policy
 from axis_survival_shadow import select_survival_axis
+from axis_survival_shadow import reorder_with_survival_axis
 from partner_intrusion_shadow import score_low_rank_intrusion
 
 TZ=ZoneInfo('Asia/Tokyo')
@@ -20,7 +21,9 @@ BASE=Path('docs/data/horses/base_catalog.json')
 PRE=Path('docs/data/horses/pre_race_features.json')
 OUT=Path('docs/data/live_predictions_sealed.json')
 STATUS=Path('status/live_prediction_seal.json')
+CHAMPION_ARCHIVE=Path('docs/data/live_predictions_champion_2026-09-06.json')
 UPGRADE_LOG=Path('docs/data/model_upgrade_log.json')
+PUBLICATION_MODEL='ORAL_INTEGRATED_V1_2_SHADOW__TOP3_SURVIVAL_R2_CHALLENGER'
 FORBIDDEN_KEYS={'odds','popularity','market_rank','payout','return_amount','result','finish_position','trio_result','trio_payout'}
 
 def _num(v,d=0.0):
@@ -93,6 +96,12 @@ def _contains_forbidden(obj):
 
 def main():
     _assert_registered_model_version()
+    # Preserve the first 9/6 Champion seal before publishing a separately
+    # identifiable Challenger reseal. Never overwrite the comparison anchor.
+    if OUT.exists() and not CHAMPION_ARCHIVE.exists():
+        prior=json.loads(OUT.read_text(encoding='utf-8'))
+        if any(str(r.get('date') or '')=='2026-09-06' for r in prior.get('races') or []):
+            CHAMPION_ARCHIVE.write_text(json.dumps(prior,ensure_ascii=False,indent=2),encoding='utf-8')
     now=datetime.now(TZ);today=now.date().isoformat();cards=_load_weekly_cards();master=_load_horses();pre_by_key,pre_summary=_load_pre_features();races=[];pending=[];frame_total=frame_known=0
     for r in cards:
         date=str(r.get('date') or '')
@@ -105,11 +114,28 @@ def main():
             pending.append({'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'status':'DATA_PENDING','reason':'at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed','evidence_horses':evidence,'score_spread':round(spread,3)});continue
         q.sort(key=lambda x:(-_num(x.get('score')),int(x['n']) if x['n'].isdigit() else 999));safe={'race_id':r.get('race_id'),'date':date,'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'surface':r.get('surface'),'distance_m':r.get('distance_m'),'ranked_snapshot':q}
         if _contains_forbidden(safe):raise RuntimeError('forbidden market/result field entered pure prediction input')
-        analysis=analyze_race(safe);situation=classify_situation(safe,q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or []);analysis['situational_shadow']=situation;analysis['ensemble_shadow']=route_ensemble(situation);analysis['axis_survival_shadow']=select_survival_axis(q);analysis['partner_intrusion_shadow']=score_low_rank_intrusion(q,safe.get('surface'),safe.get('distance_m'));analysis['ticket_value_regime_shadow']=classify_ticket_policy(safe,q,analysis)
-        races.append({**{k:safe.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'ranked_snapshot':q,'analysis':analysis})
+        champion_analysis=analyze_race(safe)
+        survival=select_survival_axis(q)
+        challenger_q=reorder_with_survival_axis(q,survival)
+        challenger_safe={**safe,'ranked_snapshot':challenger_q}
+        analysis=analyze_race(challenger_safe)
+        analysis['model_version']=PUBLICATION_MODEL
+        analysis['challenger_reseal']={
+            'status':'PUBLIC_CHALLENGER',
+            'base_model_version':MODEL_VERSION,
+            'mechanism':survival.get('architecture'),
+            'changed_from_champion':bool(survival.get('changed_from_ability_rank1')),
+            'champion_axis':champion_analysis.get('axis'),
+            'challenger_axis':analysis.get('axis'),
+            'switch_gate':survival.get('switch_gate'),
+            'results_used':False,
+            'odds_popularity_used':False,
+        }
+        situation=classify_situation(challenger_safe,challenger_q,analysis.get('axis_durability') or {},analysis.get('third_place_intrusion') or []);analysis['situational_shadow']=situation;analysis['ensemble_shadow']=route_ensemble(situation);analysis['axis_survival_shadow']=survival;analysis['partner_intrusion_shadow']=score_low_rank_intrusion(challenger_q,safe.get('surface'),safe.get('distance_m'));analysis['ticket_value_regime_shadow']=classify_ticket_policy(challenger_safe,challenger_q,analysis)
+        races.append({**{k:safe.get(k) for k in ('race_id','date','track','race_no','race_name','surface','distance_m')},'ranked_snapshot':challenger_q,'champion_ranked_snapshot':q,'analysis':analysis})
     seal_stage='FINAL_WITH_FRAME' if frame_total>0 and frame_known==frame_total else ('PARTIAL_FRAME_RESEAL' if frame_known else 'PRELIMINARY_NO_FRAME')
-    core={'schema_version':6,'mode':'LIVE_PURE_PREDICTION_SEAL','seal_stage':seal_stage,'model_version':MODEL_VERSION,'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'ticket_value_regime_shadow_enabled':True,'ticket_value_regime_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'races':races,'pending':pending}
+    core={'schema_version':7,'mode':'LIVE_PURE_PREDICTION_CHALLENGER_RESEAL','seal_stage':seal_stage,'model_version':PUBLICATION_MODEL,'base_model_version':MODEL_VERSION,'publication_status':'PUBLIC_CHALLENGER','challenger_mechanism':'TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT','champion_archive':str(CHAMPION_ARCHIVE),'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'ticket_value_regime_shadow_enabled':True,'ticket_value_regime_shadow_production_override':False,'sealed_race_count':len(races),'pending_race_count':len(pending),'challenger_axis_change_count':sum(bool((r.get('analysis') or {}).get('challenger_reseal',{}).get('changed_from_champion')) for r in races),'races':races,'pending':pending}
     hash_input=json.dumps({k:v for k,v in core.items() if k!='generated_at'},ensure_ascii=False,sort_keys=True,separators=(',',':'));core['prediction_hash_sha256']=hashlib.sha256(hash_input.encode()).hexdigest();OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(core,ensure_ascii=False,indent=2),encoding='utf-8')
-    status={'status':'SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES'),'seal_stage':seal_stage,'today_jst':today,'sealed_race_count':len(races),'pending_race_count':len(pending),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'prediction_hash_sha256':core['prediction_hash_sha256'],'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'ticket_value_regime_shadow_enabled':True,'ticket_value_regime_shadow_production_override':False,'odds_popularity_used':False,'results_used':False};STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(status,ensure_ascii=False))
+    status={'status':'SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES'),'publication_status':'PUBLIC_CHALLENGER','model_version':PUBLICATION_MODEL,'base_model_version':MODEL_VERSION,'challenger_mechanism':core['challenger_mechanism'],'challenger_axis_change_count':core['challenger_axis_change_count'],'champion_archive':str(CHAMPION_ARCHIVE),'seal_stage':seal_stage,'today_jst':today,'sealed_race_count':len(races),'pending_race_count':len(pending),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'prediction_hash_sha256':core['prediction_hash_sha256'],'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'ticket_value_regime_shadow_enabled':True,'ticket_value_regime_shadow_production_override':False,'odds_popularity_used':False,'results_used':False};STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(status,ensure_ascii=False))
 
 if __name__=='__main__':main()
