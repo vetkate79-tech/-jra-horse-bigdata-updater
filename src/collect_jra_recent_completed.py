@@ -102,6 +102,8 @@ def discover():
                     q.append(link)
         except Exception as e:
             log.append({'page':url,'error':repr(e),'seed':'weekly_card'})
+    if len(found)>=36:
+        return found,log
     max_pages=int(os.getenv('DISCOVERY_MAX_PAGES','180'))
     while q and len(visited)<max_pages:
         cname=q.popleft(); key=cname or '__BASE__'
