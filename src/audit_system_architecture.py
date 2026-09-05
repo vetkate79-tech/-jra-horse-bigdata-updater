@@ -185,8 +185,17 @@ def main():
  )
 
  policy=cfg.get('active_workflow_script_policy',{})
+ def workflow_script_refs(name):
+   raw=text(name)
+   # Push-path entries are trigger dependencies, not executed scripts. Exclude
+   # those before enforcing the runtime-script allowlist.
+   executable_text='\n'.join(
+     line for line in raw.splitlines()
+     if not re.match(r"^\s*-\s*['\"]?src/[A-Za-z0-9_.-]+\.py['\"]?\s*$",line)
+   )
+   return sorted(set(re.findall(r'src/([A-Za-z0-9_.-]+\.py)',executable_text)))
  actual_refs={
-   name:sorted(set(re.findall(r'src/([A-Za-z0-9_.-]+\.py)',text(name))))
+   name:workflow_script_refs(name)
    for name in sorted(active)
  }
  expected_refs={name:sorted(policy.get(name,[])) for name in sorted(active)}
