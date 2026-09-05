@@ -72,13 +72,15 @@ def classify_ticket_policy(race,q,analysis):
 
     return {
       "status":"RESEARCH_ONLY",
-      "architecture":"TICKET_VALUE_REGIME_SHADOW_V1",
+      "architecture":"TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
       "regime":regime,
       "hard_score":hard_score,
       "volatile_score":volatile_score,
       "target_points":target_points,
       "reason":reasons,
       "proposed_policy":policy,
+      "axis_objective":"軸は1着精度ではなく3着内残存率を最上位KPIとする",
+      "scenario_learning":"結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
       "longshot_objective":"3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
       "anti_trigami_rule":"券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
       "axis_fail_rule":"軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
