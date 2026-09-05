@@ -2,7 +2,7 @@ const DEFAULT_DATA_URL = '../data/dashboard.json';
 const qs = (s) => document.querySelector(s);
 const qsa = (s) => [...document.querySelectorAll(s)];
 
-const titles = {today:'今日の運用',races:'レース管理',models:'モデル管理',pdca:'PDCA / 検証',analysis:'データ分析',audit:'監査ログ',system:'システム状態'};
+const titles = {today:'今日の運用',races:'レース管理',models:'モデル管理',pdca:'PDCA / 検証',analysis:'データ分析',audit:'監査ログ',system:'システム状態',report:'報告内容'};
 
 qsa('.nav-item').forEach(btn=>btn.addEventListener('click',()=>{
   qsa('.nav-item').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
@@ -90,7 +90,7 @@ function renderUpgradeLog(data){
 }
 
 function renderAnalysis(data){
-  const a=data.analytics||{}, s=a.summary||data.summary||{}, breakdowns=a.breakdowns||{};
+  const a=data.analytics||{}, s=data.summary||{}, breakdowns=a.breakdowns||{};
   renderKpis(qs('#analysisKpis'),[
     {label:'累計投資',value:yen(s.stake_amount),sub:'結果接続済み購入分'},
     {label:'累計払戻',value:yen(s.return_amount),sub:'公式3連複払戻'},
@@ -142,3 +142,19 @@ async function loadPdcaReport(){
   }
 }
 loadPdcaReport();
+
+async function loadComparisonReport(){
+  try{
+    const r=await fetch('../data/erp-report-2026-09-06.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('WAITING');
+    const d=await r.json(),c=d.report_content||{},m=d.comparison||{};
+    qs('#comparisonReportStatus').textContent=d.status||'COMPLETED';
+    qs('#comparisonReportContent').innerHTML=`<div class="report-note"><b>依頼内容</b><span>${esc(c.request||'')}</span></div><div class="report-note"><b>結果</b><span>${esc(c.result||'')}</span></div><div class="report-note"><b>考察</b><span>${esc(c.consideration||'')}</span></div><div class="report-note"><b>自動発火</b><span>${esc(d.trigger?.condition||'')}／${esc(d.trigger?.scheduled_runs||'')}</span></div>`;
+    qs('#comparisonRaceBody').innerHTML=(d.race_details||[]).map(x=>`<tr><td><b>${esc(x.track)} ${esc(x.race_no)}R</b></td><td>${esc(x.old_axis||'-')}</td><td>${esc(x.new_axis||'-')}</td><td>${esc((x.actual_top3||[]).join('-'))}</td><td>${x.old_axis_top3?'軸○':'軸×'} / ${x.old_trio_hit?'的中':'外れ'}</td><td>${x.new_axis_top3?'軸○':'軸×'} / ${x.new_trio_hit?'的中':'外れ'}</td></tr>`).join('');
+  }catch(e){
+    qs('#comparisonReportStatus').textContent='9/6全結果待ち';
+    qs('#comparisonReportContent').innerHTML='<div class="report-note"><b>依頼内容</b><span>9/6全レース終了後、新型と旧型を同じJRA公式結果で比較する。</span></div><div class="report-note"><b>状態</b><span>ERP Workflowが公式36レースの1〜3着確定を確認後、自動生成します。</span></div>';
+    qs('#comparisonRaceBody').innerHTML='<tr><td colspan="6" class="muted">全レース結果確定後に自動掲載</td></tr>';
+  }
+}
+loadComparisonReport();
