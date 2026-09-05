@@ -145,7 +145,7 @@ loadPdcaReport();
 
 async function loadComparisonReport(){
   try{
-    const r=await fetch('../data/erp-report-2026-09-06.json',{cache:'no-store'});
+    const r=await fetch('../data/erp-report-latest.json',{cache:'no-store'});
     if(!r.ok)throw new Error('WAITING');
     const d=await r.json(),c=d.report_content||{},m=d.comparison||{};
     qs('#comparisonReportStatus').textContent=d.status||'COMPLETED';
