@@ -125,14 +125,14 @@ function weeklyRowsForDisplay(rows){
   const scoredDates=[...new Set(rows.filter(x=>x.scored).map(x=>x.date).filter(Boolean))].sort();
   if(!scoredDates.length)return {waiting:false,rows:[],label:'今週の結果接続待ち'};
   const latest=scoredDates.at(-1);
-  const base=new Date(latest+'T00:00:00+09:00');
+  const base=new Date(latest+'T12:00:00Z');
   const day=base.getUTCDay();
   const sat=new Date(base); sat.setUTCDate(base.getUTCDate()-(day===0?1:0));
   const sun=new Date(sat); sun.setUTCDate(sat.getUTCDate()+1);
   const iso=d=>d.toISOString().slice(0,10);
   const dates=new Set([iso(sat),iso(sun)]);
   const selected=rows.filter(x=>dates.has(x.date)&&x.scored);
-  return {waiting:false,rows:selected,label:`${[...dates].join('〜')} / ${selected.length}R結果接続`};
+  return {waiting:false,rows:selected,label:`${[...dates].join('〜')} / ${selected.length}レース結果接続`};
 }
 function renderAnalysis(data){
   const a=data.analytics||{}, allRows=a.races||[];
