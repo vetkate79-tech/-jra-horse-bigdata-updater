@@ -275,6 +275,19 @@ def main():
     manbaken_opportunities=[x for x in bought if (x.get("actual_trio_payout_yen") or 0)>=10000]
     manbaken_hits=[x for x in manbaken_opportunities if x.get("trio_hit")]
     sub10k_opportunities=[x for x in bought if 0<(x.get("actual_trio_payout_yen") or 0)<10000]
+    sub10k_stake=sum(x.get("stake_yen") or 0 for x in sub10k_opportunities)
+    sub10k_return=sum(x.get("return_yen") or 0 for x in sub10k_opportunities)
+    sub10k_roi=percent(sub10k_return,sub10k_stake)
+    sub10k_target_low=80.0
+    sub10k_target_high=90.0
+    if sub10k_roi is None:
+        sub10k_target_status="NO_DATA"
+    elif sub10k_target_low<=sub10k_roi<=sub10k_target_high:
+        sub10k_target_status="IN_TARGET"
+    elif sub10k_roi<sub10k_target_low:
+        sub10k_target_status="BELOW_TARGET"
+    else:
+        sub10k_target_status="ABOVE_TARGET"
     concentrated_shadow=[x for x in rows if ((x.get("ticket_value_regime_shadow") or {}).get("regime")=="CONCENTRATED")]
     high_payout_shadow=[x for x in rows if ((x.get("ticket_value_regime_shadow") or {}).get("regime")=="HIGH_PAYOUT_CAPTURE")]
 
@@ -318,7 +331,8 @@ def main():
         "combo_miss_rate":percent(combo_miss,len(bought)),
         "action":"固いレースは3〜5点へ圧縮して厚く、荒れレースは万馬券捕捉を優先。軸飛び保険だけの軸なし増加は禁止。券種別実オッズ接続後はトリガミ/低EVを除外。",
         "status":"SHADOW_ONLY",
-        "promotion_metrics":["万馬券捕捉率","ROI","最大払戻除外ROI","平均点数","固い群の的中率","軸飛び時の無駄打ち率"]
+        "promotion_metrics":["万馬券捕捉率","ROI","万馬券除外ROI","最大払戻除外ROI","平均点数","固い群の的中率","軸飛び時の無駄打ち率"],
+        "target":{"metric":"万馬券除外ROI","range_pct":[80,90],"meaning":"実際の三連複払戻が10,000円以上だったレースを投資・払戻ともに除外した基礎回収率。安定域到達を実購入検討の主要条件とする"}
     })
     candidates=sorted(candidates,key=lambda x:(0 if x["type"]=="WEAK_SEGMENT" else 1,-x.get("sample",0)))[:40]
 
@@ -358,6 +372,12 @@ def main():
         "manbaken_hits":len(manbaken_hits),
         "manbaken_capture_rate":percent(len(manbaken_hits),len(manbaken_opportunities)) or 0,
         "sub10k_opportunities":len(sub10k_opportunities),
+        "sub10k_stake_amount":sub10k_stake,
+        "sub10k_return_amount":sub10k_return,
+        "sub10k_roi":sub10k_roi or 0,
+        "sub10k_roi_target_low":sub10k_target_low,
+        "sub10k_roi_target_high":sub10k_target_high,
+        "sub10k_roi_target_status":sub10k_target_status,
     }
 
     live_health_metrics={
@@ -476,6 +496,7 @@ def main():
             "all_race_count":len(rows),
             "ticket_value_regime_shadow_counts":dict(Counter((x.get("ticket_value_regime_shadow") or {}).get("regime") or "NO_SHADOW" for x in rows)),
             "manbaken":{"opportunities":len(manbaken_opportunities),"hits":len(manbaken_hits),"capture_rate":percent(len(manbaken_hits),len(manbaken_opportunities)),"threshold_yen":10000},
+            "sub10k_baseline":{"eligible_races":len(sub10k_opportunities),"stake_yen":sub10k_stake,"return_yen":sub10k_return,"roi":sub10k_roi,"target_low":sub10k_target_low,"target_high":sub10k_target_high,"status":sub10k_target_status,"purchase_consideration_rule":"80〜90%の範囲で一定期間安定し、万馬券捕捉が上乗せされる状態を実購入検討ラインとする"},
         }
     }
     detail={
@@ -486,6 +507,7 @@ def main():
             "production_auto_mutation":False,
             "optimization_mode":"AUTO_DIAGNOSE_AND_SHADOW_CHALLENGER",
             "leakage_rule":"結果・払戻は封印後の分析だけに使用",
+            "purchase_stability_target":{"metric":"万馬券除外ROI","definition":"実際の三連複払戻が10,000円以上だったレースを投資・払戻ともに除外","target_range_pct":[80,90],"role":"実購入検討の主要安定性KPI"},
         },
         "summary":summary,
         "filters":filters,
