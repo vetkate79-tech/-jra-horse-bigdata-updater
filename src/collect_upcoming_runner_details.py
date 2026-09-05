@@ -105,6 +105,19 @@ def parse_card(cname,raw):
         if hid in seen:continue
         seen.add(hid);tr=a.find_parent('tr');cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])] if tr else [];frame_no,horse_no=frame_and_horse_no(tr,cells);sex_age,carried,jockey=row_meta(row_text)
         race['runners'].append({'horse_id':hid,'horse_name':name,'frame_no':frame_no,'horse_no':horse_no,'sex_age':sex_age,'carried_weight':carried,'jockey':jockey,'recent_starts_from_card':prior_starts(row_text),'official_row_text':row_text})
+    # If JRA is already publishing frame images on this card, a zero-frame parse is
+    # a collector failure, not a legitimate pending state. Fail fast so stale
+    # PRELIMINARY_NO_FRAME data cannot silently propagate downstream.
+    official_frame_images=sum(
+        1 for img in soup.find_all('img')
+        if re.search(r'枠\s*[1-8]',str(img.get('alt') or ''))
+    )
+    parsed_frames=sum(1 for row in race['runners'] if row.get('frame_no'))
+    if official_frame_images and race['runners'] and parsed_frames==0:
+        raise RuntimeError(
+            f'official frame images present but none parsed: race_id={race["race_id"]} '
+            f'images={official_frame_images} runners={len(race["runners"])}'
+        )
     return race if race['runners'] else None
 
 def hist_key(x):
