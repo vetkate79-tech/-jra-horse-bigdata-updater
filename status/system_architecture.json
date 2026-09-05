@@ -60,6 +60,7 @@
     "post_archive_date_generic": true,
     "immutable_prediction_archive_guard": true,
     "race_week_rollover_preserves_detail": true,
+    "race_week_refresh_history_preserved": true,
     "live_seal_history_preserved": true,
     "score_history_preserved": true,
     "pdca_history_preserved": true,
