@@ -65,6 +65,8 @@
     "live_seal_history_preserved": true,
     "score_history_preserved": true,
     "pdca_history_preserved": true,
+    "market_snapshot_history_preserved": true,
+    "erp_runtime_date_agnostic": true,
     "jst_date_rollover_display_guard": true,
     "active_runtime_has_no_fixed_weekend_date": true,
     "root_cause_repair_constitution_locked": true,
