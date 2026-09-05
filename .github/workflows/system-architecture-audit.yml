@@ -15,6 +15,10 @@ on:
       - 'src/collect_current_market_odds.py'
       - 'src/build_replay_page.py'
       - 'docs/admin/app.js'
+      - 'docs/admin/index.html'
+      - 'docs/admin/styles.css'
+      - 'src/collect_upcoming_runner_details.py'
+      - 'src/build_race_week_pre_race_features.py'
       - 'docs/app/race-select-current.js'
       - '.github/workflows/**'
 
