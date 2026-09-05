@@ -17,13 +17,14 @@ from pathlib import Path
 SRC=Path('docs/data/horses/catalog.json')
 OUT=Path('docs/data/horses/base_catalog.json')
 RESULT_SOURCES=(Path('data/race_results_html_2026.csv'),)
+PROFILE_2025=Path('data/horse_profiles_2025.csv')
 GRADE_URL='https://www.jra.go.jp/datafile/seiseki/replay/2026/jyusyo.html'
 UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
 
 BASE_FIELDS=(
     'horse_name','horse_id','sex_age','trainer','sire','damsire',
     'current_class','current_class_label','active','latest_race_date','latest_finish',
-    'unbeaten','wins'
+    'starts','wins','unbeaten'
 )
 KEEP_TAGS={'GRADED','OPEN','NEW','NEW_ENTRY'}
 STYLE_LABELS={
@@ -73,6 +74,59 @@ def load_results():
         with path.open(encoding='utf-8-sig',newline='') as f: rows.extend(csv.DictReader(f))
     return rows
 
+def career_unbeaten_stats(rows):
+    """Build career starts/wins without guessing.
+
+    The 2025 horse profile is the historical baseline through 2025.
+    Verified 2026 JRA result rows are then added once per race/horse.
+    Horses first appearing in 2026 use their complete 2026 result history.
+    """
+    baseline_by_id={};baseline_by_name={}
+    if PROFILE_2025.exists() and PROFILE_2025.stat().st_size:
+        with PROFILE_2025.open(encoding='utf-8-sig',newline='') as f:
+            for r in csv.DictReader(f):
+                hid=clean(r.get('horse_id'));name=clean(r.get('horse_name'))
+                try:starts=int(float(r.get('starts') or 0))
+                except Exception:starts=0
+                try:wins=int(float(r.get('wins') or 0))
+                except Exception:wins=0
+                if starts<0 or wins<0 or wins>starts:continue
+                item={'starts':starts,'wins':wins,'source':'JRA_HORSE_PROFILE_2025'}
+                if hid:baseline_by_id[hid]=item
+                if name:baseline_by_name[name]=item
+
+    current=defaultdict(dict)
+    for r in rows:
+        hid=clean(r.get('horse_id'));name=clean(r.get('horse_name'))
+        if not hid and not name:continue
+        finish=clean(r.get('finish_position'))
+        try:finish_i=int(float(finish))
+        except Exception:continue
+        if finish_i<=0:continue
+        rid=clean(r.get('race_id'))
+        if not rid:continue
+        key=hid or ('NAME:'+name)
+        current[key][rid]=finish_i
+
+    out={}
+    horse_keys=set(current)
+    for key in horse_keys:
+        hid='' if key.startswith('NAME:') else key
+        name=key[5:] if key.startswith('NAME:') else ''
+        base=baseline_by_id.get(hid) if hid else baseline_by_name.get(name)
+        starts=(base or {}).get('starts',0)
+        wins=(base or {}).get('wins',0)
+        finishes=list(current[key].values())
+        starts+=len(finishes)
+        wins+=sum(1 for x in finishes if x==1)
+        out[key]={
+            'starts':starts,
+            'wins':wins,
+            'unbeaten':bool(starts>=2 and wins==starts),
+            'unbeaten_source':'JRA_PROFILE_2025_PLUS_OFFICIAL_2026_RESULTS' if base else 'JRA_OFFICIAL_2026_RESULTS_ONLY',
+        }
+    return out
+
 def parse_corners(value): return [int(x) for x in re.findall(r'\d+',str(value or ''))]
 
 def load_running_styles(rows):
@@ -121,8 +175,11 @@ def load_class_tags(rows,graded_names):
                   'graded_races':list(graded.get(hid,{}).values())}
     return out
 
-def compact(h,styles,class_tags):
+def compact(h,styles,class_tags,career_stats):
     x={k:h.get(k) for k in BASE_FIELDS if h.get(k) not in (None,'')}
+    hid=clean(h.get('horse_id'));name=clean(h.get('horse_name'));st=career_stats.get(hid) or career_stats.get('NAME:'+name)
+    if st:
+        x['starts']=st['starts'];x['wins']=st['wins'];x['unbeaten']=st['unbeaten'];x['unbeaten_source']=st['unbeaten_source']
     tags=[t for t in (h.get('tags') or []) if t in KEEP_TAGS]
     c=class_tags.get(h.get('horse_id'),{})
     if c.get('is_open'):
@@ -145,22 +202,24 @@ def compact(h,styles,class_tags):
 
 def main():
     doc=json.loads(SRC.read_text(encoding='utf-8')) if SRC.exists() else {'summary':{},'horses':[]}
-    rows=load_results(); graded_names=official_graded_races()
+    rows=load_results(); graded_names=official_graded_races(); career_stats=career_unbeaten_stats(rows)
     styles=load_running_styles(rows); class_tags=load_class_tags(rows,graded_names)
-    horses=[compact(h,styles,class_tags) for h in doc.get('horses',[]) if h.get('horse_id') and h.get('horse_name')]
+    horses=[compact(h,styles,class_tags,career_stats) for h in doc.get('horses',[]) if h.get('horse_id') and h.get('horse_name')]
     horses.sort(key=lambda h:h.get('horse_name',''))
     style_counts=defaultdict(int)
     for h in horses: style_counts[h.get('running_style_label','判定待ち')]+=1
     open_count=sum('OPEN' in (h.get('tags') or []) for h in horses)
     graded_count=sum('GRADED' in (h.get('tags') or []) for h in horses)
+    unbeaten_count=sum(h.get('unbeaten') is True and int(h.get('wins') or 0)>=2 for h in horses)
     summary={'horse_count':len(horses),'source':'INTERNAL_HORSE_CATALOG + JRA_OFFICIAL_RESULTS',
       'mode':'LIGHTWEIGHT_BASE_MASTER','detail_policy':'expand only horses on verified upcoming JRA racecards',
       'new_horse_policy':'keep light pedigree/training memo before debut',
       'running_style_policy':'derive from recorded JRA corner positions; under 3 starts is provisional',
       'elite_tag_policy':'OPEN=latest recorded JRA class is open; GRADED=recorded start in JRA official 2026 flat graded race',
-      'official_graded_race_names_loaded':len(graded_names),'open_count':open_count,'graded_count':graded_count,
+      'official_graded_race_names_loaded':len(graded_names),'open_count':open_count,'graded_count':graded_count,'unbeaten_count':unbeaten_count,
       'running_style_counts':dict(sorted(style_counts.items())),
-      'ui_fields':['horse_name','sex_age','trainer','sire','damsire','current_class','active','latest_race_date','latest_finish','running_style','OPEN','GRADED']}
+      'unbeaten_policy':'career starts >= 2 and career wins == career starts; 2025 profile baseline + deduplicated official 2026 JRA results',
+      'ui_fields':['horse_name','sex_age','trainer','sire','damsire','current_class','active','latest_race_date','latest_finish','starts','wins','unbeaten','running_style','OPEN','GRADED']}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps({'summary':summary,'horses':horses},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     print(json.dumps(summary,ensure_ascii=False))
