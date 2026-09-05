@@ -17,6 +17,7 @@ RESULTS = Path("data/race_results_html_2026.csv")
 PAYOUTS = Path("data/race_payouts_2026.csv")
 CONTEXT = Path("data/race_context_2026.csv")
 OUT = Path(f"docs/data/erp-report-{TARGET}.json")
+LATEST = Path("docs/data/erp-report-latest.json")
 
 
 def iv(v):
@@ -89,8 +90,10 @@ def main():
 
     axis_delta=new["axis_top3_rate_pct"]-old["axis_top3_rate_pct"]; hit_delta=new["trio_hits"]-old["trio_hits"]; roi_delta=new["roi_pct"]-old["roi_pct"]
     report={"schema_version":1,"status":"COMPLETED","title":f"{TARGET} 新型・旧型 結果比較","generated_at":datetime.now(JST).isoformat(),"trigger":{"owner":"ERP_WORKFLOW","condition":"対象開催日のJRA公式結果が必要件数確定","scheduled_runs":"土日16:45/19:30/21:30 JST","gpt_scheduler_used":False},"report_content":{"request":f"{TARGET}の対象レース終了後、新型と旧型を同じJRA公式結果で詳細比較し、ERPへ結果・考察を掲載する。","result":f"旧型の軸3着内率{old['axis_top3_rate_pct']}%、新型{new['axis_top3_rate_pct']}%（差{axis_delta:+.2f}pt）。三連複的中は旧型{old['trio_hits']}件、新型{new['trio_hits']}件（差{hit_delta:+d}件）。ROI差は{roi_delta:+.2f}pt。","consideration":("新型は旧型を上回った。変更レースだけでなく全対象の軸残存・買い目変換・ROIを分離して次回昇格判断へ使う。" if axis_delta>0 and hit_delta>=0 else "単開催だけでは昇格させない。軸残存、三連複変換、ROIのどこで差が出たかをレース別明細で確認し、次の独立開催へ継続する。")},"comparison":{"old":old,"new":new,"delta":{"axis_top3_rate_pt":round(axis_delta,2),"trio_hits":hit_delta,"roi_pt":round(roi_delta,2)}},"race_details":details,"sources":{"old_prediction":str(CHAMPION),"new_prediction":str(CHALLENGER),"results":"JRA_OFFICIAL_RESULTS_DB","erp_and_public_same_prediction_source":True}}
-    OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
-    print(json.dumps({"status":"COMPLETED","output":str(OUT),"old":old,"new":new},ensure_ascii=False))
+    txt=json.dumps(report,ensure_ascii=False,indent=2)
+    OUT.write_text(txt,encoding="utf-8")
+    LATEST.write_text(txt,encoding="utf-8")
+    print(json.dumps({"status":"COMPLETED","output":str(OUT),"latest":str(LATEST),"old":old,"new":new},ensure_ascii=False))
 
 
 if __name__ == "__main__": main()
