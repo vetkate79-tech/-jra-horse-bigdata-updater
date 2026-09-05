@@ -7,6 +7,15 @@ on:
     paths:
       - 'config/system_architecture.json'
       - 'src/audit_system_architecture.py'
+      - 'src/build_management_erp.py'
+      - 'src/build_live_sealed_predictions.py'
+      - 'src/score_live_sealed_predictions.py'
+      - 'src/build_live_pdca.py'
+      - 'src/expire_weekly_runner_details.py'
+      - 'src/collect_current_market_odds.py'
+      - 'src/build_replay_page.py'
+      - 'docs/admin/app.js'
+      - 'docs/app/race-select-current.js'
       - '.github/workflows/**'
 
 permissions:
