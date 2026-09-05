@@ -23,7 +23,7 @@ def _survival_score(h, rank):
         15*max(0,min(1,cond))+
         30*(1-max(0,min(1,unc)))+
         10*max(0,min(1,starts/6))-
-        2*(rank-1)
+        3*(rank-1)
     )
     return round(score,3)
 
@@ -49,13 +49,13 @@ def select_survival_axis(ranked_snapshot, search_depth=3):
     best=max(candidates,key=lambda x:(x["survival_score"],-x["rank"]))
     second=q[1] if len(q)>1 else q[0]
     ability_gap=_f(q[0].get("score"))-_f(second.get("score"))
-    weak_original=(original["uncertainty"]>=.70 or ability_gap<=1.0)
+    weak_original=(original["uncertainty"]>=.70)
     delta=best["survival_score"]-original["survival_score"]
     switch_allowed=(best["rank"]!=1 and weak_original and delta>=1.0 and delta<=10.0)
     chosen=best if switch_allowed else original
     return {
         "status":"RESEARCH_ONLY",
-        "architecture":"TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+        "architecture":"TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
         "objective":"MAXIMIZE_TOP3_SURVIVAL",
         "axis":chosen,
         "original_axis":original,
