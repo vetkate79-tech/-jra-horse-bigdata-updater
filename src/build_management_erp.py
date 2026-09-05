@@ -10,6 +10,7 @@ from pathlib import Path
 SEALED = Path("docs/data/live_predictions_sealed.json")
 SCORES = Path("docs/data/live_prediction_scores.json")
 PDCA = Path("docs/data/live_pdca.json")
+UPGRADE_LOG = Path("docs/data/model_upgrade_log.json")
 CONTEXT = Path("data/race_context_2026.csv")
 PAYOUTS = Path("data/race_payouts_2026.csv")
 OUT = Path("docs/data/dashboard.json")
@@ -119,6 +120,7 @@ def main():
     sealed=load_json(SEALED, {"races":[]})
     scores=load_json(SCORES, {"summary":{},"races":[],"pending":[]})
     pdca=load_json(PDCA, {})
+    upgrade_log=load_json(UPGRADE_LOG, {"schema_version":1,"upgrades":[]})
     contexts=read_csv(CONTEXT)
     payouts=read_csv(PAYOUTS)
 
@@ -308,6 +310,60 @@ def main():
         "purchase_rate":percent(len(bought),len(scored)) or 0,
     }
 
+    live_health_metrics={
+        "sample_scored_races":len(scored),
+        "sample_bought_races":len(bought),
+        "roi":summary["roi"],
+        "hit_rate":summary["hit_rate"],
+        "axis_survival":summary["axis_survival"],
+        "combo_miss_rate":summary["third_column_miss_rate"],
+        "roi_ex_top":summary["roi_ex_top"],
+        "profit_amount":summary["profit_amount"],
+    }
+    upgrade_rows=[]
+    for raw in upgrade_log.get("upgrades") or []:
+        x=json.loads(json.dumps(raw,ensure_ascii=False))
+        if str(x.get("to_model") or "")==str(summary["model_version"]):
+            cmp=x.get("comparison_at_promotion") or {}
+            prev=cmp.get("previous_model") or cmp.get("baseline") or {}
+            def prev_num(*names):
+                for name in names:
+                    v=fv(prev.get(name))
+                    if v is not None:return v
+                return None
+            comparisons=[]
+            for key,aliases,higher_better in (
+                ("roi",("roi","roi_pct"),True),
+                ("hit_rate",("hit_rate","hit_rate_pct"),True),
+                ("axis_survival",("axis_survival","axis_top3_rate","axis_top3_rate_pct"),True),
+                ("combo_miss_rate",("combo_miss_rate","third_column_miss_rate"),False),
+            ):
+                old=prev_num(*aliases);cur=fv(live_health_metrics.get(key))
+                if old is None or cur is None:continue
+                better=(cur>old) if higher_better else (cur<old)
+                worse=(cur<old) if higher_better else (cur>old)
+                comparisons.append({"metric":key,"previous":old,"current":cur,"direction":"BETTER" if better else ("WORSE" if worse else "SAME")})
+            better=sum(1 for z in comparisons if z["direction"]=="BETTER")
+            worse=sum(1 for z in comparisons if z["direction"]=="WORSE")
+            if len(scored)<36:
+                status="SAMPLE_SMALL";label="サンプル不足・継続観察"
+            elif comparisons and better>worse:
+                status="BETTER";label="旧モデル比較で現在は良好"
+            elif comparisons and worse>better:
+                status="WORSE";label="旧モデル比較で現在は悪化傾向"
+            elif comparisons:
+                status="MIXED";label="旧モデル比較で一長一短"
+            else:
+                status="COMPARISON_DATA_MISSING";label="旧モデル比較データ不足"
+            x["post_upgrade_health"]={
+                "status":status,
+                "label":label,
+                "last_checked_at":summary["snapshot_time"],
+                "current_model_metrics":live_health_metrics,
+                "vs_previous_model":comparisons,
+            }
+        upgrade_rows.append(x)
+
     public_races=[]
     for r in today_rows:
         public_races.append({
@@ -360,6 +416,7 @@ def main():
             {"name":"race_payouts_2026.csv","status":"ok" if PAYOUTS.exists() else "warn","detail":"公式払戻"},
             {"name":"management_analytics.json","status":"ok","detail":"管理専用の細分化・抽出用データ"},
         ],
+        "upgrade_log":{"tracking_started_at":upgrade_log.get("tracking_started_at"),"baseline":upgrade_log.get("baseline"),"policy":upgrade_log.get("policy"),"upgrades":upgrade_rows},
         "analytics":{
             "filters":filters,
             "breakdowns":breakdowns,
@@ -383,6 +440,7 @@ def main():
         "optimization_candidates":candidates,
         "races":rows,
         "pdca":pdca,
+        "upgrade_log":{"tracking_started_at":upgrade_log.get("tracking_started_at"),"baseline":upgrade_log.get("baseline"),"policy":upgrade_log.get("policy"),"upgrades":upgrade_rows},
     }
 
     OUT.parent.mkdir(parents=True,exist_ok=True)
