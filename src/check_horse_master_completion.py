@@ -45,10 +45,15 @@ def main():
     base_summary={}
     if BASE.exists():
         b=json.loads(BASE.read_text(encoding='utf-8'));base_summary=b.get('summary',{})
+        base_horses=b.get('horses') or []
         if int(base_summary.get('horse_count') or 0)!=len(horses):structural.append('base_catalog_horse_count_mismatch')
         # Zero GRADED/OPEN across a populated master is a structural failure, not a valid completion.
         if len(horses)>=100 and int(base_summary.get('graded_count') or 0)==0:structural.append('graded_catalog_structurally_empty')
         if len(horses)>=100 and int(base_summary.get('open_count') or 0)==0:structural.append('open_catalog_structurally_empty')
+        unbeaten=[h for h in base_horses if h.get('unbeaten') is True and int(h.get('wins') or 0)>=2]
+        if int(base_summary.get('unbeaten_count') or 0)!=len(unbeaten):structural.append('unbeaten_catalog_count_mismatch')
+        if any(int(h.get('starts') or 0)<2 or int(h.get('wins') or 0)!=int(h.get('starts') or 0) for h in unbeaten):
+            structural.append('unbeaten_catalog_definition_violation')
     elite_summary={}
     if ELITE.exists():
         e=json.loads(ELITE.read_text(encoding='utf-8'));elite_summary=e.get('summary',{})
@@ -58,7 +63,7 @@ def main():
     complete=not issues and not structural
     summary={'horse_count':len(horses),'complete_horse_count':len(horses)-len(issues),'incomplete_horse_count':len(issues),
       'missing_field_counts':dict(missing),'category_counts':{k:cats.get(k,0) for k in PRIORITY+('UNKNOWN',)},
-      'base_open_count':base_summary.get('open_count'),'base_graded_count':base_summary.get('graded_count'),
+      'base_open_count':base_summary.get('open_count'),'base_graded_count':base_summary.get('graded_count'),'base_unbeaten_count':base_summary.get('unbeaten_count'),
       'active_elite_count':elite_summary.get('elite_union_count'),'structural_issues':structural,
       'status':'COMPLETE' if complete else 'IN_PROGRESS',
       'definition':'complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically'}
