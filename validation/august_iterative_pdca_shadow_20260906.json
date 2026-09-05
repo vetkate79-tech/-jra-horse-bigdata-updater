@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-09-06T00:46:00+09:00",
+  "mode": "AUGUST_ITERATIVE_PDCA_SHADOW_ONLY",
+  "data_split": {
+    "development": [
+      "2026-08-01",
+      "2026-08-02",
+      "2026-08-08",
+      "2026-08-09",
+      "2026-08-15"
+    ],
+    "final_unseen": [
+      "2026-08-16"
+    ],
+    "external_holdout": [
+      "2026-08-22",
+      "2026-08-23"
+    ]
+  },
+  "axis_findings": {
+    "development_races": 180,
+    "original_axis_top3_rate_pct": 45,
+    "key_observation": "現行の能力1位軸は、事前スコア差・不確実性・出走数が良くても3着内成功を十分に分離できていない。",
+    "refined_gate_candidate": {
+      "rule": "能力1位を基本維持。3着内残存Challengerの差が3〜10、候補3位以内、元軸出走数4以下、能力差12以下の時だけShadowで変更。",
+      "development_axis_top3_rate_pct": 48.33,
+      "development_net_gain_races": 6,
+      "final_unseen_0816_net_gain_races": 0,
+      "holdout_0822_net_gain_races": 0,
+      "holdout_0823_net_gain_races": 2,
+      "promotion_status": "SHADOW_ONLY"
+    }
+  },
+  "partner_findings": {
+    "key_observation": "候補外から来る馬は事前7〜10位に集中。特に9位馬は来た群でscore/recentが高くuncertaintyが低い。",
+    "replacement_test": "上位6頭の誰かを低順位馬で機械置換すると候補完全捕捉率が悪化したため不採用。",
+    "intrusion_flag": {
+      "policy": "上位候補は保持し、低順位侵入は別枠フラグ。買い目数の自動増加は禁止。",
+      "development_base_complete_rate_pct": 27.22,
+      "development_segmented_plus_rate_pct": 38.89,
+      "development_gain_races": 21,
+      "development_flags": 105,
+      "development_useful_flags": 30,
+      "development_precision_pct": 28.57,
+      "priority_segments": [
+        "短距離全体",
+        "ダート中短距離",
+        "芝中距離"
+      ],
+      "holdout_note": "8/16 +1R、8/22 ±0R、8/23 +1R。外部検証の改善幅は小さいため本番昇格不可。"
+    }
+  },
+  "governance": [
+    "結果・払戻は予想生成後のPDCAにのみ使用",
+    "サイト・Production本体は変更しない",
+    "軸飛び対策のためだけの点数増加は禁止",
+    "低順位侵入フラグは候補入替材料であり自動購入追加ではない",
+    "本番昇格は独立holdoutで再現性確認後"
+  ]
+}
