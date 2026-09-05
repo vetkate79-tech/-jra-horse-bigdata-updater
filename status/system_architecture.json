@@ -50,8 +50,8 @@
     "validation_not_in_production_flow": true,
     "replay_feature_contract": true,
     "ui_constitution_locked": true,
-    "replay_canonical_format_pinned": true,
-    "active_workflow_scripts_explicitly_allowlisted": false,
+    "replay_canonical_format_pinned": false,
+    "active_workflow_scripts_explicitly_allowlisted": true,
     "active_workflow_script_files_exist": true
   },
   "active_workflow_script_refs": {
@@ -125,38 +125,9 @@
       "manage_experiment_registry.py"
     ]
   },
-  "script_policy_mismatches": {
-    "jra-market-timing.yml": {
-      "expected": [
-        "market_timing_gate.py"
-      ],
-      "actual": [
-        "collect_current_market_odds.py",
-        "market_timing_gate.py"
-      ]
-    },
-    "register-upcoming-new-horses.yml": {
-      "expected": [
-        "build_horse_base_catalog.py",
-        "build_race_week_pre_race_features.py",
-        "check_horse_master_completion.py",
-        "collect_upcoming_new_horses.py",
-        "collect_upcoming_runner_details.py",
-        "enrich_new_horse_entries.py"
-      ],
-      "actual": [
-        "audit_horse_master_uniqueness.py",
-        "build_horse_base_catalog.py",
-        "build_race_week_pre_race_features.py",
-        "check_horse_master_completion.py",
-        "collect_upcoming_new_horses.py",
-        "collect_upcoming_runner_details.py",
-        "enrich_new_horse_entries.py"
-      ]
-    }
-  },
+  "script_policy_mismatches": {},
   "blockers": [
-    "check failed: active_workflow_scripts_explicitly_allowlisted"
+    "check failed: replay_canonical_format_pinned"
   ],
   "independent_subsystems": {
     "market": {
