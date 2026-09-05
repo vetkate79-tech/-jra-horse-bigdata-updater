@@ -3,6 +3,16 @@
   "updated_at": "2026-09-05T16:45:00+09:00",
   "reports": [
     {
+      "id": "2026-09-06-erp-screen-cache-recovery",
+      "parent_id": null,
+      "date": "2026-09-06",
+      "title": "ERP各画面が表示されない問題の復旧",
+      "status": "COMPLETED",
+      "request": "データ分析などERPの各画面が見られない状態を復旧する。",
+      "result": "更新時の新旧ファイル混在で描画が途中停止し得る箇所を防御し、管理画面JavaScriptへ更新番号を付与して端末キャッシュを更新した。公開デプロイ成功を確認。",
+      "consideration": "今後の画面追加は、任意要素が未反映でも既存画面を停止させない。HTMLとJavaScriptの同時更新では必ず更新番号を切り替える。"
+    },
+    {
       "id": "2026-09-06-model-comparison",
       "parent_id": null,
       "date": "2026-09-06",
