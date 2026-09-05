@@ -124,6 +124,25 @@ def grade_name(text):
         if pat.search(text):return grade
     return ''
 
+def flat_summary_stats(text):
+    """Read JRA's official 平地レース合計 row when present.
+
+    This is preferred for career starts/wins because it is already the JRA
+    aggregate and is independent of individual race-table layout.
+    """
+    m=re.search(r'平地レース合計(.*?)(?:障害レース合計|コース別成績)',text,re.S)
+    if not m:return None
+    part=m.group(1)
+    h=re.search(r'3着\s*内率',part)
+    if h:part=part[h.end():]
+    nums=re.findall(r'(?<![\d.])(\d+)(?![\d.])',part)
+    if len(nums)<5:return None
+    try:
+        wins=int(nums[0]);starts=int(nums[4])
+    except Exception:return None
+    if starts<0 or wins<0 or wins>starts:return None
+    return starts,wins
+
 def race_history(html):
     graded=[];open_rows=[];all_count=0;flat_starts=0;flat_wins=0
     parsed=[]
@@ -190,6 +209,9 @@ def race_history(html):
 def parse_profile(candidate,html):
     labeled=html_with_image_labels(html);soup=BeautifulSoup(labeled,'html.parser');text=re.sub(r'\s+',' ',soup.get_text(' ',strip=True));erased=re.search(r'抹消年月日\s*(\d{4}年\d{1,2}月\d{1,2}日)',text)
     flat_prize=money(text,'収得賞金（平地）');obstacle_prize=money(text,'収得賞金（障害）');graded,open_history,race_count,flat_starts,flat_wins=race_history(labeled);name=profile_name(soup,text,candidate['horse_name'])
+    summary_stats=flat_summary_stats(text)
+    if summary_stats is not None:
+        flat_starts,flat_wins=summary_stats
     return {'horse_name':name,'horse_id':candidate['horse_id'],'active':not bool(erased),'deregistered_at':erased.group(1) if erased else None,
       'sex':field_between(text,'性別',['馬主名','母']),'age':field_between(text,'馬齢',['調教師名','母の父']),'trainer':field_between(text,'調教師名',['母の父','生年月日']),
       'owner':field_between(text,'馬主名',['母','馬齢']),'sire':field_between(text,'父',['性別','馬主名']),'dam':field_between(text,'母',['馬齢','調教師名']),
