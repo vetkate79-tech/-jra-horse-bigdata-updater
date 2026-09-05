@@ -68,6 +68,7 @@
       "inject_global_word_links.py"
     ],
     "deploy-management-erp.yml": [
+      "audit_public_model_exposure.py",
       "build_august_validation_archive.py",
       "build_replay_page.py"
     ],
