@@ -56,7 +56,21 @@ def main():
    and ui.get('explicit_user_override_required') is True
    and 'display format must never be changed' in str(ui.get('rule',''))
  )
- checks['replay_canonical_format_pinned']=str(ui.get('canonical_replay_format_ref','')).endswith(':docs/replay/index.html')
+ checks['replay_canonical_format_pinned']=ui.get('canonical_replay_format_ref')=='src/build_replay_page.py'
+ checks['replay_generated_not_patched']=(
+   'python src/build_replay_page.py' in text('deploy-management-erp.yml')
+   and ui.get('direct_page_edit_policy')=='PROHIBITED_FOR_NORMAL_FIXES'
+ )
+ checks['prediction_seal_single_owner']=(
+   'build_live_sealed_predictions.py' in text('race-week-prediction-seal.yml')
+   and 'build_live_sealed_predictions.py' not in text('register-upcoming-new-horses.yml')
+ )
+ checks['post_archive_date_generic']=(
+   "TARGET_DATE: '2026-09-05'" not in post
+   and 'COMPLETE_DATES' in post
+   and 'publish_archive_results.py' in post
+ )
+
  policy=cfg.get('active_workflow_script_policy',{})
  actual_refs={
    name:sorted(set(re.findall(r'src/([A-Za-z0-9_.-]+\.py)',text(name))))
