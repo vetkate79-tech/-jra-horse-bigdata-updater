@@ -17,6 +17,7 @@ on:
       - 'data/race_results_html_2026*.csv'
       - 'src/build_august_validation_archive.py'
       - 'src/build_replay_page.py'
+      - 'src/inject_global_word_links.py'
       - 'src/audit_public_model_exposure.py'
       - '.github/workflows/deploy-management-erp.yml'
   workflow_dispatch:
@@ -46,6 +47,8 @@ jobs:
         run: python src/build_august_validation_archive.py
       - name: Build canonical replay page
         run: python src/build_replay_page.py
+      - name: Inject shared public navigation and word links
+        run: python src/inject_global_word_links.py
       - name: Verify canonical replay page is immediately visible
         run: |
           python - <<'PY'
