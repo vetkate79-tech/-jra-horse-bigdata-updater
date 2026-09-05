@@ -70,6 +70,14 @@ def main():
    and 'COMPLETE_DATES' in post
    and 'publish_archive_results.py' in post
  )
+ repair=cfg.get('repair_constitution') or {}
+ checks['root_cause_repair_constitution_locked']=(
+   repair.get('status')=='USER_LOCKED'
+   and repair.get('priority')=='CONSTITUTIONAL'
+   and 'ROOT_CAUSE_FIRST' in (repair.get('principles') or [])
+   and 'ADDITIVE_PATCH_LAST_RESORT' in (repair.get('principles') or [])
+   and 'NO_DUPLICATE_IMPLEMENTATIONS' in (repair.get('principles') or [])
+ )
 
  policy=cfg.get('active_workflow_script_policy',{})
  actual_refs={
