@@ -167,5 +167,33 @@
     "explicit_user_override_required": true,
     "direct_page_edit_policy": "PROHIBITED_FOR_NORMAL_FIXES",
     "replay_generation_rule": "docs/replay/index.html must be generated from src/build_replay_page.py; normal fixes change the canonical generator/data source, not the generated HTML."
+  },
+  "repair_constitution": {
+    "status": "USER_LOCKED",
+    "priority": "CONSTITUTIONAL",
+    "principles": [
+      "ROOT_CAUSE_FIRST",
+      "SIMPLIFY_BEFORE_PATCH",
+      "SINGLE_OWNER_PER_ROLE",
+      "ADDITIVE_PATCH_LAST_RESORT",
+      "NO_DUPLICATE_IMPLEMENTATIONS",
+      "VERIFY_ALL_AFFECTED_ACTIVE_PATHS"
+    ],
+    "rule": "For defects, identify and correct the root cause in the canonical owner. Do not stack compensating code on top of broken or duplicated paths when the existing structure can be simplified.",
+    "required_sequence": [
+      "identify failing observable behavior",
+      "trace to canonical source and owner",
+      "remove obsolete or duplicate responsibility",
+      "make the smallest root-level correction",
+      "run architecture and affected workflow checks",
+      "only use additive compatibility patches when structural correction is unsafe or impossible"
+    ],
+    "prohibited": [
+      "duplicate functions for the same responsibility",
+      "two active workflows owning the same write responsibility",
+      "direct edits to generated artifacts as a normal repair method",
+      "temporary date-specific production logic when a generic path is available",
+      "declaring completion from a deploy log alone when user-visible behavior has not been verified"
+    ]
   }
 }
