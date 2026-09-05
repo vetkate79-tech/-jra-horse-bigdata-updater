@@ -53,6 +53,7 @@
     "ui_constitution_locked": true,
     "replay_canonical_format_pinned": true,
     "replay_generated_not_patched": true,
+    "replay_hidden_state_guard": true,
     "prediction_seal_single_owner": true,
     "runner_refresh_to_prediction_seal_connected": true,
     "management_erp_single_owner": true,
