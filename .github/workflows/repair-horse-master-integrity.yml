@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: horse-master-integrity-repair
+  group: horse-data-writes
   cancel-in-progress: false
 
 jobs:
