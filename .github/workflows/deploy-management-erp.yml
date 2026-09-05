@@ -57,6 +57,8 @@ jobs:
           assert 'JSON.parse' not in p
           assert 'innerHTML' not in p
           assert 'id="replay-data"' not in p
+          assert '[hidden]{display:none!important}' in p
+          assert p.count('class="dates date-group" data-month="2026-09"') == 1
           print('REPLAY_STATIC_RENDER_PASS')
           PY
       - name: Audit public artifact for prediction-model code exposure
