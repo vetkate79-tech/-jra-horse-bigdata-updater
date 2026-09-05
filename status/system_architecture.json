@@ -52,6 +52,8 @@
     "result_score_before_horse_merge": true,
     "validation_not_in_production_flow": true,
     "replay_feature_contract": true,
+    "ui_constitution_locked": true,
+    "replay_canonical_format_pinned": true,
     "active_workflow_scripts_explicitly_allowlisted": false,
     "active_workflow_script_files_exist": true
   },
