@@ -4,6 +4,12 @@ const qsa = (s) => [...document.querySelectorAll(s)];
 
 const titles = {today:'今日の運用',races:'レース管理',models:'モデル管理',pdca:'PDCA / 検証',analysis:'データ分析',audit:'監査ログ',system:'システム状態',report:'報告内容','site-analytics':'サイト分析'};
 
+qs('#refreshButton')?.addEventListener('click',()=>{
+  const url=new URL(location.href);
+  url.searchParams.set('refresh',Date.now().toString());
+  location.replace(url.toString());
+});
+
 qsa('.nav-item').forEach(btn=>btn.addEventListener('click',()=>{
   qsa('.nav-item').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
   qsa('.view').forEach(x=>x.classList.remove('active')); qs(`#view-${btn.dataset.view}`).classList.add('active');
