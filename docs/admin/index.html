@@ -22,6 +22,7 @@
         <button class="nav-item" data-view="analysis">データ分析</button>
         <button class="nav-item" data-view="audit">監査ログ</button>
         <button class="nav-item" data-view="system">システム状態</button>
+        <button class="nav-item" data-view="report">報告内容</button>
       </nav>
       <div class="sidebar-footer">
         <span class="dot ok"></span><span id="connectionLabel">DATA CONNECTING</span>
@@ -120,6 +121,14 @@
           <section class="panel"><div class="panel-head"><div><span class="label">DATA SOURCES</span><h2>接続状態</h2></div></div><div id="sourceList" class="risk-list"></div></section>
           <section class="panel"><div class="panel-head"><div><span class="label">RULES</span><h2>固定ガードレール</h2></div></div><ul class="guardrails"><li>人気・オッズを能力順位へ混入しない</li><li>SEALED後の能力順位・候補馬を市場情報で変更しない</li><li>結果後に発走前記録を復元しない</li><li>FROZENモデルを上書きしない</li><li>欠損値を0補完しない</li><li>買い目水増しだけの改善を禁止</li></ul></section>
         </div>
+      </section>
+
+      <section id="view-report" class="view">
+        <section class="panel pdca-report">
+          <div class="panel-head"><div><span class="label">ERP AUTOMATED REPORT</span><h2>報告内容</h2></div><span id="comparisonReportStatus" class="pill">結果待ち</span></div>
+          <div id="comparisonReportContent" class="pdca-summary"></div>
+          <div class="race-table-wrap"><table class="race-table"><thead><tr><th>場/R</th><th>旧軸</th><th>新軸</th><th>実着順</th><th>旧型</th><th>新型</th></tr></thead><tbody id="comparisonRaceBody"></tbody></table></div>
+        </section>
       </section>
     </main>
   </div>
