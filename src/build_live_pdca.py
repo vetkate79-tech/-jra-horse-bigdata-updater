@@ -44,6 +44,56 @@ def main():
         if not rr:continue
         audit=post_result_scenario_audit(axis,rr.get('corner_positions'),rr.get('finish_position'))
         scenario_audits.append({'date':k[0],'track':k[1],'race_no':k[2],'axis':axis,'corner_positions':rr.get('corner_positions'),'audit':audit})
+    detailed_failure_audits=[]
+    for x in races:
+        try:k=(str(x.get('date') or ''),str(x.get('track') or ''),int(x.get('race_no') or 0))
+        except Exception:continue
+        pred=seal_by.get(k) or {}
+        analysis=pred.get('analysis') or {}
+        ranked=pred.get('ranked_snapshot') or []
+        actual=[str(n) for n in (x.get('actual_top3') or [])]
+        candidate_set=set()
+        ax=(analysis.get('axis') or {}).get('horse_no')
+        if ax:candidate_set.add(str(ax))
+        for row in analysis.get('partner_roles') or []:
+            if row.get('horse_no') is not None:candidate_set.add(str(row.get('horse_no')))
+        for row in analysis.get('third_place_intrusion') or []:
+            if row.get('horse_no') is not None:candidate_set.add(str(row.get('horse_no')))
+        if not candidate_set:
+            candidate_set=set(str(h.get('n')) for h in ranked[:6] if h.get('n') is not None)
+        axis_ok=x.get('axis_grade') in ('HIT','PLACE')
+        trio_hit=bool(x.get('trio_hit'))
+        candidate_complete=bool(actual) and all(n in candidate_set for n in actual)
+        if trio_hit:
+            failure_type='FULL_SUCCESS'
+        elif not axis_ok:
+            failure_type='AXIS_MISS'
+        elif not candidate_complete:
+            failure_type='OPPONENT_CANDIDATE_MISS'
+        else:
+            failure_type='TICKET_CONVERSION_MISS'
+        missed=[n for n in actual if n not in candidate_set]
+        position_buckets=[]
+        for n in missed:
+            rr=result_map.get((k[0],k[1],k[2],n))
+            if not rr:continue
+            vals=[]
+            for token in str(rr.get('corner_positions') or '').replace(',',' ').split():
+                try:vals.append(int(token))
+                except Exception:pass
+            if vals:
+                avg=(sum(vals)+vals[-1])/float(len(vals)+1)
+                bucket='FRONT' if avg<=3.5 else ('MID' if avg<=7.5 else 'BACK')
+                position_buckets.append(bucket)
+        detailed_failure_audits.append({
+            'date':k[0],'track':k[1],'race_no':k[2],
+            'failure_type':failure_type,'axis_top3':axis_ok,'trio_hit':trio_hit,
+            'candidate_complete':candidate_complete,'missed_actual_horses':missed,
+            'missed_position_buckets':position_buckets,
+        })
+    detailed_failure_counts=Counter(x.get('failure_type') for x in detailed_failure_audits)
+    missed_position_counts=Counter(b for x in detailed_failure_audits for b in x.get('missed_position_buckets') or [])
+
     grade=Counter(r.get('axis_grade') for r in races)
     by_decision={}
     for dec in ('BUY','CAUTION','PASS'):
@@ -68,7 +118,7 @@ def main():
         actions.append('相手役割分散・3着侵入・相手内完結の取りこぼしを個別監査')
     if not races:actions.append('結果接続待ち。予想ロジックを結果なしで変更しない')
     scenario_quality=Counter((x.get('audit') or {}).get('prediction_quality') for x in scenario_audits)
-    payload={'mode':'POST_RESULT_PDCA_ONLY','source_prediction_hash_sha256':(d.get('summary') or {}).get('source_prediction_hash_sha256'),'sealed_predictions_mutated':False,'scored_race_count':len(races),'pending_race_count':len(d.get('pending') or []),'failure_counts':failure_counts,'by_decision':by_decision,'recommended_actions':actions,'axis_learning_objective':'TOP3_SURVIVAL_FIRST','failure_taxonomy':failure_taxonomy,'axis_scenario_audits':scenario_audits,'axis_scenario_quality_counts':dict(scenario_quality),'governance':'PDCA output is diagnostic only; it does not automatically rewrite the certified production model.'}
+    payload={'mode':'POST_RESULT_PDCA_ONLY','source_prediction_hash_sha256':(d.get('summary') or {}).get('source_prediction_hash_sha256'),'sealed_predictions_mutated':False,'scored_race_count':len(races),'pending_race_count':len(d.get('pending') or []),'failure_counts':failure_counts,'by_decision':by_decision,'recommended_actions':actions,'axis_learning_objective':'TOP3_SURVIVAL_FIRST','failure_taxonomy':failure_taxonomy,'detailed_failure_counts':dict(detailed_failure_counts),'missed_opponent_position_counts':dict(missed_position_counts),'detailed_failure_audits':detailed_failure_audits,'axis_scenario_audits':scenario_audits,'axis_scenario_quality_counts':dict(scenario_quality),'governance':'PDCA output is diagnostic only; it does not automatically rewrite the certified production model.'}
     OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True)
     txt=json.dumps(payload,ensure_ascii=False,indent=2);OUT.write_text(txt,encoding='utf-8');STATUS.write_text(txt,encoding='utf-8');print(json.dumps(payload,ensure_ascii=False))
 if __name__=='__main__':main()
