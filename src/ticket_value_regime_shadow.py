@@ -37,8 +37,9 @@ def classify_ticket_policy(race,q,analysis):
     elif dstatus=="MID": hard_score+=1; volatile_score+=1
     else: volatile_score+=3
 
-    if gap>=4: hard_score+=3; reasons.append("軸と2位の事前能力差が大きい")
-    elif gap<1.5: volatile_score+=2; reasons.append("上位評価差が小さい")
+    # 8月PDCAでは能力1-2位差が大きいほど軸生存が高いという単調関係は再現しなかった。
+    # 大差は固さの根拠にせず、僅差だけを不確実性補助信号として扱う。
+    if gap<1.5: volatile_score+=2; reasons.append("上位評価差が小さい")
 
     if avg_unc<=.40: hard_score+=2; reasons.append("上位の不確実性が低い")
     elif avg_unc>=.60: volatile_score+=2; reasons.append("上位の不確実性が高い")
@@ -85,6 +86,6 @@ def classify_ticket_policy(race,q,analysis):
       "anti_trigami_rule":"券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
       "axis_fail_rule":"軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
       "production_override_applied":False,
-      "promotion_rule":"独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+      "promotion_rule":"独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
       "market_isolation":"NO_ODDS_OR_POPULARITY_USED"
     }
