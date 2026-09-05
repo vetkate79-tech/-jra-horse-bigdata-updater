@@ -2,6 +2,8 @@ name: Refresh 2026-09-05 replay results
 
 on:
   workflow_dispatch:
+  issues:
+    types: [opened]
   push:
     branches: [main]
     paths:
@@ -14,6 +16,7 @@ permissions:
 
 jobs:
   refresh:
+    if: github.event_name != 'issues' || startsWith(github.event.issue.title, '[JRA-REFRESH-0905]')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
