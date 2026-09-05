@@ -10,7 +10,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 JST = ZoneInfo("Asia/Tokyo")
-TARGET = os.environ.get("TARGET_DATE", "2026-09-06")
+TARGET = os.environ.get("TARGET_DATE") or datetime.now(JST).date().isoformat()
 CHAMPION = Path(f"docs/data/live_predictions_champion_{TARGET}.json")
 CHALLENGER = Path(f"docs/data/prediction-archive-{TARGET}.json")
 RESULTS = Path("data/race_results_html_2026.csv")
@@ -88,7 +88,7 @@ def main():
         details.append({"track":rk[0],"race_no":rk[1],"race_name":n.get("race_name") or o.get("race_name"),"old_axis":o.get("axis_horse_no"),"new_axis":n.get("axis_horse_no"),"axis_changed":o.get("axis_horse_no")!=n.get("axis_horse_no"),"old_axis_top3":o.get("axis_top3"),"new_axis_top3":n.get("axis_top3"),"old_trio_hit":o.get("trio_hit"),"new_trio_hit":n.get("trio_hit"),"actual_top3":n.get("actual_top3") or o.get("actual_top3")})
 
     axis_delta=new["axis_top3_rate_pct"]-old["axis_top3_rate_pct"]; hit_delta=new["trio_hits"]-old["trio_hits"]; roi_delta=new["roi_pct"]-old["roi_pct"]
-    report={"schema_version":1,"status":"COMPLETED","title":f"{TARGET} 新型・旧型 結果比較","generated_at":datetime.now(JST).isoformat(),"trigger":{"owner":"ERP_WORKFLOW","condition":"JRA公式36レースの1〜3着確定","scheduled_runs":"土日16:45/19:30/21:30 JST","gpt_scheduler_used":False},"report_content":{"request":"9/6全レース終了時に、新型と旧型の結果を同じ公式結果で詳細比較し、ERPへ依頼内容・結果・考察を掲載する。","result":f"旧型の軸3着内率{old['axis_top3_rate_pct']}%、新型{new['axis_top3_rate_pct']}%（差{axis_delta:+.2f}pt）。三連複的中は旧型{old['trio_hits']}件、新型{new['trio_hits']}件（差{hit_delta:+d}件）。ROI差は{roi_delta:+.2f}pt。","consideration":("新型は旧型を上回った。変更レースだけでなく全対象の軸残存・買い目変換・ROIを分離して次回昇格判断へ使う。" if axis_delta>0 and hit_delta>=0 else "単開催だけでは昇格させない。軸残存、三連複変換、ROIのどこで差が出たかをレース別明細で確認し、次の独立開催へ継続する。")},"comparison":{"old":old,"new":new,"delta":{"axis_top3_rate_pt":round(axis_delta,2),"trio_hits":hit_delta,"roi_pt":round(roi_delta,2)}},"race_details":details,"sources":{"old_prediction":str(CHAMPION),"new_prediction":str(CHALLENGER),"results":"JRA_OFFICIAL_RESULTS_DB","erp_and_public_same_prediction_source":True}}
+    report={"schema_version":1,"status":"COMPLETED","title":f"{TARGET} 新型・旧型 結果比較","generated_at":datetime.now(JST).isoformat(),"trigger":{"owner":"ERP_WORKFLOW","condition":"対象開催日のJRA公式結果が必要件数確定","scheduled_runs":"土日16:45/19:30/21:30 JST","gpt_scheduler_used":False},"report_content":{"request":f"{TARGET}の対象レース終了後、新型と旧型を同じJRA公式結果で詳細比較し、ERPへ結果・考察を掲載する。","result":f"旧型の軸3着内率{old['axis_top3_rate_pct']}%、新型{new['axis_top3_rate_pct']}%（差{axis_delta:+.2f}pt）。三連複的中は旧型{old['trio_hits']}件、新型{new['trio_hits']}件（差{hit_delta:+d}件）。ROI差は{roi_delta:+.2f}pt。","consideration":("新型は旧型を上回った。変更レースだけでなく全対象の軸残存・買い目変換・ROIを分離して次回昇格判断へ使う。" if axis_delta>0 and hit_delta>=0 else "単開催だけでは昇格させない。軸残存、三連複変換、ROIのどこで差が出たかをレース別明細で確認し、次の独立開催へ継続する。")},"comparison":{"old":old,"new":new,"delta":{"axis_top3_rate_pt":round(axis_delta,2),"trio_hits":hit_delta,"roi_pt":round(roi_delta,2)}},"race_details":details,"sources":{"old_prediction":str(CHAMPION),"new_prediction":str(CHALLENGER),"results":"JRA_OFFICIAL_RESULTS_DB","erp_and_public_same_prediction_source":True}}
     OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps({"status":"COMPLETED","output":str(OUT),"old":old,"new":new},ensure_ascii=False))
 
