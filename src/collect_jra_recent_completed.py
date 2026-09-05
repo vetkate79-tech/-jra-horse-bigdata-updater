@@ -48,6 +48,30 @@ def href_cnames(html):
     vals.extend(ALL_CNAME.findall(html))
     return list(dict.fromkeys(vals))
 
+def current_card_urls():
+    out=[]
+    weekly=Path('docs/data/horses/weekly_runner_details.json')
+    if weekly.exists():
+        try:
+            d=json.loads(weekly.read_text(encoding='utf-8'))
+            for x in d.get('runners',[]):
+                r=x.get('race') or {}
+                u=str(r.get('source_url') or '')
+                if u and r.get('date','').replace('-','') in target_dates():out.append(u)
+        except Exception:pass
+    return list(dict.fromkeys(out))
+
+def fetch_url(url,retries=3):
+    req=urllib.request.Request(url,headers={'User-Agent':UA,'Referer':'https://www.jra.go.jp/'})
+    for i in range(retries):
+        try:
+            with urllib.request.urlopen(req,timeout=45) as r:raw=r.read()
+            if len(raw)<5000:raise RuntimeError(f'short response {len(raw)}')
+            return raw.decode('cp932','replace')
+        except Exception:
+            if i==retries-1:raise
+            time.sleep(1.5*(i+1))
+
 def seed_cnames():
     out=[]
     cards=Path('docs/data/race_cards.json')
@@ -58,14 +82,26 @@ def seed_cnames():
                 u=r.get('source_url','');m=re.search(r'CNAME=([^&]+)',u)
                 if m:out.append(urllib.parse.unquote(m.group(1)))
         except Exception:pass
-    # Best-effort month selectors; invalid checksums are harmless because other
-    # seeds/base-page navigation remain available.
     for dt in (NOW,NOW-timedelta(days=31)):
         out.append(f'pw01skl10{dt.year}{dt.month:02d}/E1')
     return list(dict.fromkeys(out))
 
 def discover():
     targets=target_dates(); found=set(); visited=set(); q=deque([None]+seed_cnames()); log=[]
+    # Current JRA race-card pages contain menu links to the corresponding
+    # official result pages. Seed from those exact pages so discovery does not
+    # depend on historical month-selector checksums or one CNAME generation.
+    for url in current_card_urls():
+        try:
+            html=fetch_url(url)
+            links=href_cnames(html);log.append({'page':url,'links':len(links),'seed':'weekly_card'})
+            for link in links:
+                m=RACE_META.search(link)
+                if m and m.group('date') in targets:found.add(link)
+                elif link.startswith('pw01srl') or link.startswith('pw01skl'):
+                    q.append(link)
+        except Exception as e:
+            log.append({'page':url,'error':repr(e),'seed':'weekly_card'})
     max_pages=int(os.getenv('DISCOVERY_MAX_PAGES','180'))
     while q and len(visited)<max_pages:
         cname=q.popleft(); key=cname or '__BASE__'
