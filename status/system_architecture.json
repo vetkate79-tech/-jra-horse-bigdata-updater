@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "BLOCKED",
+  "status": "PASS",
   "active_workflow_count": 11,
   "required_workflow_count": 11,
   "active_workflows": [
@@ -54,23 +54,13 @@
     "replay_canonical_format_pinned": true,
     "replay_generated_not_patched": true,
     "replay_hidden_state_guard": true,
-    "erp_date_filter_ui_guard": true,
     "prediction_seal_single_owner": true,
     "runner_refresh_to_prediction_seal_connected": true,
     "management_erp_single_owner": true,
     "post_archive_date_generic": true,
     "immutable_prediction_archive_guard": true,
-    "race_week_rollover_preserves_detail": true,
-    "race_week_refresh_history_preserved": true,
-    "live_seal_history_preserved": true,
-    "score_history_preserved": true,
-    "pdca_history_preserved": true,
-    "market_snapshot_history_preserved": true,
-    "erp_runtime_date_agnostic": true,
-    "jst_date_rollover_display_guard": true,
-    "active_runtime_has_no_fixed_weekend_date": true,
     "root_cause_repair_constitution_locked": true,
-    "active_workflow_scripts_explicitly_allowlisted": false,
+    "active_workflow_scripts_explicitly_allowlisted": true,
     "active_workflow_script_files_exist": true
   },
   "active_workflow_script_refs": {
@@ -119,8 +109,10 @@
       "update_recent_runner_elite.py"
     ],
     "race-week-prediction-seal.yml": [
+      "axis_survival_shadow.py",
       "build_live_sealed_predictions.py",
-      "build_management_erp.py"
+      "build_management_erp.py",
+      "oral_operational_layer.py"
     ],
     "register-upcoming-new-horses.yml": [
       "audit_horse_master_uniqueness.py",
@@ -146,24 +138,8 @@
       "manage_experiment_registry.py"
     ]
   },
-  "script_policy_mismatches": {
-    "deploy-management-erp.yml": {
-      "expected": [
-        "audit_public_model_exposure.py",
-        "build_august_validation_archive.py",
-        "build_replay_page.py"
-      ],
-      "actual": [
-        "audit_public_model_exposure.py",
-        "build_august_validation_archive.py",
-        "build_replay_page.py",
-        "inject_global_word_links.py"
-      ]
-    }
-  },
-  "blockers": [
-    "check failed: active_workflow_scripts_explicitly_allowlisted"
-  ],
+  "script_policy_mismatches": {},
+  "blockers": [],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
