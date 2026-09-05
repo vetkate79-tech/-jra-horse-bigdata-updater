@@ -17,6 +17,7 @@ OUT = Path("docs/data/dashboard.json")
 DETAIL = Path("docs/data/management_analytics.json")
 STATUS = Path("status/management_erp.json")
 JST = timezone(timedelta(hours=9))
+REPLAY_GLOB = "replay-????-??-??.json"
 
 def load_json(path, default):
     try:
@@ -77,6 +78,21 @@ def field_band(n):
 def percent(num, den):
     return round(num / den * 100, 2) if den else None
 
+def yen_int(v):
+    if isinstance(v,(int,float)): return int(v)
+    s="".join(ch for ch in str(v or "") if ch.isdigit())
+    return int(s) if s else 0
+
+def load_replay_archive():
+    out={}
+    for p in Path("docs/data").glob(REPLAY_GLOB):
+        d=load_json(p,{})
+        for r in d.get("races") or []:
+            k=race_key(r.get("date") or d.get("date"),r.get("track"),r.get("race_no"))
+            if all((k[0],k[1],k[2] is not None)):
+                out[k]=r
+    return out
+
 def trio_combo(xs):
     vals=[]
     for x in xs or []:
@@ -123,6 +139,7 @@ def main():
     upgrade_log=load_json(UPGRADE_LOG, {"schema_version":1,"upgrades":[]})
     contexts=read_csv(CONTEXT)
     payouts=read_csv(PAYOUTS)
+    replay_by=load_replay_archive()
 
     ctx_by={}
     race_id_by={}
@@ -213,22 +230,32 @@ def main():
         c=ctx_by.get(k,{})
         rid=race_id_by.get(k) or c.get("race_id")
         pay=payout_by_race.get(str(rid or ""),{})
+        replay=replay_by.get(k) or {}
+        rp=replay.get("prediction") or {}
+        rr=replay.get("result") or {}
+        tickets=[str(x) for x in (rp.get("tickets") or []) if x]
+        decision=rp.get("decision") or s.get("decision")
+        bought=bool(decision!="PASS" and tickets)
+        trio_hit=bool(rr.get("trio_hit")) if replay else bool(s.get("trio_hit"))
+        stake=100*len(tickets) if bought else 0
+        replay_return=yen_int(rr.get("trio_payout")) if trio_hit else 0
+        ret=replay_return or ((pay.get("payout_per_100_yen") or 0) if trio_hit else 0)
         rows.append({
             "date":k[0],"track":k[1],"race_no":k[2],"race_id":rid,
-            "race_name":s.get("race_name") or c.get("race_name"),
+            "race_name":s.get("race_name") or replay.get("race_name") or c.get("race_name"),
             "race_category":c.get("race_category"),"race_class":c.get("race_class"),
             "surface":c.get("surface"),"distance_m":iv(c.get("distance_m")),
             "distance_band":dist_band(c.get("distance_m")),
             "track_condition":c.get("track_condition") or "不明",
             "weather":c.get("weather") or "不明",
             "field_size":iv(c.get("field_size")),"field_size_band":field_band(c.get("field_size")),
-            "scheduled_start":c.get("scheduled_start"),"decision":s.get("decision"),
+            "scheduled_start":c.get("scheduled_start"),"decision":decision,
             "race_state":"SCORED","axis_horse_no":s.get("axis_horse_no"),"axis_horse_name":s.get("axis_horse_name"),
             "axis_durability":None,"predicted_scenario":None,"role_tags":[],"third_place_intrusion_candidates":[],
-            "trio_tickets":[],"ticket_count":0,"scored":True,"bought":False,
+            "trio_tickets":tickets,"ticket_count":len(tickets),"scored":True,"bought":bought,
             "axis_finish":s.get("axis_finish"),"axis_grade":s.get("axis_grade"),
-            "actual_top3":s.get("actual_top3") or [],"trio_hit":bool(s.get("trio_hit")),
-            "winning_trio":pay.get("winning_selection"),"stake_yen":0,"return_yen":0,"profit_yen":0,"roi":None,
+            "actual_top3":s.get("actual_top3") or rr.get("top3") or [],"trio_hit":trio_hit,
+            "winning_trio":pay.get("winning_selection"),"stake_yen":stake,"return_yen":ret,"profit_yen":ret-stake,"roi":percent(ret,stake),
             "prediction_hash_sha256":s.get("prediction_hash_sha256"),"data_status":c.get("data_status"),
             "payout_data_status":pay.get("data_status"),
         })
