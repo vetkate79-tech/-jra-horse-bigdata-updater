@@ -36,25 +36,25 @@ def main():
         bet=str(r.get('bet_type',''))
         if '三連複' in bet or '3連複' in bet:
             payout[str(r.get('race_id',''))]=r.get('payout_per_100_yen') or ''
+    pred_by={(str(p.get('track','')).replace('競馬場',''),i(p.get('race_no'))):p for p in (pred.get('races') or []) if p.get('date')==target}
     out=[]
-    for p in pred.get('races') or []:
-        if p.get('date')!=target:continue
-        k=(str(p.get('track','')).replace('競馬場',''),i(p.get('race_no')))
-        xs=by.get(k,[])
+    for k,xs in sorted(by.items(),key=lambda kv:(kv[0][0],kv[0][1] or 99)):
         top=sorted([x for x in xs if i(x.get('finish_position')) in (1,2,3)],key=lambda x:i(x.get('finish_position')) or 99)
         if len(top)!=3:continue
+        p=pred_by.get(k)
         nums=[str(i(x.get('horse_no'))) for x in top]
         actual=combo(nums)
-        a=p.get('analysis') or {}
+        a=(p or {}).get('analysis') or {}
         tickets=set(a.get('trio_tickets') or [])
-        hit=actual in tickets
+        hit=(actual in tickets) if p else None
         rid=str(top[0].get('race_id') or '')
         py=payout.get(rid,'')
         out.append({
             'date':target,'track':k[0],'race_no':k[1],
-            'race_name':p.get('race_name') or top[0].get('race_name') or '',
+            'race_name':(p or {}).get('race_name') or top[0].get('race_name') or '',
             'top3':'－'.join(nums),
             'top3_rows':[{'finish':j+1,'horse_no':nums[j],'horse_name':top[j].get('horse_name') or ''} for j in range(3)],
+            'has_sealed_prediction':bool(p),
             'axis_horse_no':str((a.get('axis') or {}).get('horse_no') or ''),
             'axis_horse_name':str((a.get('axis') or {}).get('horse_name') or ''),
             'trio_hit':hit,
