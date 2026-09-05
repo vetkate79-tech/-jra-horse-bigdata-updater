@@ -147,6 +147,20 @@ def main():
    and 'pdca history verification failed' in pdca
    and 'pdca-history' in post
  )
+ market_collector=Path('src/collect_current_market_odds.py').read_text(encoding='utf-8') if Path('src/collect_current_market_odds.py').exists() else ''
+ market_workflow=text('jra-market-timing.yml')
+ checks['market_snapshot_history_preserved']=(
+   'market-odds-history' in market_collector
+   and 'market odds history verification failed' in market_collector
+   and 'refusing to overwrite market odds before archive' in market_collector
+   and 'market-odds-history' in market_workflow
+ )
+ checks['erp_runtime_date_agnostic']=(
+   'live_pdca.json' in admin_js
+   and 'erp-report-latest.json' in admin_js
+   and '2026-09-05' not in admin_js
+   and '2026-09-06' not in admin_js
+ )
  erp_builder=Path('src/build_management_erp.py').read_text(encoding='utf-8') if Path('src/build_management_erp.py').exists() else ''
  public_app=Path('docs/app/race-select-current.js').read_text(encoding='utf-8') if Path('docs/app/race-select-current.js').exists() else ''
  replay_builder=Path('src/build_replay_page.py').read_text(encoding='utf-8') if Path('src/build_replay_page.py').exists() else ''
@@ -158,7 +172,7 @@ def main():
    and 'latest_completed_date=max(canonical_dates)' in replay_builder
  )
  checks['active_runtime_has_no_fixed_weekend_date']=all(
-   token not in (builder+erp_builder+public_app+post+seal)
+   token not in (builder+erp_builder+public_app+admin_js+post+seal)
    for token in ('2026-09-05','2026-09-06')
  )
  repair=cfg.get('repair_constitution') or {}
