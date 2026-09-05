@@ -5,7 +5,7 @@ This never mutates the sealed pure prediction. It only publishes current
 single-win odds and market rank for value inspection.
 """
 from __future__ import annotations
-import json,re
+import json,re,hashlib
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -19,8 +19,20 @@ TZ=ZoneInfo('Asia/Tokyo')
 WEEKLY=Path('docs/data/horses/weekly_runner_details.json')
 OUT=Path('docs/data/current_market_odds.json')
 STATUS=Path('status/current_market_odds.json')
+HISTORY=Path('docs/data/market-odds-history')
 
 def clean(v): return ' '.join(str(v or '').split())
+
+def archive_market_payload(payload):
+    if not isinstance(payload,dict) or not payload:return None
+    captured=str(payload.get('captured_at') or datetime.now(TZ).isoformat())
+    date=captured[:10] if len(captured)>=10 else 'undated'
+    raw=json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode('utf-8')
+    digest=hashlib.sha256(raw).hexdigest()
+    d=HISTORY/date;d.mkdir(parents=True,exist_ok=True);p=d/(digest+'.json')
+    if not p.exists():p.write_bytes(raw)
+    if p.read_bytes()!=raw:raise RuntimeError('market odds history verification failed: '+str(p))
+    return str(p)
 
 def extract_win_odds(tr):
     # JRA renders the single-win price as its own numeric table cell.
@@ -85,6 +97,10 @@ def main():
         races.append({'race_id':rid,'date':r.get('date'),'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'source_url':url,'win_odds':rows})
     payload={'source':'JRA_OFFICIAL','market_layer_only':True,'pure_prediction_mutated':False,'odds_type':'WIN','captured_at':now.isoformat(),'race_count':len(races),'runner_odds_count':total,'races':races}
     OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True)
+    if OUT.exists():
+        try:archive_market_payload(json.loads(OUT.read_text(encoding='utf-8')))
+        except Exception as e:raise RuntimeError('refusing to overwrite market odds before archive: '+repr(e))
+    archive_market_payload(payload)
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
     STATUS.write_text(json.dumps({k:v for k,v in payload.items() if k!='races'}|{'errors':errors},ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({k:v for k,v in payload.items() if k!='races'}|{'errors':len(errors)},ensure_ascii=False))
