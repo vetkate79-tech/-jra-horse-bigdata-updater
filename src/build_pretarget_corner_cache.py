@@ -13,6 +13,13 @@ STATUS=Path('status/pretarget-corner-cache.json')
 BASE='https://www.jra.go.jp'
 CUTOFF='2026-08-29'
 
+def canonical_horse_id(value):
+    s=str(value or '')
+    nums=''.join(re.findall(r'\d+',s))
+    # JRA profile horse IDs are the trailing 10 digits. Internal pw01dud IDs
+    # may contain a leading route/version prefix before the same 10-digit ID.
+    return nums[-10:] if len(nums)>=10 else nums
+
 def parse_date(s):
     m=re.search(r'(20\d{2})[年./-](\d{1,2})[月./-](\d{1,2})',str(s or ''))
     if not m:return ''
@@ -87,7 +94,7 @@ def race_horse_corners(url):
             labels=' '.join(soup.find_all(string=re.compile('通過|コーナー'))[:3])
         if hid and corner_candidates:
             cp=corner_candidates[-1]
-            out[hid]={'horse_no':no,'corner_positions':cp,'cells':cells[:20]}
+            out[canonical_horse_id(hid)]={'horse_no':no,'corner_positions':cp,'cells':cells[:20]}
     return out
 
 def main():
@@ -116,7 +123,7 @@ def main():
     for hid,xs in profiles.items():
         ss=[]
         for x in xs:
-            rr=result_cache.get(x['url'],{}).get(hid)
+            rr=result_cache.get(x['url'],{}).get(canonical_horse_id(hid))
             if rr and rr.get('corner_positions'):
                 ss.append({'date':x['date'],'url':x['url'],'corner_positions':rr['corner_positions']})
         if ss:resolved+=1
