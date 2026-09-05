@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "tracking_started_at": "2026-09-06",
+  "policy": {
+    "log_required_for_complete_upgrade": true,
+    "retroactive_fabrication_prohibited": true,
+    "required_fields": [
+      "upgrade_id",
+      "promoted_at",
+      "from_model",
+      "to_model",
+      "reason_for_change",
+      "validation_path",
+      "change_summary",
+      "promotion_gate",
+      "comparison_at_promotion",
+      "post_upgrade_health"
+    ],
+    "note": "2026-09-06以降の予想機構の完全アップグレードを正式記録する。過去の昇格理由・検証経路は証拠が揃わない限り後付けしない。"
+  },
+  "baseline": {
+    "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
+    "note": "追跡開始時点の現行モデル。これはアップグレード履歴ではなく比較起点。"
+  },
+  "upgrades": []
+}
