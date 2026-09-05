@@ -70,7 +70,8 @@
     "deploy-management-erp.yml": [
       "audit_public_model_exposure.py",
       "build_august_validation_archive.py",
-      "build_replay_page.py"
+      "build_replay_page.py",
+      "inject_global_word_links.py"
     ],
     "horse-master-maintenance.yml": [
       "build_horse_base_catalog.py",
@@ -101,8 +102,10 @@
       "update_recent_runner_elite.py"
     ],
     "race-week-prediction-seal.yml": [
+      "axis_survival_shadow.py",
       "build_live_sealed_predictions.py",
-      "build_management_erp.py"
+      "build_management_erp.py",
+      "oral_operational_layer.py"
     ],
     "register-upcoming-new-horses.yml": [
       "audit_horse_master_uniqueness.py",
