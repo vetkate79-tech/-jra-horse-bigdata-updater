@@ -1,0 +1,218 @@
+{
+  "summary": {
+    "source_prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+    "sealed_predictions_immutable": true,
+    "scored_race_count": 0,
+    "pending_race_count": 33,
+    "axis_1st": 0,
+    "axis_2nd_3rd": 0,
+    "axis_outside_top3": 0,
+    "axis_top3_rate_pct": null,
+    "decision_counts": {},
+    "trio_bought_races": 0,
+    "trio_hits": 0,
+    "trio_hit_rate_pct": null,
+    "result_fields_used_only_after_seal": true
+  },
+  "pending": [
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 1,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 2,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 3,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 4,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 7,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 8,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 9,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 10,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 11,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 12,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 1,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 2,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 3,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 4,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 5,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 6,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 7,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 8,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 9,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 10,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 11,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "札幌",
+      "race_no": 12,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 1,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 2,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 3,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 4,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 6,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 7,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 8,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 9,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 10,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 11,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 12,
+      "reason": "RESULT_PENDING"
+    }
+  ],
+  "races": []
+}
