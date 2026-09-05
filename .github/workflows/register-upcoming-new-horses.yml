@@ -62,6 +62,17 @@ jobs:
         run: python src/enrich_new_horse_entries.py
       - name: Expand details only for this week's runners
         run: python src/collect_upcoming_runner_details.py
+      - name: Verify race-week collection integrity
+        run: |
+          python - <<'PY'
+          import json
+          s=json.load(open('status/weekly_runner_details.json',encoding='utf-8'))
+          assert s.get('status')=='READY'
+          assert int(s.get('runner_count') or 0)>0
+          assert int(s.get('frame_known_count') or 0)+int(s.get('frame_pending_count') or 0)==int(s.get('runner_count') or 0)
+          assert int(s.get('missing_master_count') or 0)==0
+          print(json.dumps({k:s.get(k) for k in ('race_count','runner_count','frame_known_count','frame_pending_count')},ensure_ascii=False))
+          PY
       - name: Build leakage-safe race-week pre-race features
         run: python src/build_race_week_pre_race_features.py
       - name: Build lightweight public horse master
