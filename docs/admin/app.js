@@ -99,7 +99,7 @@ function renderAnalysis(data){
     {label:'最大払戻除外ROI',value:pct(s.roi_ex_top),sub:'一発依存除外'}
   ]);
   const sel=qs('#analysisDimension');
-  const labels={date:'日付',track:'競馬場',race_no:'R',race_category:'年齢区分',race_class:'クラス',surface:'芝/ダート',distance_m:'距離',distance_band:'距離帯',track_condition:'馬場',weather:'天候',field_size:'頭数',field_size_band:'頭数帯',decision:'購入判定',axis_grade:'軸結果',race_state:'状態'};
+  const labels={date:'日付',track:'競馬場',race_no:'レース',race_category:'年齢区分',race_class:'クラス',surface:'芝/ダート',distance_m:'距離',distance_band:'距離帯',track_condition:'馬場',weather:'天候',field_size:'頭数',field_size_band:'頭数帯',decision:'購入判定',axis_grade:'軸結果',race_state:'状態'};
   const dims=Object.keys(breakdowns);
   sel.innerHTML=dims.map(d=>`<option value="${esc(d)}">${esc(labels[d]||d)}</option>`).join('');
   const draw=()=>{
