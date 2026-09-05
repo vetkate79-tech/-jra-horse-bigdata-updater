@@ -76,7 +76,7 @@ def main():
     if len(aug_rows)!=360:
         raise SystemExit(f"August replay must be 360 races, got {len(aug_rows)}")
 
-    exact_re=re.compile(r"^replay-(\\d{4}-\\d{2}-\\d{2})\\.json$")
+    exact_re=re.compile(r"^replay-(\d{4}-\d{2}-\d{2})\.json$")
     completed=[]
     for path in sorted(Path("docs/data").glob("replay-*.json")):
         m=exact_re.match(path.name)
