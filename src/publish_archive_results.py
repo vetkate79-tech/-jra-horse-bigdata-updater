@@ -13,6 +13,7 @@ RES=Path(f'data/race_results_html_{year}.csv')
 PAY=Path(f'data/race_payouts_{year}.csv')
 PRED=Path('docs/data/live_predictions_sealed.json')
 OUT=Path(f'docs/data/today-results-{target}.json')
+PRED_ARCHIVE=Path(f'docs/data/prediction-archive-{target}.json')
 
 def i(v):
     try:return int(float(str(v).strip()))
@@ -64,5 +65,21 @@ def main():
     payload={'date':target,'summary':{'checked':len(out),'complete':len(out)>=36},'races':out,'source':'JRA_OFFICIAL_RESULTS_DB'}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
+    archived_races=[p for p in (pred.get('races') or []) if p.get('date')==target]
+    archived_pending=[p for p in (pred.get('pending') or []) if p.get('date')==target]
+    pred_archive={
+        'schema_version':pred.get('schema_version'),
+        'mode':'IMMUTABLE_PREDICTION_ARCHIVE',
+        'source_mode':pred.get('mode'),
+        'model_version':pred.get('model_version'),
+        'sealed_generated_at':pred.get('generated_at'),
+        'prediction_hash_sha256':pred.get('prediction_hash_sha256'),
+        'date':target,
+        'odds_popularity_used':pred.get('odds_popularity_used',False),
+        'results_used':pred.get('results_used',False),
+        'races':archived_races,
+        'pending':archived_pending
+    }
+    PRED_ARCHIVE.write_text(json.dumps(pred_archive,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(payload['summary'],ensure_ascii=False))
 if __name__=='__main__':main()
