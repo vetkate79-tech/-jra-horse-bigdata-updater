@@ -3,6 +3,16 @@
   "updated_at": "2026-09-05T16:45:00+09:00",
   "reports": [
     {
+      "id": "2026-09-06-erp-icon-refresh",
+      "parent_id": null,
+      "date": "2026-09-06",
+      "title": "ERP左上アイコン更新機能",
+      "status": "COMPLETED",
+      "request": "左上のJアイコンを触るとERPが最新状態へ更新されるようにする。",
+      "result": "Jアイコンを更新ボタン化し、押下時に更新時刻をURLへ付与してHTML・JavaScript・データを再取得するようにした。",
+      "consideration": "通常の再読み込みより端末キャッシュの影響を受けにくくし、更新直後の新旧ファイル混在を避ける。"
+    },
+    {
       "id": "2026-09-06-erp-screen-cache-recovery",
       "parent_id": null,
       "date": "2026-09-06",
