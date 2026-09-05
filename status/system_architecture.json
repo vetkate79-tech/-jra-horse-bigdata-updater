@@ -142,33 +142,6 @@
         "market_timing_gate.py"
       ]
     },
-    "post-jra-meeting-update.yml": {
-      "expected": [
-        "build_horse_base_catalog.py",
-        "build_live_pdca.py",
-        "check_horse_master_completion.py",
-        "collect_jra_recent_completed.py",
-        "expand_horse_categories.py",
-        "expire_weekly_runner_details.py",
-        "merge_active_elite_into_catalog.py",
-        "merge_latest_results_into_catalog.py",
-        "score_live_sealed_predictions.py",
-        "update_recent_runner_elite.py"
-      ],
-      "actual": [
-        "build_horse_base_catalog.py",
-        "build_live_pdca.py",
-        "check_horse_master_completion.py",
-        "collect_jra_recent_completed.py",
-        "expand_horse_categories.py",
-        "expire_weekly_runner_details.py",
-        "merge_active_elite_into_catalog.py",
-        "merge_latest_results_into_catalog.py",
-        "publish_archive_results.py",
-        "score_live_sealed_predictions.py",
-        "update_recent_runner_elite.py"
-      ]
-    },
     "refresh-2026-09-05-replay.yml": {
       "expected": [],
       "actual": [
