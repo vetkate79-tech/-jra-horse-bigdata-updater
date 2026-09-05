@@ -14,6 +14,7 @@ STATUS=Path('status/live_pdca.json')
 SEALED=Path('docs/data/live_predictions_sealed.json')
 RESULTS=Path('data/race_results_html_2026.csv')
 HISTORY=Path('docs/data/pdca-history')
+ERP_LATEST=Path('docs/data/erp-pdca-latest.json')
 
 def _load_json(path,default):
     try:return json.loads(path.read_text(encoding='utf-8'))
@@ -128,5 +129,31 @@ def main():
         d=HISTORY/date;d.mkdir(parents=True,exist_ok=True);p=d/(digest+'.json')
         if not p.exists():p.write_text(txt,encoding='utf-8')
         if p.read_text(encoding='utf-8')!=txt:raise RuntimeError('pdca history verification failed: '+str(p))
-    OUT.write_text(txt,encoding='utf-8');STATUS.write_text(txt,encoding='utf-8');print(json.dumps(payload,ensure_ascii=False))
+    OUT.write_text(txt,encoding='utf-8');STATUS.write_text(txt,encoding='utf-8')
+    latest={
+      'status':'READY' if races else 'RESULT_PENDING',
+      'title':'実運用分析・改善計画',
+      'summary':{
+        'scope':' / '.join(dates)+' の封印予想に対する結果接続PDCA',
+        'immutable_rule':'封印済み予想は変更せず、結果は後段分析にのみ使用',
+      },
+      'validation_plan':{
+        'immediate_holdout':'次の独立開催で同じ失敗分類を継続観測',
+        'metrics':['軸3着内率','三連複的中率','AXIS_MISS','OPPONENT_CANDIDATE_MISS','TICKET_CONVERSION_MISS'],
+        'decomposition':[f"{k}: {v}" for k,v in sorted(detailed_failure_counts.items())],
+        'governance':[payload['governance']],
+      },
+      'findings':[
+        {'id':'AXIS','title':'軸飛び','status':'OBSERVED','observation':str(failure_counts.get('axis_outside_top3',0))+'件','risk':'軸が3着外なら買い目構造では救えない','current_action':'軸耐久性を優先監査'},
+        {'id':'OPPONENT','title':'相手捕捉','status':'OBSERVED','observation':str(detailed_failure_counts.get('OPPONENT_CANDIDATE_MISS',0))+'件','risk':'軸生存でも候補外馬が侵入する','current_action':'相手役割分散・3着侵入を監査'},
+        {'id':'TICKET','title':'買い目変換','status':'OBSERVED','observation':str(detailed_failure_counts.get('TICKET_CONVERSION_MISS',0))+'件','risk':'候補内でも組合せを落とす','current_action':'点数水増しせず変換規則を監査'},
+      ],
+      'improvement_candidates':[
+        {'priority':i+1,'name':x,'method':'SHADOW_ONLYで検証','expected_effect':'失敗型の再発率低下','validation':'独立開催で再現性を確認','promotion_gate':'本番モデルは自動変更しない'}
+        for i,x in enumerate(actions)
+      ],
+      'source_prediction_hash_sha256':payload.get('source_prediction_hash_sha256'),
+    }
+    ERP_LATEST.write_text(json.dumps(latest,ensure_ascii=False,indent=2),encoding='utf-8')
+    print(json.dumps(payload,ensure_ascii=False))
 if __name__=='__main__':main()
