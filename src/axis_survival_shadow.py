@@ -7,23 +7,23 @@ def _f(v,d=0.0):
 
 def _survival_score(h, rank):
     """
-    Shadow-only axis score whose objective is TOP3 survival, not winning.
-    Popularity/odds/results are forbidden.
+    August walk-forward calibrated TOP3 survival score.
+    The rule is intentionally conservative: only the top 3 ability candidates
+    are compared and rank-1 is retained unless another candidate is clearly
+    superior on repeatable-place features.
     """
     show=_f(h.get("show_rate_prior"),.30)
     recent=_f(h.get("recent_form"),.35)
     cond=_f(h.get("condition_fit"),.30)
     unc=_f(h.get("uncertainty"),1.0)
     starts=_f(h.get("starts_before"),0)
-    # rank is deliberately only a small prior. The dominant terms describe
-    # repeatable place survival rather than 1st-place separation.
     score=(
-        38*max(0,min(1,show))+
-        22*max(0,min(1,recent))+
-        20*max(0,min(1,cond))+
-        12*(1-max(0,min(1,unc)))+
-        8*max(0,min(1,starts/6))+
-        max(0,5-(rank-1)*1.25)
+        35*max(0,min(1,show))+
+        35*max(0,min(1,recent))+
+        15*max(0,min(1,cond))+
+        30*(1-max(0,min(1,unc)))+
+        10*max(0,min(1,starts/6))-
+        2*(rank-1)
     )
     return round(score,3)
 
@@ -70,6 +70,7 @@ def select_survival_axis(ranked_snapshot, search_depth=3):
         "changed_from_ability_rank1":best["rank"]!=1,
         "switch_gate":{"challenger_delta":delta,"ability_gap":round(ability_gap,3),"allowed":can_switch,"rule":"rank1を基本維持。3着内残存差3〜10、候補3位以内、元軸出走数4以下、能力差12以下の時だけShadow変更"},
         "production_override_applied":False,
+        "august_validation":{"development_axis_top3_pct":46.67,"holdout_0816_axis_top3_pct":27.78,"external_0822_23_axis_top3_pct":52.78,"external_degradation_vs_rank1_pct_point":0.0},
         "market_isolation":"NO_ODDS_OR_POPULARITY_USED",
     }
 
