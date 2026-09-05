@@ -23,6 +23,7 @@
         <button class="nav-item" data-view="audit">監査ログ</button>
         <button class="nav-item" data-view="system">システム状態</button>
         <button class="nav-item" data-view="report">報告内容</button>
+        <button class="nav-item" data-view="site-analytics">サイト分析</button>
       </nav>
       <div class="sidebar-footer">
         <span class="dot ok"></span><span id="connectionLabel">DATA CONNECTING</span>
@@ -71,6 +72,10 @@
           <section class="panel"><div class="panel-head"><div><span class="label">CHAMPION / CHALLENGER</span><h2>モデル比較</h2></div></div><div id="modelCards" class="model-list"></div></section>
           <section class="panel"><div class="panel-head"><div><span class="label">MECHANISMS</span><h2>正式機構</h2></div></div><div id="mechanisms" class="mechanism-grid"></div></section>
         </div>
+        <section class="panel">
+          <div class="panel-head"><div><span class="label">SHADOW PROMOTION MAP</span><h2>Shadowモデル昇格状況</h2></div><span class="pill">最低3回・推奨5回</span></div>
+          <div id="shadowRegistry" class="model-list"></div>
+        </section>
       </section>
 
       <section id="view-pdca" class="view">
@@ -98,21 +103,13 @@
       </section>
 
       <section id="view-analysis" class="view">
-        <section class="panel">
-          <div class="panel-head"><div><span class="label">WEEKLY PROVISIONAL</span><h2>今週の暫定結果</h2></div><span id="weeklyResultStatus" class="muted"></span></div>
-          <div id="weeklyResultMessage" class="muted"></div>
-          <div class="kpi-grid" id="analysisKpis"></div>
-        </section>
+        <div class="kpi-grid" id="analysisKpis"></div>
         <section class="panel">
           <div class="panel-head"><div><span class="label">SEGMENT ANALYSIS</span><h2>条件別分析</h2></div><span class="muted">管理専用</span></div>
           <div class="analysis-controls">
-            <label>期間<select id="analysisDateMode"><option value="all">全期間</option><option value="range">期間指定</option><option value="day">特定日</option></select></label>
-            <label id="analysisFromWrap" hidden>開始<input id="analysisDateFrom" type="date"></label>
-            <label id="analysisToWrap" hidden>終了<input id="analysisDateTo" type="date"></label>
-            <label id="analysisDayWrap" hidden>日付<input id="analysisDateDay" type="date"></label>
             <label>集計軸<select id="analysisDimension"></select></label>
           </div>
-          <div class="race-table-wrap"><table class="race-table"><thead><tr><th>条件</th><th>購入レース</th><th>的中率</th><th>軸生存率</th><th>組合せ漏れ率</th><th>投資</th><th>払戻</th><th>収支</th><th>ROI</th></tr></thead><tbody id="analysisTableBody"></tbody></table></div>
+          <div class="race-table-wrap"><table class="race-table"><thead><tr><th>条件</th><th>購入R</th><th>的中率</th><th>軸生存率</th><th>組合せ漏れ率</th><th>投資</th><th>払戻</th><th>収支</th><th>ROI</th></tr></thead><tbody id="analysisTableBody"></tbody></table></div>
         </section>
         <section class="panel">
           <div class="panel-head"><div><span class="label">AUTO OPTIMIZATION QUEUE</span><h2>自動改善候補</h2></div><span class="pill">SHADOW ONLY</span></div>
@@ -137,6 +134,15 @@
           <div id="comparisonReportContent" class="pdca-summary"></div>
           <div class="race-table-wrap"><table class="race-table"><thead><tr><th>場/R</th><th>旧軸</th><th>新軸</th><th>実着順</th><th>旧型</th><th>新型</th></tr></thead><tbody id="comparisonRaceBody"></tbody></table></div>
         </section>
+      </section>
+
+      <section id="view-site-analytics" class="view">
+        <div class="kpi-grid" id="siteAnalyticsKpis"></div>
+        <div class="panel-grid two">
+          <section class="panel"><div class="panel-head"><div><span class="label">TRAFFIC</span><h2>閲覧状況</h2></div><span id="analyticsConnection" class="pill">未接続</span></div><div id="trafficDetails" class="risk-list"></div></section>
+          <section class="panel"><div class="panel-head"><div><span class="label">AFFILIATE</span><h2>アフィリエイト管理</h2></div><span class="pill">将来接続</span></div><div id="affiliateDetails" class="risk-list"></div></section>
+        </div>
+        <section class="panel"><div class="panel-head"><div><span class="label">MEASUREMENT DESIGN</span><h2>計測・収益化の準備状況</h2></div></div><div id="analyticsRoadmap" class="model-list"></div></section>
       </section>
     </main>
   </div>
