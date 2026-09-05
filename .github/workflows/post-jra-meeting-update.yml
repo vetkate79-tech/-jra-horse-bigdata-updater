@@ -11,6 +11,7 @@ on:
       - 'src/collect_jra_recent_completed.py'
       - 'src/score_live_sealed_predictions.py'
       - 'src/build_live_pdca.py'
+      - 'src/build_management_erp.py'
       - 'src/merge_latest_results_into_catalog.py'
       - 'src/update_recent_runner_elite.py'
       - 'src/merge_active_elite_into_catalog.py'
@@ -69,6 +70,9 @@ jobs:
       - name: Build post-result PDCA without mutating the certified model
         if: steps.state.outputs.updated == 'true'
         run: python src/build_live_pdca.py
+      - name: Rebuild management ERP analytics from sealed predictions and results
+        if: steps.state.outputs.updated == 'true'
+        run: python src/build_management_erp.py
       - name: Publish completed race results to canonical replay archives
         if: steps.state.outputs.updated == 'true'
         env:
@@ -112,8 +116,8 @@ jobs:
           git config user.email 'actions@users.noreply.github.com'
           git add \
             data/race_results_html_2026.csv data/race_payouts_2026.csv data/race_context_2026.csv \
-            docs/data/live_prediction_scores.json docs/data/live_pdca.json docs/data/today-results-*.json docs/data/prediction-archive-*.json docs/data/replay-????-??-??.json \
-            status/jra_post_meeting_update.json status/live_prediction_scoring.json status/live_pdca.json status/horse_master_completion.json \
+            docs/data/live_prediction_scores.json docs/data/live_pdca.json docs/data/dashboard.json docs/data/management_analytics.json docs/data/today-results-*.json docs/data/prediction-archive-*.json docs/data/replay-????-??-??.json \
+            status/jra_post_meeting_update.json status/live_prediction_scoring.json status/live_pdca.json status/management_erp.json status/horse_master_completion.json \
             docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json \
             docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json || true
           git diff --cached --quiet || git commit -m "data: score, PDCA and update completed JRA meeting ${{ steps.state.outputs.dates }}"
