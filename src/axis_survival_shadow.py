@@ -43,34 +43,33 @@ def select_survival_axis(ranked_snapshot, search_depth=3):
             "uncertainty":_f(h.get("uncertainty"),1),
             "starts_before":_f(h.get("starts_before"),0),
             "running_style":h.get("running_style") or h.get("style") or "UNKNOWN",
+            "ability_score":_f(h.get("score"),0),
         })
-    candidates.sort(key=lambda x:(-x["survival_score"],x["rank"]))
-    ability_axis=next((x for x in candidates if x["rank"]==1),candidates[0])
-    challenger=candidates[0]
-    delta=round(challenger["survival_score"]-ability_axis["survival_score"],3)
-    # August iterative PDCA: never replace rank1 merely because the challenger
-    # looks much "safer". Keep absolute ability as the anchor and switch only
-    # inside a conservative middle-strength window.
-    ability_raw=next((h for h in q if str(h.get("n") or "")==ability_axis["horse_no"]),q[0])
+    original=candidates[0]
+    best=max(candidates,key=lambda x:(x["survival_score"],-x["rank"]))
     second=q[1] if len(q)>1 else q[0]
-    ability_gap=_f(ability_raw.get("score"))-_f(second.get("score"))
-    can_switch=(
-        challenger["rank"]!=1 and
-        3.0<=delta<=10.0 and
-        challenger["rank"]<=3 and
-        _f(ability_axis.get("starts_before"))<=4 and
-        ability_gap<=12.0
-    )
-    best=challenger if can_switch else ability_axis
+    ability_gap=_f(q[0].get("score"))-_f(second.get("score"))
+    weak_original=(original["uncertainty"]>=.70 or ability_gap<=1.0)
+    delta=best["survival_score"]-original["survival_score"]
+    switch_allowed=(best["rank"]!=1 and weak_original and delta>=1.0 and delta<=10.0)
+    chosen=best if switch_allowed else original
     return {
         "status":"RESEARCH_ONLY",
-        "objective":"MAXIMIZE_TOP3_SURVIVAL_WITH_ABILITY_ANCHOR",
-        "axis":best,
+        "architecture":"TOP3_SURVIVAL_AXIS_SHADOW_V2_CONSERVATIVE",
+        "objective":"MAXIMIZE_TOP3_SURVIVAL",
+        "axis":chosen,
+        "original_axis":original,
+        "best_alternative":best,
         "candidates":candidates,
-        "changed_from_ability_rank1":best["rank"]!=1,
-        "switch_gate":{"challenger_delta":delta,"ability_gap":round(ability_gap,3),"allowed":can_switch,"rule":"rank1を基本維持。3着内残存差3〜10、候補3位以内、元軸出走数4以下、能力差12以下の時だけShadow変更"},
+        "ability_gap_to_second":round(ability_gap,3),
+        "switch_gate":{
+            "weak_original":weak_original,
+            "survival_score_delta":round(delta,3),
+            "allowed":switch_allowed,
+            "rule":"元軸の不確実性>=0.70 または能力1-2位差<=1.0、かつ残存スコア差1〜10の場合のみ上位3頭内で変更",
+        },
+        "changed_from_ability_rank1":chosen["rank"]!=1,
         "production_override_applied":False,
-        "august_validation":{"development_axis_top3_pct":46.67,"holdout_0816_axis_top3_pct":27.78,"external_0822_23_axis_top3_pct":52.78,"external_degradation_vs_rank1_pct_point":0.0},
         "market_isolation":"NO_ODDS_OR_POPULARITY_USED",
     }
 
