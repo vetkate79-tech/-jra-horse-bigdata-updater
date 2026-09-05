@@ -27,7 +27,7 @@ def _survival_score(h, rank):
     )
     return round(score,3)
 
-def select_survival_axis(ranked_snapshot, search_depth=4):
+def select_survival_axis(ranked_snapshot, search_depth=3):
     q=list(ranked_snapshot or [])
     if not q:return {"status":"NO_DATA","axis":None,"candidates":[]}
     candidates=[]
@@ -45,13 +45,30 @@ def select_survival_axis(ranked_snapshot, search_depth=4):
             "running_style":h.get("running_style") or h.get("style") or "UNKNOWN",
         })
     candidates.sort(key=lambda x:(-x["survival_score"],x["rank"]))
-    best=candidates[0]
+    ability_axis=next((x for x in candidates if x["rank"]==1),candidates[0])
+    challenger=candidates[0]
+    delta=round(challenger["survival_score"]-ability_axis["survival_score"],3)
+    # August iterative PDCA: never replace rank1 merely because the challenger
+    # looks much "safer". Keep absolute ability as the anchor and switch only
+    # inside a conservative middle-strength window.
+    ability_raw=next((h for h in q if str(h.get("n") or "")==ability_axis["horse_no"]),q[0])
+    second=q[1] if len(q)>1 else q[0]
+    ability_gap=_f(ability_raw.get("score"))-_f(second.get("score"))
+    can_switch=(
+        challenger["rank"]!=1 and
+        3.0<=delta<=10.0 and
+        challenger["rank"]<=3 and
+        _f(ability_axis.get("starts_before"))<=4 and
+        ability_gap<=12.0
+    )
+    best=challenger if can_switch else ability_axis
     return {
         "status":"RESEARCH_ONLY",
-        "objective":"MAXIMIZE_TOP3_SURVIVAL",
+        "objective":"MAXIMIZE_TOP3_SURVIVAL_WITH_ABILITY_ANCHOR",
         "axis":best,
         "candidates":candidates,
         "changed_from_ability_rank1":best["rank"]!=1,
+        "switch_gate":{"challenger_delta":delta,"ability_gap":round(ability_gap,3),"allowed":can_switch,"rule":"rank1を基本維持。3着内残存差3〜10、候補3位以内、元軸出走数4以下、能力差12以下の時だけShadow変更"},
         "production_override_applied":False,
         "market_isolation":"NO_ODDS_OR_POPULARITY_USED",
     }
