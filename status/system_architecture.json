@@ -54,6 +54,7 @@
     "replay_canonical_format_pinned": true,
     "replay_generated_not_patched": true,
     "prediction_seal_single_owner": true,
+    "runner_refresh_to_prediction_seal_connected": true,
     "management_erp_single_owner": true,
     "post_archive_date_generic": true,
     "immutable_prediction_archive_guard": true,
