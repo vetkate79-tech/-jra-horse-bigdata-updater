@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-06",
+  "status": "SHADOW_ONLY_NOT_PROMOTED",
+  "scope": {
+    "development": [
+      "2026-08-01",
+      "2026-08-02",
+      "2026-08-08",
+      "2026-08-09",
+      "2026-08-15"
+    ],
+    "internal_holdout": [
+      "2026-08-16"
+    ],
+    "external_holdout": [
+      "2026-08-22",
+      "2026-08-23"
+    ],
+    "races_total": 288
+  },
+  "objectives": {
+    "axis": "3着内残存率を最優先。1着精度は主目的にしない",
+    "ticket": "軸飛び保険の点数増加は禁止。点数据え置きの役割入替を優先",
+    "longshot": "三連複払戻10,000円以上の捕捉",
+    "stability": "万馬券除外ROI 80〜90%の安定"
+  },
+  "pdca_findings": [
+    "能力1位と2位の差が大きいほど軸3着内が高いという単調関係は再現しなかった",
+    "元軸を頻繁に変更する方式は不採用。元軸の不確実性>=0.70かつ代替軸残存スコア差1〜10の場合だけ上位3頭内で変更するR2を採用候補に残した",
+    "低順位侵入候補を上位候補と機械的に置換すると候補完全捕捉率が悪化したため不採用",
+    "低順位侵入は別枠フラグとし、BUYでは既存券を崩さずC/CAUTIONだけ1点入替する方式を残した",
+    "PASS救済は開発側で改善しても日別外部検証のばらつきが大きく、採用しない",
+    "結果後のコーナー位置では軸が前寄りで運べた場合の3着内率が高く、後方ほど低かった。今後は事前想定位置との一致/不一致をPDCAへ保存する",
+    "過去封印ranked_snapshotは上位10頭保存のため実頭数別や11位以下の分析には使用しない"
+  ],
+  "failure_taxonomy_sub10k": {
+    "PASS_WHILE_FULL_CAPTURE": 30,
+    "PASS_AXIS_OK": 19,
+    "PASS_AXIS_MISS": 52,
+    "OPPONENT_MISS": 24,
+    "AXIS_MISS": 49,
+    "HIT": 13,
+    "TICKET_CONVERSION_MISS": 10
+  },
+  "comparison_288r": {
+    "baseline": {
+      "axis_top3_rate": 44.1,
+      "hits": 18,
+      "stake_yen": 131800,
+      "return_yen": 105010,
+      "roi": 79.67,
+      "max_payout_excluded_roi": 64.44,
+      "non_manbaken_roi": 37.26
+    },
+    "refined_shadow": {
+      "axis_top3_rate": 45.83,
+      "hits": 19,
+      "stake_yen": 131800,
+      "return_yen": 176370,
+      "roi": 133.82,
+      "max_payout_excluded_roi": 79.67,
+      "non_manbaken_roi": 37.26
+    },
+    "note": "refined_shadowのROI上昇は8/2新潟10Rの71,360円新規捕捉の寄与が大きい。最大払戻除外ROI79.67%まで確認し、単発高配当だけで昇格させない。"
+  },
+  "holdout_axis_top3": {
+    "2026-08-16": {
+      "baseline": 22.22,
+      "refined": 22.22
+    },
+    "2026-08-22": {
+      "baseline": 47.22,
+      "refined": 47.22
+    },
+    "2026-08-23": {
+      "baseline": 58.33,
+      "refined": 63.89
+    }
+  },
+  "rejected_experiments": {
+    "broad_axis_switch": "頻繁な軸変更で外部再現性が不足",
+    "low_rank_candidate_replacement": "上位6頭の置換で候補完全捕捉率が低下",
+    "global_intrusion_ticket_swap": "BUY側の既存的中を破壊",
+    "pass_rescue": "万馬券除外ROIの日別安定性が不足",
+    "hard_race_point_compression": "投資は減るが低配当的中も削り、万馬券除外ROIの安定改善に至らず"
+  },
+  "next_shadow_focus": [
+    "事前脚質・想定位置を保存し、結果コーナー通過順との一致成功/想定外成功を分離",
+    "軸が3着内なのに外れた10件のTICKET_CONVERSION_MISSを優先解析",
+    "相手捕捉失敗24件を前/中団/後方の侵入タイプ別に学習",
+    "万馬券除外ROI80〜90%は未達のためProduction昇格しない"
+  ]
+}
