@@ -84,6 +84,11 @@ def main():
    and 'COMPLETE_DATES' in post
    and 'publish_archive_results.py' in post
  )
+ checks['immutable_prediction_archive_guard']=(
+   'hashlib.sha256' in post
+   and 'immutable prediction archive changed' in post
+   and 'prediction-archive-' in post
+ )
  repair=cfg.get('repair_constitution') or {}
  checks['root_cause_repair_constitution_locked']=(
    repair.get('status')=='USER_LOCKED'
