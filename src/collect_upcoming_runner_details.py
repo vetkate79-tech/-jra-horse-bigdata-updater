@@ -62,11 +62,19 @@ def class_from_page(soup,title):
     if any(x in text for x in ('オープン','リステッド','重賞')):return 'OPEN','オープン以上'
     return '', ''
 
-def frame_and_horse_no(cells):
+def frame_and_horse_no(tr,cells):
+    # JRA renders the frame as an image (e.g. alt="枠6緑"), so stripped_strings
+    # contains the horse number but not the frame number. Read the official
+    # frame image directly instead of guessing from numeric cells.
+    frame_no=''
+    if tr is not None:
+        for img in tr.find_all('img'):
+            m=re.search(r'枠\s*([1-8])',str(img.get('alt') or ''))
+            if m:
+                frame_no=m.group(1);break
     nums=[x.strip() for x in cells[:5] if re.fullmatch(r'\d{1,2}',x.strip())]
-    if len(nums)>=2:return nums[0],nums[1]
-    if len(nums)==1:return '',nums[0]
-    return '',''
+    horse_no=nums[0] if nums else ''
+    return frame_no,horse_no
 
 def row_meta(row_text):
     sex_age='';carried='';jockey='';m=re.search(r'(牡|牝|せん)\s*(\d+)',row_text)
@@ -95,7 +103,7 @@ def parse_card(cname,raw):
     for a,hid,name,row_text in runner_rows(soup):
         hid=canonical_id(hid)
         if hid in seen:continue
-        seen.add(hid);tr=a.find_parent('tr');cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])] if tr else [];frame_no,horse_no=frame_and_horse_no(cells);sex_age,carried,jockey=row_meta(row_text)
+        seen.add(hid);tr=a.find_parent('tr');cells=[' '.join(x.stripped_strings) for x in tr.find_all(['th','td'])] if tr else [];frame_no,horse_no=frame_and_horse_no(tr,cells);sex_age,carried,jockey=row_meta(row_text)
         race['runners'].append({'horse_id':hid,'horse_name':name,'frame_no':frame_no,'horse_no':horse_no,'sex_age':sex_age,'carried_weight':carried,'jockey':jockey,'recent_starts_from_card':prior_starts(row_text),'official_row_text':row_text})
     return race if race['runners'] else None
 
