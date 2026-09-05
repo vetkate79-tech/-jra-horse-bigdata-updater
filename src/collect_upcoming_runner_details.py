@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build race-week details and upsert every verified runner into the persistent horse master."""
 from __future__ import annotations
-import json,re
+import hashlib,json,re
 from pathlib import Path
 from bs4 import BeautifulSoup
 import sys
@@ -9,6 +9,28 @@ sys.path.insert(0,'src')
 from collect_upcoming_new_horses import current_week_seeds,fetch,cname_url,extract_links,META,COURSE,normalize_horse_id,runner_rows
 
 CAT=Path('docs/data/horses/catalog.json');OUT=Path('docs/data/horses/weekly_runner_details.json');STATUS=Path('status/weekly_runner_details.json')
+HISTORY=Path('docs/data/horses/weekly_runner_history')
+
+def archive_existing_weekly():
+    if not OUT.exists():
+        return None
+    raw=OUT.read_bytes()
+    if not raw:
+        return None
+    try:
+        d=json.loads(raw.decode('utf-8'))
+    except Exception:
+        return None
+    dates=sorted({str((x.get('race') or {}).get('date') or '') for x in d.get('runners') or [] if (x.get('race') or {}).get('date')})
+    if not dates:
+        dates=['undated']
+    digest=hashlib.sha256(raw).hexdigest()
+    for date in dates:
+        p=HISTORY/date/(digest+'.json');p.parent.mkdir(parents=True,exist_ok=True)
+        if not p.exists():p.write_bytes(raw)
+        if hashlib.sha256(p.read_bytes()).hexdigest()!=digest:
+            raise RuntimeError('weekly runner history verification failed: '+str(p))
+    return digest
 
 def canonical_id(v):
     s=normalize_horse_id(v)
@@ -221,5 +243,5 @@ def main():
         if isinstance(obj,list):return any(contains_forbidden_market(v) for v in obj)
         return False
     if contains_forbidden_market(payload):raise RuntimeError('market field entered race-week runner details')
-    OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
+    archive_existing_weekly();OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8');STATUS.write_text(json.dumps({**payload['summary'],'errors':errors,'missing_master_ids':sorted(set(missing))},ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(payload['summary'],ensure_ascii=False))
 if __name__=='__main__':main()
