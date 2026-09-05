@@ -73,7 +73,7 @@ def classify_ticket_policy(race,q,analysis):
 
     return {
       "status":"RESEARCH_ONLY",
-      "architecture":"TICKET_VALUE_REGIME_SHADOW_V2_TOP3_AXIS",
+      "architecture":"TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
       "regime":regime,
       "hard_score":hard_score,
       "volatile_score":volatile_score,
@@ -85,6 +85,8 @@ def classify_ticket_policy(race,q,analysis):
       "longshot_objective":"3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
       "anti_trigami_rule":"券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
       "axis_fail_rule":"軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+      "intrusion_replacement_rule":"低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
+      "large_field_warning":"14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
       "production_override_applied":False,
       "promotion_rule":"独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
       "market_isolation":"NO_ODDS_OR_POPULARITY_USED"
