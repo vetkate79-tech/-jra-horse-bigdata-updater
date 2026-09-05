@@ -1,6 +1,8 @@
 name: Refresh 2026-09-05 replay results
 
 on:
+  schedule:
+    - cron: '*/5 * * * *'
   workflow_dispatch:
   issues:
     types: [opened]
