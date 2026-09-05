@@ -44,7 +44,7 @@ def main():
             h=futs[fut]
             try:
                 hid,p=fut.result();base=by_id[hid]
-                for k in ('horse_name','active','deregistered_at','sex','age','trainer','owner','sire','dam','damsire','birth_date','breeder','coat','birthplace','flat_acquired_prize_yen','obstacle_acquired_prize_yen','profile_url','profile_race_rows'):
+                for k in ('horse_name','active','deregistered_at','sex','age','trainer','owner','sire','dam','damsire','birth_date','breeder','coat','birthplace','flat_acquired_prize_yen','obstacle_acquired_prize_yen','profile_url','profile_race_rows','flat_career_starts','flat_career_wins','flat_unbeaten'):
                     v=p.get(k)
                     if v not in (None,''): base[k]=v
                 if p.get('sex') or p.get('age'):
