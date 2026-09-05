@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-06T00:15:42+09:00",
+  "updated_at": "2026-09-06T00:16:12+09:00",
   "purpose": "管理専用。公開画面には出さない詳細KPI・回収率・条件別分析・Challenger候補。",
   "governance": {
     "production_auto_mutation": false,
@@ -9,7 +9,7 @@
   },
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-    "snapshot_time": "2026-09-06T00:15:42+09:00",
+    "snapshot_time": "2026-09-06T00:16:12+09:00",
     "total_races": 33,
     "buy_races": 30,
     "pass_races": 3,
@@ -27,7 +27,11 @@
     "third_column_miss_rate": 25.0,
     "elimination_miss_rate": 0,
     "max_drawdown": 0,
-    "purchase_rate": 90.32
+    "purchase_rate": 90.32,
+    "manbaken_opportunities": 6,
+    "manbaken_hits": 1,
+    "manbaken_capture_rate": 16.67,
+    "sub10k_opportunities": 22
   },
   "filters": {
     "date": [
@@ -1307,6 +1311,25 @@
       "status": "SHADOW_ONLY"
     },
     {
+      "type": "TICKET_VALUE_REGIME_SHADOW",
+      "dimension": "ticket_policy",
+      "value": "CONCENTRATED / BALANCED / HIGH_PAYOUT_CAPTURE / PASS_BIASED",
+      "sample": 64,
+      "roi": 141.04,
+      "axis_top3_rate": 51.61,
+      "combo_miss_rate": 25.0,
+      "action": "固いレースは3〜5点へ圧縮して厚く、荒れレースは万馬券捕捉を優先。軸飛び保険だけの軸なし増加は禁止。券種別実オッズ接続後はトリガミ/低EVを除外。",
+      "status": "SHADOW_ONLY",
+      "promotion_metrics": [
+        "万馬券捕捉率",
+        "ROI",
+        "最大払戻除外ROI",
+        "平均点数",
+        "固い群の的中率",
+        "軸飛び時の無駄打ち率"
+      ]
+    },
+    {
       "type": "STRONG_SEGMENT",
       "dimension": "decision",
       "value": "BUY",
@@ -1481,6 +1504,8 @@
       "profit_yen": -800,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 1300,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -1548,6 +1573,8 @@
       "profit_yen": 3540,
       "roi": 493.33,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 4440,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -1614,6 +1641,8 @@
       "profit_yen": 50,
       "roi": 106.25,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 850,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -1671,6 +1700,8 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 1930,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -1737,6 +1768,8 @@
       "profit_yen": -800,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 17450,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -1803,6 +1836,8 @@
       "profit_yen": 4980,
       "roi": 722.5,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 5780,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -1870,6 +1905,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 6240,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -1937,6 +1974,8 @@
       "profit_yen": 1050,
       "roi": 216.67,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 1950,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2004,6 +2043,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 42840,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2071,6 +2112,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 20840,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -2137,6 +2180,8 @@
       "profit_yen": -800,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 1170,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -2203,6 +2248,8 @@
       "profit_yen": -800,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 1940,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2270,6 +2317,8 @@
       "profit_yen": 14480,
       "roi": 1708.89,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 15380,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -2336,6 +2385,8 @@
       "profit_yen": -800,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 1120,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -2403,6 +2454,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 40420,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2470,6 +2523,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 1210,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2537,6 +2592,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 2070,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -2604,6 +2661,8 @@
       "profit_yen": 3160,
       "roi": 451.11,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 4060,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2671,6 +2730,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 8270,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2728,6 +2789,8 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 760,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2795,6 +2858,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 13250,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -2861,6 +2926,8 @@
       "profit_yen": -800,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 4120,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -2918,6 +2985,8 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 520,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -2984,6 +3053,8 @@
       "profit_yen": 40,
       "roi": 105.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 840,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -3051,6 +3122,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 4250,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -3117,6 +3190,8 @@
       "profit_yen": -800,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 3280,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -3184,6 +3259,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 4780,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -3251,6 +3328,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 720,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -3317,6 +3396,8 @@
       "profit_yen": -110,
       "roi": 86.25,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 690,
       "data_status": "PASS_HTML",
       "payout_data_status": "PASS_HTML"
     },
@@ -3384,6 +3465,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 7600,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -3451,6 +3534,8 @@
       "profit_yen": -900,
       "roi": 0.0,
       "prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
+      "ticket_value_regime_shadow": {},
+      "actual_trio_payout_yen": 2940,
       "data_status": "QUARANTINED_HTML:track_condition",
       "payout_data_status": "QUARANTINED_HTML:track_condition"
     },
@@ -3503,6 +3588,26 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "PASS_BIASED",
+        "hard_score": 5,
+        "volatile_score": 5,
+        "target_points": "0-6",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い"
+        ],
+        "proposed_policy": "軸なし点数を増やして救済しない。軸耐久不足ならPASSを優先し、買う場合も根拠のある役割分散だけに限定。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3557,6 +3662,26 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "PASS_BIASED",
+        "hard_score": 2,
+        "volatile_score": 9,
+        "target_points": "0-6",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が高い"
+        ],
+        "proposed_policy": "軸なし点数を増やして救済しない。軸耐久不足ならPASSを優先し、買う場合も根拠のある役割分散だけに限定。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3620,6 +3745,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3683,6 +3829,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3745,6 +3912,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 5,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3807,6 +3995,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 5,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3869,6 +4078,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 7,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3932,6 +4162,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -3994,6 +4245,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "HIGH_PAYOUT_CAPTURE",
+        "hard_score": 4,
+        "volatile_score": 7,
+        "target_points": "7-10",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4057,6 +4329,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4120,6 +4413,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4173,6 +4487,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "HIGH_PAYOUT_CAPTURE",
+        "hard_score": 6,
+        "volatile_score": 9,
+        "target_points": "7-10",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が高い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4236,6 +4571,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4298,6 +4654,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 5,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4359,6 +4736,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 7,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4421,6 +4819,26 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 10,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4483,6 +4901,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 7,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4545,6 +4984,26 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 8,
+        "volatile_score": 4,
+        "target_points": "3-5",
+        "reason": [
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4608,6 +5067,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4671,6 +5151,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4734,6 +5235,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4796,6 +5318,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "HIGH_PAYOUT_CAPTURE",
+        "hard_score": 4,
+        "volatile_score": 7,
+        "target_points": "7-10",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4857,6 +5400,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "HIGH_PAYOUT_CAPTURE",
+        "hard_score": 6,
+        "volatile_score": 9,
+        "target_points": "7-10",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が高い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4919,6 +5483,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 7,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -4982,6 +5567,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5045,6 +5651,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5108,6 +5735,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5171,6 +5819,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5234,6 +5903,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5296,6 +5986,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 7,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5359,6 +6070,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "CONCENTRATED",
+        "hard_score": 13,
+        "volatile_score": 2,
+        "target_points": "3-5",
+        "reason": [
+          "軸と2位の事前能力差が大きい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "固い構造。上位の重複組合せへ絞り、点数を減らす。市場レイヤーでトリガミ/低EVなら買わない。正のEVなら少点数を厚くする候補。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5421,6 +6153,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 7,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     },
@@ -5483,6 +6236,27 @@
       "profit_yen": 0,
       "roi": null,
       "prediction_hash_sha256": "84be6cfe05b637b4112a7802143db93c3f383e8bfedca9793630ab3e7bd77e70",
+      "ticket_value_regime_shadow": {
+        "status": "RESEARCH_ONLY",
+        "architecture": "TICKET_VALUE_REGIME_SHADOW_V1",
+        "regime": "BALANCED",
+        "hard_score": 6,
+        "volatile_score": 7,
+        "target_points": "5-8",
+        "reason": [
+          "上位評価差が小さい",
+          "上位の不確実性が低い",
+          "3着侵入候補が複数"
+        ],
+        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
+        "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
+        "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
+        "production_override_applied": false,
+        "promotion_rule": "独立検証3回以上（推奨5回）で、万馬券捕捉率・ROI・最大払戻除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
+      },
+      "actual_trio_payout_yen": 0,
       "data_status": null,
       "payout_data_status": null
     }
