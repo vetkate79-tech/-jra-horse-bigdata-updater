@@ -89,24 +89,102 @@ function renderUpgradeLog(data){
   }).join('');
 }
 
-function renderAnalysis(data){
-  const a=data.analytics||{}, s=a.summary||data.summary||{}, breakdowns=a.breakdowns||{};
-  renderKpis(qs('#analysisKpis'),[
-    {label:'累計投資',value:yen(s.stake_amount),sub:'結果接続済み購入分'},
-    {label:'累計払戻',value:yen(s.return_amount),sub:'公式3連複払戻'},
-    {label:'累計収支',value:yen(s.profit_amount),sub:'払戻 - 投資'},
-    {label:'累計ROI',value:pct(s.roi),sub:'管理詳細'},
-    {label:'最大払戻除外ROI',value:pct(s.roi_ex_top),sub:'一発依存除外'}
-  ]);
-  const sel=qs('#analysisDimension');
-  const labels={date:'日付',track:'競馬場',race_no:'レース',race_category:'年齢区分',race_class:'クラス',surface:'芝/ダート',distance_m:'距離',distance_band:'距離帯',track_condition:'馬場',weather:'天候',field_size:'頭数',field_size_band:'頭数帯',decision:'購入判定',axis_grade:'軸結果',race_state:'状態'};
-  const dims=Object.keys(breakdowns);
-  sel.innerHTML=dims.map(d=>`<option value="${esc(d)}">${esc(labels[d]||d)}</option>`).join('');
-  const draw=()=>{
-    const rows=breakdowns[sel.value]||[];
-    qs('#analysisTableBody').innerHTML=rows.map(r=>`<tr><td><b>${esc(r.value)}</b></td><td>${r.bought_races||0}</td><td>${r.hit_rate==null?'-':pct(r.hit_rate)}</td><td>${r.axis_top3_rate==null?'-':pct(r.axis_top3_rate)}</td><td>${r.combo_miss_rate==null?'-':pct(r.combo_miss_rate)}</td><td>${yen(r.stake_yen)}</td><td>${yen(r.return_yen)}</td><td>${yen(r.profit_yen)}</td><td>${r.roi==null?'-':pct(r.roi)}</td></tr>`).join('')||'<tr><td colspan="9" class="muted">集計データなし</td></tr>';
+function summarizeRows(rows){
+  const scored=rows.filter(x=>x.scored), bought=scored.filter(x=>x.bought);
+  const stake=bought.reduce((s,x)=>s+Number(x.stake_yen||0),0);
+  const ret=bought.reduce((s,x)=>s+Number(x.return_yen||0),0);
+  const hits=bought.filter(x=>x.trio_hit).length;
+  const axisTop3=scored.filter(x=>[1,2,3].includes(Number(x.axis_finish))).length;
+  const comboMiss=bought.filter(x=>[1,2,3].includes(Number(x.axis_finish))&&!x.trio_hit).length;
+  const returns=bought.map(x=>Number(x.return_yen||0)).sort((a,b)=>b-a);
+  const retExTop=ret-(returns[0]||0);
+  return {
+    total_races:rows.length,scored_races:scored.length,bought_races:bought.length,
+    stake_amount:stake,return_amount:ret,profit_amount:ret-stake,
+    hit_rate:bought.length?hits/bought.length*100:null,hits,
+    axis_survival:scored.length?axisTop3/scored.length*100:null,
+    combo_miss_rate:bought.length?comboMiss/bought.length*100:null,
+    roi:stake?ret/stake*100:null,roi_ex_top:stake?retExTop/stake*100:null
   };
-  sel.onchange=draw; draw();
+}
+function groupRows(rows,field){
+  const groups=new Map();
+  rows.forEach(r=>{let v=r[field];if(v==null||v==='')v='不明';const k=String(v);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)});
+  const out=[...groups].map(([value,xs])=>({value,...summarizeRows(xs)}));
+  if(field==='race_no')return out.sort((a,b)=>(Number(a.value)||999)-(Number(b.value)||999));
+  return out.sort((a,b)=>b.scored_races-a.scored_races||String(a.value).localeCompare(String(b.value),'ja'));
+}
+function jstNowParts(){
+  const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',weekday:'short'}).formatToParts(new Date());
+  const g=t=>parts.find(x=>x.type===t)?.value||'';
+  return {date:`${g('year')}-${g('month')}-${g('day')}`,weekday:g('weekday')};
+}
+function weeklyRowsForDisplay(rows){
+  const now=jstNowParts(), wd=now.weekday;
+  if(['Tue','Wed','Thu','Fri'].includes(wd))return {waiting:true,rows:[],label:'来週のレース終了までお待ちください'};
+  const scoredDates=[...new Set(rows.filter(x=>x.scored).map(x=>x.date).filter(Boolean))].sort();
+  if(!scoredDates.length)return {waiting:false,rows:[],label:'今週の結果接続待ち'};
+  const latest=scoredDates.at(-1);
+  const base=new Date(latest+'T00:00:00+09:00');
+  const day=base.getUTCDay();
+  const sat=new Date(base); sat.setUTCDate(base.getUTCDate()-(day===0?1:0));
+  const sun=new Date(sat); sun.setUTCDate(sat.getUTCDate()+1);
+  const iso=d=>d.toISOString().slice(0,10);
+  const dates=new Set([iso(sat),iso(sun)]);
+  const selected=rows.filter(x=>dates.has(x.date)&&x.scored);
+  return {waiting:false,rows:selected,label:`${[...dates].join('〜')} / ${selected.length}R結果接続`};
+}
+function renderAnalysis(data){
+  const a=data.analytics||{}, allRows=a.races||[];
+  const weekly=weeklyRowsForDisplay(allRows);
+  qs('#weeklyResultStatus').textContent=weekly.label;
+  qs('#weeklyResultMessage').textContent=weekly.waiting?'火曜日以降は次開催の結果待ち表示です。過去データは条件別分析から引き続き参照できます。':'';
+  if(weekly.waiting){
+    renderKpis(qs('#analysisKpis'),[
+      {label:'今週の暫定結果',value:'結果待ち',sub:'来週のレース終了後に更新'},
+      {label:'投資',value:'-',sub:'過去データは保持済み'},
+      {label:'払戻',value:'-',sub:'過去データは保持済み'},
+      {label:'ROI',value:'-',sub:'次開催待ち'},
+      {label:'軸生存率',value:'-',sub:'次開催待ち'}
+    ]);
+  }else{
+    const s=summarizeRows(weekly.rows);
+    renderKpis(qs('#analysisKpis'),[
+      {label:'今週の投資',value:yen(s.stake_amount),sub:`${s.bought_races}R購入評価`},
+      {label:'今週の払戻',value:yen(s.return_amount),sub:`${s.hits}R的中`},
+      {label:'今週の収支',value:yen(s.profit_amount),sub:'払戻 - 投資'},
+      {label:'今週のROI',value:s.roi==null?'-':pct(s.roi),sub:'暫定'},
+      {label:'今週の軸生存率',value:s.axis_survival==null?'-':pct(s.axis_survival),sub:`${s.scored_races}R結果接続`}
+    ]);
+  }
+
+  const labels={date:'日付',track:'競馬場',race_no:'レース',race_category:'年齢区分',race_class:'クラス',surface:'芝/ダート',distance_m:'距離',distance_band:'距離帯',track_condition:'馬場',weather:'天候',field_size:'頭数',field_size_band:'頭数帯',decision:'購入判定',axis_grade:'軸結果',race_state:'状態'};
+  const dims=['date','track','race_no','race_category','race_class','surface','distance_m','distance_band','track_condition','weather','field_size','field_size_band','decision','axis_grade','race_state'];
+  const sel=qs('#analysisDimension'), mode=qs('#analysisDateMode'), from=qs('#analysisDateFrom'), to=qs('#analysisDateTo'), day=qs('#analysisDateDay');
+  sel.innerHTML=dims.map(d=>`<option value="${esc(d)}">${esc(labels[d]||d)}</option>`).join('');
+  const dates=[...new Set(allRows.map(r=>r.date).filter(Boolean))].sort();
+  const min=dates[0]||'',max=dates.at(-1)||'';
+  [from,to,day].forEach(x=>{if(min)x.min=min;if(max)x.max=max});
+  if(!from.value)from.value=min;if(!to.value)to.value=max;if(!day.value)day.value=max;
+
+  const updateVisibility=()=>{
+    const m=mode.value;
+    qs('#analysisFromWrap').hidden=m!=='range';
+    qs('#analysisToWrap').hidden=m!=='range';
+    qs('#analysisDayWrap').hidden=m!=='day';
+  };
+  const filtered=()=>{
+    if(mode.value==='day')return allRows.filter(r=>r.date===day.value);
+    if(mode.value==='range')return allRows.filter(r=>(!from.value||r.date>=from.value)&&(!to.value||r.date<=to.value));
+    return allRows;
+  };
+  const draw=()=>{
+    updateVisibility();
+    const subset=filtered(), rows=groupRows(subset,sel.value);
+    qs('#analysisTableBody').innerHTML=rows.map(r=>`<tr><td><b>${esc(r.value)}</b></td><td>${r.bought_races||0}</td><td>${r.hit_rate==null?'-':pct(r.hit_rate)}</td><td>${r.axis_survival==null?'-':pct(r.axis_survival)}</td><td>${r.combo_miss_rate==null?'-':pct(r.combo_miss_rate)}</td><td>${yen(r.stake_amount)}</td><td>${yen(r.return_amount)}</td><td>${yen(r.profit_amount)}</td><td>${r.roi==null?'-':pct(r.roi)}</td></tr>`).join('')||'<tr><td colspan="9" class="muted">指定期間の集計データなし</td></tr>';
+  };
+  [sel,mode,from,to,day].forEach(x=>x.onchange=draw); draw();
+
   qs('#optimizerList').innerHTML=(a.optimization_candidates||[]).map(x=>`<div class="model-card"><div class="row"><strong>${esc(x.type)} · ${esc(labels[x.dimension]||x.dimension)}=${esc(x.value)}</strong><span>${esc(x.status)}</span></div><p>sample ${esc(x.sample)} / ROI ${x.roi==null?'-':pct(x.roi)} / 軸生存 ${x.axis_top3_rate==null?'-':pct(x.axis_top3_rate)} / 組合せ漏れ ${x.combo_miss_rate==null?'-':pct(x.combo_miss_rate)}</p><p>${esc(x.action)}</p></div>`).join('')||'<p class="muted">改善候補なし。最低サンプル到達後に自動生成します。</p>';
 }
 
@@ -117,8 +195,17 @@ function renderBars(el,items){
 
 async function boot(){
   const dataUrl = new URLSearchParams(location.search).get('data') || window.JRA_ERP_DATA_URL || DEFAULT_DATA_URL;
-  try{const res=await fetch(dataUrl,{cache:'no-store'}); if(!res.ok) throw new Error(`HTTP ${res.status}`); render(await res.json());}
-  catch(err){qs('#connectionLabel').textContent='DATA NOT CONNECTED';qs('.sidebar-footer .dot').className='dot bad';render({summary:{},risks:[{name:'データ接続',level:'bad',detail:`${dataUrl} を取得できません。予想側が共通JSONを出力すると自動表示されます。`}],sources:[{name:'ERP data adapter',status:'bad',detail:String(err.message||err)}],mechanisms:[]});}
+  try{
+    const [res,detailRes]=await Promise.all([fetch(dataUrl,{cache:'no-store'}),fetch('../data/management_analytics.json',{cache:'no-store'})]);
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data=await res.json();
+    if(detailRes.ok){
+      const detail=await detailRes.json();
+      data.analytics={...(data.analytics||{}),races:detail.races||[],summary:detail.summary||data.analytics?.summary};
+    }
+    render(data);
+  }
+  catch(err){qs('#connectionLabel').textContent='DATA NOT CONNECTED';qs('.sidebar-footer .dot').className='dot bad';render({summary:{},analytics:{races:[]},risks:[{name:'データ接続',level:'bad',detail:`${dataUrl} を取得できません。予想側が共通JSONを出力すると自動表示されます。`}],sources:[{name:'ERP data adapter',status:'bad',detail:String(err.message||err)}],mechanisms:[]});}
 }
 boot();
 
