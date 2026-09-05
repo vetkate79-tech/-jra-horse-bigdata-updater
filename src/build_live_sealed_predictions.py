@@ -45,8 +45,15 @@ def _archive_seal_payload(payload):
         out=d/f'{digest}.json'
         if not out.exists():
             out.write_bytes(raw)
-        if out.read_bytes()!=raw:
-            raise RuntimeError(f'seal history verification failed: {out}')
+        else:
+            existing=json.loads(out.read_text(encoding='utf-8'))
+            # The semantic prediction hash intentionally excludes generated_at.
+            # Re-running the same seal may therefore have a new timestamp but
+            # must resolve to exactly the same immutable prediction semantics.
+            existing_core={k:v for k,v in existing.items() if k not in ('generated_at','prediction_hash_sha256')}
+            current_core={k:v for k,v in payload.items() if k not in ('generated_at','prediction_hash_sha256')}
+            if existing.get('prediction_hash_sha256')!=digest or existing_core!=current_core:
+                raise RuntimeError(f'seal history semantic verification failed: {out}')
         written.append(str(out))
     return written
 
