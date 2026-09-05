@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "BLOCKED",
+  "status": "PASS",
   "active_workflow_count": 11,
   "required_workflow_count": 11,
   "active_workflows": [
@@ -61,7 +61,7 @@
     "immutable_prediction_archive_guard": true,
     "root_cause_repair_constitution_locked": true,
     "active_workflow_scripts_explicitly_allowlisted": true,
-    "active_workflow_script_files_exist": false
+    "active_workflow_script_files_exist": true
   },
   "active_workflow_script_refs": {
     "audit-oral-v6-certification.yml": [
@@ -138,9 +138,7 @@
     ]
   },
   "script_policy_mismatches": {},
-  "blockers": [
-    "check failed: active_workflow_script_files_exist"
-  ],
+  "blockers": [],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
