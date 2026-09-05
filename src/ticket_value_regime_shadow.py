@@ -86,7 +86,9 @@ def classify_ticket_policy(race,q,analysis):
       "anti_trigami_rule":"券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
       "axis_fail_rule":"軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
       "intrusion_replacement_rule":"低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-      "large_field_warning":"14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+      "pass_rescue_rule":"PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+      "non_manbaken_target":"実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+      "data_limit_note":"過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
       "production_override_applied":False,
       "promotion_rule":"独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
       "market_isolation":"NO_ODDS_OR_POPULARITY_USED"
