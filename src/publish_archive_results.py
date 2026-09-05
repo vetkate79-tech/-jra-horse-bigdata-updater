@@ -33,7 +33,8 @@ def main():
     for r in rr:by[(str(r.get('course','')).replace('競馬場',''),i(r.get('race_no')))].append(r)
     payout={}
     for r in pp:
-        if '三連複' in str(r.get('bet_type','')):
+        bet=str(r.get('bet_type',''))
+        if '三連複' in bet or '3連複' in bet:
             payout[str(r.get('race_id',''))]=r.get('payout_per_100_yen') or ''
     out=[]
     for p in pred.get('races') or []:
