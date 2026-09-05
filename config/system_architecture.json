@@ -83,6 +83,7 @@
       "merge_active_elite_into_catalog.py"
     ],
     "jra-market-timing.yml": [
+      "collect_current_market_odds.py",
       "market_timing_gate.py"
     ],
     "post-jra-meeting-update.yml": [
@@ -103,6 +104,7 @@
       "oral_operational_layer.py"
     ],
     "register-upcoming-new-horses.yml": [
+      "audit_horse_master_uniqueness.py",
       "build_horse_base_catalog.py",
       "build_race_week_pre_race_features.py",
       "check_horse_master_completion.py",
@@ -162,7 +164,9 @@
       "replacing an existing interaction with a different interaction",
       "simplifying or expanding the visible format"
     ],
-    "canonical_replay_format_ref": "80f39c6349d4581dd6434defa7774692dd7f54fe:docs/replay/index.html",
-    "explicit_user_override_required": true
+    "canonical_replay_format_ref": "src/build_replay_page.py",
+    "explicit_user_override_required": true,
+    "direct_page_edit_policy": "PROHIBITED_FOR_NORMAL_FIXES",
+    "replay_generation_rule": "docs/replay/index.html must be generated from src/build_replay_page.py; normal fixes change the canonical generator/data source, not the generated HTML."
   }
 }
