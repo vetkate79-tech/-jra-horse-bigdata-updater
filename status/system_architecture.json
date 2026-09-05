@@ -63,6 +63,8 @@
     "live_seal_history_preserved": true,
     "score_history_preserved": true,
     "pdca_history_preserved": true,
+    "jst_date_rollover_display_guard": true,
+    "active_runtime_has_no_fixed_weekend_date": true,
     "root_cause_repair_constitution_locked": true,
     "active_workflow_scripts_explicitly_allowlisted": true,
     "active_workflow_script_files_exist": true
