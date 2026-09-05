@@ -1,6 +1,8 @@
 {
   "created_at": "2026-09-06T00:46:00+09:00",
+  "updated_at": "2026-09-06T01:00:00+09:00",
   "mode": "AUGUST_ITERATIVE_PDCA_SHADOW_ONLY",
+  "production_changed": false,
   "data_split": {
     "development": [
       "2026-08-01",
@@ -9,52 +11,173 @@
       "2026-08-09",
       "2026-08-15"
     ],
-    "final_unseen": [
-      "2026-08-16"
-    ],
-    "external_holdout": [
+    "checkpoint": [
+      "2026-08-16",
       "2026-08-22",
       "2026-08-23"
+    ],
+    "final_external": [
+      "2026-08-29",
+      "2026-08-30"
     ]
   },
-  "axis_findings": {
-    "development_races": 180,
-    "original_axis_top3_rate_pct": 45,
-    "key_observation": "現行の能力1位軸は、事前スコア差・不確実性・出走数が良くても3着内成功を十分に分離できていない。",
-    "refined_gate_candidate": {
-      "rule": "能力1位を基本維持。3着内残存Challengerの差が3〜10、候補3位以内、元軸出走数4以下、能力差12以下の時だけShadowで変更。",
-      "development_axis_top3_rate_pct": 48.33,
-      "development_net_gain_races": 6,
-      "final_unseen_0816_net_gain_races": 0,
-      "holdout_0822_net_gain_races": 0,
-      "holdout_0823_net_gain_races": 2,
-      "promotion_status": "SHADOW_ONLY"
-    }
+  "objectives": {
+    "axis_primary": "軸は1着率ではなく3着内残存率を最上位KPIとする",
+    "partner_primary": "軸生存時に相手2頭を捕捉できる確率を高める",
+    "ticket_rule": "軸飛び保険だけを理由に軸なし点数を増やさない",
+    "value_rule": "万馬券捕捉を維持しつつ、万馬券除外ROI 80〜90%の安定を目標とする"
   },
-  "partner_findings": {
-    "key_observation": "候補外から来る馬は事前7〜10位に集中。特に9位馬は来た群でscore/recentが高くuncertaintyが低い。",
-    "replacement_test": "上位6頭の誰かを低順位馬で機械置換すると候補完全捕捉率が悪化したため不採用。",
-    "intrusion_flag": {
-      "policy": "上位候補は保持し、低順位侵入は別枠フラグ。買い目数の自動増加は禁止。",
-      "development_base_complete_rate_pct": 27.22,
-      "development_segmented_plus_rate_pct": 38.89,
-      "development_gain_races": 21,
-      "development_flags": 105,
-      "development_useful_flags": 30,
-      "development_precision_pct": 28.57,
-      "priority_segments": [
-        "短距離全体",
-        "ダート中短距離",
-        "芝中距離"
-      ],
-      "holdout_note": "8/16 +1R、8/22 ±0R、8/23 +1R。外部検証の改善幅は小さいため本番昇格不可。"
-    }
+  "axis_pdca": {
+    "development_races": 180,
+    "baseline_top3_rate_pct": 45,
+    "failure_success_separation": {
+      "observation": "能力1位のスコア差・出走数・uncertainty単体は3着内成功/失敗を十分に分離しない",
+      "gap_1_4_axis_top3_pct": 51.7,
+      "gap_4_plus_axis_top3_pct": 38,
+      "note": "能力差が大きい=3着内軸が安全、とはならなかった"
+    },
+    "result_position_learning": {
+      "front_axis_top3_pct": 57.1,
+      "midfield_axis_top3_pct": 42.1,
+      "back_axis_top3_pct": 28.2,
+      "conclusion": "位置取り再現性を軸耐久評価へ入れる価値が高い"
+    },
+    "iterations": [
+      {
+        "name": "naive_survival_max",
+        "result": "REJECTED",
+        "reason": "残存スコア最大馬へ頻繁に乗り換えると、元能力1位の絶対能力を捨てすぎる"
+      },
+      {
+        "name": "broad_conservative_gate",
+        "result": "REJECTED",
+        "reason": "条件が広すぎ、検証済み条件と実装が一致しなかった"
+      },
+      {
+        "name": "R2_conservative_gate",
+        "result": "SHADOW_KEEP",
+        "rule": "元軸uncertainty>=0.70、代替軸は能力上位3頭内、残存スコア差1〜10の時だけ変更",
+        "development_top3_pct": 46.67,
+        "development_changes": 8,
+        "checkpoint": {
+          "2026-08-16": {
+            "baseline": 22.22,
+            "challenger": 22.22
+          },
+          "2026-08-22": {
+            "baseline": 47.22,
+            "challenger": 47.22
+          },
+          "2026-08-23": {
+            "baseline": 58.33,
+            "challenger": 63.89
+          }
+        },
+        "final_external": {
+          "2026-08-29": {
+            "baseline": 41.67,
+            "challenger": 41.67,
+            "changes": 1
+          },
+          "2026-08-30": {
+            "baseline": 61.11,
+            "challenger": 61.11,
+            "changes": 0
+          }
+        },
+        "conclusion": "改善幅は小さいが外部確認で悪化なし。Production昇格ではなく保守的Shadowとして継続"
+      }
+    ]
+  },
+  "partner_pdca": {
+    "development_races": 180,
+    "key_failure": "相手取り逃がしは事前順位7〜10位からの3着侵入が大きい",
+    "low_rank_profile": {
+      "rank9_actual_vs_nonactual": {
+        "score": [
+          30.026,
+          24.522
+        ],
+        "recent_form": [
+          0.471,
+          0.379
+        ],
+        "uncertainty": [
+          0.427,
+          0.603
+        ]
+      },
+      "conclusion": "特に9位付近は近走・再現性・不確実性の組合せで侵入候補を分けられる余地"
+    },
+    "result_position_learning": {
+      "missed_rate_by_actual_position_pct": {
+        "front": 30.3,
+        "midfield": 35.5,
+        "back": 43.1
+      },
+      "conclusion": "後方から差し込む相手ほど現行候補が落としやすい"
+    },
+    "context_patterns": {
+      "low_rank_top3_entry_rate_pct": {
+        "overall": 52,
+        "芝短距離_上位差大": 71.4,
+        "ダート中短距離_上位差大": 77.8,
+        "ダート中距離_上位差大": 31.8
+      }
+    },
+    "iterations": [
+      {
+        "name": "replace_top6_with_low_rank",
+        "result": "REJECTED",
+        "reason": "上位候補を機械的に1頭外すと候補完全捕捉率が悪化"
+      },
+      {
+        "name": "always_on_intrusion_flag",
+        "result": "REJECTED",
+        "reason": "候補捕捉は上がるが誤フラグが多く点数膨張につながる"
+      },
+      {
+        "name": "short_midshort_segmented_intrusion",
+        "result": "SHADOW_RESEARCH_ONLY",
+        "development": {
+          "base_complete_pct": 27.22,
+          "plus_complete_pct": 37.22,
+          "gain_races": 18,
+          "flags": 95,
+          "flag_precision_pct": 29.47
+        },
+        "checkpoint_note": "8/16は改善、8/22は改善なし、8/23は小幅改善",
+        "final_external": {
+          "2026-08-29": {
+            "flags": 19,
+            "useful": 0,
+            "precision_pct": 0,
+            "complete_before_pct": 19.44,
+            "complete_after_pct": 19.44
+          },
+          "2026-08-30": {
+            "flags": 18,
+            "useful": 5,
+            "precision_pct": 27.78,
+            "complete_before_pct": 33.33,
+            "complete_after_pct": 41.67
+          }
+        },
+        "conclusion": "日差が大きく本番昇格不可。買い目追加ではなく結果学習用フラグとして継続"
+      }
+    ]
+  },
+  "data_quality_findings": {
+    "ranked_snapshot_limit": "過去封印ranked_snapshotは上位10頭まで。これを実頭数として扱わない",
+    "historical_style_gap": "一部の過去封印では事前running_styleがUNKNOWNのため、結果コーナー位置との展開一致は判定不能",
+    "rule": "事前根拠が無い場合はMATCH/MISMATCHを捏造せずUNSCORABLE扱い"
   },
   "governance": [
-    "結果・払戻は予想生成後のPDCAにのみ使用",
-    "サイト・Production本体は変更しない",
-    "軸飛び対策のためだけの点数増加は禁止",
-    "低順位侵入フラグは候補入替材料であり自動購入追加ではない",
-    "本番昇格は独立holdoutで再現性確認後"
+    "結果・払戻・コーナー位置は予想生成後のPDCAにのみ使用",
+    "サイト表示は変更しない",
+    "Production本体は自動変更しない",
+    "改善案はShadowで独立検証してから昇格候補化",
+    "軸飛び対策だけの軸なし点数増加は禁止",
+    "相手侵入フラグは自動購入追加ではない"
   ]
 }
