@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-06T03:56:29+09:00",
+  "updated_at": "2026-09-06T04:05:13+09:00",
   "purpose": "管理専用。公開画面には出さない詳細KPI・回収率・条件別分析・Challenger候補。",
   "governance": {
     "production_auto_mutation": false,
@@ -18,12 +18,10 @@
   },
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_2_SHADOW__TOP3_SURVIVAL_R2_CHALLENGER",
-    "snapshot_time": "2026-09-06T03:56:29+09:00",
-    "display_date": "2026-09-06",
-    "actual_today_jst": "2026-09-06",
-    "total_races": 69,
-    "buy_races": 58,
-    "pass_races": 6,
+    "snapshot_time": "2026-09-06T04:05:13+09:00",
+    "total_races": 33,
+    "buy_races": 30,
+    "pass_races": 3,
     "scored_races": 31,
     "roi": 141.04,
     "stake_amount": 24100,
@@ -31,6 +29,8 @@
     "profit_amount": 9890,
     "hit_rate": 28.57,
     "hits": 8,
+    "daily_budget": 10000,
+    "remaining_budget": 10000,
     "roi_ex_top": 77.22,
     "axis_survival": 51.61,
     "third_column_miss_rate": 25.0,
