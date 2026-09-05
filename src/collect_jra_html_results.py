@@ -18,7 +18,7 @@ PAYOUTS=DATA/f"race_payouts_{YEAR}.csv";CONTEXT=DATA/f"race_context_{YEAR}.csv"
 MONTH=re.compile(rf"pw01skl10{YEAR}(\d{{2}})/[A-F0-9]{{2}}")
 DAY=re.compile(r"pw01srl\d+/[A-F0-9]{2}")
 RACE=re.compile(r"pw01sde\d+/[A-F0-9]{2}")
-META=re.compile(r"pw01sde10(?P<course>\d{2})(?P<year>\d{4})(?P<meeting>\d{2})(?P<day>\d{2})(?P<race>\d{2})(?P<date>\d{8})")
+META=re.compile(r"pw01sde(?:10|01)(?P<course>\d{2})(?P<year>\d{4})(?P<meeting>\d{2})(?P<day>\d{2})(?P<race>\d{2})(?P<date>\d{8})")
 COURSES={"01":"札幌","02":"函館","03":"福島","04":"新潟","05":"東京","06":"中山","07":"中京","08":"京都","09":"阪神","10":"小倉"}
 
 def request(cname,post=False,retries=5):
