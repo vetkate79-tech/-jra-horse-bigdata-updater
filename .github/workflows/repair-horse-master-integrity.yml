@@ -2,10 +2,6 @@ name: Repair horse master integrity
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/repair-horse-master-integrity.yml'
 
 permissions:
   contents: write
