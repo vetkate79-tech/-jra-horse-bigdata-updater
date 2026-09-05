@@ -211,24 +211,36 @@ boot();
 
 async function loadPdcaReport(){
   try{
-    const r=await fetch('../data/erp-pdca-2026-09-05.json',{cache:'no-store'});
+    const r=await fetch('../data/live_pdca.json',{cache:'no-store'});
     if(!r.ok)throw new Error('HTTP '+r.status);
-    const d=await r.json(),s=d.summary||{},v=d.validation_plan||{};
-    qs('#pdcaReportStatus').textContent=d.status||'READY';
-    qs('#pdcaReportSummary').innerHTML=`
-      <div class="report-lead"><strong>${esc(d.title||'実運用分析')}</strong><p>${esc(s.scope||'')}</p></div>
-      <div class="report-note"><b>未見検証</b><span>${esc(v.immediate_holdout||'')}</span></div>
-      <div class="report-note"><b>固定ルール</b><span>${esc(s.immutable_rule||'')}</span></div>`;
-    qs('#pdcaFindings').innerHTML=(d.findings||[]).map(x=>`<article class="pdca-item"><div class="pdca-item-head"><strong>${esc(x.id)} ${esc(x.title)}</strong><span>${esc(x.status||'')}</span></div><p><b>観測</b> ${esc(x.observation)}</p><p><b>リスク</b> ${esc(x.risk)}</p><p><b>対応</b> ${esc(x.current_action)}</p></article>`).join('');
-    qs('#pdcaImprovements').innerHTML=(d.improvement_candidates||[]).map(x=>`<article class="pdca-item"><div class="pdca-item-head"><strong>P${esc(x.priority)} ${esc(x.name)}</strong></div><p><b>方法</b> ${esc(x.method)}</p><p><b>狙い</b> ${esc(x.expected_effect)}</p><p><b>検証</b> ${esc(x.validation)}</p><p><b>採用条件</b> ${esc(x.promotion_gate)}</p></article>`).join('');
-    qs('#pdcaMetrics').innerHTML=(v.metrics||[]).map(x=>`<span>${esc(x)}</span>`).join('');
-    qs('#pdcaGovernance').innerHTML=[...(v.decomposition||[]),...(v.governance||[])].map(x=>`<div class="pdca-rule">${esc(x)}</div>`).join('');
+    const d=await r.json();
+    qs('#pdcaReportStatus').textContent=d.mode||'POST_RESULT_PDCA_ONLY';
+    const scored=Number(d.scored_race_count||0),pending=Number(d.pending_race_count||0);
+    qs('#pdcaReportSummary').innerHTML=
+      `<div class="report-lead"><strong>最新の実運用PDCA</strong><p>結果接続 ${scored}R / 結果待ち ${pending}R</p></div>`+
+      `<div class="report-note"><b>学習目標</b><span>${esc(d.axis_learning_objective||'TOP3_SURVIVAL_FIRST')}</span></div>`+
+      `<div class="report-note"><b>固定ルール</b><span>${esc(d.governance||'結果後の診断は封印済み予想を書き換えない')}</span></div>`;
+    const fc=d.failure_counts||{},dc=d.detailed_failure_counts||{};
+    const findings=[
+      ['軸飛び',fc.axis_outside_top3||0],
+      ['軸生存・三連複漏れ',fc.axis_survived_but_trio_missed||0],
+      ['軸＋三連複的中',fc.axis_and_trio_hit||0],
+      ['相手候補漏れ',dc.OPPONENT_CANDIDATE_MISS||0],
+      ['買い目変換漏れ',dc.TICKET_CONVERSION_MISS||0]
+    ];
+    qs('#pdcaFindings').innerHTML=findings.map(x=>`<article class="pdca-item"><div class="pdca-item-head"><strong>${esc(x[0])}</strong><span>${esc(x[1])}R</span></div></article>`).join('');
+    qs('#pdcaImprovements').innerHTML=(d.recommended_actions||[]).map((x,i)=>`<article class="pdca-item"><div class="pdca-item-head"><strong>P${i+1}</strong></div><p>${esc(x)}</p></article>`).join('')||'<p class="muted">結果接続後に自動生成</p>';
+    qs('#pdcaMetrics').innerHTML=['軸3着内率','三連複的中率','相手候補漏れ','買い目変換漏れ'].map(x=>`<span>${esc(x)}</span>`).join('');
+    qs('#pdcaGovernance').innerHTML=[
+      '封印済み予想は結果後に変更しない',
+      'PDCAは診断専用でproductionを自動上書きしない',
+      '過去PDCAは日付・予想ハッシュ別historyへ保存'
+    ].map(x=>`<div class="pdca-rule">${esc(x)}</div>`).join('');
   }catch(e){
     qs('#pdcaReportStatus').textContent='DATA ERROR';
-    qs('#pdcaReportSummary').innerHTML='<p class="muted">PDCA詳細レポートを読み込めませんでした。</p>';
+    qs('#pdcaReportSummary').innerHTML='<p class="muted">最新PDCAデータを読み込めませんでした。</p>';
   }
 }
-loadPdcaReport();
 
 async function loadComparisonReport(){
   try{
