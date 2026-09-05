@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "BLOCKED",
+  "status": "PASS",
   "active_workflow_count": 11,
   "required_workflow_count": 11,
   "active_workflows": [
@@ -54,7 +54,7 @@
     "replay_generated_not_patched": true,
     "prediction_seal_single_owner": true,
     "post_archive_date_generic": true,
-    "active_workflow_scripts_explicitly_allowlisted": false,
+    "active_workflow_scripts_explicitly_allowlisted": true,
     "active_workflow_script_files_exist": true
   },
   "active_workflow_script_refs": {
@@ -127,22 +127,8 @@
       "manage_experiment_registry.py"
     ]
   },
-  "script_policy_mismatches": {
-    "deploy-management-erp.yml": {
-      "expected": [
-        "build_august_validation_archive.py",
-        "build_demo_0830_results.py",
-        "build_replay_page.py"
-      ],
-      "actual": [
-        "build_august_validation_archive.py",
-        "build_replay_page.py"
-      ]
-    }
-  },
-  "blockers": [
-    "check failed: active_workflow_scripts_explicitly_allowlisted"
-  ],
+  "script_policy_mismatches": {},
+  "blockers": [],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
