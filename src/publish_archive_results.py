@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import csv,json,os
+from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from collections import defaultdict
+
+TZ=ZoneInfo('Asia/Tokyo')
+target=os.getenv('TARGET_DATE') or datetime.now(TZ).date().isoformat()
+year=target[:4]
+RES=Path(f'data/race_results_html_{year}.csv')
+PAY=Path(f'data/race_payouts_{year}.csv')
+PRED=Path('docs/data/live_predictions_sealed.json')
+OUT=Path(f'docs/data/today-results-{target}.json')
+
+def i(v):
+    try:return int(float(str(v).strip()))
+    except:return None
+
+def combo(xs):
+    return '-'.join(map(str,sorted(int(x) for x in xs)))
+
+def readcsv(p):
+    if not p.exists():return []
+    with p.open(encoding='utf-8-sig',newline='') as f:return list(csv.DictReader(f))
+
+def main():
+    rr=[r for r in readcsv(RES) if str(r.get('race_date'))==target]
+    pp=[r for r in readcsv(PAY) if str(r.get('race_date'))==target]
+    pred=json.loads(PRED.read_text(encoding='utf-8')) if PRED.exists() else {'races':[]}
+    by=defaultdict(list)
+    for r in rr:by[(str(r.get('course','')).replace('競馬場',''),i(r.get('race_no')))].append(r)
+    payout={}
+    for r in pp:
+        if '三連複' in str(r.get('bet_type','')):
+            payout[str(r.get('race_id',''))]=r.get('payout_per_100_yen') or ''
+    out=[]
+    for p in pred.get('races') or []:
+        if p.get('date')!=target:continue
+        k=(str(p.get('track','')).replace('競馬場',''),i(p.get('race_no')))
+        xs=by.get(k,[])
+        top=sorted([x for x in xs if i(x.get('finish_position')) in (1,2,3)],key=lambda x:i(x.get('finish_position')) or 99)
+        if len(top)!=3:continue
+        nums=[str(i(x.get('horse_no'))) for x in top]
+        actual=combo(nums)
+        a=p.get('analysis') or {}
+        tickets=set(a.get('trio_tickets') or [])
+        hit=actual in tickets
+        rid=str(top[0].get('race_id') or '')
+        py=payout.get(rid,'')
+        out.append({
+            'date':target,'track':k[0],'race_no':k[1],
+            'race_name':p.get('race_name') or top[0].get('race_name') or '',
+            'top3':'－'.join(nums),
+            'top3_rows':[{'finish':j+1,'horse_no':nums[j],'horse_name':top[j].get('horse_name') or ''} for j in range(3)],
+            'axis_horse_no':str((a.get('axis') or {}).get('horse_no') or ''),
+            'axis_horse_name':str((a.get('axis') or {}).get('horse_name') or ''),
+            'trio_hit':hit,
+            'trio_payout':(f"{int(py):,}円" if str(py).isdigit() else ('払戻確認中' if hit else '')),
+            'source':top[0].get('source_url') or ''
+        })
+    payload={'date':target,'summary':{'checked':len(out),'complete':len(out)>=36},'races':out,'source':'JRA_OFFICIAL_RESULTS_DB'}
+    OUT.parent.mkdir(parents=True,exist_ok=True)
+    OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
+    print(json.dumps(payload['summary'],ensure_ascii=False))
+if __name__=='__main__':main()
