@@ -75,14 +75,24 @@ jobs:
           COMPLETE_DATES: ${{ steps.state.outputs.dates }}
         run: |
           python - <<'PY'
-          import os, subprocess
+          import hashlib, os, subprocess
+          from pathlib import Path
+
           dates=[x.strip() for x in os.environ.get('COMPLETE_DATES','').split(',') if x.strip()]
           for raw in dates:
               date=raw
               if len(raw)==8 and raw.isdigit():
                   date=f'{raw[:4]}-{raw[4:6]}-{raw[6:8]}'
+
+              archive=Path(f'docs/data/prediction-archive-{date}.json')
+              before=hashlib.sha256(archive.read_bytes()).hexdigest() if archive.exists() else None
+
               env=dict(os.environ,TARGET_DATE=date)
               subprocess.run(['python','src/publish_archive_results.py'],check=True,env=env)
+
+              after=hashlib.sha256(archive.read_bytes()).hexdigest() if archive.exists() else None
+              if before is not None and after != before:
+                  raise RuntimeError(f'immutable prediction archive changed for {date}: {before} -> {after}')
           PY
       - name: Merge latest runners into internal horse catalog
         if: steps.state.outputs.updated == 'true'
