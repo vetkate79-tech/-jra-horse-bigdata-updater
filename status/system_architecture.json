@@ -127,17 +127,6 @@
     ]
   },
   "script_policy_mismatches": {
-    "deploy-management-erp.yml": {
-      "expected": [
-        "build_august_validation_archive.py",
-        "build_demo_0830_results.py"
-      ],
-      "actual": [
-        "build_august_validation_archive.py",
-        "build_demo_0830_results.py",
-        "build_replay_page.py"
-      ]
-    },
     "jra-market-timing.yml": {
       "expected": [
         "market_timing_gate.py"
