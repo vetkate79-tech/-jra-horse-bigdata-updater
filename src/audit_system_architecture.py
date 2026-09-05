@@ -27,7 +27,7 @@ def main():
  checks={}
  checks['canonical_flow_complete']=cfg.get('production_flow')==[
    'JRA_OFFICIAL_DATA_INGEST','HORSE_MASTER_UPDATE','RACE_WEEK_EXPANSION','PURE_PREDICTION','PREDICTION_SEAL','MARKET_EV_GATE','FINAL_TICKETS','RESULT_INGEST','SCORING','PDCA','HORSE_MASTER_RESULT_MERGE']
- checks['horse_writer_serialized']=all('group: horse-data-writes' in text(x) for x in ('post-jra-meeting-update.yml','register-upcoming-new-horses.yml','horse-master-maintenance.yml'))
+ checks['horse_writer_serialized']=all('group: horse-data-writes' in text(x) for x in ('post-jra-meeting-update.yml','register-upcoming-new-horses.yml','horse-master-maintenance.yml','repair-horse-master-integrity.yml'))
  checks['market_independent_group']='group: market-status-writes' in text('jra-market-timing.yml')
  checks['dictionary_independent_group']='group: site-dictionary-writes' in text('build-word-dictionary.yml')
  checks['pages_independent_group']='group: pages' in text('deploy-management-erp.yml')
