@@ -110,6 +110,17 @@ def main():
    and 'archive count mismatch' in expire
    and 'weekly_runner_archive/*.json' in post
  )
+ runner_collector=Path('src/collect_upcoming_runner_details.py').read_text(encoding='utf-8') if Path('src/collect_upcoming_runner_details.py').exists() else ''
+ pre_feature_builder=Path('src/build_race_week_pre_race_features.py').read_text(encoding='utf-8') if Path('src/build_race_week_pre_race_features.py').exists() else ''
+ register_week=text('register-upcoming-new-horses.yml')
+ checks['race_week_refresh_history_preserved']=(
+   'weekly_runner_history' in runner_collector
+   and 'archive_existing_weekly' in runner_collector
+   and 'pre_race_feature_history' in pre_feature_builder
+   and 'archive_existing_features' in pre_feature_builder
+   and 'weekly_runner_history' in register_week
+   and 'pre_race_feature_history' in register_week
+ )
  checks['live_seal_history_preserved']=(
    'prediction-seal-history' in builder
    and '_archive_seal_payload' in builder
