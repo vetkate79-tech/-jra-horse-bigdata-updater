@@ -152,8 +152,8 @@ async function loadComparisonReport(){
     qs('#comparisonReportContent').innerHTML=`<div class="report-note"><b>依頼内容</b><span>${esc(c.request||'')}</span></div><div class="report-note"><b>結果</b><span>${esc(c.result||'')}</span></div><div class="report-note"><b>考察</b><span>${esc(c.consideration||'')}</span></div><div class="report-note"><b>自動発火</b><span>${esc(d.trigger?.condition||'')}／${esc(d.trigger?.scheduled_runs||'')}</span></div>`;
     qs('#comparisonRaceBody').innerHTML=(d.race_details||[]).map(x=>`<tr><td><b>${esc(x.track)} ${esc(x.race_no)}R</b></td><td>${esc(x.old_axis||'-')}</td><td>${esc(x.new_axis||'-')}</td><td>${esc((x.actual_top3||[]).join('-'))}</td><td>${x.old_axis_top3?'軸○':'軸×'} / ${x.old_trio_hit?'的中':'外れ'}</td><td>${x.new_axis_top3?'軸○':'軸×'} / ${x.new_trio_hit?'的中':'外れ'}</td></tr>`).join('');
   }catch(e){
-    qs('#comparisonReportStatus').textContent='9/6全結果待ち';
-    qs('#comparisonReportContent').innerHTML='<div class="report-note"><b>依頼内容</b><span>9/6全レース終了後、新型と旧型を同じJRA公式結果で比較する。</span></div><div class="report-note"><b>状態</b><span>ERP Workflowが公式36レースの1〜3着確定を確認後、自動生成します。</span></div>';
+    qs('#comparisonReportStatus').textContent='比較対象の全結果待ち';
+    qs('#comparisonReportContent').innerHTML='<div class="report-note"><b>依頼内容</b><span>比較対象開催の終了後、新型と旧型を同じJRA公式結果で比較する。</span></div><div class="report-note"><b>状態</b><span>ERP Workflowが対象レースの1〜3着確定を確認後、自動生成します。</span></div>';
     qs('#comparisonRaceBody').innerHTML='<tr><td colspan="6" class="muted">全レース結果確定後に自動掲載</td></tr>';
   }
 }
