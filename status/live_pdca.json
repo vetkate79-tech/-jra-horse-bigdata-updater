@@ -1,17 +1,40 @@
 {
   "mode": "POST_RESULT_PDCA_ONLY",
-  "source_prediction_hash_sha256": "10d4f0ef6464751deded45e5aa0fc176244f62053a8c6f415aa17a4b8d67348d",
+  "source_prediction_hash_sha256": "3279fb824bf9bdddb91a18dfa8ee71a66555074b0c46fecf24042401bef30638",
   "sealed_predictions_mutated": false,
-  "scored_race_count": 0,
-  "pending_race_count": 0,
+  "scored_race_count": 31,
+  "pending_race_count": 33,
   "failure_counts": {
-    "axis_outside_top3": 0,
-    "axis_survived_but_trio_missed": 0,
-    "axis_and_trio_hit": 0
+    "axis_outside_top3": 15,
+    "axis_survived_but_trio_missed": 7,
+    "axis_and_trio_hit": 6
   },
-  "by_decision": {},
+  "by_decision": {
+    "BUY": {
+      "races": 17,
+      "axis_1st": 1,
+      "axis_2nd_3rd": 7,
+      "axis_out": 9,
+      "axis_top3_rate_pct": 47.06
+    },
+    "CAUTION": {
+      "races": 11,
+      "axis_1st": 2,
+      "axis_2nd_3rd": 3,
+      "axis_out": 6,
+      "axis_top3_rate_pct": 45.45
+    },
+    "PASS": {
+      "races": 3,
+      "axis_1st": 2,
+      "axis_2nd_3rd": 1,
+      "axis_out": 0,
+      "axis_top3_rate_pct": 100.0
+    }
+  },
   "recommended_actions": [
-    "結果接続待ち。予想ロジックを結果なしで変更しない"
+    "優先課題: 買い目拡張より軸選定・軸耐久性の改善を優先",
+    "相手役割分散・3着侵入・相手内完結の取りこぼしを個別監査"
   ],
   "governance": "PDCA output is diagnostic only; it does not automatically rewrite the certified production model."
 }
