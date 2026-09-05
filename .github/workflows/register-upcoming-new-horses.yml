@@ -14,7 +14,7 @@ on:
     - cron: '5 1 * * 6'   # Sat 10:05 JST
     - cron: '20 1 * * 6'  # Sat 10:20 JST retry
     - cron: '5 15 * * 6'  # Sun 00:05 JST: drop completed Saturday rows
-    - cron: '5 15 * * 0'  # Mon 00:05 JST: clear completed Sunday rows
+    - cron: '5 15 * * 0'  # Mon 00:05 JST: archive completed Sunday rows and refresh active set
   workflow_dispatch:
   push:
     branches: [main]
