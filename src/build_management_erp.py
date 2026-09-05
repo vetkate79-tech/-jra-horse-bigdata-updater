@@ -154,6 +154,8 @@ def build_group(rows, field):
             "profit_yen":ret-stake,
             "roi":percent(ret,stake),
         })
+    if field=="race_no":
+        return sorted(out, key=lambda x:(iv(x["value"]) is None, iv(x["value"]) or 999))
     return sorted(out, key=lambda x:(-x["scored_races"], x["value"]))
 
 def main():
