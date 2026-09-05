@@ -42,7 +42,7 @@ def main():
    and "ref: main" in deploy
  )
  checks['validation_read_only']='contents: read' in text('validate-jra-model.yml') and 'contents: write' not in text('validate-jra-model.yml')
- checks['repair_not_scheduled']='schedule:' not in text('repair-horse-master-integrity.yml')
+ checks['repair_not_scheduled']=('schedule:' not in text('repair-horse-master-integrity.yml') and 'push:' not in text('repair-horse-master-integrity.yml') and 'workflow_dispatch:' in text('repair-horse-master-integrity.yml'))
  seal=text('race-week-prediction-seal.yml')
  builder=Path('src/build_live_sealed_predictions.py').read_text(encoding='utf-8') if Path('src/build_live_sealed_predictions.py').exists() else ''
  market=Path('src/market_timing_gate.py').read_text(encoding='utf-8') if Path('src/market_timing_gate.py').exists() else ''
