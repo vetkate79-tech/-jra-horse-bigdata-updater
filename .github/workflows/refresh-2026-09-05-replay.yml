@@ -1,0 +1,55 @@
+name: Refresh 2026-09-05 replay results
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-2026-09-05-replay.yml'
+      - 'src/collect_jra_recent_completed.py'
+      - 'src/publish_archive_results.py'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Collect official 9/5 completed meeting
+        env:
+          TARGET_DATES: '20260905'
+          DISCOVERY_MAX_PAGES: '240'
+        run: python src/collect_jra_recent_completed.py
+      - name: Publish 9/5 replay result JSON
+        env:
+          TARGET_DATE: '2026-09-05'
+        run: python src/publish_archive_results.py
+      - name: Verify replay result completeness
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('docs/data/today-results-2026-09-05.json',encoding='utf-8'))
+          n=len(p.get('races',[]))
+          print('published races',n)
+          if n != 36:
+              raise SystemExit(f'expected 36 races, got {n}')
+          bad=[r for r in p['races'] if not r.get('top3_rows') or len(r['top3_rows'])!=3]
+          if bad: raise SystemExit(f'incomplete top3 rows: {len(bad)}')
+          print('replay verification PASS')
+          PY
+      - name: Commit verified 9/5 replay results
+        run: |
+          git config user.name 'jra-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/race_results_html_2026.csv data/race_payouts_2026.csv data/race_context_2026.csv status/jra_post_meeting_update.json docs/data/today-results-2026-09-05.json
+          git diff --cached --quiet || git commit -m "replay: publish complete verified 9/5 results"
+          git pull --rebase --autostash origin main
+          git push
