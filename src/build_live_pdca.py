@@ -56,6 +56,11 @@ def main():
       'axis_survived_but_trio_missed':sum(1 for r in races if r.get('axis_grade') in ('HIT','PLACE') and r.get('decision')!='PASS' and not r.get('trio_hit')),
       'axis_and_trio_hit':sum(1 for r in races if r.get('axis_grade') in ('HIT','PLACE') and r.get('trio_hit'))
     }
+    failure_taxonomy={
+      'AXIS_MISS':sum(1 for r in races if r.get('axis_grade')=='MISS'),
+      'AXIS_OK_OPPONENT_MISS':sum(1 for r in races if r.get('axis_grade') in ('HIT','PLACE') and r.get('decision')!='PASS' and not r.get('trio_hit')),
+      'FULL_SUCCESS':sum(1 for r in races if r.get('trio_hit')),
+    }
     actions=[]
     if failure_counts['axis_outside_top3']>failure_counts['axis_survived_but_trio_missed']:
         actions.append('優先課題: 買い目拡張より軸選定・軸耐久性の改善を優先')
@@ -63,7 +68,7 @@ def main():
         actions.append('相手役割分散・3着侵入・相手内完結の取りこぼしを個別監査')
     if not races:actions.append('結果接続待ち。予想ロジックを結果なしで変更しない')
     scenario_quality=Counter((x.get('audit') or {}).get('prediction_quality') for x in scenario_audits)
-    payload={'mode':'POST_RESULT_PDCA_ONLY','source_prediction_hash_sha256':(d.get('summary') or {}).get('source_prediction_hash_sha256'),'sealed_predictions_mutated':False,'scored_race_count':len(races),'pending_race_count':len(d.get('pending') or []),'failure_counts':failure_counts,'by_decision':by_decision,'recommended_actions':actions,'axis_learning_objective':'TOP3_SURVIVAL_FIRST','axis_scenario_audits':scenario_audits,'axis_scenario_quality_counts':dict(scenario_quality),'governance':'PDCA output is diagnostic only; it does not automatically rewrite the certified production model.'}
+    payload={'mode':'POST_RESULT_PDCA_ONLY','source_prediction_hash_sha256':(d.get('summary') or {}).get('source_prediction_hash_sha256'),'sealed_predictions_mutated':False,'scored_race_count':len(races),'pending_race_count':len(d.get('pending') or []),'failure_counts':failure_counts,'by_decision':by_decision,'recommended_actions':actions,'axis_learning_objective':'TOP3_SURVIVAL_FIRST','failure_taxonomy':failure_taxonomy,'axis_scenario_audits':scenario_audits,'axis_scenario_quality_counts':dict(scenario_quality),'governance':'PDCA output is diagnostic only; it does not automatically rewrite the certified production model.'}
     OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True)
     txt=json.dumps(payload,ensure_ascii=False,indent=2);OUT.write_text(txt,encoding='utf-8');STATUS.write_text(txt,encoding='utf-8');print(json.dumps(payload,ensure_ascii=False))
 if __name__=='__main__':main()
