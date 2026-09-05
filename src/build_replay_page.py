@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 AUGUST=Path("docs/data/august-validation-archive.json")
-SEPT=Path("docs/data/replay-2026-09-05.json")
+LIVE=Path("docs/data/live_predictions_sealed.json")
 OUT=Path("docs/replay/index.html")
 
 CSS=r""":root{--bg:#f4f6f3;--paper:#fff;--ink:#101814;--muted:#69756e;--line:#dce3de;--green:#08704a;--soft:#e9f4ee;--lock:#edf0ee;--result:#fff4dc;--win:#e5f4eb;--place:#e8f2fb;--miss:#fbefed}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;padding-bottom:74px}.top{height:54px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 14px;background:rgba(244,246,243,.96);border-bottom:1px solid var(--line)}.top a{text-decoration:none;color:var(--ink);font-weight:900}.wrap{max-width:920px;margin:auto;padding:18px 14px 30px}.hero small{font-size:10px;color:var(--green);font-weight:900;letter-spacing:.1em}.hero h1{font-size:27px;margin:7px 0 8px}.hero p,.notice{font-size:12px;line-height:1.7;color:var(--muted)}.notice{margin:14px 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.months,.dates{display:flex;gap:8px;overflow:auto;margin:16px 0 10px}.months button,.dates button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font-weight:900;white-space:nowrap}.months button.active,.dates button.active{background:var(--ink);color:#fff}.months button.locked{background:var(--lock);color:#8a938e}.dates button.locked-day{background:var(--lock);color:#8a938e;border-style:dashed;cursor:not-allowed}.day-lock-note{margin:0 0 12px;padding:11px 12px;border-radius:12px;background:#fff;border:1px dashed #bfc9c2;color:#6f7a74;font-size:11px;font-weight:800}.locked-panel{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:12px}.blur{filter:blur(5px);opacity:.35;user-select:none}.lock-message{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font-weight:900}.lock-message span{font-size:28px}.count{font-size:10px;color:var(--muted);margin-bottom:10px}.list{display:grid;gap:10px}.race{background:#fff;border:1px solid var(--line);border-radius:17px;padding:14px}.head{display:flex;justify-content:space-between;gap:10px}.head b{font-size:17px}.head small{display:block;margin-top:4px;color:var(--muted);font-size:10px}.badge{font-size:9px;font-weight:900;background:var(--soft);color:var(--green);height:max-content;padding:5px 8px;border-radius:99px}.section{margin-top:11px;border-top:1px solid var(--line);padding-top:10px}.label{font-size:9px;color:var(--muted);font-weight:900}.axis{font-size:20px;font-weight:900;margin:4px 0}.line{font-size:11px;line-height:1.65;color:#39463f}.tickets{margin-top:7px;font-size:10px;color:var(--muted);line-height:1.7}details.result{margin-top:10px;border-radius:12px;background:var(--result);padding:0 10px;transition:background .18s ease}details.result[open]{padding-bottom:10px}details.result.win[open]{background:var(--win)}details.result.place[open]{background:var(--place)}details.result.miss[open]{background:var(--miss)}summary{cursor:pointer;list-style:none;font-size:11px;font-weight:900;padding:11px 0}summary::-webkit-details-marker{display:none}details.trio-result{margin-top:9px;border-top:1px dashed rgba(70,90,78,.22);padding-top:2px}details.trio-result summary{color:#32463b;padding:10px 0 7px}.trio-box{padding:8px 0 2px}.trio-status{font-size:12px;font-weight:900;margin-bottom:5px}.trio-payout{font-size:15px;font-weight:900;color:var(--green);margin:4px 0}.top3{font-weight:900;font-size:12px;line-height:1.7}.empty{padding:30px;text-align:center;color:var(--muted)}.mobile-nav{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}.mobile-nav a{text-decoration:none;color:#5d6862;text-align:center;font-size:10px;font-weight:900;padding:12px 2px}@media(min-width:760px){body{padding-bottom:0}.mobile-nav{display:none}.list{grid-template-columns:repeat(2,1fr)}}"""
@@ -71,27 +71,62 @@ def normalize_aug(r):
     return {"date":r.get("date"),"track":r.get("track"),"race_no":r.get("race_no"),"race_name":r.get("race_name",""),"prediction":p,"result":r.get("result") or {}}
 
 def main():
-    sept=load(SEPT)
-    sep_rows=sept.get("races") or []
-    if len(sep_rows)!=36:
-        raise SystemExit(f"9/5 replay must be 36 races, got {len(sep_rows)}")
-    if sum(1 for r in sep_rows if len((r.get("result") or {}).get("top3") or [])==3)!=36:
-        raise SystemExit("9/5 replay must have 36 completed results")
     aug=load(AUGUST)
     aug_rows=[normalize_aug(r) for r in (aug.get("races") or [])]
     if len(aug_rows)!=360:
         raise SystemExit(f"August replay must be 360 races, got {len(aug_rows)}")
 
-    data={"2026-09":sep_rows,"2026-08":aug_rows}
-    initial=sorted(sep_rows,key=lambda r:(str(r.get("track")),int(r.get("race_no") or 0)))
+    exact_re=re.compile(r"^replay-(\\d{4}-\\d{2}-\\d{2})\\.json$")
+    completed=[]
+    for path in sorted(Path("docs/data").glob("replay-*.json")):
+        m=exact_re.match(path.name)
+        if not m:
+            continue
+        payload=load(path)
+        rows=payload.get("races") or []
+        date=m.group(1)
+        if not rows:
+            continue
+        if any(str(r.get("date"))!=date for r in rows):
+            raise SystemExit(f"{path} contains mismatched date rows")
+        result_count=sum(1 for r in rows if len((r.get("result") or {}).get("top3") or [])==3)
+        if result_count!=len(rows):
+            raise SystemExit(f"{path} contains incomplete replay rows: {result_count}/{len(rows)}")
+        completed.extend(rows)
+
+    if not completed:
+        raise SystemExit("No canonical replay-YYYY-MM-DD.json archives found")
+
+    data={"2026-08":aug_rows}
+    for r in completed:
+        month=str(r.get("date") or "")[:7]
+        data.setdefault(month,[]).append(r)
+    for month in data:
+        data[month]=sorted(data[month],key=lambda r:(str(r.get("date")),str(r.get("track")),int(r.get("race_no") or 0)))
+
+    open_month=max(data)
+    initial=data[open_month]
     initial_cards="".join(card(r) for r in initial)
+
+    live=load(LIVE) if LIVE.exists() else {"races":[],"pending":[]}
+    completed_dates={str(r.get("date")) for r in completed}
+    future_dates=sorted({
+        str(r.get("date")) for r in ((live.get("races") or [])+(live.get("pending") or []))
+        if r.get("date") and str(r.get("date")) not in completed_dates
+    })
+    locks={}
+    for d in future_dates:
+        locks.setdefault(d[:7],[]).append(d)
+
     embedded=json.dumps(data,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
+    lock_embedded=json.dumps(locks,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
 
     js=r'''
 (function(){
 "use strict";
 var DATA=JSON.parse(document.getElementById("replay-data").textContent);
-var month="2026-09", date="ALL", track="ALL";
+var LOCKS=JSON.parse(document.getElementById("replay-locks").textContent);
+var month=document.getElementById("replay-root").getAttribute("data-open-month"), date="ALL", track="ALL";
 function q(s){return document.querySelector(s)}
 function qa(s){return Array.prototype.slice.call(document.querySelectorAll(s))}
 function e(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]})}
@@ -119,7 +154,8 @@ function card(r){
 function base(){return DATA[month]||[]}
 function dates(){
  var ds=[];base().forEach(function(r){if(ds.indexOf(r.date)<0)ds.push(r.date)});ds.sort().reverse();
- q("#dates").innerHTML='<button class="'+(date==="ALL"?"active":"")+'" data-date="ALL">全'+base().length+'R</button>'+ds.map(function(d){return '<button class="'+(date===d?"active":"")+'" data-date="'+e(d)+'">'+Number(d.slice(5,7))+'/'+Number(d.slice(8))+'</button>'}).join("")+(month==="2026-09"?'<button class="locked-day" type="button" disabled>🔒 9/6</button>':"");
+ var locked=(LOCKS[month]||[]).map(function(d){return '<button class="locked-day" type="button" disabled>🔒 '+Number(d.slice(5,7))+'/'+Number(d.slice(8))+'</button>'}).join("");
+ q("#dates").innerHTML='<button class="'+(date==="ALL"?"active":"")+'" data-date="ALL">全'+base().length+'R</button>'+ds.map(function(d){return '<button class="'+(date===d?"active":"")+'" data-date="'+e(d)+'">'+Number(d.slice(5,7))+'/'+Number(d.slice(8))+'</button>'}).join("")+locked;
  qa("#dates [data-date]").forEach(function(b){b.onclick=function(){date=b.getAttribute("data-date");track="ALL";dates();tracks();render()}})
 }
 function tracks(){
@@ -131,7 +167,8 @@ function tracks(){
 function render(){
  var rows=base().filter(function(r){return (date==="ALL"||r.date===date)&&(track==="ALL"||r.track===track)}).sort(function(a,b){return String(b.date).localeCompare(String(a.date))||String(a.track).localeCompare(String(b.track))||Number(a.race_no)-Number(b.race_no)});
  q("#count").textContent=rows.length+"レース表示";
- q("#content").innerHTML=(month==="2026-09"?'<div class="day-lock-note">🔒 9/6は全レース終了までロック。終了後に封印済み予測と結果を過去レースへ移動します。</div>':"")+'<div class="list">'+rows.map(card).join("")+'</div>';
+ var lockNote=(LOCKS[month]||[]).length?'<div class="day-lock-note">🔒 未終了日の予想は全レース終了までロック。終了後に封印済み予測と結果を過去レースへ移動します。</div>':"";
+ q("#content").innerHTML=lockNote+'<div class="list">'+rows.map(card).join("")+'</div>';
 }
 qa("#months [data-month]").forEach(function(b){b.onclick=function(){
  var m=b.getAttribute("data-month");
@@ -149,18 +186,18 @@ dates();tracks();
 <div class="notice"><b>9/5 全36Rの結果反映済み</b><br>9月・8月を公開中。9/5はページ生成時点で36Rを固定表示します。7月以前はロック表示を維持します。</div>
 <div class="months" id="months"><button class="active" data-month="2026-09">9月</button><button data-month="2026-08">8月</button><button class="locked" data-month="2026-07">🔒 7月</button><button class="locked" data-month="2026-06">🔒 6月</button><button class="locked" data-month="2026-05">🔒 5月</button><button class="locked" data-month="2026-04">🔒 4月</button></div>
 <div id="lockedView" class="locked-panel" hidden><div class="blur">札幌 11R　軸 7　候補 2・5・9<br>新潟 10R　軸 4　候補 1・6・12<br>中京 9R　軸 3　候補 5・8・11</div><div class="lock-message"><span>🔒</span><div>7月以前のAI予測は現在ロック中</div></div></div>
-<div id="openView"><div id="dates" class="dates"><button class="active">全36R</button><button>9/5</button><button class="locked-day" disabled>🔒 9/6</button></div><div id="tracks" class="dates"><button class="active">全競馬場</button></div><div id="count" class="count">36レース表示</div><div id="content"><div class="day-lock-note">🔒 9/6は全レース終了までロック。終了後に封印済み予測と結果を過去レースへ移動します。</div><div class="list">{initial_cards}</div></div></div></main>
+<div id="replay-root" data-open-month="{open_month}"><div id="openView"><div id="dates" class="dates"><button class="active">全{len(initial)}R</button></div><div id="tracks" class="dates"><button class="active">全競馬場</button></div><div id="count" class="count">{len(initial)}レース表示</div><div id="content"><div class="list">{initial_cards}</div></div></div></div></main>
 <nav class="mobile-nav"><a href="../">ホーム</a><a href="../app/">最新予想</a><a href="../horses/">データ</a><a href="../consult/">相談</a></nav>
-<script type="application/json" id="replay-data">{embedded}</script><script>{js}</script><script src="/-jra-horse-bigdata-updater/word-links.js"></script></body></html>'''
+<script type="application/json" id="replay-data">{embedded}</script><script type="application/json" id="replay-locks">{lock_embedded}</script><script>{js}</script><script src="/-jra-horse-bigdata-updater/word-links.js"></script></body></html>'''
     if "読込中" in page:
         raise SystemExit("generated replay page must not contain 読込中")
-    if page.count('class="race"') < 36:
-        raise SystemExit("generated replay page must contain at least 36 static race cards")
-    if page.count('id="replay-data"') != 1:
-        raise SystemExit("replay data must be embedded exactly once")
+    if page.count('class="race"') < len(initial):
+        raise SystemExit("generated replay page must contain all initial static race cards")
+    if page.count('id="replay-data"') != 1 or page.count('id="replay-locks"') != 1:
+        raise SystemExit("replay data and locks must each be embedded exactly once")
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(page,encoding="utf-8")
-    print(json.dumps({"status":"PASS","initial_static_cards":36,"september_races":len(sep_rows),"august_races":len(aug_rows),"single_embedded_data":True,"loading_placeholder":False},ensure_ascii=False))
+    print(json.dumps({"status":"PASS","open_month":open_month,"initial_static_cards":len(initial),"canonical_completed_dates":sorted(completed_dates),"august_races":len(aug_rows),"single_embedded_data":True,"loading_placeholder":False},ensure_ascii=False))
 
 if __name__=="__main__":
     main()
