@@ -1,6 +1,6 @@
 {
   "created_at": "2026-09-06T00:46:00+09:00",
-  "updated_at": "2026-09-06T01:00:00+09:00",
+  "updated_at": "2026-09-06T01:35:00+09:00",
   "mode": "AUGUST_ITERATIVE_PDCA_SHADOW_ONLY",
   "production_changed": false,
   "data_split": {
@@ -179,5 +179,92 @@
     "改善案はShadowで独立検証してから昇格候補化",
     "軸飛び対策だけの軸なし点数増加は禁止",
     "相手侵入フラグは自動購入追加ではない"
-  ]
+  ],
+  "convergence": {
+    "status": "CONVERGED_FOR_THIS_AUGUST_PASS",
+    "production_promotion": "REJECTED",
+    "retained_shadow_components": [
+      {
+        "component": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
+        "decision": "KEEP_SHADOW",
+        "rule": "元軸uncertainty>=0.70かつ代替軸残存スコア差1〜10の時だけ能力上位3頭内で限定変更",
+        "reason": "開発180Rで軸3着内45.00%→46.67%。8/16・8/22で悪化なし、8/23は58.33%→63.89%、8/29・8/30でも悪化なし"
+      },
+      {
+        "component": "POST_RESULT_SCENARIO_AUDIT",
+        "decision": "KEEP_AND_ACCUMULATE",
+        "rule": "軸3着内を最上位評価。事前想定位置と結果コーナー通過順の一致成功/想定外成功/耐久失敗を分離",
+        "reason": "結果コーナー位置で軸3着内率は前寄り57.1%、中団42.1%、後方28.2%。位置取り再現性の寄与が大きい"
+      },
+      {
+        "component": "LOW_RANK_INTRUSION_FLAG",
+        "decision": "LEARNING_FLAG_ONLY",
+        "rule": "7〜10位侵入候補は結果学習フラグとして保持。自動点数追加は禁止",
+        "reason": "候補捕捉改善余地はあるが外部日差が大きく、誤フラグが多い"
+      }
+    ],
+    "rejected_or_frozen": [
+      {
+        "experiment": "能力差が大きいほど軸固定を強化",
+        "decision": "REJECT",
+        "evidence": "開発180Rで能力1-2位差1〜4の軸3着内51.7%に対し、差4以上は38.0%"
+      },
+      {
+        "experiment": "3着内残存スコア最大馬への常時乗換",
+        "decision": "REJECT",
+        "evidence": "元能力1位の絶対能力を捨てる失敗が発生し、外部再現性不足"
+      },
+      {
+        "experiment": "上位候補を低順位侵入候補と機械置換",
+        "decision": "REJECT",
+        "evidence": "候補3頭完全捕捉率が低下"
+      },
+      {
+        "experiment": "BUYを含む全購入レースで低順位侵入1点入替",
+        "decision": "REJECT",
+        "evidence": "固い側の既存的中を破壊するケースを確認"
+      },
+      {
+        "experiment": "CAUTIONの軸あり比率を一律増加",
+        "decision": "REJECT",
+        "evidence": "軸生存時の変換漏れは減る局面があるが、外部8/22で既存的中を落とし、日別安定性が改善しない"
+      },
+      {
+        "experiment": "PASS救済",
+        "decision": "REJECT",
+        "evidence": "日別ばらつきが大きく、購入対象拡大の再現性なし"
+      }
+    ],
+    "ticket_conversion_analysis": {
+      "conversion_miss_count": 10,
+      "note": "軸が3着内かつ必要3頭が候補圏にいるのに三連複組合せで落とした購入レース",
+      "actual_rank_patterns": {
+        "1-4-5": 1,
+        "1-5-6": 2,
+        "1-2-6": 1,
+        "1-4-6": 1,
+        "1-3-6": 2,
+        "1-2-3": 1,
+        "1-5-7": 2
+      },
+      "conclusion": "変換漏れは5〜7位相手を2頭同時に必要とするケースへ偏る。ただし機械的に深い相手券へ置換すると別の既存的中を壊すため、今後は事前位置取り・役割の異なる2頭を選ぶ精度を上げてから再検証"
+    },
+    "failure_priority": [
+      "1. 軸圏外: 軸3着内残存と事前位置取り再現性の改善",
+      "2. 軸生存+相手不足: 7〜10位、特に後方差込型の侵入学習",
+      "3. 3頭候補内+券外: 5〜7位相手同士の組合せ変換",
+      "4. PASS内の候補完全捕捉: 購入へ戻すのではなく、PASS判定の理由精度を監査"
+    ],
+    "stable_objectives": {
+      "axis_top3": "最優先KPI",
+      "non_manbaken_roi_target_pct": [
+        80,
+        90
+      ],
+      "longshot": "三連複払戻10,000円以上の捕捉を維持/改善",
+      "no_axis_fail_point_inflation": true,
+      "no_trigami_after_market_connection": true
+    },
+    "final_decision": "8月反復PDCAでは、軸R2と結果後位置取り学習だけを強く残す。相手侵入・券入替は学習専用Shadowに留め、Productionは変更しない。次の独立開催ブロックで再検証してから昇格判断する。"
+  }
 }
