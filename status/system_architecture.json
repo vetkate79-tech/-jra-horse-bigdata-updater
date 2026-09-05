@@ -59,6 +59,10 @@
     "management_erp_single_owner": true,
     "post_archive_date_generic": true,
     "immutable_prediction_archive_guard": true,
+    "race_week_rollover_preserves_detail": true,
+    "live_seal_history_preserved": true,
+    "score_history_preserved": true,
+    "pdca_history_preserved": true,
     "root_cause_repair_constitution_locked": true,
     "active_workflow_scripts_explicitly_allowlisted": true,
     "active_workflow_script_files_exist": true
