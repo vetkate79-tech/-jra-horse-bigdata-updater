@@ -83,12 +83,11 @@ function selectMonth(m,b){
 }
 $$('#months [data-month]').forEach(b=>b.onclick=()=>selectMonth(b.dataset.month,b));
 Promise.all([
-  fetch('../data/august-validation-archive.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]}),
-  fetch('../data/prediction-archive-2026-09-05.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]}),
-  fetch('../data/today-results-2026-09-05.json',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]})
-]).then(([aug,live,res])=>{
+  fetch('../data/august-validation-archive.json?v=20260905-2230',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]}),
+  fetch('../data/replay-2026-09-05.json?v=20260905-2230',{cache:'no-store'}).then(r=>r.ok?r.json():{races:[]})
+]).then(([aug,sep])=>{
   archives['2026-08']=aug.races||[];
-  archives['2026-09']=liveArchive(live,res);
+  archives['2026-09']=sep.races||[];
   races=archives[month];renderDates();renderTracks();render()
 }).catch(()=>{
   $('#count').textContent='データ整備中';
