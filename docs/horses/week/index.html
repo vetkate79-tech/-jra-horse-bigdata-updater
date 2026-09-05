@@ -1,3 +1,310 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>今週のJRA出走馬｜JRA AI</title><meta name="description" content="JRA公式出馬表から取得した今週の出走馬を競馬場・レース別で掲載します。"><meta name="robots" content="index,follow"><style>:root{--bg:#f4f6f3;--paper:#fff;--ink:#101814;--muted:#69756e;--line:#dce3de;--green:#0b7146}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;padding-bottom:72px}.top{height:54px;display:flex;align-items:center;padding:0 14px;border-bottom:1px solid var(--line);background:#fff}.top a{text-decoration:none;color:var(--ink);font-weight:900}.wrap{max-width:760px;margin:auto;padding:20px 14px}.hero{background:linear-gradient(135deg,#0b7146,#164c39);color:white;border-radius:20px;padding:18px}.hero small{font-size:10px;opacity:.8}.hero h1{font-size:26px;margin:5px 0}.hero p{font-size:12px;line-height:1.6;margin:0;opacity:.9}.status{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.status b{font-size:16px}.status p{font-size:12px;line-height:1.7;color:var(--muted);margin:7px 0 0}.venues{display:grid;gap:9px;margin-top:14px}.venue{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.venue strong{font-size:17px}.venue small{display:block;color:var(--muted);margin-top:4px}.race-list{display:grid;gap:7px;margin-top:10px}.race-row{border-top:1px solid #edf0ee;padding-top:9px}.race-row b{font-size:13px}.race-row span{display:block;color:var(--muted);font-size:11px;line-height:1.55;margin-top:3px}.mobile-nav{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}.mobile-nav a{text-align:center;text-decoration:none;color:#59655e;font-size:10px;font-weight:900;padding:12px 2px}.mobile-nav a.active{color:var(--green)}</style></head><body><header class="top"><a href="../">‹ 馬データ</a></header><main class="wrap"><section class="hero"><small>WEEKLY RUNNERS</small><h1 id="weekTitle">今週の出走馬</h1><p>今週走る馬だけをまとめる特設ページです。</p></section><section class="status"><b id="statusTitle">JRA出馬表を確認中</b><p id="statusText">JRA公式の出馬表から取得したデータを読み込んでいます。公開前の馬は推測で追加しません。</p></section><div id="venues" class="venues"></div></main><nav class="mobile-nav"><a href="../../app/">予想</a><a href="../../app/#history">履歴</a><a class="active" href="../">データ</a><a href="../../consult/">相談</a></nav><script>
-(()=>{const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));const fmt=d=>{const x=new Date(d+'T00:00:00+09:00');return (x.getMonth()+1)+'/'+x.getDate()};fetch('../../data/horses/weekly_runner_details.json?ts='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{const rows=d.runners||[],sum=d.summary||{},dates=[...new Set(rows.map(x=>x.race?.date).filter(Boolean))].sort();$('#weekTitle').textContent=(dates.length?dates.map(fmt).join('・')+' ':'')+'出走馬';if(!rows.length){$('#statusTitle').textContent='出馬表公開待ち';$('#statusText').textContent='JRA公式出馬表の公開後に自動反映します。公開前の馬は推測で追加しません。';return}$('#statusTitle').textContent='JRA公式出馬表から反映済み';$('#statusText').textContent='現在 '+(sum.race_count||new Set(rows.map(x=>x.race?.race_id)).size)+'レース・'+rows.length+'頭を掲載しています。取得更新時にこのページも同じ元データから自動更新されます。';const by={};for(const x of rows){const r=x.race||{},t=r.track||'競馬場未確認',n=Number(r.race_no||0);((by[t]??={})[n]??=[]).push(x)}$('#venues').innerHTML=Object.keys(by).sort().map(t=>{const races=by[t];return '<section class="venue"><strong>'+esc(t)+'</strong><small>'+esc(dates.map(fmt).join('・'))+'　'+Object.keys(races).length+'レース</small><div class="race-list">'+Object.keys(races).map(Number).sort((a,b)=>a-b).map(n=>{const xs=races[n],r=xs[0].race||{};return '<div class="race-row"><b>'+n+'R '+esc(r.race_name||'')+'</b><span>'+xs.slice().sort((a,b)=>Number(a.horse_no||999)-Number(b.horse_no||999)).map(x=>esc((x.horse_no||'—')+' '+(x.horse_name||''))).join(' ／ ')+'</span></div>'}).join('')+'</div></section>'}).join('')}).catch(()=>{$('#statusTitle').textContent='データ更新中';$('#statusText').textContent='JRA公式出馬表データの更新後に自動反映します。';});})();
-</script><script src="/-jra-horse-bigdata-updater/word-links.js"></script><script src="/-jra-horse-bigdata-updater/global-bottom-nav.js"></script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>今週のJRA出走馬｜JRA AI</title>
+<meta name="description" content="JRA公式出馬表と内部馬データから、今週の出走馬・連勝馬・大逃げ候補・AI注目馬・注目レースを整理します。">
+<meta name="robots" content="index,follow">
+<style>
+:root{--bg:#f4f6f3;--paper:#fff;--ink:#101814;--muted:#6c7770;--line:#dce3de;--green:#0b7146;--deep:#0a5c3b;--soft:#e8f4ee;--soft2:#f7faf8;--gold:#9a7a2f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;padding-bottom:96px}
+button{font:inherit}
+.top{position:sticky;top:0;z-index:20;height:54px;display:flex;align-items:center;padding:0 14px;background:rgba(244,246,243,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top a{text-decoration:none;color:var(--ink);font-weight:900}
+.wrap{max-width:760px;margin:auto;padding:16px 14px 28px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0b7146,#164c39);color:#fff;border-radius:22px;padding:20px 18px;box-shadow:0 9px 24px rgba(16,55,40,.14)}
+.hero:after{content:"♞";position:absolute;right:15px;bottom:-26px;font-size:116px;opacity:.08;transform:rotate(-8deg)}
+.hero small{font-size:10px;letter-spacing:.13em;opacity:.78;font-weight:900}
+.hero h1{font-size:28px;margin:5px 0 6px}
+.hero p{font-size:12px;line-height:1.65;margin:0;opacity:.92;max-width:74%}
+.status{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:17px;padding:14px 15px}
+.status-head{display:flex;align-items:center;gap:9px}
+.status-icon{width:31px;height:31px;border-radius:10px;background:var(--soft);color:var(--green);display:grid;place-items:center;font-weight:900}
+.status b{font-size:14px}
+.metrics{display:flex;align-items:end;gap:18px;margin:12px 0 7px}
+.metric strong{font-size:22px;color:var(--green)}
+.metric small{display:block;color:var(--muted);font-size:9px;margin-top:1px}
+.status p{font-size:10px;line-height:1.65;color:var(--muted);margin:0}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:18px 2px 10px}
+.section-title h2{font-size:17px;margin:0;display:flex;align-items:center;gap:8px}
+.section-title h2:before{content:"";width:4px;height:17px;border-radius:8px;background:var(--green)}
+.section-title span{font-size:10px;color:var(--muted)}
+.pick-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.pick{border:1px solid var(--line);background:#fff;border-radius:15px;padding:11px 10px;text-align:left;min-height:88px;cursor:pointer;color:var(--ink)}
+.pick:nth-child(1),.pick:nth-child(2),.pick:nth-child(3){grid-column:span 2}
+.pick:nth-child(4),.pick:nth-child(5){grid-column:span 3}
+.pick-top{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.pick-icon{width:26px;height:26px;border-radius:9px;background:var(--soft);color:var(--green);display:grid;place-items:center;font-size:13px;font-weight:900}
+.pick-arrow{color:#94a097}
+.pick b{display:block;font-size:12px;margin-top:7px}
+.pick strong{font-size:16px;color:var(--green)}
+.pick small{display:block;color:var(--muted);font-size:9px;line-height:1.45;margin-top:3px}
+.pick.active{border-color:#95bea9;box-shadow:0 0 0 2px rgba(11,113,70,.06)}
+.pick-detail{display:none;margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}
+.pick-detail.show{display:block}
+.pick-detail h3{font-size:13px;margin:0 0 8px}
+.detail-row{padding:9px 0;border-top:1px solid #edf0ee}
+.detail-row:first-of-type{border-top:0;padding-top:2px}
+.detail-row b{font-size:12px}
+.detail-row p{font-size:10px;color:var(--muted);line-height:1.55;margin:3px 0 0}
+.detail-row .label{display:inline-block;font-size:8px;font-weight:900;color:var(--green);background:var(--soft);border-radius:999px;padding:3px 6px;margin-right:5px}
+.tabs{display:flex;gap:7px;overflow:auto;padding:2px 0 8px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:1px solid var(--line);background:#fff;color:#58655e;border-radius:999px;padding:9px 17px;font-size:11px;font-weight:900;white-space:nowrap}
+.tab.on{background:var(--green);border-color:var(--green);color:#fff}
+.venue{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.venue-head{display:flex;justify-content:space-between;align-items:end;padding:15px 15px 11px}
+.venue-head strong{font-size:20px}
+.venue-head small{color:var(--muted);font-size:10px}
+.race-row{border-top:1px solid #edf0ee;padding:12px 14px}
+.race-line{display:flex;align-items:flex-start;gap:10px}
+.race-no{width:42px;flex:0 0 42px;font-size:20px;font-weight:950;color:var(--green)}
+.race-info{min-width:0;flex:1}
+.race-info b{font-size:13px}
+.race-info small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0 5px}
+.tag{font-size:8px;font-weight:900;padding:4px 6px;border-radius:999px;background:var(--soft);color:var(--green)}
+.tag.gold{background:#f6f0df;color:#82651f}
+.reason{font-size:10px;color:#536159;line-height:1.55;margin:0}
+.horse-chips{display:flex;gap:5px;overflow:hidden;margin-top:8px}
+.horse-chip{background:#f4f7f5;border-radius:9px;padding:6px 7px;font-size:9px;white-space:nowrap}
+.more{border:0;background:transparent;color:var(--green);font-size:9px;font-weight:900;padding:7px 0 0}
+.full-list{display:none;margin-top:7px;background:var(--soft2);border-radius:11px;padding:7px 9px}
+.full-list.show{display:block}
+.full-list span{display:block;font-size:10px;line-height:1.85;color:#445149}
+.empty{padding:22px;text-align:center;color:var(--muted);font-size:11px}
+@media(min-width:760px){.pick-grid{grid-template-columns:repeat(5,1fr)}.pick:nth-child(n){grid-column:span 1}}
+</style>
+</head>
+<body>
+<header class="top"><a href="../">‹ 馬データ</a></header>
+<main class="wrap">
+  <section class="hero">
+    <small>WEEKLY RUNNERS</small>
+    <h1 id="weekTitle">今週の出走馬</h1>
+    <p>今日走る馬・注目馬・注目レースを、JRA公式由来の内部データだけで整理します。</p>
+  </section>
+
+  <section class="status">
+    <div class="status-head"><span class="status-icon">✓</span><b id="statusTitle">JRA公式出馬表を確認中</b></div>
+    <div class="metrics">
+      <div class="metric"><strong id="raceCount">—</strong><small>レース</small></div>
+      <div class="metric"><strong id="horseCount">—</strong><small>出走頭数</small></div>
+    </div>
+    <p id="statusText">取得更新時にこのページも同じ元データから自動更新されます。</p>
+  </section>
+
+  <div class="section-title"><h2>今週のピックアップ</h2><span>内部データ判定</span></div>
+  <section class="pick-grid" id="pickGrid">
+    <button class="pick" data-pick="today"><span class="pick-top"><span class="pick-icon">今</span><span class="pick-arrow">›</span></span><b>今日走る馬</b><strong id="todayCount">—</strong><small>本日のJRA出走予定</small></button>
+    <button class="pick" data-pick="streak"><span class="pick-top"><span class="pick-icon">連</span><span class="pick-arrow">›</span></span><b>連勝馬</b><strong id="streakCount">—</strong><small>直近成績から連勝中</small></button>
+    <button class="pick" data-pick="escape"><span class="pick-top"><span class="pick-icon">逃</span><span class="pick-arrow">›</span></span><b>大逃げ馬</b><strong id="escapeCount">—</strong><small>逃げ脚質＋同型構成で判定</small></button>
+    <button class="pick" data-pick="ai"><span class="pick-top"><span class="pick-icon">AI</span><span class="pick-arrow">›</span></span><b>AI注目馬</b><strong id="aiCount">—</strong><small>能力・近走・条件から独自抽出</small></button>
+    <button class="pick" data-pick="race"><span class="pick-top"><span class="pick-icon">★</span><span class="pick-arrow">›</span></span><b>注目レース</b><strong id="focusRaceCount">—</strong><small>軸安定候補 / 重賞</small></button>
+  </section>
+  <section id="pickDetail" class="pick-detail"></section>
+
+  <div class="section-title"><h2>競馬場から見る</h2><span id="dateLabel"></span></div>
+  <div id="tabs" class="tabs"></div>
+  <div id="venueView"></div>
+</main>
+
+<script>
+(()=>{
+'use strict';
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const jstToday=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+const fmt=d=>{const x=new Date(d+'T00:00:00+09:00');return (x.getMonth()+1)+'/'+x.getDate()};
+const raceKey=r=>[r?.date,r?.track,r?.race_no].join('|');
+const finish=r=>Number(r?.finish_position??String(r?.finish??'').replace(/[^0-9]/g,''));
+const recent=x=>(x?.recent_starts||[]).slice().sort((a,b)=>String(b.race_date||'').localeCompare(String(a.race_date||'')));
+let rows=[],base=[],pred={races:[]},activeTrack='',state={streak:[],escape:[],ai:[],focus:[],today:[]};
+
+function baseFor(x){
+  return base.find(h=>x.horse_id&&h.horse_id===x.horse_id)||base.find(h=>h.horse_name===x.horse_name)||{};
+}
+function predForRace(r){
+  return (pred.races||[]).find(p=>p.date===r.date&&p.track===r.track&&Number(p.race_no)===Number(r.race_no))||null;
+}
+function predRankFor(x){
+  const p=predForRace(x.race||{}),a=p?.analysis||{},ranked=p?.ranked_snapshot||a.ranked_snapshot||[];
+  const i=ranked.findIndex(h=>(x.horse_id&&h.horse_id===x.horse_id)||String(h.horse_name||h.name||'')===String(x.horse_name||'')||String(h.horse_no||h.n||'')===String(x.horse_no||''));
+  return {p,a,ranked,index:i,rank:i>=0?i+1:null,row:i>=0?ranked[i]:null};
+}
+function streakWins(x){
+  let n=0;
+  for(const r of recent(x)){if(finish(r)===1)n++;else break}
+  return n;
+}
+function top3Rate(x){
+  const rs=recent(x).slice(0,4).map(finish).filter(Boolean);
+  return rs.length?rs.filter(v=>v<=3).length/rs.length:0;
+}
+function avgFinish(x){
+  const rs=recent(x).slice(0,4).map(finish).filter(Boolean);
+  return rs.length?rs.reduce((a,b)=>a+b,0)/rs.length:99;
+}
+function aiScore(x){
+  const pr=predRankFor(x),rnk=pr.rank;
+  const rs=recent(x).slice(0,4),t3=top3Rate(x),avg=avgFinish(x),wins=rs.map(finish).filter(v=>v===1).length;
+  const sameDist=rs.filter(r=>Number(r.distance_m)===Number(x.race?.distance_m)).length;
+  let s=t3*45+Math.max(0,12-avg)*2+wins*6+sameDist*2;
+  if(rnk)s+=Math.max(0,34-rnk*5);
+  if(pr.a?.axis&&((pr.a.axis.horse_id&&pr.a.axis.horse_id===x.horse_id)||pr.a.axis.horse_name===x.horse_name||pr.a.axis.name===x.horse_name))s+=18;
+  return s;
+}
+function aiReason(x){
+  const pr=predRankFor(x),rs=recent(x).slice(0,4),t3=rs.filter(r=>finish(r)&&finish(r)<=3).length,parts=[];
+  if(pr.rank&&pr.rank<=3)parts.push('封印済み事前AIで'+pr.rank+'位評価');
+  if(pr.a?.axis&&((pr.a.axis.horse_id&&pr.a.axis.horse_id===x.horse_id)||pr.a.axis.horse_name===x.horse_name||pr.a.axis.name===x.horse_name))parts.push('内部予想の軸指定');
+  if(t3>=3)parts.push('近'+rs.length+'走で3着内'+t3+'回');
+  if(streakWins(x)>=2)parts.push(streakWins(x)+'連勝中');
+  const same=rs.filter(r=>Number(r.distance_m)===Number(x.race?.distance_m)).length;
+  if(same>=2)parts.push('同距離の近走実績が複数');
+  if(!parts.length&&rs.length)parts.push('近走成績と今回条件の組合せを内部評価');
+  return parts.slice(0,2).join('。')+'。';
+}
+function escapeReason(x,raceRows){
+  const b=baseFor(x),same=raceRows.filter(y=>baseFor(y).running_style==='ESCAPE').length,rs=recent(x).slice(0,4);
+  const fronts=rs.filter(r=>finish(r)&&finish(r)<=3).length;
+  const a=[];
+  a.push(b.running_style_label||'逃げ脚質');
+  if(same===1)a.push('同レースの逃げ判定が1頭で単騎候補');
+  else a.push('同レースの逃げ判定 '+same+'頭');
+  if(fronts>=2)a.push('近走好走も確認');
+  return a.slice(0,2).join('。')+'。';
+}
+function isGraded(r){
+  const n=String(r?.race_name||'');
+  return /^第\d+回\s*/.test(n)&&/(ステークス|記念|賞|杯|大賞典)/.test(n) || /\bG[123]\b|GI|GII|GIII/.test(n);
+}
+function axisCandidate(r,raceRows){
+  const p=predForRace(r),a=p?.analysis||{},axis=a.axis;
+  if(!axis)return null;
+  let x=raceRows.find(y=>(axis.horse_id&&axis.horse_id===y.horse_id)||axis.horse_name===y.horse_name||axis.name===y.horse_name||String(axis.horse_no||axis.n||'')===String(y.horse_no||''));
+  if(!x)return null;
+  const pr=predRankFor(x);
+  if(pr.rank&&pr.rank<=3)return {horse:x,rank:pr.rank};
+  return null;
+}
+function compute(){
+  const today=jstToday();
+  state.today=rows.filter(x=>x.race?.date===today);
+  state.streak=rows.map(x=>({x,n:streakWins(x)})).filter(z=>z.n>=2).sort((a,b)=>b.n-a.n||aiScore(b.x)-aiScore(a.x));
+  const groups={}; rows.forEach(x=>((groups[raceKey(x.race)]??=[]).push(x)));
+  state.escape=[];
+  Object.values(groups).forEach(xs=>{
+    const es=xs.filter(x=>baseFor(x).running_style==='ESCAPE');
+    es.forEach(x=>state.escape.push({x,score:(es.length===1?20:0)+top3Rate(x)*10,reason:escapeReason(x,xs)}));
+  });
+  state.escape.sort((a,b)=>b.score-a.score);
+  state.ai=rows.map(x=>({x,score:aiScore(x),reason:aiReason(x)})).sort((a,b)=>b.score-a.score).slice(0,8);
+  state.focus=[];
+  Object.values(groups).forEach(xs=>{
+    const r=xs[0]?.race||{},axis=axisCandidate(r,xs),graded=isGraded(r);
+    if(axis||graded)state.focus.push({r,xs,axis,graded});
+  });
+  state.focus.sort((a,b)=>(b.graded-a.graded)||(Number(a.r.race_no)-Number(b.r.race_no)));
+}
+function setCounts(){
+  const raceCount=new Set(rows.map(x=>raceKey(x.race))).size;
+  $('#raceCount').textContent=raceCount;
+  $('#horseCount').textContent=rows.length;
+  $('#todayCount').textContent=state.today.length+'頭';
+  $('#streakCount').textContent=state.streak.length+'頭';
+  $('#escapeCount').textContent=state.escape.length+'頭';
+  $('#aiCount').textContent=Math.min(8,state.ai.length)+'頭';
+  $('#focusRaceCount').textContent=state.focus.length+'R';
+}
+function detailHtml(type){
+  if(type==='today'){
+    const tracks=[...new Set(state.today.map(x=>x.race?.track))];
+    return '<h3>今日走る馬</h3><div class="detail-row"><b>'+state.today.length+'頭</b><p>'+esc(tracks.join('・')||'本日の開催なし')+'。JRA公式出馬表に存在する当日出走馬だけを表示しています。</p></div>';
+  }
+  if(type==='streak'){
+    return '<h3>連勝馬</h3>'+ (state.streak.slice(0,8).map(z=>'<div class="detail-row"><b>'+esc(z.x.horse_name)+'</b><p><span class="label">'+z.n+'連勝</span>'+esc(z.x.race.track)+' '+z.x.race.race_no+'R。直近のJRA成績を新しい順に確認し、勝利が連続している馬だけを抽出。</p></div>').join('')||'<div class="empty">現在、2連勝以上の該当馬はいません。</div>');
+  }
+  if(type==='escape'){
+    return '<h3>大逃げ候補</h3>'+ (state.escape.slice(0,8).map(z=>'<div class="detail-row"><b>'+esc(z.x.horse_name)+'</b><p><span class="label">'+esc(z.x.race.track)+' '+z.x.race.race_no+'R</span>'+esc(z.reason)+'</p></div>').join('')||'<div class="empty">内部脚質データで大逃げ候補を確認できません。</div>');
+  }
+  if(type==='ai'){
+    return '<h3>AI注目馬</h3>'+state.ai.slice(0,6).map((z,i)=>'<div class="detail-row"><b>'+esc(z.x.horse_name)+'</b><p><span class="label">AI '+(i+1)+'</span>'+esc(z.x.race.track)+' '+z.x.race.race_no+'R。'+esc(z.reason)+'</p></div>').join('');
+  }
+  if(type==='race'){
+    return '<h3>注目レース</h3>'+ (state.focus.map(z=>'<div class="detail-row"><b>'+esc(z.r.track)+' '+z.r.race_no+'R '+esc(z.r.race_name)+'</b><p>'+(z.graded?'<span class="label">重賞</span>':'')+(z.axis?'<span class="label">軸安定候補</span>':'')+(z.axis?'封印済み事前AIで '+esc(z.axis.horse.horse_name)+' を軸上位として捕捉。':'JRA公式レース名から重賞として抽出。')+'</p></div>').join('')||'<div class="empty">該当レースを確認中です。</div>');
+  }
+  return '';
+}
+function bindPicks(){
+  $$('#pickGrid [data-pick]').forEach(b=>b.onclick=()=>{
+    const type=b.dataset.pick,box=$('#pickDetail'),same=b.classList.contains('active');
+    $$('#pickGrid .pick').forEach(x=>x.classList.remove('active'));
+    if(same){box.classList.remove('show');box.innerHTML='';return}
+    b.classList.add('active');box.innerHTML=detailHtml(type);box.classList.add('show');
+  });
+}
+function raceReason(xs){
+  const r=xs[0]?.race||{},axis=axisCandidate(r,xs),e=xs.filter(x=>baseFor(x).running_style==='ESCAPE'),s=xs.map(streakWins).filter(n=>n>=2);
+  if(axis)return '封印済み事前AIで '+axis.horse.horse_name+' が軸上位。近走・能力評価と合わせて注目。';
+  if(e.length===1)return e[0].horse_name+' が内部脚質データで単騎逃げ候補。展開の鍵。';
+  if(s.length)return '連勝中の馬が出走。近走の勢いを内部データで確認。';
+  const top=xs.slice().sort((a,b)=>aiScore(b)-aiScore(a))[0];
+  return top?top.horse_name+' を近走・条件・事前評価の組合せから注目。':'出走馬データを確認中。';
+}
+function renderVenue(){
+  const tracks=[...new Set(rows.map(x=>x.race?.track).filter(Boolean))].sort();
+  if(!tracks.includes(activeTrack))activeTrack=tracks[0]||'';
+  $('#tabs').innerHTML=tracks.map(t=>'<button class="tab '+(t===activeTrack?'on':'')+'" data-track="'+esc(t)+'">'+esc(t)+'</button>').join('');
+  $$('#tabs [data-track]').forEach(b=>b.onclick=()=>{activeTrack=b.dataset.track;renderVenue()});
+  const xs=rows.filter(x=>x.race?.track===activeTrack),by={};xs.forEach(x=>((by[Number(x.race.race_no)]??=[]).push(x)));
+  const nums=Object.keys(by).map(Number).sort((a,b)=>a-b);
+  if(!nums.length){$('#venueView').innerHTML='<div class="empty">出走データを確認中です。</div>';return}
+  const date=xs[0].race.date;
+  $('#venueView').innerHTML='<section class="venue"><div class="venue-head"><div><strong>'+esc(activeTrack)+'</strong><small>'+fmt(date)+'　'+nums.length+'レース</small></div><small>レース番号順</small></div>'+
+  nums.map(n=>{
+    const rs=by[n].slice().sort((a,b)=>Number(a.horse_no||999)-Number(b.horse_no||999)),r=rs[0].race||{},axis=axisCandidate(r,rs),graded=isGraded(r),escapes=rs.filter(x=>baseFor(x).running_style==='ESCAPE'),streak=rs.filter(x=>streakWins(x)>=2),top=rs.slice().sort((a,b)=>aiScore(b)-aiScore(a))[0];
+    const tags=[];
+    if(graded)tags.push('<span class="tag gold">重賞</span>');
+    if(axis)tags.push('<span class="tag">軸安定候補</span>');
+    if(streak.length)tags.push('<span class="tag">連勝馬</span>');
+    if(escapes.length===1)tags.push('<span class="tag">大逃げ候補</span>');
+    if(top)tags.push('<span class="tag">AI注目</span>');
+    const reps=[top,axis?.horse,...streak,...escapes].filter(Boolean).filter((v,i,a)=>a.findIndex(z=>z.horse_id===v.horse_id||z.horse_name===v.horse_name)===i).slice(0,3);
+    const listId='race-'+activeTrack+'-'+n;
+    return '<div class="race-row"><div class="race-line"><div class="race-no">'+n+'R</div><div class="race-info"><b>'+esc(r.race_name||'')+'</b><small>'+rs.length+'頭 ・ '+esc(r.surface||'')+' '+(r.distance_m?esc(r.distance_m)+'m':'')+'</small><div class="tags">'+tags.join('')+'</div><p class="reason">'+esc(raceReason(rs))+'</p><div class="horse-chips">'+reps.map(x=>'<span class="horse-chip">'+esc(x.horse_no||'—')+' '+esc(x.horse_name)+'</span>').join('')+'</div><button class="more" data-open="'+listId+'">全'+rs.length+'頭を見る ›</button><div class="full-list" id="'+listId+'">'+rs.map(x=>'<span>'+esc(x.horse_no||'—')+'　'+esc(x.horse_name)+'</span>').join('')+'</div></div></div></div>';
+  }).join('')+'</section>';
+  $$('[data-open]').forEach(b=>b.onclick=()=>{$('#'+CSS.escape(b.dataset.open))?.classList.toggle('show')});
+}
+async function getJson(url,fallback){try{const r=await fetch(url+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(r.status);return await r.json()}catch(e){return fallback}}
+async function init(){
+  const [w,b,p]=await Promise.all([
+    getJson('../../data/horses/weekly_runner_details.json',{runners:[],summary:{}}),
+    getJson('../../data/horses/base_catalog.json',{horses:[]}),
+    getJson('../../data/live_predictions_sealed.json',{races:[],pending:[]})
+  ]);
+  rows=w.runners||[];base=b.horses||[];pred=p||{races:[]};
+  const dates=[...new Set(rows.map(x=>x.race?.date).filter(Boolean))].sort();
+  $('#weekTitle').textContent=(dates.length?dates.map(fmt).join('・')+' ':'')+'出走馬';
+  $('#dateLabel').textContent=dates.map(fmt).join('・');
+  if(!rows.length){
+    $('#statusTitle').textContent='出馬表公開待ち';
+    $('#statusText').textContent='JRA公式出馬表の公開後に自動反映します。公開前の馬は推測で追加しません。';
+    $('#venueView').innerHTML='<div class="empty">出走データ更新中</div>';
+    return;
+  }
+  $('#statusTitle').textContent='JRA公式出馬表から反映済み';
+  $('#statusText').textContent='取得更新時にこのページも同じ元データから自動更新。ピックアップ判定に外部サイトの人気・印・記事は使用しません。';
+  compute();setCounts();bindPicks();renderVenue();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<script src="/-jra-horse-bigdata-updater/word-links.js"></script>
+<script src="/-jra-horse-bigdata-updater/global-bottom-nav.js"></script>
+</body>
+</html>
