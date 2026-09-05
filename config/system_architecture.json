@@ -88,6 +88,7 @@
     ],
     "post-jra-meeting-update.yml": [
       "build_horse_base_catalog.py",
+      "build_erp_model_comparison_report.py",
       "build_live_pdca.py",
       "check_horse_master_completion.py",
       "collect_jra_recent_completed.py",
