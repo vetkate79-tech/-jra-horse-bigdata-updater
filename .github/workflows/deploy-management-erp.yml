@@ -9,6 +9,7 @@ on:
       - 'data/race_results_html_2026*.csv'
       - 'src/build_august_validation_archive.py'
       - 'src/build_replay_page.py'
+      - 'src/audit_public_model_exposure.py'
       - '.github/workflows/deploy-management-erp.yml'
   workflow_dispatch:
 
@@ -47,6 +48,8 @@ jobs:
           assert 'id="replay-data"' not in p
           print('REPLAY_STATIC_RENDER_PASS')
           PY
+      - name: Audit public artifact for prediction-model code exposure
+        run: python src/audit_public_model_exposure.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
