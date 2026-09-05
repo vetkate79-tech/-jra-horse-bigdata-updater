@@ -22,7 +22,7 @@ def score_low_rank_intrusion(ranked_snapshot, surface=None, distance_m=None):
     for i,h in enumerate(q[6:10],start=7):
         s=(.5*_f(h.get("score"))+
            40*_f(h.get("recent_form"),.35)+
-           15*(1-_f(h.get("uncertainty"),1))+
+           25*(1-_f(h.get("uncertainty"),1))+
            5*min(_f(h.get("starts_before"),0),6)/6-
            1*(i-7))
         row={
@@ -33,7 +33,7 @@ def score_low_rank_intrusion(ranked_snapshot, surface=None, distance_m=None):
         }
         if best is None or row["intrusion_score"]>best["intrusion_score"]:
             best=row
-    if best and best["intrusion_score"]>=30:
+    if best and best["intrusion_score"]>=25:
         return {
             "status":"RESEARCH_ONLY",
             "candidate":best,
