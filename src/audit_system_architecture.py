@@ -76,6 +76,10 @@ def main():
    'python src/build_replay_page.py' in text('deploy-management-erp.yml')
    and ui.get('direct_page_edit_policy')=='PROHIBITED_FOR_NORMAL_FIXES'
  )
+ checks['replay_hidden_state_guard']=(
+   '[hidden]{display:none!important}' in Path('src/build_replay_page.py').read_text(encoding='utf-8')
+   and "assert '[hidden]{display:none!important}' in p" in text('deploy-management-erp.yml')
+ )
  checks['prediction_seal_single_owner']=(
    'build_live_sealed_predictions.py' in text('race-week-prediction-seal.yml')
    and 'build_live_sealed_predictions.py' not in text('register-upcoming-new-horses.yml')
