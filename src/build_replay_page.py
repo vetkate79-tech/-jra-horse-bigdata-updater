@@ -248,9 +248,9 @@ refreshGroups();refreshCards();
     page=f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>過去レースのAI予測｜JRA AI</title><meta name="robots" content="noindex,nofollow"><style>{CSS}</style></head><body>
 <header class="top"><a href="../">JRA AI</a><a href="../app/">最新予想</a></header>
 <main class="wrap"><section class="hero"><small>AI RACE ARCHIVE</small><h1>過去レースのAI予測</h1><p>各レース1つのAI予測を固定して保存。予測内容を見たあと、タップして実際の結果を確認できます。</p></section>
-<div class="notice"><b>結果反映済みの過去予想</b><br>公開済みの日付はページ生成時点で固定表示します。未終了日はロックし、全レース終了後に封印済み予測と結果を移動します。</div>
+<div class="notice"><b>9/5 全36Rの結果反映済み</b><br>9月・8月を公開中。9/5はページ本体に固定保存した予想とJRA公式結果を表示します。7月以前はロック表示を維持します。</div>
 <div class="months" id="months">{month_buttons}{locked_months}</div>
-<div id="lockedView" class="locked-panel" hidden><div class="blur">札幌 11R　軸 7　候補 2・5・9<br>新潟 10R　軸 4　候補 1・6・12<br>中京 9R　軸 3　候補 5・8・11</div><div class="lock-message"><span>🔒</span><div>ロック中の過去予想</div></div></div>
+<div id="lockedView" class="locked-panel" hidden><div class="blur">札幌 11R　軸 7　候補 2・5・9<br>新潟 10R　軸 4　候補 1・6・12<br>中京 9R　軸 3　候補 5・8・11</div><div class="lock-message"><span>🔒</span><div>7月以前のAI予測は現在ロック中</div></div></div>
 <div id="replay-root" data-open-month="{open_month}"><div id="openView">{date_groups}{"".join(track_groups)}<div id="count" class="count">{initial_count}レース表示</div><div id="day-lock-note" class="day-lock-note"{lock_note_hidden}>🔒 未終了日の予想は全レース終了までロック。終了後に封印済み予測と結果を過去レースへ移動します。</div><div id="content"><div class="list">{cards}</div></div></div></div></main>
 <nav class="mobile-nav"><a href="../">ホーム</a><a href="../app/">最新予想</a><a href="../horses/">データ</a><a href="../consult/">相談</a></nav>
 <script>{js}</script><script src="/-jra-horse-bigdata-updater/word-links.js"></script></body></html>'''
