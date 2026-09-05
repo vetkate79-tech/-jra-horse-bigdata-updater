@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import html
 import json
-import re
 from pathlib import Path
 
 AUGUST=Path("docs/data/august-validation-archive.json")
@@ -121,16 +120,12 @@ def main():
     if len(aug_rows)!=360:
         raise SystemExit(f"August replay must be 360 races, got {len(aug_rows)}")
 
-    exact_re=re.compile(r"^replay-(\d{4}-\d{2}-\d{2})\.json$")
     completed=[]
     canonical_dates=[]
-    for path in sorted(Path("docs/data").glob("replay-*.json")):
-        m=exact_re.match(path.name)
-        if not m:
-            continue
+    for path in sorted(Path("docs/data").glob("replay-????-??-??.json")):
         payload=load(path)
         rows=payload.get("races") or []
-        date=m.group(1)
+        date=path.stem.removeprefix("replay-")
         if not rows:
             continue
         if any(str(r.get("date"))!=date for r in rows):
