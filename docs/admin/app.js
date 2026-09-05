@@ -44,7 +44,8 @@ function render(data){
   const models=data.models||[]; qs('#modelCards').innerHTML=models.map(m=>`<div class="model-card"><div class="row"><strong>${esc(m.name)}</strong><span>${esc(m.status)}</span></div><p>ROI ${pct(m.roi)} / 的中 ${pct(m.hit_rate)} / ${esc(m.note||'')}</p></div>`).join('');
 
   const mechs=data.mechanisms||[]; qs('#mechanisms').innerHTML=mechs.map(m=>`<div class="mechanism"><b>${esc(m.name)}</b><span>${esc(m.status)} · ${esc(m.note||'')}</span></div>`).join('');
-  qs('#shadowRegistry').innerHTML=(data.shadow_registry||[]).map(x=>`<article class="model-card"><div class="row"><strong>${esc(x.name)}</strong><span>${esc(x.status)}</span></div><p><b>現在地</b> ${esc(x.stage)}</p><p><b>根拠</b> ${esc(x.evidence)}</p><p><b>昇格まで</b> ${esc(x.remaining)}</p><p class="muted">${esc(x.code)}</p></article>`).join('')||'<p class="muted">Shadow登録なし</p>';
+  const shadowRegistry=qs('#shadowRegistry');
+  if(shadowRegistry)shadowRegistry.innerHTML=(data.shadow_registry||[]).map(x=>`<article class="model-card"><div class="row"><strong>${esc(x.name)}</strong><span>${esc(x.status)}</span></div><p><b>現在地</b> ${esc(x.stage)}</p><p><b>根拠</b> ${esc(x.evidence)}</p><p><b>昇格まで</b> ${esc(x.remaining)}</p><p class="muted">${esc(x.code)}</p></article>`).join('')||'<p class="muted">Shadow登録なし</p>';
 
   renderKpis(qs('#pdcaKpis'),[
     {label:'軸生存率',value:pct(summary.axis_survival),sub:'3着以内'},
@@ -145,6 +146,7 @@ async function loadPdcaReport(){
 loadPdcaReport();
 
 async function loadComparisonReport(){
+  if(!qs('#comparisonReportContent'))return;
   try{
     const lr=await fetch('../data/erp-report-log.json',{cache:'no-store'});if(!lr.ok)throw new Error('LOG');
     const log=await lr.json(),reports=log.reports||[];
@@ -163,6 +165,7 @@ async function loadComparisonReport(){
 loadComparisonReport();
 
 async function loadSiteAnalytics(){
+  if(!qs('#siteAnalyticsKpis'))return;
   try{
     const r=await fetch('../data/site_analytics.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);
     const d=await r.json(),t=d.traffic||{},a=d.affiliate||{};
