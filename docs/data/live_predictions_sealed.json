@@ -3,7 +3,7 @@
   "mode": "LIVE_PURE_PREDICTION_SEAL",
   "seal_stage": "PRELIMINARY_NO_FRAME",
   "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-  "generated_at": "2026-09-06T01:15:27.650933+09:00",
+  "generated_at": "2026-09-06T01:23:21.019294+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-06",
@@ -390,7 +390,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -449,7 +449,7 @@
               "rank": 2,
               "horse_no": "4",
               "horse_name": "シグムンド",
-              "survival_score": 67.191,
+              "survival_score": 66.191,
               "show_rate_prior": 0.2647,
               "recent_form": 0.4622,
               "condition_fit": 0.25,
@@ -462,7 +462,7 @@
               "rank": 3,
               "horse_no": "2",
               "horse_name": "エーオーキング",
-              "survival_score": 57.596,
+              "survival_score": 55.596,
               "show_rate_prior": 0.1786,
               "recent_form": 0.3313,
               "condition_fit": 0.25,
@@ -474,7 +474,7 @@
           ],
           "ability_gap_to_second": 0.454,
           "switch_gate": {
-            "weak_original": true,
+            "weak_original": false,
             "survival_score_delta": 0.0,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
@@ -507,7 +507,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -1028,13 +1030,13 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 2,
             "horse_no": "9",
             "horse_name": "フォーエバーブルー",
-            "survival_score": 66.832,
+            "survival_score": 65.832,
             "show_rate_prior": 0.3571,
             "recent_form": 1.0,
             "condition_fit": 0.4,
@@ -1060,7 +1062,7 @@
             "rank": 2,
             "horse_no": "9",
             "horse_name": "フォーエバーブルー",
-            "survival_score": 66.832,
+            "survival_score": 65.832,
             "show_rate_prior": 0.3571,
             "recent_form": 1.0,
             "condition_fit": 0.4,
@@ -1087,7 +1089,7 @@
               "rank": 2,
               "horse_no": "9",
               "horse_name": "フォーエバーブルー",
-              "survival_score": 66.832,
+              "survival_score": 65.832,
               "show_rate_prior": 0.3571,
               "recent_form": 1.0,
               "condition_fit": 0.4,
@@ -1100,7 +1102,7 @@
               "rank": 3,
               "horse_no": "12",
               "horse_name": "スペシャルサンクス",
-              "survival_score": 55.312,
+              "survival_score": 53.312,
               "show_rate_prior": 0.3571,
               "recent_form": 0.728,
               "condition_fit": 0.4,
@@ -1113,7 +1115,7 @@
           "ability_gap_to_second": 1.43,
           "switch_gate": {
             "weak_original": true,
-            "survival_score_delta": 2.081,
+            "survival_score_delta": 1.081,
             "allowed": true,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
           },
@@ -1127,7 +1129,7 @@
             "horse_no": "14",
             "horse_name": "イヴナンバーフォー",
             "rank": 7,
-            "intrusion_score": 34.347
+            "intrusion_score": 36.347
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -1153,7 +1155,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -1726,7 +1730,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -1785,7 +1789,7 @@
               "rank": 2,
               "horse_no": "15",
               "horse_name": "イサチルクイーン",
-              "survival_score": 86.937,
+              "survival_score": 85.937,
               "show_rate_prior": 0.35,
               "recent_form": 0.9351,
               "condition_fit": 0.375,
@@ -1798,7 +1802,7 @@
               "rank": 3,
               "horse_no": "2",
               "horse_name": "マイネルトレマーズ",
-              "survival_score": 71.196,
+              "survival_score": 69.196,
               "show_rate_prior": 0.3182,
               "recent_form": 0.5037,
               "condition_fit": 0.4286,
@@ -1843,7 +1847,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -2437,7 +2443,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -2496,7 +2502,7 @@
               "rank": 2,
               "horse_no": "12",
               "horse_name": "ハンナパール",
-              "survival_score": 89.738,
+              "survival_score": 88.738,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -2509,7 +2515,7 @@
               "rank": 3,
               "horse_no": "5",
               "horse_name": "ハングローズ",
-              "survival_score": 92.696,
+              "survival_score": 90.696,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -2536,7 +2542,7 @@
             "horse_no": "11",
             "horse_name": "サリーアン",
             "rank": 7,
-            "intrusion_score": 66.664
+            "intrusion_score": 76.664
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -2562,7 +2568,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -3185,7 +3193,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -3244,7 +3252,7 @@
               "rank": 2,
               "horse_no": "8",
               "horse_name": "ブラッキッシュ",
-              "survival_score": 85.688,
+              "survival_score": 84.688,
               "show_rate_prior": 0.5625,
               "recent_form": 1.0,
               "condition_fit": 0.6667,
@@ -3257,7 +3265,7 @@
               "rank": 3,
               "horse_no": "2",
               "horse_name": "セキテイリノ",
-              "survival_score": 94.54,
+              "survival_score": 92.54,
               "show_rate_prior": 0.4583,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -3269,7 +3277,7 @@
           ],
           "ability_gap_to_second": 0.99,
           "switch_gate": {
-            "weak_original": true,
+            "weak_original": false,
             "survival_score_delta": 0.0,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
@@ -3303,7 +3311,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -3901,20 +3911,20 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
-            "rank": 2,
-            "horse_no": "14",
-            "horse_name": "ラヴアンドライク",
-            "survival_score": 96.54,
-            "show_rate_prior": 0.4583,
+            "rank": 1,
+            "horse_no": "3",
+            "horse_name": "アイビーチーキー",
+            "survival_score": 91.738,
+            "show_rate_prior": 0.5,
             "recent_form": 1.0,
-            "condition_fit": 0.5,
-            "uncertainty": 0.0,
-            "starts_before": 7.0,
-            "running_style": "ESCAPE",
-            "ability_score": 52.483
+            "condition_fit": 0.5714,
+            "uncertainty": 0.2,
+            "starts_before": 4.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 53.025
           },
           "original_axis": {
             "rank": 1,
@@ -3933,7 +3943,7 @@
             "rank": 2,
             "horse_no": "14",
             "horse_name": "ラヴアンドライク",
-            "survival_score": 96.54,
+            "survival_score": 95.54,
             "show_rate_prior": 0.4583,
             "recent_form": 1.0,
             "condition_fit": 0.5,
@@ -3960,7 +3970,7 @@
               "rank": 2,
               "horse_no": "14",
               "horse_name": "ラヴアンドライク",
-              "survival_score": 96.54,
+              "survival_score": 95.54,
               "show_rate_prior": 0.4583,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -3973,7 +3983,7 @@
               "rank": 3,
               "horse_no": "16",
               "horse_name": "メディチパワー",
-              "survival_score": 91.984,
+              "survival_score": 89.984,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
@@ -3985,12 +3995,12 @@
           ],
           "ability_gap_to_second": 0.542,
           "switch_gate": {
-            "weak_original": true,
-            "survival_score_delta": 4.802,
-            "allowed": true,
+            "weak_original": false,
+            "survival_score_delta": 3.802,
+            "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
           },
-          "changed_from_ability_rank1": true,
+          "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
@@ -4019,7 +4029,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -4608,7 +4620,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -4667,7 +4679,7 @@
               "rank": 2,
               "horse_no": "6",
               "horse_name": "アスタールフナ",
-              "survival_score": 94.591,
+              "survival_score": 93.591,
               "show_rate_prior": 0.5278,
               "recent_form": 0.848,
               "condition_fit": 0.5625,
@@ -4680,7 +4692,7 @@
               "rank": 3,
               "horse_no": "10",
               "horse_name": "モーゲンセン",
-              "survival_score": 90.125,
+              "survival_score": 88.125,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.4,
@@ -4707,7 +4719,7 @@
             "horse_no": "14",
             "horse_name": "イノキ",
             "rank": 10,
-            "intrusion_score": 74.678
+            "intrusion_score": 84.678
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -4734,7 +4746,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -5215,7 +5229,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -5274,7 +5288,7 @@
               "rank": 2,
               "horse_no": "8",
               "horse_name": "カーヌスティ",
-              "survival_score": 94.117,
+              "survival_score": 93.117,
               "show_rate_prior": 0.3462,
               "recent_form": 1.0,
               "condition_fit": 0.6,
@@ -5287,7 +5301,7 @@
               "rank": 3,
               "horse_no": "9",
               "horse_name": "ポッドロワール",
-              "survival_score": 91.884,
+              "survival_score": 89.884,
               "show_rate_prior": 0.3824,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -5314,7 +5328,7 @@
             "horse_no": "7",
             "horse_name": "ルーフ",
             "rank": 8,
-            "intrusion_score": 69.18
+            "intrusion_score": 79.18
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -5340,7 +5354,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -5864,7 +5880,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -5923,7 +5939,7 @@
               "rank": 2,
               "horse_no": "9",
               "horse_name": "ドリームコア",
-              "survival_score": 102.545,
+              "survival_score": 101.545,
               "show_rate_prior": 0.5909,
               "recent_form": 1.0,
               "condition_fit": 0.5909,
@@ -5936,7 +5952,7 @@
               "rank": 3,
               "horse_no": "10",
               "horse_name": "ジッピーチューン",
-              "survival_score": 92.222,
+              "survival_score": 90.222,
               "show_rate_prior": 0.6111,
               "recent_form": 1.0,
               "condition_fit": 0.6111,
@@ -5948,7 +5964,7 @@
           ],
           "ability_gap_to_second": 0.443,
           "switch_gate": {
-            "weak_original": true,
+            "weak_original": false,
             "survival_score_delta": 0.0,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
@@ -5982,7 +5998,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -6578,7 +6596,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -6637,7 +6655,7 @@
               "rank": 2,
               "horse_no": "6",
               "horse_name": "ホウオウショコラ",
-              "survival_score": 90.562,
+              "survival_score": 89.562,
               "show_rate_prior": 0.3462,
               "recent_form": 0.9413,
               "condition_fit": 0.5,
@@ -6650,7 +6668,7 @@
               "rank": 3,
               "horse_no": "10",
               "horse_name": "マイネルユーゲント",
-              "survival_score": 90.125,
+              "survival_score": 88.125,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.4,
@@ -6677,7 +6695,7 @@
             "horse_no": "4",
             "horse_name": "ブライティアブーケ",
             "rank": 7,
-            "intrusion_score": 80.225
+            "intrusion_score": 90.225
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -6703,7 +6721,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -7251,7 +7271,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -7310,7 +7330,7 @@
               "rank": 2,
               "horse_no": "4",
               "horse_name": "ルージュリヴィエラ",
-              "survival_score": 94.583,
+              "survival_score": 93.583,
               "show_rate_prior": 0.45,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -7323,7 +7343,7 @@
               "rank": 3,
               "horse_no": "2",
               "horse_name": "テンレッドサン",
-              "survival_score": 91.984,
+              "survival_score": 89.984,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
@@ -7368,7 +7388,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -7857,7 +7879,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -7916,7 +7938,7 @@
               "rank": 2,
               "horse_no": "4",
               "horse_name": "アオイゲート",
-              "survival_score": 62.751,
+              "survival_score": 61.751,
               "show_rate_prior": 0.4167,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -7929,7 +7951,7 @@
               "rank": 3,
               "horse_no": "2",
               "horse_name": "ロゼプレミア",
-              "survival_score": 60.751,
+              "survival_score": 58.751,
               "show_rate_prior": 0.4167,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -7974,7 +7996,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -8540,7 +8564,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -8572,7 +8596,7 @@
             "rank": 2,
             "horse_no": "6",
             "horse_name": "ツクバヴァンガード",
-            "survival_score": 90.298,
+            "survival_score": 89.298,
             "show_rate_prior": 0.45,
             "recent_form": 0.899,
             "condition_fit": 0.45,
@@ -8599,7 +8623,7 @@
               "rank": 2,
               "horse_no": "6",
               "horse_name": "ツクバヴァンガード",
-              "survival_score": 90.298,
+              "survival_score": 89.298,
               "show_rate_prior": 0.45,
               "recent_form": 0.899,
               "condition_fit": 0.45,
@@ -8612,7 +8636,7 @@
               "rank": 3,
               "horse_no": "14",
               "horse_name": "ロードステラート",
-              "survival_score": 86.498,
+              "survival_score": 84.498,
               "show_rate_prior": 0.3929,
               "recent_form": 0.8356,
               "condition_fit": 0.5,
@@ -8625,7 +8649,7 @@
           "ability_gap_to_second": 5.855,
           "switch_gate": {
             "weak_original": false,
-            "survival_score_delta": 2.61,
+            "survival_score_delta": 1.61,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
           },
@@ -8657,7 +8681,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -9252,20 +9278,20 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
-            "rank": 2,
-            "horse_no": "7",
-            "horse_name": "フルムーン",
-            "survival_score": 85.56,
-            "show_rate_prior": 0.45,
-            "recent_form": 0.7422,
+            "rank": 1,
+            "horse_no": "14",
+            "horse_name": "ルージュフィーリア",
+            "survival_score": 80.812,
+            "show_rate_prior": 0.4375,
+            "recent_form": 1.0,
             "condition_fit": 0.5,
-            "uncertainty": 0.0,
-            "starts_before": 5.0,
-            "running_style": "STALK",
-            "ability_score": 51.066
+            "uncertainty": 0.4,
+            "starts_before": 3.0,
+            "running_style": "UNKNOWN",
+            "ability_score": 51.344
           },
           "original_axis": {
             "rank": 1,
@@ -9284,7 +9310,7 @@
             "rank": 2,
             "horse_no": "7",
             "horse_name": "フルムーン",
-            "survival_score": 85.56,
+            "survival_score": 84.56,
             "show_rate_prior": 0.45,
             "recent_form": 0.7422,
             "condition_fit": 0.5,
@@ -9311,7 +9337,7 @@
               "rank": 2,
               "horse_no": "7",
               "horse_name": "フルムーン",
-              "survival_score": 85.56,
+              "survival_score": 84.56,
               "show_rate_prior": 0.45,
               "recent_form": 0.7422,
               "condition_fit": 0.5,
@@ -9324,7 +9350,7 @@
               "rank": 3,
               "horse_no": "8",
               "horse_name": "リアララ",
-              "survival_score": 64.832,
+              "survival_score": 62.832,
               "show_rate_prior": 0.3571,
               "recent_form": 1.0,
               "condition_fit": 0.4,
@@ -9336,12 +9362,12 @@
           ],
           "ability_gap_to_second": 0.278,
           "switch_gate": {
-            "weak_original": true,
-            "survival_score_delta": 4.748,
-            "allowed": true,
+            "weak_original": false,
+            "survival_score_delta": 3.748,
+            "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
           },
-          "changed_from_ability_rank1": true,
+          "changed_from_ability_rank1": false,
           "production_override_applied": false,
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         },
@@ -9351,7 +9377,7 @@
             "horse_no": "2",
             "horse_name": "メイショウテンジン",
             "rank": 7,
-            "intrusion_score": 69.064
+            "intrusion_score": 79.064
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -9378,7 +9404,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -9968,7 +9996,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -10027,7 +10055,7 @@
               "rank": 2,
               "horse_no": "9",
               "horse_name": "ブライスフェアリー",
-              "survival_score": 89.256,
+              "survival_score": 88.256,
               "show_rate_prior": 0.375,
               "recent_form": 0.899,
               "condition_fit": 0.4444,
@@ -10040,7 +10068,7 @@
               "rank": 3,
               "horse_no": "3",
               "horse_name": "ゴールドエンバー",
-              "survival_score": 86.983,
+              "survival_score": 84.983,
               "show_rate_prior": 0.3182,
               "recent_form": 0.9956,
               "condition_fit": 0.3333,
@@ -10052,7 +10080,7 @@
           ],
           "ability_gap_to_second": 0.831,
           "switch_gate": {
-            "weak_original": true,
+            "weak_original": false,
             "survival_score_delta": 0.0,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
@@ -10086,7 +10114,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -10617,7 +10647,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -10676,7 +10706,7 @@
               "rank": 2,
               "horse_no": "11",
               "horse_name": "ドリームガッサン",
-              "survival_score": 96.54,
+              "survival_score": 95.54,
               "show_rate_prior": 0.4583,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -10689,7 +10719,7 @@
               "rank": 3,
               "horse_no": "4",
               "horse_name": "アドリアフレイバー",
-              "survival_score": 92.583,
+              "survival_score": 90.583,
               "show_rate_prior": 0.45,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -10716,7 +10746,7 @@
             "horse_no": "10",
             "horse_name": "ロードヴィゴラス",
             "rank": 7,
-            "intrusion_score": 64.599
+            "intrusion_score": 74.599
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -10742,7 +10772,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -11339,7 +11371,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -11398,7 +11430,7 @@
               "rank": 2,
               "horse_no": "9",
               "horse_name": "レッドアイスピア",
-              "survival_score": 98.683,
+              "survival_score": 97.683,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5455,
@@ -11411,7 +11443,7 @@
               "rank": 3,
               "horse_no": "6",
               "horse_name": "バレンタインビスタ",
-              "survival_score": 90.554,
+              "survival_score": 88.554,
               "show_rate_prior": 0.375,
               "recent_form": 1.0,
               "condition_fit": 0.4286,
@@ -11438,7 +11470,7 @@
             "horse_no": "8",
             "horse_name": "コスモファーブロス",
             "rank": 7,
-            "intrusion_score": 80.862
+            "intrusion_score": 90.862
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -11465,7 +11497,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -12025,7 +12059,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -12084,7 +12118,7 @@
               "rank": 2,
               "horse_no": "7",
               "horse_name": "アクアアイ",
-              "survival_score": 99.154,
+              "survival_score": 98.154,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -12097,7 +12131,7 @@
               "rank": 3,
               "horse_no": "14",
               "horse_name": "クリスレジーナ",
-              "survival_score": 86.334,
+              "survival_score": 84.334,
               "show_rate_prior": 0.5,
               "recent_form": 0.9905,
               "condition_fit": 0.5,
@@ -12142,7 +12176,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -12710,7 +12746,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -12742,7 +12778,7 @@
             "rank": 2,
             "horse_no": "3",
             "horse_name": "ライフゲート",
-            "survival_score": 99.709,
+            "survival_score": 98.709,
             "show_rate_prior": 0.525,
             "recent_form": 1.0,
             "condition_fit": 0.5556,
@@ -12769,7 +12805,7 @@
               "rank": 2,
               "horse_no": "3",
               "horse_name": "ライフゲート",
-              "survival_score": 99.709,
+              "survival_score": 98.709,
               "show_rate_prior": 0.525,
               "recent_form": 1.0,
               "condition_fit": 0.5556,
@@ -12782,7 +12818,7 @@
               "rank": 3,
               "horse_no": "9",
               "horse_name": "アオハルブルース",
-              "survival_score": 94.54,
+              "survival_score": 92.54,
               "show_rate_prior": 0.4583,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -12795,7 +12831,7 @@
           "ability_gap_to_second": 4.993,
           "switch_gate": {
             "weak_original": false,
-            "survival_score_delta": 1.939,
+            "survival_score_delta": 0.939,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
           },
@@ -12827,7 +12863,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -13396,7 +13434,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -13455,7 +13493,7 @@
               "rank": 2,
               "horse_no": "10",
               "horse_name": "コッツォリーノ",
-              "survival_score": 100.959,
+              "survival_score": 99.959,
               "show_rate_prior": 0.5417,
               "recent_form": 1.0,
               "condition_fit": 0.6,
@@ -13468,7 +13506,7 @@
               "rank": 3,
               "horse_no": "3",
               "horse_name": "ドッグウッド",
-              "survival_score": 97.958,
+              "survival_score": 95.958,
               "show_rate_prior": 0.55,
               "recent_form": 1.0,
               "condition_fit": 0.625,
@@ -13513,7 +13551,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -14080,7 +14120,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -14139,7 +14179,7 @@
               "rank": 2,
               "horse_no": "7",
               "horse_name": "コーチェラバレー",
-              "survival_score": 94.504,
+              "survival_score": 93.504,
               "show_rate_prior": 0.4333,
               "recent_form": 0.9668,
               "condition_fit": 0.5,
@@ -14152,7 +14192,7 @@
               "rank": 3,
               "horse_no": "4",
               "horse_name": "ヨヒーン",
-              "survival_score": 93.223,
+              "survival_score": 91.223,
               "show_rate_prior": 0.5278,
               "recent_form": 1.0,
               "condition_fit": 0.25,
@@ -14197,7 +14237,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -14731,7 +14773,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -14763,7 +14805,7 @@
             "rank": 2,
             "horse_no": "5",
             "horse_name": "グレイスフルマーチ",
-            "survival_score": 96.908,
+            "survival_score": 95.908,
             "show_rate_prior": 0.4688,
             "recent_form": 1.0,
             "condition_fit": 0.5,
@@ -14790,7 +14832,7 @@
               "rank": 2,
               "horse_no": "5",
               "horse_name": "グレイスフルマーチ",
-              "survival_score": 96.908,
+              "survival_score": 95.908,
               "show_rate_prior": 0.4688,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -14803,7 +14845,7 @@
               "rank": 3,
               "horse_no": "7",
               "horse_name": "ファイアリービート",
-              "survival_score": 91.984,
+              "survival_score": 89.984,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
@@ -14816,7 +14858,7 @@
           "ability_gap_to_second": 1.064,
           "switch_gate": {
             "weak_original": false,
-            "survival_score_delta": 5.17,
+            "survival_score_delta": 4.17,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
           },
@@ -14849,7 +14891,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -15343,7 +15387,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -15402,7 +15446,7 @@
               "rank": 2,
               "horse_no": "8",
               "horse_name": "シュプレヒコール",
-              "survival_score": 66.515,
+              "survival_score": 65.515,
               "show_rate_prior": 0.3571,
               "recent_form": 0.9481,
               "condition_fit": 0.5,
@@ -15415,7 +15459,7 @@
               "rank": 3,
               "horse_no": "7",
               "horse_name": "スマートメモリー",
-              "survival_score": 69.937,
+              "survival_score": 67.937,
               "show_rate_prior": 0.3125,
               "recent_form": 1.0,
               "condition_fit": 0.3333,
@@ -15460,7 +15504,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -16057,7 +16103,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -16116,7 +16162,7 @@
               "rank": 2,
               "horse_no": "8",
               "horse_name": "ナムラロダン",
-              "survival_score": 95.889,
+              "survival_score": 94.889,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -16129,7 +16175,7 @@
               "rank": 3,
               "horse_no": "14",
               "horse_name": "ペプチドアロン",
-              "survival_score": 76.812,
+              "survival_score": 74.812,
               "show_rate_prior": 0.4375,
               "recent_form": 1.0,
               "condition_fit": 0.5,
@@ -16156,7 +16202,7 @@
             "horse_no": "13",
             "horse_name": "ガルディエンヌ",
             "rank": 7,
-            "intrusion_score": 70.647
+            "intrusion_score": 80.647
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -16183,7 +16229,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -16762,7 +16810,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -16821,7 +16869,7 @@
               "rank": 2,
               "horse_no": "1",
               "horse_name": "キミガスキダ",
-              "survival_score": 95.889,
+              "survival_score": 94.889,
               "show_rate_prior": 0.4091,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -16834,7 +16882,7 @@
               "rank": 3,
               "horse_no": "15",
               "horse_name": "アスクハッピーマン",
-              "survival_score": 79.373,
+              "survival_score": 77.373,
               "show_rate_prior": 0.3889,
               "recent_form": 0.9333,
               "condition_fit": 0.4286,
@@ -16879,7 +16927,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -17464,7 +17514,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -17523,7 +17573,7 @@
               "rank": 2,
               "horse_no": "11",
               "horse_name": "ライツェントライゼ",
-              "survival_score": 76.364,
+              "survival_score": 75.364,
               "show_rate_prior": 0.3462,
               "recent_form": 0.5941,
               "condition_fit": 0.3636,
@@ -17536,7 +17586,7 @@
               "rank": 3,
               "horse_no": "15",
               "horse_name": "クロスボーダー",
-              "survival_score": 76.913,
+              "survival_score": 74.913,
               "show_rate_prior": 0.2083,
               "recent_form": 0.8178,
               "condition_fit": 0.3333,
@@ -17581,7 +17631,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -18114,7 +18166,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -18173,7 +18225,7 @@
               "rank": 2,
               "horse_no": "7",
               "horse_name": "マクノス",
-              "survival_score": 95.654,
+              "survival_score": 94.654,
               "show_rate_prior": 0.45,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -18186,7 +18238,7 @@
               "rank": 3,
               "horse_no": "6",
               "horse_name": "ガールズデイアウト",
-              "survival_score": 89.483,
+              "survival_score": 87.483,
               "show_rate_prior": 0.3929,
               "recent_form": 0.9209,
               "condition_fit": 0.5,
@@ -18231,7 +18283,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -18794,7 +18848,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -18853,7 +18907,7 @@
               "rank": 2,
               "horse_no": "4",
               "horse_name": "バースデイフライト",
-              "survival_score": 97.433,
+              "survival_score": 96.433,
               "show_rate_prior": 0.4643,
               "recent_form": 1.0,
               "condition_fit": 0.5455,
@@ -18866,7 +18920,7 @@
               "rank": 3,
               "horse_no": "12",
               "horse_name": "ファニーバニー",
-              "survival_score": 81.125,
+              "survival_score": 79.125,
               "show_rate_prior": 0.5357,
               "recent_form": 0.5087,
               "condition_fit": 0.5714,
@@ -18911,7 +18965,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -19342,7 +19398,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -19401,7 +19457,7 @@
               "rank": 2,
               "horse_no": "1",
               "horse_name": "テーオーアルアイン",
-              "survival_score": 93.569,
+              "survival_score": 92.569,
               "show_rate_prior": 0.3929,
               "recent_form": 1.0,
               "condition_fit": 0.4545,
@@ -19414,7 +19470,7 @@
               "rank": 3,
               "horse_no": "5",
               "horse_name": "ショウナンバルドル",
-              "survival_score": 85.93,
+              "survival_score": 83.93,
               "show_rate_prior": 0.3438,
               "recent_form": 0.8923,
               "condition_fit": 0.4444,
@@ -19459,7 +19515,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -20064,7 +20122,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -20123,7 +20181,7 @@
               "rank": 2,
               "horse_no": "6",
               "horse_name": "アスクチャンスマン",
-              "survival_score": 95.322,
+              "survival_score": 94.322,
               "show_rate_prior": 0.3929,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -20136,7 +20194,7 @@
               "rank": 3,
               "horse_no": "4",
               "horse_name": "ロードヴェリタス",
-              "survival_score": 87.738,
+              "survival_score": 85.738,
               "show_rate_prior": 0.5,
               "recent_form": 1.0,
               "condition_fit": 0.5714,
@@ -20148,7 +20206,7 @@
           ],
           "ability_gap_to_second": 0.752,
           "switch_gate": {
-            "weak_original": true,
+            "weak_original": false,
             "survival_score_delta": 0.0,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
@@ -20182,7 +20240,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -20728,7 +20788,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -20787,7 +20847,7 @@
               "rank": 2,
               "horse_no": "10",
               "horse_name": "ウルスクローム",
-              "survival_score": 103.427,
+              "survival_score": 102.427,
               "show_rate_prior": 0.5938,
               "recent_form": 1.0,
               "condition_fit": 0.6429,
@@ -20800,7 +20860,7 @@
               "rank": 3,
               "horse_no": "4",
               "horse_name": "ヨリノレジェンド",
-              "survival_score": 94.074,
+              "survival_score": 92.074,
               "show_rate_prior": 0.4688,
               "recent_form": 1.0,
               "condition_fit": 0.4444,
@@ -20827,7 +20887,7 @@
             "horse_no": "2",
             "horse_name": "ランウインディ",
             "rank": 9,
-            "intrusion_score": 77.022
+            "intrusion_score": 87.022
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -20853,7 +20913,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -21455,7 +21517,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -21514,7 +21576,7 @@
               "rank": 2,
               "horse_no": "16",
               "horse_name": "タマモイカロス",
-              "survival_score": 102.066,
+              "survival_score": 101.066,
               "show_rate_prior": 0.5667,
               "recent_form": 1.0,
               "condition_fit": 0.6154,
@@ -21527,7 +21589,7 @@
               "rank": 3,
               "horse_no": "3",
               "horse_name": "フリッカージャブ",
-              "survival_score": 96.251,
+              "survival_score": 94.251,
               "show_rate_prior": 0.4643,
               "recent_form": 1.0,
               "condition_fit": 0.6,
@@ -21554,7 +21616,7 @@
             "horse_no": "12",
             "horse_name": "レッドモンレーヴ",
             "rank": 10,
-            "intrusion_score": 79.438
+            "intrusion_score": 89.438
           },
           "eligible_for_ticket_swap": true,
           "scope": "CAUTION_ONLY",
@@ -21581,7 +21643,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -22182,7 +22246,7 @@
         },
         "axis_survival_shadow": {
           "status": "RESEARCH_ONLY",
-          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V3_R2_VALIDATED",
+          "architecture": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "objective": "MAXIMIZE_TOP3_SURVIVAL",
           "axis": {
             "rank": 1,
@@ -22241,7 +22305,7 @@
               "rank": 2,
               "horse_no": "4",
               "horse_name": "ザックザク",
-              "survival_score": 105.375,
+              "survival_score": 104.375,
               "show_rate_prior": 0.625,
               "recent_form": 1.0,
               "condition_fit": 0.7,
@@ -22254,7 +22318,7 @@
               "rank": 3,
               "horse_no": "10",
               "horse_name": "ピカラ",
-              "survival_score": 83.688,
+              "survival_score": 81.688,
               "show_rate_prior": 0.5625,
               "recent_form": 1.0,
               "condition_fit": 0.6667,
@@ -22266,7 +22330,7 @@
           ],
           "ability_gap_to_second": 0.669,
           "switch_gate": {
-            "weak_original": true,
+            "weak_original": false,
             "survival_score_delta": 0.0,
             "allowed": false,
             "rule": "元軸の不確実性>=0.70、かつ残存スコア差1〜10の場合のみ上位3頭内で変更"
@@ -22300,7 +22364,9 @@
           "anti_trigami_rule": "券種別実オッズ接続後は、想定払戻が総投資以下または期待値不足の買い目を購入しない",
           "axis_fail_rule": "軸飛び対策のためだけの軸なし点数増加は禁止。軸耐久不足はPASS/非固定軸構造で処理",
           "intrusion_replacement_rule": "低順位3着侵入候補による既存券の1点入替はC/CAUTION系Shadowだけで検証。BUY/固い側の既存券は崩さない",
-          "large_field_warning": "14頭以上では8月検証で軸3着内・候補完全捕捉が大幅悪化。全頭順位を保持して11位以下も研究対象にし、上位10頭打切りを前提にしない",
+          "pass_rescue_rule": "PASS救済は8月検証で日別ばらつきが大きく、現時点では採用しない。PASSを機械的に購入へ戻さない",
+          "non_manbaken_target": "実払戻10,000円以上のレースを投資・払戻とも除外したROI 80〜90%の安定を主要昇格条件にする",
+          "data_limit_note": "過去封印ranked_snapshotは上位10頭保存のため、実頭数別・11位以下侵入の学習には使わない",
           "production_override_applied": false,
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
@@ -22340,5 +22406,5 @@
       "score_spread": 1.898
     }
   ],
-  "prediction_hash_sha256": "a8ecc3fc55e72a0e13d414515c8f6c9c3e6e40932376aa8556e49ed019cd18ba"
+  "prediction_hash_sha256": "cff8e8430c7627d1d69e126690778603847473eb15c764fa458f1d4521469cbe"
 }
