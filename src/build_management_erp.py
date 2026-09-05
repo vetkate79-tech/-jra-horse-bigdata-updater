@@ -13,12 +13,12 @@ PDCA = Path("docs/data/live_pdca.json")
 UPGRADE_LOG = Path("docs/data/model_upgrade_log.json")
 CONTEXT = Path("data/race_context_2026.csv")
 PAYOUTS = Path("data/race_payouts_2026.csv")
-RESULTS = Path("data/race_results_html_2026.csv")
 OUT = Path("docs/data/dashboard.json")
 DETAIL = Path("docs/data/management_analytics.json")
 STATUS = Path("status/management_erp.json")
 JST = timezone(timedelta(hours=9))
 PRED_ARCHIVE_GLOB = "prediction-archive-????-??-??.json"
+RESULT_ARCHIVE_GLOB = "today-results-????-??-??.json"
 
 def load_json(path, default):
     try:
@@ -103,25 +103,25 @@ def load_prediction_archives():
                 }
     return out,dates
 
-def build_result_top3(rows):
-    # The append-only official collector can contain repeated snapshots of the
-    # same runner. Canonicalize by race, finish and horse number before deciding
-    # whether the official top three is complete.
-    grouped=defaultdict(dict)
-    for r in rows:
-        k=race_key(r.get("race_date"),r.get("course") or r.get("track"),r.get("race_no"))
-        finish=iv(r.get("finish_position"))
-        if k[0] and k[1] and k[2] is not None and finish in (1,2,3):
-            horse_no=iv(r.get("horse_no"))
-            if horse_no is not None:
-                grouped[k][(finish,horse_no)]=r
+def load_canonical_result_archives():
     out={}
-    for k,by_runner in grouped.items():
-        xs=list(by_runner.values())
-        xs=sorted(xs,key=lambda x:iv(x.get("finish_position")) or 99)
-        if len(xs)==3 and [iv(x.get("finish_position")) for x in xs]==[1,2,3]:
-            out[k]=xs
-    return out
+    dates=set()
+    for p in Path("docs/data").glob(RESULT_ARCHIVE_GLOB):
+        d=load_json(p,{})
+        date=str(d.get("date") or p.stem.removeprefix("today-results-"))
+        summary=d.get("summary") or {}
+        if not date or summary.get("complete") is not True:
+            continue
+        rows=d.get("races") or []
+        if not rows:
+            continue
+        dates.add(date)
+        for r in rows:
+            k=race_key(r.get("date") or date,r.get("track"),r.get("race_no"))
+            top=r.get("top3_rows") or []
+            if k[0] and k[1] and k[2] is not None and len(top)==3:
+                out[k]={"race":r,"top3":top,"source":d.get("source") or "JRA_OFFICIAL_RESULTS_DB"}
+    return out,dates
 
 def trio_combo(xs):
     vals=[]
@@ -171,9 +171,8 @@ def main():
     upgrade_log=load_json(UPGRADE_LOG, {"schema_version":1,"upgrades":[]})
     contexts=read_csv(CONTEXT)
     payouts=read_csv(PAYOUTS)
-    results=read_csv(RESULTS)
     archive_pred_by,archive_dates=load_prediction_archives()
-    result_top3_by=build_result_top3(results)
+    canonical_results,result_dates=load_canonical_result_archives()
 
     ctx_by={}
     race_id_by={}
@@ -259,20 +258,22 @@ def main():
         rows.append(row)
 
     # Historical ERP rows are rebuilt from the same canonical upstream sources as the public replay:
-    # immutable pre-race prediction archives + JRA official result/payout CSVs.
-    # The ERP never reads the public replay JSON as an input source.
+    # immutable pre-race prediction archives + JRA official confirmed result archives.
+    # The ERP never reads public replay JSON as an input.
     known={(r["date"],r["track"],r["race_no"]) for r in rows}
     historical_keys=sorted(
-        (k for k in result_top3_by if k[0] in archive_dates and k not in known),
+        (k for k in canonical_results if k[0] in archive_dates and k[0] in result_dates and k not in known),
         key=lambda k:(k[0],k[1],k[2] or 0)
     )
     for k in historical_keys:
-        top=result_top3_by[k]
+        result_entry=canonical_results[k]
+        result_row=result_entry.get("race") or {}
+        top=result_entry.get("top3") or []
         archived=archive_pred_by.get(k) or {}
         pred=archived.get("prediction") or {}
         a=pred.get("analysis") or {}
         cctx=ctx_by.get(k,{})
-        rid=race_id_by.get(k) or cctx.get("race_id") or (top[0].get("race_id") if top else None)
+        rid=race_id_by.get(k) or cctx.get("race_id")
         pay=payout_by_race.get(str(rid or ""),{})
         tickets=[str(x) for x in (a.get("trio_tickets") or []) if x]
         decision=str(a.get("pre_market_decision") or pred.get("decision") or ("NO_PREDICTION" if not pred else "UNKNOWN"))
@@ -291,7 +292,7 @@ def main():
         axis_grade=("HIT" if axis_finish==1 else ("PLACE" if axis_finish in (2,3) else ("MISS" if axis_finish else None)))
         rows.append({
             "date":k[0],"track":k[1],"race_no":k[2],"race_id":rid,
-            "race_name":pred.get("race_name") or cctx.get("race_name") or (top[0].get("race_name") if top else None),
+            "race_name":pred.get("race_name") or result_row.get("race_name") or cctx.get("race_name"),
             "race_category":cctx.get("race_category"),"race_class":cctx.get("race_class"),
             "surface":cctx.get("surface"),"distance_m":iv(cctx.get("distance_m")),
             "distance_band":dist_band(cctx.get("distance_m")),
@@ -315,7 +316,7 @@ def main():
             "ticket_value_regime_shadow":a.get("ticket_value_regime_shadow") or {},
             "actual_trio_payout_yen":pay.get("payout_per_100_yen") or 0,
             "data_status":cctx.get("data_status"),"payout_data_status":pay.get("data_status"),
-            "result_source":"JRA_OFFICIAL_RESULTS_DB",
+            "result_source":result_entry.get("source") or "JRA_OFFICIAL_RESULTS_DB",
             "prediction_source":"IMMUTABLE_PREDICTION_ARCHIVE" if has_prediction else None,
         })
 
@@ -401,51 +402,67 @@ def main():
         {"label":"候補内組合せ漏れ","value":combo_miss},
     ]
     state_counts=dict(Counter(r["race_state"] for r in rows))
-    today=max((r["date"] for r in rows if r.get("date")), default="")
-    today_rows=[r for r in rows if r.get("date")==today] if today else rows
+    actual_today=datetime.now(JST).date().isoformat()
+    available_dates=sorted({r.get("date") for r in rows if r.get("date")})
+    if actual_today in available_dates:
+        display_date=actual_today
+    else:
+        future_dates=[d for d in available_dates if d>actual_today]
+        display_date=future_dates[0] if future_dates else (available_dates[-1] if available_dates else "")
+    today_rows=[r for r in rows if r.get("date")==display_date] if display_date else []
 
-    summary={
-        "model_version":sealed.get("model_version") or sealed.get("schema_version") or "JRA-LIVE",
-        "snapshot_time":datetime.now(JST).isoformat(timespec="seconds"),
-        "total_races":len(today_rows),
-        "buy_races":sum(1 for r in today_rows if r.get("decision") in ("BUY","CAUTION")),
-        "pass_races":sum(1 for r in today_rows if r.get("decision")=="PASS"),
-        "scored_races":len(scored),
-        "roi":percent(ret,stake) or 0,
-        "stake_amount":stake,
-        "return_amount":ret,
-        "profit_amount":ret-stake,
-        "hit_rate":percent(hits,len(bought)) or 0,
-        "hits":hits,
-        "daily_budget":10000,
-        "remaining_budget":10000,
-        "roi_ex_top":percent(ret_ex_top,stake) or 0,
-        "axis_survival":percent(axis_top3,len(scored)) or 0,
-        "third_column_miss_rate":percent(combo_miss,len(bought)) or 0,
-        "elimination_miss_rate":0,
-        "max_drawdown":0,
-        "purchase_rate":percent(len(bought),len(scored)) or 0,
-        "manbaken_opportunities":len(manbaken_opportunities),
-        "manbaken_hits":len(manbaken_hits),
+    snapshot_time=datetime.now(JST).isoformat(timespec="seconds")
+    model_version=sealed.get("model_version") or sealed.get("schema_version") or "JRA-LIVE"
+
+    cumulative_summary={
+        "model_version":model_version,"snapshot_time":snapshot_time,"display_date":display_date,"actual_today_jst":actual_today,
+        "total_races":len(rows),"buy_races":sum(1 for r in rows if r.get("decision") in ("BUY","CAUTION")),
+        "pass_races":sum(1 for r in rows if r.get("decision")=="PASS"),"scored_races":len(scored),
+        "roi":percent(ret,stake) or 0,"stake_amount":stake,"return_amount":ret,"profit_amount":ret-stake,
+        "hit_rate":percent(hits,len(bought)) or 0,"hits":hits,"roi_ex_top":percent(ret_ex_top,stake) or 0,
+        "axis_survival":percent(axis_top3,len(scored)) or 0,"third_column_miss_rate":percent(combo_miss,len(bought)) or 0,
+        "elimination_miss_rate":0,"max_drawdown":0,"purchase_rate":percent(len(bought),len(scored)) or 0,
+        "manbaken_opportunities":len(manbaken_opportunities),"manbaken_hits":len(manbaken_hits),
         "manbaken_capture_rate":percent(len(manbaken_hits),len(manbaken_opportunities)) or 0,
-        "sub10k_opportunities":len(sub10k_opportunities),
-        "sub10k_stake_amount":sub10k_stake,
-        "sub10k_return_amount":sub10k_return,
-        "sub10k_roi":sub10k_roi or 0,
-        "sub10k_roi_target_low":sub10k_target_low,
-        "sub10k_roi_target_high":sub10k_target_high,
+        "sub10k_opportunities":len(sub10k_opportunities),"sub10k_stake_amount":sub10k_stake,
+        "sub10k_return_amount":sub10k_return,"sub10k_roi":sub10k_roi or 0,
+        "sub10k_roi_target_low":sub10k_target_low,"sub10k_roi_target_high":sub10k_target_high,
         "sub10k_roi_target_status":sub10k_target_status,
+    }
+
+    today_scored=[x for x in today_rows if x.get("scored")]
+    today_bought=[x for x in today_scored if x.get("bought")]
+    today_stake=sum(x.get("stake_yen") or 0 for x in today_bought)
+    today_ret=sum(x.get("return_yen") or 0 for x in today_bought)
+    today_hits=sum(1 for x in today_bought if x.get("trio_hit"))
+    today_axis_top3=sum(1 for x in today_scored if x.get("axis_finish") in (1,2,3))
+    today_combo_miss=sum(1 for x in today_bought if x.get("axis_finish") in (1,2,3) and not x.get("trio_hit"))
+    today_returns=sorted((x.get("return_yen") or 0 for x in today_bought),reverse=True)
+    today_ret_ex_top=today_ret-(today_returns[0] if today_returns else 0)
+    summary={
+        "model_version":model_version,"snapshot_time":snapshot_time,"display_date":display_date,"actual_today_jst":actual_today,
+        "total_races":len(today_rows),"buy_races":sum(1 for r in today_rows if r.get("decision") in ("BUY","CAUTION")),
+        "pass_races":sum(1 for r in today_rows if r.get("decision")=="PASS"),"scored_races":len(today_scored),
+        "roi":percent(today_ret,today_stake) or 0,"stake_amount":today_stake,"return_amount":today_ret,"profit_amount":today_ret-today_stake,
+        "hit_rate":percent(today_hits,len(today_bought)) or 0,"hits":today_hits,"daily_budget":10000,
+        "remaining_budget":max(0,10000-today_stake),"roi_ex_top":percent(today_ret_ex_top,today_stake) or 0,
+        "axis_survival":percent(today_axis_top3,len(today_scored)) or 0,
+        "third_column_miss_rate":percent(today_combo_miss,len(today_bought)) or 0,
+        "elimination_miss_rate":0,"max_drawdown":0,"purchase_rate":percent(len(today_bought),len(today_scored)) or 0,
+        "manbaken_opportunities":0,"manbaken_hits":0,"manbaken_capture_rate":0,
+        "sub10k_opportunities":0,"sub10k_stake_amount":0,"sub10k_return_amount":0,"sub10k_roi":0,
+        "sub10k_roi_target_low":sub10k_target_low,"sub10k_roi_target_high":sub10k_target_high,"sub10k_roi_target_status":"NO_DATA",
     }
 
     live_health_metrics={
         "sample_scored_races":len(scored),
         "sample_bought_races":len(bought),
-        "roi":summary["roi"],
-        "hit_rate":summary["hit_rate"],
-        "axis_survival":summary["axis_survival"],
-        "combo_miss_rate":summary["third_column_miss_rate"],
-        "roi_ex_top":summary["roi_ex_top"],
-        "profit_amount":summary["profit_amount"],
+        "roi":cumulative_summary["roi"],
+        "hit_rate":cumulative_summary["hit_rate"],
+        "axis_survival":cumulative_summary["axis_survival"],
+        "combo_miss_rate":cumulative_summary["third_column_miss_rate"],
+        "roi_ex_top":cumulative_summary["roi_ex_top"],
+        "profit_amount":cumulative_summary["profit_amount"],
     }
     upgrade_rows=[]
     for raw in upgrade_log.get("upgrades") or []:
@@ -519,7 +536,7 @@ def main():
         ],
         "models":[
             {"name":"A3/B5/C7 FROZEN v1.0","status":"CHAMPION / READ ONLY","roi":0,"hit_rate":0,"note":"上書き禁止の比較基準"},
-            {"name":"Current Integrated","status":"CURRENT","roi":summary["roi"],"hit_rate":summary["hit_rate"],"note":"現行ライブ実績を自動集計"},
+            {"name":"Current Integrated","status":"CURRENT","roi":cumulative_summary["roi"],"hit_rate":cumulative_summary["hit_rate"],"note":"現行ライブ実績を自動集計"},
         ],
         "shadow_registry":[
             {"name":"3着内残存・保守的軸変更 R2","code":"TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT","status":"昇格最有力","stage":"実運用Challenger","evidence":"8月開発180Rで軸3着内45.00%→46.67%。8/16・8/22・8/29・8/30で悪化なし、8/23は58.33%→63.89%。","remaining":"9/6を含む独立開催を最低3回、推奨5回確認。単開催だけでは昇格しない。"},
@@ -553,6 +570,7 @@ def main():
         ],
         "upgrade_log":{"tracking_started_at":upgrade_log.get("tracking_started_at"),"baseline":upgrade_log.get("baseline"),"policy":upgrade_log.get("policy"),"upgrades":upgrade_rows},
         "analytics":{
+            "summary":cumulative_summary,
             "filters":filters,
             "breakdowns":breakdowns,
             "optimization_candidates":candidates,
@@ -573,7 +591,7 @@ def main():
             "leakage_rule":"結果・払戻は封印後の分析だけに使用",
             "purchase_stability_target":{"metric":"万馬券除外ROI","definition":"実際の三連複払戻が10,000円以上だったレースを投資・払戻ともに除外","target_range_pct":[80,90],"role":"実購入検討の主要安定性KPI"},
         },
-        "summary":summary,
+        "summary":cumulative_summary,
         "filters":filters,
         "breakdowns":breakdowns,
         "optimization_candidates":candidates,
