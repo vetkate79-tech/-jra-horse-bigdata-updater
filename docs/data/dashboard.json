@@ -1,7 +1,7 @@
 {
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
-    "snapshot_time": "2026-09-06T03:33:34+09:00",
+    "snapshot_time": "2026-09-06T03:36:41+09:00",
     "total_races": 33,
     "buy_races": 30,
     "pass_races": 3,
@@ -1156,7 +1156,7 @@
   "role_distribution": [],
   "audit": [
     {
-      "time": "2026-09-06T03:33:34+09:00",
+      "time": "2026-09-06T03:36:41+09:00",
       "level": "INFO",
       "title": "管理分析データ更新",
       "detail": "33Rを正規化。0R結果接続、0R購入評価。"
@@ -1342,48 +1342,6 @@
           "roi": null
         },
         {
-          "value": "10",
-          "races": 3,
-          "scored_races": 0,
-          "bought_races": 0,
-          "trio_hits": 0,
-          "hit_rate": null,
-          "axis_top3_rate": null,
-          "combo_miss_rate": null,
-          "stake_yen": 0,
-          "return_yen": 0,
-          "profit_yen": 0,
-          "roi": null
-        },
-        {
-          "value": "11",
-          "races": 3,
-          "scored_races": 0,
-          "bought_races": 0,
-          "trio_hits": 0,
-          "hit_rate": null,
-          "axis_top3_rate": null,
-          "combo_miss_rate": null,
-          "stake_yen": 0,
-          "return_yen": 0,
-          "profit_yen": 0,
-          "roi": null
-        },
-        {
-          "value": "12",
-          "races": 3,
-          "scored_races": 0,
-          "bought_races": 0,
-          "trio_hits": 0,
-          "hit_rate": null,
-          "axis_top3_rate": null,
-          "combo_miss_rate": null,
-          "stake_yen": 0,
-          "return_yen": 0,
-          "profit_yen": 0,
-          "roi": null
-        },
-        {
           "value": "2",
           "races": 3,
           "scored_races": 0,
@@ -1483,6 +1441,48 @@
         },
         {
           "value": "9",
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "10",
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "11",
+          "races": 3,
+          "scored_races": 0,
+          "bought_races": 0,
+          "trio_hits": 0,
+          "hit_rate": null,
+          "axis_top3_rate": null,
+          "combo_miss_rate": null,
+          "stake_yen": 0,
+          "return_yen": 0,
+          "profit_yen": 0,
+          "roi": null
+        },
+        {
+          "value": "12",
           "races": 3,
           "scored_races": 0,
           "bought_races": 0,
