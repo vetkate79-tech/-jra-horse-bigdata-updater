@@ -42,7 +42,9 @@ jobs:
           assert '読込中' not in p
           assert p.count('class="race"') >= 36
           assert '36レース表示' in p
-          assert p.count('id="replay-data"') == 1
+          assert 'JSON.parse' not in p
+          assert 'innerHTML' not in p
+          assert 'id="replay-data"' not in p
           print('REPLAY_STATIC_RENDER_PASS')
           PY
       - name: Configure Pages
