@@ -2,7 +2,7 @@ const DEFAULT_DATA_URL = '../data/dashboard.json';
 const qs = (s) => document.querySelector(s);
 const qsa = (s) => [...document.querySelectorAll(s)];
 
-const titles = {today:'今日の運用',races:'レース管理',models:'モデル管理',pdca:'PDCA / 検証',audit:'監査ログ',system:'システム状態'};
+const titles = {today:'今日の運用',races:'レース管理',models:'モデル管理',pdca:'PDCA / 検証',analysis:'データ分析',audit:'監査ログ',system:'システム状態'};
 
 qsa('.nav-item').forEach(btn=>btn.addEventListener('click',()=>{
   qsa('.nav-item').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
@@ -59,6 +59,28 @@ function render(data){
   qs('#auditList').innerHTML=(data.audit||[]).map(a=>`<div class="audit"><div class="muted">${esc(a.time)}</div><div class="level">${esc(a.level)}</div><div><strong>${esc(a.title)}</strong><p>${esc(a.detail)}</p></div></div>`).join('') || '<p class="muted">監査ログなし</p>';
 
   qs('#sourceList').innerHTML=(data.sources||[]).map(x=>`<div class="risk"><div class="risk-row"><strong>${esc(x.name)}</strong><span class="dot ${x.status==='ok'?'ok':x.status==='bad'?'bad':'warn'}"></span></div><p>${esc(x.detail)}</p></div>`).join('');
+  renderAnalysis(data);
+}
+
+function renderAnalysis(data){
+  const a=data.analytics||{}, s=data.summary||{}, breakdowns=a.breakdowns||{};
+  renderKpis(qs('#analysisKpis'),[
+    {label:'累計投資',value:yen(s.stake_amount),sub:'結果接続済み購入分'},
+    {label:'累計払戻',value:yen(s.return_amount),sub:'公式3連複払戻'},
+    {label:'累計収支',value:yen(s.profit_amount),sub:'払戻 - 投資'},
+    {label:'累計ROI',value:pct(s.roi),sub:'管理詳細'},
+    {label:'最大払戻除外ROI',value:pct(s.roi_ex_top),sub:'一発依存除外'}
+  ]);
+  const sel=qs('#analysisDimension');
+  const labels={date:'日付',track:'競馬場',race_no:'R',race_category:'年齢区分',race_class:'クラス',surface:'芝/ダート',distance_m:'距離',distance_band:'距離帯',track_condition:'馬場',weather:'天候',field_size:'頭数',field_size_band:'頭数帯',decision:'購入判定',axis_grade:'軸結果',race_state:'状態'};
+  const dims=Object.keys(breakdowns);
+  sel.innerHTML=dims.map(d=>`<option value="${esc(d)}">${esc(labels[d]||d)}</option>`).join('');
+  const draw=()=>{
+    const rows=breakdowns[sel.value]||[];
+    qs('#analysisTableBody').innerHTML=rows.map(r=>`<tr><td><b>${esc(r.value)}</b></td><td>${r.bought_races||0}</td><td>${r.hit_rate==null?'-':pct(r.hit_rate)}</td><td>${r.axis_top3_rate==null?'-':pct(r.axis_top3_rate)}</td><td>${r.combo_miss_rate==null?'-':pct(r.combo_miss_rate)}</td><td>${yen(r.stake_yen)}</td><td>${yen(r.return_yen)}</td><td>${yen(r.profit_yen)}</td><td>${r.roi==null?'-':pct(r.roi)}</td></tr>`).join('')||'<tr><td colspan="9" class="muted">集計データなし</td></tr>';
+  };
+  sel.onchange=draw; draw();
+  qs('#optimizerList').innerHTML=(a.optimization_candidates||[]).map(x=>`<div class="model-card"><div class="row"><strong>${esc(x.type)} · ${esc(labels[x.dimension]||x.dimension)}=${esc(x.value)}</strong><span>${esc(x.status)}</span></div><p>sample ${esc(x.sample)} / ROI ${x.roi==null?'-':pct(x.roi)} / 軸生存 ${x.axis_top3_rate==null?'-':pct(x.axis_top3_rate)} / 組合せ漏れ ${x.combo_miss_rate==null?'-':pct(x.combo_miss_rate)}</p><p>${esc(x.action)}</p></div>`).join('')||'<p class="muted">改善候補なし。最低サンプル到達後に自動生成します。</p>';
 }
 
 function renderBars(el,items){
