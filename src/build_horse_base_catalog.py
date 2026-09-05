@@ -179,9 +179,17 @@ def load_class_tags(rows,graded_names):
 
 def compact(h,styles,class_tags,career_stats):
     x={k:h.get(k) for k in BASE_FIELDS if h.get(k) not in (None,'')}
-    hid=clean(h.get('horse_id'));name=clean(h.get('horse_name'));st=career_stats.get(hid) or career_stats.get('NAME:'+name)
-    if st:
-        x['starts']=st['starts'];x['wins']=st['wins'];x['unbeaten']=st['unbeaten'];x['unbeaten_source']=st['unbeaten_source']
+    hid=clean(h.get('horse_id'));name=clean(h.get('horse_name'))
+    # Current JRA horse-profile history is authoritative when successfully parsed.
+    # Historical stitched data is fallback only.
+    if h.get('flat_career_starts') is not None and h.get('flat_career_wins') is not None:
+        starts=int(h.get('flat_career_starts') or 0);wins=int(h.get('flat_career_wins') or 0)
+        x['starts']=starts;x['wins']=wins;x['unbeaten']=bool(starts>=2 and wins==starts)
+        x['unbeaten_source']='JRA_OFFICIAL_CURRENT_HORSE_PROFILE'
+    else:
+        st=career_stats.get(hid) or career_stats.get('NAME:'+name)
+        if st:
+            x['starts']=st['starts'];x['wins']=st['wins'];x['unbeaten']=st['unbeaten'];x['unbeaten_source']=st['unbeaten_source']
     tags=[t for t in (h.get('tags') or []) if t in KEEP_TAGS]
     c=class_tags.get(h.get('horse_id'),{})
     if c.get('is_open'):
@@ -220,7 +228,7 @@ def main():
       'elite_tag_policy':'OPEN=latest recorded JRA class is open; GRADED=recorded start in JRA official 2026 flat graded race',
       'official_graded_race_names_loaded':len(graded_names),'open_count':open_count,'graded_count':graded_count,'unbeaten_count':unbeaten_count,
       'running_style_counts':dict(sorted(style_counts.items())),
-      'unbeaten_policy':'career starts >= 2 and career wins == career starts; 2025 profile baseline + deduplicated official 2026 JRA results',
+      'unbeaten_policy':'flat career starts >= 2 and flat career wins == flat career starts; current JRA horse-profile history is authoritative, historical stitched records are fallback only',
       'ui_fields':['horse_name','sex_age','trainer','sire','damsire','current_class','active','latest_race_date','latest_finish','starts','wins','unbeaten','running_style','OPEN','GRADED']}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps({'summary':summary,'horses':horses},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
