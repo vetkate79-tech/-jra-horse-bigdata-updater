@@ -19,6 +19,7 @@
         <button class="nav-item" data-view="races">レース管理</button>
         <button class="nav-item" data-view="models">モデル管理</button>
         <button class="nav-item" data-view="pdca">PDCA / 検証</button>
+        <button class="nav-item" data-view="analysis">データ分析</button>
         <button class="nav-item" data-view="audit">監査ログ</button>
         <button class="nav-item" data-view="system">システム状態</button>
       </nav>
@@ -88,6 +89,21 @@
             <div><h3>検証KPI</h3><div id="pdcaMetrics" class="tag-list"></div></div>
             <div><h3>検証・昇格ルール</h3><div id="pdcaGovernance" class="pdca-list compact"></div></div>
           </div>
+        </section>
+      </section>
+
+      <section id="view-analysis" class="view">
+        <div class="kpi-grid" id="analysisKpis"></div>
+        <section class="panel">
+          <div class="panel-head"><div><span class="label">SEGMENT ANALYSIS</span><h2>条件別分析</h2></div><span class="muted">管理専用</span></div>
+          <div class="analysis-controls">
+            <label>集計軸<select id="analysisDimension"></select></label>
+          </div>
+          <div class="race-table-wrap"><table class="race-table"><thead><tr><th>条件</th><th>購入R</th><th>的中率</th><th>軸生存率</th><th>組合せ漏れ率</th><th>投資</th><th>払戻</th><th>収支</th><th>ROI</th></tr></thead><tbody id="analysisTableBody"></tbody></table></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><div><span class="label">AUTO OPTIMIZATION QUEUE</span><h2>自動改善候補</h2></div><span class="pill">SHADOW ONLY</span></div>
+          <div id="optimizerList" class="model-list"></div>
         </section>
       </section>
 
