@@ -56,40 +56,6 @@ jobs:
           restore-keys: |
             jra-new-horse-${{ runner.os }}-
             jra-profile-incremental-${{ runner.os }}-
-      - name: Archive outgoing race-week snapshots before refresh
-        run: |
-          python - <<'PY'
-          import hashlib, json
-          from pathlib import Path
-
-          targets=[
-              (Path('docs/data/horses/weekly_runner_details.json'),Path('docs/data/horses/weekly_runner_history'),'runners'),
-              (Path('docs/data/horses/pre_race_features.json'),Path('docs/data/horses/pre_race_feature_history'),'features'),
-          ]
-          for src,root,row_key in targets:
-              if not src.exists():
-                  continue
-              raw=src.read_bytes()
-              try:
-                  doc=json.loads(raw)
-              except Exception:
-                  raise RuntimeError(f'refusing refresh: cannot archive invalid JSON {src}')
-              rows=doc.get(row_key) or []
-              if row_key=='runners':
-                  dates=sorted({str((x.get('race') or {}).get('date') or '') for x in rows if str((x.get('race') or {}).get('date') or '')})
-              else:
-                  dates=sorted({str(x.get('date') or '') for x in rows if str(x.get('date') or '')})
-              if not dates:
-                  dates=[str((doc.get('summary') or {}).get('cutoff_date') or 'undated')]
-              digest=hashlib.sha256(raw).hexdigest()
-              for date in dates:
-                  out=root/date/(digest+'.json')
-                  out.parent.mkdir(parents=True,exist_ok=True)
-                  if not out.exists():
-                      out.write_bytes(raw)
-                  if out.read_bytes()!=raw:
-                      raise RuntimeError(f'archive verification failed: {out}')
-          PY
       - name: Register debut horses from verified JRA cards
         run: python src/collect_upcoming_new_horses.py
       - name: Enrich only registered debut horses
