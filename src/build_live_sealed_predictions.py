@@ -143,6 +143,9 @@ def _new_horse_score(card_h,entry,surface,distance):
     score+=min(connection,4.5)
     return round(score,3),{'sire':sire,'damsire':damsire,'trainer':trainer,'jockey':jockey,'connection_score':round(min(connection,4.5),2)}
 
+def _new_combo(xs):
+    return '-'.join(map(str,sorted(map(int,xs))))
+
 def _new_horse_analysis(safe):
     q=list(safe.get('ranked_snapshot') or [])
     ns=[str(x.get('n') or '') for x in q if str(x.get('n') or '').isdigit()]
@@ -151,7 +154,7 @@ def _new_horse_analysis(safe):
     top=ns[:6];a,b,c,d,e,f=top
     formation={'first':[a,b],'second':[a,b,c,d],'third':[a,b,c,d,e,f]}
     preferred=[(a,b,c),(a,b,d),(a,b,e),(a,b,f),(a,c,d),(b,c,d),(a,c,e),(b,c,e),(b,d,e)]
-    tickets=list(dict.fromkeys(_combo(x) for x in preferred))
+    tickets=list(dict.fromkeys(_new_combo(x) for x in preferred))
     gap=_num(q[0].get('score'))-_num(q[1].get('score')) if len(q)>1 else 0
     roles=[]
     for i,h in enumerate(q[1:9],start=2):
