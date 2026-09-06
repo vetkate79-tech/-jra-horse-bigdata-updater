@@ -34,7 +34,7 @@ def archive_market_payload(payload):
     if p.read_bytes()!=raw:raise RuntimeError('market odds history verification failed: '+str(p))
     return str(p)
 
-def extract_win_odds(tr):
+def extract_win_odds(tr, horse_anchor=None):
     # JRA renders the single-win price as its own numeric table cell.
     # Do not infer from composite text (weight/bodyweight/etc.).
     candidates=[]
@@ -48,8 +48,24 @@ def extract_win_odds(tr):
         if m:
             v=float(m.group(1))
             if 1.0<=v<=9999.9:candidates.append(v)
-    # Usually only the win-odds cell is a bare decimal. If multiple bare
-    # decimals exist, refuse to guess rather than publish a false price.
+    # Current JRA detailed race cards may render "馬名 29.2(9番人気)" in the
+    # same cell instead of a dedicated bare-decimal odds cell. Read that
+    # explicit popularity-labelled value as a safe fallback.
+    scopes=[]
+    if horse_anchor is not None:
+        parent=horse_anchor.find_parent(['th','td'])
+        if parent is not None: scopes.append(parent)
+    scopes.append(tr)
+    for scope in scopes:
+        txt=clean(scope.get_text(' ',strip=True))
+        labelled=re.findall(r'(?<!\\d)(\\d{1,4}(?:\\.\\d)?)\\s*[（(]\\s*\\d+\\s*番人気\\s*[）)]',txt)
+        values=[]
+        for raw in labelled:
+            v=float(raw)
+            if 1.0<=v<=9999.9: values.append(v)
+        if len(values)==1:return values[0]
+    # Otherwise only accept a unique bare decimal. Never guess when
+    # multiple numeric candidates are present.
     return candidates[0] if len(candidates)==1 else None
 
 def main():
@@ -81,7 +97,7 @@ def main():
                     horse_anchor=a;hid=canonical_id(m.group(0));break
             if not horse_anchor:continue
             name=clean(horse_anchor.get_text(' ',strip=True))
-            price=extract_win_odds(tr)
+            price=extract_win_odds(tr, horse_anchor)
             if price is None:continue
             odds_by_id[hid]=price
             if name:odds_by_name[name]=price
