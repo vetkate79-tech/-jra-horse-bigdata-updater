@@ -3,8 +3,262 @@
   "market_layer_only": true,
   "pure_prediction_mutated": false,
   "odds_type": "WIN",
-  "captured_at": "2026-09-06T10:13:05.930887+09:00",
+  "captured_at": "2026-09-06T10:14:57.764685+09:00",
   "race_count": 36,
   "runner_odds_count": 0,
-  "errors": []
+  "errors": [],
+  "diagnostics": [
+    {
+      "race_id": "pw01dde0106202604020120260906",
+      "horse_anchor_rows": 7,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020220260906",
+      "horse_anchor_rows": 14,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020320260906",
+      "horse_anchor_rows": 15,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020420260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020520260906",
+      "horse_anchor_rows": 15,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020620260906",
+      "horse_anchor_rows": 12,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020720260906",
+      "horse_anchor_rows": 18,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020820260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604020920260906",
+      "horse_anchor_rows": 21,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604021020260906",
+      "horse_anchor_rows": 14,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604021120260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0106202604021220260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060120260906",
+      "horse_anchor_rows": 13,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060220260906",
+      "horse_anchor_rows": 10,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060320260906",
+      "horse_anchor_rows": 14,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060420260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060520260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060620260906",
+      "horse_anchor_rows": 12,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060720260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060820260906",
+      "horse_anchor_rows": 14,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602060920260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602061020260906",
+      "horse_anchor_rows": 19,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602061120260906",
+      "horse_anchor_rows": 18,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0101202602061220260906",
+      "horse_anchor_rows": 12,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020120260906",
+      "horse_anchor_rows": 10,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020220260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020320260906",
+      "horse_anchor_rows": 15,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020420260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020520260906",
+      "horse_anchor_rows": 10,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020620260906",
+      "horse_anchor_rows": 12,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020720260906",
+      "horse_anchor_rows": 14,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020820260906",
+      "horse_anchor_rows": 11,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604020920260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604021020260906",
+      "horse_anchor_rows": 18,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604021120260906",
+      "horse_anchor_rows": 21,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    },
+    {
+      "race_id": "pw01dde0109202604021220260906",
+      "horse_anchor_rows": 16,
+      "popularity_rows": 0,
+      "matched_odds_rows": 0,
+      "sample_popularity": []
+    }
+  ]
 }
