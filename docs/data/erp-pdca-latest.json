@@ -1,0 +1,71 @@
+{
+  "status": "READY",
+  "title": "実運用分析・改善計画",
+  "summary": {
+    "scope": "2026-09-06 の封印予想に対する結果接続PDCA",
+    "immutable_rule": "封印済み予想は変更せず、結果は後段分析にのみ使用"
+  },
+  "validation_plan": {
+    "immediate_holdout": "次の独立開催で同じ失敗分類を継続観測",
+    "metrics": [
+      "軸3着内率",
+      "三連複的中率",
+      "AXIS_MISS",
+      "OPPONENT_CANDIDATE_MISS",
+      "TICKET_CONVERSION_MISS"
+    ],
+    "decomposition": [
+      "AXIS_MISS: 19",
+      "FULL_SUCCESS: 5",
+      "OPPONENT_CANDIDATE_MISS: 12"
+    ],
+    "governance": [
+      "PDCA output is diagnostic only; it does not automatically rewrite the certified production model."
+    ]
+  },
+  "findings": [
+    {
+      "id": "AXIS",
+      "title": "軸飛び",
+      "status": "OBSERVED",
+      "observation": "20件",
+      "risk": "軸が3着外なら買い目構造では救えない",
+      "current_action": "軸耐久性を優先監査"
+    },
+    {
+      "id": "OPPONENT",
+      "title": "相手捕捉",
+      "status": "OBSERVED",
+      "observation": "12件",
+      "risk": "軸生存でも候補外馬が侵入する",
+      "current_action": "相手役割分散・3着侵入を監査"
+    },
+    {
+      "id": "TICKET",
+      "title": "買い目変換",
+      "status": "OBSERVED",
+      "observation": "0件",
+      "risk": "候補内でも組合せを落とす",
+      "current_action": "点数水増しせず変換規則を監査"
+    }
+  ],
+  "improvement_candidates": [
+    {
+      "priority": 1,
+      "name": "優先課題: 買い目拡張より軸選定・軸耐久性の改善を優先",
+      "method": "SHADOW_ONLYで検証",
+      "expected_effect": "失敗型の再発率低下",
+      "validation": "独立開催で再現性を確認",
+      "promotion_gate": "本番モデルは自動変更しない"
+    },
+    {
+      "priority": 2,
+      "name": "相手役割分散・3着侵入・相手内完結の取りこぼしを個別監査",
+      "method": "SHADOW_ONLYで検証",
+      "expected_effect": "失敗型の再発率低下",
+      "validation": "独立開催で再現性を確認",
+      "promotion_gate": "本番モデルは自動変更しない"
+    }
+  ],
+  "source_prediction_hash_sha256": "98e7ce62cdaaa1a22a0703d774561dd95251f0e3f2bcdd0272ff5d2fdd11bc95"
+}

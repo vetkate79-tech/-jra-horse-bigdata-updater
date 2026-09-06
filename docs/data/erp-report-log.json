@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-05T16:45:00+09:00",
+  "updated_at": "2026-09-06T16:48:24.183343+09:00",
   "reports": [
     {
       "id": "2026-09-06-model-comparison",
       "parent_id": null,
       "date": "2026-09-06",
       "title": "新型・旧型 結果比較",
-      "status": "WAITING_FOR_ALL_RESULTS",
-      "request": "9/6全レース終了後、新型と旧型を同じJRA公式結果で比較する。",
-      "result": "ERP Workflowが公式全レースの1〜3着確定を確認後、自動生成します。",
-      "consideration": "単開催だけで昇格させず、軸残存・三連複変換・ROIをレース別に分離して確認します。",
+      "status": "COMPLETED",
+      "request": "9/6全レース終了時に、新型と旧型の結果を同じ公式結果で詳細比較し、ERPへ依頼内容・結果・考察を掲載する。",
+      "result": "旧型の軸3着内率45.45%、新型44.44%（差-1.01pt）。三連複的中は旧型2件、新型5件（差+3件）。ROI差は+16.11pt。",
+      "consideration": "単開催だけでは昇格させない。軸残存、三連複変換、ROIのどこで差が出たかをレース別明細で確認し、次の独立開催へ継続する。",
       "report_file": "erp-report-2026-09-06.json"
     }
   ]

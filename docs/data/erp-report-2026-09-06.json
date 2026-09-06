@@ -1,0 +1,664 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETED",
+  "title": "2026-09-06 新型・旧型 結果比較",
+  "generated_at": "2026-09-06T16:48:24.183343+09:00",
+  "trigger": {
+    "owner": "ERP_WORKFLOW",
+    "condition": "JRA公式36レースの1〜3着確定",
+    "scheduled_runs": "土日16:45/19:30/21:30 JST",
+    "gpt_scheduler_used": false
+  },
+  "report_content": {
+    "request": "9/6全レース終了時に、新型と旧型の結果を同じ公式結果で詳細比較し、ERPへ依頼内容・結果・考察を掲載する。",
+    "result": "旧型の軸3着内率45.45%、新型44.44%（差-1.01pt）。三連複的中は旧型2件、新型5件（差+3件）。ROI差は+16.11pt。",
+    "consideration": "単開催だけでは昇格させない。軸残存、三連複変換、ROIのどこで差が出たかをレース別明細で確認し、次の独立開催へ継続する。"
+  },
+  "comparison": {
+    "old": {
+      "scored_races": 33,
+      "axis_top3": 15,
+      "axis_top3_rate_pct": 45.45,
+      "trio_hits": 2,
+      "stake_yen": 25700,
+      "return_yen": 3850,
+      "profit_yen": -21850,
+      "roi_pct": 14.98
+    },
+    "new": {
+      "scored_races": 36,
+      "axis_top3": 16,
+      "axis_top3_rate_pct": 44.44,
+      "trio_hits": 5,
+      "stake_yen": 28400,
+      "return_yen": 8830,
+      "profit_yen": -19570,
+      "roi_pct": 31.09
+    },
+    "delta": {
+      "axis_top3_rate_pt": -1.01,
+      "trio_hits": 3,
+      "roi_pt": 16.11
+    }
+  },
+  "race_details": [
+    {
+      "track": "中山",
+      "race_no": 1,
+      "race_name": "障害3歳以上未勝利",
+      "old_axis": "6",
+      "new_axis": "6",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "2",
+        "7",
+        "6"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "old_axis": "1",
+      "new_axis": "9",
+      "axis_changed": true,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "8",
+        "1",
+        "9"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 3,
+      "race_name": "3歳未勝利",
+      "old_axis": "4",
+      "new_axis": "4",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": true,
+      "new_trio_hit": true,
+      "actual_top3": [
+        "4",
+        "11",
+        "9"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 4,
+      "race_name": "3歳未勝利",
+      "old_axis": "3",
+      "new_axis": "3",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "15",
+        "12",
+        "1"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 5,
+      "race_name": "メイクデビュー中山",
+      "old_axis": null,
+      "new_axis": "10",
+      "axis_changed": true,
+      "old_axis_top3": null,
+      "new_axis_top3": true,
+      "old_trio_hit": null,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "14",
+        "10",
+        "1"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 6,
+      "race_name": "メイクデビュー中山",
+      "old_axis": null,
+      "new_axis": "4",
+      "axis_changed": true,
+      "old_axis_top3": null,
+      "new_axis_top3": false,
+      "old_trio_hit": null,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "8",
+        "7",
+        "12"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 7,
+      "race_name": "3歳未勝利",
+      "old_axis": "9",
+      "new_axis": "9",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "5",
+        "4",
+        "13"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 8,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "3",
+      "new_axis": "3",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "16",
+        "7",
+        "13"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 9,
+      "race_name": "浦安特別",
+      "old_axis": "13",
+      "new_axis": "13",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "6",
+        "3",
+        "10"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 10,
+      "race_name": "セプテンバーステークス",
+      "old_axis": "5",
+      "new_axis": "5",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "6",
+        "8",
+        "2"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 11,
+      "race_name": "第11回 紫苑ステークス",
+      "old_axis": "6",
+      "new_axis": "6",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "4",
+        "2",
+        "9"
+      ]
+    },
+    {
+      "track": "中山",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "2",
+      "new_axis": "2",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "3",
+        "7",
+        "16"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 1,
+      "race_name": "3歳未勝利",
+      "old_axis": "3",
+      "new_axis": "3",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "7",
+        "2",
+        "6"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "old_axis": "6",
+      "new_axis": "6",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "1",
+        "2",
+        "6"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 3,
+      "race_name": "3歳未勝利",
+      "old_axis": "3",
+      "new_axis": "3",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "12",
+        "8",
+        "14"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 4,
+      "race_name": "3歳未勝利",
+      "old_axis": "14",
+      "new_axis": "14",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": true,
+      "actual_top3": [
+        "2",
+        "14",
+        "8"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 5,
+      "race_name": "3歳未勝利",
+      "old_axis": "10",
+      "new_axis": "10",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "4",
+        "9",
+        "6"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 6,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "2",
+      "new_axis": "2",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "10",
+        "2",
+        "12"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "12",
+      "new_axis": "12",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "12",
+        "16",
+        "4"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 8,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "11",
+      "new_axis": "11",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "11",
+        "2",
+        "5"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 9,
+      "race_name": "旭川特別",
+      "old_axis": "10",
+      "new_axis": "10",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": true,
+      "actual_top3": [
+        "10",
+        "12",
+        "6"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 10,
+      "race_name": "HTB賞",
+      "old_axis": "9",
+      "new_axis": "9",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "9",
+        "8",
+        "11"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 11,
+      "race_name": "丹頂ステークス",
+      "old_axis": "1",
+      "new_axis": "1",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "7",
+        "12",
+        "8"
+      ]
+    },
+    {
+      "track": "札幌",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "8",
+      "new_axis": "8",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": true,
+      "new_trio_hit": true,
+      "actual_top3": [
+        "4",
+        "8",
+        "5"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "old_axis": "1",
+      "new_axis": "1",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "1",
+        "3",
+        "8"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 2,
+      "race_name": "3歳未勝利",
+      "old_axis": "16",
+      "new_axis": "16",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "13",
+        "1",
+        "8"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 3,
+      "race_name": "3歳未勝利",
+      "old_axis": "14",
+      "new_axis": "14",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "14",
+        "6",
+        "1"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 4,
+      "race_name": "3歳未勝利",
+      "old_axis": "3",
+      "new_axis": "3",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "3",
+        "5",
+        "8"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 5,
+      "race_name": "メイクデビュー阪神",
+      "old_axis": null,
+      "new_axis": "5",
+      "axis_changed": true,
+      "old_axis_top3": null,
+      "new_axis_top3": false,
+      "old_trio_hit": null,
+      "new_trio_hit": true,
+      "actual_top3": [
+        "1",
+        "9",
+        "4"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 6,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "9",
+      "new_axis": "9",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "7",
+        "6",
+        "12"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "3",
+      "new_axis": "3",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "7",
+        "1",
+        "5"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 8,
+      "race_name": "武田尾特別",
+      "old_axis": "6",
+      "new_axis": "6",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "1",
+        "2",
+        "5"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 9,
+      "race_name": "3歳以上1勝クラス",
+      "old_axis": "14",
+      "new_axis": "14",
+      "axis_changed": false,
+      "old_axis_top3": true,
+      "new_axis_top3": true,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "14",
+        "11",
+        "3"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 10,
+      "race_name": "オークランドサラブレッドレーシングトロフィー",
+      "old_axis": "5",
+      "new_axis": "5",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "4",
+        "10",
+        "12"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 11,
+      "race_name": "第40回 産経賞セントウルステークス",
+      "old_axis": "5",
+      "new_axis": "5",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "3",
+        "9",
+        "1"
+      ]
+    },
+    {
+      "track": "阪神",
+      "race_no": 12,
+      "race_name": "3歳以上2勝クラス",
+      "old_axis": "15",
+      "new_axis": "15",
+      "axis_changed": false,
+      "old_axis_top3": false,
+      "new_axis_top3": false,
+      "old_trio_hit": false,
+      "new_trio_hit": false,
+      "actual_top3": [
+        "13",
+        "10",
+        "16"
+      ]
+    }
+  ],
+  "sources": {
+    "old_prediction": "docs/data/live_predictions_champion_2026-09-06.json",
+    "new_prediction": "docs/data/prediction-archive-2026-09-06.json",
+    "results": "JRA_OFFICIAL_RESULTS_DB",
+    "erp_and_public_same_prediction_source": true
+  }
+}
