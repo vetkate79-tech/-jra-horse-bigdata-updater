@@ -67,6 +67,15 @@ function render(data){
   qs('#auditList').innerHTML=(data.audit||[]).map(a=>`<div class="audit"><div class="muted">${esc(a.time)}</div><div class="level">${esc(a.level)}</div><div><strong>${esc(a.title)}</strong><p>${esc(a.detail)}</p></div></div>`).join('') || '<p class="muted">監査ログなし</p>';
 
   qs('#sourceList').innerHTML=(data.sources||[]).map(x=>`<div class="risk"><div class="risk-row"><strong>${esc(x.name)}</strong><span class="dot ${x.status==='ok'?'ok':x.status==='bad'?'bad':'warn'}"></span></div><p>${esc(x.detail)}</p></div>`).join('');
+  const runtime=data.runtime_ownership||{}, gh=runtime.github_pages||{}, mirror=runtime.standby_sync||{}, replit=runtime.replit||{};
+  const runtimeRows=[
+    {name:'本番実行オーナー',value:runtime.runtime_owner_repo||'-',detail:'JRA取得・純予想・封印・市場・結果・PDCAの正規実行元'},
+    {name:'正規公開URL',value:runtime.canonical_public_url||'-',detail:'ユーザー向けの唯一の正規公開面'},
+    {name:'GitHub Pages',value:gh.role||'未定義',detail:gh.note||''},
+    {name:'配信用ミラー',value:mirror.repository||runtime.standby_repo||'-',detail:'静的ミラー/バックアップ。予想・市場・結果・PDCAを書き込まない'},
+    {name:'Replit',value:replit.role||'DEVELOPMENT_ONLY',detail:replit.required_for_runtime===false?'本番必須依存なし。コード作成・修正・一時検証のみ。':'要確認'}
+  ];
+  qs('#runtimeOwnership').innerHTML=runtimeRows.map(x=>`<div class="risk"><div class="risk-row"><strong>${esc(x.name)}</strong><span>${esc(x.value)}</span></div><p>${esc(x.detail)}</p></div>`).join('');
   renderAnalysis(data);
   renderUpgradeLog(data);
 }
