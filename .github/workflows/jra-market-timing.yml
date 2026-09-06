@@ -2,8 +2,10 @@ name: JRA market timing monitor
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 09:00 JST
-    - cron: '0 4 * * *' # 13:00 JST
+    - cron: '0 0 * * *' # 09:00 JST primary
+    - cron: '25 0 * * *' # 09:25 JST watchdog
+    - cron: '0 4 * * *' # 13:00 JST primary
+    - cron: '25 4 * * *' # 13:25 JST watchdog
   workflow_dispatch:
   push:
     branches: [main]
@@ -29,15 +31,44 @@ jobs:
           cache: pip
       - name: Install runtime dependencies
         run: pip install -r requirements.txt
+      - name: Resolve market snapshot slot and watchdog
+        id: slot
+        shell: bash
+        run: |
+          EVENT="${{ github.event_name }}"
+          SCHEDULE="${{ github.event.schedule }}"
+          if [ "$EVENT" = "schedule" ]; then
+            case "$SCHEDULE" in
+              "0 0 * * *"|"25 0 * * *") SLOT="09" ;;
+              "0 4 * * *"|"25 4 * * *") SLOT="13" ;;
+              *) SLOT="manual" ;;
+            esac
+          else
+            SLOT="manual"
+          fi
+          RUN="true"
+          if [ "$SCHEDULE" = "25 0 * * *" ] || [ "$SCHEDULE" = "25 4 * * *" ]; then
+            DATE_JST="$(TZ=Asia/Tokyo date +%F)"
+            if [ -d "docs/data/market-odds-history/$DATE_JST/$SLOT" ] && [ -n "$(find "docs/data/market-odds-history/$DATE_JST/$SLOT" -type f -name '*.json' -print -quit 2>/dev/null)" ]; then
+              RUN="false"
+            fi
+          fi
+          echo "slot=$SLOT" >> "$GITHUB_OUTPUT"
+          echo "run_collection=$RUN" >> "$GITHUB_OUTPUT"
+
       - name: Collect current JRA win odds
+        if: steps.slot.outputs.run_collection == 'true'
         env:
           TZ: Asia/Tokyo
+          SNAPSHOT_SLOT: ${{ steps.slot.outputs.slot }}
         run: python src/collect_current_market_odds.py
       - name: Evaluate independent odds checkpoints
+        if: steps.slot.outputs.run_collection == 'true'
         env:
           TZ: Asia/Tokyo
         run: python src/market_timing_gate.py
       - name: Commit only semantic market-state changes
+        if: steps.slot.outputs.run_collection == 'true'
         run: |
           git config user.name 'jra-market-bot'
           git config user.email 'actions@users.noreply.github.com'
