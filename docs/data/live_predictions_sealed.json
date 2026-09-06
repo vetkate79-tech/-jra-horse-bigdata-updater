@@ -7,7 +7,7 @@
   "publication_status": "PUBLIC_CHALLENGER",
   "challenger_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
   "champion_archive": "docs/data/live_predictions_champion_2026-09-06.json",
-  "generated_at": "2026-09-06T11:31:49.935872+09:00",
+  "generated_at": "2026-09-06T12:53:45.387664+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-06",
@@ -20,8 +20,8 @@
   "ensemble_shadow_production_override": false,
   "ticket_value_regime_shadow_enabled": true,
   "ticket_value_regime_shadow_production_override": false,
-  "sealed_race_count": 33,
-  "pending_race_count": 3,
+  "sealed_race_count": 36,
+  "pending_race_count": 0,
   "challenger_axis_change_count": 1,
   "races": [
     {
@@ -3578,6 +3578,1668 @@
           "promotion_rule": "独立検証3回以上（推奨5回）で、軸3着内率・万馬券捕捉率・ROI・万馬券除外ROIを改善し、平均点数を悪化させず、固い群の的中率を毀損しない場合のみ昇格候補",
           "market_isolation": "NO_ODDS_OR_POPULARITY_USED"
         }
+      }
+    },
+    {
+      "race_id": "pw01dde0106202604020520260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 5,
+      "race_name": "メイクデビュー中山",
+      "surface": "芝",
+      "distance_m": 1600,
+      "ranked_snapshot": [
+        {
+          "n": "10",
+          "frame_no": "6",
+          "name": "ローザヴェローナ",
+          "horse_id": "pw01dud102024106751/A2",
+          "score": 17.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "シルバーステート",
+            "damsire": "ルーラーシップ",
+            "trainer": "尾関 知人",
+            "jockey": "C.ルメール",
+            "connection_score": 4.5
+          }
+        },
+        {
+          "n": "14",
+          "frame_no": "8",
+          "name": "アイムオンアロール",
+          "horse_id": "pw01dud102024100668/0C",
+          "score": 13.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キズナ",
+            "damsire": "Dubawi",
+            "trainer": "宮田 敬介",
+            "jockey": "三浦 皇成",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "8",
+          "frame_no": "5",
+          "name": "イズミル",
+          "horse_id": "pw01dud102024106845/8F",
+          "score": 11.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "New",
+            "damsire": "Lope de Vega",
+            "trainer": "中舘 英二",
+            "jockey": "大野 拓弥",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "6",
+          "frame_no": "4",
+          "name": "ビシット",
+          "horse_id": "pw01dud102024103788/2A",
+          "score": 11.5,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マカヒキ",
+            "damsire": "ネオユニヴァース",
+            "trainer": "石栗 龍彦",
+            "jockey": "▲ 佐藤 翔馬",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "12",
+          "frame_no": "7",
+          "name": "ハナビ",
+          "horse_id": "pw01dud102024100629/3F",
+          "score": 11.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "グレーターロンドン",
+            "damsire": "Shamardal",
+            "trainer": "斎藤 誠",
+            "jockey": "岩田 康誠",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "9",
+          "frame_no": "5",
+          "name": "ゴールデンパルス",
+          "horse_id": "pw01dud102024100749/90",
+          "score": 11.1,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "レイデオロ",
+            "damsire": "タイキシャトル",
+            "trainer": "柄崎 将寿",
+            "jockey": "北村 友一",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "1",
+          "frame_no": "1",
+          "name": "ハンサム",
+          "horse_id": "pw01dud102024104872/88",
+          "score": 11.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "リオンディーズ",
+            "damsire": "タイキシャトル",
+            "trainer": "",
+            "jockey": "津村 明秀",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "2",
+          "frame_no": "2",
+          "name": "ピクシーブラスト",
+          "horse_id": "pw01dud102024103245/9C",
+          "score": 10.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "シスキン",
+            "damsire": "ハーツクライ",
+            "trainer": "岩戸 孝樹",
+            "jockey": "菊沢 一樹",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "7",
+          "frame_no": "4",
+          "name": "オシゴリ",
+          "horse_id": "pw01dud102024102325/BE",
+          "score": 10.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ロジャーバローズ",
+            "damsire": "キングカメハメハ",
+            "trainer": "深山 雅史",
+            "jockey": "内田 博幸",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "4",
+          "frame_no": "3",
+          "name": "タッカーヴィーチェ",
+          "horse_id": "pw01dud102024103407/A4",
+          "score": 10.5,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サートゥルナーリア",
+            "damsire": "シンボリクリスエス",
+            "trainer": "田島 俊明",
+            "jockey": "丸山 元気",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "3",
+          "frame_no": "2",
+          "name": "ムービーマジック",
+          "horse_id": "pw01dud102024107234/D5",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サトノクラウン",
+            "damsire": "リアルインパクト",
+            "trainer": "",
+            "jockey": "団野 大成",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "5",
+          "frame_no": "3",
+          "name": "アッティーヤ",
+          "horse_id": "pw01dud102024100669/7F",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "Ghaiyyath",
+            "damsire": "Iffraaj",
+            "trainer": "鹿戸 雄一",
+            "jockey": "M.ミシェル",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "11",
+          "frame_no": "6",
+          "name": "レイナクリューソス",
+          "horse_id": "pw01dud102024106865/AF",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "Starspangledbanner",
+            "damsire": "Monsieur Bond",
+            "trainer": "池上 昌和",
+            "jockey": "石橋 脩",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "13",
+          "frame_no": "7",
+          "name": "ロイヤルガンモ",
+          "horse_id": "pw01dud102024107373/D3",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "グレーターロンドン",
+            "damsire": "キングカメハメハ",
+            "trainer": "上原 博之",
+            "jockey": "原 優介",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "15",
+          "frame_no": "8",
+          "name": "マホロ",
+          "horse_id": "pw01dud102024103328/06",
+          "score": 10.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ストラクター",
+            "damsire": "ルーラーシップ",
+            "trainer": "石栗 龍彦",
+            "jockey": "丸田 恭介",
+            "connection_score": 0.0
+          }
+        }
+      ],
+      "champion_ranked_snapshot": [
+        {
+          "n": "10",
+          "frame_no": "6",
+          "name": "ローザヴェローナ",
+          "horse_id": "pw01dud102024106751/A2",
+          "score": 17.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "シルバーステート",
+            "damsire": "ルーラーシップ",
+            "trainer": "尾関 知人",
+            "jockey": "C.ルメール",
+            "connection_score": 4.5
+          }
+        },
+        {
+          "n": "14",
+          "frame_no": "8",
+          "name": "アイムオンアロール",
+          "horse_id": "pw01dud102024100668/0C",
+          "score": 13.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キズナ",
+            "damsire": "Dubawi",
+            "trainer": "宮田 敬介",
+            "jockey": "三浦 皇成",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "8",
+          "frame_no": "5",
+          "name": "イズミル",
+          "horse_id": "pw01dud102024106845/8F",
+          "score": 11.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "New",
+            "damsire": "Lope de Vega",
+            "trainer": "中舘 英二",
+            "jockey": "大野 拓弥",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "6",
+          "frame_no": "4",
+          "name": "ビシット",
+          "horse_id": "pw01dud102024103788/2A",
+          "score": 11.5,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マカヒキ",
+            "damsire": "ネオユニヴァース",
+            "trainer": "石栗 龍彦",
+            "jockey": "▲ 佐藤 翔馬",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "12",
+          "frame_no": "7",
+          "name": "ハナビ",
+          "horse_id": "pw01dud102024100629/3F",
+          "score": 11.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "グレーターロンドン",
+            "damsire": "Shamardal",
+            "trainer": "斎藤 誠",
+            "jockey": "岩田 康誠",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "9",
+          "frame_no": "5",
+          "name": "ゴールデンパルス",
+          "horse_id": "pw01dud102024100749/90",
+          "score": 11.1,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "レイデオロ",
+            "damsire": "タイキシャトル",
+            "trainer": "柄崎 将寿",
+            "jockey": "北村 友一",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "1",
+          "frame_no": "1",
+          "name": "ハンサム",
+          "horse_id": "pw01dud102024104872/88",
+          "score": 11.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "リオンディーズ",
+            "damsire": "タイキシャトル",
+            "trainer": "",
+            "jockey": "津村 明秀",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "2",
+          "frame_no": "2",
+          "name": "ピクシーブラスト",
+          "horse_id": "pw01dud102024103245/9C",
+          "score": 10.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "シスキン",
+            "damsire": "ハーツクライ",
+            "trainer": "岩戸 孝樹",
+            "jockey": "菊沢 一樹",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "7",
+          "frame_no": "4",
+          "name": "オシゴリ",
+          "horse_id": "pw01dud102024102325/BE",
+          "score": 10.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ロジャーバローズ",
+            "damsire": "キングカメハメハ",
+            "trainer": "深山 雅史",
+            "jockey": "内田 博幸",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "4",
+          "frame_no": "3",
+          "name": "タッカーヴィーチェ",
+          "horse_id": "pw01dud102024103407/A4",
+          "score": 10.5,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サートゥルナーリア",
+            "damsire": "シンボリクリスエス",
+            "trainer": "田島 俊明",
+            "jockey": "丸山 元気",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "3",
+          "frame_no": "2",
+          "name": "ムービーマジック",
+          "horse_id": "pw01dud102024107234/D5",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サトノクラウン",
+            "damsire": "リアルインパクト",
+            "trainer": "",
+            "jockey": "団野 大成",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "5",
+          "frame_no": "3",
+          "name": "アッティーヤ",
+          "horse_id": "pw01dud102024100669/7F",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "Ghaiyyath",
+            "damsire": "Iffraaj",
+            "trainer": "鹿戸 雄一",
+            "jockey": "M.ミシェル",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "11",
+          "frame_no": "6",
+          "name": "レイナクリューソス",
+          "horse_id": "pw01dud102024106865/AF",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "Starspangledbanner",
+            "damsire": "Monsieur Bond",
+            "trainer": "池上 昌和",
+            "jockey": "石橋 脩",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "13",
+          "frame_no": "7",
+          "name": "ロイヤルガンモ",
+          "horse_id": "pw01dud102024107373/D3",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "グレーターロンドン",
+            "damsire": "キングカメハメハ",
+            "trainer": "上原 博之",
+            "jockey": "原 優介",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "15",
+          "frame_no": "8",
+          "name": "マホロ",
+          "horse_id": "pw01dud102024103328/06",
+          "score": 10.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ストラクター",
+            "damsire": "ルーラーシップ",
+            "trainer": "石栗 龍彦",
+            "jockey": "丸田 恭介",
+            "connection_score": 0.0
+          }
+        }
+      ],
+      "analysis": {
+        "model_version": "NEW_HORSE_DEDICATED_V1",
+        "axis": {
+          "horse_no": "10",
+          "horse_name": "ローザヴェローナ"
+        },
+        "axis_durability": {
+          "score": 60,
+          "status": "LOW",
+          "gap_to_second": 4.0,
+          "uncertainty": 0.85,
+          "starts_before": 0,
+          "reasons": [
+            "新馬戦のため既走データなし",
+            "通常戦の軸固定を使用せず上位2頭を中心に分散"
+          ]
+        },
+        "partner_roles": [
+          {
+            "horse_no": "14",
+            "horse_name": "アイムオンアロール",
+            "rank": 2,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "8",
+            "horse_name": "イズミル",
+            "rank": 3,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "6",
+            "horse_name": "ビシット",
+            "rank": 4,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "ハナビ",
+            "rank": 5,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "ゴールデンパルス",
+            "rank": 6,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "ハンサム",
+            "rank": 7,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "2",
+            "horse_name": "ピクシーブラスト",
+            "rank": 8,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "7",
+            "horse_name": "オシゴリ",
+            "rank": 9,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          }
+        ],
+        "third_place_intrusion": [
+          {
+            "horse_no": "12",
+            "horse_name": "ハナビ",
+            "rank": 5,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "新馬・展開未確定",
+            "scenario_fit": 0.0,
+            "reason": "新馬戦専用機構で血統・厩舎・騎手・生産背景から3着侵入候補として評価",
+            "intrusion_score": 0.647
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "ゴールデンパルス",
+            "rank": 6,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "新馬・展開未確定",
+            "scenario_fit": 0.0,
+            "reason": "新馬戦専用機構で血統・厩舎・騎手・生産背景から3着侵入候補として評価",
+            "intrusion_score": 0.642
+          }
+        ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "新馬・展開未確定",
+          "favored_styles": [],
+          "reason": "既走脚質がないため展開を固定しない"
+        },
+        "failure_scenarios": [
+          {
+            "id": "BASE",
+            "label": "新馬上位評価成立",
+            "covered_horses": [
+              "14",
+              "8",
+              "6"
+            ]
+          },
+          {
+            "id": "AXIS_FAIL",
+            "label": "最上位評価馬が飛ぶ",
+            "covered_horses": [
+              "14",
+              "8",
+              "6",
+              "12"
+            ]
+          },
+          {
+            "id": "THIRD_INTRUSION",
+            "label": "3着低順位馬侵入",
+            "covered_horses": [
+              "12",
+              "9"
+            ]
+          }
+        ],
+        "ticket_shape": "NEW_HORSE_GROUP",
+        "formation_columns": {
+          "first": [
+            "10",
+            "14"
+          ],
+          "second": [
+            "10",
+            "14",
+            "8",
+            "6"
+          ],
+          "third": [
+            "10",
+            "14",
+            "8",
+            "6",
+            "12",
+            "9"
+          ]
+        },
+        "trio_tickets": [
+          "8-10-14",
+          "6-10-14",
+          "10-12-14",
+          "9-10-14",
+          "6-8-10",
+          "6-8-14",
+          "8-10-12",
+          "8-12-14",
+          "6-12-14"
+        ],
+        "ticket_count": 9,
+        "classification": "C",
+        "pre_market_decision": "CAUTION",
+        "data_quality": "NEW_HORSE_DEDICATED",
+        "derived_ticket_analysis": {},
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
+      }
+    },
+    {
+      "race_id": "pw01dde0106202604020620260906",
+      "date": "2026-09-06",
+      "track": "中山",
+      "race_no": 6,
+      "race_name": "メイクデビュー中山",
+      "surface": "ダート",
+      "distance_m": 1800,
+      "ranked_snapshot": [
+        {
+          "n": "4",
+          "frame_no": "4",
+          "name": "ハーモニープルーフ",
+          "horse_id": "pw01dud102024106320/3B",
+          "score": 21.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ナダル",
+            "damsire": "トーセンジョーダン",
+            "trainer": "森 一誠",
+            "jockey": "C.ルメール",
+            "connection_score": 4.5
+          }
+        },
+        {
+          "n": "11",
+          "frame_no": "8",
+          "name": "ドーンオブホープ",
+          "horse_id": "pw01dud102024107184/F4",
+          "score": 20.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ニューイヤーズデイ",
+            "damsire": "ゴールドアリュール",
+            "trainer": "伊藤 圭三",
+            "jockey": "菊沢 一樹",
+            "connection_score": 4.4
+          }
+        },
+        {
+          "n": "8",
+          "frame_no": "6",
+          "name": "エンジャムメント",
+          "horse_id": "pw01dud102024105733/79",
+          "score": 19.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マインドユアビスケッツ",
+            "damsire": "ネオユニヴァース",
+            "trainer": "中舘 英二",
+            "jockey": "北村 友一",
+            "connection_score": 4.2
+          }
+        },
+        {
+          "n": "3",
+          "frame_no": "3",
+          "name": "プリンシパルギフト",
+          "horse_id": "pw01dud102024107065/16",
+          "score": 18.9,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ドレフォン",
+            "damsire": "ダイワメジャー",
+            "trainer": "和田 正一郎",
+            "jockey": "大野 拓弥",
+            "connection_score": 4.4
+          }
+        },
+        {
+          "n": "7",
+          "frame_no": "6",
+          "name": "ヒゲキリ",
+          "horse_id": "pw01dud102024105462/A3",
+          "score": 15.4,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "コパノリッキー",
+            "damsire": "アグネスデジタル",
+            "trainer": "加藤 士津八",
+            "jockey": "三浦 皇成",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "12",
+          "frame_no": "8",
+          "name": "ファブリック",
+          "horse_id": "pw01dud102024104851/F5",
+          "score": 14.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "クリソベリル",
+            "damsire": "キズナ",
+            "trainer": "武井 亮",
+            "jockey": "岩田 康誠",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "1",
+          "frame_no": "1",
+          "name": "タイセイウィザード",
+          "horse_id": "pw01dud102024105540/CE",
+          "score": 13.5,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "チュウワウィザード",
+            "damsire": "High Chaparral",
+            "trainer": "栗田 徹",
+            "jockey": "津村 明秀",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "10",
+          "frame_no": "7",
+          "name": "サイモントレノ",
+          "horse_id": "pw01dud102024104675/7F",
+          "score": 13.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "インカンテーション",
+            "damsire": "ダイワメジャー",
+            "trainer": "奥平 雅士",
+            "jockey": "内田 博幸",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "9",
+          "frame_no": "7",
+          "name": "サードアイ",
+          "horse_id": "pw01dud102024107366/1C",
+          "score": 12.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マジェスティックウォリアー",
+            "damsire": "Uncaptured",
+            "trainer": "蛯名 正義",
+            "jockey": "丸山 元気",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "5",
+          "frame_no": "5",
+          "name": "メイプルカモーン",
+          "horse_id": "pw01dud102024104534/9B",
+          "score": 12.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ゴールドシップ",
+            "damsire": "ドレフォン",
+            "trainer": "中舘 英二",
+            "jockey": "丸田 恭介",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "6",
+          "frame_no": "5",
+          "name": "ニシノハクシャ",
+          "horse_id": "pw01dud102024105565/2D",
+          "score": 11.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "オメガパフューム",
+            "damsire": "キングヘイロー",
+            "trainer": "清水 英克",
+            "jockey": "△ 石神 深道",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "2",
+          "frame_no": "2",
+          "name": "イールーファー",
+          "horse_id": "pw01dud102024101806/17",
+          "score": 11.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マテラスカイ",
+            "damsire": "プリサイスエンド",
+            "trainer": "秋本 大介",
+            "jockey": "▲ 水沼 元輝",
+            "connection_score": 0.0
+          }
+        }
+      ],
+      "champion_ranked_snapshot": [
+        {
+          "n": "4",
+          "frame_no": "4",
+          "name": "ハーモニープルーフ",
+          "horse_id": "pw01dud102024106320/3B",
+          "score": 21.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ナダル",
+            "damsire": "トーセンジョーダン",
+            "trainer": "森 一誠",
+            "jockey": "C.ルメール",
+            "connection_score": 4.5
+          }
+        },
+        {
+          "n": "11",
+          "frame_no": "8",
+          "name": "ドーンオブホープ",
+          "horse_id": "pw01dud102024107184/F4",
+          "score": 20.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ニューイヤーズデイ",
+            "damsire": "ゴールドアリュール",
+            "trainer": "伊藤 圭三",
+            "jockey": "菊沢 一樹",
+            "connection_score": 4.4
+          }
+        },
+        {
+          "n": "8",
+          "frame_no": "6",
+          "name": "エンジャムメント",
+          "horse_id": "pw01dud102024105733/79",
+          "score": 19.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マインドユアビスケッツ",
+            "damsire": "ネオユニヴァース",
+            "trainer": "中舘 英二",
+            "jockey": "北村 友一",
+            "connection_score": 4.2
+          }
+        },
+        {
+          "n": "3",
+          "frame_no": "3",
+          "name": "プリンシパルギフト",
+          "horse_id": "pw01dud102024107065/16",
+          "score": 18.9,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ドレフォン",
+            "damsire": "ダイワメジャー",
+            "trainer": "和田 正一郎",
+            "jockey": "大野 拓弥",
+            "connection_score": 4.4
+          }
+        },
+        {
+          "n": "7",
+          "frame_no": "6",
+          "name": "ヒゲキリ",
+          "horse_id": "pw01dud102024105462/A3",
+          "score": 15.4,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "コパノリッキー",
+            "damsire": "アグネスデジタル",
+            "trainer": "加藤 士津八",
+            "jockey": "三浦 皇成",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "12",
+          "frame_no": "8",
+          "name": "ファブリック",
+          "horse_id": "pw01dud102024104851/F5",
+          "score": 14.2,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "クリソベリル",
+            "damsire": "キズナ",
+            "trainer": "武井 亮",
+            "jockey": "岩田 康誠",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "1",
+          "frame_no": "1",
+          "name": "タイセイウィザード",
+          "horse_id": "pw01dud102024105540/CE",
+          "score": 13.5,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "チュウワウィザード",
+            "damsire": "High Chaparral",
+            "trainer": "栗田 徹",
+            "jockey": "津村 明秀",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "10",
+          "frame_no": "7",
+          "name": "サイモントレノ",
+          "horse_id": "pw01dud102024104675/7F",
+          "score": 13.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "インカンテーション",
+            "damsire": "ダイワメジャー",
+            "trainer": "奥平 雅士",
+            "jockey": "内田 博幸",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "9",
+          "frame_no": "7",
+          "name": "サードアイ",
+          "horse_id": "pw01dud102024107366/1C",
+          "score": 12.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マジェスティックウォリアー",
+            "damsire": "Uncaptured",
+            "trainer": "蛯名 正義",
+            "jockey": "丸山 元気",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "5",
+          "frame_no": "5",
+          "name": "メイプルカモーン",
+          "horse_id": "pw01dud102024104534/9B",
+          "score": 12.0,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ゴールドシップ",
+            "damsire": "ドレフォン",
+            "trainer": "中舘 英二",
+            "jockey": "丸田 恭介",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "6",
+          "frame_no": "5",
+          "name": "ニシノハクシャ",
+          "horse_id": "pw01dud102024105565/2D",
+          "score": 11.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "オメガパフューム",
+            "damsire": "キングヘイロー",
+            "trainer": "清水 英克",
+            "jockey": "△ 石神 深道",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "2",
+          "frame_no": "2",
+          "name": "イールーファー",
+          "horse_id": "pw01dud102024101806/17",
+          "score": 11.6,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "マテラスカイ",
+            "damsire": "プリサイスエンド",
+            "trainer": "秋本 大介",
+            "jockey": "▲ 水沼 元輝",
+            "connection_score": 0.0
+          }
+        }
+      ],
+      "analysis": {
+        "model_version": "NEW_HORSE_DEDICATED_V1",
+        "axis": {
+          "horse_no": "4",
+          "horse_name": "ハーモニープルーフ"
+        },
+        "axis_durability": {
+          "score": 48.2,
+          "status": "LOW",
+          "gap_to_second": 0.8,
+          "uncertainty": 0.85,
+          "starts_before": 0,
+          "reasons": [
+            "新馬戦のため既走データなし",
+            "通常戦の軸固定を使用せず上位2頭を中心に分散"
+          ]
+        },
+        "partner_roles": [
+          {
+            "horse_no": "11",
+            "horse_name": "ドーンオブホープ",
+            "rank": 2,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "8",
+            "horse_name": "エンジャムメント",
+            "rank": 3,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "3",
+            "horse_name": "プリンシパルギフト",
+            "rank": 4,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "7",
+            "horse_name": "ヒゲキリ",
+            "rank": 5,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "ファブリック",
+            "rank": 6,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "タイセイウィザード",
+            "rank": 7,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "10",
+            "horse_name": "サイモントレノ",
+            "rank": 8,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "9",
+            "horse_name": "サードアイ",
+            "rank": 9,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          }
+        ],
+        "third_place_intrusion": [
+          {
+            "horse_no": "7",
+            "horse_name": "ヒゲキリ",
+            "rank": 5,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "新馬・展開未確定",
+            "scenario_fit": 0.0,
+            "reason": "新馬戦専用機構で血統・厩舎・騎手・生産背景から3着侵入候補として評価",
+            "intrusion_score": 0.733
+          },
+          {
+            "horse_no": "12",
+            "horse_name": "ファブリック",
+            "rank": 6,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "新馬・展開未確定",
+            "scenario_fit": 0.0,
+            "reason": "新馬戦専用機構で血統・厩舎・騎手・生産背景から3着侵入候補として評価",
+            "intrusion_score": 0.676
+          }
+        ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "新馬・展開未確定",
+          "favored_styles": [],
+          "reason": "既走脚質がないため展開を固定しない"
+        },
+        "failure_scenarios": [
+          {
+            "id": "BASE",
+            "label": "新馬上位評価成立",
+            "covered_horses": [
+              "11",
+              "8",
+              "3"
+            ]
+          },
+          {
+            "id": "AXIS_FAIL",
+            "label": "最上位評価馬が飛ぶ",
+            "covered_horses": [
+              "11",
+              "8",
+              "3",
+              "7"
+            ]
+          },
+          {
+            "id": "THIRD_INTRUSION",
+            "label": "3着低順位馬侵入",
+            "covered_horses": [
+              "7",
+              "12"
+            ]
+          }
+        ],
+        "ticket_shape": "NEW_HORSE_GROUP",
+        "formation_columns": {
+          "first": [
+            "4",
+            "11"
+          ],
+          "second": [
+            "4",
+            "11",
+            "8",
+            "3"
+          ],
+          "third": [
+            "4",
+            "11",
+            "8",
+            "3",
+            "7",
+            "12"
+          ]
+        },
+        "trio_tickets": [
+          "4-8-11",
+          "3-4-11",
+          "4-7-11",
+          "4-11-12",
+          "3-4-8",
+          "3-8-11",
+          "4-7-8",
+          "7-8-11",
+          "3-7-11"
+        ],
+        "ticket_count": 9,
+        "classification": "C",
+        "pre_market_decision": "CAUTION",
+        "data_quality": "NEW_HORSE_DEDICATED",
+        "derived_ticket_analysis": {},
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
       }
     },
     {
@@ -24496,6 +26158,676 @@
       }
     },
     {
+      "race_id": "pw01dde0109202604020520260906",
+      "date": "2026-09-06",
+      "track": "阪神",
+      "race_no": 5,
+      "race_name": "メイクデビュー阪神",
+      "surface": "芝",
+      "distance_m": 1800,
+      "ranked_snapshot": [
+        {
+          "n": "5",
+          "frame_no": "5",
+          "name": "アストラルライト",
+          "horse_id": "pw01dud102024106612/A4",
+          "score": 14.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "コントレイル",
+            "damsire": "Galileo",
+            "trainer": "",
+            "jockey": "岩田 望来",
+            "connection_score": 4.5
+          }
+        },
+        {
+          "n": "9",
+          "frame_no": "8",
+          "name": "ハートノート",
+          "horse_id": "pw01dud102024106226/BC",
+          "score": 14.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "エフフォーリア",
+            "damsire": "ダイワメジャー",
+            "trainer": "",
+            "jockey": "松山 弘平",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "1",
+          "frame_no": "1",
+          "name": "リスグロワール",
+          "horse_id": "pw01dud102024106690/3E",
+          "score": 13.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サートゥルナーリア",
+            "damsire": "ハーツクライ",
+            "trainer": "",
+            "jockey": "D.レーン",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "4",
+          "frame_no": "4",
+          "name": "ガヤーズアモーレ",
+          "horse_id": "pw01dud102024106333/A4",
+          "score": 13.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "モーリス",
+            "damsire": "ディープインパクト",
+            "trainer": "田中 勝春",
+            "jockey": "武 豊",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "6",
+          "frame_no": "6",
+          "name": "シーグロリオーゾ",
+          "horse_id": "pw01dud102024106742/05",
+          "score": 13.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キタサンブラック",
+            "damsire": "ヘニーヒューズ",
+            "trainer": "",
+            "jockey": "池添 謙一",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "3",
+          "frame_no": "3",
+          "name": "マーゴットプレ",
+          "horse_id": "pw01dud102024100419/CD",
+          "score": 12.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キズナ",
+            "damsire": "シンボリクリスエス",
+            "trainer": "",
+            "jockey": "菱田 裕二",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "7",
+          "frame_no": "7",
+          "name": "ルージュムーサ",
+          "horse_id": "pw01dud102024101940/D6",
+          "score": 12.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キズナ",
+            "damsire": "キングカメハメハ",
+            "trainer": "",
+            "jockey": "◇ 今村 聖奈",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "8",
+          "frame_no": "7",
+          "name": "ロードメガロポリス",
+          "horse_id": "pw01dud102024105312/22",
+          "score": 11.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ダノンスマッシュ",
+            "damsire": "ダイワメジャー",
+            "trainer": "",
+            "jockey": "吉村 誠之助",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "2",
+          "frame_no": "2",
+          "name": "エモティコン",
+          "horse_id": "pw01dud102024106879/8B",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サートゥルナーリア",
+            "damsire": "Soldier Hollow",
+            "trainer": "",
+            "jockey": "西村 淳也",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "10",
+          "frame_no": "8",
+          "name": "レイディアントサン",
+          "horse_id": "pw01dud102024102372/B5",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "タワーオブロンドン",
+            "damsire": "シルバーステート",
+            "trainer": "",
+            "jockey": "幸 英明",
+            "connection_score": 0.0
+          }
+        }
+      ],
+      "champion_ranked_snapshot": [
+        {
+          "n": "5",
+          "frame_no": "5",
+          "name": "アストラルライト",
+          "horse_id": "pw01dud102024106612/A4",
+          "score": 14.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "コントレイル",
+            "damsire": "Galileo",
+            "trainer": "",
+            "jockey": "岩田 望来",
+            "connection_score": 4.5
+          }
+        },
+        {
+          "n": "9",
+          "frame_no": "8",
+          "name": "ハートノート",
+          "horse_id": "pw01dud102024106226/BC",
+          "score": 14.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "エフフォーリア",
+            "damsire": "ダイワメジャー",
+            "trainer": "",
+            "jockey": "松山 弘平",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "1",
+          "frame_no": "1",
+          "name": "リスグロワール",
+          "horse_id": "pw01dud102024106690/3E",
+          "score": 13.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サートゥルナーリア",
+            "damsire": "ハーツクライ",
+            "trainer": "",
+            "jockey": "D.レーン",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "4",
+          "frame_no": "4",
+          "name": "ガヤーズアモーレ",
+          "horse_id": "pw01dud102024106333/A4",
+          "score": 13.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "モーリス",
+            "damsire": "ディープインパクト",
+            "trainer": "田中 勝春",
+            "jockey": "武 豊",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "6",
+          "frame_no": "6",
+          "name": "シーグロリオーゾ",
+          "horse_id": "pw01dud102024106742/05",
+          "score": 13.8,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キタサンブラック",
+            "damsire": "ヘニーヒューズ",
+            "trainer": "",
+            "jockey": "池添 謙一",
+            "connection_score": 3.5
+          }
+        },
+        {
+          "n": "3",
+          "frame_no": "3",
+          "name": "マーゴットプレ",
+          "horse_id": "pw01dud102024100419/CD",
+          "score": 12.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キズナ",
+            "damsire": "シンボリクリスエス",
+            "trainer": "",
+            "jockey": "菱田 裕二",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "7",
+          "frame_no": "7",
+          "name": "ルージュムーサ",
+          "horse_id": "pw01dud102024101940/D6",
+          "score": 12.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "キズナ",
+            "damsire": "キングカメハメハ",
+            "trainer": "",
+            "jockey": "◇ 今村 聖奈",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "8",
+          "frame_no": "7",
+          "name": "ロードメガロポリス",
+          "horse_id": "pw01dud102024105312/22",
+          "score": 11.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "ダノンスマッシュ",
+            "damsire": "ダイワメジャー",
+            "trainer": "",
+            "jockey": "吉村 誠之助",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "2",
+          "frame_no": "2",
+          "name": "エモティコン",
+          "horse_id": "pw01dud102024106879/8B",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "サートゥルナーリア",
+            "damsire": "Soldier Hollow",
+            "trainer": "",
+            "jockey": "西村 淳也",
+            "connection_score": 0.0
+          }
+        },
+        {
+          "n": "10",
+          "frame_no": "8",
+          "name": "レイディアントサン",
+          "horse_id": "pw01dud102024102372/B5",
+          "score": 10.3,
+          "starts_before": 0,
+          "show_rate_prior": 0.3,
+          "recent_form": 0.35,
+          "condition_fit": 0.3,
+          "uncertainty": 0.85,
+          "running_style": "UNKNOWN",
+          "draw_show_prior": 0.3,
+          "draw_history_starts": 0,
+          "score_source": "NEW_HORSE_DEDICATED_V1",
+          "new_horse_evidence": {
+            "sire": "タワーオブロンドン",
+            "damsire": "シルバーステート",
+            "trainer": "",
+            "jockey": "幸 英明",
+            "connection_score": 0.0
+          }
+        }
+      ],
+      "analysis": {
+        "model_version": "NEW_HORSE_DEDICATED_V1",
+        "axis": {
+          "horse_no": "5",
+          "horse_name": "アストラルライト"
+        },
+        "axis_durability": {
+          "score": 45,
+          "status": "LOW",
+          "gap_to_second": 0.0,
+          "uncertainty": 0.85,
+          "starts_before": 0,
+          "reasons": [
+            "新馬戦のため既走データなし",
+            "通常戦の軸固定を使用せず上位2頭を中心に分散"
+          ]
+        },
+        "partner_roles": [
+          {
+            "horse_no": "9",
+            "horse_name": "ハートノート",
+            "rank": 2,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "1",
+            "horse_name": "リスグロワール",
+            "rank": 3,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "4",
+            "horse_name": "ガヤーズアモーレ",
+            "rank": 4,
+            "roles": [
+              "新馬能力上位"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "6",
+            "horse_name": "シーグロリオーゾ",
+            "rank": 5,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "3",
+            "horse_name": "マーゴットプレ",
+            "rank": 6,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "7",
+            "horse_name": "ルージュムーサ",
+            "rank": 7,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "8",
+            "horse_name": "ロードメガロポリス",
+            "rank": 8,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          },
+          {
+            "horse_no": "2",
+            "horse_name": "エモティコン",
+            "rank": 9,
+            "roles": [
+              "3着侵入候補"
+            ],
+            "uncertainty": 0.85,
+            "running_style": "UNKNOWN"
+          }
+        ],
+        "third_place_intrusion": [
+          {
+            "horse_no": "6",
+            "horse_name": "シーグロリオーゾ",
+            "rank": 5,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "新馬・展開未確定",
+            "scenario_fit": 0.0,
+            "reason": "新馬戦専用機構で血統・厩舎・騎手・生産背景から3着侵入候補として評価",
+            "intrusion_score": 0.932
+          },
+          {
+            "horse_no": "3",
+            "horse_name": "マーゴットプレ",
+            "rank": 6,
+            "running_style": "UNKNOWN",
+            "axis_win_flow": "新馬・展開未確定",
+            "scenario_fit": 0.0,
+            "reason": "新馬戦専用機構で血統・厩舎・騎手・生産背景から3着侵入候補として評価",
+            "intrusion_score": 0.831
+          }
+        ],
+        "axis_win_flow": {
+          "axis_style": "UNKNOWN",
+          "front_count": 0,
+          "flow": "新馬・展開未確定",
+          "favored_styles": [],
+          "reason": "既走脚質がないため展開を固定しない"
+        },
+        "failure_scenarios": [
+          {
+            "id": "BASE",
+            "label": "新馬上位評価成立",
+            "covered_horses": [
+              "9",
+              "1",
+              "4"
+            ]
+          },
+          {
+            "id": "AXIS_FAIL",
+            "label": "最上位評価馬が飛ぶ",
+            "covered_horses": [
+              "9",
+              "1",
+              "4",
+              "6"
+            ]
+          },
+          {
+            "id": "THIRD_INTRUSION",
+            "label": "3着低順位馬侵入",
+            "covered_horses": [
+              "6",
+              "3"
+            ]
+          }
+        ],
+        "ticket_shape": "NEW_HORSE_GROUP",
+        "formation_columns": {
+          "first": [
+            "5",
+            "9"
+          ],
+          "second": [
+            "5",
+            "9",
+            "1",
+            "4"
+          ],
+          "third": [
+            "5",
+            "9",
+            "1",
+            "4",
+            "6",
+            "3"
+          ]
+        },
+        "trio_tickets": [
+          "1-5-9",
+          "4-5-9",
+          "5-6-9",
+          "3-5-9",
+          "1-4-5",
+          "1-4-9",
+          "1-5-6",
+          "1-6-9",
+          "4-6-9"
+        ],
+        "ticket_count": 9,
+        "classification": "C",
+        "pre_market_decision": "CAUTION",
+        "data_quality": "NEW_HORSE_DEDICATED",
+        "derived_ticket_analysis": {},
+        "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
+      }
+    },
+    {
       "race_id": "pw01dde0109202604020620260906",
       "date": "2026-09-06",
       "track": "阪神",
@@ -31027,37 +33359,6 @@
       }
     }
   ],
-  "pending": [
-    {
-      "race_id": "pw01dde0106202604020520260906",
-      "date": "2026-09-06",
-      "track": "中山",
-      "race_no": 5,
-      "status": "DATA_PENDING",
-      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
-      "evidence_horses": 0,
-      "score_spread": 2.574
-    },
-    {
-      "race_id": "pw01dde0106202604020620260906",
-      "date": "2026-09-06",
-      "track": "中山",
-      "race_no": 6,
-      "status": "DATA_PENDING",
-      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
-      "evidence_horses": 0,
-      "score_spread": 2.574
-    },
-    {
-      "race_id": "pw01dde0109202604020520260906",
-      "date": "2026-09-06",
-      "track": "阪神",
-      "race_no": 5,
-      "status": "DATA_PENDING",
-      "reason": "at least 3 evidence-backed and differentiated pre-race horse scores are required; no fallback/fabricated ranking is allowed",
-      "evidence_horses": 0,
-      "score_spread": 1.898
-    }
-  ],
-  "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82"
+  "pending": [],
+  "prediction_hash_sha256": "d26f0f8655ba89e1f1c29c98a0d294951ce91fcaac983ca303909dc03bf657c1"
 }
