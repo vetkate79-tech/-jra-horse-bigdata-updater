@@ -2,12 +2,12 @@
   "schema_version": 7,
   "mode": "LIVE_PURE_PREDICTION_CHALLENGER_RESEAL",
   "seal_stage": "FINAL_WITH_FRAME",
-  "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
-  "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+  "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+  "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
   "publication_status": "PUBLIC_CHALLENGER",
   "challenger_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
   "champion_archive": "docs/data/live_predictions_champion_2026-09-06.json",
-  "generated_at": "2026-09-06T12:53:45.387664+09:00",
+  "generated_at": "2026-09-06T13:26:56.324065+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-06",
@@ -261,7 +261,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "6",
           "horse_name": "エンジョイドライブ"
@@ -483,10 +483,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -1136,7 +1136,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "9",
           "horse_name": "フォーエバーブルー"
@@ -1387,10 +1387,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": true,
           "champion_axis": {
@@ -2080,7 +2080,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "4",
           "horse_name": "トルネードアイル"
@@ -2295,14 +2295,14 @@
         },
         "trio_tickets": [
           "2-4-15",
-          "4-11-15",
-          "2-4-11",
-          "4-9-15",
-          "2-4-9",
           "4-9-11",
           "4-13-15",
-          "2-4-13",
-          "4-11-13"
+          "2-4-14",
+          "4-11-13",
+          "4-9-15",
+          "4-11-14",
+          "2-4-9",
+          "4-14-15"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -2369,10 +2369,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -3086,7 +3086,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "3",
           "horse_name": "メビウスロマンス"
@@ -3305,15 +3305,15 @@
           ]
         },
         "trio_tickets": [
-          "3-5-12",
           "3-4-12",
+          "3-5-11",
+          "3-9-12",
+          "3-5-15",
           "3-4-5",
           "3-11-12",
-          "3-5-11",
-          "3-4-11",
-          "3-9-12",
+          "3-4-9",
           "3-5-9",
-          "3-4-9"
+          "3-4-11"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -3380,10 +3380,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -5831,7 +5831,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "9",
           "horse_name": "クリスタルドレス"
@@ -6048,14 +6048,14 @@
           ]
         },
         "trio_tickets": [
-          "2-8-9",
           "8-9-15",
-          "8-9-18",
+          "2-9-18",
           "8-9-16",
-          "2-8-15",
-          "2-8-18",
-          "2-8-16",
-          "8-15-18"
+          "2-9-12",
+          "15-16-18",
+          "8-15-18",
+          "2-15-16",
+          "12-16-18"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -6122,10 +6122,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -6840,7 +6840,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "3",
           "horse_name": "アイビーチーキー"
@@ -7064,14 +7064,14 @@
           ]
         },
         "trio_tickets": [
-          "3-14-16",
           "1-3-14",
-          "3-12-14",
+          "3-12-16",
           "3-9-14",
-          "1-14-16",
-          "12-14-16",
-          "9-14-16",
-          "1-12-14"
+          "3-13-16",
+          "1-9-12",
+          "1-12-14",
+          "1-9-16",
+          "9-12-13"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -7138,10 +7138,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -7856,7 +7856,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "13",
           "horse_name": "キタノライブリー"
@@ -8071,14 +8071,14 @@
           ]
         },
         "trio_tickets": [
-          "6-10-13",
-          "2-6-13",
           "6-8-13",
+          "10-13-14",
+          "2-4-13",
           "6-13-14",
-          "6-8-10",
-          "6-10-14",
-          "2-6-8",
-          "4-6-10"
+          "4-8-14",
+          "6-8-14",
+          "4-8-10",
+          "2-4-14"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -8145,10 +8145,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -8647,7 +8647,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "5",
           "horse_name": "フクチャンショウ"
@@ -8865,15 +8865,15 @@
           ]
         },
         "trio_tickets": [
-          "5-8-9",
           "5-6-8",
+          "5-7-9",
+          "2-5-8",
+          "4-5-9",
           "5-6-9",
           "5-7-8",
-          "5-7-9",
-          "5-6-7",
-          "2-5-8",
+          "2-5-6",
           "2-5-9",
-          "2-5-6"
+          "5-6-7"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -8940,10 +8940,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -9505,7 +9505,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "6",
           "horse_name": "アストリル"
@@ -9735,14 +9735,14 @@
           ]
         },
         "trio_tickets": [
-          "6-9-10",
           "3-6-9",
-          "2-6-9",
+          "2-6-10",
           "1-6-9",
-          "3-9-10",
-          "2-9-10",
-          "1-9-10",
-          "2-3-9"
+          "6-7-10",
+          "1-2-3",
+          "2-3-9",
+          "1-3-10",
+          "1-2-7"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -9809,10 +9809,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -10527,7 +10527,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "2",
           "horse_name": "ファインサマーデイ"
@@ -10748,15 +10748,15 @@
           ]
         },
         "trio_tickets": [
-          "2-6-10",
           "2-6-7",
+          "1-2-10",
+          "2-6-16",
+          "2-3-10",
           "2-7-10",
           "1-2-6",
-          "1-2-10",
-          "1-2-7",
-          "2-6-16",
+          "2-7-16",
           "2-10-16",
-          "2-7-16"
+          "1-2-7"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -10823,10 +10823,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -11452,7 +11452,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "3",
           "horse_name": "エリカビアリッツ"
@@ -11673,15 +11673,15 @@
           ]
         },
         "trio_tickets": [
-          "2-3-4",
           "3-4-10",
+          "2-3-8",
+          "3-4-6",
+          "2-3-7",
           "2-3-10",
           "3-4-8",
-          "2-3-8",
-          "3-8-10",
-          "3-4-6",
+          "3-6-10",
           "2-3-6",
-          "3-6-10"
+          "3-8-10"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -11748,10 +11748,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -12273,7 +12273,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "6",
           "horse_name": "イッペイ"
@@ -12558,10 +12558,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -13211,7 +13211,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "3",
           "horse_name": "ゴンフィンガー"
@@ -13435,14 +13435,14 @@
         },
         "trio_tickets": [
           "3-6-14",
-          "3-6-12",
-          "3-12-14",
-          "2-3-6",
-          "2-3-14",
           "2-3-12",
           "3-4-6",
-          "3-4-14",
-          "3-4-12"
+          "3-11-14",
+          "3-4-12",
+          "2-3-6",
+          "3-11-12",
+          "2-3-14",
+          "3-6-11"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -13509,10 +13509,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -14226,7 +14226,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "14",
           "horse_name": "ルージュフィーリア"
@@ -14447,14 +14447,14 @@
           ]
         },
         "trio_tickets": [
-          "7-8-14",
-          "7-14-15",
           "7-10-14",
+          "2-8-14",
+          "4-14-15",
           "2-7-14",
-          "7-8-10",
-          "2-7-8",
-          "7-10-15",
-          "4-7-8"
+          "2-4-10",
+          "2-7-10",
+          "4-8-10",
+          "2-4-15"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -14521,10 +14521,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -15247,7 +15247,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "10",
           "horse_name": "ゴコウコイコイ"
@@ -15463,14 +15463,14 @@
           ]
         },
         "trio_tickets": [
-          "3-9-10",
           "9-10-14",
-          "9-10-16",
+          "3-10-16",
           "8-9-10",
-          "3-9-14",
-          "3-9-16",
-          "3-8-9",
-          "9-14-16"
+          "3-10-11",
+          "8-14-16",
+          "9-14-16",
+          "3-8-14",
+          "8-11-16"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -15537,10 +15537,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -16127,7 +16127,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "2",
           "horse_name": "ステラノヴァ"
@@ -16347,15 +16347,15 @@
           ]
         },
         "trio_tickets": [
-          "2-4-11",
           "2-7-11",
+          "1-2-4",
+          "2-3-11",
+          "2-4-10",
           "2-4-7",
           "1-2-11",
-          "1-2-4",
-          "1-2-7",
-          "2-3-11",
+          "2-3-7",
           "2-3-4",
-          "2-3-7"
+          "1-2-7"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -16422,10 +16422,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -17147,7 +17147,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "12",
           "horse_name": "ウィングブルー"
@@ -17370,14 +17370,14 @@
           ]
         },
         "trio_tickets": [
-          "6-9-12",
           "9-12-14",
-          "3-9-12",
+          "3-6-12",
           "8-9-12",
-          "6-9-14",
-          "3-6-9",
-          "6-8-9",
-          "3-9-14"
+          "6-12-16",
+          "3-8-14",
+          "3-9-14",
+          "6-8-14",
+          "3-8-16"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -17444,10 +17444,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -18106,7 +18106,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "11",
           "horse_name": "ルールザウェイヴ"
@@ -18323,15 +18323,15 @@
           ]
         },
         "trio_tickets": [
-          "7-11-14",
           "5-7-11",
+          "9-11-14",
+          "4-7-11",
+          "11-13-14",
           "5-11-14",
           "7-9-11",
-          "9-11-14",
-          "5-9-11",
-          "4-7-11",
+          "4-5-11",
           "4-11-14",
-          "4-5-11"
+          "5-9-11"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -18398,10 +18398,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -19051,7 +19051,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "10",
           "horse_name": "エスシービクトリア"
@@ -19277,14 +19277,14 @@
         },
         "trio_tickets": [
           "3-9-10",
-          "3-6-10",
-          "6-9-10",
-          "3-7-10",
-          "7-9-10",
           "6-7-10",
           "3-4-10",
-          "4-9-10",
-          "4-6-10"
+          "9-10-12",
+          "4-6-10",
+          "3-7-10",
+          "6-10-12",
+          "7-9-10",
+          "3-10-12"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -19351,10 +19351,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -20004,7 +20004,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "9",
           "horse_name": "ハヤブササキチャン"
@@ -20230,15 +20230,15 @@
           ]
         },
         "trio_tickets": [
-          "3-9-10",
           "6-9-10",
+          "3-9-11",
+          "9-10-14",
+          "3-8-9",
           "3-6-9",
           "9-10-11",
-          "3-9-11",
-          "6-9-11",
-          "9-10-14",
+          "6-9-14",
           "3-9-14",
-          "6-9-14"
+          "6-9-11"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -20305,10 +20305,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -20958,7 +20958,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "1",
           "horse_name": "レクスノヴァス"
@@ -21182,15 +21182,15 @@
           ]
         },
         "trio_tickets": [
-          "1-4-7",
           "1-7-12",
+          "1-4-14",
+          "1-7-10",
+          "1-4-5",
           "1-4-12",
           "1-7-14",
-          "1-4-14",
-          "1-12-14",
-          "1-7-10",
+          "1-10-12",
           "1-4-10",
-          "1-10-12"
+          "1-12-14"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -21257,10 +21257,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -21846,7 +21846,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "8",
           "horse_name": "アチーヴァー"
@@ -22070,14 +22070,14 @@
           ]
         },
         "trio_tickets": [
-          "5-7-8",
-          "1-5-8",
           "4-5-8",
+          "7-8-9",
+          "1-8-11",
           "5-8-9",
-          "4-5-7",
-          "5-7-9",
-          "1-4-5",
-          "5-7-11"
+          "4-9-11",
+          "4-5-9",
+          "4-7-11",
+          "1-9-11"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -22144,10 +22144,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -22670,7 +22670,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "1",
           "horse_name": "ルースソラール"
@@ -22886,14 +22886,14 @@
           ]
         },
         "trio_tickets": [
-          "1-7-8",
           "1-5-8",
-          "1-4-8",
+          "1-4-7",
           "1-6-8",
-          "5-7-8",
-          "4-7-8",
-          "6-7-8",
-          "4-5-8"
+          "1-3-7",
+          "4-5-6",
+          "4-5-8",
+          "5-6-7",
+          "3-4-6"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -22960,10 +22960,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -23677,7 +23677,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "16",
           "horse_name": "マカロンブルー"
@@ -23900,14 +23900,14 @@
           ]
         },
         "trio_tickets": [
-          "8-14-16",
           "8-9-16",
-          "8-12-16",
+          "12-14-16",
           "5-8-16",
-          "8-9-14",
-          "8-12-14",
-          "5-8-14",
-          "8-9-12"
+          "4-14-16",
+          "5-9-12",
+          "8-9-12",
+          "5-9-14",
+          "4-5-12"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -23974,10 +23974,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -24668,7 +24668,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "14",
           "horse_name": "アラムシャピラス"
@@ -24888,15 +24888,15 @@
           ]
         },
         "trio_tickets": [
-          "1-14-15",
           "1-2-14",
+          "4-14-15",
+          "1-5-14",
+          "9-14-15",
           "2-14-15",
           "1-4-14",
-          "4-14-15",
-          "2-4-14",
-          "1-5-14",
+          "2-5-14",
           "5-14-15",
-          "2-5-14"
+          "2-4-14"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -24963,10 +24963,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -25680,7 +25680,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "3",
           "horse_name": "ティタノマキア"
@@ -25890,15 +25890,15 @@
           ]
         },
         "trio_tickets": [
-          "3-11-15",
           "3-4-11",
+          "3-8-15",
+          "3-11-12",
+          "2-3-15",
           "3-4-15",
           "3-8-11",
-          "3-8-15",
-          "3-4-8",
-          "3-11-12",
+          "3-4-12",
           "3-12-15",
-          "3-4-12"
+          "3-4-8"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -25965,10 +25965,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -27224,7 +27224,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "9",
           "horse_name": "シュネルアンジュ"
@@ -27446,15 +27446,15 @@
           ]
         },
         "trio_tickets": [
-          "6-7-9",
           "7-9-12",
+          "2-6-9",
+          "4-7-9",
+          "5-6-9",
           "6-9-12",
           "2-7-9",
-          "2-6-9",
-          "2-9-12",
-          "4-7-9",
+          "4-9-12",
           "4-6-9",
-          "4-9-12"
+          "2-9-12"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -27521,10 +27521,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -28174,7 +28174,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "3",
           "horse_name": "マゲバスピード"
@@ -28394,15 +28394,15 @@
           ]
         },
         "trio_tickets": [
-          "3-4-12",
           "3-4-13",
+          "3-8-12",
+          "3-4-11",
+          "1-3-12",
           "3-12-13",
           "3-4-8",
-          "3-8-12",
-          "3-8-13",
-          "3-4-11",
+          "3-11-13",
           "3-11-12",
-          "3-11-13"
+          "3-8-13"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -28469,10 +28469,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -28898,7 +28898,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "6",
           "horse_name": "バルセシート"
@@ -29099,14 +29099,14 @@
         },
         "trio_tickets": [
           "1-5-6",
-          "1-2-6",
-          "2-5-6",
-          "1-3-6",
-          "3-5-6",
           "2-3-6",
           "1-4-6",
-          "4-5-6",
-          "2-4-6"
+          "5-6-7",
+          "2-4-6",
+          "1-3-6",
+          "2-6-7",
+          "3-5-6",
+          "1-6-7"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -29173,10 +29173,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -29890,7 +29890,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "14",
           "horse_name": "パイオニアスクエア"
@@ -30121,14 +30121,14 @@
           ]
         },
         "trio_tickets": [
-          "4-6-14",
           "6-10-14",
-          "6-11-14",
+          "4-11-14",
           "1-6-14",
-          "4-6-10",
-          "4-6-11",
-          "1-4-6",
-          "6-10-11"
+          "4-8-14",
+          "1-10-11",
+          "6-10-11",
+          "1-4-10",
+          "1-8-11"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -30195,10 +30195,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -30817,7 +30817,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "5",
           "horse_name": "テーオーグレーザー"
@@ -31036,15 +31036,15 @@
           ]
         },
         "trio_tickets": [
-          "4-5-10",
           "5-10-11",
+          "4-5-8",
+          "5-10-13",
+          "1-4-5",
           "4-5-11",
           "5-8-10",
-          "4-5-8",
-          "5-8-11",
-          "5-10-13",
+          "5-11-13",
           "4-5-13",
-          "5-11-13"
+          "5-8-11"
         ],
         "ticket_count": 9,
         "classification": "A",
@@ -31111,10 +31111,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -31836,7 +31836,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "5",
           "horse_name": "ダイヤモンドノット"
@@ -32064,14 +32064,14 @@
           ]
         },
         "trio_tickets": [
-          "3-5-16",
           "5-7-16",
-          "5-8-16",
+          "3-5-8",
           "5-9-16",
-          "3-7-16",
-          "3-8-16",
-          "3-9-16",
-          "7-8-16"
+          "2-3-5",
+          "7-8-9",
+          "7-8-16",
+          "3-7-9",
+          "2-8-9"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -32138,10 +32138,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -32864,7 +32864,7 @@
         }
       ],
       "analysis": {
-        "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+        "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
         "axis": {
           "horse_no": "15",
           "horse_name": "ランスオブセヘル"
@@ -33091,14 +33091,14 @@
           ]
         },
         "trio_tickets": [
-          "4-10-15",
           "2-4-15",
-          "4-12-15",
+          "10-12-15",
           "3-4-15",
-          "2-4-10",
-          "4-10-12",
-          "3-4-10",
-          "2-4-12"
+          "10-14-15",
+          "2-3-12",
+          "2-4-12",
+          "2-3-10",
+          "3-12-14"
         ],
         "ticket_count": 8,
         "classification": "C",
@@ -33165,10 +33165,10 @@
           }
         },
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.",
+        "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "challenger_reseal": {
           "status": "PUBLIC_CHALLENGER",
-          "base_model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+          "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
           "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
           "changed_from_champion": false,
           "champion_axis": {
@@ -33360,5 +33360,5 @@
     }
   ],
   "pending": [],
-  "prediction_hash_sha256": "d26f0f8655ba89e1f1c29c98a0d294951ce91fcaac983ca303909dc03bf657c1"
+  "prediction_hash_sha256": "98e7ce62cdaaa1a22a0703d774561dd95251f0e3f2bcdd0272ff5d2fdd11bc95"
 }
