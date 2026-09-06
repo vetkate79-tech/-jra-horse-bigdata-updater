@@ -401,12 +401,20 @@ def main():
         {"label":"候補内組合せ漏れ","value":combo_miss},
     ]
     state_counts=dict(Counter(r["race_state"] for r in rows))
-    today=max((r["date"] for r in rows if r.get("date")), default="")
-    today_rows=[r for r in rows if r.get("date")==today] if today else rows
+    actual_today=datetime.now(JST).date().isoformat()
+    canonical_dates=sorted({str(r.get("date") or "") for r in rows if str(r.get("date") or "")})
+    if actual_today in canonical_dates:
+        display_date=actual_today
+    else:
+        future_dates=[d for d in canonical_dates if d>actual_today]
+        display_date=future_dates[0] if future_dates else (canonical_dates[-1] if canonical_dates else "")
+    today_rows=[r for r in rows if r.get("date")==display_date] if display_date else rows
 
     summary={
         "model_version":sealed.get("model_version") or sealed.get("schema_version") or "JRA-LIVE",
         "snapshot_time":datetime.now(JST).isoformat(timespec="seconds"),
+        "actual_today_jst":actual_today,
+        "display_date":display_date,
         "total_races":len(today_rows),
         "buy_races":sum(1 for r in today_rows if r.get("decision") in ("BUY","CAUTION")),
         "pass_races":sum(1 for r in today_rows if r.get("decision")=="PASS"),
