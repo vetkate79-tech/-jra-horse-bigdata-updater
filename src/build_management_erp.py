@@ -11,6 +11,7 @@ SEALED = Path("docs/data/live_predictions_sealed.json")
 SCORES = Path("docs/data/live_prediction_scores.json")
 PDCA = Path("docs/data/live_pdca.json")
 UPGRADE_LOG = Path("docs/data/model_upgrade_log.json")
+RUNTIME_OWNERSHIP = Path("config/runtime_ownership.json")
 CONTEXT = Path("data/race_context_2026.csv")
 PAYOUTS = Path("data/race_payouts_2026.csv")
 RESULTS = Path("data/race_results_html_2026.csv")
@@ -169,6 +170,7 @@ def main():
     scores=load_json(SCORES, {"summary":{},"races":[],"pending":[]})
     pdca=load_json(PDCA, {})
     upgrade_log=load_json(UPGRADE_LOG, {"schema_version":1,"upgrades":[]})
+    runtime_ownership=load_json(RUNTIME_OWNERSHIP, {})
     contexts=read_csv(CONTEXT)
     payouts=read_csv(PAYOUTS)
     results=read_csv(RESULTS)
@@ -520,8 +522,11 @@ def main():
         "summary":summary,
         "state_counts":state_counts,
         "races":public_races,
+        "runtime_ownership":runtime_ownership,
         "risks":[
             {"name":"公開側→管理側データ連携","level":"ok","detail":"公開画面と同じ正規データ源から管理分析JSONを自動生成。手動取り込み不要。"},
+            {"name":"本番実行基盤","level":"ok","detail":"本番運用はGitHub Actionsへ一本化。Replitは開発専用で停止しても本番運用に影響しない。"},
+            {"name":"正規公開URL","level":"ok","detail":"Cloudflare Pagesを唯一の正規公開面として扱い、GitHub Pagesは非正規の補助確認用。"},
             {"name":"市場情報ファイアウォール","level":"ok","detail":"能力予想と結果/払戻の後段分析を分離。"},
             {"name":"自動最適化","level":"ok","detail":"条件別分解からChallenger候補を自動生成。productionは自動上書きしない。"},
         ],
@@ -558,6 +563,7 @@ def main():
             {"name":"race_context_2026.csv","status":"ok" if CONTEXT.exists() else "warn","detail":"レース条件"},
             {"name":"race_payouts_2026.csv","status":"ok" if PAYOUTS.exists() else "warn","detail":"公式払戻"},
             {"name":"management_analytics.json","status":"ok","detail":"管理専用の細分化・抽出用データ"},
+            {"name":"runtime_ownership.json","status":"ok" if RUNTIME_OWNERSHIP.exists() else "bad","detail":"本番実行元・公開先・ミラー・Replit責務の単一オーナー定義"},
         ],
         "upgrade_log":{"tracking_started_at":upgrade_log.get("tracking_started_at"),"baseline":upgrade_log.get("baseline"),"policy":upgrade_log.get("policy"),"upgrades":upgrade_rows},
         "analytics":{
