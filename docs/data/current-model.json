@@ -1,24 +1,24 @@
 {
   "status": "ACTIVE_RESEARCH_PRODUCTION_CORE",
-  "operational_layer": "ORAL_INTEGRATED_V1_2_SHADOW",
+  "operational_layer": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
   "feature_layer": "JRA_MULTI_HORIZON_STRICT_CUTOFF_V2",
-  "updated_for": "2026-09-02 big-data anti-bias, repeatability, situational-race and mixture-of-experts architecture",
+  "updated_for": "2026-09-06 role-split ticket guard: third-line coverage, hidden-fixed-partner prevention, and honest hedged display",
   "market_isolation": {
     "odds_in_pure_prediction": false,
     "popularity_in_pure_prediction": false,
     "target_results_before_seal": false
   },
   "horse_ranking": {
-    "structural_big_data_weight": 0.70,
-    "medium_term_weight": 0.20,
-    "short_term_weight": 0.10,
+    "structural_big_data_weight": 0.7,
+    "medium_term_weight": 0.2,
+    "short_term_weight": 0.1,
     "short_term_weight_cap": 0.15
   },
   "axis_durability": {
-    "historical_top3_rate": 0.30,
+    "historical_top3_rate": 0.3,
     "condition_fit": 0.22,
     "recent_form": 0.18,
-    "gap_to_second": 0.10,
+    "gap_to_second": 0.1,
     "low_uncertainty": 0.12,
     "evidence_volume": 0.08
   },
@@ -67,9 +67,26 @@
   },
   "fixed_public_validation_archive": {
     "month": "2026-08",
-    "dates": ["2026-08-01","2026-08-02","2026-08-08","2026-08-09","2026-08-15","2026-08-16","2026-08-22","2026-08-23","2026-08-29","2026-08-30"],
+    "dates": [
+      "2026-08-01",
+      "2026-08-02",
+      "2026-08-08",
+      "2026-08-09",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-29",
+      "2026-08-30"
+    ],
     "race_count": 360,
     "one_prediction_per_race": true,
     "separate_from_actual_pre_race_archive": true
+  },
+  "ticket_conversion_guard": {
+    "third_line_candidate_must_appear_in_ticket": true,
+    "hidden_non_axis_fixed_partner_prohibited": true,
+    "mid_shape": "4 axis-anchored + 4 axis-free",
+    "odds_popularity_used": false
   }
 }
