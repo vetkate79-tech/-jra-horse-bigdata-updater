@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-06T10:47:15+09:00",
+  "updated_at": "2026-09-06T11:31:50+09:00",
   "purpose": "管理専用。公開画面には出さない詳細KPI・回収率・条件別分析・Challenger候補。",
   "governance": {
     "production_auto_mutation": false,
@@ -17,8 +17,8 @@
     }
   },
   "summary": {
-    "model_version": "ORAL_INTEGRATED_V1_2_SHADOW__TOP3_SURVIVAL_R2_CHALLENGER",
-    "snapshot_time": "2026-09-06T10:47:15+09:00",
+    "model_version": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER",
+    "snapshot_time": "2026-09-06T11:31:50+09:00",
     "actual_today_jst": "2026-09-06",
     "display_date": "2026-09-06",
     "total_races": 33,
@@ -3967,7 +3967,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4044,7 +4044,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4113,13 +4113,13 @@
       "trio_tickets": [
         "2-4-15",
         "4-11-15",
-        "4-9-15",
-        "4-14-15",
         "2-4-11",
+        "4-9-15",
         "2-4-9",
-        "2-4-14",
         "4-9-11",
-        "4-11-14"
+        "4-13-15",
+        "2-4-13",
+        "4-11-13"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -4133,7 +4133,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4202,13 +4202,13 @@
       "trio_tickets": [
         "3-5-12",
         "3-4-12",
-        "3-9-12",
-        "3-12-15",
         "3-4-5",
+        "3-11-12",
+        "3-5-11",
+        "3-4-11",
+        "3-9-12",
         "3-5-9",
-        "3-5-15",
-        "3-4-9",
-        "3-4-15"
+        "3-4-9"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -4222,7 +4222,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4291,12 +4291,12 @@
       "trio_tickets": [
         "2-8-9",
         "8-9-15",
-        "8-9-12",
-        "2-9-15",
+        "8-9-18",
+        "8-9-16",
         "2-8-15",
         "2-8-18",
-        "8-12-15",
-        "2-8-16"
+        "2-8-16",
+        "8-15-18"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -4310,7 +4310,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4380,12 +4380,12 @@
       "trio_tickets": [
         "3-14-16",
         "1-3-14",
-        "3-13-14",
-        "1-3-16",
+        "3-12-14",
+        "3-9-14",
         "1-14-16",
-        "1-13-14",
         "12-14-16",
-        "1-11-14"
+        "9-14-16",
+        "1-12-14"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -4399,7 +4399,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4470,11 +4470,11 @@
         "6-10-13",
         "2-6-13",
         "6-8-13",
-        "2-10-13",
+        "6-13-14",
         "6-8-10",
-        "4-6-10",
+        "6-10-14",
         "2-6-8",
-        "6-10-14"
+        "4-6-10"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -4488,7 +4488,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4558,13 +4558,13 @@
       "trio_tickets": [
         "5-8-9",
         "5-6-8",
-        "4-5-8",
-        "3-5-8",
         "5-6-9",
-        "4-5-9",
-        "3-5-9",
-        "4-5-6",
-        "3-5-6"
+        "5-7-8",
+        "5-7-9",
+        "5-6-7",
+        "2-5-8",
+        "2-5-9",
+        "2-5-6"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -4578,7 +4578,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4647,12 +4647,12 @@
       "trio_tickets": [
         "6-9-10",
         "3-6-9",
+        "2-6-9",
         "1-6-9",
-        "3-6-10",
         "3-9-10",
-        "1-9-10",
         "2-9-10",
-        "1-3-9"
+        "1-9-10",
+        "2-3-9"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -4666,7 +4666,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4736,13 +4736,13 @@
       "trio_tickets": [
         "2-6-10",
         "2-6-7",
-        "1-2-6",
-        "2-3-6",
         "2-7-10",
+        "1-2-6",
         "1-2-10",
-        "2-3-10",
         "1-2-7",
-        "2-3-7"
+        "2-6-16",
+        "2-10-16",
+        "2-7-16"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -4756,7 +4756,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4825,12 +4825,12 @@
       "trio_tickets": [
         "2-3-4",
         "3-4-10",
-        "3-4-8",
-        "3-4-6",
         "2-3-10",
+        "3-4-8",
         "2-3-8",
-        "2-3-6",
         "3-8-10",
+        "3-4-6",
+        "2-3-6",
         "3-6-10"
       ],
       "ticket_count": 9,
@@ -4845,7 +4845,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4924,7 +4924,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4993,12 +4993,12 @@
       "trio_tickets": [
         "3-6-14",
         "3-6-12",
-        "2-3-6",
-        "3-4-6",
         "3-12-14",
+        "2-3-6",
         "2-3-14",
-        "3-4-14",
         "2-3-12",
+        "3-4-6",
+        "3-4-14",
         "3-4-12"
       ],
       "ticket_count": 9,
@@ -5013,7 +5013,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5083,11 +5083,11 @@
         "7-8-14",
         "7-14-15",
         "7-10-14",
-        "8-14-15",
+        "2-7-14",
         "7-8-10",
-        "7-10-15",
         "2-7-8",
-        "8-10-15"
+        "7-10-15",
+        "4-7-8"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -5101,7 +5101,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5170,12 +5170,12 @@
       "trio_tickets": [
         "3-9-10",
         "9-10-14",
+        "9-10-16",
         "8-9-10",
-        "3-10-14",
         "3-9-14",
-        "3-8-9",
         "3-9-16",
-        "8-9-14"
+        "3-8-9",
+        "9-14-16"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -5189,7 +5189,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5256,15 +5256,15 @@
       "role_tags": [],
       "third_place_intrusion_candidates": [],
       "trio_tickets": [
+        "2-4-11",
         "2-7-11",
+        "2-4-7",
         "1-2-11",
-        "2-3-11",
-        "2-10-11",
+        "1-2-4",
         "1-2-7",
-        "2-3-7",
-        "2-7-10",
-        "1-2-3",
-        "1-2-10"
+        "2-3-11",
+        "2-3-4",
+        "2-3-7"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -5278,7 +5278,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5348,11 +5348,11 @@
         "6-9-12",
         "9-12-14",
         "3-9-12",
-        "6-12-14",
+        "8-9-12",
         "6-9-14",
         "3-6-9",
-        "3-9-14",
-        "6-8-9"
+        "6-8-9",
+        "3-9-14"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -5366,7 +5366,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5435,13 +5435,13 @@
       "trio_tickets": [
         "7-11-14",
         "5-7-11",
-        "4-7-11",
-        "7-9-11",
         "5-11-14",
-        "4-11-14",
+        "7-9-11",
         "9-11-14",
-        "4-5-11",
-        "5-9-11"
+        "5-9-11",
+        "4-7-11",
+        "4-11-14",
+        "4-5-11"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -5455,7 +5455,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5524,13 +5524,13 @@
       "trio_tickets": [
         "3-9-10",
         "3-6-10",
-        "3-4-10",
-        "3-7-10",
         "6-9-10",
-        "4-9-10",
+        "3-7-10",
         "7-9-10",
-        "4-6-10",
-        "6-7-10"
+        "6-7-10",
+        "3-4-10",
+        "4-9-10",
+        "4-6-10"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -5544,7 +5544,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5613,13 +5613,13 @@
       "trio_tickets": [
         "3-9-10",
         "6-9-10",
-        "9-10-14",
-        "9-10-11",
         "3-6-9",
-        "3-9-14",
+        "9-10-11",
         "3-9-11",
-        "6-9-14",
-        "6-9-11"
+        "6-9-11",
+        "9-10-14",
+        "3-9-14",
+        "6-9-14"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -5633,7 +5633,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5702,13 +5702,13 @@
       "trio_tickets": [
         "1-4-7",
         "1-7-12",
-        "1-7-14",
-        "1-5-7",
         "1-4-12",
+        "1-7-14",
         "1-4-14",
-        "1-4-5",
         "1-12-14",
-        "1-5-12"
+        "1-7-10",
+        "1-4-10",
+        "1-10-12"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -5722,7 +5722,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5792,7 +5792,7 @@
         "5-7-8",
         "1-5-8",
         "4-5-8",
-        "1-7-8",
+        "5-8-9",
         "4-5-7",
         "5-7-9",
         "1-4-5",
@@ -5810,7 +5810,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5880,7 +5880,7 @@
         "1-7-8",
         "1-5-8",
         "1-4-8",
-        "1-5-7",
+        "1-6-8",
         "5-7-8",
         "4-7-8",
         "6-7-8",
@@ -5898,7 +5898,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -5968,11 +5968,11 @@
         "8-14-16",
         "8-9-16",
         "8-12-16",
-        "9-14-16",
+        "5-8-16",
         "8-9-14",
         "8-12-14",
-        "8-9-12",
-        "5-8-14"
+        "5-8-14",
+        "8-9-12"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -5986,7 +5986,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6056,13 +6056,13 @@
       "trio_tickets": [
         "1-14-15",
         "1-2-14",
-        "1-4-14",
-        "1-9-14",
         "2-14-15",
+        "1-4-14",
         "4-14-15",
-        "9-14-15",
         "2-4-14",
-        "2-9-14"
+        "1-5-14",
+        "5-14-15",
+        "2-5-14"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -6076,7 +6076,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6145,13 +6145,13 @@
       "trio_tickets": [
         "3-11-15",
         "3-4-11",
-        "3-11-12",
-        "2-3-11",
         "3-4-15",
+        "3-8-11",
+        "3-8-15",
+        "3-4-8",
+        "3-11-12",
         "3-12-15",
-        "2-3-15",
-        "3-4-12",
-        "2-3-4"
+        "3-4-12"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -6165,7 +6165,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6234,13 +6234,13 @@
       "trio_tickets": [
         "6-7-9",
         "7-9-12",
-        "4-7-9",
-        "2-7-9",
         "6-9-12",
-        "4-6-9",
+        "2-7-9",
         "2-6-9",
-        "4-9-12",
-        "2-9-12"
+        "2-9-12",
+        "4-7-9",
+        "4-6-9",
+        "4-9-12"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -6254,7 +6254,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6323,13 +6323,13 @@
       "trio_tickets": [
         "3-4-12",
         "3-4-13",
-        "1-3-4",
-        "3-4-8",
         "3-12-13",
-        "1-3-12",
+        "3-4-8",
         "3-8-12",
-        "1-3-13",
-        "3-8-13"
+        "3-8-13",
+        "3-4-11",
+        "3-11-12",
+        "3-11-13"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -6343,7 +6343,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6412,12 +6412,12 @@
       "trio_tickets": [
         "1-5-6",
         "1-2-6",
-        "1-3-6",
-        "1-4-6",
         "2-5-6",
+        "1-3-6",
         "3-5-6",
-        "4-5-6",
         "2-3-6",
+        "1-4-6",
+        "4-5-6",
         "2-4-6"
       ],
       "ticket_count": 9,
@@ -6432,7 +6432,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6502,7 +6502,7 @@
         "4-6-14",
         "6-10-14",
         "6-11-14",
-        "4-10-14",
+        "1-6-14",
         "4-6-10",
         "4-6-11",
         "1-4-6",
@@ -6520,7 +6520,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6588,15 +6588,15 @@
       "role_tags": [],
       "third_place_intrusion_candidates": [],
       "trio_tickets": [
-        "5-10-11",
-        "5-10-13",
-        "5-8-10",
         "4-5-10",
-        "5-11-13",
-        "5-8-11",
+        "5-10-11",
         "4-5-11",
-        "5-8-13",
-        "4-5-13"
+        "5-8-10",
+        "4-5-8",
+        "5-8-11",
+        "5-10-13",
+        "4-5-13",
+        "5-11-13"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -6610,7 +6610,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6679,12 +6679,12 @@
       "trio_tickets": [
         "3-5-16",
         "5-7-16",
+        "5-8-16",
         "5-9-16",
-        "3-5-7",
         "3-7-16",
+        "3-8-16",
         "3-9-16",
-        "7-9-16",
-        "3-8-16"
+        "7-8-16"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -6698,7 +6698,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6769,7 +6769,7 @@
         "4-10-15",
         "2-4-15",
         "4-12-15",
-        "2-10-15",
+        "3-4-15",
         "2-4-10",
         "4-10-12",
         "3-4-10",
@@ -6787,7 +6787,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "e04bf367a4643e3ea9a20479f24f56a889d0e30b48a0610f7c593ebac4925a8d",
+      "prediction_hash_sha256": "2da856e4eb18cde55e5c3f445b7cad3359cbad9b86ad4e59c05b85527ff37b82",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -6859,6 +6859,19 @@
       ],
       "note": "2026-09-06以降の予想機構の完全アップグレードを正式記録する。過去の昇格理由・検証経路は証拠が揃わない限り後付けしない。"
     },
-    "upgrades": []
+    "upgrades": [
+      {
+        "upgrade_id": "2026-09-06_role_split_v1_3",
+        "promoted_at": "2026-09-06T11:18:00+09:00",
+        "from_model": "ORAL_INTEGRATED_V1_2_SHADOW",
+        "to_model": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+        "reason_for_change": "公開サイトで2列目と3列目が同一化し、独立した3着侵入候補が買い目構造に十分反映されていなかったため。ユーザー指示により、2列目=2着到達候補、3列目=2列目+独立3着侵入候補へ役割分離する。",
+        "validation_path": "Production behavior change requested by user; leakage firewall and existing architecture checks remain required. Performance uplift is not claimed until post-race unseen evaluation.",
+        "change_summary": "相手候補を能力順で保持しつつ、2列目は能力上位の相手本線3頭、3列目はそれらを包含して展開・条件・脚質から算出した3着侵入候補を優先追加。点数上限は既存運用内に維持。",
+        "promotion_gate": "USER_DIRECTED_OPERATIONAL_PROMOTION_WITH_POST_RACE_VALIDATION",
+        "comparison_at_promotion": "No retrospective ROI claim. Compare axis survival, third-place miss rate, ticket-conversion failure and ROI from races sealed after this promotion.",
+        "post_upgrade_health": "Pending live reseal and unseen race scoring. Odds/popularity/result firewall must remain false in pure prediction."
+      }
+    ]
   }
 }
