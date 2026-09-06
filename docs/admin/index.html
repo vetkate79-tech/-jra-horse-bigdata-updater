@@ -126,7 +126,11 @@
       </section>
 
       <section id="view-system" class="view">
-        <div class="panel-grid two">
+        <section class="panel">
+          <div class="panel-head"><div><span class="label">RUNTIME OWNERSHIP</span><h2>運用基盤・公開先</h2></div><span class="pill">SINGLE OWNER</span></div>
+          <div id="runtimeOwnership" class="risk-list"></div>
+        </section>
+        <div class="panel-grid two" style="margin-top:12px">
           <section class="panel"><div class="panel-head"><div><span class="label">DATA SOURCES</span><h2>接続状態</h2></div></div><div id="sourceList" class="risk-list"></div></section>
           <section class="panel"><div class="panel-head"><div><span class="label">RULES</span><h2>固定ガードレール</h2></div></div><ul class="guardrails"><li>人気・オッズを能力順位へ混入しない</li><li>SEALED後の能力順位・候補馬を市場情報で変更しない</li><li>結果後に発走前記録を復元しない</li><li>FROZENモデルを上書きしない</li><li>欠損値を0補完しない</li><li>買い目水増しだけの改善を禁止</li></ul></section>
         </div>
