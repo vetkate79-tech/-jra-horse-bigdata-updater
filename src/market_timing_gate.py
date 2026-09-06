@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""Evaluate market value as a post-seal, market-only layer.
+
+This module may read the immutable pure-prediction seal and current JRA odds,
+but it never rewrites prediction rank, axis, candidates, or tickets.
+"""
 import json,re
 from datetime import datetime
 from pathlib import Path
@@ -6,19 +11,22 @@ from zoneinfo import ZoneInfo
 
 TZ=ZoneInfo('Asia/Tokyo')
 SEAL=Path('docs/data/live_predictions_sealed.json')
-CARDS=Path('docs/data/race_cards.json')
+WEEKLY=Path('docs/data/horses/weekly_runner_details.json')
+MARKET=Path('docs/data/current_market_odds.json')
 OUT=Path('docs/data/market_watch_status.json')
 now=datetime.now(TZ)
 
 POLICY={
-    'prerequisite':'market layer starts only for races present in the pure-prediction seal',
-    'thursday':'pure prediction/seal first; no market influence on ability ranking',
-    'friday_morning':'pure prediction only',
-    'after_friday_noon':'market checkpoint every 12h',
-    'race_day':'market checkpoint every 3h',
-    'race_relative':['T-60','T-30','T-10'],
-    'firewall':'odds never change ability ranking; only value/purchase judgment',
-    'final_ticket_rule':'final ticket status stays MARKET_DATA_PENDING until real market data is connected; never fabricate odds or EV'
+    'prerequisite':'market layer starts only after pure prediction is sealed',
+    'fixed_snapshots_jst':['09:00','13:00'],
+    'firewall':'odds/popularity never change ability ranking, axis, candidates, or pure tickets',
+    'value_definition':'compare sealed AI rank with current market rank; positive rank_gap means AI rates the horse higher than market',
+    'labels':{
+        'HIGH_VALUE':'AI順位が市場順位より3以上上かつ単勝5倍以上',
+        'VALUE':'AI順位が市場順位より2以上上',
+        'FAIR':'AI順位と市場順位が概ね一致',
+        'OVERBOUGHT':'市場順位がAI順位より2以上上',
+    }
 }
 
 def _load(p,default):
@@ -29,62 +37,96 @@ def _clock(v):
     s=str(v or '').strip()
     m=re.search(r'(\d{1,2})\s*[時:]\s*(\d{1,2})',s)
     if m:return f'{int(m.group(1)):02d}:{int(m.group(2)):02d}'
-    m=re.match(r'^(\d{1,2}):(\d{2})$',s)
-    return f'{int(m.group(1)):02d}:{int(m.group(2)):02d}' if m else None
+    return None
 
-def parse_dt(r):
-    d=r.get('date') or r.get('race_date');t=_clock(r.get('start_time') or r.get('scheduled_start'))
-    if not d or not t:return None
-    try:return datetime.fromisoformat(f'{d}T{t}:00').replace(tzinfo=TZ)
-    except:return None
-
-def phase_for(r):
-    dt=parse_dt(r)
-    if not dt:return 'DATA_PENDING'
-    if now.weekday()==3:return 'PURE_PREDICTION'
-    if now.weekday()==4 and now.hour<12:return 'PURE_PREDICTION'
-    if now.date()<dt.date():return 'VALUE_WATCH_12H'
-    mins=(dt-now).total_seconds()/60
-    if mins<0:return 'STARTED'
-    if mins<=10:return 'T_MINUS_10'
-    if mins<=30:return 'T_MINUS_30'
-    if mins<=60:return 'T_MINUS_60'
-    return 'RACE_DAY_3H'
-
-def due(r):
-    dt=parse_dt(r)
-    if not dt:return False,'NO_START_TIME'
-    p=phase_for(r)
-    if p in ('PURE_PREDICTION','STARTED','DATA_PENDING'):return False,p
-    mins=(dt-now).total_seconds()/60
-    if p=='T_MINUS_10':return 0<=mins<=10,'T_MINUS_10'
-    if p=='T_MINUS_30':return 10<mins<=30,'T_MINUS_30'
-    if p=='T_MINUS_60':return 30<mins<=60,'T_MINUS_60'
-    if p=='RACE_DAY_3H':return now.hour%3==0 and now.minute<10,'RACE_DAY_3H'
-    if p=='VALUE_WATCH_12H':return now.hour in (0,12) and now.minute<10,'VALUE_WATCH_12H'
-    return False,p
+def _race_key(r):
+    return (str(r.get('date') or ''),str(r.get('track') or ''),int(r.get('race_no') or 0))
 
 seal=_load(SEAL,{'races':[],'prediction_hash_sha256':None})
-cards=_load(CARDS,{'races':[]})
-card_by_id={str(x.get('race_id')):x for x in cards.get('races',[])}
+weekly=_load(WEEKLY,{'runners':[]})
+market=_load(MARKET,{'races':[],'captured_at':None,'runner_odds_count':0})
+
+weekly_by={}
+for x in weekly.get('runners') or []:
+    r=x.get('race') or {}
+    k=_race_key(r)
+    if k[0] and k[1] and k[2]:
+        weekly_by[k]=r
+
+market_by={_race_key(r):r for r in market.get('races') or []}
+
 rows=[]
-for p in seal.get('races',[]):
-    rid=str(p.get('race_id') or '')
-    c=card_by_id.get(rid,{})
-    r={**p,'start_time':c.get('start_time')}
-    is_due,reason=due(r)
+for p in seal.get('races') or []:
+    k=_race_key(p)
+    card=weekly_by.get(k,{})
+    mr=market_by.get(k,{})
+    odds_rows=mr.get('win_odds') or []
+    odds_by_no={str(x.get('horse_no') or ''):x for x in odds_rows}
+    odds_by_id={str(x.get('horse_id') or ''):x for x in odds_rows}
+    odds_by_name={str(x.get('horse_name') or ''):x for x in odds_rows}
+
+    a=p.get('analysis') or {}
+    ranked=p.get('ranked_snapshot') or a.get('ranked_snapshot') or []
+    evaluations=[]
+    for idx,h in enumerate(ranked,1):
+        horse_no=str(h.get('n') or h.get('horse_no') or '')
+        horse_id=str(h.get('horse_id') or '')
+        horse_name=str(h.get('name') or h.get('horse_name') or '')
+        o=odds_by_id.get(horse_id) or odds_by_no.get(horse_no) or odds_by_name.get(horse_name)
+        if not o:continue
+        market_rank=int(o.get('market_rank') or 0) or None
+        win_odds=float(o.get('win_odds')) if o.get('win_odds') is not None else None
+        rank_gap=(market_rank-idx) if market_rank is not None else None
+        if rank_gap is not None and rank_gap>=3 and win_odds is not None and win_odds>=5:
+            label='HIGH_VALUE';jp='妙味高'
+        elif rank_gap is not None and rank_gap>=2:
+            label='VALUE';jp='妙味あり'
+        elif rank_gap is not None and rank_gap<=-2:
+            label='OVERBOUGHT';jp='市場先行'
+        else:
+            label='FAIR';jp='妥当'
+        evaluations.append({
+            'horse_no':horse_no,'horse_id':horse_id,'horse_name':horse_name,
+            'sealed_ai_rank':idx,'market_rank':market_rank,'win_odds':win_odds,
+            'rank_gap':rank_gap,'value_label':label,'value_label_ja':jp,
+            'reason':(
+                f'AI{idx}位に対し市場{market_rank}位。市場よりAI評価が{rank_gap}段階高い。'
+                if rank_gap is not None and rank_gap>0 else
+                f'AI{idx}位と市場{market_rank}位の差は小さい。'
+                if rank_gap is not None and abs(rank_gap)<=1 else
+                f'AI{idx}位に対し市場{market_rank}位。市場評価がAIより{abs(rank_gap)}段階高い。'
+                if rank_gap is not None else '市場順位未取得'
+            )
+        })
+
     rows.append({
-        'race_id':rid,'date':r.get('date'),'track':r.get('track'),'race_no':r.get('race_no'),
-        'start_time':r.get('start_time'),'prediction_sealed':True,
+        'race_id':p.get('race_id'),'date':k[0],'track':k[1],'race_no':k[2],
+        'start_time':_clock(card.get('start_time')),
+        'prediction_sealed':True,
         'prediction_hash_sha256':seal.get('prediction_hash_sha256'),
-        'phase':phase_for(r),'market_check_due':is_due,'checkpoint':reason,
-        'market_data_status':'PENDING_EXTERNAL_MARKET_DATA' if is_due else 'NOT_DUE',
-        'final_ticket_status':'MARKET_DATA_PENDING' if is_due else 'PRE_MARKET'
+        'market_snapshot_captured_at':market.get('captured_at'),
+        'market_data_status':'CONNECTED' if evaluations else 'NO_MATCHED_MARKET_DATA',
+        'runner_market_count':len(evaluations),
+        'value_evaluations':evaluations,
+        'high_value_horses':[x for x in evaluations if x['value_label']=='HIGH_VALUE'],
+        'value_horses':[x for x in evaluations if x['value_label'] in ('HIGH_VALUE','VALUE')],
+        'firewall_ok':market.get('pure_prediction_mutated') is False,
     })
-semantic={'policy':POLICY,'sealed_prediction_hash':seal.get('prediction_hash_sha256'),'races':rows}
-old=_load(OUT,{})
-old_semantic={'policy':old.get('policy'),'sealed_prediction_hash':old.get('sealed_prediction_hash'),'races':old.get('races')}
-changed=old_semantic!=semantic
-if changed:
-    OUT.write_text(json.dumps({'checked_at':now.isoformat(),**semantic},ensure_ascii=False,indent=2),encoding='utf-8')
-print(json.dumps({'checked_at':now.isoformat(),'sealed_races':len(rows),'market_due':sum(x['market_check_due'] for x in rows),'state_changed':changed},ensure_ascii=False))
+
+payload={
+    'checked_at':now.isoformat(),
+    'policy':POLICY,
+    'sealed_prediction_hash':seal.get('prediction_hash_sha256'),
+    'market_snapshot':{
+        'captured_at':market.get('captured_at'),
+        'snapshot_slot':market.get('snapshot_slot'),
+        'race_count':market.get('race_count'),
+        'runner_odds_count':market.get('runner_odds_count'),
+        'pure_prediction_mutated':market.get('pure_prediction_mutated'),
+    },
+    'race_count':len(rows),
+    'races':rows,
+}
+OUT.parent.mkdir(parents=True,exist_ok=True)
+OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
+print(json.dumps({'race_count':len(rows),'market_runner_count':sum(x['runner_market_count'] for x in rows),'market_captured_at':market.get('captured_at'),'firewall_ok':market.get('pure_prediction_mutated') is False},ensure_ascii=False))
