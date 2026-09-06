@@ -11,6 +11,7 @@ on:
     branches: [main]
     paths:
       - 'src/collect_current_market_odds.py'
+      - 'src/market_timing_gate.py'
       - '.github/workflows/jra-market-timing.yml'
 
 permissions:
