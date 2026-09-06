@@ -24,7 +24,7 @@ OUT=Path('docs/data/live_predictions_sealed.json')
 STATUS=Path('status/live_prediction_seal.json')
 SEAL_HISTORY=Path('docs/data/prediction-seal-history')
 UPGRADE_LOG=Path('docs/data/model_upgrade_log.json')
-PUBLICATION_MODEL='ORAL_INTEGRATED_V1_3_ROLE_SPLIT__TOP3_SURVIVAL_R2_CHALLENGER'
+PUBLICATION_MODEL='ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER'
 FORBIDDEN_KEYS={'odds','popularity','market_rank','payout','return_amount','result','finish_position','trio_result','trio_payout'}
 
 def _archive_seal_payload(payload):
