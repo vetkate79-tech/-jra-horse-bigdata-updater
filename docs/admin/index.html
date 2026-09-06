@@ -107,6 +107,10 @@
         <section class="panel">
           <div class="panel-head"><div><span class="label">SEGMENT ANALYSIS</span><h2>条件別分析</h2></div><span class="muted">管理専用</span></div>
           <div class="analysis-controls">
+            <label>期間<select id="analysisDateMode"><option value="all">全期間</option><option value="day">1日</option><option value="range">期間指定</option></select></label>
+            <label id="analysisDateDayWrap" hidden>日付<input id="analysisDateDay" type="date"></label>
+            <label id="analysisDateFromWrap" hidden>開始<input id="analysisDateFrom" type="date"></label>
+            <label id="analysisDateToWrap" hidden>終了<input id="analysisDateTo" type="date"></label>
             <label>集計軸<select id="analysisDimension"></select></label>
           </div>
           <div class="race-table-wrap"><table class="race-table"><thead><tr><th>条件</th><th>購入R</th><th>的中率</th><th>軸生存率</th><th>組合せ漏れ率</th><th>投資</th><th>払戻</th><th>収支</th><th>ROI</th></tr></thead><tbody id="analysisTableBody"></tbody></table></div>
