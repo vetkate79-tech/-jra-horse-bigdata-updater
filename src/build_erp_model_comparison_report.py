@@ -10,7 +10,9 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 JST = ZoneInfo("Asia/Tokyo")
-TARGET = os.environ.get("TARGET_DATE", "2026-09-06")
+TARGET = os.environ.get("TARGET_DATE", "").strip()
+if not TARGET:
+    raise SystemExit("TARGET_DATE is required; post-meeting workflow supplies each completed date")
 CHAMPION = Path(f"docs/data/live_predictions_champion_{TARGET}.json")
 CHALLENGER = Path(f"docs/data/prediction-archive-{TARGET}.json")
 RESULTS = Path("data/race_results_html_2026.csv")
@@ -18,6 +20,7 @@ PAYOUTS = Path("data/race_payouts_2026.csv")
 CONTEXT = Path("data/race_context_2026.csv")
 OUT = Path(f"docs/data/erp-report-{TARGET}.json")
 LOG = Path("docs/data/erp-report-log.json")
+LATEST = Path("docs/data/erp-report-latest.json")
 
 
 def iv(v):
@@ -90,7 +93,9 @@ def main():
 
     axis_delta=new["axis_top3_rate_pct"]-old["axis_top3_rate_pct"]; hit_delta=new["trio_hits"]-old["trio_hits"]; roi_delta=new["roi_pct"]-old["roi_pct"]
     report={"schema_version":1,"status":"COMPLETED","title":f"{TARGET} 新型・旧型 結果比較","generated_at":datetime.now(JST).isoformat(),"trigger":{"owner":"ERP_WORKFLOW","condition":"JRA公式36レースの1〜3着確定","scheduled_runs":"土日16:45/19:30/21:30 JST","gpt_scheduler_used":False},"report_content":{"request":"9/6全レース終了時に、新型と旧型の結果を同じ公式結果で詳細比較し、ERPへ依頼内容・結果・考察を掲載する。","result":f"旧型の軸3着内率{old['axis_top3_rate_pct']}%、新型{new['axis_top3_rate_pct']}%（差{axis_delta:+.2f}pt）。三連複的中は旧型{old['trio_hits']}件、新型{new['trio_hits']}件（差{hit_delta:+d}件）。ROI差は{roi_delta:+.2f}pt。","consideration":("新型は旧型を上回った。変更レースだけでなく全対象の軸残存・買い目変換・ROIを分離して次回昇格判断へ使う。" if axis_delta>0 and hit_delta>=0 else "単開催だけでは昇格させない。軸残存、三連複変換、ROIのどこで差が出たかをレース別明細で確認し、次の独立開催へ継続する。")},"comparison":{"old":old,"new":new,"delta":{"axis_top3_rate_pt":round(axis_delta,2),"trio_hits":hit_delta,"roi_pt":round(roi_delta,2)}},"race_details":details,"sources":{"old_prediction":str(CHAMPION),"new_prediction":str(CHALLENGER),"results":"JRA_OFFICIAL_RESULTS_DB","erp_and_public_same_prediction_source":True}}
-    OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
+    report_text=json.dumps(report,ensure_ascii=False,indent=2)
+    OUT.write_text(report_text,encoding="utf-8")
+    LATEST.write_text(report_text,encoding="utf-8")
     log={"schema_version":1,"updated_at":report["generated_at"],"reports":[]}
     if LOG.exists():
         try: log=json.loads(LOG.read_text(encoding="utf-8"))
