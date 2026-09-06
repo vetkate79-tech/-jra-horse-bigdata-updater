@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import itertools
+from collections import defaultdict
 
 MODEL_VERSION='ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED'
 
