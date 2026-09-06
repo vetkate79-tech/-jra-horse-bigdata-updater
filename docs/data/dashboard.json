@@ -1,7 +1,7 @@
 {
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_2_SHADOW__TOP3_SURVIVAL_R2_CHALLENGER",
-    "snapshot_time": "2026-09-06T10:41:00+09:00",
+    "snapshot_time": "2026-09-06T10:47:15+09:00",
     "actual_today_jst": "2026-09-06",
     "display_date": "2026-09-06",
     "total_races": 33,
@@ -1089,8 +1089,8 @@
     "public_surface": "CLOUDFLARE_PAGES_CANONICAL",
     "github_pages": {
       "url": "https://vetkate79-tech.github.io/-jra-horse-bigdata-updater/",
-      "role": "SECONDARY_NON_CANONICAL",
-      "note": "内部確認・移行互換用。表向きの正規公開URLではない。"
+      "role": "LEGACY_REDIRECT_ONLY",
+      "note": "旧URLはCloudflare正規公開URLへリダイレクト。旧サイト本体は配信しない。"
     },
     "standby_sync": {
       "repository": "vetkate79-tech/-jra-horse-data-collector-web",
@@ -1114,7 +1114,9 @@
         "本番Scheduler唯一実行元",
         "本番公開唯一配信元"
       ]
-    }
+    },
+    "cutover_status": "COMPLETE",
+    "cutover_effective_at": "2026-09-06T10:45:00+09:00"
   },
   "risks": [
     {
@@ -1269,7 +1271,7 @@
   "role_distribution": [],
   "audit": [
     {
-      "time": "2026-09-06T10:41:00+09:00",
+      "time": "2026-09-06T10:47:15+09:00",
       "level": "INFO",
       "title": "管理分析データ更新",
       "detail": "69Rを正規化。31R結果接続、28R購入評価。"
