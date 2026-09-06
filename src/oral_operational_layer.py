@@ -2,7 +2,7 @@
 from __future__ import annotations
 import itertools
 
-MODEL_VERSION='ORAL_INTEGRATED_V1_3_ROLE_SPLIT'
+MODEL_VERSION='ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED'
 
 def _f(v,d=0.0):
     try:return float(v)
@@ -163,6 +163,31 @@ def _partner_tiers(q,roles,intrusion):
         if len(third)>=6:break
     return second[:3],third[:6]
 
+def _ticket_members(ticket):
+    return set(str(ticket).split('-'))
+
+def _pick_diverse(candidates,limit,coverage_targets=None,priority=None):
+    """Greedy deterministic selector that favors target coverage and avoids hidden fixed horses."""
+    uniq=list(dict.fromkeys(candidates))
+    coverage_targets=set(coverage_targets or [])
+    priority=priority or {}
+    selected=[]; covered=set(); freq=defaultdict(int)
+    while uniq and len(selected)<limit:
+        def score(t):
+            members=_ticket_members(t)
+            new_cov=len((members & coverage_targets)-covered)
+            # Reward requested coverage first, then explicit structural priority,
+            # then penalize repeatedly using the same non-axis horses.
+            repeat=sum(freq[x] for x in members)
+            return (new_cov*100 + priority.get(t,0)*10 - repeat, -repeat, -len(selected))
+        best=max(uniq,key=score)
+        selected.append(best)
+        members=_ticket_members(best)
+        covered|=(members & coverage_targets)
+        for x in members:freq[x]+=1
+        uniq.remove(best)
+    return selected
+
 def _tickets(q,dur,roles,intrusion):
     ns=[str(x.get('n')) for x in q[:10] if str(x.get('n','')).isdigit()]
     if len(ns)<5:return 'PASS',[],{'first':[],'second':[],'third':[]}
@@ -172,44 +197,90 @@ def _tickets(q,dur,roles,intrusion):
     formation={'first':[axis],'second':second,'third':third}
     out=[]
     if dur['status']=='HIGH':
-        # 本線同士を先に確保し、その後に3着侵入候補との組合せを優先する。
-        for a,b in itertools.combinations(second,2):
-            out.append(_combo([axis,a,b]))
-        for h in intr:
-            if h not in third:continue
-            for a in second:
-                if a!=h:out.append(_combo([axis,a,h]))
-        for a in second:
-            for b in third:
-                if a!=b:out.append(_combo([axis,a,b]))
-        shape='AXIS';out=list(dict.fromkeys(out))[:9]
-    elif dur['status']=='MID':
-        # MIDは固定軸として扱わない。約半数を1位軸あり、約半数を1位軸なしにする。
-        alternatives=list(dict.fromkeys(second+third+intr+ns[1:7]))
-        alternatives=[x for x in alternatives if x!=axis and x in ns][:6]
-        anchored=[]
+        candidates=[]; priority={}
+        # Build all valid anchored combinations first, then select with coverage guarantees.
         for a in second:
             for b in third:
                 if a==b:continue
-                anchored.append(_combo([axis,a,b]))
-                if len(dict.fromkeys(anchored))>=4:break
-            if len(dict.fromkeys(anchored))>=4:break
-        axis_free=[]
-        triples=list(itertools.combinations(alternatives,3))
-        triples.sort(key=lambda c:(
-            0 if any(x in intr for x in c) else 1,
-            sum(alternatives.index(x) for x in c)
-        ))
-        for cc in triples:
-            axis_free.append(_combo(cc))
-            if len(axis_free)>=4:break
+                t=_combo([axis,a,b]);candidates.append(t)
+                p=3 if b in second else 1
+                if b in intr:p+=2
+                priority[t]=max(priority.get(t,0),p)
+        out=_pick_diverse(candidates,9,coverage_targets=third,priority=priority)
+        shape='AXIS'
+    elif dur['status']=='MID':
+        # MID is genuinely hedged: 4 tickets with the stated axis, 4 without it.
+        # The old implementation could accidentally put the same partner in all 8 tickets.
+        alternatives=list(dict.fromkeys(second+third+intr+ns[1:7]))
+        alternatives=[x for x in alternatives if x!=axis and x in ns][:6]
+
+        anchored_candidates=[];anchored_priority={}
+        for a in second:
+            for b in third:
+                if a==b:continue
+                t=_combo([axis,a,b]);anchored_candidates.append(t)
+                p=2 if b in second else 1
+                if b in intr:p+=2
+                anchored_priority[t]=max(anchored_priority.get(t,0),p)
+        anchored=_pick_diverse(
+            anchored_candidates,4,
+            coverage_targets=third,
+            priority=anchored_priority
+        )
+
+        free_candidates=[_combo(cc) for cc in itertools.combinations(alternatives,3)]
+        free_priority={}
+        for t in free_candidates:
+            members=_ticket_members(t)
+            free_priority[t]=2*len(members & set(intr))
+        # Prefer uncovered third-line candidates and distribute horse usage.
+        already=set().union(*[_ticket_members(t) for t in anchored]) if anchored else set()
+        remaining_targets=[x for x in third if x not in already]
+        axis_free=_pick_diverse(
+            free_candidates,4,
+            coverage_targets=remaining_targets,
+            priority=free_priority
+        )
         out=list(dict.fromkeys(anchored+axis_free))[:8]
+
+        # Hard invariants:
+        # 1) every displayed third-line horse must exist in at least one generated ticket;
+        # 2) no non-axis horse may become an accidental hidden fixed horse across all tickets.
+        represented=set().union(*[_ticket_members(t) for t in out]) if out else set()
+        missing=[x for x in third if x not in represented]
+        for h in missing:
+            repl=next((t for t in anchored_candidates+free_candidates if h in _ticket_members(t) and t not in out),None)
+            if repl:
+                # Replace the most redundant ticket while preserving 4/4 hedge as much as possible.
+                replace_idx=None
+                repl_has_axis=axis in _ticket_members(repl)
+                for i in range(len(out)-1,-1,-1):
+                    if (axis in _ticket_members(out[i]))==repl_has_axis:
+                        replace_idx=i;break
+                if replace_idx is None:replace_idx=len(out)-1
+                out[replace_idx]=repl
+
+        for h in alternatives:
+            if out and all(h in _ticket_members(t) for t in out):
+                pool=free_candidates if any(axis not in _ticket_members(t) for t in out) else anchored_candidates
+                repl=next((t for t in pool if h not in _ticket_members(t) and t not in out),None)
+                if repl:
+                    # Replace a ticket from the same axis/axis-free side.
+                    repl_has_axis=axis in _ticket_members(repl)
+                    idx=next((i for i in range(len(out)-1,-1,-1)
+                              if (axis in _ticket_members(out[i]))==repl_has_axis),len(out)-1)
+                    out[idx]=repl
+
+        out=list(dict.fromkeys(out))[:8]
+        # Keep the display honest: if a candidate somehow cannot be represented, do not show it in third line.
+        represented=set().union(*[_ticket_members(t) for t in out]) if out else set()
+        formation['third']=[x for x in third if x in represented]
         shape='HEDGED'
     else:
         shape='GROUP'
         pool=list(dict.fromkeys([axis]+second+third+intr))[:6]
-        for cc in itertools.combinations(pool,3):out.append(_combo(cc))
-        out=list(dict.fromkeys(out))[:10]
+        candidates=[_combo(cc) for cc in itertools.combinations(pool,3)]
+        out=_pick_diverse(candidates,10,coverage_targets=pool)
     return shape,out,formation
 
 def _classification(dur,q,tickets,data_quality):
@@ -256,5 +327,5 @@ def analyze_race(race):
       'data_quality':data_quality,
       'derived_ticket_analysis':_derived(axis,roles,dur,cls),
       'market_isolation':'NO_ODDS_OR_POPULARITY_USED',
-      'implementation_note':'V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.'
+      'implementation_note':'V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.'
     }
