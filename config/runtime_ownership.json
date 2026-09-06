@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-06",
+  "runtime_owner_repo": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "standby_repo": "vetkate79-tech/-jra-horse-data-collector-web",
+  "replit_required": false,
+  "responsibilities": {
+    "data_ingest": "runtime_owner_repo",
+    "prediction_seal": "runtime_owner_repo",
+    "market_snapshot": "runtime_owner_repo",
+    "results": "runtime_owner_repo",
+    "pdca": "runtime_owner_repo",
+    "pages": "runtime_owner_repo",
+    "handover_backup": "standby_repo"
+  },
+  "market_schedule_jst": [
+    "09:00",
+    "13:00"
+  ],
+  "market_watchdog_jst": [
+    "09:25",
+    "13:25"
+  ],
+  "rules": [
+    "market_never_mutates_pure_prediction",
+    "history_must_be_preserved",
+    "failed_fetch_must_not_be_reported_as_success",
+    "single_writer_per_runtime_output"
+  ]
+}
