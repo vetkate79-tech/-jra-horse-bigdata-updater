@@ -20,6 +20,8 @@ POLICY={
     'prerequisite':'market layer starts only after pure prediction is sealed',
     'fixed_snapshots_jst':['09:00','13:00'],
     'firewall':'odds/popularity never change ability ranking, axis, candidates, or pure tickets',
+    'final_ticket_status':'MARKET_DATA_PENDING until market-only purchase judgement is completed',
+    'honesty_rule':'never fabricate odds or EV; missing market data remains explicitly pending',
     'value_definition':'compare sealed AI rank with current market rank; positive rank_gap means AI rates the horse higher than market',
     'labels':{
         'HIGH_VALUE':'AI順位が市場順位より3以上上かつ単勝5倍以上',
