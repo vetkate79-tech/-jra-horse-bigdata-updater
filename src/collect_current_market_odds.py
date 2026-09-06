@@ -5,7 +5,7 @@ This never mutates the sealed pure prediction. It only publishes current
 single-win odds and market rank for value inspection.
 """
 from __future__ import annotations
-import json,re,hashlib
+import json,re,hashlib,urllib.parse,urllib.request
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -22,6 +22,90 @@ STATUS=Path('status/current_market_odds.json')
 HISTORY=Path('docs/data/market-odds-history')
 
 def clean(v): return ' '.join(str(v or '').split())
+
+def build_win_odds_cname(source_url):
+    """Convert a JRA detailed-card CNAME into the single/place odds CNAME.
+
+    JRA's odds pages are POST endpoints. The conversion below mirrors the
+    public JRA link structure for 単勝・複勝（馬番順）.
+    """
+    q=urllib.parse.urlparse(str(source_url or '')).query
+    cname=urllib.parse.parse_qs(q).get('CNAME',[None])[0]
+    if not cname or '/' not in cname or not cname.startswith('pw01dde01'):
+        return None
+    head,cd=cname.rsplit('/',1)
+    if not re.fullmatch(r'[0-9A-Fa-f]{2}',cd):
+        return None
+    body=head.replace('pw01dde01','pw151ouS3',1)
+    new_cd=(int(cd,16)+163)%256
+    return body+'Z/'+format(new_cd,'02X')
+
+def fetch_post_odds(source_url):
+    cname=build_win_odds_cname(source_url)
+    if not cname:return None,None
+    data=urllib.parse.urlencode({'cname':cname}).encode('ascii')
+    req=urllib.request.Request(
+        'https://www.jra.go.jp/JRADB/accessO.html',
+        data=data,
+        headers={
+            'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
+            'Referer':'https://www.jra.go.jp/',
+            'Accept-Language':'ja,en-US;q=0.7',
+            'Content-Type':'application/x-www-form-urlencoded',
+        },
+        method='POST',
+    )
+    with urllib.request.urlopen(req,timeout=45) as res:
+        raw=res.read()
+    for enc in ('cp932','utf-8'):
+        try:return raw.decode(enc),cname
+        except UnicodeDecodeError:pass
+    return raw.decode('cp932','replace'),cname
+
+def extract_odds_from_odds_page(raw, runners):
+    if not raw:return {},{}
+    soup=BeautifulSoup(raw,'html.parser')
+    by_id={};by_name={}
+    for x in runners:
+        name=clean(x.get('horse_name'))
+        hid=canonical_id(x.get('horse_id'))
+        if not name:continue
+        target=None
+        for node in soup.find_all(string=lambda t: clean(t)==name if t else False):
+            tr=node.find_parent('tr')
+            if tr is not None:
+                target=tr;break
+        vals=[]
+        if target is not None:
+            # Prefer an explicitly odds-labelled cell.
+            for cell in target.find_all(['th','td']):
+                txt=clean(cell.get_text(' ',strip=True))
+                cls=' '.join(cell.get('class') or []).lower()
+                if 'odds' in cls:
+                    m=re.fullmatch(r'(\\d{1,4}(?:\\.\\d)?)',txt)
+                    if m:
+                        v=float(m.group(1))
+                        if 1.0<=v<=9999.9:
+                            vals=[v];break
+            if not vals:
+                for cell in target.find_all(['th','td']):
+                    txt=clean(cell.get_text(' ',strip=True))
+                    m=re.fullmatch(r'(\\d{1,4}\\.\\d)',txt)
+                    if m:
+                        v=float(m.group(1))
+                        if 1.0<=v<=9999.9:vals.append(v)
+        if not vals:
+            page_text=clean(soup.get_text(' ',strip=True))
+            m=re.search(re.escape(name)+r'\\s+(\\d{1,4}(?:\\.\\d)?)',page_text)
+            if m:
+                v=float(m.group(1))
+                if 1.0<=v<=9999.9:vals=[v]
+        if vals:
+            price=vals[0]
+            by_id[hid]=price
+            by_name[name]=price
+    return by_id,by_name
+
 
 def archive_market_payload(payload):
     if not isinstance(payload,dict) or not payload:return None
@@ -88,6 +172,13 @@ def main():
             errors.append({'race_id':rid,'error':repr(e)});continue
         soup=BeautifulSoup(raw,'html.parser')
         odds_by_id={};odds_by_name={}
+        odds_page_cname=None;odds_page_error=None
+        try:
+            odds_raw,odds_page_cname=fetch_post_odds(url)
+            post_by_id,post_by_name=extract_odds_from_odds_page(odds_raw,g['runners'])
+            odds_by_id.update(post_by_id);odds_by_name.update(post_by_name)
+        except Exception as e:
+            odds_page_error=repr(e)
         anchor_rows=0; popularity_rows=0; sample_popularity=[]
         for tr in soup.find_all('tr'):
             horse_anchor=None;hid=None
@@ -126,7 +217,7 @@ def main():
         rows.sort(key=lambda x:(x['win_odds'],int(x['horse_no']) if x['horse_no'].isdigit() else 999))
         for i,x in enumerate(rows,1):x['market_rank']=i
         total+=len(rows)
-        diagnostics.append({'race_id':rid,'horse_anchor_rows':anchor_rows,'popularity_rows':popularity_rows,'matched_odds_rows':len(rows),'sample_popularity':sample_popularity})
+        diagnostics.append({'race_id':rid,'odds_page_cname':odds_page_cname,'odds_page_error':odds_page_error,'horse_anchor_rows':anchor_rows,'popularity_rows':popularity_rows,'matched_odds_rows':len(rows),'sample_popularity':sample_popularity})
         races.append({'race_id':rid,'date':r.get('date'),'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'source_url':url,'win_odds':rows})
     payload={'source':'JRA_OFFICIAL','market_layer_only':True,'pure_prediction_mutated':False,'odds_type':'WIN','captured_at':now.isoformat(),'race_count':len(races),'runner_odds_count':total,'races':races}
     OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True)
