@@ -10,7 +10,7 @@
     "market_snapshot": "runtime_owner_repo",
     "results": "runtime_owner_repo",
     "pdca": "runtime_owner_repo",
-    "pages": "runtime_owner_repo",
+    "pages": "cloudflare_pages_via_standby_mirror",
     "handover_backup": "standby_repo"
   },
   "market_schedule_jst": [
@@ -26,5 +26,35 @@
     "history_must_be_preserved",
     "failed_fetch_must_not_be_reported_as_success",
     "single_writer_per_runtime_output"
-  ]
+  ],
+  "canonical_public_url": "https://jra-horse-data-collector-web.pages.dev/",
+  "public_surface": "CLOUDFLARE_PAGES_CANONICAL",
+  "github_pages": {
+    "url": "https://vetkate79-tech.github.io/-jra-horse-bigdata-updater/",
+    "role": "SECONDARY_NON_CANONICAL",
+    "note": "内部確認・移行互換用。表向きの正規公開URLではない。"
+  },
+  "standby_sync": {
+    "repository": "vetkate79-tech/-jra-horse-data-collector-web",
+    "workflow": "Sync canonical JRA site",
+    "role": "STATIC_MIRROR_AND_BACKUP",
+    "writes_prediction_state": false,
+    "writes_market_state": false,
+    "writes_result_state": false,
+    "writes_pdca_state": false
+  },
+  "replit": {
+    "role": "DEVELOPMENT_ONLY",
+    "required_for_runtime": false,
+    "allowed": [
+      "初期コード作成",
+      "修正",
+      "一時検証"
+    ],
+    "prohibited": [
+      "本番データ唯一保存先",
+      "本番Scheduler唯一実行元",
+      "本番公開唯一配信元"
+    ]
+  }
 }
