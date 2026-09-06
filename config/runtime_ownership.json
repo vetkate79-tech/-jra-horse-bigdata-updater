@@ -31,8 +31,8 @@
   "public_surface": "CLOUDFLARE_PAGES_CANONICAL",
   "github_pages": {
     "url": "https://vetkate79-tech.github.io/-jra-horse-bigdata-updater/",
-    "role": "SECONDARY_NON_CANONICAL",
-    "note": "内部確認・移行互換用。表向きの正規公開URLではない。"
+    "role": "LEGACY_REDIRECT_ONLY",
+    "note": "旧URLはCloudflare正規公開URLへリダイレクト。旧サイト本体は配信しない。"
   },
   "standby_sync": {
     "repository": "vetkate79-tech/-jra-horse-data-collector-web",
@@ -56,5 +56,7 @@
       "本番Scheduler唯一実行元",
       "本番公開唯一配信元"
     ]
-  }
+  },
+  "cutover_status": "COMPLETE",
+  "cutover_effective_at": "2026-09-06T10:45:00+09:00"
 }
