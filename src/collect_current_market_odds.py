@@ -82,7 +82,7 @@ def extract_odds_from_odds_page(raw, runners):
                 txt=clean(cell.get_text(' ',strip=True))
                 cls=' '.join(cell.get('class') or []).lower()
                 if 'odds' in cls:
-                    m=re.fullmatch(r'(\\d{1,4}(?:\\.\\d)?)',txt)
+                    m=re.fullmatch(r'(\d{1,4}(?:\.\d)?)',txt)
                     if m:
                         v=float(m.group(1))
                         if 1.0<=v<=9999.9:
@@ -90,13 +90,13 @@ def extract_odds_from_odds_page(raw, runners):
             if not vals:
                 for cell in target.find_all(['th','td']):
                     txt=clean(cell.get_text(' ',strip=True))
-                    m=re.fullmatch(r'(\\d{1,4}\\.\\d)',txt)
+                    m=re.fullmatch(r'(\d{1,4}\.\d)',txt)
                     if m:
                         v=float(m.group(1))
                         if 1.0<=v<=9999.9:vals.append(v)
         if not vals:
             page_text=clean(soup.get_text(' ',strip=True))
-            m=re.search(re.escape(name)+r'\\s+(\\d{1,4}(?:\\.\\d)?)',page_text)
+            m=re.search(re.escape(name)+r'\s+(\d{1,4}(?:\.\d)?)',page_text)
             if m:
                 v=float(m.group(1))
                 if 1.0<=v<=9999.9:vals=[v]
@@ -142,7 +142,7 @@ def extract_win_odds(tr, horse_anchor=None):
     scopes.append(tr)
     for scope in scopes:
         txt=clean(scope.get_text(' ',strip=True))
-        labelled=re.findall(r'(?<!\\d)(\\d{1,4}(?:\\.\\d)?)\\s*[（(]\\s*\\d+\\s*番人気\\s*[）)]',txt)
+        labelled=re.findall(r'(?<!\d)(\d{1,4}(?:\.\d)?)\s*[（(]\s*\d+\s*番人気\s*[）)]',txt)
         values=[]
         for raw in labelled:
             v=float(raw)
@@ -190,7 +190,7 @@ def main():
             if not horse_anchor:continue
             anchor_rows+=1
             row_text=clean(tr.get_text(' ',strip=True))
-            if re.search(r'\\d{1,4}(?:\\.\\d)?\\s*[（(]\\s*\\d+\\s*番人気',row_text):
+            if re.search(r'\d{1,4}(?:\.\d)?\s*[（(]\s*\d+\s*番人気',row_text):
                 popularity_rows+=1
                 if len(sample_popularity)<2: sample_popularity.append(row_text[:240])
             name=clean(horse_anchor.get_text(' ',strip=True))
@@ -208,7 +208,7 @@ def main():
             hid=canonical_id(x.get('horse_id'));name=clean(x.get('horse_name'))
             o=odds_by_id.get(hid,odds_by_name.get(name))
             if o is None and name:
-                m=re.search(re.escape(name)+r'\\s+(\\d{1,4}(?:\\.\\d)?)\\s*[（(]\\s*\\d+\\s*番人気\\s*[）)]',page_text)
+                m=re.search(re.escape(name)+r'\s+(\d{1,4}(?:\.\d)?)\s*[（(]\s*\d+\s*番人気\s*[）)]',page_text)
                 if m:
                     v=float(m.group(1))
                     if 1.0<=v<=9999.9:o=v
