@@ -34,6 +34,18 @@
       "promotion_gate": "USER_DIRECTED_OPERATIONAL_PROMOTION_WITH_POST_RACE_VALIDATION",
       "comparison_at_promotion": "No retrospective ROI claim. Compare axis survival, third-place miss rate, ticket-conversion failure and ROI from races sealed after this promotion.",
       "post_upgrade_health": "Pending live reseal and unseen race scoring. Odds/popularity/result firewall must remain false in pure prediction."
+    },
+    {
+      "upgrade_id": "2026-09-06_role_split_guard_v1_3_1",
+      "promoted_at": "2026-09-06T13:20:00+09:00",
+      "from_model": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+      "to_model": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
+      "reason_for_change": "2列目/3列目役割分離後、3列目表示馬が全買い目から消えるケースと、軸なし併用表示にもかかわらず特定の相手馬が全買い目に入る隠れ固定が発生したため。",
+      "validation_path": "User-reported live anomalies were traced to ticket-generation logic. Base horse ranking, market isolation, axis durability inputs and prediction features are unchanged. Fix is limited to ticket conversion invariants and will be scored prospectively on unseen races.",
+      "change_summary": "HIGH/MID/GROUPの買い目選択を候補カバレッジと多様性を優先する決定的セレクタへ変更。MIDは軸あり4点+軸なし4点を維持し、表示された3列目馬は最低1買い目に必ず含め、非軸馬の全買い目隠れ固定を禁止。表示と実買い目が矛盾する場合は3列目表示側を実買い目に合わせて縮退する。",
+      "promotion_gate": "USER_DIRECTED_CORRECTIVE_HOTFIX_WITH_POST_RACE_VALIDATION",
+      "comparison_at_promotion": "No retrospective ROI improvement claimed. Compare ticket-conversion failure, third-place candidate orphan rate, hidden-fixed-partner incidence, axis survival and ROI only on predictions sealed after this hotfix.",
+      "post_upgrade_health": "Pending reseal. Pure prediction must continue to report odds_popularity_used=false and results_used=false; generated tickets must pass third-line coverage and hidden-fixed-partner invariants."
     }
   ]
 }
