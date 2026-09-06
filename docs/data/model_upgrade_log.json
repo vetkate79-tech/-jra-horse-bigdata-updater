@@ -22,5 +22,18 @@
     "model_version": "ORAL_INTEGRATED_V1_2_SHADOW",
     "note": "追跡開始時点の現行モデル。これはアップグレード履歴ではなく比較起点。"
   },
-  "upgrades": []
+  "upgrades": [
+    {
+      "upgrade_id": "2026-09-06_role_split_v1_3",
+      "promoted_at": "2026-09-06T11:18:00+09:00",
+      "from_model": "ORAL_INTEGRATED_V1_2_SHADOW",
+      "to_model": "ORAL_INTEGRATED_V1_3_ROLE_SPLIT",
+      "reason_for_change": "公開サイトで2列目と3列目が同一化し、独立した3着侵入候補が買い目構造に十分反映されていなかったため。ユーザー指示により、2列目=2着到達候補、3列目=2列目+独立3着侵入候補へ役割分離する。",
+      "validation_path": "Production behavior change requested by user; leakage firewall and existing architecture checks remain required. Performance uplift is not claimed until post-race unseen evaluation.",
+      "change_summary": "相手候補を能力順で保持しつつ、2列目は能力上位の相手本線3頭、3列目はそれらを包含して展開・条件・脚質から算出した3着侵入候補を優先追加。点数上限は既存運用内に維持。",
+      "promotion_gate": "USER_DIRECTED_OPERATIONAL_PROMOTION_WITH_POST_RACE_VALIDATION",
+      "comparison_at_promotion": "No retrospective ROI claim. Compare axis survival, third-place miss rate, ticket-conversion failure and ROI from races sealed after this promotion.",
+      "post_upgrade_health": "Pending live reseal and unseen race scoring. Odds/popularity/result firewall must remain false in pure prediction."
+    }
+  ]
 }
