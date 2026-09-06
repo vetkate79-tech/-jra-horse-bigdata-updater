@@ -79,7 +79,7 @@ def main():
         if not rid:continue
         g=by_race.setdefault(rid,{'race':r,'runners':[]})
         g['runners'].append(x)
-    races=[];errors=[];total=0
+    races=[];errors=[];diagnostics=[];total=0
     for rid,g in by_race.items():
         r=g['race'];url=r.get('source_url')
         if not url:continue
@@ -88,6 +88,7 @@ def main():
             errors.append({'race_id':rid,'error':repr(e)});continue
         soup=BeautifulSoup(raw,'html.parser')
         odds_by_id={};odds_by_name={}
+        anchor_rows=0; popularity_rows=0; sample_popularity=[]
         for tr in soup.find_all('tr'):
             horse_anchor=None;hid=None
             for a in tr.find_all('a'):
@@ -96,6 +97,11 @@ def main():
                 if m:
                     horse_anchor=a;hid=canonical_id(m.group(0));break
             if not horse_anchor:continue
+            anchor_rows+=1
+            row_text=clean(tr.get_text(' ',strip=True))
+            if re.search(r'\\d{1,4}(?:\\.\\d)?\\s*[（(]\\s*\\d+\\s*番人気',row_text):
+                popularity_rows+=1
+                if len(sample_popularity)<2: sample_popularity.append(row_text[:240])
             name=clean(horse_anchor.get_text(' ',strip=True))
             price=extract_win_odds(tr, horse_anchor)
             if price is None:continue
@@ -110,6 +116,7 @@ def main():
         rows.sort(key=lambda x:(x['win_odds'],int(x['horse_no']) if x['horse_no'].isdigit() else 999))
         for i,x in enumerate(rows,1):x['market_rank']=i
         total+=len(rows)
+        diagnostics.append({'race_id':rid,'horse_anchor_rows':anchor_rows,'popularity_rows':popularity_rows,'matched_odds_rows':len(rows),'sample_popularity':sample_popularity})
         races.append({'race_id':rid,'date':r.get('date'),'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'source_url':url,'win_odds':rows})
     payload={'source':'JRA_OFFICIAL','market_layer_only':True,'pure_prediction_mutated':False,'odds_type':'WIN','captured_at':now.isoformat(),'race_count':len(races),'runner_odds_count':total,'races':races}
     OUT.parent.mkdir(parents=True,exist_ok=True);STATUS.parent.mkdir(parents=True,exist_ok=True)
@@ -118,6 +125,6 @@ def main():
         except Exception as e:raise RuntimeError('refusing to overwrite market odds before archive: '+repr(e))
     archive_market_payload(payload)
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
-    STATUS.write_text(json.dumps({k:v for k,v in payload.items() if k!='races'}|{'errors':errors},ensure_ascii=False,indent=2),encoding='utf-8')
+    STATUS.write_text(json.dumps({k:v for k,v in payload.items() if k!='races'}|{'errors':errors,'diagnostics':diagnostics},ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({k:v for k,v in payload.items() if k!='races'}|{'errors':len(errors)},ensure_ascii=False))
 if __name__=='__main__':main()
