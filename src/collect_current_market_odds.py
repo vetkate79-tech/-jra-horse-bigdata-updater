@@ -107,10 +107,20 @@ def main():
             if price is None:continue
             odds_by_id[hid]=price
             if name:odds_by_name[name]=price
+        # Fallback: JRA's current detailed card reliably renders
+        # "馬名 29.2(9番人気)" in visible text even when element/class
+        # structure changes. Match only an exact known runner name followed
+        # immediately by an explicitly popularity-labelled price.
+        page_text=clean(soup.get_text(' ',strip=True))
         rows=[]
         for x in g['runners']:
             hid=canonical_id(x.get('horse_id'));name=clean(x.get('horse_name'))
             o=odds_by_id.get(hid,odds_by_name.get(name))
+            if o is None and name:
+                m=re.search(re.escape(name)+r'\\s+(\\d{1,4}(?:\\.\\d)?)\\s*[（(]\\s*\\d+\\s*番人気\\s*[）)]',page_text)
+                if m:
+                    v=float(m.group(1))
+                    if 1.0<=v<=9999.9:o=v
             if o is None:continue
             rows.append({'horse_id':hid,'horse_no':str(x.get('horse_no') or ''),'horse_name':name,'win_odds':o})
         rows.sort(key=lambda x:(x['win_odds'],int(x['horse_no']) if x['horse_no'].isdigit() else 999))
