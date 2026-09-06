@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "BLOCKED",
+  "status": "PASS",
   "active_workflow_count": 11,
   "required_workflow_count": 11,
   "active_workflows": [
@@ -43,7 +43,7 @@
     "live_prediction_seal_exists": true,
     "live_seal_market_firewall": true,
     "market_reads_only_sealed_races": true,
-    "market_final_ticket_honesty": false,
+    "market_final_ticket_honesty": true,
     "market_does_not_run_prediction_engine": true,
     "post_result_scoring_connected": true,
     "pdca_connected_and_non_mutating": true,
@@ -147,9 +147,7 @@
     ]
   },
   "script_policy_mismatches": {},
-  "blockers": [
-    "check failed: market_final_ticket_honesty"
-  ],
+  "blockers": [],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
