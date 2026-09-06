@@ -70,10 +70,26 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Upload static site
+      - name: Build legacy GitHub Pages redirect
+        run: |
+          rm -rf legacy-pages
+          mkdir -p legacy-pages
+          cat > legacy-pages/index.html <<'HTML'
+          <!doctype html><meta charset="utf-8"><title>Moved</title>
+          <link rel="canonical" href="https://jra-horse-data-collector-web.pages.dev/">
+          <meta http-equiv="refresh" content="0;url=https://jra-horse-data-collector-web.pages.dev/">
+          <script>
+          const base='https://jra-horse-data-collector-web.pages.dev';
+          const path=location.pathname.replace(/^\/-jra-horse-bigdata-updater/,'')||'/';
+          location.replace(base+path+location.search+location.hash);
+          </script>
+          <a href="https://jra-horse-data-collector-web.pages.dev/">新しいJRA AI Webへ移動</a>
+          HTML
+          cp legacy-pages/index.html legacy-pages/404.html
+      - name: Upload legacy redirect only
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
-      - name: Deploy to GitHub Pages
+          path: legacy-pages
+      - name: Deploy legacy redirect to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
