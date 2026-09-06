@@ -98,7 +98,7 @@ function renderUpgradeLog(data){
 }
 
 function renderAnalysis(data){
-  const a=data.analytics||{}, s=data.summary||{}, breakdowns=a.breakdowns||{};
+  const a=data.analytics||{}, s=data.summary||{}, breakdowns=a.breakdowns||{}, rawRows=a.races||[];
   renderKpis(qs('#analysisKpis'),[
     {label:'累計投資',value:yen(s.stake_amount),sub:'結果接続済み購入分'},
     {label:'累計払戻',value:yen(s.return_amount),sub:'公式3連複払戻'},
@@ -106,18 +106,18 @@ function renderAnalysis(data){
     {label:'累計ROI',value:pct(s.roi),sub:'管理詳細'},
     {label:'最大払戻除外ROI',value:pct(s.roi_ex_top),sub:'一発依存除外'}
   ]);
-  const sel=qs('#analysisDimension');
+  const sel=qs('#analysisDimension'),mode=qs('#analysisDateMode'),day=qs('#analysisDateDay'),from=qs('#analysisDateFrom'),to=qs('#analysisDateTo');
   const labels={date:'日付',track:'競馬場',race_no:'レース',race_category:'年齢区分',race_class:'クラス',surface:'芝/ダート',distance_m:'距離',distance_band:'距離帯',track_condition:'馬場',weather:'天候',field_size:'頭数',field_size_band:'頭数帯',decision:'購入判定',axis_grade:'軸結果',race_state:'状態'};
-  const dims=Object.keys(breakdowns);
-  sel.innerHTML=dims.map(d=>`<option value="${esc(d)}">${esc(labels[d]||d)}</option>`).join('');
-  const draw=()=>{
-    const rows=breakdowns[sel.value]||[];
-    qs('#analysisTableBody').innerHTML=rows.map(r=>`<tr><td><b>${esc(r.value)}</b></td><td>${r.bought_races||0}</td><td>${r.hit_rate==null?'-':pct(r.hit_rate)}</td><td>${r.axis_top3_rate==null?'-':pct(r.axis_top3_rate)}</td><td>${r.combo_miss_rate==null?'-':pct(r.combo_miss_rate)}</td><td>${yen(r.stake_yen)}</td><td>${yen(r.return_yen)}</td><td>${yen(r.profit_yen)}</td><td>${r.roi==null?'-':pct(r.roi)}</td></tr>`).join('')||'<tr><td colspan="9" class="muted">集計データなし</td></tr>';
-  };
-  sel.onchange=draw; draw();
+  const dims=Object.keys(breakdowns); sel.innerHTML=dims.map(d=>`<option value="${esc(d)}">${esc(labels[d]||d)}</option>`).join('');
+  const dates=[...new Set(rawRows.map(r=>r.date).filter(Boolean))].sort(), latest=dates[dates.length-1]||'';
+  if(day&&!day.value)day.value=s.display_date||latest;if(from&&!from.value)from.value=dates[0]||'';if(to&&!to.value)to.value=latest;
+  const toggle=()=>{qs('#analysisDateDayWrap').hidden=mode.value!=='day';qs('#analysisDateFromWrap').hidden=mode.value!=='range';qs('#analysisDateToWrap').hidden=mode.value!=='range'};
+  const filtered=()=>rawRows.filter(r=>mode.value==='all'||(mode.value==='day'&&r.date===day.value)||(mode.value==='range'&&(!from.value||r.date>=from.value)&&(!to.value||r.date<=to.value)));
+  const aggregate=(rows,field)=>{const groups=new Map();for(const r of rows){const value=String(r[field]??'不明');if(!groups.has(value))groups.set(value,[]);groups.get(value).push(r)}return [...groups].map(([value,xs])=>{const bought=xs.filter(x=>x.bought),scored=xs.filter(x=>x.scored),stake=bought.reduce((n,x)=>n+Number(x.stake_yen||0),0),ret=bought.reduce((n,x)=>n+Number(x.return_yen||0),0),hits=bought.filter(x=>x.trio_hit).length,axis=scored.filter(x=>[1,2,3].includes(Number(x.axis_finish))).length,miss=bought.filter(x=>[1,2,3].includes(Number(x.axis_finish))&&!x.trio_hit).length;return{value,bought_races:bought.length,hit_rate:bought.length?hits/bought.length*100:null,axis_top3_rate:scored.length?axis/scored.length*100:null,combo_miss_rate:bought.length?miss/bought.length*100:null,stake_yen:stake,return_yen:ret,profit_yen:ret-stake,roi:stake?ret/stake*100:null}})};
+  const draw=()=>{toggle();const rows=mode.value==='all'?(breakdowns[sel.value]||[]):aggregate(filtered(),sel.value);qs('#analysisTableBody').innerHTML=rows.map(r=>`<tr><td><b>${esc(r.value)}</b></td><td>${r.bought_races||0}</td><td>${r.hit_rate==null?'-':pct(r.hit_rate)}</td><td>${r.axis_top3_rate==null?'-':pct(r.axis_top3_rate)}</td><td>${r.combo_miss_rate==null?'-':pct(r.combo_miss_rate)}</td><td>${yen(r.stake_yen)}</td><td>${yen(r.return_yen)}</td><td>${yen(r.profit_yen)}</td><td>${r.roi==null?'-':pct(r.roi)}</td></tr>`).join('')||'<tr><td colspan="9" class="muted">来週のレース終了までお待ちください</td></tr>'};
+  [sel,mode,day,from,to].forEach(x=>{if(x)x.onchange=draw});draw();
   qs('#optimizerList').innerHTML=(a.optimization_candidates||[]).map(x=>`<div class="model-card"><div class="row"><strong>${esc(x.type)} · ${esc(labels[x.dimension]||x.dimension)}=${esc(x.value)}</strong><span>${esc(x.status)}</span></div><p>sample ${esc(x.sample)} / ROI ${x.roi==null?'-':pct(x.roi)} / 軸生存 ${x.axis_top3_rate==null?'-':pct(x.axis_top3_rate)} / 組合せ漏れ ${x.combo_miss_rate==null?'-':pct(x.combo_miss_rate)}</p><p>${esc(x.action)}</p></div>`).join('')||'<p class="muted">改善候補なし。最低サンプル到達後に自動生成します。</p>';
 }
-
 function renderBars(el,items){
   const max=Math.max(1,...items.map(x=>Number(x.value||0)));
   el.innerHTML=items.map(x=>`<div><div class="bar-label"><span>${esc(x.label)}</span><span>${esc(x.value)}</span></div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(2,Number(x.value||0)/max*100)}%"></div></div></div>`).join('') || '<p class="muted">データなし</p>';
@@ -130,9 +130,10 @@ async function boot(){
 }
 boot();
 
+// Source lineage: live_pdca.json -> erp-pdca-latest.json
 async function loadPdcaReport(){
   try{
-    const r=await fetch('../data/erp-pdca-2026-09-05.json',{cache:'no-store'});
+    const r=await fetch('../data/erp-pdca-latest.json',{cache:'no-store'});
     if(!r.ok)throw new Error('HTTP '+r.status);
     const d=await r.json(),s=d.summary||{},v=d.validation_plan||{};
     qs('#pdcaReportStatus').textContent=d.status||'READY';
@@ -154,17 +155,15 @@ loadPdcaReport();
 async function loadComparisonReport(){
   if(!qs('#comparisonReportContent'))return;
   try{
-    const lr=await fetch('../data/erp-report-log.json',{cache:'no-store'});if(!lr.ok)throw new Error('LOG');
+    const [lr,latestResponse]=await Promise.all([fetch('../data/erp-report-log.json',{cache:'no-store'}),fetch('../data/erp-report-latest.json',{cache:'no-store'})]);if(!lr.ok)throw new Error('LOG');
     const log=await lr.json(),reports=log.reports||[];
     qs('#comparisonReportStatus').textContent=reports.some(x=>x.status==='COMPLETED')?'更新済み':'結果待ち';
     qs('#comparisonReportContent').innerHTML=reports.map((x,i)=>`<details class="report-tree-node" ${i===0?'open':''}><summary><span>${esc(x.date||'')}</span><strong>${esc(x.title||'報告')}</strong><em>${esc(x.status||'')}</em></summary><div class="report-tree-body"><div class="report-note"><b>依頼内容</b><span>${esc(x.request||'')}</span></div><div class="report-note"><b>結果</b><span>${esc(x.result||'')}</span></div><div class="report-note"><b>考察</b><span>${esc(x.consideration||'')}</span></div></div></details>`).join('');
-    const latest=reports.find(x=>x.report_file);
-    if(!latest)throw new Error('WAITING');
-    const r=await fetch('../data/'+latest.report_file,{cache:'no-store'});if(!r.ok)throw new Error('WAITING');
-    const d=await r.json();
+    if(!latestResponse.ok)throw new Error('WAITING');
+    const d=await latestResponse.json();
     qs('#comparisonRaceBody').innerHTML=(d.race_details||[]).map(x=>`<tr><td><b>${esc(x.track)} ${esc(x.race_no)}R</b></td><td>${esc(x.old_axis||'-')}</td><td>${esc(x.new_axis||'-')}</td><td>${esc((x.actual_top3||[]).join('-'))}</td><td>${x.old_axis_top3?'軸○':'軸×'} / ${x.old_trio_hit?'的中':'外れ'}</td><td>${x.new_axis_top3?'軸○':'軸×'} / ${x.new_trio_hit?'的中':'外れ'}</td></tr>`).join('');
   }catch(e){
-    if(!qs('#comparisonReportContent').innerHTML){qs('#comparisonReportStatus').textContent='9/6全結果待ち';qs('#comparisonReportContent').innerHTML='<div class="report-note"><b>状態</b><span>報告ログを準備しています。</span></div>'}
+    if(!qs('#comparisonReportContent').innerHTML){qs('#comparisonReportStatus').textContent='全結果待ち';qs('#comparisonReportContent').innerHTML='<div class="report-note"><b>状態</b><span>報告ログを準備しています。</span></div>'}
     qs('#comparisonRaceBody').innerHTML='<tr><td colspan="6" class="muted">全レース結果確定後に自動掲載</td></tr>';
   }
 }
