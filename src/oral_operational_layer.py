@@ -2,7 +2,7 @@
 from __future__ import annotations
 import itertools
 
-MODEL_VERSION='ORAL_INTEGRATED_V1_2_SHADOW'
+MODEL_VERSION='ORAL_INTEGRATED_V1_3_ROLE_SPLIT'
 
 def _f(v,d=0.0):
     try:return float(v)
@@ -137,41 +137,80 @@ def _diverse_partner_pool(roles,intrusion,limit=5):
             else:chosen.append(x['horse_no'])
     return list(dict.fromkeys(chosen))[:limit]
 
+def _partner_tiers(q,roles,intrusion):
+    ns=[str(x.get('n')) for x in q[:10] if str(x.get('n','')).isdigit()]
+    axis=ns[0] if ns else ''
+    role_by_no={str(x.get('horse_no')):x for x in roles}
+    # 2列目は「2着まで来る現実性」を能力順に優先する。
+    second=[]
+    for h in q[1:7]:
+        n=str(h.get('n') or '')
+        if not n or n==axis:continue
+        r=role_by_no.get(n,{})
+        if len(second)<3:
+            second.append(n)
+    # 3列目は2列目を包含し、独立した3着侵入候補を優先して追加する。
+    third=list(second)
+    for x in intrusion:
+        n=str(x.get('horse_no') or '')
+        if n and n in ns and n!=axis and n not in third:
+            third.append(n)
+    # 穴候補が少ない時だけ能力順の次点を補完する。
+    for h in q[1:9]:
+        n=str(h.get('n') or '')
+        if n and n!=axis and n not in third:
+            third.append(n)
+        if len(third)>=6:break
+    return second[:3],third[:6]
+
 def _tickets(q,dur,roles,intrusion):
     ns=[str(x.get('n')) for x in q[:10] if str(x.get('n','')).isdigit()]
-    if len(ns)<5:return 'PASS',[]
-    axis=ns[0]; partners=[x for x in _diverse_partner_pool(roles,intrusion,5) if x in ns]
+    if len(ns)<5:return 'PASS',[],{'first':[],'second':[],'third':[]}
+    axis=ns[0]
+    second,third=_partner_tiers(q,roles,intrusion)
     intr=[x['horse_no'] for x in intrusion if x['horse_no'] in ns]
+    formation={'first':[axis],'second':second,'third':third}
     out=[]
     if dur['status']=='HIGH':
-        pool=list(dict.fromkeys(partners+intr))[:5]
-        for a,b in itertools.combinations(pool,2):out.append(_combo([axis,a,b]))
-        shape='AXIS'; out=out[:9]
+        # 本線同士を先に確保し、その後に3着侵入候補との組合せを優先する。
+        for a,b in itertools.combinations(second,2):
+            out.append(_combo([axis,a,b]))
+        for h in intr:
+            if h not in third:continue
+            for a in second:
+                if a!=h:out.append(_combo([axis,a,h]))
+        for a in second:
+            for b in third:
+                if a!=b:out.append(_combo([axis,a,b]))
+        shape='AXIS';out=list(dict.fromkeys(out))[:9]
     elif dur['status']=='MID':
         # MIDは固定軸として扱わない。約半数を1位軸あり、約半数を1位軸なしにする。
-        alternatives=list(dict.fromkeys(partners+intr+ns[1:7]))
+        alternatives=list(dict.fromkeys(second+third+intr+ns[1:7]))
         alternatives=[x for x in alternatives if x!=axis and x in ns][:6]
         anchored=[]
-        for a,b in itertools.combinations(alternatives[:4],2):
-            anchored.append(_combo([axis,a,b]))
-            if len(anchored)>=4:break
+        for a in second:
+            for b in third:
+                if a==b:continue
+                anchored.append(_combo([axis,a,b]))
+                if len(dict.fromkeys(anchored))>=4:break
+            if len(dict.fromkeys(anchored))>=4:break
         axis_free=[]
         triples=list(itertools.combinations(alternatives,3))
         triples.sort(key=lambda c:(
             0 if any(x in intr for x in c) else 1,
             sum(alternatives.index(x) for x in c)
         ))
-        for c in triples:
-            axis_free.append(_combo(c))
+        for cc in triples:
+            axis_free.append(_combo(cc))
             if len(axis_free)>=4:break
         out=list(dict.fromkeys(anchored+axis_free))[:8]
         shape='HEDGED'
     else:
         shape='GROUP'
-        pool=list(dict.fromkeys(ns[:5]+intr))[:6]
-        for c in itertools.combinations(pool,3):out.append(_combo(c))
+        pool=list(dict.fromkeys([axis]+second+third+intr))[:6]
+        for cc in itertools.combinations(pool,3):out.append(_combo(cc))
         out=list(dict.fromkeys(out))[:10]
-    return shape,out
+    return shape,out,formation
 
 def _classification(dur,q,tickets,data_quality):
     if not q or not tickets or data_quality=='LOW':return 'PASS'
@@ -198,7 +237,7 @@ def analyze_race(race):
     q=_rank(race);axis=q[0] if q else {}
     data_quality=_data_quality(q)
     dur=_axis_durability(q); roles=_roles(q); intrusion=_intrusion(q,roles); scenarios=_scenarios(axis,roles,intrusion); axis_win_flow=_axis_win_flow(q)
-    shape,tickets=_tickets(q,dur,roles,intrusion); cls=_classification(dur,q,tickets,data_quality)
+    shape,tickets,formation_columns=_tickets(q,dur,roles,intrusion); cls=_classification(dur,q,tickets,data_quality)
     if cls=='PASS':tickets=[];shape='PASS'
     return {
       'model_version':MODEL_VERSION,
@@ -209,6 +248,7 @@ def analyze_race(race):
       'axis_win_flow':axis_win_flow,
       'failure_scenarios':scenarios,
       'ticket_shape':shape,
+      'formation_columns':formation_columns,
       'trio_tickets':tickets,
       'ticket_count':len(tickets),
       'classification':cls,
@@ -216,5 +256,5 @@ def analyze_race(race):
       'data_quality':data_quality,
       'derived_ticket_analysis':_derived(axis,roles,dur,cls),
       'market_isolation':'NO_ODDS_OR_POPULARITY_USED',
-      'implementation_note':'V1.2 shadow: evidence-gated axis durability, axis-win-flow scenario intrusion, role-diversified partners, and hedged MID ticket structure.'
+      'implementation_note':'V1.3 role split: second-line finish-strength partners are separated from third-line intrusion candidates; third line contains independent scenario/condition hole coverage without using odds or popularity.'
     }
