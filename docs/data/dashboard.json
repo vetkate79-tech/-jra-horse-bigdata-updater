@@ -1,7 +1,7 @@
 {
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_2_SHADOW__TOP3_SURVIVAL_R2_CHALLENGER",
-    "snapshot_time": "2026-09-06T10:25:48+09:00",
+    "snapshot_time": "2026-09-06T10:41:00+09:00",
     "actual_today_jst": "2026-09-06",
     "display_date": "2026-09-06",
     "total_races": 33,
@@ -1056,11 +1056,81 @@
       "predicted_scenario": ""
     }
   ],
+  "runtime_ownership": {
+    "schema_version": 1,
+    "updated_at": "2026-09-06",
+    "runtime_owner_repo": "vetkate79-tech/-jra-horse-bigdata-updater",
+    "standby_repo": "vetkate79-tech/-jra-horse-data-collector-web",
+    "replit_required": false,
+    "responsibilities": {
+      "data_ingest": "runtime_owner_repo",
+      "prediction_seal": "runtime_owner_repo",
+      "market_snapshot": "runtime_owner_repo",
+      "results": "runtime_owner_repo",
+      "pdca": "runtime_owner_repo",
+      "pages": "cloudflare_pages_via_standby_mirror",
+      "handover_backup": "standby_repo"
+    },
+    "market_schedule_jst": [
+      "09:00",
+      "13:00"
+    ],
+    "market_watchdog_jst": [
+      "09:25",
+      "13:25"
+    ],
+    "rules": [
+      "market_never_mutates_pure_prediction",
+      "history_must_be_preserved",
+      "failed_fetch_must_not_be_reported_as_success",
+      "single_writer_per_runtime_output"
+    ],
+    "canonical_public_url": "https://jra-horse-data-collector-web.pages.dev/",
+    "public_surface": "CLOUDFLARE_PAGES_CANONICAL",
+    "github_pages": {
+      "url": "https://vetkate79-tech.github.io/-jra-horse-bigdata-updater/",
+      "role": "SECONDARY_NON_CANONICAL",
+      "note": "内部確認・移行互換用。表向きの正規公開URLではない。"
+    },
+    "standby_sync": {
+      "repository": "vetkate79-tech/-jra-horse-data-collector-web",
+      "workflow": "Sync canonical JRA site",
+      "role": "STATIC_MIRROR_AND_BACKUP",
+      "writes_prediction_state": false,
+      "writes_market_state": false,
+      "writes_result_state": false,
+      "writes_pdca_state": false
+    },
+    "replit": {
+      "role": "DEVELOPMENT_ONLY",
+      "required_for_runtime": false,
+      "allowed": [
+        "初期コード作成",
+        "修正",
+        "一時検証"
+      ],
+      "prohibited": [
+        "本番データ唯一保存先",
+        "本番Scheduler唯一実行元",
+        "本番公開唯一配信元"
+      ]
+    }
+  },
   "risks": [
     {
       "name": "公開側→管理側データ連携",
       "level": "ok",
       "detail": "公開画面と同じ正規データ源から管理分析JSONを自動生成。手動取り込み不要。"
+    },
+    {
+      "name": "本番実行基盤",
+      "level": "ok",
+      "detail": "本番運用はGitHub Actionsへ一本化。Replitは開発専用で停止しても本番運用に影響しない。"
+    },
+    {
+      "name": "正規公開URL",
+      "level": "ok",
+      "detail": "Cloudflare Pagesを唯一の正規公開面として扱い、GitHub Pagesは非正規の補助確認用。"
     },
     {
       "name": "市場情報ファイアウォール",
@@ -1199,7 +1269,7 @@
   "role_distribution": [],
   "audit": [
     {
-      "time": "2026-09-06T10:25:48+09:00",
+      "time": "2026-09-06T10:41:00+09:00",
       "level": "INFO",
       "title": "管理分析データ更新",
       "detail": "69Rを正規化。31R結果接続、28R購入評価。"
@@ -1230,6 +1300,11 @@
       "name": "management_analytics.json",
       "status": "ok",
       "detail": "管理専用の細分化・抽出用データ"
+    },
+    {
+      "name": "runtime_ownership.json",
+      "status": "ok",
+      "detail": "本番実行元・公開先・ミラー・Replit責務の単一オーナー定義"
     }
   ],
   "upgrade_log": {
