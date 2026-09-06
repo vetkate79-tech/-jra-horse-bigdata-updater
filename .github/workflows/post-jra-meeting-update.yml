@@ -95,11 +95,19 @@ jobs:
               if before is not None and after != before:
                   raise RuntimeError(f'immutable prediction archive changed for {date}: {before} -> {after}')
           PY
-      - name: Build ERP old/new model report after all 9/6 races are official
+      - name: Build ERP old/new model report for completed dates
         if: steps.state.outputs.updated == 'true'
         env:
-          TARGET_DATE: '2026-09-06'
-        run: python src/build_erp_model_comparison_report.py
+          COMPLETE_DATES: ${{ steps.state.outputs.dates }}
+        run: |
+          python - <<'PY'
+          import os, subprocess
+          for raw in [x.strip() for x in os.environ.get('COMPLETE_DATES','').split(',') if x.strip()]:
+              date=raw
+              if len(raw)==8 and raw.isdigit():
+                  date=f'{raw[:4]}-{raw[4:6]}-{raw[6:8]}'
+              subprocess.run(['python','src/build_erp_model_comparison_report.py'],check=True,env=dict(os.environ,TARGET_DATE=date))
+          PY
       - name: Merge latest runners into internal horse catalog
         if: steps.state.outputs.updated == 'true'
         run: python src/merge_latest_results_into_catalog.py
@@ -128,9 +136,10 @@ jobs:
           git config user.email 'actions@users.noreply.github.com'
           git add \
             data/race_results_html_2026.csv data/race_payouts_2026.csv data/race_context_2026.csv \
-            docs/data/live_prediction_scores.json docs/data/live_pdca.json docs/data/today-results-*.json docs/data/prediction-archive-*.json docs/data/replay-????-??-??.json docs/data/erp-report-*.json \
+            docs/data/live_prediction_scores.json docs/data/live_pdca.json docs/data/erp-pdca-latest.json docs/data/today-results-*.json docs/data/prediction-archive-*.json docs/data/replay-????-??-??.json docs/data/erp-report-*.json \
+            docs/data/prediction-score-history docs/data/pdca-history \
             status/jra_post_meeting_update.json status/live_prediction_scoring.json status/live_pdca.json status/horse_master_completion.json \
-            docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json \
+            docs/data/horses/catalog.json docs/data/horses/base_catalog.json docs/data/horses/weekly_runner_details.json docs/data/horses/weekly_runner_archive/*.json \
             docs/data/horses/active_graded.json docs/data/horses/active_open.json docs/data/horses/active_elite.json || true
           git diff --cached --quiet || git commit -m "data: score, PDCA and update completed JRA meeting ${{ steps.state.outputs.dates }}"
           for i in 1 2 3 4 5; do
