@@ -23,6 +23,7 @@ on:
       - 'docs/data/horses/pre_race_features.json'
       - 'docs/data/horses/catalog.json'
       - 'docs/data/horses/base_catalog.json'
+      - 'config/runtime_ownership.json'
       - '.github/workflows/race-week-prediction-seal.yml'
 
 permissions:
