@@ -26,10 +26,11 @@
     }
     const race=current();
     const xs=race?.unrated_dark_horses||race?.analysis?.unrated_dark_horses||[];
-    const isNew=race?.analysis?.model_version==='NEW_HORSE_DEDICATED_V1';
+    const mv=String(race?.analysis?.model_version||'');
+    const isNew=mv.startsWith('NEW_HORSE_DEDICATED_V');
     if(!isNew||!xs.length){box.style.display='none';box.innerHTML='';return;}
     box.style.display='block';
-    box.innerHTML=`<small style="display:block;letter-spacing:.08em;color:#6f665d">除外ゾーン</small><b style="display:block;margin:3px 0 7px">未評価馬（完全ダークホース）</b><p style="margin:0 0 9px;font-size:13px;line-height:1.55">能力が低いという意味ではありません。新馬専用機構で必要な情報が不足し、順位を付けると誤評価になるためランキングから除外しています。</p>${xs.map(x=>`<div style="padding:8px 0;border-top:1px solid #d8d0c7"><b>${esc(x.n||'—')} ${esc(x.name||'')}</b><small style="display:block;margin-top:2px;color:#6f665d">未評価・完全ダークホース${(x.missing_evidence||[]).length?` / 不足: ${esc((x.missing_evidence||[]).join(', '))}`:''}</small></div>`).join('')}`;
+    box.innerHTML=`<small style="display:block;letter-spacing:.08em;color:#6f665d">除外ゾーン</small><b style="display:block;margin:3px 0 7px">未評価馬（完全ダークホース）</b><p style="margin:0 0 9px;font-size:13px;line-height:1.55">能力が低いという意味ではありません。新馬専用機構で必要な情報が不足し、順位を付けると誤評価になるためランキングから除外しています。血統だけで無理に順位付けもしません。</p>${xs.map(x=>`<div style="padding:8px 0;border-top:1px solid #d8d0c7"><b>${esc(x.n||'—')} ${esc(x.name||'')}</b><small style="display:block;margin-top:2px;color:#6f665d">未評価・完全ダークホース${(x.missing_evidence||[]).length?` / 不足: ${esc((x.missing_evidence||[]).join(', '))}`:''}</small></div>`).join('')}`;
   }
   document.addEventListener('click',()=>setTimeout(render,80));
   new MutationObserver(()=>render()).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class']});
