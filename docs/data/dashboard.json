@@ -1,7 +1,7 @@
 {
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
-    "snapshot_time": "2026-09-12T12:19:09+09:00",
+    "snapshot_time": "2026-09-12T12:23:57+09:00",
     "actual_today_jst": "2026-09-12",
     "display_date": "2026-09-12",
     "total_races": 24,
@@ -173,14 +173,15 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 47.8,
+        "score": 43.2,
         "status": "LOW",
-        "gap_to_second": 0.7,
-        "uncertainty": 0.85,
+        "gap_to_second": 0.4,
+        "uncertainty": 0.8,
         "starts_before": 0,
         "reasons": [
-          "新馬戦のため既走データなし",
-          "通常戦の軸固定を使用せず上位2頭を中心に分散"
+          "全馬未出走のため能力差を強く断定しない",
+          "血統は弱い事前分布としてのみ使用",
+          "未評価馬は完全ダークホースとして別管理"
         ]
       },
       "axis_failure_risk": "-",
@@ -202,14 +203,15 @@
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 51.4,
+        "score": 46.5,
         "status": "LOW",
-        "gap_to_second": 1.6,
-        "uncertainty": 0.85,
+        "gap_to_second": 1.5,
+        "uncertainty": 0.8,
         "starts_before": 0,
         "reasons": [
-          "新馬戦のため既走データなし",
-          "通常戦の軸固定を使用せず上位2頭を中心に分散"
+          "全馬未出走のため能力差を強く断定しない",
+          "血統は弱い事前分布としてのみ使用",
+          "未評価馬は完全ダークホースとして別管理"
         ]
       },
       "axis_failure_risk": "-",
@@ -526,21 +528,22 @@
       "race_no": 5,
       "start_time": "",
       "classification": "CAUTION",
-      "axis": "4 アリアニコ",
+      "axis": "5 クラルテロワ",
       "race_state": "SEALED",
       "ev": null,
       "stake": 0,
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 45.8,
+        "score": 43.8,
         "status": "LOW",
-        "gap_to_second": 0.2,
-        "uncertainty": 0.85,
+        "gap_to_second": 0.6,
+        "uncertainty": 0.8,
         "starts_before": 0,
         "reasons": [
-          "新馬戦のため既走データなし",
-          "通常戦の軸固定を使用せず上位2頭を中心に分散"
+          "全馬未出走のため能力差を強く断定しない",
+          "血統は弱い事前分布としてのみ使用",
+          "未評価馬は完全ダークホースとして別管理"
         ]
       },
       "axis_failure_risk": "-",
@@ -555,21 +558,22 @@
       "race_no": 6,
       "start_time": "",
       "classification": "CAUTION",
-      "axis": "3 エピドゥブレ",
+      "axis": "1 ボーオーブ",
       "race_state": "SEALED",
       "ev": null,
       "stake": 0,
       "surface": null,
       "distance": null,
       "axis_durability": {
-        "score": 53.0,
+        "score": 43.5,
         "status": "LOW",
-        "gap_to_second": 2.0,
-        "uncertainty": 0.85,
+        "gap_to_second": 0.5,
+        "uncertainty": 0.8,
         "starts_before": 0,
         "reasons": [
-          "新馬戦のため既走データなし",
-          "通常戦の軸固定を使用せず上位2頭を中心に分散"
+          "全馬未出走のため能力差を強く断定しない",
+          "血統は弱い事前分布としてのみ使用",
+          "未評価馬は完全ダークホースとして別管理"
         ]
       },
       "axis_failure_risk": "-",
@@ -980,7 +984,7 @@
   "role_distribution": [],
   "audit": [
     {
-      "time": "2026-09-12T12:19:09+09:00",
+      "time": "2026-09-12T12:23:57+09:00",
       "level": "INFO",
       "title": "管理分析データ更新",
       "detail": "120Rを正規化。67R結果接続、61R購入評価。"
@@ -2719,7 +2723,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -2798,7 +2802,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -2886,7 +2890,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -2975,7 +2979,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3027,29 +3031,30 @@
         "axis_horse_no": "9",
         "axis_horse_name": "ワンモアタイム",
         "axis_durability": {
-          "score": 47.8,
+          "score": 43.2,
           "status": "LOW",
-          "gap_to_second": 0.7,
-          "uncertainty": 0.85,
+          "gap_to_second": 0.4,
+          "uncertainty": 0.8,
           "starts_before": 0,
           "reasons": [
-            "新馬戦のため既走データなし",
-            "通常戦の軸固定を使用せず上位2頭を中心に分散"
+            "全馬未出走のため能力差を強く断定しない",
+            "血統は弱い事前分布としてのみ使用",
+            "未評価馬は完全ダークホースとして別管理"
           ]
         },
         "predicted_scenario": null,
         "role_tags": [],
         "third_place_intrusion_candidates": [],
         "trio_tickets": [
-          "1-9-10",
           "2-9-10",
-          "3-9-10",
-          "4-9-10",
           "1-2-9",
+          "2-3-9",
+          "2-4-9",
+          "1-9-10",
           "1-2-10",
-          "1-3-9",
-          "1-3-10",
-          "2-3-10"
+          "3-9-10",
+          "2-3-10",
+          "1-2-3"
         ],
         "ticket_count": 9,
         "scored": false,
@@ -3063,7 +3068,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {},
         "actual_trio_payout_yen": 0,
         "data_status": null,
@@ -3090,14 +3095,15 @@
         "axis_horse_no": "3",
         "axis_horse_name": "ジェミニディウ",
         "axis_durability": {
-          "score": 51.4,
+          "score": 46.5,
           "status": "LOW",
-          "gap_to_second": 1.6,
-          "uncertainty": 0.85,
+          "gap_to_second": 1.5,
+          "uncertainty": 0.8,
           "starts_before": 0,
           "reasons": [
-            "新馬戦のため既走データなし",
-            "通常戦の軸固定を使用せず上位2頭を中心に分散"
+            "全馬未出走のため能力差を強く断定しない",
+            "血統は弱い事前分布としてのみ使用",
+            "未評価馬は完全ダークホースとして別管理"
           ]
         },
         "predicted_scenario": null,
@@ -3105,14 +3111,14 @@
         "third_place_intrusion_candidates": [],
         "trio_tickets": [
           "3-4-10",
-          "3-8-10",
-          "1-3-10",
-          "2-3-10",
           "3-4-8",
-          "4-8-10",
           "1-3-4",
+          "2-3-4",
+          "3-8-10",
+          "4-8-10",
+          "1-3-10",
           "1-4-10",
-          "1-8-10"
+          "1-4-8"
         ],
         "ticket_count": 9,
         "scored": false,
@@ -3126,7 +3132,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {},
         "actual_trio_payout_yen": 0,
         "data_status": null,
@@ -3190,7 +3196,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3278,7 +3284,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3368,7 +3374,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3456,7 +3462,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3544,7 +3550,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3633,7 +3639,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3722,7 +3728,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3799,7 +3805,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3876,7 +3882,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -3965,7 +3971,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4013,17 +4019,18 @@
         "scheduled_start": null,
         "decision": "CAUTION",
         "race_state": "SEALED",
-        "axis_horse_no": "4",
-        "axis_horse_name": "アリアニコ",
+        "axis_horse_no": "5",
+        "axis_horse_name": "クラルテロワ",
         "axis_durability": {
-          "score": 45.8,
+          "score": 43.8,
           "status": "LOW",
-          "gap_to_second": 0.2,
-          "uncertainty": 0.85,
+          "gap_to_second": 0.6,
+          "uncertainty": 0.8,
           "starts_before": 0,
           "reasons": [
-            "新馬戦のため既走データなし",
-            "通常戦の軸固定を使用せず上位2頭を中心に分散"
+            "全馬未出走のため能力差を強く断定しない",
+            "血統は弱い事前分布としてのみ使用",
+            "未評価馬は完全ダークホースとして別管理"
           ]
         },
         "predicted_scenario": null,
@@ -4034,11 +4041,11 @@
           "4-5-9",
           "4-5-10",
           "1-4-5",
-          "4-7-9",
           "5-7-9",
-          "4-7-10",
+          "4-7-9",
           "5-7-10",
-          "5-9-10"
+          "4-7-10",
+          "4-9-10"
         ],
         "ticket_count": 9,
         "scored": false,
@@ -4052,7 +4059,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {},
         "actual_trio_payout_yen": 0,
         "data_status": null,
@@ -4076,17 +4083,18 @@
         "scheduled_start": null,
         "decision": "CAUTION",
         "race_state": "SEALED",
-        "axis_horse_no": "3",
-        "axis_horse_name": "エピドゥブレ",
+        "axis_horse_no": "1",
+        "axis_horse_name": "ボーオーブ",
         "axis_durability": {
-          "score": 53.0,
+          "score": 43.5,
           "status": "LOW",
-          "gap_to_second": 2.0,
-          "uncertainty": 0.85,
+          "gap_to_second": 0.5,
+          "uncertainty": 0.8,
           "starts_before": 0,
           "reasons": [
-            "新馬戦のため既走データなし",
-            "通常戦の軸固定を使用せず上位2頭を中心に分散"
+            "全馬未出走のため能力差を強く断定しない",
+            "血統は弱い事前分布としてのみ使用",
+            "未評価馬は完全ダークホースとして別管理"
           ]
         },
         "predicted_scenario": null,
@@ -4097,11 +4105,11 @@
           "1-3-4",
           "1-3-5",
           "1-3-6",
-          "2-3-4",
           "1-2-4",
-          "2-3-5",
+          "2-3-4",
           "1-2-5",
-          "1-4-5"
+          "2-3-5",
+          "3-4-5"
         ],
         "ticket_count": 9,
         "scored": false,
@@ -4115,7 +4123,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {},
         "actual_trio_payout_yen": 0,
         "data_status": null,
@@ -4180,7 +4188,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4269,7 +4277,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4357,7 +4365,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4446,7 +4454,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4536,7 +4544,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -4625,7 +4633,7 @@
         "return_yen": 0,
         "profit_yen": 0,
         "roi": null,
-        "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+        "prediction_hash_sha256": "0bf33bab15500f84ba3da9dee73767c78d841b27d601ed1ad12198cfb2f51258",
         "ticket_value_regime_shadow": {
           "status": "RESEARCH_ONLY",
           "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
