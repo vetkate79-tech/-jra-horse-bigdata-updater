@@ -6,8 +6,6 @@ on:
       - Register upcoming JRA debut horses and race-week details
     types: [completed]
   schedule:
-    # Fallback reseals shortly after JRA official card publication.
-    # Primary path is immediate push-triggered sealing after race-week data refresh.
     - cron: '30 7 * * 4'   # Thursday 16:30 JST
     - cron: '30 1 * * 5'   # Friday 10:30 JST
     - cron: '30 1 * * 6'   # Saturday 10:30 JST
@@ -16,7 +14,7 @@ on:
     branches: [main]
     paths:
       - 'src/build_live_sealed_predictions.py'
-      - 'src/apply_new_horse_unrated_zone.py'
+      - 'src/build_live_sealed_predictions_v2.py'
       - 'src/axis_survival_shadow.py'
       - 'src/oral_operational_layer.py'
       - 'src/build_management_erp.py'
@@ -24,6 +22,7 @@ on:
       - 'docs/data/horses/pre_race_features.json'
       - 'docs/data/horses/catalog.json'
       - 'docs/data/horses/base_catalog.json'
+      - 'docs/data/upcoming_new_horses.json'
       - 'config/runtime_ownership.json'
       - '.github/workflows/race-week-prediction-seal.yml'
 
@@ -46,10 +45,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Build leakage-safe live pure predictions
-        run: python src/build_live_sealed_predictions.py
-      - name: Separate unrated debut horses into dark-horse zone
-        run: python src/apply_new_horse_unrated_zone.py
-      - name: Verify market and result firewall
+        run: python src/build_live_sealed_predictions_v2.py
+      - name: Verify market/result firewall and new-horse V2
         run: |
           python - <<'PY'
           import json
@@ -59,6 +56,8 @@ jobs:
           assert s['results_used'] is False
           assert s['status'] in ('SEALED','DATA_PENDING','NO_UPCOMING_RACES')
           assert s.get('new_horse_unrated_zone_enabled') is True
+          assert s.get('new_horse_detection_all_zero_starts_enabled') is True
+          assert str(s.get('new_horse_model_version') or '').startswith('NEW_HORSE_DEDICATED_V2')
           print(json.dumps(s,ensure_ascii=False,indent=2))
           PY
       - name: Refresh management ERP from the new sealed predictions
