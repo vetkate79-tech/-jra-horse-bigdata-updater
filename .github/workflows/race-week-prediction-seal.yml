@@ -16,6 +16,7 @@ on:
     branches: [main]
     paths:
       - 'src/build_live_sealed_predictions.py'
+      - 'src/apply_new_horse_unrated_zone.py'
       - 'src/axis_survival_shadow.py'
       - 'src/oral_operational_layer.py'
       - 'src/build_management_erp.py'
@@ -46,6 +47,8 @@ jobs:
           python-version: '3.11'
       - name: Build leakage-safe live pure predictions
         run: python src/build_live_sealed_predictions.py
+      - name: Separate unrated debut horses into dark-horse zone
+        run: python src/apply_new_horse_unrated_zone.py
       - name: Verify market and result firewall
         run: |
           python - <<'PY'
@@ -55,6 +58,7 @@ jobs:
           assert s['odds_popularity_used'] is False
           assert s['results_used'] is False
           assert s['status'] in ('SEALED','DATA_PENDING','NO_UPCOMING_RACES')
+          assert s.get('new_horse_unrated_zone_enabled') is True
           print(json.dumps(s,ensure_ascii=False,indent=2))
           PY
       - name: Refresh management ERP from the new sealed predictions
