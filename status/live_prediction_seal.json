@@ -13,7 +13,7 @@
   "frame_known_count": 630,
   "frame_total_count": 630,
   "draw_feature_applied": true,
-  "prediction_hash_sha256": "73a6d204be090c58c2de9084b1d2dec568a2868bec3236f6ecf61f5a2e724e85",
+  "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
   "pre_race_feature_cutoff": "2026-09-12",
   "situational_shadow_enabled": true,
   "situational_shadow_production_override": false,
@@ -22,5 +22,8 @@
   "ticket_value_regime_shadow_enabled": true,
   "ticket_value_regime_shadow_production_override": false,
   "odds_popularity_used": false,
-  "results_used": false
+  "results_used": false,
+  "new_horse_unrated_zone_enabled": true,
+  "new_horse_unrated_race_count": 0,
+  "new_horse_unrated_horse_count": 0
 }

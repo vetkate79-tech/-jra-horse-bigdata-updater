@@ -7,7 +7,7 @@
   "publication_status": "PUBLIC_CHALLENGER",
   "challenger_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
   "champion_archive": "docs/data/live_predictions_champion_2026-09-12.json",
-  "generated_at": "2026-09-12T10:32:37.341008+09:00",
+  "generated_at": "2026-09-12T12:19:08.448885+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-12",
@@ -4503,8 +4503,11 @@
         "data_quality": "NEW_HORSE_DEDICATED",
         "derived_ticket_analysis": {},
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
-      }
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded.",
+        "unrated_dark_horses": [],
+        "excluded_zone_label": "未評価馬（完全ダークホース）"
+      },
+      "unrated_dark_horses": []
     },
     {
       "race_id": "pw01dde0106202604030620260912",
@@ -5265,8 +5268,11 @@
         "data_quality": "NEW_HORSE_DEDICATED",
         "derived_ticket_analysis": {},
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
-      }
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded.",
+        "unrated_dark_horses": [],
+        "excluded_zone_label": "未評価馬（完全ダークホース）"
+      },
+      "unrated_dark_horses": []
     },
     {
       "race_id": "pw01dde0106202604030720260912",
@@ -14911,8 +14917,11 @@
         "data_quality": "NEW_HORSE_DEDICATED",
         "derived_ticket_analysis": {},
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
-      }
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded.",
+        "unrated_dark_horses": [],
+        "excluded_zone_label": "未評価馬（完全ダークホース）"
+      },
+      "unrated_dark_horses": []
     },
     {
       "race_id": "pw01dde0109202604030620260912",
@@ -15479,8 +15488,11 @@
         "data_quality": "NEW_HORSE_DEDICATED",
         "derived_ticket_analysis": {},
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
-      }
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded.",
+        "unrated_dark_horses": [],
+        "excluded_zone_label": "未評価馬（完全ダークホース）"
+      },
+      "unrated_dark_horses": []
     },
     {
       "race_id": "pw01dde0109202604030720260912",
@@ -25692,8 +25704,11 @@
         "data_quality": "NEW_HORSE_DEDICATED",
         "derived_ticket_analysis": {},
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
-      }
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded.",
+        "unrated_dark_horses": [],
+        "excluded_zone_label": "未評価馬（完全ダークホース）"
+      },
+      "unrated_dark_horses": []
     },
     {
       "race_id": "pw01dde0106202604040620260913",
@@ -36408,8 +36423,11 @@
         "data_quality": "NEW_HORSE_DEDICATED",
         "derived_ticket_analysis": {},
         "market_isolation": "NO_ODDS_OR_POPULARITY_USED",
-        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded."
-      }
+        "implementation_note": "New-horse dedicated mechanism: verified pre-race JRA racecard facts only. Pedigree, trainer, jockey and production/ownership background are used; popularity and odds are explicitly excluded.",
+        "unrated_dark_horses": [],
+        "excluded_zone_label": "未評価馬（完全ダークホース）"
+      },
+      "unrated_dark_horses": []
     },
     {
       "race_id": "pw01dde0109202604040620260913",
@@ -42987,5 +43005,8 @@
     }
   ],
   "pending": [],
-  "prediction_hash_sha256": "73a6d204be090c58c2de9084b1d2dec568a2868bec3236f6ecf61f5a2e724e85"
+  "prediction_hash_sha256": "7829f3aa747c7cc6c40367471a8a9c24d798a1bf4363c742ca4d9cc14fa0c3c6",
+  "new_horse_unrated_zone_enabled": true,
+  "new_horse_unrated_race_count": 0,
+  "new_horse_unrated_horse_count": 0
 }
