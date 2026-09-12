@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "mode": "CANONICAL_REPLAY_DATE",
+  "date": "2026-09-12",
+  "summary": {
+    "races": 24,
+    "sealed": 24,
+    "results": 24
+  },
+  "races": [
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "2",
+        "axis_name": "ソラニワラエバ",
+        "decision": "PASS",
+        "candidate": [
+          "9 サクセスボーイ",
+          "5 ハチキンキリシマ",
+          "6 ナムラダックス",
+          "11 イキフン",
+          "1 ゼラニウム"
+        ],
+        "tickets": []
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "9",
+            "horse_name": "サクセスボーイ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "11",
+            "horse_name": "イキフン"
+          },
+          {
+            "finish": 3,
+            "horse_no": "6",
+            "horse_name": "ナムラダックス"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "9,750円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030120260912%2F07"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "10",
+        "axis_name": "アイファーマーリン",
+        "decision": "PASS",
+        "candidate": [
+          "9 ヨドノプレミアム",
+          "2 イントゥーザブルー",
+          "1 プレママドンナ",
+          "6 マーズワース",
+          "7 コスモティタノ"
+        ],
+        "tickets": []
+      },
+      "result": {
+        "axis_finish": 1,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "10",
+            "horse_name": "アイファーマーリン"
+          },
+          {
+            "finish": 2,
+            "horse_no": "7",
+            "horse_name": "コスモティタノ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "6",
+            "horse_name": "マーズワース"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "16,110円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030220260912%2FBC"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 3,
+      "race_name": "3歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "9",
+        "axis_name": "エリースノー",
+        "decision": "CAUTION",
+        "candidate": [
+          "15 ミッキーサウザンド",
+          "8 ハングローズ",
+          "13 エンジェルサン",
+          "2 セイウンヤオヨロズ",
+          "10 ジーティーニッツァ"
+        ],
+        "tickets": [
+          "9-10-15",
+          "1-8-9",
+          "4-9-13",
+          "1-9-15",
+          "1-4-10",
+          "1-10-15",
+          "4-8-10",
+          "1-4-13"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "15",
+            "horse_name": "ミッキーサウザンド"
+          },
+          {
+            "finish": 2,
+            "horse_no": "13",
+            "horse_name": "エンジェルサン"
+          },
+          {
+            "finish": 3,
+            "horse_no": "8",
+            "horse_name": "ハングローズ"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "5,250円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030320260912%2F71"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 4,
+      "race_name": "3歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "11",
+        "axis_name": "エリュグレイス",
+        "decision": "CAUTION",
+        "candidate": [
+          "2 ミナヅキ",
+          "13 コスモアルペジオ",
+          "16 ヒシナスキロ",
+          "8 ヤマニンリンキング",
+          "12 ナイトバード"
+        ],
+        "tickets": [
+          "2-8-11",
+          "10-11-13",
+          "11-12-16",
+          "2-10-11",
+          "8-10-12",
+          "2-8-10",
+          "8-12-13",
+          "10-12-16"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "4",
+            "horse_name": "カーヴドヴァン"
+          },
+          {
+            "finish": 2,
+            "horse_no": "2",
+            "horse_name": "ミナヅキ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "10",
+            "horse_name": "ジェイエルグリーン"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "37,440円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030420260912%2F26"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 5,
+      "race_name": "メイクデビュー中山",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "9",
+        "axis_name": "ワンモアタイム",
+        "decision": "CAUTION",
+        "candidate": [
+          "2 リオンパリス",
+          "10 オラパ",
+          "1 サムワンユーラヴド",
+          "3 アテナプロマコス",
+          "4 ブルードロップ"
+        ],
+        "tickets": [
+          "2-9-10",
+          "1-2-9",
+          "2-3-9",
+          "2-4-9",
+          "1-9-10",
+          "1-2-10",
+          "3-9-10",
+          "2-3-10",
+          "1-2-3"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "8",
+            "horse_name": "サトノハクマイ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "4",
+            "horse_name": "ブルードロップ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "1",
+            "horse_name": "サムワンユーラヴド"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "7,070円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030520260912%2FDB"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 6,
+      "race_name": "メイクデビュー中山",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "3",
+        "axis_name": "ジェミニディウ",
+        "decision": "CAUTION",
+        "candidate": [
+          "4 トパーズヘッド",
+          "10 ゲンロクコイモヨウ",
+          "8 ファイアリーボルト",
+          "1 レーヴデリオン",
+          "2 アーバーバイティ"
+        ],
+        "tickets": [
+          "3-4-10",
+          "3-4-8",
+          "1-3-4",
+          "2-3-4",
+          "3-8-10",
+          "4-8-10",
+          "1-3-10",
+          "1-4-10",
+          "1-4-8"
+        ]
+      },
+      "result": {
+        "axis_finish": 2,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "11",
+            "horse_name": "ナイトパイロット"
+          },
+          {
+            "finish": 2,
+            "horse_no": "3",
+            "horse_name": "ジェミニディウ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "2",
+            "horse_name": "アーバーバイティ"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "30,760円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030620260912%2F90"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 7,
+      "race_name": "3歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "14",
+        "axis_name": "カシマライフウ",
+        "decision": "CAUTION",
+        "candidate": [
+          "3 ゴールドプレイヤー",
+          "7 イーサンミラー",
+          "4 イントゥザウインド",
+          "9 サングラント",
+          "8 ユイノサダハル"
+        ],
+        "tickets": [
+          "3-4-14",
+          "7-9-14",
+          "3-8-14",
+          "2-7-14",
+          "4-8-9",
+          "3-4-9",
+          "4-7-8",
+          "2-8-9"
+        ]
+      },
+      "result": {
+        "axis_finish": 1,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "14",
+            "horse_name": "カシマライフウ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "7",
+            "horse_name": "イーサンミラー"
+          },
+          {
+            "finish": 3,
+            "horse_no": "2",
+            "horse_name": "プロミスライン"
+          }
+        ],
+        "trio_hit": true,
+        "trio_payout": "8,760円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030720260912%2F45"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 8,
+      "race_name": "3歳以上1勝クラス",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "1",
+        "axis_name": "ヴァルカンテソーロ",
+        "decision": "CAUTION",
+        "candidate": [
+          "11 マーゴットドライ",
+          "5 ヤマニンヘルシェ",
+          "13 ベルトラッキ",
+          "8 マイネルアウルム",
+          "12 コスモナエマ"
+        ],
+        "tickets": [
+          "1-11-12",
+          "1-5-7",
+          "1-8-13",
+          "1-7-11",
+          "7-8-12",
+          "7-11-12",
+          "5-8-12",
+          "7-8-13"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "5",
+            "horse_name": "ヤマニンヘルシェ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "12",
+            "horse_name": "コスモナエマ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "2",
+            "horse_name": "スノーディーヴァ"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "32,730円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030820260912%2FFA"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 9,
+      "race_name": "御宿特別",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "12",
+        "axis_name": "シャンソンドール",
+        "decision": "BUY",
+        "candidate": [
+          "13 キスアンドクライ",
+          "2 ロケベンドラ",
+          "10 ルナルーチェット",
+          "1 ホウオウシンデレラ",
+          "7 レイユール"
+        ],
+        "tickets": [
+          "10-12-13",
+          "1-2-12",
+          "7-12-13",
+          "2-3-12",
+          "2-10-12",
+          "1-12-13",
+          "7-10-12",
+          "2-7-12",
+          "1-10-12"
+        ]
+      },
+      "result": {
+        "axis_finish": 2,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "2",
+            "horse_name": "ロケベンドラ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "12",
+            "horse_name": "シャンソンドール"
+          },
+          {
+            "finish": 3,
+            "horse_no": "10",
+            "horse_name": "ルナルーチェット"
+          }
+        ],
+        "trio_hit": true,
+        "trio_payout": "1,080円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604030920260912%2FAF"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 10,
+      "race_name": "レインボーステークス",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "3",
+        "axis_name": "ルールーリマ",
+        "decision": "BUY",
+        "candidate": [
+          "4 マイネルフーガ",
+          "10 ダンツファイター",
+          "8 ショウナンサムデイ",
+          "9 ダノンジャイアン",
+          "1 デルアヴァー"
+        ],
+        "tickets": [
+          "3-4-8",
+          "3-9-10",
+          "1-3-4",
+          "3-10-11",
+          "3-8-10",
+          "3-4-9",
+          "1-3-8",
+          "1-3-10",
+          "3-8-9"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "5",
+            "horse_name": "アマイ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "2",
+            "horse_name": "マイネルブリックス"
+          },
+          {
+            "finish": 3,
+            "horse_no": "4",
+            "horse_name": "マイネルフーガ"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "18,740円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604031020260912%2FA4"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 11,
+      "race_name": "ラジオ日本賞",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "10",
+        "axis_name": "ゲイルライダー",
+        "decision": "CAUTION",
+        "candidate": [
+          "4 モンドプリューム",
+          "2 プレゼンティーア",
+          "13 ショウナンアビアス",
+          "5 ジョーローリット",
+          "1 オーブルクール"
+        ],
+        "tickets": [
+          "4-10-13",
+          "2-9-10",
+          "4-8-10",
+          "2-5-10",
+          "8-9-13",
+          "4-9-13",
+          "2-8-13",
+          "5-8-9"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "15",
+            "horse_name": "ユキマル"
+          },
+          {
+            "finish": 2,
+            "horse_no": "5",
+            "horse_name": "ジョーローリット"
+          },
+          {
+            "finish": 3,
+            "horse_no": "16",
+            "horse_name": "ロードフロンティア"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "6,800円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604031120260912%2F59"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "中山",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "14",
+        "axis_name": "ヨドノタイヨウ",
+        "decision": "BUY",
+        "candidate": [
+          "13 ジェネラスキング",
+          "12 ユアフェリシティ",
+          "2 アバレリュウ",
+          "6 ボールドタワー",
+          "4 スノースコール"
+        ],
+        "tickets": [
+          "12-13-14",
+          "2-6-14",
+          "8-13-14",
+          "4-12-14",
+          "2-8-14",
+          "6-13-14",
+          "2-4-14",
+          "6-12-14",
+          "4-13-14"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "8",
+            "horse_name": "インナーパッション"
+          },
+          {
+            "finish": 2,
+            "horse_no": "12",
+            "horse_name": "ユアフェリシティ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "9",
+            "horse_name": "ロードフロリゼル"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "12,540円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0106202604031220260912%2F0E"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 1,
+      "race_name": "障害3歳以上未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "6",
+        "axis_name": "ガストン",
+        "decision": "BUY",
+        "candidate": [
+          "1 メイショウトム",
+          "2 ホルトバージ",
+          "7 ツーエムクロノス",
+          "8 バトラーズワーフ",
+          "4 インターステラ"
+        ],
+        "tickets": [
+          "1-6-7",
+          "2-4-6",
+          "1-5-6",
+          "2-6-8",
+          "2-6-7",
+          "1-4-6",
+          "5-6-7",
+          "2-5-6",
+          "4-6-7"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "1",
+            "horse_name": "メイショウトム"
+          },
+          {
+            "finish": 2,
+            "horse_no": "8",
+            "horse_name": "バトラーズワーフ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "5",
+            "horse_name": "クリアクォーツ"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "9,370円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030120260912%2FE5"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "6",
+        "axis_name": "メイショウジェード",
+        "decision": "PASS",
+        "candidate": [
+          "5 ショウナンバトレニ",
+          "1 ケイアイトリノ",
+          "2 ハルカカナタ",
+          "7 マスリュウオー",
+          "3 シャプシュ"
+        ],
+        "tickets": []
+      },
+      "result": {
+        "axis_finish": 2,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "5",
+            "horse_name": "ショウナンバトレニ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "6",
+            "horse_name": "メイショウジェード"
+          },
+          {
+            "finish": 3,
+            "horse_no": "2",
+            "horse_name": "ハルカカナタ"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "420円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030220260912%2F9A"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 3,
+      "race_name": "2歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "7",
+        "axis_name": "ホットロッドハート",
+        "decision": "PASS",
+        "candidate": [
+          "2 ジュンヴァグネル",
+          "3 ゴールドシューター",
+          "1 ナポリ",
+          "5 ベルメサージュ",
+          "6 アワジシマ"
+        ],
+        "tickets": []
+      },
+      "result": {
+        "axis_finish": 1,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "7",
+            "horse_name": "ホットロッドハート"
+          },
+          {
+            "finish": 2,
+            "horse_no": "3",
+            "horse_name": "ゴールドシューター"
+          },
+          {
+            "finish": 3,
+            "horse_no": "6",
+            "horse_name": "アワジシマ"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "1,250円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030320260912%2F4F"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 4,
+      "race_name": "3歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "6",
+        "axis_name": "コスモフィレンツェ",
+        "decision": "BUY",
+        "candidate": [
+          "13 イルミナジーティー",
+          "17 アステルディーヴァ",
+          "16 ペガサスジルシ",
+          "9 ファランギーナ",
+          "2 テンダーワーズ"
+        ],
+        "tickets": [
+          "6-13-16",
+          "6-9-17",
+          "2-6-13",
+          "6-11-17",
+          "6-16-17",
+          "6-9-13",
+          "2-6-16",
+          "2-6-17",
+          "6-9-16"
+        ]
+      },
+      "result": {
+        "axis_finish": 2,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "5",
+            "horse_name": "ラッキーストーン"
+          },
+          {
+            "finish": 2,
+            "horse_no": "6",
+            "horse_name": "コスモフィレンツェ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "15",
+            "horse_name": "ビロングトゥミー"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "39,010円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030420260912%2F04"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 5,
+      "race_name": "メイクデビュー阪神",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "5",
+        "axis_name": "クラルテロワ",
+        "decision": "CAUTION",
+        "candidate": [
+          "4 アリアニコ",
+          "7 ルパドゥクール",
+          "9 ルーメンルーナエ",
+          "10 アヤノ",
+          "1 ブラッドバローズ"
+        ],
+        "tickets": [
+          "4-5-7",
+          "4-5-9",
+          "4-5-10",
+          "1-4-5",
+          "5-7-9",
+          "4-7-9",
+          "5-7-10",
+          "4-7-10",
+          "4-9-10"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "1",
+            "horse_name": "ブラッドバローズ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "9",
+            "horse_name": "ルーメンルーナエ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "8",
+            "horse_name": "ベルセルク"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "11,210円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030520260912%2FB9"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 6,
+      "race_name": "メイクデビュー阪神",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "1",
+        "axis_name": "ボーオーブ",
+        "decision": "CAUTION",
+        "candidate": [
+          "3 エピドゥブレ",
+          "2 ベルウッドワタル",
+          "4 プッシュバーン",
+          "5 コロラート",
+          "6 ミンコフスキー"
+        ],
+        "tickets": [
+          "1-2-3",
+          "1-3-4",
+          "1-3-5",
+          "1-3-6",
+          "1-2-4",
+          "2-3-4",
+          "1-2-5",
+          "2-3-5",
+          "3-4-5"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "3",
+            "horse_name": "エピドゥブレ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "8",
+            "horse_name": "パルパル"
+          },
+          {
+            "finish": 3,
+            "horse_no": "6",
+            "horse_name": "ミンコフスキー"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "2,060円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030620260912%2F6E"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 7,
+      "race_name": "3歳未勝利",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "4",
+        "axis_name": "ナムラロダン",
+        "decision": "BUY",
+        "candidate": [
+          "15 プペアンビスキュイ",
+          "7 シャインゴーツ",
+          "3 メイショウヒタカミ",
+          "1 キャスケード",
+          "16 ハピネスサンライズ"
+        ],
+        "tickets": [
+          "3-4-15",
+          "4-7-10",
+          "1-4-15",
+          "4-7-16",
+          "3-4-7",
+          "4-10-15",
+          "1-3-4",
+          "1-4-7",
+          "3-4-10"
+        ]
+      },
+      "result": {
+        "axis_finish": 2,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "9",
+            "horse_name": "イッタレイッタレ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "4",
+            "horse_name": "ナムラロダン"
+          },
+          {
+            "finish": 3,
+            "horse_no": "11",
+            "horse_name": "バルフルール"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "7,960円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030720260912%2F23"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 8,
+      "race_name": "3歳以上1勝クラス",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "7",
+        "axis_name": "サトノアグード",
+        "decision": "BUY",
+        "candidate": [
+          "1 マイリトルヒーロー",
+          "11 ダノンテムズ",
+          "4 アクセス",
+          "13 ダノンブギ",
+          "2 オーシンエス"
+        ],
+        "tickets": [
+          "1-4-7",
+          "2-7-11",
+          "1-5-7",
+          "7-11-13",
+          "4-7-11",
+          "1-2-7",
+          "4-5-7",
+          "5-7-11",
+          "2-4-7"
+        ]
+      },
+      "result": {
+        "axis_finish": 2,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "4",
+            "horse_name": "アクセス"
+          },
+          {
+            "finish": 2,
+            "horse_no": "7",
+            "horse_name": "サトノアグード"
+          },
+          {
+            "finish": 3,
+            "horse_no": "1",
+            "horse_name": "マイリトルヒーロー"
+          }
+        ],
+        "trio_hit": true,
+        "trio_payout": "1,120円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030820260912%2FD8"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 9,
+      "race_name": "瀬戸内海特別",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "2",
+        "axis_name": "ライラ",
+        "decision": "CAUTION",
+        "candidate": [
+          "12 ロンドボス",
+          "11 アジュマン",
+          "10 キングケープ",
+          "8 ワンコールアウェイ",
+          "4 ダガーリング"
+        ],
+        "tickets": [
+          "2-10-12",
+          "2-8-11",
+          "2-7-12",
+          "2-4-11",
+          "7-8-10",
+          "8-10-12",
+          "7-10-11",
+          "4-7-8"
+        ]
+      },
+      "result": {
+        "axis_finish": 1,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "2",
+            "horse_name": "ライラ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "8",
+            "horse_name": "ワンコールアウェイ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "4",
+            "horse_name": "ダガーリング"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "3,490円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604030920260912%2F8D"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 10,
+      "race_name": "竹田城ステークス",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "2",
+        "axis_name": "ペンナヴェローチェ",
+        "decision": "CAUTION",
+        "candidate": [
+          "13 タガノマカシヤ",
+          "15 ルクスフレンジー",
+          "9 タイセイアディクト",
+          "10 レヴァンテシチー",
+          "7 マテンロウブレイブ"
+        ],
+        "tickets": [
+          "2-9-13",
+          "2-8-15",
+          "2-5-13",
+          "2-10-15",
+          "5-8-9",
+          "8-9-13",
+          "5-9-15",
+          "5-8-10"
+        ]
+      },
+      "result": {
+        "axis_finish": 2,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "5",
+            "horse_name": "パシアンジャン"
+          },
+          {
+            "finish": 2,
+            "horse_no": "2",
+            "horse_name": "ペンナヴェローチェ"
+          },
+          {
+            "finish": 3,
+            "horse_no": "10",
+            "horse_name": "レヴァンテシチー"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "3,740円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604031020260912%2F82"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 11,
+      "race_name": "第77回 チャレンジカップ",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "11",
+        "axis_name": "マリアイリダータ",
+        "decision": "BUY",
+        "candidate": [
+          "14 ミッキーゴールド",
+          "9 マテンロウゲイル",
+          "1 フィーリウス",
+          "7 ジーティーアダマン",
+          "13 グランヴィノス"
+        ],
+        "tickets": [
+          "1-11-14",
+          "9-11-13",
+          "10-11-14",
+          "7-9-11",
+          "1-9-11",
+          "11-13-14",
+          "1-10-11",
+          "9-10-11",
+          "1-11-13"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "15",
+            "horse_name": "ジョバンニ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "8",
+            "horse_name": "カラマティアノス"
+          },
+          {
+            "finish": 3,
+            "horse_no": "7",
+            "horse_name": "ジーティーアダマン"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "16,840円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604031120260912%2F37"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "track": "阪神",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "prediction": {
+        "sealed": true,
+        "axis_no": "13",
+        "axis_name": "ヒルノプーリア",
+        "decision": "BUY",
+        "candidate": [
+          "16 ビスケットアソート",
+          "6 サトノロザリー",
+          "8 アームズレジェンド",
+          "14 スターフュージョン",
+          "7 オプティモ"
+        ],
+        "tickets": [
+          "8-13-16",
+          "6-13-14",
+          "7-13-16",
+          "2-6-13",
+          "6-8-13",
+          "13-14-16",
+          "7-8-13",
+          "6-7-13",
+          "8-13-14"
+        ]
+      },
+      "result": {
+        "axis_finish": 4,
+        "top3": [
+          {
+            "finish": 1,
+            "horse_no": "10",
+            "horse_name": "ゴールドアーチ"
+          },
+          {
+            "finish": 2,
+            "horse_no": "14",
+            "horse_name": "スターフュージョン"
+          },
+          {
+            "finish": 3,
+            "horse_no": "16",
+            "horse_name": "ビスケットアソート"
+          }
+        ],
+        "trio_hit": false,
+        "trio_payout": "4,630円",
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0109202604031220260912%2FEC"
+      }
+    }
+  ]
+}
