@@ -119,8 +119,7 @@
       "update_recent_runner_elite.py"
     ],
     "race-week-prediction-seal.yml": [
-      "apply_new_horse_unrated_zone.py",
-      "build_live_sealed_predictions.py",
+      "build_live_sealed_predictions_v2.py",
       "build_management_erp.py"
     ],
     "register-upcoming-new-horses.yml": [
@@ -154,8 +153,7 @@
         "build_management_erp.py"
       ],
       "actual": [
-        "apply_new_horse_unrated_zone.py",
-        "build_live_sealed_predictions.py",
+        "build_live_sealed_predictions_v2.py",
         "build_management_erp.py"
       ]
     }
