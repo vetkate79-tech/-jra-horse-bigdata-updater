@@ -4,14 +4,14 @@
   "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
   "challenger_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
   "challenger_axis_change_count": 2,
-  "champion_archive": "docs/data/live_predictions_champion_2026-09-18.json",
+  "champion_archive": "docs/data/live_predictions_champion_2026-09-19.json",
   "seal_stage": "PARTIAL_FRAME_RESEAL",
   "sealed_race_count": 72,
   "pending_race_count": 0,
-  "frame_known_count": 300,
+  "frame_known_count": 632,
   "frame_total_count": 942,
   "draw_feature_applied": true,
-  "prediction_hash_sha256": "68fc8c88cc085e2227fd5a0d17a751ddc2394f71f8c5ecdab048b23fc4a6f7ec",
+  "prediction_hash_sha256": "d534bda5cc5ef48c7155ba2005e8a645739139e014e5b86d2755350b69959ba7",
   "pre_race_feature_cutoff": "2026-09-19",
   "odds_popularity_used": false,
   "results_used": false,
@@ -21,5 +21,5 @@
   "new_horse_unrated_race_count": 0,
   "new_horse_unrated_horse_count": 0,
   "status": "SEALED",
-  "today_jst": "2026-09-18"
+  "today_jst": "2026-09-19"
 }
