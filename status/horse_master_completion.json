@@ -1,20 +1,20 @@
 {
   "summary": {
     "horse_count": 3327,
-    "complete_horse_count": 2894,
-    "incomplete_horse_count": 433,
+    "complete_horse_count": 2893,
+    "incomplete_horse_count": 434,
     "missing_field_counts": {
-      "new_sire": 432,
-      "new_damsire": 432,
+      "new_sire": 433,
+      "new_damsire": 433,
       "race_history": 1
     },
     "category_counts": {
       "GRADED": 117,
       "OPEN": 149,
       "3WIN": 172,
-      "2WIN": 274,
+      "2WIN": 275,
       "1WIN": 894,
-      "MAIDEN": 1250,
+      "MAIDEN": 1249,
       "NEW": 471,
       "UNKNOWN": 0
     },
@@ -1782,6 +1782,14 @@
     {
       "horse_id": "pw01dud102024100951/6A",
       "horse_name": "テルケンレンジシ",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024105454/79",
+      "horse_name": "テングカゼ",
       "missing": [
         "new_sire",
         "new_damsire"
