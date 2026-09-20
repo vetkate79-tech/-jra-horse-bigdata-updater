@@ -3,15 +3,15 @@
   "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
   "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
   "challenger_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
-  "challenger_axis_change_count": 1,
-  "champion_archive": "docs/data/live_predictions_champion_2026-09-20.json",
-  "seal_stage": "FINAL_WITH_FRAME",
+  "challenger_axis_change_count": 0,
+  "champion_archive": "docs/data/live_predictions_champion_2026-09-21.json",
+  "seal_stage": "PARTIAL_FRAME_RESEAL",
   "sealed_race_count": 24,
   "pending_race_count": 0,
-  "frame_known_count": 334,
-  "frame_total_count": 334,
+  "frame_known_count": 11,
+  "frame_total_count": 321,
   "draw_feature_applied": true,
-  "prediction_hash_sha256": "90937c433adf5910960fe54427efb7ff278271b7bbb997669abb73f110cb3c88",
+  "prediction_hash_sha256": "6f6f7b5881e0dd81c0afb4368f14c80d71122b17f90c1f4ab19ae25f79d89ad5",
   "pre_race_feature_cutoff": "2026-09-20",
   "odds_popularity_used": false,
   "results_used": false,
@@ -22,5 +22,5 @@
   "new_horse_unrated_horse_count": 0,
   "status": "SEALED",
   "today_jst": "2026-09-20",
-  "target_date": "2026-09-20"
+  "target_date": "2026-09-21"
 }
