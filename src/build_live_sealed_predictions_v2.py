@@ -110,7 +110,16 @@ def _new_horse_analysis(safe,unrated):
 
 def main():
     base._assert_registered_model_version()
-    now=datetime.now(TZ);today=now.date().isoformat();target_date=str(os.getenv('JRA_TARGET_DATE') or today);champion_archive=base._champion_archive_for(target_date)
+    now=datetime.now(TZ);today=now.date().isoformat()
+    target_date=str(os.getenv('JRA_TARGET_DATE') or '')
+    if not target_date:
+        try:
+            request=json.loads(Path('config/prediction_target_date.json').read_text(encoding='utf-8'))
+            target_date=str(request.get('target_date') or '')
+        except Exception:
+            target_date=''
+    target_date=target_date or today
+    champion_archive=base._champion_archive_for(target_date)
     prior=None
     if base.OUT.exists():
         prior=json.loads(base.OUT.read_text(encoding='utf-8'));base._archive_seal_payload(prior)
