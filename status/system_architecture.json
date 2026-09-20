@@ -102,6 +102,7 @@
     ],
     "jra-market-timing.yml": [
       "collect_current_market_odds.py",
+      "market_collection_due.py",
       "market_timing_gate.py"
     ],
     "post-jra-meeting-update.yml": [
@@ -147,6 +148,17 @@
     ]
   },
   "script_policy_mismatches": {
+    "jra-market-timing.yml": {
+      "expected": [
+        "collect_current_market_odds.py",
+        "market_timing_gate.py"
+      ],
+      "actual": [
+        "collect_current_market_odds.py",
+        "market_collection_due.py",
+        "market_timing_gate.py"
+      ]
+    },
     "race-week-prediction-seal.yml": {
       "expected": [
         "build_live_sealed_predictions.py",
