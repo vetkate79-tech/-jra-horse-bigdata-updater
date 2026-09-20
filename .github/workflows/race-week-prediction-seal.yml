@@ -51,7 +51,7 @@ jobs:
           python-version: '3.11'
       - name: Build leakage-safe live pure predictions
         env:
-          JRA_TARGET_DATE: ${{ github.event.inputs.target_date || '' }}
+          JRA_TARGET_DATE: ${{ github.event.inputs.target_date || vars.JRA_TARGET_DATE || '' }}
         run: python src/build_live_sealed_predictions_v2.py
       - name: Verify market/result firewall and new-horse V2
         run: |
