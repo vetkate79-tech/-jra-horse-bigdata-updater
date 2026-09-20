@@ -10,7 +10,11 @@ on:
     - cron: '30 1 * * 5'   # Friday 10:30 JST
     - cron: '30 1 * * 6'   # Saturday 10:30 JST
   workflow_dispatch:
-# manual-refresh: 2026-09-20T16:40+09:00 for 2026-09-21 full reseal
+    inputs:
+      target_date:
+        description: 'JRA date to seal (YYYY-MM-DD); blank = today JST'
+        required: false
+        type: string
   push:
     branches: [main]
     paths:
@@ -46,6 +50,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Build leakage-safe live pure predictions
+        env:
+          JRA_TARGET_DATE: ${{ github.event.inputs.target_date || '' }}
         run: python src/build_live_sealed_predictions_v2.py
       - name: Verify market/result firewall and new-horse V2
         run: |
