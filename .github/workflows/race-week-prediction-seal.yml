@@ -29,6 +29,7 @@ on:
       - 'docs/data/horses/base_catalog.json'
       - 'docs/data/upcoming_new_horses.json'
       - 'config/runtime_ownership.json'
+      - 'config/prediction_target_date.json'
       - '.github/workflows/race-week-prediction-seal.yml'
 
 permissions:
