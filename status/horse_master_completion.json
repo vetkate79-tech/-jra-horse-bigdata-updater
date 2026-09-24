@@ -1,10 +1,9 @@
 {
   "summary": {
     "horse_count": 3785,
-    "complete_horse_count": 3234,
-    "incomplete_horse_count": 551,
+    "complete_horse_count": 3246,
+    "incomplete_horse_count": 539,
     "missing_field_counts": {
-      "open_evidence": 12,
       "new_sire": 538,
       "new_damsire": 538,
       "race_history": 1
@@ -19,22 +18,15 @@
       "NEW": 543,
       "UNKNOWN": 0
     },
-    "base_open_count": 221,
+    "base_open_count": 233,
     "base_graded_count": 119,
     "base_unbeaten_count": 0,
-    "active_elite_count": 291,
+    "active_elite_count": 303,
     "structural_issues": [],
     "status": "IN_PROGRESS",
     "definition": "complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically"
   },
   "issues": [
-    {
-      "horse_id": "pw01dud102022103875/DA",
-      "horse_name": "アイサンサン",
-      "missing": [
-        "open_evidence"
-      ]
-    },
     {
       "horse_id": "pw01dud102024106775/8E",
       "horse_name": "アイビーナツユメ",
@@ -436,13 +428,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102017101429/05",
-      "horse_name": "ウインカーネリアン",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102023103500/24",
       "horse_name": "ウェイクフィールド",
       "missing": [
@@ -688,13 +673,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019105859/CD",
-      "horse_name": "エーティーマクフィ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -1274,13 +1252,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022102057/29",
-      "horse_name": "サウンドモリアーナ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024104753/AA",
       "horse_name": "サクシードシチー",
       "missing": [
@@ -1649,13 +1620,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021110099/B3",
-      "horse_name": "ジューンブレア",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024101882/CB",
       "horse_name": "ジョイザモーメント",
       "missing": [
@@ -1741,13 +1705,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106920/D5",
-      "horse_name": "スターアニス",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -2711,13 +2668,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022101732/32",
-      "horse_name": "パンジャタワー",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102022105803/62",
       "horse_name": "パースウェイド",
       "missing": [
@@ -2958,13 +2908,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102023107008/83",
-      "horse_name": "ブラックチャリス",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024101722/3A",
       "horse_name": "ブラッドバローズ",
       "missing": [
@@ -3194,13 +3137,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021102320/DB",
-      "horse_name": "ペアポルックス",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -3908,13 +3844,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020106851/A3",
-      "horse_name": "ルガル",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024104567/24",
       "horse_name": "ルジェドリール",
       "missing": [
@@ -4048,13 +3977,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103066/B5",
-      "horse_name": "レイピア",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -4366,13 +4288,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021105864/A9",
-      "horse_name": "ワールズエンド",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
