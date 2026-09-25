@@ -7,13 +7,13 @@
   "publication_status": "PUBLIC_CHALLENGER",
   "challenger_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
   "champion_archive": "docs/data/live_predictions_champion_2026-09-21.json",
-  "generated_at": "2026-09-24T21:51:20.909194+09:00",
+  "generated_at": "2026-09-25T15:11:23.531212+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-09-26",
   "frame_known_count": 0,
   "frame_total_count": 0,
-  "draw_feature_applied": false,
+  "draw_feature_applied": true,
   "situational_shadow_enabled": true,
   "situational_shadow_production_override": false,
   "ensemble_shadow_enabled": true,
@@ -30,5 +30,5 @@
   "challenger_axis_change_count": 0,
   "races": [],
   "pending": [],
-  "prediction_hash_sha256": "ff09902207e075602d3070ac33cfbf23049931fded3c04ea796f519d8882af8e"
+  "prediction_hash_sha256": "90cd8cfd5f832953cf6a9e646dc8ab0f87c276360e5a2716aa0b9cadfc015116"
 }
