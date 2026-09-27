@@ -111,14 +111,12 @@ def _new_horse_analysis(safe,unrated):
 def main():
     base._assert_registered_model_version()
     now=datetime.now(TZ);today=now.date().isoformat()
-    target_date=str(os.getenv('JRA_TARGET_DATE') or '')
-    if not target_date:
-        try:
-            request=json.loads(Path('config/prediction_target_date.json').read_text(encoding='utf-8'))
-            target_date=str(request.get('target_date') or '')
-        except Exception:
-            target_date=''
-    target_date=target_date or today
+    # Normal scheduled/workflow-run operation must always target today JST.
+    # A historical/specified reseal is allowed only when the workflow explicitly
+    # supplies JRA_TARGET_DATE (workflow_dispatch). Do not fall back to the
+    # persistent config file here: a stale manual target previously caused a
+    # new-day run to publish an empty seal even though today's race cards existed.
+    target_date=str(os.getenv('JRA_TARGET_DATE') or '').strip() or today
     champion_archive=base._champion_archive_for(target_date)
     prior=None
     if base.OUT.exists():
