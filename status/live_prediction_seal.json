@@ -4,14 +4,14 @@
   "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
   "challenger_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
   "challenger_axis_change_count": 0,
-  "champion_archive": "docs/data/live_predictions_champion_2026-10-01.json",
+  "champion_archive": "docs/data/live_predictions_champion_2026-10-02.json",
   "seal_stage": "PRELIMINARY_NO_FRAME",
   "sealed_race_count": 0,
   "pending_race_count": 0,
   "frame_known_count": 0,
   "frame_total_count": 0,
-  "draw_feature_applied": false,
-  "prediction_hash_sha256": "4e8fbd8b7f9adff6afc3e99cf1a624a27c2b352fd0789ae6a4b7844218cf0ba4",
+  "draw_feature_applied": true,
+  "prediction_hash_sha256": "99c47ffa7bdcb5fb7abdf6fcfd1b346f96b628ce9368cda36cdbb28d23564a08",
   "pre_race_feature_cutoff": "2026-10-03",
   "odds_popularity_used": false,
   "results_used": false,
@@ -21,6 +21,6 @@
   "new_horse_unrated_race_count": 0,
   "new_horse_unrated_horse_count": 0,
   "status": "NO_UPCOMING_RACES",
-  "today_jst": "2026-10-01",
-  "target_date": "2026-10-01"
+  "today_jst": "2026-10-02",
+  "target_date": "2026-10-02"
 }
