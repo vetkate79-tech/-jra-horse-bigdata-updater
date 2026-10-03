@@ -70,6 +70,15 @@ jobs:
           assert s.get('simulation_finalizer_enabled') is True
           assert s.get('simulation_market_isolation') is True
           assert str(s.get('simulation_model_version') or '').startswith('MONTE_CARLO_FINALIZER_V1')
+          assert int(s.get('simulation_runs_per_race') or 0) >= 10000 or s.get('status') in ('DATA_PENDING','NO_UPCOMING_RACES')
+          if s.get('status') == 'SEALED':
+              p=json.loads(Path('docs/data/live_predictions_sealed.json').read_text())
+              for race in p.get('races') or []:
+                  sim=race.get('simulation_finalizer') or {}
+                  assert int(sim.get('runs') or 0) >= 10000
+                  assert sim.get('market_isolation') == 'NO_ODDS_OR_POPULARITY_OR_RESULTS_USED'
+                  assert race.get('ranked_snapshot')
+                  assert all((h.get('simulation') or {}).get('final_rank') for h in race.get('ranked_snapshot') or [])
           assert str(s.get('new_horse_model_version') or '').startswith('NEW_HORSE_DEDICATED_V2')
           if not __import__('os').environ.get('JRA_TARGET_DATE'):
               assert s.get('include_upcoming_dates') is True
