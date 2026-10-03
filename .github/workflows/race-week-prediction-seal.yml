@@ -9,6 +9,7 @@ on:
     - cron: '30 7 * * 4'   # Thursday 16:30 JST
     - cron: '30 1 * * 5'   # Friday 10:30 JST
     - cron: '30 1 * * 6'   # Saturday 10:30 JST
+    - cron: '30 1 * * 0'   # Sunday 10:30 JST
   workflow_dispatch:
     inputs:
       target_date:
@@ -66,6 +67,8 @@ jobs:
           assert s.get('new_horse_unrated_zone_enabled') is True
           assert s.get('new_horse_detection_all_zero_starts_enabled') is True
           assert str(s.get('new_horse_model_version') or '').startswith('NEW_HORSE_DEDICATED_V2')
+          if not __import__('os').environ.get('JRA_TARGET_DATE'):
+              assert s.get('include_upcoming_dates') is True
           print(json.dumps(s,ensure_ascii=False,indent=2))
           PY
       - name: Refresh management ERP from the new sealed predictions
