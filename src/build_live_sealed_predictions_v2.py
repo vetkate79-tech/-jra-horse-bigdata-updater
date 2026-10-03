@@ -116,7 +116,9 @@ def main():
     # supplies JRA_TARGET_DATE (workflow_dispatch). Do not fall back to the
     # persistent config file here: a stale manual target previously caused a
     # new-day run to publish an empty seal even though today's race cards existed.
-    target_date=str(os.getenv('JRA_TARGET_DATE') or '').strip() or today
+    requested_target=str(os.getenv('JRA_TARGET_DATE') or '').strip()
+    target_date=requested_target or today
+    include_upcoming=not bool(requested_target)
     champion_archive=base._champion_archive_for(target_date)
     prior=None
     if base.OUT.exists():
@@ -127,7 +129,10 @@ def main():
     cards=base._load_weekly_cards();master=base._load_horses();pre_by_key,pre_summary=base._load_pre_features();new_entries=base._load_upcoming_new();races=[];pending=[];frame_total=frame_known=0
     for r in cards:
         date=str(r.get('date') or '')
-        if not date or date!=target_date:continue
+        if not date:continue
+        if include_upcoming:
+            if date<today:continue
+        elif date!=target_date:continue
         q=[]
         for x in r.get('horses') or []:
             frame_total+=1;frame_known+=int(bool(str(x.get('frame_no') or '')));key=(str(r.get('race_id') or ''),str(x.get('horse_id') or ''));q.append(base._safe_horse(x,master,pre_by_key.get(key)))
@@ -159,6 +164,6 @@ def main():
     unrated_races=sum(bool(r.get('unrated_dark_horses')) for r in races);unrated_horses=sum(len(r.get('unrated_dark_horses') or []) for r in races)
     core={'schema_version':8,'mode':'LIVE_PURE_PREDICTION_CHALLENGER_RESEAL','seal_stage':seal_stage,'model_version':base.PUBLICATION_MODEL,'base_model_version':MODEL_VERSION,'publication_status':'PUBLIC_CHALLENGER','challenger_mechanism':'TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT','champion_archive':str(champion_archive),'generated_at':now.isoformat(),'odds_popularity_used':False,'results_used':False,'pre_race_feature_cutoff':pre_summary.get('cutoff_date'),'frame_known_count':frame_known,'frame_total_count':frame_total,'draw_feature_applied':bool(pre_summary.get('draw_feature_applied')),'situational_shadow_enabled':True,'situational_shadow_production_override':False,'ensemble_shadow_enabled':True,'ensemble_shadow_production_override':False,'ticket_value_regime_shadow_enabled':True,'ticket_value_regime_shadow_production_override':False,'new_horse_model_version':NEW_MODEL,'new_horse_detection_all_zero_starts_enabled':True,'new_horse_unrated_zone_enabled':True,'new_horse_unrated_race_count':unrated_races,'new_horse_unrated_horse_count':unrated_horses,'sealed_race_count':len(races),'pending_race_count':len(pending),'challenger_axis_change_count':sum(bool((r.get('analysis') or {}).get('challenger_reseal',{}).get('changed_from_champion')) for r in races),'races':races,'pending':pending}
     hash_input=json.dumps({k:v for k,v in core.items() if k!='generated_at'},ensure_ascii=False,sort_keys=True,separators=(',',':'));core['prediction_hash_sha256']=hashlib.sha256(hash_input.encode()).hexdigest();base.OUT.parent.mkdir(parents=True,exist_ok=True);base.STATUS.parent.mkdir(parents=True,exist_ok=True);base._archive_seal_payload(core);base.OUT.write_text(json.dumps(core,ensure_ascii=False,indent=2),encoding='utf-8')
-    status={k:core[k] for k in ('publication_status','model_version','base_model_version','challenger_mechanism','challenger_axis_change_count','champion_archive','seal_stage','sealed_race_count','pending_race_count','frame_known_count','frame_total_count','draw_feature_applied','prediction_hash_sha256','pre_race_feature_cutoff','odds_popularity_used','results_used','new_horse_model_version','new_horse_detection_all_zero_starts_enabled','new_horse_unrated_zone_enabled','new_horse_unrated_race_count','new_horse_unrated_horse_count')};status['status']='SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES');status['today_jst']=today;status['target_date']=target_date;base.STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(status,ensure_ascii=False))
+    status={k:core[k] for k in ('publication_status','model_version','base_model_version','challenger_mechanism','challenger_axis_change_count','champion_archive','seal_stage','sealed_race_count','pending_race_count','frame_known_count','frame_total_count','draw_feature_applied','prediction_hash_sha256','pre_race_feature_cutoff','odds_popularity_used','results_used','new_horse_model_version','new_horse_detection_all_zero_starts_enabled','new_horse_unrated_zone_enabled','new_horse_unrated_race_count','new_horse_unrated_horse_count')};status['status']='SEALED' if races else ('DATA_PENDING' if pending else 'NO_UPCOMING_RACES');status['today_jst']=today;status['target_date']=target_date;status['include_upcoming_dates']=include_upcoming;status['sealed_dates']=sorted({str(r.get('date') or '') for r in races if r.get('date')});base.STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(status,ensure_ascii=False))
 
 if __name__=='__main__':main()
