@@ -22,6 +22,7 @@ on:
       - 'src/build_live_sealed_predictions.py'
       - 'src/build_live_sealed_predictions_v2.py'
       - 'src/axis_survival_shadow.py'
+      - 'src/monte_carlo_finalizer.py'
       - 'src/oral_operational_layer.py'
       - 'src/build_management_erp.py'
       - 'docs/data/race_cards.json'
@@ -66,6 +67,9 @@ jobs:
           assert s['status'] in ('SEALED','DATA_PENDING','NO_UPCOMING_RACES')
           assert s.get('new_horse_unrated_zone_enabled') is True
           assert s.get('new_horse_detection_all_zero_starts_enabled') is True
+          assert s.get('simulation_finalizer_enabled') is True
+          assert s.get('simulation_market_isolation') is True
+          assert str(s.get('simulation_model_version') or '').startswith('MONTE_CARLO_FINALIZER_V1')
           assert str(s.get('new_horse_model_version') or '').startswith('NEW_HORSE_DEDICATED_V2')
           if not __import__('os').environ.get('JRA_TARGET_DATE'):
               assert s.get('include_upcoming_dates') is True
