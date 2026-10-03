@@ -20,6 +20,7 @@ on:
       - 'src/collect_upcoming_runner_details.py'
       - 'src/build_race_week_pre_race_features.py'
       - 'docs/app/race-select-current.js'
+      - 'docs/analysis/index.html'
       - '.github/workflows/**'
 
 permissions:
@@ -39,6 +40,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Guard advanced analysis race resolution
+        run: |
+          test -f docs/analysis/index.html
+          grep -q "const findRace=" docs/analysis/index.html
+          grep -q "function showState" docs/analysis/index.html
+          ! grep -q "throw Error('選択したレース情報が見つかりません')" docs/analysis/index.html
+          echo "ADVANCED_ANALYSIS_RESOLVER_OK"
       - name: Audit canonical flow and independent subsystems
         id: audit
         continue-on-error: true
