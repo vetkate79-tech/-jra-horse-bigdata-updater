@@ -1,7 +1,18 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-06T21:46:11.263836+09:00",
+  "updated_at": "2026-10-03T21:45:59.349223+09:00",
   "reports": [
+    {
+      "id": "2026-10-03-model-comparison",
+      "parent_id": null,
+      "date": "2026-10-03",
+      "title": "新型・旧型 結果比較",
+      "status": "COMPLETED",
+      "request": "9/6全レース終了時に、新型と旧型の結果を同じ公式結果で詳細比較し、ERPへ依頼内容・結果・考察を掲載する。",
+      "result": "旧型の軸3着内率62.5%、新型62.5%（差+0.00pt）。三連複的中は旧型4件、新型4件（差+0件）。ROI差は+0.00pt。",
+      "consideration": "単開催だけでは昇格させない。軸残存、三連複変換、ROIのどこで差が出たかをレース別明細で確認し、次の独立開催へ継続する。",
+      "report_file": "erp-report-2026-10-03.json"
+    },
     {
       "id": "2026-09-06-model-comparison",
       "parent_id": null,
