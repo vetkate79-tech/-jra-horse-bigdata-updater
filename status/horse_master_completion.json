@@ -1,12 +1,11 @@
 {
   "summary": {
     "horse_count": 4908,
-    "complete_horse_count": 3942,
-    "incomplete_horse_count": 966,
+    "complete_horse_count": 4009,
+    "incomplete_horse_count": 899,
     "missing_field_counts": {
       "new_sire": 897,
       "new_damsire": 897,
-      "open_evidence": 67,
       "race_history": 2
     },
     "category_counts": {
@@ -19,10 +18,10 @@
       "NEW": 822,
       "UNKNOWN": 0
     },
-    "base_open_count": 317,
+    "base_open_count": 384,
     "base_graded_count": 120,
     "base_unbeaten_count": 0,
-    "active_elite_count": 388,
+    "active_elite_count": 455,
     "structural_issues": [],
     "status": "IN_PROGRESS",
     "definition": "complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically"
@@ -157,25 +156,11 @@
       ]
     },
     {
-      "horse_id": "pw01dud102019101612/4A",
-      "horse_name": "アスクオンディープ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106369/86",
       "horse_name": "アスクゴクジョウ",
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105202/C9",
-      "horse_name": "アスクセクシーモア",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -304,13 +289,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102018110131/55",
-      "horse_name": "アメリカンピース",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -730,13 +708,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022106232/E8",
-      "horse_name": "ウイントワイライト",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024107233/62",
       "horse_name": "ウインドピット",
       "missing": [
@@ -750,13 +721,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019100213/0A",
-      "horse_name": "ウインマーベル",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -1032,13 +996,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022103205/44",
-      "horse_name": "エリカエクスプレス",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024100825/D5",
       "horse_name": "エリティエ",
       "missing": [
@@ -1132,13 +1089,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021110031/BB",
-      "horse_name": "オフトレイル",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -1245,13 +1195,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022104839/55",
-      "horse_name": "カネラフィーナ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102023103899/52",
       "horse_name": "カフジエメンタール",
       "missing": [
@@ -1273,13 +1216,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105402/2B",
-      "horse_name": "カムニャック",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -1568,13 +1504,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021105414/95",
-      "horse_name": "クイーンズウォーク",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -1879,13 +1808,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020105774/FC",
-      "horse_name": "コスモチプリア",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -2297,13 +2219,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102023107053/94",
-      "horse_name": "サンダーストラック",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106752/15",
       "horse_name": "サンティエリュール",
       "missing": [
@@ -2504,13 +2419,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020103053/34",
-      "horse_name": "シャンドゥレール",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024101407/C6",
       "horse_name": "シャーロットタウン",
       "missing": [
@@ -2543,25 +2451,11 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022102117/1A",
-      "horse_name": "シュラザック",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106514/59",
       "horse_name": "シュヴァルツペルレ",
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105071/64",
-      "horse_name": "ショウナンザナドゥ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -2589,13 +2483,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020105424/19",
-      "horse_name": "シルトホルン",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106454/68",
       "horse_name": "シルバーウィル",
       "missing": [
@@ -2617,13 +2504,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102018101348/0D",
-      "horse_name": "シルブロン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -2811,13 +2691,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022104813/83",
-      "horse_name": "ジュタ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106763/98",
       "horse_name": "ジュベルシャムス",
       "missing": [
@@ -2834,32 +2707,11 @@
       ]
     },
     {
-      "horse_id": "pw01dud102019105118/C3",
-      "horse_name": "ジュンブロッサム",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024101882/CB",
       "horse_name": "ジョイザモーメント",
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105369/7F",
-      "horse_name": "ジョイフルニュース",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022104767/6E",
-      "horse_name": "ジョスラン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -3028,13 +2880,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020105018/11",
-      "horse_name": "スズハローム",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -3262,13 +3107,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021103975/7F",
-      "horse_name": "セキトバイースト",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024107019/92",
       "horse_name": "セブンサークル",
       "missing": [
@@ -3397,13 +3235,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021110061/EB",
-      "horse_name": "ソレルビュレット",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106945/C0",
       "horse_name": "ソードオブステート",
       "missing": [
@@ -3481,13 +3312,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022106553/0E",
-      "horse_name": "タガノバビロン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -3608,13 +3432,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105778/E0",
-      "horse_name": "チェルビアット",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -3802,13 +3619,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022104812/10",
-      "horse_name": "テリオスララ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024104463/27",
       "horse_name": "テルケンレンコール",
       "missing": [
@@ -3886,13 +3696,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021104324/85",
-      "horse_name": "ディマイザキッド",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -4064,13 +3867,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102019104711/D5",
-      "horse_name": "トーセンリョウ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024100879/F1",
       "horse_name": "ドゥラドゥーラ",
       "missing": [
@@ -4223,13 +4019,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021102895/7F",
-      "horse_name": "ナムラエイハブ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102023106227/A3",
       "horse_name": "ナムラコスモス",
       "missing": [
@@ -4318,13 +4107,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021100244/B8",
-      "horse_name": "ニシノティアモ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102993/6E",
       "horse_name": "ニシノトラノスケ",
       "missing": [
@@ -4389,13 +4171,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020100254/3C",
-      "horse_name": "ニシノレヴナント",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024100010/FE",
       "horse_name": "ニホンノヨアケゼヨ",
       "missing": [
@@ -4425,13 +4200,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020101301/B3",
-      "horse_name": "ネオトキオ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -4587,13 +4355,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021105255/E6",
-      "horse_name": "ハワイアンティアレ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024104872/88",
       "horse_name": "ハンサム",
       "missing": [
@@ -4631,13 +4392,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021106610/1A",
-      "horse_name": "バスタードサフラン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -4697,13 +4451,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021104503/54",
-      "horse_name": "パシアンジャン",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024100404/7E",
       "horse_name": "パッションノーヴァ",
       "missing": [
@@ -4741,13 +4488,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020104328/C5",
-      "horse_name": "パープルアドミラル",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -5071,13 +4811,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021104800/8E",
-      "horse_name": "フォージドブリック",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024105752/26",
       "horse_name": "フクチャンヨシ",
       "missing": [
@@ -5187,13 +4920,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021106171/F8",
-      "horse_name": "ブルーサン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -5421,13 +5147,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021105425/18",
-      "horse_name": "ベルウェザー",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024105398/54",
       "horse_name": "ベルウッドスーパー",
       "missing": [
@@ -5492,13 +5211,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020101020/CD",
-      "horse_name": "ペイシャモノノフ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024101725/93",
       "horse_name": "ペプチドカトレア",
       "missing": [
@@ -5536,13 +5248,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020103939/7F",
-      "horse_name": "ホウオウプレシャス",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -5623,13 +5328,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019104658/09",
-      "horse_name": "ボーンディスウェイ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -5769,13 +5467,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022106768/BF",
-      "horse_name": "マイネルチケット",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102470/00",
       "horse_name": "マイネルヘルリッヒ",
       "missing": [
@@ -5904,13 +5595,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102019101198/87",
-      "horse_name": "マリオロード",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024104214/E8",
       "horse_name": "マリノフスキー",
       "missing": [
@@ -5975,13 +5659,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021105801/F0",
-      "horse_name": "ミアネーロ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024100426/84",
       "horse_name": "ミエノヴィヴィッド",
       "missing": [
@@ -6006,25 +5683,11 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021105112/1C",
-      "horse_name": "ミッキークレスト",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102022103245/84",
       "horse_name": "ミッキージュエリー",
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105230/13",
-      "horse_name": "ミニトランザット",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6044,13 +5707,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021105105/65",
-      "horse_name": "ミラビリスマジック",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024105936/34",
       "horse_name": "ミランダスマイル",
       "missing": [
@@ -6064,13 +5720,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021103480/5B",
-      "horse_name": "ミレニアムヒロイン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6111,13 +5760,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019104112/22",
-      "horse_name": "メイショウウネビ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6174,13 +5816,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102039/7B",
-      "horse_name": "メイショウハチコウ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6280,20 +5915,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021104791/60",
-      "horse_name": "メリオーレム",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105303/F9",
-      "horse_name": "メルカントゥール",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102021104832/A4",
       "horse_name": "モアリジット",
       "missing": [
@@ -6315,13 +5936,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020100061/91",
-      "horse_name": "モックモック",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6509,13 +6123,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020103398/46",
-      "horse_name": "ライツフォル",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024108374/35",
       "horse_name": "ライフイズアソング",
       "missing": [
@@ -6580,13 +6187,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021100935/72",
-      "horse_name": "ララマセラシオン",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024103406/31",
       "horse_name": "ラルコ",
       "missing": [
@@ -6627,25 +6227,11 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022105291/E6",
-      "horse_name": "ランフォーヴァウ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102484/DC",
       "horse_name": "ランプリサージュ",
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021107098/FB",
-      "horse_name": "ラヴァンダ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6742,13 +6328,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102018103590/05",
-      "horse_name": "リッケンバッカー",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6896,13 +6475,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102018105213/29",
-      "horse_name": "ルドヴィクス",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024103824/2F",
       "horse_name": "ルナディアナ",
       "missing": [
@@ -6972,13 +6544,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022105157/27",
-      "horse_name": "ルージュソリテール",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -7091,13 +6656,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020110155/4C",
-      "horse_name": "レイベリング",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -7485,13 +7043,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102021104434/C6",
-      "horse_name": "ワイドラトゥール",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024108373/C2",
       "horse_name": "ワイドヴァラー",
       "missing": [
@@ -7505,13 +7056,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022101412/7F",
-      "horse_name": "ワタシマツワ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -7650,13 +7194,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022104832/30",
-      "horse_name": "ヴィンセンシオ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106354/37",
       "horse_name": "ヴェトロテンペスタ",
       "missing": [
@@ -7678,13 +7215,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102019104767/D7",
-      "horse_name": "ヴェールランス",
-      "missing": [
-        "open_evidence"
       ]
     }
   ]
