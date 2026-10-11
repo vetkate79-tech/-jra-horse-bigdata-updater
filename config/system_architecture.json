@@ -85,6 +85,7 @@
     ],
     "jra-market-timing.yml": [
       "collect_current_market_odds.py",
+      "market_collection_due.py",
       "market_timing_gate.py"
     ],
     "post-jra-meeting-update.yml": [
@@ -102,7 +103,7 @@
       "update_recent_runner_elite.py"
     ],
     "race-week-prediction-seal.yml": [
-      "build_live_sealed_predictions.py",
+      "build_live_sealed_predictions_v2.py",
       "build_management_erp.py"
     ],
     "register-upcoming-new-horses.yml": [
