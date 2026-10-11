@@ -23,6 +23,7 @@ on:
       - 'src/build_live_sealed_predictions_v2.py'
       - 'src/axis_survival_shadow.py'
       - 'src/monte_carlo_finalizer.py'
+      - 'requirements.txt'
       - 'src/oral_operational_layer.py'
       - 'src/build_management_erp.py'
       - 'docs/data/race_cards.json'
@@ -59,6 +60,8 @@ jobs:
           cache: pip
       - name: Install prediction dependencies
         run: pip install -r requirements.txt
+      - name: Smoke-test prediction runtime dependencies
+        run: python -c "import numpy; import pandas; print('PREDICTION_RUNTIME_DEPS_OK')"
       - name: Build leakage-safe live pure predictions
         run: python src/build_live_sealed_predictions_v2.py
       - name: Verify market/result firewall and new-horse V2
