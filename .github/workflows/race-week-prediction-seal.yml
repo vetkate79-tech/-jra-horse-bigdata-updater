@@ -23,6 +23,7 @@ on:
       - 'src/build_live_sealed_predictions_v2.py'
       - 'src/axis_survival_shadow.py'
       - 'src/monte_carlo_finalizer.py'
+      - 'src/build_analysis_live_bundle.py'
       - 'requirements.txt'
       - 'src/oral_operational_layer.py'
       - 'src/build_management_erp.py'
@@ -109,11 +110,13 @@ jobs:
           PY
       - name: Refresh management ERP from the new sealed predictions
         run: python src/build_management_erp.py
+      - name: Build same-origin advanced-analysis live bundle
+        run: python src/build_analysis_live_bundle.py
       - name: Commit immutable-style seal artifact
         run: |
           git config user.name 'jra-prediction-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/live_predictions_sealed.json docs/data/live_predictions_champion_*.json docs/data/prediction-seal-history docs/data/dashboard.json docs/data/management_analytics.json status/live_prediction_seal.json status/management_erp.json
+          git add docs/data/live_predictions_sealed.json docs/data/live_predictions_champion_*.json docs/data/prediction-seal-history docs/data/dashboard.json docs/data/management_analytics.json docs/analysis/live-seal.js status/live_prediction_seal.json status/management_erp.json
           git diff --cached --quiet && exit 0
           git commit -m 'prediction: seal race-week pure predictions'
           for i in 1 2 3; do
