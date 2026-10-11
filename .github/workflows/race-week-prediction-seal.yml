@@ -45,6 +45,10 @@ jobs:
   seal:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    env:
+      # Normal schedule/workflow_run must always use today's JST card set.
+      # Historical/specified reseals are allowed only from workflow_dispatch input.
+      JRA_TARGET_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.target_date || '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -52,9 +56,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
+      - name: Install prediction dependencies
+        run: pip install -r requirements.txt
       - name: Build leakage-safe live pure predictions
-        env:
-          JRA_TARGET_DATE: ${{ github.event.inputs.target_date || vars.JRA_TARGET_DATE || '' }}
         run: python src/build_live_sealed_predictions_v2.py
       - name: Verify market/result firewall and new-horse V2
         run: |
@@ -80,8 +85,23 @@ jobs:
                   assert race.get('ranked_snapshot')
                   assert all((h.get('simulation') or {}).get('final_rank') for h in race.get('ranked_snapshot') or [])
           assert str(s.get('new_horse_model_version') or '').startswith('NEW_HORSE_DEDICATED_V2')
-          if not __import__('os').environ.get('JRA_TARGET_DATE'):
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          requested=(os.environ.get('JRA_TARGET_DATE') or '').strip()
+          today=datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
+          assert s.get('today_jst') == today, (s.get('today_jst'), today)
+          if not requested:
               assert s.get('include_upcoming_dates') is True
+              weekly=json.loads(Path('docs/data/horses/weekly_runner_details.json').read_text())
+              active_dates=sorted({str(x) for x in (weekly.get('dates') or []) if str(x) >= today})
+              sealed_dates=sorted({str(x) for x in (s.get('sealed_dates') or [])})
+              if today in active_dates:
+                  assert today in sealed_dates, {'today':today,'active_dates':active_dates,'sealed_dates':sealed_dates}
+              assert set(active_dates).issubset(set(sealed_dates)), {'active_dates':active_dates,'sealed_dates':sealed_dates}
+          else:
+              assert s.get('target_date') == requested
+              assert s.get('include_upcoming_dates') is False
           print(json.dumps(s,ensure_ascii=False,indent=2))
           PY
       - name: Refresh management ERP from the new sealed predictions
