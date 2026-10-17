@@ -1,11 +1,11 @@
 {
   "summary": {
     "horse_count": 5478,
-    "complete_horse_count": 4438,
-    "incomplete_horse_count": 1040,
+    "complete_horse_count": 4442,
+    "incomplete_horse_count": 1036,
     "missing_field_counts": {
-      "new_sire": 1035,
-      "new_damsire": 1035,
+      "new_sire": 1031,
+      "new_damsire": 1031,
       "race_history": 5
     },
     "category_counts": {
@@ -13,15 +13,15 @@
       "OPEN": 380,
       "3WIN": 257,
       "2WIN": 650,
-      "1WIN": 1432,
-      "MAIDEN": 1734,
+      "1WIN": 1433,
+      "MAIDEN": 1733,
       "NEW": 904,
       "UNKNOWN": 0
     },
     "base_open_count": 429,
     "base_graded_count": 121,
     "base_unbeaten_count": 0,
-    "active_elite_count": 1,
+    "active_elite_count": 501,
     "structural_issues": [],
     "status": "IN_PROGRESS",
     "definition": "complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically"
@@ -2482,14 +2482,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102023106219/79",
-      "horse_name": "サムシングスイート",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024103627/26",
       "horse_name": "サムワンユーラヴド",
       "missing": [
@@ -4512,14 +4504,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102023107146/0E",
-      "horse_name": "ドリームコア",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106396/5D",
       "horse_name": "ドンクラッシュ",
       "missing": [
@@ -4562,14 +4546,6 @@
     {
       "horse_id": "pw01dud102024102335/CE",
       "horse_name": "ナイスウーマン",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023105420/F1",
-      "horse_name": "ナイスプレーアスク",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -6434,14 +6410,6 @@
     {
       "horse_id": "pw01dud102024100216/12",
       "horse_name": "マジュリス",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023106810/94",
-      "horse_name": "マスターソアラ",
       "missing": [
         "new_sire",
         "new_damsire"
