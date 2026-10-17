@@ -1,55 +1,56 @@
 {
   "mode": "POST_RESULT_PDCA_ONLY",
-  "source_prediction_hash_sha256": "4fe5ee368dc0b2ec3e227ba1b7f72ae01e64af2eda7d380bbd400199d453b07a",
+  "source_prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
   "sealed_predictions_mutated": false,
-  "scored_race_count": 24,
-  "pending_race_count": 24,
+  "scored_race_count": 36,
+  "pending_race_count": 36,
   "failure_counts": {
-    "axis_outside_top3": 9,
-    "axis_survived_but_trio_missed": 9,
-    "axis_and_trio_hit": 4
+    "axis_outside_top3": 14,
+    "axis_survived_but_trio_missed": 12,
+    "axis_and_trio_hit": 6
   },
   "by_decision": {
     "BUY": {
-      "races": 14,
-      "axis_1st": 2,
-      "axis_2nd_3rd": 7,
+      "races": 17,
+      "axis_1st": 3,
+      "axis_2nd_3rd": 9,
       "axis_out": 5,
-      "axis_top3_rate_pct": 64.29
+      "axis_top3_rate_pct": 70.59
     },
     "CAUTION": {
-      "races": 8,
-      "axis_1st": 1,
+      "races": 12,
+      "axis_1st": 3,
       "axis_2nd_3rd": 3,
-      "axis_out": 4,
+      "axis_out": 6,
       "axis_top3_rate_pct": 50.0
     },
     "PASS": {
-      "races": 2,
-      "axis_1st": 0,
-      "axis_2nd_3rd": 2,
-      "axis_out": 0,
-      "axis_top3_rate_pct": 100.0
+      "races": 7,
+      "axis_1st": 1,
+      "axis_2nd_3rd": 3,
+      "axis_out": 3,
+      "axis_top3_rate_pct": 57.14
     }
   },
   "recommended_actions": [
+    "優先課題: 買い目拡張より軸選定・軸耐久性の改善を優先",
     "相手役割分散・3着侵入・相手内完結の取りこぼしを個別監査"
   ],
   "axis_learning_objective": "TOP3_SURVIVAL_FIRST",
   "failure_taxonomy": {
-    "AXIS_MISS": 9,
-    "AXIS_OK_OPPONENT_MISS": 9,
-    "FULL_SUCCESS": 4
+    "AXIS_MISS": 14,
+    "AXIS_OK_OPPONENT_MISS": 12,
+    "FULL_SUCCESS": 6
   },
   "detailed_failure_counts": {
-    "OPPONENT_CANDIDATE_MISS": 11,
-    "AXIS_MISS": 9,
-    "FULL_SUCCESS": 4
+    "OPPONENT_CANDIDATE_MISS": 16,
+    "AXIS_MISS": 14,
+    "FULL_SUCCESS": 6
   },
   "missed_opponent_position_counts": {},
   "detailed_failure_audits": [
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 1,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
@@ -57,14 +58,14 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '5', 'horse_name': 'ペアスターロード', 'finish': 1}",
-        "{'horse_no': '15', 'horse_name': 'ゴールデンレシオ', 'finish': 2}",
-        "{'horse_no': '13', 'horse_name': 'ジョルティーニ', 'finish': 3}"
+        "{'horse_no': '2', 'horse_name': 'ヴェルヴィエ', 'finish': 1}",
+        "{'horse_no': '9', 'horse_name': 'ユイリノベーション', 'finish': 2}",
+        "{'horse_no': '3', 'horse_name': 'バルチックアンバー', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 2,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
@@ -72,14 +73,14 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '1', 'horse_name': 'イッペイ', 'finish': 1}",
-        "{'horse_no': '7', 'horse_name': 'リーベラーリア', 'finish': 2}",
-        "{'horse_no': '3', 'horse_name': 'メイショウジェード', 'finish': 3}"
+        "{'horse_no': '7', 'horse_name': 'ウォータージェード', 'finish': 1}",
+        "{'horse_no': '6', 'horse_name': 'コルベータ', 'finish': 2}",
+        "{'horse_no': '1', 'horse_name': 'バクソウシャチョウ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 3,
       "failure_type": "AXIS_MISS",
@@ -87,14 +88,14 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '2', 'horse_name': 'ワイズギャング', 'finish': 1}",
-        "{'horse_no': '13', 'horse_name': 'キンダープンシュ', 'finish': 2}",
-        "{'horse_no': '6', 'horse_name': 'チリーゴールド', 'finish': 3}"
+        "{'horse_no': '4', 'horse_name': 'カエンフォース', 'finish': 1}",
+        "{'horse_no': '5', 'horse_name': 'ハナナ', 'finish': 2}",
+        "{'horse_no': '8', 'horse_name': 'ペプチドデバイス', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 4,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
@@ -102,104 +103,104 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '8', 'horse_name': 'デラスゴイガン', 'finish': 1}",
-        "{'horse_no': '13', 'horse_name': 'ベラジオアゲーラ', 'finish': 2}",
-        "{'horse_no': '12', 'horse_name': 'バルチックアンバー', 'finish': 3}"
+        "{'horse_no': '5', 'horse_name': 'アドアプローズ', 'finish': 1}",
+        "{'horse_no': '2', 'horse_name': 'ハッピーダンチャン', 'finish': 2}",
+        "{'horse_no': '1', 'horse_name': 'ソルトチューダ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 5,
-      "failure_type": "AXIS_MISS",
-      "axis_top3": false,
-      "trio_hit": false,
-      "candidate_complete": false,
-      "missed_actual_horses": [
-        "{'horse_no': '11', 'horse_name': 'レッドシーカー', 'finish': 1}",
-        "{'horse_no': '9', 'horse_name': 'ディープリメンバー', 'finish': 2}",
-        "{'horse_no': '15', 'horse_name': 'ポネンテ', 'finish': 3}"
-      ],
-      "missed_position_buckets": []
-    },
-    {
-      "date": "2026-10-03",
-      "track": "京都",
-      "race_no": 6,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
       "axis_top3": true,
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '10', 'horse_name': 'キッコベッロ', 'finish': 1}",
-        "{'horse_no': '1', 'horse_name': 'ノンブルドール', 'finish': 2}",
-        "{'horse_no': '12', 'horse_name': 'ムスクレスト', 'finish': 3}"
+        "{'horse_no': '1', 'horse_name': 'マルキア', 'finish': 1}",
+        "{'horse_no': '2', 'horse_name': 'オールドリーキー', 'finish': 2}",
+        "{'horse_no': '4', 'horse_name': 'エフティヒア', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
-      "race_no": 7,
+      "race_no": 6,
       "failure_type": "AXIS_MISS",
       "axis_top3": false,
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '5', 'horse_name': 'パンサーズ', 'finish': 1}",
-        "{'horse_no': '4', 'horse_name': 'ダノンクロム', 'finish': 2}",
-        "{'horse_no': '7', 'horse_name': 'ブロンテス', 'finish': 3}"
+        "{'horse_no': '4', 'horse_name': 'チュウワアーチ', 'finish': 1}",
+        "{'horse_no': '10', 'horse_name': 'オリオンベリル', 'finish': 2}",
+        "{'horse_no': '8', 'horse_name': 'アポカリプト', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 7,
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "axis_top3": true,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '7', 'horse_name': 'ゼンカイナダル', 'finish': 1}",
+        "{'horse_no': '4', 'horse_name': 'ココロヅヨサ', 'finish': 2}",
+        "{'horse_no': '8', 'horse_name': 'ビービーバザーク', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 8,
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "axis_top3": true,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '7', 'horse_name': 'ロンドンガーズ', 'finish': 1}",
+        "{'horse_no': '3', 'horse_name': 'アンムート', 'finish': 2}",
+        "{'horse_no': '6', 'horse_name': 'カレンハウ', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 9,
       "failure_type": "FULL_SUCCESS",
       "axis_top3": true,
       "trio_hit": true,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '5', 'horse_name': 'ブレットパス', 'finish': 1}",
-        "{'horse_no': '9', 'horse_name': 'アクロフェイズ', 'finish': 2}",
-        "{'horse_no': '4', 'horse_name': 'サトノアイボリー', 'finish': 3}"
+        "{'horse_no': '7', 'horse_name': 'ジャンヌドゥレーヴ', 'finish': 1}",
+        "{'horse_no': '11', 'horse_name': 'ルビドゥソレイユ', 'finish': 2}",
+        "{'horse_no': '14', 'horse_name': 'ホウショウマリス', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
-      "track": "京都",
-      "race_no": 9,
-      "failure_type": "OPPONENT_CANDIDATE_MISS",
-      "axis_top3": true,
-      "trio_hit": false,
-      "candidate_complete": false,
-      "missed_actual_horses": [
-        "{'horse_no': '7', 'horse_name': 'ラムラベイ', 'finish': 1}",
-        "{'horse_no': '6', 'horse_name': 'ヴィヴェローネ', 'finish': 2}",
-        "{'horse_no': '4', 'horse_name': 'セイウンリリーナ', 'finish': 3}"
-      ],
-      "missed_position_buckets": []
-    },
-    {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 10,
-      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "failure_type": "FULL_SUCCESS",
       "axis_top3": true,
-      "trio_hit": false,
+      "trio_hit": true,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '8', 'horse_name': 'アメリカンチケット', 'finish': 1}",
-        "{'horse_no': '14', 'horse_name': 'ルクスデイジー', 'finish': 2}",
-        "{'horse_no': '6', 'horse_name': 'ウルスクローム', 'finish': 3}"
+        "{'horse_no': '6', 'horse_name': 'チェルヴァーラ', 'finish': 1}",
+        "{'horse_no': '2', 'horse_name': 'エイシンビーコン', 'finish': 2}",
+        "{'horse_no': '7', 'horse_name': 'トリニティ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 11,
       "failure_type": "FULL_SUCCESS",
@@ -207,29 +208,209 @@
       "trio_hit": true,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '6', 'horse_name': 'リリージョワ', 'finish': 1}",
-        "{'horse_no': '18', 'horse_name': 'ディアナザール', 'finish': 2}",
-        "{'horse_no': '8', 'horse_name': 'レッドエヴァンス', 'finish': 3}"
+        "{'horse_no': '10', 'horse_name': 'マジックローズ', 'finish': 1}",
+        "{'horse_no': '5', 'horse_name': 'ジューンエオス', 'finish': 2}",
+        "{'horse_no': '9', 'horse_name': 'エアトベーレ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 12,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '5', 'horse_name': 'タナブイハチターボ', 'finish': 1}",
+        "{'horse_no': '7', 'horse_name': 'キシャール', 'finish': 2}",
+        "{'horse_no': '10', 'horse_name': 'ムーンライトダイヤ', 'finish': 2}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 1,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '9', 'horse_name': 'クシェドゥソレイユ', 'finish': 1}",
+        "{'horse_no': '2', 'horse_name': 'ドラゴンドール', 'finish': 2}",
+        "{'horse_no': '7', 'horse_name': 'サノノファイター', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 2,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '7', 'horse_name': 'コパノキラキラ', 'finish': 1}",
+        "{'horse_no': '11', 'horse_name': 'ツイストマインド', 'finish': 2}",
+        "{'horse_no': '1', 'horse_name': 'エボニーウイング', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 3,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '2', 'horse_name': 'ラベンダーヘイズ', 'finish': 1}",
+        "{'horse_no': '5', 'horse_name': 'アンバサダネージュ', 'finish': 2}",
+        "{'horse_no': '1', 'horse_name': 'ミライハーモニー', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 4,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
       "axis_top3": true,
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '14', 'horse_name': 'システマソラー', 'finish': 1}",
-        "{'horse_no': '4', 'horse_name': 'ジーニアスバローズ', 'finish': 2}",
-        "{'horse_no': '10', 'horse_name': 'ショーダンサー', 'finish': 3}"
+        "{'horse_no': '7', 'horse_name': 'ジーティーメティオ', 'finish': 1}",
+        "{'horse_no': '11', 'horse_name': 'キアラメンテ', 'finish': 2}",
+        "{'horse_no': '10', 'horse_name': 'エイズルブルーム', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 5,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '11', 'horse_name': 'セイラルレモン', 'finish': 1}",
+        "{'horse_no': '3', 'horse_name': 'クリスタルシャイン', 'finish': 2}",
+        "{'horse_no': '15', 'horse_name': 'クアヒネ', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 6,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '11', 'horse_name': 'メイショウキンタイ', 'finish': 1}",
+        "{'horse_no': '15', 'horse_name': 'トラカイキャッスル', 'finish': 2}",
+        "{'horse_no': '2', 'horse_name': 'カリドーラ', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 7,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '6', 'horse_name': 'ウルフ', 'finish': 1}",
+        "{'horse_no': '4', 'horse_name': 'ヴェーヌドール', 'finish': 2}",
+        "{'horse_no': '7', 'horse_name': 'ヤマメイッカ', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 8,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '2', 'horse_name': 'ランドプリメーロ', 'finish': 1}",
+        "{'horse_no': '4', 'horse_name': 'モティスフォント', 'finish': 2}",
+        "{'horse_no': '13', 'horse_name': 'ブルースカイブルー', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 9,
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "axis_top3": true,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '3', 'horse_name': 'サイモンシャリオ', 'finish': 1}",
+        "{'horse_no': '9', 'horse_name': 'エルナト', 'finish': 2}",
+        "{'horse_no': '1', 'horse_name': 'ディアアズール', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 10,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '10', 'horse_name': 'キャリーグレイス', 'finish': 1}",
+        "{'horse_no': '6', 'horse_name': 'エスカレイト', 'finish': 2}",
+        "{'horse_no': '3', 'horse_name': 'ダノンモンテローザ', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 11,
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "axis_top3": true,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '6', 'horse_name': 'ベイビーキッス', 'finish': 1}",
+        "{'horse_no': '12', 'horse_name': 'シカゴスティング', 'finish': 2}",
+        "{'horse_no': '15', 'horse_name': 'サトノワーグナー', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 12,
+      "failure_type": "AXIS_MISS",
+      "axis_top3": false,
+      "trio_hit": false,
+      "candidate_complete": false,
+      "missed_actual_horses": [
+        "{'horse_no': '16', 'horse_name': 'ラインピクシー', 'finish': 1}",
+        "{'horse_no': '14', 'horse_name': 'ラブカムーン', 'finish': 2}",
+        "{'horse_no': '8', 'horse_name': 'ミエノブラボー', 'finish': 3}"
+      ],
+      "missed_position_buckets": []
+    },
+    {
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 1,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
@@ -237,59 +418,59 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '5', 'horse_name': 'ワンダーマーベル', 'finish': 1}",
-        "{'horse_no': '13', 'horse_name': 'スターフラッシュ', 'finish': 2}",
-        "{'horse_no': '1', 'horse_name': 'アークレイリ', 'finish': 3}"
+        "{'horse_no': '4', 'horse_name': 'ピウモッソ', 'finish': 1}",
+        "{'horse_no': '2', 'horse_name': 'ワレモコウ', 'finish': 2}",
+        "{'horse_no': '6', 'horse_name': 'ロイヤルグルーヴ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 2,
-      "failure_type": "AXIS_MISS",
-      "axis_top3": false,
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "axis_top3": true,
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '4', 'horse_name': 'インテルラゴス', 'finish': 1}",
-        "{'horse_no': '8', 'horse_name': 'シアルナーレ', 'finish': 2}",
-        "{'horse_no': '10', 'horse_name': 'ウイニングレイ', 'finish': 3}"
+        "{'horse_no': '4', 'horse_name': 'ガヤーズアモーレ', 'finish': 1}",
+        "{'horse_no': '9', 'horse_name': 'スワーヴバシレウス', 'finish': 2}",
+        "{'horse_no': '8', 'horse_name': 'アイアムイガイニモ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 3,
-      "failure_type": "AXIS_MISS",
-      "axis_top3": false,
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "axis_top3": true,
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '2', 'horse_name': 'ソードオブステート', 'finish': 1}",
-        "{'horse_no': '7', 'horse_name': 'タンタフェリチア', 'finish': 2}",
-        "{'horse_no': '1', 'horse_name': 'リアシュアー', 'finish': 3}"
+        "{'horse_no': '11', 'horse_name': 'ニューロファイター', 'finish': 1}",
+        "{'horse_no': '8', 'horse_name': 'レッドマウロア', 'finish': 2}",
+        "{'horse_no': '6', 'horse_name': 'センチュリースカイ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 4,
-      "failure_type": "AXIS_MISS",
-      "axis_top3": false,
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "axis_top3": true,
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '3', 'horse_name': 'ブライトマン', 'finish': 1}",
-        "{'horse_no': '7', 'horse_name': 'ブラックバラード', 'finish': 2}",
-        "{'horse_no': '4', 'horse_name': 'エーオーキング', 'finish': 3}"
+        "{'horse_no': '5', 'horse_name': 'ジルファノーガ', 'finish': 1}",
+        "{'horse_no': '17', 'horse_name': 'トーセンマライカ', 'finish': 2}",
+        "{'horse_no': '15', 'horse_name': 'ロジリッパー', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 5,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
@@ -297,14 +478,14 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '3', 'horse_name': 'ヴァルカモニカ', 'finish': 1}",
-        "{'horse_no': '8', 'horse_name': 'ヒシホライゾン', 'finish': 2}",
-        "{'horse_no': '1', 'horse_name': 'センチュリースカイ', 'finish': 3}"
+        "{'horse_no': '9', 'horse_name': 'ソーロブスト', 'finish': 1}",
+        "{'horse_no': '7', 'horse_name': 'トナリティ', 'finish': 2}",
+        "{'horse_no': '3', 'horse_name': 'サトノエスパーダ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 6,
       "failure_type": "OPPONENT_CANDIDATE_MISS",
@@ -312,14 +493,14 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '7', 'horse_name': 'チームユートピア', 'finish': 1}",
-        "{'horse_no': '1', 'horse_name': 'ミヤエスケープ', 'finish': 2}",
-        "{'horse_no': '15', 'horse_name': 'オテンバプリンセス', 'finish': 3}"
+        "{'horse_no': '13', 'horse_name': 'ナハトナナレオン', 'finish': 1}",
+        "{'horse_no': '17', 'horse_name': 'アイアンパイク', 'finish': 2}",
+        "{'horse_no': '7', 'horse_name': 'タイセイフレッサ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 7,
       "failure_type": "AXIS_MISS",
@@ -327,44 +508,44 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '2', 'horse_name': 'グリオンヴール', 'finish': 1}",
-        "{'horse_no': '14', 'horse_name': 'ワディアルリヤハ', 'finish': 2}",
-        "{'horse_no': '16', 'horse_name': 'ピエドゥラパン', 'finish': 3}"
+        "{'horse_no': '5', 'horse_name': 'タイセイリアル', 'finish': 1}",
+        "{'horse_no': '11', 'horse_name': 'モノポリオ', 'finish': 2}",
+        "{'horse_no': '4', 'horse_name': 'アデルフィー', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 8,
-      "failure_type": "AXIS_MISS",
-      "axis_top3": false,
-      "trio_hit": false,
+      "failure_type": "FULL_SUCCESS",
+      "axis_top3": true,
+      "trio_hit": true,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '15', 'horse_name': 'ファンタイムギフト', 'finish': 1}",
-        "{'horse_no': '12', 'horse_name': 'スターエンブレム', 'finish': 2}",
-        "{'horse_no': '5', 'horse_name': 'エドワードバローズ', 'finish': 3}"
+        "{'horse_no': '6', 'horse_name': 'スピンザブラッド', 'finish': 1}",
+        "{'horse_no': '4', 'horse_name': 'リポサンテ', 'finish': 2}",
+        "{'horse_no': '3', 'horse_name': 'モートンアイランド', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 9,
-      "failure_type": "OPPONENT_CANDIDATE_MISS",
+      "failure_type": "FULL_SUCCESS",
       "axis_top3": true,
-      "trio_hit": false,
+      "trio_hit": true,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '9', 'horse_name': 'ファムクラジューズ', 'finish': 1}",
-        "{'horse_no': '8', 'horse_name': 'ドッグウッド', 'finish': 2}",
-        "{'horse_no': '4', 'horse_name': 'フィールドノート', 'finish': 3}"
+        "{'horse_no': '7', 'horse_name': 'キャピタルストーン', 'finish': 1}",
+        "{'horse_no': '12', 'horse_name': 'コラリオン', 'finish': 2}",
+        "{'horse_no': '5', 'horse_name': 'コスモイェーガー', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 10,
       "failure_type": "AXIS_MISS",
@@ -372,29 +553,29 @@
       "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '12', 'horse_name': 'フォーゲル', 'finish': 1}",
-        "{'horse_no': '3', 'horse_name': 'ホウオウシェリー', 'finish': 2}",
-        "{'horse_no': '6', 'horse_name': 'サトミノキラリ', 'finish': 3}"
+        "{'horse_no': '4', 'horse_name': 'ライノ', 'finish': 1}",
+        "{'horse_no': '10', 'horse_name': 'ロングウェイホーム', 'finish': 2}",
+        "{'horse_no': '14', 'horse_name': 'メイショウフジ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 11,
-      "failure_type": "FULL_SUCCESS",
+      "failure_type": "OPPONENT_CANDIDATE_MISS",
       "axis_top3": true,
-      "trio_hit": true,
+      "trio_hit": false,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '5', 'horse_name': 'ドンエレクトス', 'finish': 1}",
-        "{'horse_no': '4', 'horse_name': 'ヘニーガイスト', 'finish': 2}",
-        "{'horse_no': '1', 'horse_name': 'ルヴァレドクール', 'finish': 3}"
+        "{'horse_no': '13', 'horse_name': 'シュガークン', 'finish': 1}",
+        "{'horse_no': '10', 'horse_name': 'アンパドゥ', 'finish': 2}",
+        "{'horse_no': '14', 'horse_name': 'エコロアルバ', 'finish': 3}"
       ],
       "missed_position_buckets": []
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 12,
       "failure_type": "FULL_SUCCESS",
@@ -402,22 +583,92 @@
       "trio_hit": true,
       "candidate_complete": false,
       "missed_actual_horses": [
-        "{'horse_no': '8', 'horse_name': 'マジッククッキー', 'finish': 1}",
-        "{'horse_no': '6', 'horse_name': 'ヘリテージブルーム', 'finish': 2}",
-        "{'horse_no': '12', 'horse_name': 'ケブランリ', 'finish': 3}"
+        "{'horse_no': '2', 'horse_name': 'ショーリバース', 'finish': 1}",
+        "{'horse_no': '7', 'horse_name': 'バルダンツァ', 'finish': 2}",
+        "{'horse_no': '5', 'horse_name': 'ダノンキラウェア', 'finish': 3}"
       ],
       "missed_position_buckets": []
     }
   ],
   "axis_scenario_audits": [
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 1,
       "axis": {
         "rank": 1,
-        "horse_no": "13",
-        "horse_name": "ジョルティーニ",
+        "horse_no": "3",
+        "horse_name": "バルチックアンバー",
+        "survival_score": 63.502,
+        "show_rate_prior": 0.4167,
+        "recent_form": 1.0,
+        "condition_fit": 0.4167,
+        "uncertainty": 0.8,
+        "starts_before": 1.0,
+        "running_style": "FRONT",
+        "ability_score": 42.916
+      },
+      "corner_positions": "3  3",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 3,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            3,
+            3
+          ],
+          "average": 3.0
+        },
+        "scenario_match": "MATCH",
+        "prediction_quality": "REPRODUCIBLE_SUCCESS",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 2,
+      "axis": {
+        "rank": 1,
+        "horse_no": "1",
+        "horse_name": "バクソウシャチョウ",
+        "survival_score": 86.778,
+        "show_rate_prior": 0.3889,
+        "recent_form": 1.0,
+        "condition_fit": 0.5,
+        "uncertainty": 0.2,
+        "starts_before": 4.0,
+        "running_style": "FRONT",
+        "ability_score": 52.479
+      },
+      "corner_positions": "3  4",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 3,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "STALK",
+          "positions": [
+            3,
+            4
+          ],
+          "average": 3.67
+        },
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "UNEXPECTED_SUCCESS",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 3,
+      "axis": {
+        "rank": 1,
+        "horse_no": "2",
+        "horse_name": "ベニールラヴニール",
         "survival_score": 64.751,
         "show_rate_prior": 0.4167,
         "recent_form": 1.0,
@@ -425,7 +676,118 @@
         "uncertainty": 0.8,
         "starts_before": 1.0,
         "running_style": "UNKNOWN",
-        "ability_score": 44.868
+        "ability_score": 46.234
+      },
+      "corner_positions": "6  5  7  7",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 6,
+        "expected_position": "UNKNOWN",
+        "actual_position": {
+          "bucket": "STALK",
+          "positions": [
+            6,
+            5,
+            7,
+            7
+          ],
+          "average": 6.4
+        },
+        "scenario_match": "UNSCORABLE",
+        "prediction_quality": "FAILURE_SCENARIO_UNKNOWN",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 4,
+      "axis": {
+        "rank": 1,
+        "horse_no": "2",
+        "horse_name": "ハッピーダンチャン",
+        "survival_score": 80.351,
+        "show_rate_prior": 0.325,
+        "recent_form": 0.6136,
+        "condition_fit": 0.5,
+        "uncertainty": 0.0,
+        "starts_before": 15.0,
+        "running_style": "FRONT",
+        "ability_score": 43.699
+      },
+      "corner_positions": "3  2  2  2",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 2,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "average": 2.2
+        },
+        "scenario_match": "MATCH",
+        "prediction_quality": "REPRODUCIBLE_SUCCESS",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 7,
+      "axis": {
+        "rank": 1,
+        "horse_no": "4",
+        "horse_name": "ココロヅヨサ",
+        "survival_score": 96.583,
+        "show_rate_prior": 0.45,
+        "recent_form": 1.0,
+        "condition_fit": 0.5,
+        "uncertainty": 0.0,
+        "starts_before": 5.0,
+        "running_style": "UNKNOWN",
+        "ability_score": 52.401
+      },
+      "corner_positions": "9  9  4  2",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 2,
+        "expected_position": "UNKNOWN",
+        "actual_position": {
+          "bucket": "STALK",
+          "positions": [
+            9,
+            9,
+            4,
+            2
+          ],
+          "average": 5.2
+        },
+        "scenario_match": "UNSCORABLE",
+        "prediction_quality": "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 8,
+      "axis": {
+        "rank": 1,
+        "horse_no": "6",
+        "horse_name": "カレンハウ",
+        "survival_score": 87.688,
+        "show_rate_prior": 0.5625,
+        "recent_form": 1.0,
+        "condition_fit": 0.6667,
+        "uncertainty": 0.4,
+        "starts_before": 3.0,
+        "running_style": "UNKNOWN",
+        "ability_score": 59.483
       },
       "corner_positions": "3  3",
       "audit": {
@@ -446,106 +808,34 @@
       }
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
-      "race_no": 2,
+      "race_no": 9,
       "axis": {
         "rank": 1,
-        "horse_no": "3",
-        "horse_name": "メイショウジェード",
-        "survival_score": 87.688,
-        "show_rate_prior": 0.5625,
+        "horse_no": "11",
+        "horse_name": "ルビドゥソレイユ",
+        "survival_score": 99.319,
+        "show_rate_prior": 0.4091,
         "recent_form": 1.0,
         "condition_fit": 0.6667,
-        "uncertainty": 0.4,
-        "starts_before": 3.0,
-        "running_style": "ESCAPE",
-        "ability_score": 58.943
-      },
-      "corner_positions": "3  3",
-      "audit": {
-        "axis_top3_survived": true,
-        "finish_position": 3,
-        "expected_position": "FRONT",
-        "actual_position": {
-          "bucket": "FRONT",
-          "positions": [
-            3,
-            3
-          ],
-          "average": 3.0
-        },
-        "scenario_match": "MATCH",
-        "prediction_quality": "REPRODUCIBLE_SUCCESS",
-        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "track": "京都",
-      "race_no": 3,
-      "axis": {
-        "rank": 1,
-        "horse_no": "1",
-        "horse_name": "スターフュージョン",
-        "survival_score": 87.688,
-        "show_rate_prior": 0.5625,
-        "recent_form": 1.0,
-        "condition_fit": 0.6667,
-        "uncertainty": 0.4,
-        "starts_before": 3.0,
-        "running_style": "FRONT",
-        "ability_score": 59.333
-      },
-      "corner_positions": "5  5",
-      "audit": {
-        "axis_top3_survived": false,
-        "finish_position": 4,
-        "expected_position": "FRONT",
-        "actual_position": {
-          "bucket": "STALK",
-          "positions": [
-            5,
-            5
-          ],
-          "average": 5.0
-        },
-        "scenario_match": "MISMATCH",
-        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
-        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "track": "京都",
-      "race_no": 6,
-      "axis": {
-        "rank": 1,
-        "horse_no": "1",
-        "horse_name": "ノンブルドール",
-        "survival_score": 106.931,
-        "show_rate_prior": 0.5909,
-        "recent_form": 1.0,
-        "condition_fit": 0.75,
         "uncertainty": 0.0,
         "starts_before": 6.0,
-        "running_style": "CLOSER",
-        "ability_score": 64.953
+        "running_style": "STALK",
+        "ability_score": 56.135
       },
-      "corner_positions": "11  10  10  10",
+      "corner_positions": "6  6",
       "audit": {
         "axis_top3_survived": true,
         "finish_position": 2,
-        "expected_position": "CLOSER",
+        "expected_position": "STALK",
         "actual_position": {
-          "bucket": "CLOSER",
+          "bucket": "STALK",
           "positions": [
-            11,
-            10,
-            10,
-            10
+            6,
+            6
           ],
-          "average": 10.2
+          "average": 6.0
         },
         "scenario_match": "MATCH",
         "prediction_quality": "REPRODUCIBLE_SUCCESS",
@@ -553,141 +843,36 @@
       }
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
-      "race_no": 7,
+      "race_no": 10,
       "axis": {
         "rank": 1,
-        "horse_no": "14",
-        "horse_name": "ペプチドレオン",
+        "horse_no": "6",
+        "horse_name": "チェルヴァーラ",
         "survival_score": 107.333,
         "show_rate_prior": 0.65,
         "recent_form": 1.0,
         "condition_fit": 0.75,
         "uncertainty": 0.0,
         "starts_before": 5.0,
-        "running_style": "STALK",
-        "ability_score": 66.435
+        "running_style": "CLOSER",
+        "ability_score": 68.828
       },
-      "corner_positions": "4  3",
-      "audit": {
-        "axis_top3_survived": false,
-        "finish_position": 5,
-        "expected_position": "STALK",
-        "actual_position": {
-          "bucket": "FRONT",
-          "positions": [
-            4,
-            3
-          ],
-          "average": 3.33
-        },
-        "scenario_match": "MISMATCH",
-        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
-        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "track": "京都",
-      "race_no": 8,
-      "axis": {
-        "rank": 1,
-        "horse_no": "5",
-        "horse_name": "ブレットパス",
-        "survival_score": 105.682,
-        "show_rate_prior": 0.5909,
-        "recent_form": 1.0,
-        "condition_fit": 0.6667,
-        "uncertainty": 0.0,
-        "starts_before": 6.0,
-        "running_style": "STALK",
-        "ability_score": 64.938
-      },
-      "corner_positions": "7  7  7  7",
+      "corner_positions": "6  6  6  5",
       "audit": {
         "axis_top3_survived": true,
         "finish_position": 1,
-        "expected_position": "STALK",
-        "actual_position": {
-          "bucket": "STALK",
-          "positions": [
-            7,
-            7,
-            7,
-            7
-          ],
-          "average": 7.0
-        },
-        "scenario_match": "MATCH",
-        "prediction_quality": "REPRODUCIBLE_SUCCESS",
-        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "track": "京都",
-      "race_no": 9,
-      "axis": {
-        "rank": 1,
-        "horse_no": "6",
-        "horse_name": "ヴィヴェローネ",
-        "survival_score": 76.833,
-        "show_rate_prior": 0.5,
-        "recent_form": 1.0,
-        "condition_fit": 0.6,
-        "uncertainty": 0.6,
-        "starts_before": 2.0,
-        "running_style": "CLOSER",
-        "ability_score": 55.235
-      },
-      "corner_positions": "3  3",
-      "audit": {
-        "axis_top3_survived": true,
-        "finish_position": 2,
         "expected_position": "CLOSER",
         "actual_position": {
-          "bucket": "FRONT",
-          "positions": [
-            3,
-            3
-          ],
-          "average": 3.0
-        },
-        "scenario_match": "MISMATCH",
-        "prediction_quality": "UNEXPECTED_SUCCESS",
-        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "track": "京都",
-      "race_no": 10,
-      "axis": {
-        "rank": 1,
-        "horse_no": "14",
-        "horse_name": "ルクスデイジー",
-        "survival_score": 107.55,
-        "show_rate_prior": 0.6333,
-        "recent_form": 1.0,
-        "condition_fit": 0.6923,
-        "uncertainty": 0.0,
-        "starts_before": 10.0,
-        "running_style": "ESCAPE",
-        "ability_score": 65.502
-      },
-      "corner_positions": "4  5",
-      "audit": {
-        "axis_top3_survived": true,
-        "finish_position": 2,
-        "expected_position": "FRONT",
-        "actual_position": {
           "bucket": "STALK",
           "positions": [
-            4,
+            6,
+            6,
+            6,
             5
           ],
-          "average": 4.67
+          "average": 5.6
         },
         "scenario_match": "MISMATCH",
         "prediction_quality": "UNEXPECTED_SUCCESS",
@@ -695,34 +880,36 @@
       }
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 11,
       "axis": {
         "rank": 1,
-        "horse_no": "8",
-        "horse_name": "レッドエヴァンス",
-        "survival_score": 105.427,
-        "show_rate_prior": 0.5938,
+        "horse_no": "9",
+        "horse_name": "エアトベーレ",
+        "survival_score": 103.96,
+        "show_rate_prior": 0.5417,
         "recent_form": 1.0,
-        "condition_fit": 0.6429,
+        "condition_fit": 0.6667,
         "uncertainty": 0.0,
-        "starts_before": 11.0,
-        "running_style": "STALK",
-        "ability_score": 65.507
+        "starts_before": 7.0,
+        "running_style": "DEEP_CLOSER",
+        "ability_score": 59.438
       },
-      "corner_positions": "16  15",
+      "corner_positions": "6  6  6  4",
       "audit": {
         "axis_top3_survived": true,
         "finish_position": 3,
-        "expected_position": "STALK",
+        "expected_position": "CLOSER",
         "actual_position": {
-          "bucket": "CLOSER",
+          "bucket": "STALK",
           "positions": [
-            16,
-            15
+            6,
+            6,
+            6,
+            4
           ],
-          "average": 15.33
+          "average": 5.2
         },
         "scenario_match": "MISMATCH",
         "prediction_quality": "UNEXPECTED_SUCCESS",
@@ -730,64 +917,27 @@
       }
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "京都",
       "race_no": 12,
       "axis": {
         "rank": 1,
-        "horse_no": "14",
-        "horse_name": "システマソラー",
-        "survival_score": 87.688,
-        "show_rate_prior": 0.5625,
+        "horse_no": "1",
+        "horse_name": "カルロット",
+        "survival_score": 100.834,
+        "show_rate_prior": 0.5,
         "recent_form": 1.0,
-        "condition_fit": 0.6667,
-        "uncertainty": 0.4,
-        "starts_before": 3.0,
-        "running_style": "UNKNOWN",
-        "ability_score": 59.76
-      },
-      "corner_positions": "9  9  9  8",
-      "audit": {
-        "axis_top3_survived": true,
-        "finish_position": 1,
-        "expected_position": "UNKNOWN",
-        "actual_position": {
-          "bucket": "CLOSER",
-          "positions": [
-            9,
-            9,
-            9,
-            8
-          ],
-          "average": 8.6
-        },
-        "scenario_match": "UNSCORABLE",
-        "prediction_quality": "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN",
-        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "track": "東京",
-      "race_no": 1,
-      "axis": {
-        "rank": 1,
-        "horse_no": "13",
-        "horse_name": "スターフラッシュ",
-        "survival_score": 64.751,
-        "show_rate_prior": 0.4167,
-        "recent_form": 1.0,
-        "condition_fit": 0.5,
-        "uncertainty": 0.8,
-        "starts_before": 1.0,
-        "running_style": "UNKNOWN",
-        "ability_score": 44.667
+        "condition_fit": 0.5556,
+        "uncertainty": 0.0,
+        "starts_before": 6.0,
+        "running_style": "STALK",
+        "ability_score": 58.823
       },
       "corner_positions": "3  2",
       "audit": {
-        "axis_top3_survived": true,
-        "finish_position": 2,
-        "expected_position": "UNKNOWN",
+        "axis_top3_survived": false,
+        "finish_position": 6,
+        "expected_position": "STALK",
         "actual_position": {
           "bucket": "FRONT",
           "positions": [
@@ -796,69 +946,33 @@
           ],
           "average": 2.33
         },
-        "scenario_match": "UNSCORABLE",
-        "prediction_quality": "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN",
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
         "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
       }
     },
     {
-      "date": "2026-10-03",
-      "track": "東京",
-      "race_no": 2,
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 1,
       "axis": {
-        "rank": 1,
-        "horse_no": "6",
-        "horse_name": "ロゼプレミア",
-        "survival_score": 76.833,
-        "show_rate_prior": 0.5,
+        "rank": 2,
+        "horse_no": "7",
+        "horse_name": "サノノファイター",
+        "survival_score": 65.832,
+        "show_rate_prior": 0.3571,
         "recent_form": 1.0,
-        "condition_fit": 0.6,
+        "condition_fit": 0.4,
         "uncertainty": 0.6,
         "starts_before": 2.0,
         "running_style": "ESCAPE",
-        "ability_score": 53.599
-      },
-      "corner_positions": "1  1  2",
-      "audit": {
-        "axis_top3_survived": false,
-        "finish_position": 6,
-        "expected_position": "FRONT",
-        "actual_position": {
-          "bucket": "FRONT",
-          "positions": [
-            1,
-            1,
-            2
-          ],
-          "average": 1.5
-        },
-        "scenario_match": "MATCH",
-        "prediction_quality": "DURABILITY_FAILURE",
-        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "track": "東京",
-      "race_no": 4,
-      "axis": {
-        "rank": 1,
-        "horse_no": "11",
-        "horse_name": "ハイウェイスター",
-        "survival_score": 102.044,
-        "show_rate_prior": 0.5278,
-        "recent_form": 1.0,
-        "condition_fit": 0.5714,
-        "uncertainty": 0.0,
-        "starts_before": 13.0,
-        "running_style": "STALK",
-        "ability_score": 56.953
+        "ability_score": 43.825
       },
       "corner_positions": "5  5",
       "audit": {
-        "axis_top3_survived": false,
-        "finish_position": null,
-        "expected_position": "STALK",
+        "axis_top3_survived": true,
+        "finish_position": 3,
+        "expected_position": "FRONT",
         "actual_position": {
           "bucket": "STALK",
           "positions": [
@@ -867,32 +981,139 @@
           ],
           "average": 5.0
         },
-        "scenario_match": "MATCH",
-        "prediction_quality": "DURABILITY_FAILURE",
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "UNEXPECTED_SUCCESS",
         "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
       }
     },
     {
-      "date": "2026-10-03",
-      "track": "東京",
-      "race_no": 6,
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 2,
       "axis": {
         "rank": 1,
-        "horse_no": "1",
-        "horse_name": "ミヤエスケープ",
-        "survival_score": 91.738,
-        "show_rate_prior": 0.5,
+        "horse_no": "8",
+        "horse_name": "クラリスバローズ",
+        "survival_score": 79.875,
+        "show_rate_prior": 0.4375,
         "recent_form": 1.0,
-        "condition_fit": 0.5714,
-        "uncertainty": 0.2,
-        "starts_before": 4.0,
-        "running_style": "STALK",
-        "ability_score": 53.087
+        "condition_fit": 0.4375,
+        "uncertainty": 0.4,
+        "starts_before": 3.0,
+        "running_style": "UNKNOWN",
+        "ability_score": 48.662
       },
-      "corner_positions": "3  3",
+      "corner_positions": "3  3  4  5",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 7,
+        "expected_position": "UNKNOWN",
+        "actual_position": {
+          "bucket": "STALK",
+          "positions": [
+            3,
+            3,
+            4,
+            5
+          ],
+          "average": 4.0
+        },
+        "scenario_match": "UNSCORABLE",
+        "prediction_quality": "FAILURE_SCENARIO_UNKNOWN",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 3,
+      "axis": {
+        "rank": 1,
+        "horse_no": "12",
+        "horse_name": "マリリンバローズ",
+        "survival_score": 107.333,
+        "show_rate_prior": 0.65,
+        "recent_form": 1.0,
+        "condition_fit": 0.75,
+        "uncertainty": 0.0,
+        "starts_before": 5.0,
+        "running_style": "ESCAPE",
+        "ability_score": 66.15
+      },
+      "corner_positions": "9  9",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 5,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "CLOSER",
+          "positions": [
+            9,
+            9
+          ],
+          "average": 9.0
+        },
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 4,
+      "axis": {
+        "rank": 1,
+        "horse_no": "11",
+        "horse_name": "キアラメンテ",
+        "survival_score": 104.737,
+        "show_rate_prior": 0.5769,
+        "recent_form": 1.0,
+        "condition_fit": 0.6364,
+        "uncertainty": 0.0,
+        "starts_before": 8.0,
+        "running_style": "FRONT",
+        "ability_score": 62.273
+      },
+      "corner_positions": "1  1",
       "audit": {
         "axis_top3_survived": true,
         "finish_position": 2,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            1,
+            1
+          ],
+          "average": 1.0
+        },
+        "scenario_match": "MATCH",
+        "prediction_quality": "REPRODUCIBLE_SUCCESS",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 6,
+      "axis": {
+        "rank": 1,
+        "horse_no": "3",
+        "horse_name": "ダーリンダーリン",
+        "survival_score": 92.249,
+        "show_rate_prior": 0.3214,
+        "recent_form": 1.0,
+        "condition_fit": 0.4,
+        "uncertainty": 0.0,
+        "starts_before": 9.0,
+        "running_style": "STALK",
+        "ability_score": 47.125
+      },
+      "corner_positions": "3  3",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 4,
         "expected_position": "STALK",
         "actual_position": {
           "bucket": "FRONT",
@@ -903,39 +1124,148 @@
           "average": 3.0
         },
         "scenario_match": "MISMATCH",
+        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 7,
+      "axis": {
+        "rank": 1,
+        "horse_no": "3",
+        "horse_name": "ダノンヴェステル",
+        "survival_score": 105.682,
+        "show_rate_prior": 0.5909,
+        "recent_form": 1.0,
+        "condition_fit": 0.6667,
+        "uncertainty": 0.0,
+        "starts_before": 6.0,
+        "running_style": "FRONT",
+        "ability_score": 61.108
+      },
+      "corner_positions": "7  5  6  6",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 15,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "STALK",
+          "positions": [
+            7,
+            5,
+            6,
+            6
+          ],
+          "average": 6.0
+        },
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 8,
+      "axis": {
+        "rank": 1,
+        "horse_no": "7",
+        "horse_name": "セシルブリュネ",
+        "survival_score": 90.583,
+        "show_rate_prior": 0.35,
+        "recent_form": 1.0,
+        "condition_fit": 0.3333,
+        "uncertainty": 0.0,
+        "starts_before": 5.0,
+        "running_style": "FRONT",
+        "ability_score": 47.123
+      },
+      "corner_positions": "3  3",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 17,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            3,
+            3
+          ],
+          "average": 3.0
+        },
+        "scenario_match": "MATCH",
+        "prediction_quality": "DURABILITY_FAILURE",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 9,
+      "axis": {
+        "rank": 1,
+        "horse_no": "1",
+        "horse_name": "ディアアズール",
+        "survival_score": 103.298,
+        "show_rate_prior": 0.55,
+        "recent_form": 1.0,
+        "condition_fit": 0.7143,
+        "uncertainty": 0.0,
+        "starts_before": 5.0,
+        "running_style": "CLOSER",
+        "ability_score": 62.65
+      },
+      "corner_positions": "3  3  2  2",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 3,
+        "expected_position": "CLOSER",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "average": 2.4
+        },
+        "scenario_match": "MISMATCH",
         "prediction_quality": "UNEXPECTED_SUCCESS",
         "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
       }
     },
     {
-      "date": "2026-10-03",
-      "track": "東京",
-      "race_no": 7,
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 10,
       "axis": {
         "rank": 1,
-        "horse_no": "7",
-        "horse_name": "アイアンパイク",
-        "survival_score": 105.083,
-        "show_rate_prior": 0.65,
+        "horse_no": "14",
+        "horse_name": "ロイヤルスパイア",
+        "survival_score": 106.54,
+        "show_rate_prior": 0.6333,
         "recent_form": 1.0,
-        "condition_fit": 0.6,
+        "condition_fit": 0.625,
         "uncertainty": 0.0,
-        "starts_before": 5.0,
-        "running_style": "FRONT",
-        "ability_score": 64.966
+        "starts_before": 10.0,
+        "running_style": "STALK",
+        "ability_score": 62.199
       },
-      "corner_positions": "4  5",
+      "corner_positions": "2  2",
       "audit": {
         "axis_top3_survived": false,
-        "finish_position": 5,
-        "expected_position": "FRONT",
+        "finish_position": 4,
+        "expected_position": "STALK",
         "actual_position": {
-          "bucket": "STALK",
+          "bucket": "FRONT",
           "positions": [
-            4,
-            5
+            2,
+            2
           ],
-          "average": 4.67
+          "average": 2.0
         },
         "scenario_match": "MISMATCH",
         "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
@@ -943,62 +1273,128 @@
       }
     },
     {
-      "date": "2026-10-03",
-      "track": "東京",
-      "race_no": 8,
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 11,
       "axis": {
         "rank": 1,
-        "horse_no": "3",
-        "horse_name": "マサッチェハマー",
-        "survival_score": 93.167,
-        "show_rate_prior": 0.5,
+        "horse_no": "6",
+        "horse_name": "ベイビーキッス",
+        "survival_score": 102.198,
+        "show_rate_prior": 0.525,
         "recent_form": 1.0,
-        "condition_fit": 0.6667,
-        "uncertainty": 0.2,
-        "starts_before": 4.0,
-        "running_style": "FRONT",
-        "ability_score": 57.007
+        "condition_fit": 0.5882,
+        "uncertainty": 0.0,
+        "starts_before": 15.0,
+        "running_style": "ESCAPE",
+        "ability_score": 59.714
       },
-      "corner_positions": "5  4",
+      "corner_positions": "1  1",
       "audit": {
-        "axis_top3_survived": false,
-        "finish_position": 10,
+        "axis_top3_survived": true,
+        "finish_position": 1,
         "expected_position": "FRONT",
         "actual_position": {
-          "bucket": "STALK",
+          "bucket": "FRONT",
           "positions": [
-            5,
-            4
+            1,
+            1
           ],
-          "average": 4.33
+          "average": 1.0
         },
-        "scenario_match": "MISMATCH",
-        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
+        "scenario_match": "MATCH",
+        "prediction_quality": "REPRODUCIBLE_SUCCESS",
         "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
       }
     },
     {
-      "date": "2026-10-03",
-      "track": "東京",
-      "race_no": 9,
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 12,
       "axis": {
         "rank": 1,
-        "horse_no": "8",
-        "horse_name": "ドッグウッド",
-        "survival_score": 91.738,
-        "show_rate_prior": 0.5,
+        "horse_no": "12",
+        "horse_name": "イングラム",
+        "survival_score": 85.112,
+        "show_rate_prior": 0.3889,
         "recent_form": 1.0,
-        "condition_fit": 0.5714,
+        "condition_fit": 0.3889,
         "uncertainty": 0.2,
         "starts_before": 4.0,
         "running_style": "UNKNOWN",
-        "ability_score": 57.591
+        "ability_score": 46.078
       },
-      "corner_positions": "5  6  6",
+      "corner_positions": "",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 4,
+        "expected_position": "UNKNOWN",
+        "actual_position": {
+          "bucket": "UNKNOWN",
+          "positions": []
+        },
+        "scenario_match": "UNSCORABLE",
+        "prediction_quality": "FAILURE_SCENARIO_UNKNOWN",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 1,
+      "axis": {
+        "rank": 1,
+        "horse_no": "2",
+        "horse_name": "ワレモコウ",
+        "survival_score": 85.188,
+        "show_rate_prior": 0.5625,
+        "recent_form": 1.0,
+        "condition_fit": 0.5,
+        "uncertainty": 0.4,
+        "starts_before": 3.0,
+        "running_style": "UNKNOWN",
+        "ability_score": 56.28
+      },
+      "corner_positions": "1  1",
       "audit": {
         "axis_top3_survived": true,
         "finish_position": 2,
         "expected_position": "UNKNOWN",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            1,
+            1
+          ],
+          "average": 1.0
+        },
+        "scenario_match": "UNSCORABLE",
+        "prediction_quality": "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 2,
+      "axis": {
+        "rank": 1,
+        "horse_no": "4",
+        "horse_name": "ガヤーズアモーレ",
+        "survival_score": 64.751,
+        "show_rate_prior": 0.4167,
+        "recent_form": 1.0,
+        "condition_fit": 0.5,
+        "uncertainty": 0.8,
+        "starts_before": 1.0,
+        "running_style": "ESCAPE",
+        "ability_score": 47.811
+      },
+      "corner_positions": "5  6  6",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 1,
+        "expected_position": "FRONT",
         "actual_position": {
           "bucket": "STALK",
           "positions": [
@@ -1008,75 +1404,75 @@
           ],
           "average": 5.75
         },
-        "scenario_match": "UNSCORABLE",
-        "prediction_quality": "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN",
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "UNEXPECTED_SUCCESS",
         "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
       }
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
-      "race_no": 10,
+      "race_no": 3,
       "axis": {
         "rank": 1,
-        "horse_no": "5",
-        "horse_name": "レッドキングリー",
-        "survival_score": 103.215,
+        "horse_no": "8",
+        "horse_name": "レッドマウロア",
+        "survival_score": 76.833,
         "show_rate_prior": 0.5,
         "recent_form": 1.0,
-        "condition_fit": 0.7143,
-        "uncertainty": 0.0,
-        "starts_before": 6.0,
+        "condition_fit": 0.6,
+        "uncertainty": 0.6,
+        "starts_before": 2.0,
         "running_style": "FRONT",
-        "ability_score": 62.759
+        "ability_score": 50.961
       },
-      "corner_positions": "7  6",
+      "corner_positions": "3  2",
       "audit": {
-        "axis_top3_survived": false,
-        "finish_position": 8,
+        "axis_top3_survived": true,
+        "finish_position": 2,
         "expected_position": "FRONT",
         "actual_position": {
-          "bucket": "STALK",
+          "bucket": "FRONT",
           "positions": [
-            7,
-            6
+            3,
+            2
           ],
-          "average": 6.33
+          "average": 2.33
         },
-        "scenario_match": "MISMATCH",
-        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
+        "scenario_match": "MATCH",
+        "prediction_quality": "REPRODUCIBLE_SUCCESS",
         "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
       }
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
       "track": "東京",
-      "race_no": 11,
+      "race_no": 6,
       "axis": {
         "rank": 1,
-        "horse_no": "1",
-        "horse_name": "ルヴァレドクール",
-        "survival_score": 110.53,
-        "show_rate_prior": 0.6818,
+        "horse_no": "13",
+        "horse_name": "ナハトナナレオン",
+        "survival_score": 102.293,
+        "show_rate_prior": 0.5417,
         "recent_form": 1.0,
-        "condition_fit": 0.7778,
+        "condition_fit": 0.5556,
         "uncertainty": 0.0,
-        "starts_before": 6.0,
-        "running_style": "FRONT",
-        "ability_score": 69.214
+        "starts_before": 7.0,
+        "running_style": "CLOSER",
+        "ability_score": 59.278
       },
-      "corner_positions": "4  4",
+      "corner_positions": "6  6",
       "audit": {
         "axis_top3_survived": true,
-        "finish_position": 3,
-        "expected_position": "FRONT",
+        "finish_position": 1,
+        "expected_position": "CLOSER",
         "actual_position": {
           "bucket": "STALK",
           "positions": [
-            4,
-            4
+            6,
+            6
           ],
-          "average": 4.0
+          "average": 6.0
         },
         "scenario_match": "MISMATCH",
         "prediction_quality": "UNEXPECTED_SUCCESS",
@@ -1084,47 +1480,227 @@
       }
     },
     {
-      "date": "2026-10-03",
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 7,
+      "axis": {
+        "rank": 1,
+        "horse_no": "11",
+        "horse_name": "モノポリオ",
+        "survival_score": 85.112,
+        "show_rate_prior": 0.3889,
+        "recent_form": 1.0,
+        "condition_fit": 0.3889,
+        "uncertainty": 0.2,
+        "starts_before": 4.0,
+        "running_style": "CLOSER",
+        "ability_score": 50.239
+      },
+      "corner_positions": "2  1",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 2,
+        "expected_position": "CLOSER",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            2,
+            1
+          ],
+          "average": 1.33
+        },
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "UNEXPECTED_SUCCESS",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 8,
+      "axis": {
+        "rank": 1,
+        "horse_no": "4",
+        "horse_name": "リポサンテ",
+        "survival_score": 108.415,
+        "show_rate_prior": 0.6333,
+        "recent_form": 1.0,
+        "condition_fit": 0.75,
+        "uncertainty": 0.0,
+        "starts_before": 10.0,
+        "running_style": "CLOSER",
+        "ability_score": 68.969
+      },
+      "corner_positions": "8  8  6",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 2,
+        "expected_position": "CLOSER",
+        "actual_position": {
+          "bucket": "STALK",
+          "positions": [
+            8,
+            8,
+            6
+          ],
+          "average": 7.0
+        },
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "UNEXPECTED_SUCCESS",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 9,
+      "axis": {
+        "rank": 1,
+        "horse_no": "7",
+        "horse_name": "キャピタルストーン",
+        "survival_score": 87.688,
+        "show_rate_prior": 0.5625,
+        "recent_form": 1.0,
+        "condition_fit": 0.6667,
+        "uncertainty": 0.4,
+        "starts_before": 3.0,
+        "running_style": "UNKNOWN",
+        "ability_score": 59.665
+      },
+      "corner_positions": "2  3  3",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 1,
+        "expected_position": "UNKNOWN",
+        "actual_position": {
+          "bucket": "FRONT",
+          "positions": [
+            2,
+            3,
+            3
+          ],
+          "average": 2.75
+        },
+        "scenario_match": "UNSCORABLE",
+        "prediction_quality": "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 10,
+      "axis": {
+        "rank": 1,
+        "horse_no": "3",
+        "horse_name": "ビービーアジャイル",
+        "survival_score": 108.542,
+        "show_rate_prior": 0.625,
+        "recent_form": 1.0,
+        "condition_fit": 0.7778,
+        "uncertainty": 0.0,
+        "starts_before": 7.0,
+        "running_style": "FRONT",
+        "ability_score": 67.538
+      },
+      "corner_positions": "8  8  8  8",
+      "audit": {
+        "axis_top3_survived": false,
+        "finish_position": 13,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "CLOSER",
+          "positions": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "average": 8.0
+        },
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "SCENARIO_AND_DURABILITY_FAILURE",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 11,
+      "axis": {
+        "rank": 1,
+        "horse_no": "10",
+        "horse_name": "アンパドゥ",
+        "survival_score": 105.682,
+        "show_rate_prior": 0.5909,
+        "recent_form": 1.0,
+        "condition_fit": 0.6667,
+        "uncertainty": 0.0,
+        "starts_before": 6.0,
+        "running_style": "FRONT",
+        "ability_score": 65.239
+      },
+      "corner_positions": "9  8",
+      "audit": {
+        "axis_top3_survived": true,
+        "finish_position": 2,
+        "expected_position": "FRONT",
+        "actual_position": {
+          "bucket": "CLOSER",
+          "positions": [
+            9,
+            8
+          ],
+          "average": 8.33
+        },
+        "scenario_match": "MISMATCH",
+        "prediction_quality": "UNEXPECTED_SUCCESS",
+        "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
+      }
+    },
+    {
+      "date": "2026-10-17",
       "track": "東京",
       "race_no": 12,
       "axis": {
         "rank": 1,
-        "horse_no": "6",
-        "horse_name": "ヘリテージブルーム",
-        "survival_score": 109.66,
-        "show_rate_prior": 0.6786,
-        "recent_form": 1.0,
-        "condition_fit": 0.7273,
-        "uncertainty": 0.0,
-        "starts_before": 9.0,
-        "running_style": "STALK",
-        "ability_score": 66.784
+        "horse_no": "5",
+        "horse_name": "ダノンキラウェア",
+        "survival_score": 85.502,
+        "show_rate_prior": 0.5,
+        "recent_form": 0.781,
+        "condition_fit": 0.6667,
+        "uncertainty": 0.2,
+        "starts_before": 4.0,
+        "running_style": "UNKNOWN",
+        "ability_score": 55.811
       },
-      "corner_positions": "4  4",
+      "corner_positions": "3  5",
       "audit": {
         "axis_top3_survived": true,
-        "finish_position": 2,
-        "expected_position": "STALK",
+        "finish_position": 3,
+        "expected_position": "UNKNOWN",
         "actual_position": {
           "bucket": "STALK",
           "positions": [
-            4,
-            4
+            3,
+            5
           ],
-          "average": 4.0
+          "average": 4.33
         },
-        "scenario_match": "MATCH",
-        "prediction_quality": "REPRODUCIBLE_SUCCESS",
+        "scenario_match": "UNSCORABLE",
+        "prediction_quality": "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN",
         "learning_rule": "結果は軸3着内を最優先。展開一致成功と想定外成功を分離して学習する。"
       }
     }
   ],
   "axis_scenario_quality_counts": {
-    "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN": 4,
-    "REPRODUCIBLE_SUCCESS": 4,
-    "SCENARIO_AND_DURABILITY_FAILURE": 5,
-    "UNEXPECTED_SUCCESS": 5,
-    "DURABILITY_FAILURE": 2
+    "REPRODUCIBLE_SUCCESS": 6,
+    "UNEXPECTED_SUCCESS": 10,
+    "FAILURE_SCENARIO_UNKNOWN": 3,
+    "SURVIVAL_SUCCESS_SCENARIO_UNKNOWN": 5,
+    "SCENARIO_AND_DURABILITY_FAILURE": 6,
+    "DURABILITY_FAILURE": 1
   },
   "governance": "PDCA output is diagnostic only; it does not automatically rewrite the certified production model."
 }

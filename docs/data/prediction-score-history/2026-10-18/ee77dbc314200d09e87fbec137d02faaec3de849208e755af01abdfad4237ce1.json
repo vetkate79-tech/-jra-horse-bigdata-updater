@@ -1,0 +1,1393 @@
+{
+  "summary": {
+    "source_prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+    "sealed_predictions_immutable": true,
+    "scored_race_count": 36,
+    "pending_race_count": 36,
+    "axis_1st": 7,
+    "axis_2nd_3rd": 15,
+    "axis_outside_top3": 14,
+    "axis_top3_rate_pct": 61.11,
+    "decision_counts": {
+      "PASS": 7,
+      "CAUTION": 12,
+      "BUY": 17
+    },
+    "trio_bought_races": 29,
+    "trio_hits": 6,
+    "trio_hit_rate_pct": 20.69,
+    "result_fields_used_only_after_seal": true
+  },
+  "pending": [
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 1,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 2,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 3,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 4,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 5,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 6,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 7,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 8,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 9,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 10,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 11,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "京都",
+      "race_no": 12,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 1,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 2,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 3,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 4,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 5,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 6,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 7,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 8,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 9,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 10,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 11,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "新潟",
+      "race_no": 12,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 1,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 2,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 3,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 4,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 5,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 6,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 7,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 8,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 9,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 10,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 11,
+      "reason": "RESULT_PENDING"
+    },
+    {
+      "date": "2026-10-18",
+      "track": "東京",
+      "race_no": 12,
+      "reason": "RESULT_PENDING"
+    }
+  ],
+  "races": [
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "PASS",
+      "axis_horse_no": "3",
+      "axis_horse_name": "バルチックアンバー",
+      "axis_finish": 3,
+      "axis_popularity_result_only": 2,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "2",
+          "horse_name": "ヴェルヴィエ",
+          "finish": 1
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "ユイリノベーション",
+          "finish": 2
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "バルチックアンバー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "PASS",
+      "axis_horse_no": "1",
+      "axis_horse_name": "バクソウシャチョウ",
+      "axis_finish": 3,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "7",
+          "horse_name": "ウォータージェード",
+          "finish": 1
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "コルベータ",
+          "finish": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "バクソウシャチョウ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 3,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "PASS",
+      "axis_horse_no": "2",
+      "axis_horse_name": "ベニールラヴニール",
+      "axis_finish": 6,
+      "axis_popularity_result_only": 2,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "4",
+          "horse_name": "カエンフォース",
+          "finish": 1
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ハナナ",
+          "finish": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ペプチドデバイス",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 4,
+      "race_name": "障害3歳以上未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "2",
+      "axis_horse_name": "ハッピーダンチャン",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 4,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "5",
+          "horse_name": "アドアプローズ",
+          "finish": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ハッピーダンチャン",
+          "finish": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ソルトチューダ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 5,
+      "race_name": "メイクデビュー京都",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "1",
+      "axis_horse_name": "マルキア",
+      "axis_finish": 1,
+      "axis_popularity_result_only": 5,
+      "axis_grade": "HIT",
+      "axis_label": "◎ 予想的中",
+      "actual_top3": [
+        {
+          "horse_no": "1",
+          "horse_name": "マルキア",
+          "finish": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "オールドリーキー",
+          "finish": 2
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "エフティヒア",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 6,
+      "race_name": "メイクデビュー京都",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "13",
+      "axis_horse_name": "コックスコーム",
+      "axis_finish": 9,
+      "axis_popularity_result_only": 5,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "4",
+          "horse_name": "チュウワアーチ",
+          "finish": 1
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "オリオンベリル",
+          "finish": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "アポカリプト",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "4",
+      "axis_horse_name": "ココロヅヨサ",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "7",
+          "horse_name": "ゼンカイナダル",
+          "finish": 1
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ココロヅヨサ",
+          "finish": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ビービーバザーク",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 8,
+      "race_name": "もみじステークス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "6",
+      "axis_horse_name": "カレンハウ",
+      "axis_finish": 3,
+      "axis_popularity_result_only": 3,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "7",
+          "horse_name": "ロンドンガーズ",
+          "finish": 1
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "アンムート",
+          "finish": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "カレンハウ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 9,
+      "race_name": "3歳以上2勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "11",
+      "axis_horse_name": "ルビドゥソレイユ",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "7",
+          "horse_name": "ジャンヌドゥレーヴ",
+          "finish": 1
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "ルビドゥソレイユ",
+          "finish": 2
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "ホウショウマリス",
+          "finish": 3
+        }
+      ],
+      "trio_hit": true
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 10,
+      "race_name": "清滝特別",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "6",
+      "axis_horse_name": "チェルヴァーラ",
+      "axis_finish": 1,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "HIT",
+      "axis_label": "◎ 予想的中",
+      "actual_top3": [
+        {
+          "horse_no": "6",
+          "horse_name": "チェルヴァーラ",
+          "finish": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "エイシンビーコン",
+          "finish": 2
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "トリニティ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": true
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 11,
+      "race_name": "トルマリンステークス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "9",
+      "axis_horse_name": "エアトベーレ",
+      "axis_finish": 3,
+      "axis_popularity_result_only": 3,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "10",
+          "horse_name": "マジックローズ",
+          "finish": 1
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ジューンエオス",
+          "finish": 2
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "エアトベーレ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": true
+    },
+    {
+      "date": "2026-10-17",
+      "track": "京都",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "1",
+      "axis_horse_name": "カルロット",
+      "axis_finish": 6,
+      "axis_popularity_result_only": 3,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "5",
+          "horse_name": "タナブイハチターボ",
+          "finish": 1
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "キシャール",
+          "finish": 2
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ムーンライトダイヤ",
+          "finish": 2
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "PASS",
+      "axis_horse_no": "10",
+      "axis_horse_name": "グリーンアイランド",
+      "axis_finish": 10,
+      "axis_popularity_result_only": 4,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "9",
+          "horse_name": "クシェドゥソレイユ",
+          "finish": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ドラゴンドール",
+          "finish": 2
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "サノノファイター",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "PASS",
+      "axis_horse_no": "8",
+      "axis_horse_name": "クラリスバローズ",
+      "axis_finish": 7,
+      "axis_popularity_result_only": 2,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "7",
+          "horse_name": "コパノキラキラ",
+          "finish": 1
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "ツイストマインド",
+          "finish": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "エボニーウイング",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 3,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "12",
+      "axis_horse_name": "マリリンバローズ",
+      "axis_finish": 5,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "2",
+          "horse_name": "ラベンダーヘイズ",
+          "finish": 1
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "アンバサダネージュ",
+          "finish": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ミライハーモニー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 4,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "11",
+      "axis_horse_name": "キアラメンテ",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "7",
+          "horse_name": "ジーティーメティオ",
+          "finish": 1
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "キアラメンテ",
+          "finish": 2
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "エイズルブルーム",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 5,
+      "race_name": "メイクデビュー新潟",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "10",
+      "axis_horse_name": "タニセンファイア",
+      "axis_finish": 7,
+      "axis_popularity_result_only": 2,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "11",
+          "horse_name": "セイラルレモン",
+          "finish": 1
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "クリスタルシャイン",
+          "finish": 2
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "クアヒネ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 6,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "3",
+      "axis_horse_name": "ダーリンダーリン",
+      "axis_finish": 4,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "11",
+          "horse_name": "メイショウキンタイ",
+          "finish": 1
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "トラカイキャッスル",
+          "finish": 2
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "カリドーラ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "3",
+      "axis_horse_name": "ダノンヴェステル",
+      "axis_finish": 15,
+      "axis_popularity_result_only": 5,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "6",
+          "horse_name": "ウルフ",
+          "finish": 1
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ヴェーヌドール",
+          "finish": 2
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ヤマメイッカ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 8,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "7",
+      "axis_horse_name": "セシルブリュネ",
+      "axis_finish": 17,
+      "axis_popularity_result_only": 4,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "2",
+          "horse_name": "ランドプリメーロ",
+          "finish": 1
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "モティスフォント",
+          "finish": 2
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ブルースカイブルー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 9,
+      "race_name": "岩船特別",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "1",
+      "axis_horse_name": "ディアアズール",
+      "axis_finish": 3,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "3",
+          "horse_name": "サイモンシャリオ",
+          "finish": 1
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "エルナト",
+          "finish": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ディアアズール",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 10,
+      "race_name": "妙高特別",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "14",
+      "axis_horse_name": "ロイヤルスパイア",
+      "axis_finish": 4,
+      "axis_popularity_result_only": 4,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "10",
+          "horse_name": "キャリーグレイス",
+          "finish": 1
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "エスカレイト",
+          "finish": 2
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ダノンモンテローザ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 11,
+      "race_name": "北陸ステークス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "6",
+      "axis_horse_name": "ベイビーキッス",
+      "axis_finish": 1,
+      "axis_popularity_result_only": 3,
+      "axis_grade": "HIT",
+      "axis_label": "◎ 予想的中",
+      "actual_top3": [
+        {
+          "horse_no": "6",
+          "horse_name": "ベイビーキッス",
+          "finish": 1
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "シカゴスティング",
+          "finish": 2
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "サトノワーグナー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "新潟",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "12",
+      "axis_horse_name": "イングラム",
+      "axis_finish": 4,
+      "axis_popularity_result_only": 8,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "16",
+          "horse_name": "ラインピクシー",
+          "finish": 1
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "ラブカムーン",
+          "finish": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ミエノブラボー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "2",
+      "axis_horse_name": "ワレモコウ",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "4",
+          "horse_name": "ピウモッソ",
+          "finish": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ワレモコウ",
+          "finish": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ロイヤルグルーヴ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "PASS",
+      "axis_horse_no": "4",
+      "axis_horse_name": "ガヤーズアモーレ",
+      "axis_finish": 1,
+      "axis_popularity_result_only": 2,
+      "axis_grade": "HIT",
+      "axis_label": "◎ 予想的中",
+      "actual_top3": [
+        {
+          "horse_no": "4",
+          "horse_name": "ガヤーズアモーレ",
+          "finish": 1
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "スワーヴバシレウス",
+          "finish": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "アイアムイガイニモ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 3,
+      "race_name": "2歳未勝利",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "PASS",
+      "axis_horse_no": "8",
+      "axis_horse_name": "レッドマウロア",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "11",
+          "horse_name": "ニューロファイター",
+          "finish": 1
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "レッドマウロア",
+          "finish": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "センチュリースカイ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 4,
+      "race_name": "メイクデビュー東京",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "5",
+      "axis_horse_name": "ジルファノーガ",
+      "axis_finish": 1,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "HIT",
+      "axis_label": "◎ 予想的中",
+      "actual_top3": [
+        {
+          "horse_no": "5",
+          "horse_name": "ジルファノーガ",
+          "finish": 1
+        },
+        {
+          "horse_no": "17",
+          "horse_name": "トーセンマライカ",
+          "finish": 2
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ロジリッパー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 5,
+      "race_name": "メイクデビュー東京",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "9",
+      "axis_horse_name": "ソーロブスト",
+      "axis_finish": 1,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "HIT",
+      "axis_label": "◎ 予想的中",
+      "actual_top3": [
+        {
+          "horse_no": "9",
+          "horse_name": "ソーロブスト",
+          "finish": 1
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "トナリティ",
+          "finish": 2
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "サトノエスパーダ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 6,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "7",
+      "axis_horse_name": "タイセイフレッサ",
+      "axis_finish": 3,
+      "axis_popularity_result_only": 3,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "13",
+          "horse_name": "ナハトナナレオン",
+          "finish": 1
+        },
+        {
+          "horse_no": "17",
+          "horse_name": "アイアンパイク",
+          "finish": 2
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "タイセイフレッサ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "CAUTION",
+      "axis_horse_no": "6",
+      "axis_horse_name": "スティールヴォーグ",
+      "axis_finish": 11,
+      "axis_popularity_result_only": 8,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "5",
+          "horse_name": "タイセイリアル",
+          "finish": 1
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "モノポリオ",
+          "finish": 2
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "アデルフィー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 8,
+      "race_name": "3歳以上2勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "4",
+      "axis_horse_name": "リポサンテ",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 2,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "6",
+          "horse_name": "スピンザブラッド",
+          "finish": 1
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "リポサンテ",
+          "finish": 2
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "モートンアイランド",
+          "finish": 3
+        }
+      ],
+      "trio_hit": true
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 9,
+      "race_name": "アイビーステークス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "7",
+      "axis_horse_name": "キャピタルストーン",
+      "axis_finish": 1,
+      "axis_popularity_result_only": 11,
+      "axis_grade": "HIT",
+      "axis_label": "◎ 予想的中",
+      "actual_top3": [
+        {
+          "horse_no": "7",
+          "horse_name": "キャピタルストーン",
+          "finish": 1
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "コラリオン",
+          "finish": 2
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "コスモイェーガー",
+          "finish": 3
+        }
+      ],
+      "trio_hit": true
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 10,
+      "race_name": "伊勢佐木ステークス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "3",
+      "axis_horse_name": "ビービーアジャイル",
+      "axis_finish": 13,
+      "axis_popularity_result_only": 1,
+      "axis_grade": "MISS",
+      "axis_label": "× 不的中",
+      "actual_top3": [
+        {
+          "horse_no": "4",
+          "horse_name": "ライノ",
+          "finish": 1
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ロングウェイホーム",
+          "finish": 2
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "メイショウフジ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 11,
+      "race_name": "第29回 富士ステークス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "10",
+      "axis_horse_name": "アンパドゥ",
+      "axis_finish": 2,
+      "axis_popularity_result_only": 2,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "13",
+          "horse_name": "シュガークン",
+          "finish": 1
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "アンパドゥ",
+          "finish": 2
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "エコロアルバ",
+          "finish": 3
+        }
+      ],
+      "trio_hit": false
+    },
+    {
+      "date": "2026-10-17",
+      "track": "東京",
+      "race_no": 12,
+      "race_name": "3歳以上2勝クラス",
+      "prediction_hash_sha256": "ee77dbc314200d09e87fbec137d02faaec3de849208e755af01abdfad4237ce1",
+      "decision": "BUY",
+      "axis_horse_no": "5",
+      "axis_horse_name": "ダノンキラウェア",
+      "axis_finish": 3,
+      "axis_popularity_result_only": 3,
+      "axis_grade": "PLACE",
+      "axis_label": "△ 馬券内",
+      "actual_top3": [
+        {
+          "horse_no": "2",
+          "horse_name": "ショーリバース",
+          "finish": 1
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "バルダンツァ",
+          "finish": 2
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ダノンキラウェア",
+          "finish": 3
+        }
+      ],
+      "trio_hit": true
+    }
+  ]
+}
