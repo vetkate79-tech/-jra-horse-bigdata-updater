@@ -1,20 +1,20 @@
 {
   "summary": {
     "horse_count": 5482,
-    "complete_horse_count": 4426,
-    "incomplete_horse_count": 1056,
+    "complete_horse_count": 4422,
+    "incomplete_horse_count": 1060,
     "missing_field_counts": {
-      "new_sire": 1050,
-      "new_damsire": 1050,
+      "new_sire": 1054,
+      "new_damsire": 1054,
       "race_history": 6
     },
     "category_counts": {
       "GRADED": 120,
       "OPEN": 348,
       "3WIN": 258,
-      "2WIN": 624,
+      "2WIN": 642,
       "1WIN": 1436,
-      "MAIDEN": 1787,
+      "MAIDEN": 1769,
       "NEW": 909,
       "UNKNOWN": 0
     },
@@ -2546,6 +2546,14 @@
       ]
     },
     {
+      "horse_id": "pw01dud102023106219/79",
+      "horse_name": "サムシングスイート",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024103627/26",
       "horse_name": "サムワンユーラヴド",
       "missing": [
@@ -4576,6 +4584,14 @@
       ]
     },
     {
+      "horse_id": "pw01dud102023107146/0E",
+      "horse_name": "ドリームコア",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024106396/5D",
       "horse_name": "ドンクラッシュ",
       "missing": [
@@ -4618,6 +4634,14 @@
     {
       "horse_id": "pw01dud102024102335/CE",
       "horse_name": "ナイスウーマン",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102023105420/F1",
+      "horse_name": "ナイスプレーアスク",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -6514,6 +6538,14 @@
     {
       "horse_id": "pw01dud102024100216/12",
       "horse_name": "マジュリス",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102023106810/94",
+      "horse_name": "マスターソアラ",
       "missing": [
         "new_sire",
         "new_damsire"
