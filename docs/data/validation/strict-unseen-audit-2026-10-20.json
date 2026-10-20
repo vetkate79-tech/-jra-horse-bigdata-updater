@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-20",
+  "status": "ROLLING36_NUMERIC_PASS_WITH_CAVEATS",
+  "source_audit": "docs/data/validation/strict-pre-race-audit-2026-10-16.json",
+  "source_replay": "docs/data/replay-2026-10-17.json",
+  "source_seal_commit": "f72c1c4edd1f9635e18ce5d84a679ddaaf736ba2",
+  "strict_timing_verified_scored_races": 150,
+  "new_scored_races": 36,
+  "first_passing_rolling_window": {
+    "start_index": 111,
+    "end_index": 146,
+    "from": "2026-10-03 京都11R",
+    "to": "2026-10-17 京都11R",
+    "races": 36,
+    "bought": 29,
+    "stake_yen": 25500,
+    "return_yen": 40030,
+    "roi_pct": 156.98,
+    "roi_ex_largest_pct": 94.75,
+    "max_payout_yen": 15870,
+    "hits": 8
+  },
+  "caveat": "Mixed pre-race model mechanisms and missing intervening race dates. Upstream feature lineage not independently audited. No fixed nonoverlapping 36R lot passed. No paired challenger test.",
+  "no_repeat_notice": true
+}
