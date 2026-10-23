@@ -1,20 +1,20 @@
 {
   "summary": {
     "horse_count": 5965,
-    "complete_horse_count": 4758,
-    "incomplete_horse_count": 1207,
+    "complete_horse_count": 4757,
+    "incomplete_horse_count": 1208,
     "missing_field_counts": {
-      "new_sire": 1201,
-      "new_damsire": 1201,
+      "new_sire": 1202,
+      "new_damsire": 1202,
       "race_history": 6
     },
     "category_counts": {
       "GRADED": 121,
       "OPEN": 412,
       "3WIN": 282,
-      "2WIN": 679,
+      "2WIN": 694,
       "1WIN": 1556,
-      "MAIDEN": 1922,
+      "MAIDEN": 1907,
       "NEW": 993,
       "UNKNOWN": 0
     },
@@ -3101,6 +3101,14 @@
     {
       "horse_id": "pw01dud102024107083/50",
       "horse_name": "シツライ",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024104953/0C",
+      "horse_name": "シティオブドリーム",
       "missing": [
         "new_sire",
         "new_damsire"
