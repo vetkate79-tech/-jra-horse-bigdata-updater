@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-23",
+  "audit_as_of_jst": "2026-10-23T19:32:33+09:00",
+  "status": "NO_NEW_FORMAL_36R_PASS",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "evidence": {
+    "latest_observed_commit": "19f191defb42023b701317a3b7f34dff3d7ef462",
+    "latest_observed_commit_utc": "2026-10-23T06:21:43Z",
+    "latest_seal_history_commit": "2d58377e4f268fbdfd801067a36ca24a28ec593d",
+    "latest_runner_refresh_commit": "10876300bb7c1183c2113115b9a15c52aeafbfde",
+    "strict_prior_audit": "docs/data/validation/strict-unseen-audit-2026-10-20.json",
+    "strict_base_audit": "docs/data/validation/strict-pre-race-audit-2026-10-16.json",
+    "scored_replay_2026_10_17": "docs/data/replay-2026-10-17.json",
+    "management_snapshot": "docs/data/management_analytics.json",
+    "seal_status": "status/live_prediction_seal.json",
+    "feature_status": "docs/data/horses/pre_race_features.json"
+  },
+  "strict_scored_cumulative": {
+    "verified_seal_timing_and_replay_match_races": 150,
+    "bought": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "hits": 25,
+    "roi_pct": 89.49,
+    "largest_payout_yen": 15870,
+    "roi_ex_largest_pct": 75.24,
+    "new_qualifying_scored_races_since_2026_10_20": 0,
+    "upstream_feature_lineage_independently_verified": false,
+    "notes": "Same 150-race timing/replay-matched cohort as 2026-10-20; NOT an independently certified fully leak-free 1000R cohort."
+  },
+  "deduplication": {
+    "key": "date|track|race_no",
+    "duplicate_count_in_reconstructed_150": 0,
+    "race_order_rule": "race date and scheduled post time; never concatenate replay races by track because source file order is track-grouped",
+    "order_source": "2026-10-16 verified_races.start_time_jst and 2026-10-17 management_analytics.races.scheduled_start",
+    "schedule_gap": "2026-10-17 京都12R absent from management_analytics (present in replay); occurs after the 111-146 rolling window end, so does not affect that window's numerical verification"
+  },
+  "fixed_nonoverlapping_36r_lots": [
+    {
+      "lot": 1,
+      "range": "1-36",
+      "stake_yen": 25800,
+      "return_yen": 33990,
+      "roi_pct": 131.74,
+      "roi_ex_largest_pct": 72.13,
+      "max_payout_yen": 15380
+    },
+    {
+      "lot": 2,
+      "range": "37-72",
+      "stake_yen": 25600,
+      "return_yen": 16380,
+      "roi_pct": 63.98,
+      "roi_ex_largest_pct": 29.77,
+      "max_payout_yen": 8760
+    },
+    {
+      "lot": 3,
+      "range": "73-108",
+      "stake_yen": 29200,
+      "return_yen": 8050,
+      "roi_pct": 27.57,
+      "roi_ex_largest_pct": 3.77,
+      "max_payout_yen": 6950
+    },
+    {
+      "lot": 4,
+      "range": "109-144",
+      "stake_yen": 25500,
+      "return_yen": 30930,
+      "roi_pct": 121.29,
+      "roi_ex_largest_pct": 59.06,
+      "max_payout_yen": 15870
+    }
+  ],
+  "remainder_races": 6,
+  "rolling_36r": {
+    "windows": 115,
+    "numeric_passing_windows": 1,
+    "already_reported_window": {
+      "range": "111-146",
+      "from": "2026-10-03 京都11R",
+      "to": "2026-10-17 京都11R",
+      "stake_yen": 25500,
+      "return_yen": 40030,
+      "roi_pct": 156.98,
+      "roi_ex_largest_pct": 94.75,
+      "max_payout_yen": 15870
+    },
+    "new_passing_windows_since_prior_audit": 0,
+    "formal_same_mechanism_feature_audited_passes": 0
+  },
+  "other_population_not_to_merge": {
+    "management_snapshot_time_jst": "2026-10-23T15:21:42+09:00",
+    "scored_races": 174,
+    "bought_races": 149,
+    "stake_yen": 129800,
+    "return_yen": 103100,
+    "roi_pct": 79.43,
+    "roi_ex_top_pct": 67.2,
+    "reason": "Management scoring population differs from strict seal-timing-audited 150; not interchangeable."
+  },
+  "upcoming_seal": {
+    "sealed_future_dates": [
+      "2026-10-24",
+      "2026-10-25"
+    ],
+    "sealed_races": 72,
+    "seal_commit_utc": "2026-10-23T06:07:33Z",
+    "latest_timestamp_only_reseal_commit_utc": "2026-10-23T06:21:43Z",
+    "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+    "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT+MONTE_CARLO_FINALIZER_V1",
+    "stage": "PARTIAL_FRAME_RESEAL",
+    "frame_known": 486,
+    "frame_total": 936,
+    "frame_missing": 450,
+    "frame_known_pct": 51.92,
+    "scored": false,
+    "eligible_for_future_strict_scoring": false,
+    "condition_for_eligibility": "Preserve an immutable pre-start full-frame snapshot and matched axis/decision/tickets, verify official post times, result timing, upstream feature lineage and no post-start reseal."
+  },
+  "missing_replay_files_checked": [
+    "docs/data/replay-2026-10-18.json",
+    "docs/data/replay-2026-10-19.json",
+    "docs/data/replay-2026-10-22.json"
+  ],
+  "challenger_comparison": {
+    "status": "NOT_RUN",
+    "reason": "No new strictly eligible post-result cohort; future sealed input is partial-frame. Do not optimize on previously scored races."
+  },
+  "high_payout_policy": "Retain high-payout capture as an independent priority above stability; exclude only largest payout from the robustness KPI, not from total model evaluation.",
+  "notification": {
+    "send": false,
+    "reason": "No new same-mechanism, upstream-audited, precommitted 36R lot with both ROI>90 and ROI-ex-largest>90. Old rolling numeric pass was already reported."
+  }
+}
