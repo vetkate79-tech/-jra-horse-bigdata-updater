@@ -1,115 +1,127 @@
 {
   "status": "UPDATED",
-  "checked_at": "2026-10-17T22:48:40.660794+09:00",
+  "checked_at": "2026-10-24T21:13:05.144467+09:00",
   "target_dates": [
-    "20261014",
-    "20261015",
-    "20261016",
-    "20261017"
+    "20261021",
+    "20261022",
+    "20261023",
+    "20261024"
   ],
   "discovered_races": 36,
   "complete_dates": [
-    "20261017"
+    "20261024"
   ],
   "incomplete": {},
   "racecards_ready": 36,
-  "new_runner_rows": 472,
+  "new_runner_rows": 468,
   "strict_warnings": [
     {
-      "race": "pw01sde0104202604010220261017/B8",
+      "race": "pw01sde0104202604030120261024/0C",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0104202604010320261017/6D",
+      "race": "pw01sde0104202604030320261024/76",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0104202604010520261017/D7",
+      "race": "pw01sde0104202604030620261024/95",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0104202604010720261017/41",
+      "race": "pw01sde0104202604030820261024/FF",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0104202604011020261017/A0",
+      "race": "pw01sde0104202604031020261024/A9",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604060120261017/8C",
+      "race": "pw01sde0105202604080120261024/95",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604060320261017/F6",
+      "race": "pw01sde0105202604080420261024/B4",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604060720261017/CA",
+      "race": "pw01sde0105202604080620261024/1E",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604061020261017/29",
+      "race": "pw01sde0105202604080720261024/D3",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604061220261017/93",
+      "race": "pw01sde0105202604081020261024/32",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604060120261017/6A",
+      "race": "pw01sde0105202604081220261024/9C",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604060620261017/F3",
+      "race": "pw01sde0108202604080120261024/73",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604060720261017/A8",
+      "race": "pw01sde0108202604080320261024/DD",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604060920261017/12",
+      "race": "pw01sde0108202604080620261024/FC",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604061120261017/BC",
+      "race": "pw01sde0108202604080720261024/B1",
+      "strict_errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0108202604080920261024/1B",
+      "strict_errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0108202604081220261024/7A",
       "strict_errors": [
         "track_condition"
       ]
     }
   ],
   "totals": {
-    "result_rows": 3798,
-    "payout_rows": 3427,
-    "context_rows": 288
+    "result_rows": 4266,
+    "payout_rows": 3856,
+    "context_rows": 324
   },
   "discovery_pages": 36
 }
