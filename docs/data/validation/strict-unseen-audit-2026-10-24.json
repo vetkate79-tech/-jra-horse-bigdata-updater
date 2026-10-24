@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-24",
+  "audit_as_of_jst": "2026-10-24T20:20:00+09:00",
+  "status": "NO_NEW_FORMAL_36R_PASS",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "evidence": {
+    "latest_observed_commit": "87317ed375ccfd353b458ba0310269e7764634dc",
+    "latest_observed_commit_utc": "2026-10-24T06:25:05Z",
+    "latest_full_frame_seal_commit": "5e75d27f5e411050d669d83f253b20c2130d0d64",
+    "latest_full_frame_seal_commit_utc": "2026-10-24T05:49:22Z",
+    "latest_reseal_commit": "19c6df35790f019ddcd3dd66fd1dce0f1b453ed0",
+    "latest_reseal_commit_utc": "2026-10-24T06:03:37Z",
+    "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-23.json",
+    "baseline_audit": "docs/data/validation/strict-unseen-audit-2026-10-20.json",
+    "seal_status": "status/live_prediction_seal.json",
+    "source_seal_history": "docs/data/prediction-seal-history/2026-10-24/94a065f704042d94d41838a32c6bfbc17b5d327e17cc328a1422b3cbc9898136.json"
+  },
+  "strict_scored_cumulative": {
+    "verified_seal_timing_and_replay_match_races": 150,
+    "bought": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "roi_pct": 89.49,
+    "largest_payout_yen": 15870,
+    "roi_ex_largest_pct": 75.24,
+    "new_qualifying_scored_races_since_previous_audit": 0,
+    "upstream_feature_lineage_independently_verified": false,
+    "note": "Carry-forward, not a newly reconstructed 1000R cohort; upstream lineage audit remains incomplete."
+  },
+  "latest_seal": {
+    "target_dates": [
+      "2026-10-24",
+      "2026-10-25"
+    ],
+    "sealed_race_count": 72,
+    "frame_known": 935,
+    "frame_total": 935,
+    "frame_coverage_pct": 100,
+    "stage": "FINAL_WITH_FRAME",
+    "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+    "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT+MONTE_CARLO_FINALIZER_V1",
+    "commit_utc": "2026-10-24T05:49:22Z",
+    "commit_jst": "2026-10-24T14:49:22+09:00",
+    "hash_sha256": "94a065f704042d94d41838a32c6bfbc17b5d327e17cc328a1422b3cbc9898136",
+    "result_used_self_report": false,
+    "odds_popularity_used_self_report": false,
+    "self_report_is_not_provenance": true,
+    "interpretation": "10/24 seal committed at 14:49 JST, so early 10/24 races must not be counted as pre-start sealed from this commit. Any 10/24 late race requires race-specific start time and immutable pre-start exact prediction verification. The 10/25 portion is a candidate for future eligibility if preserved, start times and upstream features pass audit. The prior 10/23 pre-race snapshot was partial-frame (486/936) and cannot be silently substituted for the later full-frame snapshot."
+  },
+  "missing_replay_files_checked": [
+    "docs/data/replay-2026-10-24.json",
+    "docs/data/replay-2026-10-18.json",
+    "docs/data/replay-2026-10-19.json",
+    "docs/data/replay-2026-10-11.json"
+  ],
+  "fixed_36r_status": "No new same-mechanism, upstream-lineage-audited, precommitted 36R lot verified.",
+  "rolling_36r_status": "Previously reported 111-146 numeric passing window not counted again.",
+  "challenger_comparison": {
+    "status": "NOT_RUN",
+    "reason": "No new verified scored race cohort; do not optimize or re-score postrace-only inputs."
+  },
+  "high_payout_policy": "High-payout capture retained as separate higher-priority model criterion; largest-payout removal applies only to robustness ROI, not total ROI.",
+  "notification": {
+    "send": false,
+    "reason": "No new formally qualifying 36R lot; old rolling numeric pass already reported."
+  }
+}
