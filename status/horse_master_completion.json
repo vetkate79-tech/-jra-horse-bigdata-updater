@@ -1,12 +1,11 @@
 {
   "summary": {
     "horse_count": 5958,
-    "complete_horse_count": 4757,
-    "incomplete_horse_count": 1201,
+    "complete_horse_count": 4767,
+    "incomplete_horse_count": 1191,
     "missing_field_counts": {
       "new_sire": 1186,
       "new_damsire": 1186,
-      "open_evidence": 10,
       "race_history": 5
     },
     "category_counts": {
@@ -19,10 +18,10 @@
       "NEW": 991,
       "UNKNOWN": 0
     },
-    "base_open_count": 473,
+    "base_open_count": 483,
     "base_graded_count": 123,
     "base_unbeaten_count": 0,
-    "active_elite_count": 3,
+    "active_elite_count": 556,
     "structural_issues": [],
     "status": "IN_PROGRESS",
     "definition": "complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically"
@@ -1477,13 +1476,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022104877/AF",
-      "horse_name": "カナルビーグル",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102542/E7",
       "horse_name": "カネトシブレイン",
       "missing": [
@@ -1875,13 +1867,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022103267/8A",
-      "horse_name": "ギュルヴィ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106504/49",
       "horse_name": "ギョニソ",
       "missing": [
@@ -1911,13 +1896,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022100159/62",
-      "horse_name": "クインズショコラ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -2937,13 +2915,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020106370/5B",
-      "horse_name": "サンマルパトロール",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102441/43",
       "horse_name": "サンマルボニータ",
       "missing": [
@@ -3085,13 +3056,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020101694/2F",
-      "horse_name": "シゲルショウグン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -7644,13 +7608,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102018105431/C5",
-      "horse_name": "ミッキーヌチバナ",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106929/6C",
       "horse_name": "ミネットドール",
       "missing": [
@@ -7784,13 +7741,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022100154/23",
-      "horse_name": "メイショウズイウン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -8426,13 +8376,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022105702/BE",
-      "horse_name": "リアライズカミオン",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024106816/D2",
       "horse_name": "リアライズボルト",
       "missing": [
@@ -8793,13 +8736,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102022103941/0F",
-      "horse_name": "ルヴァンユニベール",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024103405/BE",
       "horse_name": "ルージュクエーサー",
       "missing": [
@@ -9109,13 +9045,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021103717/A3",
-      "horse_name": "レヴォントゥレット",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
