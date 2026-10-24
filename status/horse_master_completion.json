@@ -1,20 +1,21 @@
 {
   "summary": {
     "horse_count": 5965,
-    "complete_horse_count": 4758,
-    "incomplete_horse_count": 1207,
+    "complete_horse_count": 4747,
+    "incomplete_horse_count": 1218,
     "missing_field_counts": {
-      "new_sire": 1201,
-      "new_damsire": 1201,
+      "new_sire": 1202,
+      "new_damsire": 1202,
+      "open_evidence": 10,
       "race_history": 6
     },
     "category_counts": {
       "GRADED": 121,
-      "OPEN": 412,
+      "OPEN": 422,
       "3WIN": 282,
-      "2WIN": 694,
-      "1WIN": 1556,
-      "MAIDEN": 1907,
+      "2WIN": 676,
+      "1WIN": 1546,
+      "MAIDEN": 1925,
       "NEW": 993,
       "UNKNOWN": 0
     },
@@ -1484,6 +1485,13 @@
       ]
     },
     {
+      "horse_id": "pw01dud102022104877/AF",
+      "horse_name": "カナルビーグル",
+      "missing": [
+        "open_evidence"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024102542/E7",
       "horse_name": "カネトシブレイン",
       "missing": [
@@ -1875,6 +1883,13 @@
       ]
     },
     {
+      "horse_id": "pw01dud102022103267/8A",
+      "horse_name": "ギュルヴィ",
+      "missing": [
+        "open_evidence"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024106504/49",
       "horse_name": "ギョニソ",
       "missing": [
@@ -1904,6 +1919,13 @@
       "missing": [
         "new_sire",
         "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102022100159/62",
+      "horse_name": "クインズショコラ",
+      "missing": [
+        "open_evidence"
       ]
     },
     {
@@ -2931,6 +2953,13 @@
       ]
     },
     {
+      "horse_id": "pw01dud102020106370/5B",
+      "horse_name": "サンマルパトロール",
+      "missing": [
+        "open_evidence"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024102441/43",
       "horse_name": "サンマルボニータ",
       "missing": [
@@ -3075,6 +3104,13 @@
       ]
     },
     {
+      "horse_id": "pw01dud102020101694/2F",
+      "horse_name": "シゲルショウグン",
+      "missing": [
+        "open_evidence"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024102126/CF",
       "horse_name": "シシソンソン",
       "missing": [
@@ -3101,6 +3137,14 @@
     {
       "horse_id": "pw01dud102024107083/50",
       "horse_name": "シツライ",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024104953/0C",
+      "horse_name": "シティオブドリーム",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -7727,6 +7771,13 @@
       ]
     },
     {
+      "horse_id": "pw01dud102018105431/C5",
+      "horse_name": "ミッキーヌチバナ",
+      "missing": [
+        "open_evidence"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024106929/6C",
       "horse_name": "ミネットドール",
       "missing": [
@@ -7868,6 +7919,13 @@
       "missing": [
         "new_sire",
         "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102022100154/23",
+      "horse_name": "メイショウズイウン",
+      "missing": [
+        "open_evidence"
       ]
     },
     {
@@ -8503,6 +8561,13 @@
       ]
     },
     {
+      "horse_id": "pw01dud102022105702/BE",
+      "horse_name": "リアライズカミオン",
+      "missing": [
+        "open_evidence"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024106816/D2",
       "horse_name": "リアライズボルト",
       "missing": [
@@ -8863,6 +8928,13 @@
       ]
     },
     {
+      "horse_id": "pw01dud102022103941/0F",
+      "horse_name": "ルヴァンユニベール",
+      "missing": [
+        "open_evidence"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024103405/BE",
       "horse_name": "ルージュクエーサー",
       "missing": [
@@ -9172,6 +9244,13 @@
       "missing": [
         "new_sire",
         "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102021103717/A3",
+      "horse_name": "レヴォントゥレット",
+      "missing": [
+        "open_evidence"
       ]
     },
     {
