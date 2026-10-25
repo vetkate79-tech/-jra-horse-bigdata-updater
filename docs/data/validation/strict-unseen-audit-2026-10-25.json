@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-25",
+  "audit_as_of_jst": "2026-10-25T19:50:40+09:00",
+  "status": "NO_NEW_FORMAL_SAME_MECHANISM_36R_PASS",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "policy": {
+    "formal_minimum_races": 36,
+    "success": "pre-start immutable seal and exact axis/decision/tickets match; upstream feature lineage independently checked; same mechanism, precommitted non-overlapping 36R lot; gross_roi_pct>90 and roi_ex_largest_payout_pct>90",
+    "after_start_reseal": "diagnostic only unless independent earlier per-race immutable prediction proof",
+    "high_payout": "retain and positively weight separately from largest-payout-removed robustness",
+    "challenger": "single predeclared change, identical pre-race inputs and stakes/points, no retroactive fitting"
+  },
+  "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-24.json",
+  "existing_timing_and_replay_matched_cohort": {
+    "scored_races": 150,
+    "bought_races": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "gross_roi_pct": 89.49,
+    "roi_ex_largest_payout_pct": 75.24,
+    "upstream_feature_lineage_independently_verified": false,
+    "new_formal_scored_races_added": 0,
+    "note": "Carry-forward from Oct 20/23/24 audits. Not a fully independently leak-free 1000R cohort."
+  },
+  "new_2026_10_24_replay_diagnostic": {
+    "source": "docs/data/replay-2026-10-24.json",
+    "source_blob_sha": "4e3c146eb788a2921f19cb613c6ac9f5e1f87498",
+    "unique_races": 36,
+    "duplicate_keys": 0,
+    "bought_races": 30,
+    "stake_yen": 26100,
+    "return_yen": 13390,
+    "hits": 4,
+    "gross_roi_pct": 51.3,
+    "roi_ex_largest_payout_pct": 36.44,
+    "largest_single_payout_yen": 3880,
+    "axis_top3_races": 17,
+    "buy": {
+      "races": 15,
+      "stake_yen": 13500,
+      "return_yen": 13390,
+      "hits": 4,
+      "roi_pct": 99.19
+    },
+    "caution": {
+      "races": 15,
+      "stake_yen": 12600,
+      "return_yen": 0,
+      "hits": 0,
+      "roi_pct": 0
+    },
+    "pass": {
+      "races": 6,
+      "stake_yen": 0
+    },
+    "payout_ticket_match_mismatches": 0,
+    "official_jra_sample_confirmations": [
+      {
+        "race": "2026-10-24 京都8R",
+        "trio": "4-5-8",
+        "payout_yen": 3880,
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604080820261024/66"
+      },
+      {
+        "race": "2026-10-24 新潟2R",
+        "trio": "2-8-10",
+        "payout_yen": 3860,
+        "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0104202604030220261024/C1"
+      }
+    ],
+    "seal_commit": "5e75d27f5e411050d669d83f253b20c2130d0d64",
+    "seal_commit_utc": "2026-10-24T05:49:22Z",
+    "seal_commit_jst": "2026-10-24T14:49:22+09:00",
+    "full_frame_coverage": "935/935 for combined Oct 24+25",
+    "timing_issue": "All four replay hits were in Kyoto8R, Niigata2R, Tokyo8R, Tokyo9R, all before 14:49 JST; cannot count as pre-start sealed based on this full-frame commit. Earlier Oct23 partial-frame snapshot (486/936) requires exact per-race axis/decision/tickets match before any exception.",
+    "formal_status": "DIAGNOSTIC_ONLY_NOT_ADDED_TO_STRICT_COHORT",
+    "no_model_upgrade_from_this_sample": true
+  },
+  "new_2026_10_25_pre_race_candidate": {
+    "seal_commit": "c939970e1784fbf03d4e4424219d386039a8717d",
+    "seal_commit_utc": "2026-10-24T18:10:10Z",
+    "seal_commit_jst": "2026-10-25T03:10:10+09:00",
+    "source": "docs/data/prediction-seal-history/2026-10-25/3e6788fd7e4685f871ef8ee38f2b63c9b85bb199711c102101dbbdddb65b1692.json",
+    "hash_sha256": "3e6788fd7e4685f871ef8ee38f2b63c9b85bb199711c102101dbbdddb65b1692",
+    "race_count_reported": 36,
+    "frame_known": 467,
+    "frame_total": 467,
+    "mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT+MONTE_CARLO_FINALIZER_V1",
+    "status": "PRE_START_SEAL_COMMIT_CANDIDATE_NOT_SCORED",
+    "notes": "The 03:10 JST commit predates JRA Oct25 first races (Tokyo1R 09:50 per JRA). JRA results exist for Oct25, but no docs/data/replay-2026-10-25.json in repository at audit time. Large seal file could not be read through connector; race-by-race immutable prediction equality and upstream feature lineage remain unverified. Later 15:32 seal had the same prediction hash, but later timestamp alone is not pre-start evidence.",
+    "official_first_race_source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604090120261025/C5"
+  },
+  "historical_rolling_numeric_pass": {
+    "range": "111-146",
+    "gross_roi_pct": 156.98,
+    "roi_ex_largest_payout_pct": 94.75,
+    "already_reported": true,
+    "formal_same_mechanism_upstream_audited": false
+  },
+  "fixed_36r_new_formal_passes": 0,
+  "paired_challenger_comparison": {
+    "status": "NOT_RUN",
+    "reason": "No new fully verified same-mechanism scored 36R cohort; no post-result fitting"
+  },
+  "next_actions": [
+    "Publish compact per-race immutable seal manifests (race ID, sealed commit UTC, prediction/feature hashes, axis, decision, ticket list, start time) for exact audits without downloading very large archives.",
+    "Join all 36 Oct25 official JRA finish orders and trio payouts against the 03:10 pre-race snapshot; verify per-race immutable prediction equality, scratched horses and feature lineage before scoring.",
+    "For Oct24 late races only, compare original 14:49 snapshot with official actual start time and exact replay ticket content; isolate earlier races unless proven by the Oct23 snapshot.",
+    "Maintain fixed non-overlapping same-mechanism 36R and 100R metrics; do not reuse the previously reported mixed rolling window as a new success."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new same-mechanism upstream-leakage-audited fixed 36R with both ROI thresholds >90."
+  }
+}
