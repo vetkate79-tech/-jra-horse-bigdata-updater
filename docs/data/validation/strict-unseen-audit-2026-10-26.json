@@ -1,0 +1,877 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-26",
+  "audit_status": "NEW_PRE_START_SEALED_36R_PROVISIONAL_SCORE_FAIL_90_GATE",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-25.json",
+  "source": {
+    "original_immutable_seal_commit": "c939970e1784fbf03d4e4424219d386039a8717d",
+    "original_seal_commit_jst": "2026-10-25T03:10:10+09:00",
+    "original_seal_generated_at_jst": "2026-10-25T03:10:07.094732+09:00",
+    "original_seal_path": "docs/data/prediction-seal-history/2026-10-25/3e6788fd7e4685f871ef8ee38f2b63c9b85bb199711c102101dbbdddb65b1692.json",
+    "original_seal_blob_sha": "6c30dedc1d29465b4e36511463aae6738fba2276",
+    "original_prediction_hash": "3e6788fd7e4685f871ef8ee38f2b63c9b85bb199711c102101dbbdddb65b1692",
+    "later_seal_blob_sha": "c4a98eb64773977cb302323138c354f5c056eb74",
+    "later_seal_generated_at_jst": "2026-10-25T15:32:38.131526+09:00",
+    "later_seal_prediction_hash_matches": true,
+    "original_vs_later_axis_decision_classification_tickets_exact_match_count": 36,
+    "original_vs_later_mismatch_count": 0,
+    "original_frame_coverage": "467/467",
+    "source_of_36_trio_payouts": "https://winsight.jp/race/result_all?code=20261025",
+    "source_status": "SECONDARY_CONSOLIDATED_ALL_36; 3 JRA OFFICIAL CROSS-CHECKED",
+    "jra_official_crosschecks": [
+      {
+        "race": "京都7R",
+        "trio": "2-3-5",
+        "payout_yen": 800,
+        "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604090720261025/E1"
+      },
+      {
+        "race": "東京10R",
+        "trio": "2-4-7",
+        "payout_yen": 3880,
+        "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604091020261025/62"
+      },
+      {
+        "race": "新潟11R",
+        "trio": "9-10-11;9-11-14",
+        "payout_yen": "18620;1920",
+        "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1004202604041120261025/6D"
+      }
+    ],
+    "earliest_verified_jra_start": "2026-10-25T09:50:00+09:00",
+    "dedup_key": "date|track|race_no|race_id",
+    "dedup_unique": 36,
+    "notes": "Original 03:10 commit predates first race. Scored original snapshot, not later 15:32 reseal. Self-reported odds/results flags are not proof."
+  },
+  "model_mechanism": "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT+MONTE_CARLO_FINALIZER_V1",
+  "scored_36r_provisional": {
+    "race_count": 36,
+    "bought_races": 28,
+    "stake_yen": 24100,
+    "return_yen": 6600,
+    "gross_roi_pct": 27.39,
+    "largest_payout_yen": 3880,
+    "roi_ex_largest_pct": 11.29,
+    "hit_races": 3,
+    "bought_hit_rate_pct": 10.71,
+    "axis_top3_races": 14,
+    "axis_top3_bought_races": 11,
+    "decisions": {
+      "BUY": {
+        "races": 12,
+        "bought": 12,
+        "stake_yen": 10800,
+        "return_yen": 6600,
+        "hits": 3,
+        "axis_top3": 7,
+        "roi_pct": 61.11
+      },
+      "CAUTION": {
+        "races": 16,
+        "bought": 16,
+        "stake_yen": 13300,
+        "return_yen": 0,
+        "hits": 0,
+        "axis_top3": 4,
+        "roi_pct": 0
+      },
+      "PASS": {
+        "races": 8,
+        "bought": 0,
+        "stake_yen": 0,
+        "return_yen": 0,
+        "hits": 0,
+        "axis_top3": 3,
+        "roi_pct": null
+      }
+    },
+    "failures": {
+      "PASS": 8,
+      "AXIS_FAIL": 17,
+      "TICKET_CONVERSION": 3,
+      "HIT": 3,
+      "CANDIDATE_FAIL": 5
+    },
+    "winning_races": [
+      {
+        "track": "京都",
+        "race_no": 7,
+        "return_yen": 800,
+        "decision": "BUY"
+      },
+      {
+        "track": "新潟",
+        "race_no": 11,
+        "return_yen": 1920,
+        "decision": "BUY"
+      },
+      {
+        "track": "東京",
+        "race_no": 10,
+        "return_yen": 3880,
+        "decision": "BUY"
+      }
+    ],
+    "missed_high_payouts": [
+      {
+        "track": "新潟",
+        "race_no": 10,
+        "payout_yen": 166440,
+        "comb": "4-8-10"
+      },
+      {
+        "track": "新潟",
+        "race_no": 1,
+        "payout_yen": 149060,
+        "comb": "7-11-12"
+      },
+      {
+        "track": "新潟",
+        "race_no": 9,
+        "payout_yen": 77520,
+        "comb": "1-8-13"
+      },
+      {
+        "track": "新潟",
+        "race_no": 12,
+        "payout_yen": 64180,
+        "comb": "2-6-7"
+      },
+      {
+        "track": "京都",
+        "race_no": 10,
+        "payout_yen": 43250,
+        "comb": "3-10-12"
+      },
+      {
+        "track": "新潟",
+        "race_no": 7,
+        "payout_yen": 31630,
+        "comb": "2-3-8"
+      }
+    ],
+    "gate_90_pass": false
+  },
+  "formal_cohort": {
+    "prior_timing_matched_scored_races": 150,
+    "prior_bought_races": 128,
+    "prior_stake_yen": 111400,
+    "prior_return_yen": 99690,
+    "prior_roi_pct": 89.49,
+    "prior_roi_ex_largest_pct": 75.24,
+    "newly_promoted_races": 0,
+    "reason": "Upstream feature lineage not independently verified; only 3/36 JRA official result pages crosschecked; scratches/refunds and chronological maxDD not audited. Numeric 90% gate also fails.",
+    "formal_new_same_mechanism_fixed_36r_90_passes": 0,
+    "previous_mixed_rolling36_numeric_pass": "Already reported 2026-10-20; not repeated"
+  },
+  "pending": [
+    "Independently audit feature lineage, all 36 official JRA payouts, scratches/refunds.",
+    "Compute chronological maxDD/streak from actual start times.",
+    "Collect new precommitted same-mechanism 36R; paired challenger comparison only with same inputs/stakes."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new formal same-mechanism upstream-audited fixed 36R with both ROI thresholds >90."
+  },
+  "per_race_provisional": [
+    {
+      "race_id": "pw01dde0108202604090120261025",
+      "track": "京都",
+      "race_no": 1,
+      "axis_no": 1,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "1-4-5",
+          "payout_yen": 8520
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604090220261025",
+      "track": "京都",
+      "race_no": 2,
+      "axis_no": 5,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "1-4-5",
+          "payout_yen": 2040
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604090320261025",
+      "track": "京都",
+      "race_no": 3,
+      "axis_no": 5,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "1-2-6",
+          "payout_yen": 470
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604090420261025",
+      "track": "京都",
+      "race_no": 4,
+      "axis_no": 4,
+      "decision": "CAUTION",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "3-10-11",
+          "payout_yen": 18740
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604090520261025",
+      "track": "京都",
+      "race_no": 5,
+      "axis_no": 1,
+      "decision": "CAUTION",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "TICKET_CONVERSION",
+      "trio_outcomes": [
+        {
+          "comb": "1-7-8",
+          "payout_yen": 170
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604090620261025",
+      "track": "京都",
+      "race_no": 6,
+      "axis_no": 1,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "6-11-12",
+          "payout_yen": 2450
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604090720261025",
+      "track": "京都",
+      "race_no": 7,
+      "axis_no": 2,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 800,
+      "axis_top3": true,
+      "failure": "HIT",
+      "trio_outcomes": [
+        {
+          "comb": "2-3-5",
+          "payout_yen": 800
+        }
+      ],
+      "winning_ticket_combos": [
+        "2-3-5"
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604090820261025",
+      "track": "京都",
+      "race_no": 8,
+      "axis_no": 1,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "3-10-18",
+          "payout_yen": 5830
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604090920261025",
+      "track": "京都",
+      "race_no": 9,
+      "axis_no": 8,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "1-5-7",
+          "payout_yen": 6190
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604091020261025",
+      "track": "京都",
+      "race_no": 10,
+      "axis_no": 6,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "3-10-12",
+          "payout_yen": 43250
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604091120261025",
+      "track": "京都",
+      "race_no": 11,
+      "axis_no": 8,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "6-9-10",
+          "payout_yen": 8580
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0108202604091220261025",
+      "track": "京都",
+      "race_no": 12,
+      "axis_no": 3,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "5-7-12",
+          "payout_yen": 11670
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040120261025",
+      "track": "新潟",
+      "race_no": 1,
+      "axis_no": 9,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "7-11-12",
+          "payout_yen": 149060
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040220261025",
+      "track": "新潟",
+      "race_no": 2,
+      "axis_no": 4,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "CANDIDATE_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "4-5-8",
+          "payout_yen": 1580
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040320261025",
+      "track": "新潟",
+      "race_no": 3,
+      "axis_no": 14,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "9-14-18",
+          "payout_yen": 7160
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040420261025",
+      "track": "新潟",
+      "race_no": 4,
+      "axis_no": 5,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "TICKET_CONVERSION",
+      "trio_outcomes": [
+        {
+          "comb": "4-5-13",
+          "payout_yen": 2290
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040520261025",
+      "track": "新潟",
+      "race_no": 5,
+      "axis_no": 18,
+      "decision": "CAUTION",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "2-3-13",
+          "payout_yen": 2330
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040620261025",
+      "track": "新潟",
+      "race_no": 6,
+      "axis_no": 9,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "3-6-10",
+          "payout_yen": 3960
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040720261025",
+      "track": "新潟",
+      "race_no": 7,
+      "axis_no": 8,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "CANDIDATE_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "2-3-8",
+          "payout_yen": 31630
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040820261025",
+      "track": "新潟",
+      "race_no": 8,
+      "axis_no": 10,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "4-12-14",
+          "payout_yen": 6210
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604040920261025",
+      "track": "新潟",
+      "race_no": 9,
+      "axis_no": 2,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "1-8-13",
+          "payout_yen": 77520
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604041020261025",
+      "track": "新潟",
+      "race_no": 10,
+      "axis_no": 12,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "4-8-10",
+          "payout_yen": 166440
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0104202604041120261025",
+      "track": "新潟",
+      "race_no": 11,
+      "axis_no": 14,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 1920,
+      "axis_top3": true,
+      "failure": "HIT",
+      "trio_outcomes": [
+        {
+          "comb": "9-10-11",
+          "payout_yen": 18620
+        },
+        {
+          "comb": "9-11-14",
+          "payout_yen": 1920
+        }
+      ],
+      "winning_ticket_combos": [
+        "9-11-14"
+      ]
+    },
+    {
+      "race_id": "pw01dde0104202604041220261025",
+      "track": "新潟",
+      "race_no": 12,
+      "axis_no": 9,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "2-6-7",
+          "payout_yen": 64180
+        },
+        {
+          "comb": "6-7-10",
+          "payout_yen": 28060
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090120261025",
+      "track": "東京",
+      "race_no": 1,
+      "axis_no": 2,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "11-13-16",
+          "payout_yen": 7710
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090220261025",
+      "track": "東京",
+      "race_no": 2,
+      "axis_no": 7,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "TICKET_CONVERSION",
+      "trio_outcomes": [
+        {
+          "comb": "2-4-7",
+          "payout_yen": 250
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090320261025",
+      "track": "東京",
+      "race_no": 3,
+      "axis_no": 9,
+      "decision": "PASS",
+      "ticket_count": 0,
+      "stake_yen": 0,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "PASS",
+      "trio_outcomes": [
+        {
+          "comb": "1-10-11",
+          "payout_yen": 6250
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090420261025",
+      "track": "東京",
+      "race_no": 4,
+      "axis_no": 6,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "2-3-7",
+          "payout_yen": 1580
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090520261025",
+      "track": "東京",
+      "race_no": 5,
+      "axis_no": 6,
+      "decision": "CAUTION",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "3-5-8",
+          "payout_yen": 3880
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090620261025",
+      "track": "東京",
+      "race_no": 6,
+      "axis_no": 14,
+      "decision": "CAUTION",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "CANDIDATE_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "11-13-14",
+          "payout_yen": 1610
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090720261025",
+      "track": "東京",
+      "race_no": 7,
+      "axis_no": 6,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "CANDIDATE_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "6-9-10",
+          "payout_yen": 8180
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090820261025",
+      "track": "東京",
+      "race_no": 8,
+      "axis_no": 12,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": true,
+      "failure": "CANDIDATE_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "11-12-14",
+          "payout_yen": 4690
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604090920261025",
+      "track": "東京",
+      "race_no": 9,
+      "axis_no": 11,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "3-5-9",
+          "payout_yen": 5290
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604091020261025",
+      "track": "東京",
+      "race_no": 10,
+      "axis_no": 2,
+      "decision": "BUY",
+      "ticket_count": 9,
+      "stake_yen": 900,
+      "return_yen": 3880,
+      "axis_top3": true,
+      "failure": "HIT",
+      "trio_outcomes": [
+        {
+          "comb": "2-4-7",
+          "payout_yen": 3880
+        }
+      ],
+      "winning_ticket_combos": [
+        "2-4-7"
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604091120261025",
+      "track": "東京",
+      "race_no": 11,
+      "axis_no": 13,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "2-4-5",
+          "payout_yen": 2190
+        }
+      ],
+      "winning_ticket_combos": []
+    },
+    {
+      "race_id": "pw01dde0105202604091220261025",
+      "track": "東京",
+      "race_no": 12,
+      "axis_no": 4,
+      "decision": "CAUTION",
+      "ticket_count": 8,
+      "stake_yen": 800,
+      "return_yen": 0,
+      "axis_top3": false,
+      "failure": "AXIS_FAIL",
+      "trio_outcomes": [
+        {
+          "comb": "2-8-11",
+          "payout_yen": 3090
+        }
+      ],
+      "winning_ticket_combos": []
+    }
+  ]
+}
