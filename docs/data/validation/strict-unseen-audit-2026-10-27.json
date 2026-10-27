@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-27",
+  "status": "NO_NEW_FORMAL_SAME_MECHANISM_UPSTREAM_AUDITED_36R_PASS",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-26.json",
+  "source_integrity": {
+    "latest_checked_commit": "c8d8ea7d66eee2736a32e379e4321d0ce940b43d",
+    "previous_audit_blob_sha": "d95c258396449a88a800c47c0408b2c11737a74b",
+    "oct25_immutable_pre_start_seal_commit": "c939970e1784fbf03d4e4424219d386039a8717d",
+    "oct25_seal_commit_utc": "2026-10-24T18:10:10Z",
+    "oct25_seal_commit_jst": "2026-10-25T03:10:10+09:00",
+    "oct25_seal_blob_sha": "6c30dedc1d29465b4e36511463aae6738fba2276",
+    "seal_large_blob_direct_read": "UNAVAILABLE_EMPTY_CONTENT_FROM_CONNECTOR",
+    "oct25_first_race_jst": "2026-10-25T09:50:00+09:00",
+    "caveat": "The original commit predates all Oct25 races, but upstream feature lineage and complete original seal file cannot yet be independently inspected through connector. Later reseal is not evidence."
+  },
+  "independent_recalculation_from_previous_audit_per_race": {
+    "date": "2026-10-25",
+    "unique_races": 36,
+    "duplicates": 0,
+    "bought_races": 28,
+    "stake_yen": 24100,
+    "return_yen": 6600,
+    "gross_roi_pct": 27.39,
+    "largest_payout_yen": 3880,
+    "roi_ex_largest_pct": 11.29,
+    "hit_races": 3,
+    "bought_hit_rate_pct": 10.71,
+    "axis_top3_races": 14,
+    "failures": {
+      "PASS": 8,
+      "AXIS_FAIL": 17,
+      "CANDIDATE_FAIL": 5,
+      "TICKET_CONVERSION": 3,
+      "HIT": 3
+    },
+    "decisions": {
+      "BUY": {
+        "races": 12,
+        "stake_yen": 10800,
+        "return_yen": 6600,
+        "roi_pct": 61.11
+      },
+      "CAUTION": {
+        "races": 16,
+        "stake_yen": 13300,
+        "return_yen": 0,
+        "roi_pct": 0
+      },
+      "PASS": {
+        "races": 8,
+        "stake_yen": 0,
+        "return_yen": 0
+      }
+    },
+    "internal_invariants": {
+      "ticket_count_times_100_equals_stake": "36/36",
+      "winning_ticket_payout_sum_equals_recorded_return": "36/36",
+      "winning_ticket_matches_recorded_trio_outcome": "36/36",
+      "axis_top3_consistent_with_recorded_trio_outcomes": "36/36",
+      "hit_classification_matches_return": "36/36"
+    },
+    "official_payout_independent_crosscheck": "3/36 only, inherited from 2026-10-26 audit",
+    "missed_large_payouts_yen": [
+      166440,
+      149060,
+      77520
+    ],
+    "no_retrospective_BUY_only_model_upgrade": true,
+    "interpretation": "Diagnostic internal arithmetic verified; 36R numeric gate fails both ROI thresholds. Source official payouts, scratches/refunds and feature lineage are not fully audited."
+  },
+  "existing_timing_matched_but_upstream_pending": {
+    "races": 150,
+    "bought_races": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "gross_roi_pct": 89.49,
+    "roi_ex_largest_pct": 75.24,
+    "newly_promoted_races": 0,
+    "status": "NOT_FULLY_LEAK_FREE_1000R_COHORT"
+  },
+  "oct24_replay": {
+    "races": 36,
+    "stake_yen": 26100,
+    "return_yen": 13390,
+    "roi_pct": 51.3,
+    "roi_ex_largest_pct": 36.44,
+    "status": "DIAGNOSTIC_ONLY_LATE_SEAL"
+  },
+  "historical_rolling36": {
+    "range": "111-146",
+    "gross_roi_pct": 156.98,
+    "roi_ex_largest_pct": 94.75,
+    "status": "PREVIOUSLY_REPORTED_MIXED_MECHANISM_NUMERIC_ONLY_NOT_FORMAL"
+  },
+  "paired_challenger": {
+    "status": "NOT_RUN",
+    "reason": "No fully audited same-mechanism predeclared paired 36R input; avoid after-result tuning"
+  },
+  "formal_new_same_mechanism_fixed_36r_90_passes": 0,
+  "next_actions": [
+    "Retrieve immutable Oct25 per-race seal manifest and independent upstream feature timestamp lineage.",
+    "Check all 36 Oct25 official JRA result/payout pages, scratches/refunds and chronological DD.",
+    "Keep Oct24 post-start replay separate unless earlier matching per-race immutable seal is demonstrated.",
+    "Freeze a single mechanism and predeclared challenger for a fixed non-overlapping 36R with identical inputs and ticket constraints.",
+    "Maintain high-payout capture as separate high-priority positive metric, without treating a single hit as stability."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new fixed same-mechanism upstream-audited 36R with gross and max-payout-excluded ROI both above 90%."
+  }
+}
