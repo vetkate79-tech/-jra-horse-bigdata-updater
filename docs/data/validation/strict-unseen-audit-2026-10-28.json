@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-28",
+  "status": "NO_NEW_FORMAL_SAME_MECHANISM_UPSTREAM_AUDITED_FIXED_36R_PASS",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "checked_default_branch_head": "86f87830df002ffd0bbddd541d88d21511018d7b",
+  "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-27.json",
+  "source_refs": {
+    "latest_commit": "https://github.com/vetkate79-tech/-jra-horse-bigdata-updater/commit/86f87830df002ffd0bbddd541d88d21511018d7b",
+    "oct25_original_seal_commit": "c939970e1784fbf03d4e4424219d386039a8717d",
+    "oct25_original_seal_commit_jst": "2026-10-25T03:10:10+09:00",
+    "oct25_original_seal_blob_sha": "6c30dedc1d29465b4e36511463aae6738fba2276",
+    "original_large_seal_connector_read": "EMPTY_CONTENT_NOT_INDEPENDENTLY_INSPECTED",
+    "oct25_replay_file": "NOT_PRESENT",
+    "oct25_per_race_source": "docs/data/validation/strict-unseen-audit-2026-10-26.json",
+    "management_analytics_sha": "a09ef0cfc4cba21223b019f45f89e3c7c1ce9a40"
+  },
+  "independent_aggregate_recalculation": {
+    "source": "2026-10-26 per_race_provisional (diagnostic only)",
+    "unique_races": 36,
+    "duplicates": 0,
+    "purchased_races": 28,
+    "stake_yen": 24100,
+    "return_yen": 6600,
+    "gross_roi_pct": 27.39,
+    "largest_payout_yen": 3880,
+    "roi_ex_largest_pct": 11.29,
+    "hits": 3,
+    "hit_rate_bought_pct": 10.71,
+    "decision_breakdown": {
+      "BUY": {
+        "races": 12,
+        "stake_yen": 10800,
+        "return_yen": 6600,
+        "roi_pct": 61.11,
+        "axis_top3": 7
+      },
+      "CAUTION": {
+        "races": 16,
+        "stake_yen": 13300,
+        "return_yen": 0,
+        "roi_pct": 0,
+        "axis_top3": 4
+      },
+      "PASS": {
+        "races": 8,
+        "stake_yen": 0,
+        "return_yen": 0,
+        "axis_top3": 3
+      }
+    },
+    "failure_counts": {
+      "PASS": 8,
+      "AXIS_FAIL": 17,
+      "TICKET_CONVERSION": 3,
+      "HIT": 3,
+      "CANDIDATE_FAIL": 5
+    },
+    "gate_pass": false
+  },
+  "jra_official_result_rechecked_2026_10_28": [
+    {
+      "race": "2026-10-25 京都7R",
+      "trio": [
+        {
+          "comb": "2-3-5",
+          "payout_yen": 800
+        }
+      ],
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604090720261025/E1"
+    },
+    {
+      "race": "2026-10-25 東京10R",
+      "trio": [
+        {
+          "comb": "2-4-7",
+          "payout_yen": 3880
+        }
+      ],
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604091020261025/62"
+    },
+    {
+      "race": "2026-10-25 新潟11R",
+      "trio": [
+        {
+          "comb": "9-10-11",
+          "payout_yen": 18620
+        },
+        {
+          "comb": "9-11-14",
+          "payout_yen": 1920
+        }
+      ],
+      "actual_start_changed_to_jst": "15:11",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1004202604041120261025/6D"
+    }
+  ],
+  "jra_official_complete_coverage": "3/36 only; remaining 33 races unverified against official JRA source",
+  "audit_quality_findings": [
+    "Niigata11 and Niigata12 each have multiple trio outcomes (dead-heat handling); must score ticket-specific combinations rather than one payout per race.",
+    "Management analytics scored_races=210, stake=155900, return=116490, ROI=74.72 are mixed diagnostic metrics, not independently leak-free strict cohort; do not replace 150R timing-matched baseline.",
+    "Management analytics max_drawdown=0 despite negative cumulative profit is suspicious/unusable until metric implementation and ordering are audited.",
+    "Management analytics sub10k_roi=81.65 uses exclusion of 10k+ races and is not comparable to largest-payout-excluded ROI.",
+    "No new default-branch audit for 2026-10-28 existed before this write. Most recent commit updates 2026-10-27 audit only."
+  ],
+  "carried_forward_timing_matched_upstream_pending": {
+    "races": 150,
+    "bought": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "gross_roi_pct": 89.49,
+    "roi_ex_largest_pct": 75.24,
+    "newly_promoted_races": 0
+  },
+  "historical_mixed_mechanism_rolling36": {
+    "gross_roi_pct": 156.98,
+    "roi_ex_largest_pct": 94.75,
+    "status": "ALREADY_REPORTED_NUMERIC_ONLY_NOT_NEW_FORMAL_PASS"
+  },
+  "upstream_lineage_independently_verified": false,
+  "full_official_results_and_refunds_verified": false,
+  "new_formal_fixed_36r_passes": 0,
+  "paired_challenger": "NOT_RUN_NO_FULLY_AUDITED_PRECOMMITTED_PAIRED_INPUT",
+  "next_actions": [
+    "Retrieve immutable compact original per-race Oct25 prediction/feature manifest to audit feature lineage and exact pre-start tickets.",
+    "Complete official JRA results/refunds/scratch crosscheck for remaining 33/36 Oct25 races.",
+    "Validate chronological race starts and compute real maxDD/losing streak; do not accept dashboard max_drawdown=0 at face value.",
+    "Collect and freeze next non-overlapping same-mechanism 36R and predeclared single-change challenger before racing."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new fully upstream-audited same-mechanism predeclared 36R with both ROI thresholds above 90%; no repeated notification of 2026-10-20 mixed rolling pass."
+  }
+}
