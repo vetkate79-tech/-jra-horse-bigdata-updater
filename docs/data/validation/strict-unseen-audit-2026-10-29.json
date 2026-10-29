@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-29",
+  "status": "NO_NEW_FORMAL_UPSTREAM_AUDITED_FIXED_36R_PASS",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "checked_default_branch_head": "e8565e1eb64a46cc4de2e9daff619cc33d14fc1b",
+  "checked_latest_commit_utc": "2026-10-28T22:50:54Z",
+  "latest_commit_changes": [
+    "docs/data/site-term-candidates.json",
+    "status/site_term_coverage.json"
+  ],
+  "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-28.json",
+  "source_per_race": "docs/data/validation/strict-unseen-audit-2026-10-26.json",
+  "original_oct25_seal_commit": "c939970e1784fbf03d4e4424219d386039a8717d",
+  "original_oct25_seal_commit_utc": "2026-10-24T18:10:10Z",
+  "original_oct25_seal_blob_sha": "6c30dedc1d29465b4e36511463aae6738fba2276",
+  "original_oct25_seal_content_directly_inspected": false,
+  "original_oct25_seal_read_limitation": "GitHub connector returns empty content for large original immutable seal; commit and blob SHA exist but original complete per-race prediction and upstream feature lineage remain independently uninspected.",
+  "oct25_diagnostic": {
+    "races": 36,
+    "unique_keys": 36,
+    "duplicates": 0,
+    "purchased": 28,
+    "stake_yen": 24100,
+    "return_yen": 6600,
+    "net_yen": -17500,
+    "gross_roi_pct": 27.39,
+    "largest_return_yen": 3880,
+    "roi_ex_largest_pct": 11.29,
+    "hits": 3,
+    "hit_rate_bought_pct": 10.71,
+    "per_track": [
+      {
+        "track": "京都",
+        "races": 12,
+        "purchased": 8,
+        "stake_yen": 6900,
+        "return_yen": 800,
+        "roi_pct": 11.59,
+        "hits": 1,
+        "axis_fail": 6,
+        "candidate_fail": 0,
+        "axis_top3_all": 4
+      },
+      {
+        "track": "新潟",
+        "races": 12,
+        "purchased": 10,
+        "stake_yen": 8500,
+        "return_yen": 1920,
+        "roi_pct": 22.59,
+        "hits": 1,
+        "axis_fail": 6,
+        "candidate_fail": 2,
+        "axis_top3_all": 5
+      },
+      {
+        "track": "東京",
+        "races": 12,
+        "purchased": 10,
+        "stake_yen": 8700,
+        "return_yen": 3880,
+        "roi_pct": 44.6,
+        "hits": 1,
+        "axis_fail": 5,
+        "candidate_fail": 3,
+        "axis_top3_all": 5
+      }
+    ],
+    "max_drawdown_lower_bound_yen": 17500,
+    "max_drawdown_lower_bound_reason": "Regardless of race ordering, cumulative P&L from zero finishes at -17500 yen, so true peak-to-trough drawdown cannot be less than 17500 yen; actual chronological maximum remains uncomputed.",
+    "max_dd_exact_available": false,
+    "largest_missed_trio_payouts_yen": [
+      166440,
+      149060,
+      77520,
+      64180,
+      43250,
+      31630
+    ],
+    "high_payout_caveat": "These are JRA trio dividends not realized returns; cannot treat missed payouts as foregone achievable model profit."
+  },
+  "jra_official_trio_crosschecks": {
+    "verified_races": 9,
+    "of": 36,
+    "previously_checked": 3,
+    "newly_checked": 6,
+    "remaining": 27,
+    "matched": true,
+    "comparisons": [
+      {
+        "track": "京都",
+        "race_no": 7,
+        "matched": true,
+        "source": "RECONFIRMED_FROM_PRIOR_AUDIT"
+      },
+      {
+        "track": "東京",
+        "race_no": 10,
+        "matched": true,
+        "source": "CARRIED_FROM_PRIOR_AUDIT"
+      },
+      {
+        "track": "新潟",
+        "race_no": 11,
+        "matched": true,
+        "source": "CARRIED_FROM_PRIOR_AUDIT"
+      },
+      {
+        "track": "新潟",
+        "race_no": 1,
+        "matched": true,
+        "source": "NEW_2026_10_29"
+      },
+      {
+        "track": "新潟",
+        "race_no": 7,
+        "matched": true,
+        "source": "NEW_2026_10_29"
+      },
+      {
+        "track": "新潟",
+        "race_no": 9,
+        "matched": true,
+        "source": "NEW_2026_10_29"
+      },
+      {
+        "track": "新潟",
+        "race_no": 10,
+        "matched": true,
+        "source": "NEW_2026_10_29"
+      },
+      {
+        "track": "新潟",
+        "race_no": 12,
+        "matched": true,
+        "source": "NEW_2026_10_29"
+      },
+      {
+        "track": "京都",
+        "race_no": 10,
+        "matched": true,
+        "source": "NEW_2026_10_29"
+      }
+    ],
+    "links": [
+      {
+        "track": "京都",
+        "race_no": 7,
+        "url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde0108202604090720261025/6E",
+        "combos": [
+          [
+            "2-3-5",
+            800
+          ]
+        ]
+      },
+      {
+        "track": "東京",
+        "race_no": 10,
+        "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604091020261025/62",
+        "combos": [
+          [
+            "2-4-7",
+            3880
+          ]
+        ]
+      },
+      {
+        "track": "新潟",
+        "race_no": 11,
+        "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1004202604041120261025/6D",
+        "combos": [
+          [
+            "9-10-11",
+            18620
+          ],
+          [
+            "9-11-14",
+            1920
+          ]
+        ]
+      },
+      {
+        "track": "新潟",
+        "race_no": 1,
+        "url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040120261025/A8",
+        "combos": [
+          [
+            "7-11-12",
+            149060
+          ]
+        ]
+      },
+      {
+        "track": "新潟",
+        "race_no": 7,
+        "url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde0104202604040720261025/07",
+        "combos": [
+          [
+            "2-3-8",
+            31630
+          ]
+        ]
+      },
+      {
+        "track": "新潟",
+        "race_no": 9,
+        "url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040920261025/50",
+        "combos": [
+          [
+            "1-8-13",
+            77520
+          ]
+        ]
+      },
+      {
+        "track": "新潟",
+        "race_no": 10,
+        "url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604041020261025/45",
+        "combos": [
+          [
+            "4-8-10",
+            166440
+          ]
+        ]
+      },
+      {
+        "track": "新潟",
+        "race_no": 12,
+        "url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604041220261025/AF",
+        "combos": [
+          [
+            "2-6-7",
+            64180
+          ],
+          [
+            "6-7-10",
+            28060
+          ]
+        ]
+      },
+      {
+        "track": "京都",
+        "race_no": 10,
+        "url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604091020261025/AC",
+        "combos": [
+          [
+            "3-10-12",
+            43250
+          ]
+        ]
+      }
+    ]
+  },
+  "management_dashboard_invariant": {
+    "source": "docs/data/dashboard.json",
+    "scored_races": 210,
+    "stake_yen": 155900,
+    "return_yen": 116490,
+    "net_yen": -39410,
+    "reported_max_drawdown_yen": 0,
+    "minimum_possible_max_drawdown_yen": 39410,
+    "status": "DASHBOARD_DD_ZERO_IS_MATHEMATICALLY_INCOMPATIBLE_WITH_NEGATIVE_FINAL_PNL; FIX_REQUIRED; DIAGNOSTIC_COHORT_ONLY"
+  },
+  "carried_forward_timing_matched_upstream_pending": {
+    "races": 150,
+    "bought": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "gross_roi_pct": 89.49,
+    "roi_ex_largest_pct": 75.24,
+    "newly_promoted_races": 0
+  },
+  "historical_mixed_mechanism_rolling36": {
+    "gross_roi_pct": 156.98,
+    "roi_ex_largest_pct": 94.75,
+    "already_reported": true,
+    "formal_single_mechanism_pass": false
+  },
+  "new_formal_same_mechanism_upstream_audited_fixed36_passes": 0,
+  "challenger": {
+    "paired_test_run": false,
+    "reason": "No fully upstream-audited predeclared paired inputs with same mechanism and identical bet constraints; no retrospective tuning."
+  },
+  "next_actions": [
+    "Independently retrieve original Oct25 immutable per-race seal and upstream feature lineage with exact pre-start timestamps.",
+    "Crosscheck remaining 27 of 36 Oct25 JRA official trio results, scratches/refunds, and start times.",
+    "Fix dashboard maxDD implementation and calculate chronological actual DD and losing streaks from immutable ticket ledger.",
+    "Freeze new same-mechanism nonoverlapping 36R cohort with predeclared single-change Challenger; preserve high-dividend capture metric."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new fixed same-mechanism upstream-audited 36R lot satisfying both ROI>90 and largest-payout-excluded ROI>90. Prior mixed rolling36 achievement already reported."
+  }
+}
