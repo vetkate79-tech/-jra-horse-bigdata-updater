@@ -3,3637 +3,2383 @@
   "market_layer_only": true,
   "pure_prediction_mutated": false,
   "odds_type": "WIN",
-  "snapshot_slot": "T30_5MIN",
-  "captured_at": "2026-10-25T11:56:57.628405+09:00",
-  "race_count": 36,
-  "runner_odds_count": 467,
+  "snapshot_slot": "HOURLY",
+  "captured_at": "2026-10-31T00:50:26.511651+09:00",
+  "race_count": 24,
+  "runner_odds_count": 305,
   "races": [
     {
-      "race_id": "pw01dde0108202604090120261025",
-      "date": "2026-10-25",
+      "race_id": "pw01dde0108202604100120261031",
+      "date": "2026-10-31",
       "track": "京都",
       "race_no": 1,
       "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090120261025%2FE7",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100120261031%2F52",
       "win_odds": [
         {
-          "horse_id": "pw01dud102024107172/FE",
-          "horse_no": "1",
-          "horse_name": "ナオミガサイキョウ",
-          "win_odds": 1.4,
+          "horse_id": "pw01dud102024108132/AD",
+          "horse_no": "5",
+          "horse_name": "マルモリマイベスト",
+          "win_odds": 2.3,
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102024106232/00",
-          "horse_no": "3",
-          "horse_name": "マリナーヴァレイ",
-          "win_odds": 3.3,
+          "horse_id": "pw01dud102024109047/BA",
+          "horse_no": "7",
+          "horse_name": "シムサラビン",
+          "win_odds": 8.6,
           "market_rank": 2
         },
         {
-          "horse_id": "pw01dud102024103078/C3",
-          "horse_no": "6",
-          "horse_name": "ウインブリーズ",
-          "win_odds": 7.2,
+          "horse_id": "pw01dud102024108284/14",
+          "horse_no": "1",
+          "horse_name": "スリーオブスペイズ",
+          "win_odds": 8.8,
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102024104231/AF",
-          "horse_no": "8",
-          "horse_name": "マリアーナ",
-          "win_odds": 20.1,
+          "horse_id": "pw01dud102024108327/3E",
+          "horse_no": "14",
+          "horse_name": "ピコジャック",
+          "win_odds": 8.8,
           "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102024102645/71",
-          "horse_no": "4",
-          "horse_name": "ミール",
-          "win_odds": 26.7,
+          "horse_id": "pw01dud102024103815/92",
+          "horse_no": "9",
+          "horse_name": "エアロクリスタ",
+          "win_odds": 9.7,
           "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102024104786/33",
-          "horse_no": "2",
-          "horse_name": "キミチャン",
-          "win_odds": 39.1,
+          "horse_id": "pw01dud102024100358/69",
+          "horse_no": "13",
+          "horse_name": "ジャスコヒラリアス",
+          "win_odds": 13.4,
           "market_rank": 6
         },
         {
-          "horse_id": "pw01dud102024107251/9C",
-          "horse_no": "5",
-          "horse_name": "アップルペアー",
-          "win_odds": 64.9,
+          "horse_id": "pw01dud102024103504/7C",
+          "horse_no": "8",
+          "horse_name": "ベラジオセブン",
+          "win_odds": 15.7,
           "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102024101134/0A",
-          "horse_no": "7",
-          "horse_name": "オージーブラック",
-          "win_odds": 89.8,
+          "horse_id": "pw01dud102024105952/88",
+          "horse_no": "10",
+          "horse_name": "ダイユウエゾフジ",
+          "win_odds": 16.0,
           "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024105434/59",
+          "horse_no": "12",
+          "horse_name": "アセンシオン",
+          "win_odds": 20.6,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024103952/AA",
+          "horse_no": "16",
+          "horse_name": "ヴァルダンセ",
+          "win_odds": 27.5,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024108341/AC",
+          "horse_no": "11",
+          "horse_name": "エリーマイラヴ",
+          "win_odds": 39.4,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102024100260/B0",
+          "horse_no": "6",
+          "horse_name": "ピエナマーズ",
+          "win_odds": 51.9,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024104203/65",
+          "horse_no": "3",
+          "horse_name": "ウィナーズクロノ",
+          "win_odds": 55.0,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102024103364/7A",
+          "horse_no": "4",
+          "horse_name": "ランズエンド",
+          "win_odds": 59.4,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102024104826/04",
+          "horse_no": "15",
+          "horse_name": "ヤマトデュノール",
+          "win_odds": 98.9,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102024105015/E8",
+          "horse_no": "2",
+          "horse_name": "ゴールドアーク",
+          "win_odds": 115.6,
+          "market_rank": 16
         }
       ]
     },
     {
-      "race_id": "pw01dde0108202604090220261025",
-      "date": "2026-10-25",
+      "race_id": "pw01dde0108202604100220261031",
+      "date": "2026-10-31",
       "track": "京都",
       "race_no": 2,
       "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090220261025%2F9C",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100220261031%2F07",
       "win_odds": [
         {
-          "horse_id": "pw01dud102024106406/FE",
-          "horse_no": "4",
-          "horse_name": "サルトヴェローチェ",
-          "win_odds": 1.5,
+          "horse_id": "pw01dud102024102197/B2",
+          "horse_no": "9",
+          "horse_name": "コンセルノ",
+          "win_odds": 2.2,
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102024103377/E3",
-          "horse_no": "5",
-          "horse_name": "タガノゲイル",
-          "win_odds": 4.5,
+          "horse_id": "pw01dud102024106277/7F",
+          "horse_no": "6",
+          "horse_name": "ラガッタレアーレ",
+          "win_odds": 3.1,
           "market_rank": 2
         },
         {
-          "horse_id": "pw01dud102024102038/94",
-          "horse_no": "7",
-          "horse_name": "メイショウギフト",
-          "win_odds": 5.0,
+          "horse_id": "pw01dud102024106809/1B",
+          "horse_no": "8",
+          "horse_name": "ダディーズレガリア",
+          "win_odds": 7.4,
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102024106792/55",
-          "horse_no": "2",
-          "horse_name": "ランスオブナイト",
-          "win_odds": 16.9,
+          "horse_id": "pw01dud102024101768/2C",
+          "horse_no": "7",
+          "horse_name": "ヒノトリ",
+          "win_odds": 8.2,
           "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102024101394/CC",
-          "horse_no": "8",
-          "horse_name": "マンノエンプレス",
-          "win_odds": 20.4,
+          "horse_id": "pw01dud102024100340/C1",
+          "horse_no": "1",
+          "horse_name": "フクノブルースカイ",
+          "win_odds": 11.9,
           "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102024101174/4A",
-          "horse_no": "3",
-          "horse_name": "タナコクシテンホウ",
-          "win_odds": 24.5,
+          "horse_id": "pw01dud102024101070/4D",
+          "horse_no": "5",
+          "horse_name": "サウンドアミューズ",
+          "win_odds": 14.9,
           "market_rank": 6
         },
         {
-          "horse_id": "pw01dud102024104426/40",
-          "horse_no": "9",
-          "horse_name": "イザベル",
-          "win_odds": 43.4,
+          "horse_id": "pw01dud102024106871/F3",
+          "horse_no": "10",
+          "horse_name": "トゥルーライフ",
+          "win_odds": 27.9,
           "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102024103038/83",
-          "horse_no": "1",
-          "horse_name": "スナークモネ",
-          "win_odds": 82.2,
+          "horse_id": "pw01dud102024108222/CE",
+          "horse_no": "2",
+          "horse_name": "ルガルデ",
+          "win_odds": 57.7,
           "market_rank": 8
         },
         {
-          "horse_id": "pw01dud102024105611/42",
-          "horse_no": "10",
-          "horse_name": "メイショウペルル",
-          "win_odds": 134.2,
+          "horse_id": "pw01dud102024106913/AA",
+          "horse_no": "4",
+          "horse_name": "ジューンルル",
+          "win_odds": 79.3,
           "market_rank": 9
         },
         {
-          "horse_id": "pw01dud102024104429/99",
-          "horse_no": "6",
-          "horse_name": "メネルブ",
-          "win_odds": 342.9,
+          "horse_id": "pw01dud102024104848/0A",
+          "horse_no": "3",
+          "horse_name": "ナムラサフラン",
+          "win_odds": 87.3,
           "market_rank": 10
         }
       ]
     },
     {
-      "race_id": "pw01dde0108202604090320261025",
-      "date": "2026-10-25",
+      "race_id": "pw01dde0108202604100320261031",
+      "date": "2026-10-31",
       "track": "京都",
       "race_no": 3,
       "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090320261025%2F51",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100320261031%2FBC",
       "win_odds": [
         {
-          "horse_id": "pw01dud102024106396/5D",
-          "horse_no": "2",
-          "horse_name": "ドンクラッシュ",
-          "win_odds": 1.7,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024107058/5F",
-          "horse_no": "6",
-          "horse_name": "デュアルサイン",
-          "win_odds": 2.9,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024106050/D8",
-          "horse_no": "9",
-          "horse_name": "マルカクラック",
-          "win_odds": 6.8,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024104709/0C",
-          "horse_no": "1",
-          "horse_name": "コルサロ",
-          "win_odds": 12.7,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024106879/8B",
-          "horse_no": "3",
-          "horse_name": "エモティコン",
-          "win_odds": 16.5,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024102372/B5",
-          "horse_no": "4",
-          "horse_name": "レイディアントサン",
-          "win_odds": 50.0,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024105437/B2",
-          "horse_no": "5",
-          "horse_name": "シュプレヒコール",
-          "win_odds": 56.0,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024102207/53",
-          "horse_no": "8",
-          "horse_name": "メイショウソレイユ",
-          "win_odds": 130.4,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024103913/DD",
+          "horse_id": "pw01dud102024101334/6C",
           "horse_no": "7",
-          "horse_name": "ヒルノアラゴン",
-          "win_odds": 179.6,
-          "market_rank": 9
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604090420261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 4,
-      "race_name": "メイクデビュー京都",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090420261025%2F06",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024105631/62",
-          "horse_no": "11",
-          "horse_name": "パッションシーザー",
-          "win_odds": 2.8,
+          "horse_name": "ディープリメンバー",
+          "win_odds": 2.4,
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102024100459/0D",
-          "horse_no": "4",
-          "horse_name": "マーゴットヴィム",
-          "win_odds": 3.9,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024102481/83",
-          "horse_no": "15",
-          "horse_name": "ザラフェット",
-          "win_odds": 6.7,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024100411/35",
-          "horse_no": "7",
-          "horse_name": "スナークゴーギャン",
-          "win_odds": 7.6,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024102478/98",
-          "horse_no": "3",
-          "horse_name": "リワナグ",
-          "win_odds": 11.0,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024104444/7A",
-          "horse_no": "14",
-          "horse_name": "オウゴンノヤ",
-          "win_odds": 12.9,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024104396/7F",
+          "horse_id": "pw01dud102024106991/44",
           "horse_no": "8",
-          "horse_name": "スマートサロン",
-          "win_odds": 16.0,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024104436/50",
-          "horse_no": "1",
-          "horse_name": "ブルーエノワール",
-          "win_odds": 24.5,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024107134/A4",
-          "horse_no": "10",
-          "horse_name": "メイショウアンブル",
-          "win_odds": 47.8,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024104625/2F",
-          "horse_no": "6",
-          "horse_name": "アスレイ",
-          "win_odds": 53.2,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024104246/FE",
-          "horse_no": "2",
-          "horse_name": "サイボーグ",
-          "win_odds": 55.2,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024104045/29",
-          "horse_no": "13",
-          "horse_name": "フィアローゼン",
-          "win_odds": 59.8,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024104378/45",
-          "horse_no": "16",
-          "horse_name": "テムルヴァン",
-          "win_odds": 115.1,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102024102229/59",
-          "horse_no": "5",
-          "horse_name": "ヤソタケル",
-          "win_odds": 144.2,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102024108008/FE",
-          "horse_no": "12",
-          "horse_name": "アランチャ",
-          "win_odds": 178.8,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102024101109/19",
-          "horse_no": "9",
-          "horse_name": "クーアイエルフ",
-          "win_odds": 240.1,
-          "market_rank": 16
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604090520261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 5,
-      "race_name": "メイクデビュー京都",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090520261025%2FBB",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024106292/60",
-          "horse_no": "1",
-          "horse_name": "ノイエルング",
-          "win_odds": 1.7,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024104321/D0",
-          "horse_no": "8",
-          "horse_name": "ダノンカンタービレ",
-          "win_odds": 2.7,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024107196/EA",
-          "horse_no": "7",
-          "horse_name": "ゴールデンプロミス",
-          "win_odds": 6.3,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024102356/61",
-          "horse_no": "6",
-          "horse_name": "サイモングレイス",
-          "win_odds": 24.8,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024100484/FE",
-          "horse_no": "4",
-          "horse_name": "セレーネサンライズ",
-          "win_odds": 25.5,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024102032/E2",
-          "horse_no": "5",
-          "horse_name": "ウインリヒト",
-          "win_odds": 39.3,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024101523/4B",
-          "horse_no": "2",
-          "horse_name": "テールルージュ",
-          "win_odds": 39.4,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024104273/D5",
-          "horse_no": "3",
-          "horse_name": "ホオマナ",
-          "win_odds": 51.5,
-          "market_rank": 8
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604090620261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 6,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090620261025%2F70",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022110125/34",
-          "horse_no": "11",
-          "horse_name": "ヤエギリ",
-          "win_odds": 2.5,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022105075/30",
-          "horse_no": "12",
-          "horse_name": "タイセイドラード",
-          "win_odds": 5.2,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102022101062/0B",
-          "horse_no": "10",
-          "horse_name": "インディゴ",
-          "win_odds": 5.8,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102023101607/9C",
-          "horse_no": "1",
-          "horse_name": "ダイメイクマモト",
-          "win_odds": 6.6,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022102710/1B",
-          "horse_no": "5",
-          "horse_name": "エイユーファイヤー",
-          "win_odds": 8.3,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102021101557/A3",
-          "horse_no": "6",
-          "horse_name": "タマモランプ",
-          "win_odds": 14.7,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023104411/65",
-          "horse_no": "4",
-          "horse_name": "コルヴァス",
-          "win_odds": 18.8,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102021110121/DC",
-          "horse_no": "3",
-          "horse_name": "アメリカンランナー",
-          "win_odds": 42.0,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102020103314/FA",
-          "horse_no": "8",
-          "horse_name": "カレンパンピナップ",
-          "win_odds": 46.2,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102022110133/5E",
-          "horse_no": "7",
-          "horse_name": "メイショウアイナ",
-          "win_odds": 48.9,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102023102998/21",
-          "horse_no": "2",
-          "horse_name": "ペイシャプル",
-          "win_odds": 53.5,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102023104408/7A",
-          "horse_no": "9",
-          "horse_name": "ナウオアネヴァー",
-          "win_odds": 58.9,
-          "market_rank": 12
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604090720261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 7,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090720261025%2F25",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023105247/D4",
-          "horse_no": "3",
-          "horse_name": "サトノアグード",
-          "win_odds": 2.1,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023107297/02",
-          "horse_no": "5",
-          "horse_name": "ルーチェブリラーレ",
-          "win_odds": 4.0,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102023101207/D8",
-          "horse_no": "4",
-          "horse_name": "メイショウショカツ",
-          "win_odds": 6.6,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102023103246/83",
-          "horse_no": "8",
-          "horse_name": "ブラックシャリマー",
-          "win_odds": 8.5,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023109106/AC",
-          "horse_no": "2",
-          "horse_name": "ダイチノナポリ",
-          "win_odds": 10.0,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022105190/42",
-          "horse_no": "1",
-          "horse_name": "ブルーミングローズ",
-          "win_odds": 15.1,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023106614/FE",
-          "horse_no": "7",
-          "horse_name": "レッドリガーレ",
-          "win_odds": 22.1,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102023106226/30",
-          "horse_no": "9",
-          "horse_name": "ナムラヒナギク",
-          "win_odds": 26.6,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022102957/E2",
-          "horse_no": "6",
-          "horse_name": "ヴィーナスバブル",
-          "win_odds": 51.2,
-          "market_rank": 9
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604090820261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 8,
-      "race_name": "壬生特別",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090820261025%2FDA",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023105415/20",
-          "horse_no": "3",
-          "horse_name": "ルージュスプリヤ",
-          "win_odds": 2.8,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023101632/8D",
-          "horse_no": "17",
-          "horse_name": "マーゴットミスト",
-          "win_odds": 5.2,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102022110063/5D",
-          "horse_no": "1",
-          "horse_name": "サディーク",
-          "win_odds": 10.2,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102023110055/BF",
-          "horse_no": "15",
-          "horse_name": "グッドピース",
-          "win_odds": 12.1,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022106438/FC",
-          "horse_no": "10",
-          "horse_name": "タマモブラウンタイ",
-          "win_odds": 12.6,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102021110023/91",
-          "horse_no": "7",
-          "horse_name": "エクストラバック",
-          "win_odds": 15.7,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102022103188/EC",
-          "horse_no": "9",
-          "horse_name": "メイショウゴールド",
-          "win_odds": 17.1,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102023100942/41",
-          "horse_no": "18",
-          "horse_name": "マウンテンバローズ",
-          "win_odds": 19.1,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102021100365/7C",
-          "horse_no": "2",
-          "horse_name": "トウカイエルデ",
-          "win_odds": 19.4,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102020103632/C7",
-          "horse_no": "6",
-          "horse_name": "スイミーユニバンス",
-          "win_odds": 19.5,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102022104501/FA",
-          "horse_no": "16",
-          "horse_name": "パリコレジェンヌ",
-          "win_odds": 28.6,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102023103036/11",
-          "horse_no": "13",
-          "horse_name": "カガラプンツェル",
-          "win_odds": 30.0,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102020104732/E7",
-          "horse_no": "4",
-          "horse_name": "ハルオーブ",
-          "win_odds": 30.8,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102020106777/44",
-          "horse_no": "14",
-          "horse_name": "セレッソデアモール",
-          "win_odds": 62.8,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102022106351/C6",
-          "horse_no": "12",
-          "horse_name": "ベビーズブレス",
-          "win_odds": 64.7,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102020106821/73",
-          "horse_no": "5",
-          "horse_name": "ピースフルナイト",
-          "win_odds": 71.7,
-          "market_rank": 16
-        },
-        {
-          "horse_id": "pw01dud102022109145/ED",
-          "horse_no": "8",
-          "horse_name": "エイヨーアメジスト",
-          "win_odds": 76.3,
-          "market_rank": 17
-        },
-        {
-          "horse_id": "pw01dud102023105661/06",
-          "horse_no": "11",
-          "horse_name": "ストロングボンド",
-          "win_odds": 134.7,
-          "market_rank": 18
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604090920261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 9,
-      "race_name": "萩ステークス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604090920261025%2F8F",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024106744/EB",
-          "horse_no": "4",
-          "horse_name": "ヴァンクライ",
-          "win_odds": 2.5,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024104442/94",
-          "horse_no": "7",
-          "horse_name": "イッペイ",
-          "win_odds": 5.5,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024103469/EA",
-          "horse_no": "9",
-          "horse_name": "レインインザスカイ",
-          "win_odds": 6.6,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024106674/EA",
-          "horse_no": "8",
-          "horse_name": "ブレイクガール",
-          "win_odds": 6.9,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024105936/34",
-          "horse_no": "5",
-          "horse_name": "ミランダスマイル",
-          "win_odds": 8.3,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024108228/80",
-          "horse_no": "3",
-          "horse_name": "デミアン",
-          "win_odds": 9.7,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024105037/EE",
-          "horse_no": "1",
-          "horse_name": "フランソワーズ",
-          "win_odds": 11.4,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024106514/59",
-          "horse_no": "6",
-          "horse_name": "シュヴァルツペルレ",
-          "win_odds": 23.3,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024106002/6E",
-          "horse_no": "2",
-          "horse_name": "ユーダブルワン",
-          "win_odds": 44.8,
-          "market_rank": 9
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604091020261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 10,
-      "race_name": "カノープスステークス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604091020261025%2F84",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022110121/68",
-          "horse_no": "13",
-          "horse_name": "ゴールデンクラウド",
-          "win_odds": 5.1,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022103267/8A",
-          "horse_no": "6",
-          "horse_name": "ギュルヴィ",
-          "win_odds": 5.8,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102022105702/BE",
-          "horse_no": "5",
-          "horse_name": "リアライズカミオン",
-          "win_odds": 7.3,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102020101694/2F",
-          "horse_no": "2",
-          "horse_name": "シゲルショウグン",
-          "win_odds": 8.5,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022100159/62",
-          "horse_no": "3",
-          "horse_name": "クインズショコラ",
-          "win_odds": 10.1,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102018105431/C5",
-          "horse_no": "9",
-          "horse_name": "ミッキーヌチバナ",
-          "win_odds": 10.6,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102021100838/9A",
-          "horse_no": "7",
-          "horse_name": "モンブランミノル",
-          "win_odds": 11.7,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102020101020/CD",
-          "horse_no": "4",
-          "horse_name": "ペイシャモノノフ",
-          "win_odds": 15.1,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022104877/AF",
-          "horse_no": "10",
-          "horse_name": "カナルビーグル",
-          "win_odds": 17.1,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102021103717/A3",
-          "horse_no": "11",
-          "horse_name": "レヴォントゥレット",
-          "win_odds": 19.3,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021104646/1E",
-          "horse_no": "15",
-          "horse_name": "ジンセイ",
-          "win_odds": 19.6,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102022100154/23",
-          "horse_no": "12",
-          "horse_name": "メイショウズイウン",
-          "win_odds": 20.9,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102020106873/A9",
-          "horse_no": "8",
-          "horse_name": "オウギノカナメ",
-          "win_odds": 29.0,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102022103941/0F",
-          "horse_no": "1",
-          "horse_name": "ルヴァンユニベール",
-          "win_odds": 29.5,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102020106370/5B",
-          "horse_no": "14",
-          "horse_name": "サンマルパトロール",
-          "win_odds": 92.1,
-          "market_rank": 15
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0108202604091120261025",
-      "date": "2026-10-25",
-      "track": "京都",
-      "race_no": 11,
-      "race_name": "第87回 菊花賞",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604091120261025%2F39",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023107089/76",
-          "horse_no": "8",
-          "horse_name": "ロブチェン",
-          "win_odds": 1.7,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023107005/2A",
-          "horse_no": "10",
-          "horse_name": "ダノンヒストリー",
+          "horse_name": "アイオリスパルス",
           "win_odds": 4.4,
           "market_rank": 2
         },
         {
-          "horse_id": "pw01dud102023105378/A8",
-          "horse_no": "9",
-          "horse_name": "ゴーイントゥスカイ",
-          "win_odds": 11.9,
+          "horse_id": "pw01dud102024104309/48",
+          "horse_no": "4",
+          "horse_name": "ポカポカヨウキ",
+          "win_odds": 4.5,
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102023106924/A1",
+          "horse_id": "pw01dud102024106131/5C",
           "horse_no": "5",
-          "horse_name": "ジャスティンシカゴ",
-          "win_odds": 14.2,
+          "horse_name": "ブラックミューズ",
+          "win_odds": 4.5,
           "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102023107321/11",
-          "horse_no": "3",
-          "horse_name": "アウダーシア",
-          "win_odds": 20.0,
+          "horse_id": "pw01dud102024107167/2D",
+          "horse_no": "1",
+          "horse_name": "シルクウォード",
+          "win_odds": 10.7,
           "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102023106963/6E",
-          "horse_no": "2",
-          "horse_name": "コンジェスタス",
-          "win_odds": 20.6,
+          "horse_id": "pw01dud102024105768/E8",
+          "horse_no": "6",
+          "horse_name": "サントボーム",
+          "win_odds": 30.4,
           "market_rank": 6
         },
         {
-          "horse_id": "pw01dud102023106400/C0",
-          "horse_no": "11",
-          "horse_name": "アスクエジンバラ",
-          "win_odds": 24.0,
+          "horse_id": "pw01dud102024100008/86",
+          "horse_no": "3",
+          "horse_name": "メメヤンチャヒメ",
+          "win_odds": 33.9,
           "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102023107247/B2",
-          "horse_no": "6",
-          "horse_name": "バステール",
-          "win_odds": 37.1,
+          "horse_id": "pw01dud102024105274/37",
+          "horse_no": "2",
+          "horse_name": "ウィリーウィリー",
+          "win_odds": 64.4,
           "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102023107127/61",
-          "horse_no": "1",
-          "horse_name": "エムズビギン",
-          "win_odds": 37.6,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102023103531/C7",
-          "horse_no": "14",
-          "horse_name": "マジョレルブルー",
-          "win_odds": 45.1,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102023103828/6F",
-          "horse_no": "16",
-          "horse_name": "ショウナンハヤナミ",
-          "win_odds": 46.5,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102023101200/B3",
-          "horse_no": "15",
-          "horse_name": "シートゥサミット",
-          "win_odds": 53.5,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102023100021/F5",
-          "horse_no": "13",
-          "horse_name": "キンググローリー",
-          "win_odds": 75.7,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102023100724/A5",
-          "horse_no": "12",
-          "horse_name": "サノノグレーター",
-          "win_odds": 111.9,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102023105560/62",
-          "horse_no": "7",
-          "horse_name": "ラージアンサンブル",
-          "win_odds": 119.0,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102023107389/09",
-          "horse_no": "17",
-          "horse_name": "チャリングクロス",
-          "win_odds": 125.3,
-          "market_rank": 16
-        },
-        {
-          "horse_id": "pw01dud102023105046/FF",
-          "horse_no": "18",
-          "horse_name": "ナリタエスペランサ",
-          "win_odds": 135.7,
-          "market_rank": 17
-        },
-        {
-          "horse_id": "pw01dud102023105332/B6",
-          "horse_no": "4",
-          "horse_name": "ショウナンガルフ",
-          "win_odds": 212.4,
-          "market_rank": 18
         }
       ]
     },
     {
-      "race_id": "pw01dde0108202604091220261025",
-      "date": "2026-10-25",
+      "race_id": "pw01dde0108202604100420261031",
+      "date": "2026-10-31",
       "track": "京都",
-      "race_no": 12,
-      "race_name": "嵯峨野特別",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604091220261025%2FEE",
+      "race_no": 4,
+      "race_name": "障害3歳以上未勝利",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100420261031%2F71",
       "win_odds": [
         {
-          "horse_id": "pw01dud102022100018/7E",
-          "horse_no": "12",
-          "horse_name": "ポッドドンナー",
-          "win_odds": 3.9,
+          "horse_id": "pw01dud102021104830/BE",
+          "horse_no": "1",
+          "horse_name": "グロリアラウス",
+          "win_odds": 2.0,
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102022104854/36",
-          "horse_no": "11",
-          "horse_name": "ソニックステップ",
-          "win_odds": 5.2,
+          "horse_id": "pw01dud102021102388/D3",
+          "horse_no": "5",
+          "horse_name": "カイコウ",
+          "win_odds": 3.2,
           "market_rank": 2
         },
         {
-          "horse_id": "pw01dud102023104876/C8",
-          "horse_no": "1",
-          "horse_name": "ペプチドレオン",
-          "win_odds": 5.3,
+          "horse_id": "pw01dud102022101461/5C",
+          "horse_no": "4",
+          "horse_name": "セイフウサツキ",
+          "win_odds": 7.9,
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102022101903/D7",
+          "horse_id": "pw01dud102020102648/9A",
+          "horse_no": "9",
+          "horse_name": "ラパンラピッド",
+          "win_odds": 8.6,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102023101781/9B",
+          "horse_no": "8",
+          "horse_name": "ラッキーダイヤ",
+          "win_odds": 18.2,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102019100764/C2",
+          "horse_no": "7",
+          "horse_name": "ローズピリオド",
+          "win_odds": 26.8,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102022103288/1D",
+          "horse_no": "3",
+          "horse_name": "ヤコブセン",
+          "win_odds": 28.9,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102022101587/5F",
+          "horse_no": "10",
+          "horse_name": "クリアクォーツ",
+          "win_odds": 38.1,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102022100044/E2",
+          "horse_no": "6",
+          "horse_name": "ディープサミット",
+          "win_odds": 41.2,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102022102141/98",
+          "horse_no": "2",
+          "horse_name": "モルゲンゾンネ",
+          "win_odds": 41.7,
+          "market_rank": 10
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604100520261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 5,
+      "race_name": "メイクデビュー京都",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100520261031%2F26",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102024106970/B1",
           "horse_no": "5",
-          "horse_name": "アンビシャスヨシノ",
+          "horse_name": "アンドロニクス",
+          "win_odds": 3.5,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024105816/E3",
+          "horse_no": "10",
+          "horse_name": "フォコンノワール",
+          "win_odds": 3.5,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024105293/E4",
+          "horse_no": "9",
+          "horse_name": "オーバーアゲイン",
+          "win_odds": 5.1,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024106373/E4",
+          "horse_no": "1",
+          "horse_name": "ソトッキー",
           "win_odds": 6.7,
           "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102022103733/83",
-          "horse_no": "4",
-          "horse_name": "スーパージョック",
-          "win_odds": 9.3,
+          "horse_id": "pw01dud102024106177/4E",
+          "horse_no": "2",
+          "horse_name": "フェイムシーカー",
+          "win_odds": 11.3,
           "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102023101113/EB",
-          "horse_no": "9",
-          "horse_name": "フェスティヴドレス",
-          "win_odds": 11.6,
+          "horse_id": "pw01dud102024102143/96",
+          "horse_no": "8",
+          "horse_name": "メイショウイロドリ",
+          "win_odds": 16.4,
           "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024103438/47",
+          "horse_no": "4",
+          "horse_name": "アントレピード",
+          "win_odds": 18.1,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024106033/11",
+          "horse_no": "11",
+          "horse_name": "ヒロノリホープ",
+          "win_odds": 23.4,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024106059/E3",
+          "horse_no": "7",
+          "horse_name": "デルマクズリュウ",
+          "win_odds": 32.1,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024103587/55",
+          "horse_no": "3",
+          "horse_name": "トゥーリ",
+          "win_odds": 37.2,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024109088/6D",
+          "horse_no": "6",
+          "horse_name": "フラワーマーチ",
+          "win_odds": 59.7,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102024104169/46",
+          "horse_no": "12",
+          "horse_name": "ホウオウトリリオン",
+          "win_odds": 67.5,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024103962/BA",
+          "horse_no": "13",
+          "horse_name": "マンハッタンモーン",
+          "win_odds": 100.2,
+          "market_rank": 13
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604100620261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 6,
+      "race_name": "メイクデビュー京都",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100620261031%2FDB",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102024102216/F0",
+          "horse_no": "10",
+          "horse_name": "スターシーカー",
+          "win_odds": 2.6,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024108219/E3",
+          "horse_no": "8",
+          "horse_name": "ジーティーイレブン",
+          "win_odds": 4.1,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024106560/DD",
+          "horse_no": "3",
+          "horse_name": "クローネンリーベ",
+          "win_odds": 8.0,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024108212/BE",
+          "horse_no": "12",
+          "horse_name": "ホーフアイゼン",
+          "win_odds": 9.1,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024102894/B0",
+          "horse_no": "1",
+          "horse_name": "レッドガレオン",
+          "win_odds": 9.4,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024101871/48",
+          "horse_no": "15",
+          "horse_name": "マスターピース",
+          "win_odds": 20.5,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024108331/9C",
+          "horse_no": "9",
+          "horse_name": "トップエンドパワー",
+          "win_odds": 21.7,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024106795/AE",
+          "horse_no": "4",
+          "horse_name": "サマーレディ",
+          "win_odds": 23.9,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024104738/C9",
+          "horse_no": "7",
+          "horse_name": "ドリームハロウ",
+          "win_odds": 28.1,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024108344/05",
+          "horse_no": "2",
+          "horse_name": "モアザンヴォルト",
+          "win_odds": 36.3,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024108387/9E",
+          "horse_no": "14",
+          "horse_name": "サイモンレコルト",
+          "win_odds": 37.5,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102024104979/DE",
+          "horse_no": "16",
+          "horse_name": "ビップカレッジ",
+          "win_odds": 40.6,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024104619/EB",
+          "horse_no": "5",
+          "horse_name": "キングゴールド",
+          "win_odds": 79.1,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102024107422/41",
+          "horse_no": "6",
+          "horse_name": "クリコリンダ",
+          "win_odds": 104.5,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102024101238/07",
+          "horse_no": "13",
+          "horse_name": "ルシエルノーブル",
+          "win_odds": 136.1,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102024100113/88",
+          "horse_no": "11",
+          "horse_name": "ナムラウルフ",
+          "win_odds": 139.4,
+          "market_rank": 16
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604100720261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100720261031%2F90",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102023105354/BC",
+          "horse_no": "10",
+          "horse_name": "バリオス",
+          "win_odds": 2.7,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023107229/78",
+          "horse_no": "2",
+          "horse_name": "スカイストライプス",
+          "win_odds": 3.4,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023102761/6A",
+          "horse_no": "8",
+          "horse_name": "ハイロード",
+          "win_odds": 6.9,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102022104654/D4",
+          "horse_no": "12",
+          "horse_name": "ジーティーアメリカ",
+          "win_odds": 9.5,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102023101840/19",
+          "horse_no": "7",
+          "horse_name": "ララディアーブル",
+          "win_odds": 13.3,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102021101391/CF",
+          "horse_no": "4",
+          "horse_name": "ブラックドレス",
+          "win_odds": 13.7,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102023105462/17",
+          "horse_no": "6",
+          "horse_name": "クラテロス",
+          "win_odds": 14.0,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102023104072/74",
+          "horse_no": "5",
+          "horse_name": "スナークシャラク",
+          "win_odds": 25.8,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102023107378/86",
+          "horse_no": "11",
+          "horse_name": "テーオーアンジェラ",
+          "win_odds": 28.9,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102023105726/36",
+          "horse_no": "9",
+          "horse_name": "ゴールデンダガー",
+          "win_odds": 34.3,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102023106076/1E",
+          "horse_no": "3",
+          "horse_name": "ハノハノ",
+          "win_odds": 44.6,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102023100804/B6",
+          "horse_no": "1",
+          "horse_name": "マリノエステーラ",
+          "win_odds": 127.8,
+          "market_rank": 12
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604100820261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 8,
+      "race_name": "3歳以上2勝クラス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100820261031%2F45",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102023103087/D4",
+          "horse_no": "13",
+          "horse_name": "ライトオブヌカタ",
+          "win_odds": 2.2,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102021100158/63",
+          "horse_no": "3",
+          "horse_name": "ダノンモンテローザ",
+          "win_odds": 6.3,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023105591/05",
+          "horse_no": "8",
+          "horse_name": "マメタンク",
+          "win_odds": 8.6,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102022106923/A2",
+          "horse_no": "10",
+          "horse_name": "バッハアルプゼー",
+          "win_odds": 10.0,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102023104044/2A",
+          "horse_no": "12",
+          "horse_name": "モンサンゴールデン",
+          "win_odds": 12.5,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102021100899/6D",
+          "horse_no": "4",
+          "horse_name": "ビッグドリーム",
+          "win_odds": 15.1,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102022104317/5A",
+          "horse_no": "1",
+          "horse_name": "ミサビスケッツ",
+          "win_odds": 15.4,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102021105973/77",
+          "horse_no": "11",
+          "horse_name": "ワイノナオミ",
+          "win_odds": 21.5,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102022100574/07",
+          "horse_no": "9",
+          "horse_name": "ルイステソーロ",
+          "win_odds": 21.9,
+          "market_rank": 9
         },
         {
           "horse_id": "pw01dud102021103242/9F",
           "horse_no": "7",
           "horse_name": "ジーベック",
-          "win_odds": 15.3,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022104788/01",
-          "horse_no": "6",
-          "horse_name": "ジュルナール",
-          "win_odds": 16.0,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102021103842/C5",
-          "horse_no": "3",
-          "horse_name": "ニホンピロカラット",
-          "win_odds": 16.4,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102021104399/34",
-          "horse_no": "8",
-          "horse_name": "ラヴオントップ",
-          "win_odds": 25.3,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021101057/AE",
-          "horse_no": "2",
-          "horse_name": "セールヴォラン",
-          "win_odds": 37.2,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102021100652/A6",
-          "horse_no": "10",
-          "horse_name": "ラピダリア",
-          "win_odds": 38.0,
-          "market_rank": 12
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040120261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 1,
-      "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040120261025%2F80",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024105300/2C",
-          "horse_no": "6",
-          "horse_name": "クラストムーン",
-          "win_odds": 2.8,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024102411/13",
-          "horse_no": "9",
-          "horse_name": "クールガモーン",
-          "win_odds": 5.4,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024104865/D1",
-          "horse_no": "4",
-          "horse_name": "ブランカバローズ",
-          "win_odds": 5.7,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024102020/EC",
-          "horse_no": "7",
-          "horse_name": "ベルメグスタ",
-          "win_odds": 8.8,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024104860/92",
-          "horse_no": "3",
-          "horse_name": "コパノアクション",
-          "win_odds": 10.2,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024100629/3F",
-          "horse_no": "13",
-          "horse_name": "ハナビ",
-          "win_odds": 10.3,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024102714/FF",
-          "horse_no": "5",
-          "horse_name": "リアルジャパン",
-          "win_odds": 14.0,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024103824/2F",
-          "horse_no": "10",
-          "horse_name": "ルナディアナ",
-          "win_odds": 18.0,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024103079/36",
-          "horse_no": "11",
-          "horse_name": "リアシュアー",
-          "win_odds": 32.7,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024105040/D9",
-          "horse_no": "8",
-          "horse_name": "コールオンユー",
-          "win_odds": 35.1,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024101223/B8",
-          "horse_no": "12",
-          "horse_name": "テーオージャスミン",
-          "win_odds": 47.5,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024102341/12",
-          "horse_no": "1",
-          "horse_name": "ワイドアイリー",
-          "win_odds": 78.7,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024102861/27",
-          "horse_no": "2",
-          "horse_name": "メイショウノゾミ",
-          "win_odds": 119.0,
-          "market_rank": 13
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040220261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 2,
-      "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040220261025%2F35",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024107319/25",
-          "horse_no": "5",
-          "horse_name": "エコロヴァルド",
-          "win_odds": 2.5,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024103554/CC",
-          "horse_no": "4",
-          "horse_name": "プリメラエストレラ",
-          "win_odds": 3.1,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024102824/40",
-          "horse_no": "2",
-          "horse_name": "オーケーグラン",
-          "win_odds": 5.4,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024103482/E5",
-          "horse_no": "1",
-          "horse_name": "レガーメフォルテ",
-          "win_odds": 8.1,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024103510/C0",
-          "horse_no": "9",
-          "horse_name": "カフジカニステル",
-          "win_odds": 12.0,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024105581/81",
-          "horse_no": "8",
-          "horse_name": "マルスフィス",
-          "win_odds": 13.7,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024100443/4B",
-          "horse_no": "10",
-          "horse_name": "トラモンターナ",
-          "win_odds": 17.0,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024101248/17",
-          "horse_no": "3",
-          "horse_name": "アルヴィットーリア",
-          "win_odds": 112.4,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024107339/45",
-          "horse_no": "7",
-          "horse_name": "シャインロード",
-          "win_odds": 181.3,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024102845/D3",
-          "horse_no": "6",
-          "horse_name": "ラプユフラット",
-          "win_odds": 317.2,
-          "market_rank": 10
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040320261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 3,
-      "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040320261025%2FEA",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024104510/AF",
-          "horse_no": "14",
-          "horse_name": "ルクスアルカード",
-          "win_odds": 3.5,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024106679/29",
-          "horse_no": "17",
-          "horse_name": "スロノス",
-          "win_odds": 3.9,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024100299/EB",
-          "horse_no": "3",
-          "horse_name": "クラウンソクラテス",
-          "win_odds": 8.5,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024106098/B0",
-          "horse_no": "9",
-          "horse_name": "ロクメイカン",
-          "win_odds": 9.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024100726/17",
-          "horse_no": "16",
-          "horse_name": "ムーンパッセ",
-          "win_odds": 10.8,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024105728/A8",
-          "horse_no": "18",
-          "horse_name": "サンライズエイト",
-          "win_odds": 11.2,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024100290/E0",
-          "horse_no": "1",
-          "horse_name": "ナショナルフラッグ",
-          "win_odds": 11.8,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024104835/A1",
-          "horse_no": "8",
-          "horse_name": "リリーギャラクシー",
-          "win_odds": 15.1,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024105029/C4",
-          "horse_no": "5",
-          "horse_name": "マイネルラビリンス",
-          "win_odds": 21.2,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024105950/A2",
-          "horse_no": "4",
-          "horse_name": "ミクニルミナス",
-          "win_odds": 49.4,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024106605/ED",
-          "horse_no": "12",
-          "horse_name": "オプティミスタ",
-          "win_odds": 54.0,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024101928/4E",
-          "horse_no": "2",
-          "horse_name": "シダス",
-          "win_odds": 54.8,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024103181/DF",
-          "horse_no": "15",
-          "horse_name": "シルバータイガー",
-          "win_odds": 64.7,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102024102135/6C",
-          "horse_no": "7",
-          "horse_name": "ルミエールノット",
-          "win_odds": 71.7,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102024103591/B3",
-          "horse_no": "13",
-          "horse_name": "コスモフラムオット",
-          "win_odds": 100.8,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102024102151/C0",
-          "horse_no": "10",
-          "horse_name": "ジャストピーチー",
-          "win_odds": 184.2,
-          "market_rank": 16
-        },
-        {
-          "horse_id": "pw01dud102024100518/8B",
-          "horse_no": "11",
-          "horse_name": "デルマキタカミ",
-          "win_odds": 259.4,
-          "market_rank": 17
-        },
-        {
-          "horse_id": "pw01dud102024104139/16",
-          "horse_no": "6",
-          "horse_name": "アルバスタキヤ",
-          "win_odds": 268.3,
-          "market_rank": 18
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040420261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 4,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040420261025%2F9F",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023104596/55",
-          "horse_no": "5",
-          "horse_name": "ペルセポネ",
-          "win_odds": 3.8,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023103718/2E",
-          "horse_no": "4",
-          "horse_name": "アーガイルショア",
-          "win_odds": 4.2,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102023107095/BA",
-          "horse_no": "13",
-          "horse_name": "クアロアランチ",
-          "win_odds": 4.6,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102023101394/40",
-          "horse_no": "6",
-          "horse_name": "ミエスタ",
-          "win_odds": 9.8,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023101004/1D",
-          "horse_no": "12",
-          "horse_name": "ハンザキ",
-          "win_odds": 10.7,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022104644/C4",
-          "horse_no": "7",
-          "horse_name": "ペンテリコン",
-          "win_odds": 11.5,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023101523/BF",
-          "horse_no": "10",
-          "horse_name": "モズオサキニ",
-          "win_odds": 12.1,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022107387/97",
-          "horse_no": "11",
-          "horse_name": "リカード",
-          "win_odds": 14.3,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102023107242/73",
-          "horse_no": "9",
-          "horse_name": "ヨルヴィック",
-          "win_odds": 16.0,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102021105715/9B",
-          "horse_no": "1",
-          "horse_name": "アルバニー",
-          "win_odds": 51.3,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021103343/43",
-          "horse_no": "8",
-          "horse_name": "ハヌル",
-          "win_odds": 60.0,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102023106256/60",
-          "horse_no": "3",
-          "horse_name": "セイウンアインス",
-          "win_odds": 150.6,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102021103867/24",
-          "horse_no": "2",
-          "horse_name": "オテンバムスメ",
-          "win_odds": 218.3,
-          "market_rank": 13
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040520261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 5,
-      "race_name": "メイクデビュー新潟",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040520261025%2F54",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024105049/E4",
-          "horse_no": "3",
-          "horse_name": "アルジャンレオ",
-          "win_odds": 4.1,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024102890/E4",
-          "horse_no": "13",
-          "horse_name": "バックトゥザスター",
-          "win_odds": 5.0,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024106929/6C",
-          "horse_no": "17",
-          "horse_name": "ミネットドール",
-          "win_odds": 6.0,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024108338/C1",
-          "horse_no": "2",
-          "horse_name": "ワイルドシャチョウ",
-          "win_odds": 7.1,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024103332/64",
-          "horse_no": "12",
-          "horse_name": "タケル",
-          "win_odds": 7.9,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024106440/8C",
-          "horse_no": "16",
-          "horse_name": "クラフティ",
-          "win_odds": 11.0,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024100756/47",
-          "horse_no": "9",
-          "horse_name": "キーチラナキラ",
-          "win_odds": 16.8,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024102258/16",
-          "horse_no": "15",
-          "horse_name": "サークル",
-          "win_odds": 28.1,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024100576/05",
-          "horse_no": "5",
-          "horse_name": "カフジペピーノ",
-          "win_odds": 29.8,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024101199/A9",
-          "horse_no": "10",
-          "horse_name": "パロディ",
-          "win_odds": 34.4,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024105182/30",
-          "horse_no": "18",
-          "horse_name": "ユメイチズ",
-          "win_odds": 34.4,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024105022/9F",
-          "horse_no": "11",
-          "horse_name": "エクセルスカイ",
-          "win_odds": 35.7,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024104117/10",
-          "horse_no": "8",
-          "horse_name": "マリンスター",
-          "win_odds": 47.8,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102024104661/A3",
-          "horse_no": "1",
-          "horse_name": "ミスターキリシマ",
-          "win_odds": 59.7,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102024102157/72",
-          "horse_no": "7",
-          "horse_name": "パーシビア",
-          "win_odds": 75.3,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102024107112/9E",
-          "horse_no": "14",
-          "horse_name": "ナバラ",
-          "win_odds": 107.0,
-          "market_rank": 16
-        },
-        {
-          "horse_id": "pw01dud102024107085/36",
-          "horse_no": "4",
-          "horse_name": "オーケープライム",
-          "win_odds": 107.8,
-          "market_rank": 17
-        },
-        {
-          "horse_id": "pw01dud102024108204/94",
-          "horse_no": "6",
-          "horse_name": "シャトースタービル",
-          "win_odds": 202.0,
-          "market_rank": 18
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040620261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 6,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040620261025%2F09",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023105381/93",
-          "horse_no": "3",
-          "horse_name": "ハイライトニング",
-          "win_odds": 2.7,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023103801/2A",
-          "horse_no": "1",
-          "horse_name": "トップデュオ",
-          "win_odds": 4.5,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102022105848/E1",
-          "horse_no": "9",
-          "horse_name": "ステイクオール",
-          "win_odds": 6.3,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102021105394/E4",
-          "horse_no": "4",
-          "horse_name": "ヒヒーン",
-          "win_odds": 7.4,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022100621/8F",
-          "horse_no": "10",
-          "horse_name": "ロードフロリゼル",
-          "win_odds": 10.5,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102023101642/9D",
-          "horse_no": "8",
-          "horse_name": "ベルウッドピース",
-          "win_odds": 13.5,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023102167/F6",
-          "horse_no": "2",
-          "horse_name": "スクイーズアウト",
-          "win_odds": 17.8,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102021103150/98",
-          "horse_no": "6",
-          "horse_name": "タルタロス",
-          "win_odds": 18.0,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022105347/79",
-          "horse_no": "7",
-          "horse_name": "ジロラータ",
-          "win_odds": 24.6,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102021102494/48",
-          "horse_no": "11",
-          "horse_name": "ブーケドグレイス",
-          "win_odds": 29.6,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102022102097/69",
-          "horse_no": "5",
-          "horse_name": "チュラビックタイム",
-          "win_odds": 59.4,
-          "market_rank": 11
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040720261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 7,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040720261025%2FBE",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023106314/6B",
-          "horse_no": "4",
-          "horse_name": "ジェイエルグリーン",
-          "win_odds": 5.9,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022103705/39",
-          "horse_no": "12",
-          "horse_name": "エレガンシア",
-          "win_odds": 6.9,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102021105113/8F",
-          "horse_no": "8",
-          "horse_name": "ダノンアトラス",
-          "win_odds": 7.5,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102022102550/F9",
-          "horse_no": "14",
-          "horse_name": "メイショウピリカ",
-          "win_odds": 7.7,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022106634/92",
-          "horse_no": "9",
-          "horse_name": "アンビアンス",
-          "win_odds": 8.9,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102023107291/50",
-          "horse_no": "5",
-          "horse_name": "カドーダムール",
-          "win_odds": 10.7,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023102669/D1",
-          "horse_no": "2",
-          "horse_name": "ワダツミ",
-          "win_odds": 11.0,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022105132/C8",
-          "horse_no": "6",
-          "horse_name": "オリオアルセーリオ",
-          "win_odds": 11.6,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022101620/0B",
-          "horse_no": "7",
-          "horse_name": "トラストモアリズム",
-          "win_odds": 15.3,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102023103548/FC",
-          "horse_no": "11",
-          "horse_name": "ダイナソーコー",
-          "win_odds": 18.1,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102023105851/58",
-          "horse_no": "1",
-          "horse_name": "ウインキングリー",
-          "win_odds": 19.3,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102023105891/98",
-          "horse_no": "13",
-          "horse_name": "ウイントリベルガ",
-          "win_odds": 20.3,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102023106461/93",
-          "horse_no": "10",
-          "horse_name": "コスモアルペジオ",
-          "win_odds": 25.7,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102023105211/F2",
-          "horse_no": "3",
-          "horse_name": "アージュドール",
-          "win_odds": 28.2,
-          "market_rank": 14
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040820261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 8,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040820261025%2F73",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023103734/82",
-          "horse_no": "13",
-          "horse_name": "アスクドゥチャンプ",
-          "win_odds": 2.7,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023105445/50",
-          "horse_no": "12",
-          "horse_name": "ドメイン",
-          "win_odds": 3.4,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102023105462/17",
-          "horse_no": "10",
-          "horse_name": "クラテロス",
-          "win_odds": 6.0,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102023107221/E0",
-          "horse_no": "8",
-          "horse_name": "シャンドラファール",
-          "win_odds": 10.5,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023101484/61",
-          "horse_no": "4",
-          "horse_name": "リバーソニック",
-          "win_odds": 10.7,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102021103504/D8",
-          "horse_no": "14",
-          "horse_name": "スノーディーヴァ",
-          "win_odds": 18.3,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102022105903/93",
-          "horse_no": "9",
-          "horse_name": "トーアケルキラ",
-          "win_odds": 26.3,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022105292/59",
-          "horse_no": "2",
-          "horse_name": "オメガストリーム",
-          "win_odds": 26.4,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022104264/20",
-          "horse_no": "1",
-          "horse_name": "ライヴスプーン",
-          "win_odds": 27.0,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102023101586/78",
-          "horse_no": "6",
-          "horse_name": "リオンサーガ",
-          "win_odds": 35.0,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102023103521/B7",
-          "horse_no": "3",
-          "horse_name": "ウインターブレス",
-          "win_odds": 49.5,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102022107299/5C",
-          "horse_no": "5",
-          "horse_name": "クレスコドルフィン",
-          "win_odds": 68.9,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102021105074/31",
-          "horse_no": "11",
-          "horse_name": "モヴレクス",
-          "win_odds": 80.1,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102023106531/94",
-          "horse_no": "7",
-          "horse_name": "ゴーントゥファー",
-          "win_odds": 86.6,
-          "market_rank": 14
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604040920261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 9,
-      "race_name": "柏崎特別",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604040920261025%2F28",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022105534/72",
-          "horse_no": "2",
-          "horse_name": "シャンパンライフ",
-          "win_odds": 3.9,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023104678/4C",
-          "horse_no": "6",
-          "horse_name": "コウギョク",
-          "win_odds": 6.7,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102021100081/3D",
-          "horse_no": "10",
-          "horse_name": "ゴールドブレス",
-          "win_odds": 7.4,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102022105334/10",
-          "horse_no": "3",
-          "horse_name": "ダノンブランニュー",
-          "win_odds": 7.5,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023106913/1E",
-          "horse_no": "9",
-          "horse_name": "ジュナベーラ",
-          "win_odds": 9.0,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102023103543/BD",
-          "horse_no": "13",
-          "horse_name": "ルージュリリック",
-          "win_odds": 10.5,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023102083/19",
-          "horse_no": "8",
-          "horse_name": "ジーティーシンドウ",
-          "win_odds": 11.2,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022105122/B8",
-          "horse_no": "11",
-          "horse_name": "ジェゼロ",
-          "win_odds": 14.9,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102023101459/70",
-          "horse_no": "5",
-          "horse_name": "シャルムグリーン",
-          "win_odds": 20.3,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102023104355/40",
-          "horse_no": "1",
-          "horse_name": "テルヴィセクス",
-          "win_odds": 21.7,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021105168/1E",
-          "horse_no": "14",
-          "horse_name": "クイーンズワーフ",
-          "win_odds": 27.3,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102022101498/B1",
-          "horse_no": "4",
-          "horse_name": "クモヒトツナイ",
-          "win_odds": 28.6,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102021103488/F3",
-          "horse_no": "7",
-          "horse_name": "ジャンヌローサ",
-          "win_odds": 30.1,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102022105123/2B",
-          "horse_no": "12",
-          "horse_name": "デビューフライト",
-          "win_odds": 45.5,
-          "market_rank": 14
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604041020261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 10,
-      "race_name": "村上特別",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604041020261025%2F1D",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022105421/D8",
-          "horse_no": "12",
-          "horse_name": "コンフォルツァ",
-          "win_odds": 2.4,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022102745/8A",
-          "horse_no": "7",
-          "horse_name": "ベネスピラ",
-          "win_odds": 6.2,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102021100597/F4",
-          "horse_no": "4",
-          "horse_name": "ズイウンゴサイ",
-          "win_odds": 7.0,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102023106808/1C",
-          "horse_no": "2",
-          "horse_name": "シルバーリム",
-          "win_odds": 7.2,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022100274/74",
-          "horse_no": "1",
-          "horse_name": "マイネルアズーロ",
-          "win_odds": 7.5,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102023106439/FB",
-          "horse_no": "9",
-          "horse_name": "マイネルマスター",
-          "win_odds": 12.8,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102022105549/C1",
-          "horse_no": "8",
-          "horse_name": "ハートメテオ",
-          "win_odds": 23.3,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102021104840/CE",
-          "horse_no": "3",
-          "horse_name": "フルレゾン",
-          "win_odds": 24.7,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022103522/9E",
-          "horse_no": "11",
-          "horse_name": "ジェットブレード",
-          "win_odds": 31.1,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102021100165/1A",
-          "horse_no": "5",
-          "horse_name": "フォルテフィオーレ",
-          "win_odds": 34.5,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021103878/A7",
-          "horse_no": "6",
-          "horse_name": "ジャンビ",
-          "win_odds": 35.0,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102020106415/6B",
-          "horse_no": "10",
-          "horse_name": "ロゼル",
-          "win_odds": 54.0,
-          "market_rank": 12
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604041120261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 11,
-      "race_name": "ルミエールオータムダッシュ",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604041120261025%2FD2",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022100627/41",
-          "horse_no": "14",
-          "horse_name": "カウスリップ",
-          "win_odds": 3.1,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022100490/2A",
-          "horse_no": "9",
-          "horse_name": "モズナナスター",
-          "win_odds": 6.5,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102020101262/55",
-          "horse_no": "11",
-          "horse_name": "エコロレジーナ",
-          "win_odds": 7.1,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102021100157/F0",
-          "horse_no": "17",
-          "horse_name": "ロードトレイル",
-          "win_odds": 7.5,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022110140/15",
-          "horse_no": "15",
-          "horse_name": "ポールセン",
-          "win_odds": 10.8,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022104186/F5",
-          "horse_no": "3",
-          "horse_name": "ヴェントゥーラ",
-          "win_odds": 13.3,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102021102392/31",
-          "horse_no": "12",
-          "horse_name": "ナナオ",
-          "win_odds": 13.8,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022103324/22",
-          "horse_no": "16",
-          "horse_name": "シュラフ",
-          "win_odds": 14.9,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102021101924/DE",
-          "horse_no": "8",
-          "horse_name": "フィオライア",
-          "win_odds": 19.7,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102022101626/BD",
-          "horse_no": "7",
-          "horse_name": "フウセツ",
-          "win_odds": 34.8,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102019106179/85",
-          "horse_no": "13",
-          "horse_name": "ハートホイップ",
-          "win_odds": 36.1,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102018103205/21",
-          "horse_no": "10",
-          "horse_name": "クムシラコ",
-          "win_odds": 46.0,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102021100356/DF",
-          "horse_no": "6",
-          "horse_name": "クールベイビー",
-          "win_odds": 51.4,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102019110102/24",
-          "horse_no": "5",
-          "horse_name": "デュガ",
-          "win_odds": 55.1,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102020105203/24",
-          "horse_no": "1",
-          "horse_name": "ウインアイオライト",
-          "win_odds": 59.7,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102021100792/17",
-          "horse_no": "2",
-          "horse_name": "スコーピオン",
-          "win_odds": 102.2,
-          "market_rank": 16
-        },
-        {
-          "horse_id": "pw01dud102020103284/39",
-          "horse_no": "4",
-          "horse_name": "トールキン",
-          "win_odds": 110.5,
-          "market_rank": 17
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0104202604041220261025",
-      "date": "2026-10-25",
-      "track": "新潟",
-      "race_no": 12,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0104202604041220261025%2F87",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022101396/9A",
-          "horse_no": "12",
-          "horse_name": "サンライズブレイク",
-          "win_odds": 4.0,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023100359/50",
-          "horse_no": "1",
-          "horse_name": "シュヴァルツシルト",
-          "win_odds": 4.4,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102023107517/15",
-          "horse_no": "5",
-          "horse_name": "ジャスパーメルチェ",
-          "win_odds": 4.5,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102022110104/A1",
-          "horse_no": "10",
-          "horse_name": "アメリカンビヨンド",
-          "win_odds": 6.2,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022110082/0A",
-          "horse_no": "2",
-          "horse_name": "パヴィーア",
-          "win_odds": 8.5,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102023104050/6E",
-          "horse_no": "8",
-          "horse_name": "ゼンノフォトン",
-          "win_odds": 13.3,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023103657/CA",
-          "horse_no": "9",
-          "horse_name": "ノーブルクロンヌ",
-          "win_odds": 15.7,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102021110063/D1",
-          "horse_no": "7",
-          "horse_name": "メイプルギャング",
-          "win_odds": 25.6,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102021100683/49",
-          "horse_no": "6",
-          "horse_name": "ビーグラッド",
-          "win_odds": 31.1,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102022110157/4A",
-          "horse_no": "3",
-          "horse_name": "レーヴドアンジュ",
-          "win_odds": 33.9,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021105298/7F",
-          "horse_no": "4",
-          "horse_name": "エイカイボクサー",
-          "win_odds": 38.2,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102020100555/42",
-          "horse_no": "11",
-          "horse_name": "リッチハンター",
-          "win_odds": 64.3,
-          "market_rank": 12
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604090120261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 1,
-      "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090120261025%2F09",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024103358/36",
-          "horse_no": "13",
-          "horse_name": "メジャーシンガー",
-          "win_odds": 3.6,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024107322/10",
-          "horse_no": "2",
-          "horse_name": "エコロゴッド",
-          "win_odds": 4.5,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024105975/01",
-          "horse_no": "12",
-          "horse_name": "ロータスピーク",
-          "win_odds": 5.3,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024106196/FB",
-          "horse_no": "8",
-          "horse_name": "オーディンスピア",
-          "win_odds": 6.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024104753/AA",
-          "horse_no": "10",
-          "horse_name": "サクシードシチー",
-          "win_odds": 8.1,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024104618/78",
-          "horse_no": "16",
-          "horse_name": "テールエメール",
-          "win_odds": 9.9,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024101670/73",
-          "horse_no": "5",
-          "horse_name": "ローザベッラ",
-          "win_odds": 13.2,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024107206/8B",
-          "horse_no": "11",
-          "horse_name": "ユイノゲリラゴウウ",
-          "win_odds": 22.6,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024101272/95",
-          "horse_no": "7",
-          "horse_name": "オペレッタテソーロ",
-          "win_odds": 47.1,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024107382/70",
-          "horse_no": "4",
-          "horse_name": "コペルニクス",
-          "win_odds": 78.7,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024103846/35",
-          "horse_no": "1",
-          "horse_name": "トラストフィスティ",
-          "win_odds": 90.5,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024100050/3E",
-          "horse_no": "3",
-          "horse_name": "エルシオン",
-          "win_odds": 236.2,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024104969/CE",
-          "horse_no": "9",
-          "horse_name": "ヴァルガルデーナ",
-          "win_odds": 246.5,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102024100868/6E",
-          "horse_no": "14",
-          "horse_name": "マイサマーガール",
-          "win_odds": 292.4,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102024100951/6A",
-          "horse_no": "6",
-          "horse_name": "テルケンレンジシ",
-          "win_odds": 351.8,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102024103763/CB",
-          "horse_no": "15",
-          "horse_name": "ヴェットビルズ",
-          "win_odds": 367.8,
-          "market_rank": 16
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604090220261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 2,
-      "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090220261025%2FBE",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024106139/F4",
-          "horse_no": "7",
-          "horse_name": "ヴェルバーニア",
-          "win_odds": 2.0,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024105911/D5",
-          "horse_no": "2",
-          "horse_name": "シアルナーレ",
-          "win_odds": 2.3,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024105882/87",
-          "horse_no": "4",
-          "horse_name": "ウイニングレイ",
-          "win_odds": 6.7,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024106502/63",
-          "horse_no": "3",
-          "horse_name": "マテンロウアルカナ",
-          "win_odds": 7.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024105810/31",
-          "horse_no": "1",
-          "horse_name": "アースグレイジング",
-          "win_odds": 52.3,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024104133/64",
-          "horse_no": "5",
-          "horse_name": "ブライトシーン",
-          "win_odds": 74.1,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024103844/4F",
-          "horse_no": "6",
-          "horse_name": "スキエンティア",
-          "win_odds": 120.1,
-          "market_rank": 7
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604090320261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 3,
-      "race_name": "2歳未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090320261025%2F73",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024106170/29",
-          "horse_no": "9",
-          "horse_name": "ヒシホライゾン",
-          "win_odds": 2.1,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024106698/D6",
-          "horse_no": "10",
-          "horse_name": "ポストトゥルース",
-          "win_odds": 2.7,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024105750/40",
-          "horse_no": "1",
-          "horse_name": "イグナイトフィール",
-          "win_odds": 5.2,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024101262/85",
-          "horse_no": "4",
-          "horse_name": "エリステソーロ",
-          "win_odds": 9.8,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024100094/4A",
-          "horse_no": "2",
-          "horse_name": "レンミッキ",
-          "win_odds": 22.9,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024103001/2E",
-          "horse_no": "6",
-          "horse_name": "セイウントレジャ",
-          "win_odds": 29.1,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024106840/50",
-          "horse_no": "11",
-          "horse_name": "アイレバルバドス",
-          "win_odds": 39.3,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024103630/11",
-          "horse_no": "5",
-          "horse_name": "ツェルプスト",
-          "win_odds": 69.5,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024103174/28",
-          "horse_no": "3",
-          "horse_name": "イキデイナセ",
-          "win_odds": 183.3,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024105454/79",
-          "horse_no": "12",
-          "horse_name": "テングカゼ",
-          "win_odds": 201.8,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024104383/16",
-          "horse_no": "7",
-          "horse_name": "フライングビー",
-          "win_odds": 294.1,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024104009/B5",
-          "horse_no": "8",
-          "horse_name": "ワンダリングスター",
-          "win_odds": 372.8,
-          "market_rank": 12
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604090420261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 4,
-      "race_name": "障害3歳以上未勝利",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090420261025%2F28",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102021101779/0B",
-          "horse_no": "6",
-          "horse_name": "グランナヴィール",
-          "win_odds": 2.8,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102021105370/F8",
-          "horse_no": "7",
-          "horse_name": "キャプテンシー",
-          "win_odds": 2.9,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102021105477/4E",
-          "horse_no": "3",
-          "horse_name": "ハーバーライト",
-          "win_odds": 5.8,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102020102976/77",
-          "horse_no": "2",
-          "horse_name": "ノーブルクライ",
-          "win_odds": 6.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102020102452/96",
-          "horse_no": "4",
-          "horse_name": "フェスティヴビーム",
-          "win_odds": 9.8,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102021104899/29",
-          "horse_no": "11",
-          "horse_name": "ドリームクルーズ",
-          "win_odds": 14.8,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102019105462/F4",
-          "horse_no": "8",
-          "horse_name": "ソリダリティ",
-          "win_odds": 24.5,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102021102336/9D",
-          "horse_no": "9",
-          "horse_name": "ヨシノヤッタルデー",
-          "win_odds": 120.9,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022103503/F1",
-          "horse_no": "5",
-          "horse_name": "アウルムレガリア",
-          "win_odds": 176.1,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102020104960/93",
-          "horse_no": "1",
-          "horse_name": "トロピカルヒーロー",
-          "win_odds": 222.9,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102023105553/AB",
-          "horse_no": "10",
-          "horse_name": "ヘイマー",
-          "win_odds": 234.7,
-          "market_rank": 11
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604090520261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 5,
-      "race_name": "メイクデビュー東京",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090520261025%2FDD",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024106557/F2",
-          "horse_no": "3",
-          "horse_name": "ノヴァルクス",
-          "win_odds": 1.4,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024103529/DB",
-          "horse_no": "11",
-          "horse_name": "レナセール",
-          "win_odds": 5.7,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024102176/1F",
-          "horse_no": "5",
-          "horse_name": "シーバップ",
-          "win_odds": 12.5,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024101362/B6",
-          "horse_no": "7",
-          "horse_name": "ヴィラン",
-          "win_odds": 13.2,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024105721/83",
-          "horse_no": "1",
-          "horse_name": "ロカルゼ",
-          "win_odds": 15.9,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024106026/5A",
-          "horse_no": "6",
-          "horse_name": "ブレッシングロード",
-          "win_odds": 17.4,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024106582/E3",
-          "horse_no": "8",
-          "horse_name": "エバースカイ",
-          "win_odds": 27.6,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024102920/A5",
-          "horse_no": "10",
-          "horse_name": "ブロナバラッド",
-          "win_odds": 44.6,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024104505/DE",
-          "horse_no": "9",
-          "horse_name": "グラスリズム",
-          "win_odds": 51.0,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024102065/6B",
-          "horse_no": "4",
-          "horse_name": "キタノクラウド",
-          "win_odds": 59.0,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024101111/91",
-          "horse_no": "12",
-          "horse_name": "テーオーフォアマン",
-          "win_odds": 79.4,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024106047/ED",
-          "horse_no": "2",
-          "horse_name": "テンダネス",
-          "win_odds": 111.8,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024102428/48",
-          "horse_no": "13",
-          "horse_name": "アンベリール",
-          "win_odds": 147.5,
-          "market_rank": 13
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604090620261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 6,
-      "race_name": "メイクデビュー東京",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090620261025%2F92",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102024106600/AE",
-          "horse_no": "14",
-          "horse_name": "ミストヴェール",
-          "win_odds": 3.0,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024106289/75",
-          "horse_no": "11",
-          "horse_name": "クリスタルシュガー",
-          "win_odds": 6.0,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024108029/91",
-          "horse_no": "7",
-          "horse_name": "レインワルティア",
-          "win_odds": 6.9,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024102626/C4",
-          "horse_no": "12",
-          "horse_name": "アルパイングリーン",
-          "win_odds": 7.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024101952/CC",
-          "horse_no": "2",
-          "horse_name": "ボルトライン",
-          "win_odds": 10.7,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024104407/93",
-          "horse_no": "10",
-          "horse_name": "ニャンコ",
-          "win_odds": 12.7,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024104821/C5",
-          "horse_no": "13",
-          "horse_name": "ノーブルウィナー",
-          "win_odds": 14.4,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024105044/A5",
-          "horse_no": "3",
-          "horse_name": "タカチャン",
-          "win_odds": 17.4,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024105541/41",
-          "horse_no": "4",
-          "horse_name": "ミコアイランド",
-          "win_odds": 23.9,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024101691/06",
-          "horse_no": "6",
-          "horse_name": "スタニングヨシノ",
-          "win_odds": 38.3,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102024107425/9A",
-          "horse_no": "5",
-          "horse_name": "ナンヨーカラフル",
-          "win_odds": 43.0,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024105324/18",
-          "horse_no": "1",
-          "horse_name": "リアスドール",
-          "win_odds": 46.4,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024105510/9E",
-          "horse_no": "8",
-          "horse_name": "ゴルゴーローズ",
-          "win_odds": 54.3,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102024105136/AC",
-          "horse_no": "16",
-          "horse_name": "ケレドフェスティヴ",
-          "win_odds": 62.9,
-          "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102024104671/B3",
-          "horse_no": "9",
-          "horse_name": "ビーセルフィッシュ",
-          "win_odds": 68.3,
-          "market_rank": 15
-        },
-        {
-          "horse_id": "pw01dud102024102210/3E",
-          "horse_no": "15",
-          "horse_name": "チャジャッタ",
-          "win_odds": 78.1,
-          "market_rank": 16
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604090720261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 7,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090720261025%2F47",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102023102592/AB",
-          "horse_no": "6",
-          "horse_name": "ミヤエスケープ",
-          "win_odds": 2.5,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022103482/CD",
-          "horse_no": "5",
-          "horse_name": "ステラノヴァ",
-          "win_odds": 6.4,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102023105405/10",
-          "horse_no": "7",
-          "horse_name": "フクシマブリルハム",
-          "win_odds": 7.4,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102022100613/65",
-          "horse_no": "4",
-          "horse_name": "ロードフロイデ",
-          "win_odds": 7.6,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022105162/F8",
-          "horse_no": "10",
-          "horse_name": "ルージュナリッシュ",
-          "win_odds": 12.3,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022102088/CC",
-          "horse_no": "9",
-          "horse_name": "ユーティジャーニー",
-          "win_odds": 16.1,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102023100728/71",
-          "horse_no": "2",
-          "horse_name": "リネンタイリン",
-          "win_odds": 19.9,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102023103256/93",
-          "horse_no": "15",
-          "horse_name": "ユキノサイエンス",
-          "win_odds": 21.5,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102023103146/52",
-          "horse_no": "3",
-          "horse_name": "スタートレイン",
-          "win_odds": 22.3,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102023100633/11",
-          "horse_no": "11",
-          "horse_name": "アイアンナックル",
           "win_odds": 25.1,
           "market_rank": 10
         },
         {
-          "horse_id": "pw01dud102023104053/C7",
-          "horse_no": "8",
-          "horse_name": "マカイゾウ",
-          "win_odds": 33.4,
+          "horse_id": "pw01dud102022101536/9C",
+          "horse_no": "2",
+          "horse_name": "ストラテージュ",
+          "win_odds": 36.5,
           "market_rank": 11
         },
         {
-          "horse_id": "pw01dud102023106721/E6",
-          "horse_no": "1",
-          "horse_name": "ヴァルボナ",
-          "win_odds": 34.3,
+          "horse_id": "pw01dud102021105711/CF",
+          "horse_no": "6",
+          "horse_name": "ズバットマサムネ",
+          "win_odds": 45.7,
           "market_rank": 12
         },
         {
-          "horse_id": "pw01dud102023100533/E0",
-          "horse_no": "14",
-          "horse_name": "タイセイブルーム",
-          "win_odds": 36.7,
+          "horse_id": "pw01dud102020105957/97",
+          "horse_no": "5",
+          "horse_name": "ダズリングダンス",
+          "win_odds": 47.6,
           "market_rank": 13
         },
         {
-          "horse_id": "pw01dud102023103873/80",
-          "horse_no": "12",
-          "horse_name": "サーロー",
-          "win_odds": 57.0,
+          "horse_id": "pw01dud102019109106/89",
+          "horse_no": "14",
+          "horse_name": "バイファーザベスト",
+          "win_odds": 64.4,
           "market_rank": 14
-        },
-        {
-          "horse_id": "pw01dud102022101114/D2",
-          "horse_no": "13",
-          "horse_name": "アイファージェット",
-          "win_odds": 185.6,
-          "market_rank": 15
         }
       ]
     },
     {
-      "race_id": "pw01dde0105202604090820261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 8,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090820261025%2FFC",
+      "race_id": "pw01dde0108202604100920261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 9,
+      "race_name": "北野特別",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100920261031%2FFA",
       "win_odds": [
         {
-          "horse_id": "pw01dud102023103917/1D",
-          "horse_no": "12",
-          "horse_name": "タイセイアストロ",
+          "horse_id": "pw01dud102023103907/0D",
+          "horse_no": "8",
+          "horse_name": "スカイスプレンダー",
+          "win_odds": 3.0,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023104386/E3",
+          "horse_no": "7",
+          "horse_name": "カムアップローゼス",
+          "win_odds": 4.0,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102020103647/16",
+          "horse_no": "6",
+          "horse_name": "ダイヤモンドハンズ",
+          "win_odds": 4.1,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102022103278/0D",
+          "horse_no": "4",
+          "horse_name": "ホウオウタイタン",
+          "win_odds": 6.3,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102021110078/20",
+          "horse_no": "5",
+          "horse_name": "オメガインペリアル",
+          "win_odds": 15.8,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102021105102/0C",
+          "horse_no": "3",
+          "horse_name": "スターリングアップ",
+          "win_odds": 17.1,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102022104719/04",
+          "horse_no": "1",
+          "horse_name": "ダノンカゼルタ",
+          "win_odds": 19.1,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102022104914/27",
+          "horse_no": "2",
+          "horse_name": "キタサンハナビラ",
+          "win_odds": 19.6,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102021101751/53",
+          "horse_no": "9",
+          "horse_name": "ミカエルパシャ",
+          "win_odds": 23.4,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102022102532/BF",
+          "horse_no": "10",
+          "horse_name": "ビッグデイメイク",
+          "win_odds": 107.0,
+          "market_rank": 10
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604101020261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 10,
+      "race_name": "ハロウィンステークス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604101020261031%2FEF",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102023102120/91",
+          "horse_no": "9",
+          "horse_name": "システマソラー",
           "win_odds": 5.2,
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102022104666/CA",
-          "horse_no": "1",
-          "horse_name": "カザンラク",
-          "win_odds": 6.5,
+          "horse_id": "pw01dud102023102075/EF",
+          "horse_no": "3",
+          "horse_name": "ソルチェリア",
+          "win_odds": 6.0,
           "market_rank": 2
         },
         {
-          "horse_id": "pw01dud102023107138/E4",
-          "horse_no": "6",
-          "horse_name": "ケールハイム",
-          "win_odds": 6.5,
+          "horse_id": "pw01dud102021104092/7C",
+          "horse_no": "11",
+          "horse_name": "ペンナヴェローチェ",
+          "win_odds": 6.2,
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102023104442/08",
-          "horse_no": "3",
-          "horse_name": "カズノダイジョウ",
-          "win_odds": 8.6,
+          "horse_id": "pw01dud102022105021/14",
+          "horse_no": "14",
+          "horse_name": "マテンロウブレイブ",
+          "win_odds": 6.9,
           "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102021104173/00",
-          "horse_no": "11",
-          "horse_name": "デイジー",
-          "win_odds": 9.0,
+          "horse_id": "pw01dud102021110012/0E",
+          "horse_no": "4",
+          "horse_name": "アークドール",
+          "win_odds": 9.9,
           "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102023103885/76",
-          "horse_no": "7",
-          "horse_name": "ナックホワイト",
-          "win_odds": 11.3,
+          "horse_id": "pw01dud102021105508/82",
+          "horse_no": "16",
+          "horse_name": "リューデスハイム",
+          "win_odds": 11.8,
           "market_rank": 6
         },
         {
-          "horse_id": "pw01dud102022110134/D1",
-          "horse_no": "5",
-          "horse_name": "マリブオレンジ",
-          "win_odds": 13.2,
+          "horse_id": "pw01dud102020100771/F8",
+          "horse_no": "8",
+          "horse_name": "ジョータルマエ",
+          "win_odds": 13.9,
           "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102022102305/86",
-          "horse_no": "14",
-          "horse_name": "アスクヴォルテージ",
-          "win_odds": 16.4,
+          "horse_id": "pw01dud102022102965/0C",
+          "horse_no": "10",
+          "horse_name": "ブレトワルダ",
+          "win_odds": 14.9,
           "market_rank": 8
         },
         {
-          "horse_id": "pw01dud102022105293/CC",
-          "horse_no": "4",
-          "horse_name": "キャトルエピス",
-          "win_odds": 17.2,
+          "horse_id": "pw01dud102022102131/88",
+          "horse_no": "2",
+          "horse_name": "ショウサンジョージ",
+          "win_odds": 19.0,
           "market_rank": 9
         },
         {
-          "horse_id": "pw01dud102022106741/7A",
-          "horse_no": "2",
-          "horse_name": "メイリー",
-          "win_odds": 24.5,
+          "horse_id": "pw01dud102021106126/E7",
+          "horse_no": "13",
+          "horse_name": "タイセイアディクト",
+          "win_odds": 23.7,
           "market_rank": 10
         },
         {
-          "horse_id": "pw01dud102023105688/4B",
-          "horse_no": "10",
-          "horse_name": "オンナキュヌヴィ",
-          "win_odds": 24.6,
+          "horse_id": "pw01dud102020103521/13",
+          "horse_no": "1",
+          "horse_name": "セブンマジシャン",
+          "win_odds": 23.8,
           "market_rank": 11
         },
         {
-          "horse_id": "pw01dud102023106299/F9",
-          "horse_no": "15",
-          "horse_name": "ダイユウルミナス",
-          "win_odds": 26.1,
+          "horse_id": "pw01dud102020100979/F2",
+          "horse_no": "6",
+          "horse_name": "メイショウコガシラ",
+          "win_odds": 26.8,
           "market_rank": 12
         },
         {
-          "horse_id": "pw01dud102022105376/36",
-          "horse_no": "9",
-          "horse_name": "ティピティーナ",
-          "win_odds": 28.6,
+          "horse_id": "pw01dud102022105694/03",
+          "horse_no": "12",
+          "horse_name": "オリーブグリーン",
+          "win_odds": 28.8,
           "market_rank": 13
         },
         {
-          "horse_id": "pw01dud102023106372/E5",
-          "horse_no": "17",
-          "horse_name": "リラベガ",
-          "win_odds": 30.2,
+          "horse_id": "pw01dud102020104297/91",
+          "horse_no": "7",
+          "horse_name": "ルクスビッグスター",
+          "win_odds": 36.8,
           "market_rank": 14
         },
         {
-          "horse_id": "pw01dud102022104533/10",
-          "horse_no": "13",
-          "horse_name": "チョングク",
-          "win_odds": 48.4,
+          "horse_id": "pw01dud102019102983/AF",
+          "horse_no": "5",
+          "horse_name": "キュールエフウジン",
+          "win_odds": 44.0,
           "market_rank": 15
         },
         {
-          "horse_id": "pw01dud102023106197/E2",
+          "horse_id": "pw01dud102020102317/64",
+          "horse_no": "15",
+          "horse_name": "サイモンブーケ",
+          "win_odds": 147.2,
+          "market_rank": 16
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604101120261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 11,
+      "race_name": "第31回 KBS京都賞ファンタジーステークス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604101120261031%2FA4",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102024105916/14",
+          "horse_no": "8",
+          "horse_name": "ブライトスクリプト",
+          "win_odds": 2.5,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024106378/23",
+          "horse_no": "6",
+          "horse_name": "イモージェン",
+          "win_odds": 5.6,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024106712/D5",
+          "horse_no": "4",
+          "horse_name": "ニクスルーナ",
+          "win_odds": 6.8,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024106262/30",
+          "horse_no": "3",
+          "horse_name": "ビスケットサンド",
+          "win_odds": 7.6,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024105568/86",
+          "horse_no": "10",
+          "horse_name": "フェリチタ",
+          "win_odds": 10.3,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024106355/AA",
+          "horse_no": "1",
+          "horse_name": "レニュアージュ",
+          "win_odds": 11.8,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024106025/E7",
+          "horse_no": "7",
+          "horse_name": "シャンデヴァーグ",
+          "win_odds": 16.3,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024104447/D3",
+          "horse_no": "9",
+          "horse_name": "ベニバナ",
+          "win_odds": 18.5,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024106512/73",
+          "horse_no": "11",
+          "horse_name": "ツキミ",
+          "win_odds": 18.9,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024101674/3F",
+          "horse_no": "2",
+          "horse_name": "セイウンマイラヴ",
+          "win_odds": 22.1,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024107318/B2",
+          "horse_no": "5",
+          "horse_name": "バタフライ",
+          "win_odds": 81.7,
+          "market_rank": 11
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0108202604101220261031",
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604101220261031%2F59",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102023104034/1A",
+          "horse_no": "2",
+          "horse_name": "テイエムスティール",
+          "win_odds": 5.2,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102022104738/B1",
+          "horse_no": "6",
+          "horse_name": "パスコード",
+          "win_odds": 7.5,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023107183/F5",
+          "horse_no": "17",
+          "horse_name": "フォルナックス",
+          "win_odds": 8.2,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102023102225/01",
+          "horse_no": "1",
+          "horse_name": "スマートティアナ",
+          "win_odds": 8.4,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102023106569/5C",
+          "horse_no": "15",
+          "horse_name": "メイショウトウコウ",
+          "win_odds": 8.8,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102023102996/3B",
+          "horse_no": "8",
+          "horse_name": "エイズルブルーム",
+          "win_odds": 10.1,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102023103766/98",
+          "horse_no": "11",
+          "horse_name": "タイムレスキス",
+          "win_odds": 10.6,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102022103702/E0",
+          "horse_no": "9",
+          "horse_name": "アイスヴィレッジ",
+          "win_odds": 15.4,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102023103580/A4",
+          "horse_no": "3",
+          "horse_name": "ラパンドール",
+          "win_odds": 19.9,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102023105153/E7",
+          "horse_no": "12",
+          "horse_name": "マテンロウネイビー",
+          "win_odds": 22.2,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102023106868/7C",
           "horse_no": "18",
-          "horse_name": "フレンドモナコ",
-          "win_odds": 71.8,
+          "horse_name": "サトノセプター",
+          "win_odds": 22.7,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102023110077/C5",
+          "horse_no": "16",
+          "horse_name": "エングルマン",
+          "win_odds": 23.6,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102022107342/18",
+          "horse_no": "4",
+          "horse_name": "ザラタン",
+          "win_odds": 30.1,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102023107290/DD",
+          "horse_no": "10",
+          "horse_name": "ラヴリーティアラ",
+          "win_odds": 35.3,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102023103615/A4",
+          "horse_no": "7",
+          "horse_name": "エスティヴァリス",
+          "win_odds": 41.4,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102022106593/4E",
+          "horse_no": "13",
+          "horse_name": "カポレイラ",
+          "win_odds": 51.2,
           "market_rank": 16
         },
         {
-          "horse_id": "pw01dud102023105691/36",
-          "horse_no": "8",
-          "horse_name": "ハクサンミレイ",
-          "win_odds": 84.6,
+          "horse_id": "pw01dud102023106226/30",
+          "horse_no": "14",
+          "horse_name": "ナムラヒナギク",
+          "win_odds": 56.1,
           "market_rank": 17
         },
         {
-          "horse_id": "pw01dud102022103327/7B",
-          "horse_no": "16",
-          "horse_name": "バム",
-          "win_odds": 111.0,
+          "horse_id": "pw01dud102023104692/BA",
+          "horse_no": "5",
+          "horse_name": "サマーブリザード",
+          "win_odds": 70.1,
           "market_rank": 18
         }
       ]
     },
     {
-      "race_id": "pw01dde0105202604090920261025",
-      "date": "2026-10-25",
+      "race_id": "pw01dde0105202604100120261031",
+      "date": "2026-10-31",
       "track": "東京",
-      "race_no": 9,
-      "race_name": "三鷹特別",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604090920261025%2FB1",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100120261031%2F74",
       "win_odds": [
         {
-          "horse_id": "pw01dud102022103371/19",
-          "horse_no": "9",
-          "horse_name": "パイシャオピン",
-          "win_odds": 2.1,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022105556/78",
-          "horse_no": "7",
-          "horse_name": "ラストレガシー",
-          "win_odds": 6.5,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102023103962/2E",
-          "horse_no": "5",
-          "horse_name": "オクトーバーナイン",
-          "win_odds": 7.8,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102021101928/AA",
+          "horse_id": "pw01dud102024103168/E4",
           "horse_no": "11",
-          "horse_name": "チザルピーノ",
-          "win_odds": 8.2,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102021101305/0B",
-          "horse_no": "1",
-          "horse_name": "サンカルミア",
-          "win_odds": 10.0,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022103186/06",
-          "horse_no": "2",
-          "horse_name": "テーオーライマン",
-          "win_odds": 15.2,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102022105385/D3",
-          "horse_no": "4",
-          "horse_name": "ステアハート",
-          "win_odds": 15.7,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022104942/71",
-          "horse_no": "8",
-          "horse_name": "シルバーレイン",
-          "win_odds": 17.9,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022106951/EC",
-          "horse_no": "3",
-          "horse_name": "ブレゲアン",
-          "win_odds": 25.2,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102022105201/56",
-          "horse_no": "10",
-          "horse_name": "ラマンシュ",
-          "win_odds": 30.5,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021103129/73",
-          "horse_no": "6",
-          "horse_name": "マリンバンカー",
-          "win_odds": 56.9,
-          "market_rank": 11
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604091020261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 10,
-      "race_name": "山中湖特別",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604091020261025%2FA6",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022104818/C2",
-          "horse_no": "2",
-          "horse_name": "クライスレリアーナ",
-          "win_odds": 1.6,
+          "horse_name": "ランフェザー",
+          "win_odds": 1.4,
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102022106825/57",
-          "horse_no": "9",
-          "horse_name": "コスモイシュタル",
-          "win_odds": 6.5,
+          "horse_id": "pw01dud102024108276/EA",
+          "horse_no": "14",
+          "horse_name": "パレスラン",
+          "win_odds": 10.7,
           "market_rank": 2
         },
         {
-          "horse_id": "pw01dud102022105977/CF",
-          "horse_no": "1",
-          "horse_name": "ロートホルン",
-          "win_odds": 7.1,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102022105849/54",
-          "horse_no": "4",
-          "horse_name": "マイスターヴェルク",
-          "win_odds": 9.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022105047/E6",
-          "horse_no": "6",
-          "horse_name": "メランジェ",
-          "win_odds": 12.0,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022105032/97",
-          "horse_no": "7",
-          "horse_name": "エバーグルーヴ",
-          "win_odds": 17.1,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102022105981/2D",
-          "horse_no": "3",
-          "horse_name": "ブラックルビー",
-          "win_odds": 23.9,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102022101272/7D",
-          "horse_no": "8",
-          "horse_name": "スタニングヴュー",
-          "win_odds": 25.2,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102021106904/69",
-          "horse_no": "5",
-          "horse_name": "レイピカケ",
-          "win_odds": 43.7,
-          "market_rank": 9
-        }
-      ]
-    },
-    {
-      "race_id": "pw01dde0105202604091120261025",
-      "date": "2026-10-25",
-      "track": "東京",
-      "race_no": 11,
-      "race_name": "神無月ステークス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604091120261025%2F5B",
-      "win_odds": [
-        {
-          "horse_id": "pw01dud102022100905/CE",
-          "horse_no": "2",
-          "horse_name": "メリディアンスター",
-          "win_odds": 3.7,
-          "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102022106658/7E",
-          "horse_no": "4",
-          "horse_name": "ベルジュロネット",
-          "win_odds": 4.0,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102021103812/95",
-          "horse_no": "16",
-          "horse_name": "ワイワイレジェンド",
-          "win_odds": 5.8,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102022102202/FC",
-          "horse_no": "7",
-          "horse_name": "ヨリノレジェンド",
-          "win_odds": 12.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102022110107/FA",
-          "horse_no": "1",
-          "horse_name": "エコロアゼル",
-          "win_odds": 13.7,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022104922/51",
-          "horse_no": "11",
-          "horse_name": "リラエンブレム",
-          "win_odds": 14.3,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102021110148/21",
-          "horse_no": "5",
-          "horse_name": "ノーブルロジャー",
-          "win_odds": 17.8,
-          "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102020102843/BD",
-          "horse_no": "10",
-          "horse_name": "アッチャゴーラ",
-          "win_odds": 18.6,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102020102045/1B",
-          "horse_no": "9",
-          "horse_name": "フェルヴェンテ",
-          "win_odds": 19.5,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102023105105/7D",
-          "horse_no": "13",
-          "horse_name": "リュウノフライト",
-          "win_odds": 22.1,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102020101373/09",
-          "horse_no": "3",
-          "horse_name": "バトゥーキ",
-          "win_odds": 22.9,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102020105144/A6",
+          "horse_id": "pw01dud102024106410/5C",
           "horse_no": "12",
-          "horse_name": "ニシキギミッチー",
-          "win_odds": 23.0,
+          "horse_name": "ホウオウシュウ",
+          "win_odds": 10.9,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024102763/DC",
+          "horse_no": "6",
+          "horse_name": "イントゥーザブルー",
+          "win_odds": 11.0,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024106163/72",
+          "horse_no": "5",
+          "horse_name": "ハイファイネスト",
+          "win_odds": 16.2,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024100161/F2",
+          "horse_no": "7",
+          "horse_name": "フジサンインフレ",
+          "win_odds": 17.3,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024105705/2F",
+          "horse_no": "15",
+          "horse_name": "アークレイリ",
+          "win_odds": 20.9,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024101415/F0",
+          "horse_no": "13",
+          "horse_name": "チャリンコリン",
+          "win_odds": 28.3,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024107184/F4",
+          "horse_no": "3",
+          "horse_name": "ドーンオブホープ",
+          "win_odds": 59.8,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024102841/07",
+          "horse_no": "8",
+          "horse_name": "フィックスユー",
+          "win_odds": 60.1,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024101719/4F",
+          "horse_no": "4",
+          "horse_name": "ボディビルダー",
+          "win_odds": 69.8,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102024103688/F9",
+          "horse_no": "10",
+          "horse_name": "サクラトップオメガ",
+          "win_odds": 78.3,
           "market_rank": 12
         },
         {
-          "horse_id": "pw01dud102020110106/6F",
-          "horse_no": "14",
-          "horse_name": "アドバンスファラオ",
-          "win_odds": 56.1,
+          "horse_id": "pw01dud102024102617/27",
+          "horse_no": "2",
+          "horse_name": "ニシノツムジカゼ",
+          "win_odds": 82.8,
           "market_rank": 13
         },
         {
-          "horse_id": "pw01dud102018110126/84",
-          "horse_no": "8",
-          "horse_name": "ジャスパーゴールド",
-          "win_odds": 88.4,
+          "horse_id": "pw01dud102024104246/FE",
+          "horse_no": "9",
+          "horse_name": "サイボーグ",
+          "win_odds": 91.7,
           "market_rank": 14
         },
         {
-          "horse_id": "pw01dud102018102969/B5",
-          "horse_no": "6",
-          "horse_name": "タイセイブレイズ",
-          "win_odds": 90.5,
+          "horse_id": "pw01dud102024104637/25",
+          "horse_no": "16",
+          "horse_name": "ウスズミザクラ",
+          "win_odds": 157.3,
           "market_rank": 15
         },
         {
-          "horse_id": "pw01dud102022104972/A1",
-          "horse_no": "15",
-          "horse_name": "スリーピース",
-          "win_odds": 111.3,
+          "horse_id": "pw01dud102024101618/AB",
+          "horse_no": "1",
+          "horse_name": "トルタネーラ",
+          "win_odds": 322.7,
           "market_rank": 16
         }
       ]
     },
     {
-      "race_id": "pw01dde0105202604091220261025",
-      "date": "2026-10-25",
+      "race_id": "pw01dde0105202604100220261031",
+      "date": "2026-10-31",
       "track": "東京",
-      "race_no": 12,
-      "race_name": "3歳以上1勝クラス",
-      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604091220261025%2F10",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100220261031%2F29",
       "win_odds": [
         {
-          "horse_id": "pw01dud102023100612/7E",
-          "horse_no": "11",
-          "horse_name": "タイセイジェイド",
-          "win_odds": 3.6,
+          "horse_id": "pw01dud102024106751/A2",
+          "horse_no": "9",
+          "horse_name": "ローザヴェローナ",
+          "win_odds": 1.3,
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102023103748/5E",
-          "horse_no": "12",
-          "horse_name": "プレースメント",
-          "win_odds": 4.0,
+          "horse_id": "pw01dud102024102379/DA",
+          "horse_no": "2",
+          "horse_name": "ドナフェリーチェ",
+          "win_odds": 5.9,
           "market_rank": 2
         },
         {
-          "horse_id": "pw01dud102023101117/B7",
+          "horse_id": "pw01dud102024101835/D4",
+          "horse_no": "3",
+          "horse_name": "セラフィムコード",
+          "win_odds": 11.3,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024105504/5A",
+          "horse_no": "5",
+          "horse_name": "ダンツトリノ",
+          "win_odds": 18.5,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024103626/B3",
+          "horse_no": "10",
+          "horse_name": "コスモシグナス",
+          "win_odds": 18.8,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024102437/E5",
+          "horse_no": "6",
+          "horse_name": "クリガーレ",
+          "win_odds": 21.0,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024106838/D8",
+          "horse_no": "7",
+          "horse_name": "トーセンイルン",
+          "win_odds": 38.2,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024108317/2E",
+          "horse_no": "8",
+          "horse_name": "アイビークロノス",
+          "win_odds": 40.5,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024105070/09",
+          "horse_no": "1",
+          "horse_name": "ヒミツヘイキ",
+          "win_odds": 55.0,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024103657/56",
+          "horse_no": "4",
+          "horse_name": "キタノバトゥーキ",
+          "win_odds": 147.1,
+          "market_rank": 10
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604100320261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 3,
+      "race_name": "2歳未勝利",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100320261031%2FDE",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102024106508/15",
+          "horse_no": "8",
+          "horse_name": "アトミックリーチ",
+          "win_odds": 1.4,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024105832/37",
           "horse_no": "2",
-          "horse_name": "ビンバラ",
+          "horse_name": "グランドストーリー",
+          "win_odds": 5.7,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024101275/EE",
+          "horse_no": "5",
+          "horse_name": "ゴールドテソーロ",
+          "win_odds": 8.0,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024104331/E0",
+          "horse_no": "7",
+          "horse_name": "サラサシンシアズ",
+          "win_odds": 9.6,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024105988/6A",
+          "horse_no": "6",
+          "horse_name": "アオイゲート",
+          "win_odds": 14.1,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024102027/11",
+          "horse_no": "4",
+          "horse_name": "リカジョンファンク",
+          "win_odds": 29.6,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024105910/62",
+          "horse_no": "1",
+          "horse_name": "フィニート",
+          "win_odds": 37.7,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024103169/57",
+          "horse_no": "3",
+          "horse_name": "スカイミラー",
+          "win_odds": 50.9,
+          "market_rank": 8
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604100420261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 4,
+      "race_name": "メイクデビュー東京",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100420261031%2F93",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102024100741/F8",
+          "horse_no": "9",
+          "horse_name": "ミヤルロワ",
+          "win_odds": 5.7,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024103840/83",
+          "horse_no": "3",
+          "horse_name": "ワイワイシャイニー",
+          "win_odds": 5.9,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024106230/1A",
+          "horse_no": "6",
+          "horse_name": "ジャスティンバルサ",
+          "win_odds": 6.8,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024101831/08",
+          "horse_no": "12",
+          "horse_name": "レーヴマジック",
+          "win_odds": 7.5,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024100472/08",
+          "horse_no": "14",
+          "horse_name": "エコロガルディア",
+          "win_odds": 7.5,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024102324/4B",
+          "horse_no": "13",
+          "horse_name": "チェンジエッジ",
+          "win_odds": 8.9,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024108139/D2",
+          "horse_no": "4",
+          "horse_name": "ホウオウビリオン",
+          "win_odds": 10.3,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024106959/9C",
+          "horse_no": "10",
+          "horse_name": "モリノヤマセミ",
+          "win_odds": 14.4,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024101913/FF",
+          "horse_no": "2",
+          "horse_name": "アマネディル",
+          "win_odds": 21.9,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024103252/53",
+          "horse_no": "7",
+          "horse_name": "シンクロニシティ",
+          "win_odds": 22.9,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024104068/A2",
+          "horse_no": "11",
+          "horse_name": "ナニワダマシイ",
+          "win_odds": 36.0,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102024103897/F8",
+          "horse_no": "15",
+          "horse_name": "エマリュウオー",
+          "win_odds": 36.0,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024105784/3C",
+          "horse_no": "1",
+          "horse_name": "アワフェリシティ",
+          "win_odds": 47.9,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102024102014/A8",
+          "horse_no": "5",
+          "horse_name": "アヘッドオブオール",
+          "win_odds": 50.5,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102024108136/79",
+          "horse_no": "16",
+          "horse_name": "グランドバッシュ",
+          "win_odds": 59.2,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102024104622/D6",
+          "horse_no": "8",
+          "horse_name": "ピトンピンク",
+          "win_odds": 61.1,
+          "market_rank": 16
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604100520261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 5,
+      "race_name": "メイクデビュー東京",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100520261031%2F48",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102024106349/66",
+          "horse_no": "8",
+          "horse_name": "エクアトーレ",
+          "win_odds": 1.3,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024107202/BF",
+          "horse_no": "2",
+          "horse_name": "ラヴェーラ",
+          "win_odds": 7.6,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024103777/A7",
+          "horse_no": "5",
+          "horse_name": "ハクアイソー",
+          "win_odds": 10.4,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024103604/AD",
+          "horse_no": "7",
+          "horse_name": "シャルマンスリール",
+          "win_odds": 13.6,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024106359/76",
+          "horse_no": "6",
+          "horse_name": "タイセイリメンバー",
+          "win_odds": 13.8,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024106511/00",
+          "horse_no": "3",
+          "horse_name": "ケープルグラン",
+          "win_odds": 17.3,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024104962/A9",
+          "horse_no": "9",
+          "horse_name": "バーンユアハート",
+          "win_odds": 23.0,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024103186/1E",
+          "horse_no": "4",
+          "horse_name": "ヴィルアペックス",
+          "win_odds": 34.0,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024100722/4B",
+          "horse_no": "1",
+          "horse_name": "サスケサートゥル",
+          "win_odds": 49.1,
+          "market_rank": 9
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604100620261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 6,
+      "race_name": "3歳以上1勝クラス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100620261031%2FFD",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102023104958/BF",
+          "horse_no": "11",
+          "horse_name": "ターフクリスタル",
+          "win_odds": 5.2,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023102750/E7",
+          "horse_no": "8",
+          "horse_name": "ワンダーブリッツ",
+          "win_odds": 5.6,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102022105863/C2",
+          "horse_no": "10",
+          "horse_name": "ルシャルムール",
+          "win_odds": 5.7,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102023102833/51",
+          "horse_no": "5",
+          "horse_name": "グランドスウェル",
+          "win_odds": 6.0,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102023103731/29",
+          "horse_no": "15",
+          "horse_name": "モデレートゲイル",
+          "win_odds": 9.7,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102023107348/56",
+          "horse_no": "9",
+          "horse_name": "ピードモント",
+          "win_odds": 10.5,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102023105177/D3",
+          "horse_no": "16",
+          "horse_name": "タケルムサシ",
+          "win_odds": 11.2,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102023101301/57",
+          "horse_no": "12",
+          "horse_name": "クアッドフォルツァ",
+          "win_odds": 15.1,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102023103698/7D",
+          "horse_no": "1",
+          "horse_name": "ソニックキャット",
+          "win_odds": 20.5,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102023101644/83",
+          "horse_no": "3",
+          "horse_name": "オルブライト",
+          "win_odds": 26.0,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102019103219/89",
+          "horse_no": "14",
+          "horse_name": "ブレイクザアイス",
+          "win_odds": 28.4,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102023105654/4F",
+          "horse_no": "2",
+          "horse_name": "ジオストラテジー",
+          "win_odds": 37.5,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102022102991/70",
+          "horse_no": "4",
+          "horse_name": "カイトヴィント",
+          "win_odds": 53.3,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102022106199/3C",
+          "horse_no": "13",
+          "horse_name": "タマモトリノ",
+          "win_odds": 58.0,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102022105337/69",
+          "horse_no": "6",
+          "horse_name": "カサビセンス",
+          "win_odds": 84.8,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102023106177/C2",
+          "horse_no": "7",
+          "horse_name": "エクセルクラウン",
+          "win_odds": 90.8,
+          "market_rank": 16
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604100720261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100720261031%2FB2",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102023105783/3D",
+          "horse_no": "3",
+          "horse_name": "ホールドザデイ",
+          "win_odds": 2.8,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023107164/48",
+          "horse_no": "5",
+          "horse_name": "ランザワールド",
+          "win_odds": 3.3,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023105375/4F",
+          "horse_no": "6",
+          "horse_name": "ジーティーメティオ",
+          "win_odds": 4.2,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102022105864/35",
+          "horse_no": "2",
+          "horse_name": "キアラメンテ",
+          "win_odds": 10.6,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102023105002/F3",
+          "horse_no": "8",
+          "horse_name": "ミッキーマーメイド",
+          "win_odds": 12.9,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102022104716/AB",
+          "horse_no": "4",
+          "horse_name": "シェーンシュティア",
+          "win_odds": 16.8,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102022105153/5B",
+          "horse_no": "10",
+          "horse_name": "ディヒターリーベ",
+          "win_odds": 17.0,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102023104628/FC",
+          "horse_no": "7",
+          "horse_name": "ハーディジェナー",
+          "win_odds": 38.2,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102023104576/35",
+          "horse_no": "9",
+          "horse_name": "カンティーナ",
+          "win_odds": 38.8,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102022105365/B3",
+          "horse_no": "11",
+          "horse_name": "オプレントジュエル",
+          "win_odds": 61.0,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102023101812/CF",
+          "horse_no": "1",
+          "horse_name": "デイズインザサン",
+          "win_odds": 113.8,
+          "market_rank": 11
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604100820261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 8,
+      "race_name": "3歳以上2勝クラス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100820261031%2F67",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102022106699/31",
+          "horse_no": "3",
+          "horse_name": "ダイシンリンク",
+          "win_odds": 1.9,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023103365/61",
+          "horse_no": "7",
+          "horse_name": "ヘリテージブルーム",
+          "win_odds": 3.0,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102022102026/86",
+          "horse_no": "13",
+          "horse_name": "アクアマリーナ",
+          "win_odds": 11.7,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102021101121/FD",
+          "horse_no": "11",
+          "horse_name": "ミライテーラー",
+          "win_odds": 14.2,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102022104758/D1",
+          "horse_no": "10",
+          "horse_name": "ヴィンブルレー",
+          "win_odds": 15.4,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102020104174/E7",
+          "horse_no": "6",
+          "horse_name": "レジーナローズ",
+          "win_odds": 26.0,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102021101015/88",
+          "horse_no": "1",
+          "horse_name": "スーパーバイザー",
+          "win_odds": 35.9,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102023103171/43",
+          "horse_no": "2",
+          "horse_name": "プレダトゥール",
+          "win_odds": 37.1,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102021103776/90",
+          "horse_no": "4",
+          "horse_name": "ベルメサイア",
+          "win_odds": 37.3,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102020101412/67",
+          "horse_no": "12",
+          "horse_name": "パープルナイト",
+          "win_odds": 38.0,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102023104852/DC",
+          "horse_no": "5",
+          "horse_name": "レディサン",
+          "win_odds": 38.4,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102020107095/16",
+          "horse_no": "8",
+          "horse_name": "メモリーグラス",
+          "win_odds": 67.5,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102020101764/30",
+          "horse_no": "9",
+          "horse_name": "トーホウキザン",
+          "win_odds": 74.3,
+          "market_rank": 13
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604100920261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 9,
+      "race_name": "オキザリス賞",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100920261031%2F1C",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102024105753/99",
+          "horse_no": "4",
+          "horse_name": "ワンスフォーユー",
+          "win_odds": 2.5,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024101709/3F",
+          "horse_no": "13",
+          "horse_name": "ユイノエスポワール",
+          "win_odds": 3.2,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024101687/A8",
+          "horse_no": "7",
+          "horse_name": "イトウカカリチョウ",
+          "win_odds": 9.8,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024101716/F6",
+          "horse_no": "3",
+          "horse_name": "スマートブライド",
+          "win_odds": 10.2,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024100744/51",
+          "horse_no": "1",
+          "horse_name": "マイスターシューズ",
+          "win_odds": 10.5,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024101076/FF",
+          "horse_no": "9",
+          "horse_name": "スマートポーション",
+          "win_odds": 13.3,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024101581/C5",
+          "horse_no": "8",
+          "horse_name": "アレックスケー",
+          "win_odds": 21.6,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024101206/F1",
+          "horse_no": "2",
+          "horse_name": "コパノキラキラ",
+          "win_odds": 36.3,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102024100292/C6",
+          "horse_no": "6",
+          "horse_name": "マリノエスプレッソ",
+          "win_odds": 36.7,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024103977/09",
+          "horse_no": "14",
+          "horse_name": "ニシノイサリビ",
+          "win_odds": 46.7,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024103097/70",
+          "horse_no": "5",
+          "horse_name": "クロリス",
+          "win_odds": 47.3,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102024102461/63",
+          "horse_no": "11",
+          "horse_name": "ソラティオ",
+          "win_odds": 59.2,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024105532/A4",
+          "horse_no": "10",
+          "horse_name": "モミスケ",
+          "win_odds": 68.6,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102024105078/A1",
+          "horse_no": "12",
+          "horse_name": "グラスラリー",
+          "win_odds": 101.0,
+          "market_rank": 14
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604101020261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 10,
+      "race_name": "国立特別",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604101020261031%2F11",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102022105038/49",
+          "horse_no": "3",
+          "horse_name": "シャンソンドール",
+          "win_odds": 2.8,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023101566/58",
+          "horse_no": "7",
+          "horse_name": "フジガイフウ",
+          "win_odds": 2.8,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023106960/15",
+          "horse_no": "4",
+          "horse_name": "キシダンチョウ",
+          "win_odds": 6.6,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102023100504/23",
+          "horse_no": "10",
+          "horse_name": "クールデイトナ",
+          "win_odds": 9.3,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102022105807/2E",
+          "horse_no": "8",
+          "horse_name": "パワースナッチ",
+          "win_odds": 10.5,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102021103799/09",
+          "horse_no": "1",
+          "horse_name": "ケイケイ",
+          "win_odds": 14.1,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102021105252/8D",
+          "horse_no": "5",
+          "horse_name": "シャンパンマーク",
+          "win_odds": 16.8,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102020101184/2A",
+          "horse_no": "6",
+          "horse_name": "シャイニースイフト",
+          "win_odds": 22.7,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102021102468/E4",
+          "horse_no": "2",
+          "horse_name": "ブライティアダイヤ",
+          "win_odds": 86.6,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102021100008/E2",
+          "horse_no": "9",
+          "horse_name": "ホークマン",
+          "win_odds": 87.9,
+          "market_rank": 10
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604101120261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 11,
+      "race_name": "ペルセウスステークス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604101120261031%2FC6",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102022100204/04",
+          "horse_no": "16",
+          "horse_name": "ピエマンソン",
+          "win_odds": 4.4,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102022104743/82",
+          "horse_no": "12",
+          "horse_name": "クレーキング",
+          "win_odds": 6.1,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023106651/E5",
+          "horse_no": "9",
+          "horse_name": "リサシテーション",
+          "win_odds": 7.8,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102020103331/C1",
+          "horse_no": "6",
+          "horse_name": "ジェイパームス",
+          "win_odds": 8.0,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102020102724/DF",
+          "horse_no": "13",
+          "horse_name": "クールブロン",
+          "win_odds": 8.3,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102020103005/CA",
+          "horse_no": "14",
+          "horse_name": "ナイトアクアリウム",
+          "win_odds": 10.0,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102022104983/24",
+          "horse_no": "5",
+          "horse_name": "イムホテプ",
+          "win_odds": 10.5,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102022102117/1A",
+          "horse_no": "7",
+          "horse_name": "シュラザック",
+          "win_odds": 12.6,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102020101808/CD",
+          "horse_no": "8",
+          "horse_name": "ハワイアンタイム",
+          "win_odds": 21.9,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102022104584/D3",
+          "horse_no": "10",
+          "horse_name": "アドマイヤデイトナ",
+          "win_odds": 25.2,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102022100653/A5",
+          "horse_no": "3",
+          "horse_name": "ロードラビリンス",
+          "win_odds": 27.3,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102020103148/94",
+          "horse_no": "15",
+          "horse_name": "ショウナンライシン",
+          "win_odds": 43.0,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102020103275/9C",
+          "horse_no": "2",
+          "horse_name": "シーズンリッチ",
+          "win_odds": 44.4,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102019103593/EA",
+          "horse_no": "1",
+          "horse_name": "ハセドン",
+          "win_odds": 53.1,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102021100895/A1",
+          "horse_no": "4",
+          "horse_name": "サフランヒーロー",
+          "win_odds": 59.6,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102021110069/83",
+          "horse_no": "11",
+          "horse_name": "エスカル",
+          "win_odds": 73.5,
+          "market_rank": 16
+        }
+      ]
+    },
+    {
+      "race_id": "pw01dde0105202604101220261031",
+      "date": "2026-10-31",
+      "track": "東京",
+      "race_no": 12,
+      "race_name": "3歳以上1勝クラス",
+      "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604101220261031%2F7B",
+      "win_odds": [
+        {
+          "horse_id": "pw01dud102023105238/37",
+          "horse_no": "7",
+          "horse_name": "ラヴェニュー",
+          "win_odds": 2.6,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023106905/F4",
+          "horse_no": "12",
+          "horse_name": "ヴァロアーク",
+          "win_odds": 4.6,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102022104875/C9",
+          "horse_no": "10",
+          "horse_name": "オルグジェシダ",
           "win_odds": 6.1,
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102022105160/12",
-          "horse_no": "3",
-          "horse_name": "レッドエウロス",
-          "win_odds": 9.2,
+          "horse_id": "pw01dud102023106432/D6",
+          "horse_no": "5",
+          "horse_name": "マイネルグレート",
+          "win_odds": 11.5,
           "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102023105077/A2",
-          "horse_no": "1",
-          "horse_name": "マサッチェハマー",
-          "win_odds": 10.9,
+          "horse_id": "pw01dud102023103814/93",
+          "horse_no": "8",
+          "horse_name": "アメテュストス",
+          "win_odds": 12.4,
           "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102022110061/77",
-          "horse_no": "8",
-          "horse_name": "ブレスドナイル",
-          "win_odds": 11.8,
+          "horse_id": "pw01dud102023110018/D8",
+          "horse_no": "6",
+          "horse_name": "ラッキーストーン",
+          "win_odds": 12.7,
           "market_rank": 6
         },
         {
-          "horse_id": "pw01dud102023102160/D1",
-          "horse_no": "10",
-          "horse_name": "アルデキングダム",
-          "win_odds": 11.9,
+          "horse_id": "pw01dud102023103298/B9",
+          "horse_no": "2",
+          "horse_name": "ダイユウアレグロ",
+          "win_odds": 16.2,
           "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102022106545/E4",
-          "horse_no": "7",
-          "horse_name": "カンレイスキー",
-          "win_odds": 18.5,
+          "horse_id": "pw01dud102023107329/A9",
+          "horse_no": "3",
+          "horse_name": "ボニープリンス",
+          "win_odds": 16.6,
           "market_rank": 8
         },
         {
-          "horse_id": "pw01dud102022101673/B4",
+          "horse_id": "pw01dud102023107111/9F",
           "horse_no": "4",
-          "horse_name": "サルファー",
-          "win_odds": 22.8,
+          "horse_name": "アイムイン",
+          "win_odds": 26.9,
           "market_rank": 9
         },
         {
-          "horse_id": "pw01dud102023104042/44",
-          "horse_no": "5",
-          "horse_name": "ライカ",
-          "win_odds": 28.8,
+          "horse_id": "pw01dud102023102504/01",
+          "horse_no": "9",
+          "horse_name": "セーヌデローヴ",
+          "win_odds": 27.7,
           "market_rank": 10
         },
         {
-          "horse_id": "pw01dud102023107363/37",
-          "horse_no": "9",
-          "horse_name": "ハギンス",
-          "win_odds": 45.3,
+          "horse_id": "pw01dud102023104389/3C",
+          "horse_no": "11",
+          "horse_name": "フリーガー",
+          "win_odds": 30.5,
           "market_rank": 11
         },
         {
-          "horse_id": "pw01dud102021110139/84",
-          "horse_no": "13",
-          "horse_name": "ガーデンカメリア",
-          "win_odds": 45.3,
+          "horse_id": "pw01dud102023103045/AE",
+          "horse_no": "1",
+          "horse_name": "フィクセルリリア",
+          "win_odds": 65.4,
           "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102020106974/4D",
-          "horse_no": "6",
-          "horse_name": "サムワンライクユー",
-          "win_odds": 45.7,
-          "market_rank": 13
         }
       ]
     }
