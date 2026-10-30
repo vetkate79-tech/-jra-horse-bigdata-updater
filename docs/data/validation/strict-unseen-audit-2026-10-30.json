@@ -1,0 +1,735 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-30",
+  "status": "JRA_OFFICIAL_TRIO_36_OF_36_COMPLETE_BUT_NO_NEW_FORMAL_UPSTREAM_AUDITED_FIXED_36R_PASS",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "checked_default_branch_head": "3475ace35aa5d411fdf82ddebd3611f70cb89754",
+  "checked_latest_commit_utc": "2026-10-30T07:36:34Z",
+  "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-29.json",
+  "oct25_original_seal": {
+    "commit": "c939970e1784fbf03d4e4424219d386039a8717d",
+    "commit_utc": "2026-10-24T18:10:10Z",
+    "blob_sha": "6c30dedc1d29465b4e36511463aae6738fba2276",
+    "immutable_full_content_independently_inspected": false,
+    "connector_response": "0 bytes despite blob SHA; partial line request also 0 bytes",
+    "status": "UPSTREAM_LINEAGE_AND_FULL_CONTENT_STILL_PENDING"
+  },
+  "oct25_jra_official_results": {
+    "races": 36,
+    "unique_keys": 36,
+    "duplicates": 0,
+    "previously_checked": 9,
+    "newly_checked": 27,
+    "now_verified": 36,
+    "remaining": 0,
+    "trio_combination_payout_mismatches": 0,
+    "all_36_trio_outcomes_checked_against_jra_official_pages": true,
+    "same_day_cancel_or_refund_findings": [
+      {
+        "track": "京都",
+        "race_no": 3,
+        "scratched_horse_no": 5,
+        "official_refund_for_horse": true,
+        "decision": "PASS",
+        "stake_yen": 0,
+        "observed_pnl_impact_yen": 0
+      }
+    ],
+    "caveat": "All 36 trio outcomes/dividends checked; comprehensive ticket-level cancellation/refund and start-time reconciliation still pending.",
+    "per_race": [
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 1,
+        "race_id": "pw01dde0108202604090120261025",
+        "jra_official_trio": [
+          {
+            "comb": "1-4-5",
+            "payout_yen": 8520
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090120261025/0F",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 2,
+        "race_id": "pw01dde0108202604090220261025",
+        "jra_official_trio": [
+          {
+            "comb": "1-4-5",
+            "payout_yen": 2040
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090220261025/C4",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 3,
+        "race_id": "pw01dde0108202604090320261025",
+        "jra_official_trio": [
+          {
+            "comb": "1-2-6",
+            "payout_yen": 470
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090320261025/79",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 4,
+        "race_id": "pw01dde0108202604090420261025",
+        "jra_official_trio": [
+          {
+            "comb": "3-10-11",
+            "payout_yen": 18740
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090420261025/2E",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 5,
+        "race_id": "pw01dde0108202604090520261025",
+        "jra_official_trio": [
+          {
+            "comb": "1-7-8",
+            "payout_yen": 170
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090520261025/E3",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 6,
+        "race_id": "pw01dde0108202604090620261025",
+        "jra_official_trio": [
+          {
+            "comb": "6-11-12",
+            "payout_yen": 2450
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090620261025/98",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 7,
+        "race_id": "pw01dde0108202604090720261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-3-5",
+            "payout_yen": 800
+          }
+        ],
+        "jra_official_result_url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde0108202604090720261025/6E",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 800,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 8,
+        "race_id": "pw01dde0108202604090820261025",
+        "jra_official_trio": [
+          {
+            "comb": "3-10-18",
+            "payout_yen": 5830
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090820261025/02",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 9,
+        "race_id": "pw01dde0108202604090920261025",
+        "jra_official_trio": [
+          {
+            "comb": "1-5-7",
+            "payout_yen": 6190
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604090920261025/B7",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 10,
+        "race_id": "pw01dde0108202604091020261025",
+        "jra_official_trio": [
+          {
+            "comb": "3-10-12",
+            "payout_yen": 43250
+          }
+        ],
+        "jra_official_result_url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604091020261025/AC",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 11,
+        "race_id": "pw01dde0108202604091120261025",
+        "jra_official_trio": [
+          {
+            "comb": "6-9-10",
+            "payout_yen": 8580
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604091120261025/61",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "京都",
+        "race_no": 12,
+        "race_id": "pw01dde0108202604091220261025",
+        "jra_official_trio": [
+          {
+            "comb": "5-7-12",
+            "payout_yen": 11670
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1008202604091220261025/16",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 1,
+        "race_id": "pw01dde0104202604040120261025",
+        "jra_official_trio": [
+          {
+            "comb": "7-11-12",
+            "payout_yen": 149060
+          }
+        ],
+        "jra_official_result_url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040120261025/A8",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 2,
+        "race_id": "pw01dde0104202604040220261025",
+        "jra_official_trio": [
+          {
+            "comb": "4-5-8",
+            "payout_yen": 1580
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040220261025/5D",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 3,
+        "race_id": "pw01dde0104202604040320261025",
+        "jra_official_trio": [
+          {
+            "comb": "9-14-18",
+            "payout_yen": 7160
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040320261025/12",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 4,
+        "race_id": "pw01dde0104202604040420261025",
+        "jra_official_trio": [
+          {
+            "comb": "4-5-13",
+            "payout_yen": 2290
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040420261025/C7",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 5,
+        "race_id": "pw01dde0104202604040520261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-3-13",
+            "payout_yen": 2330
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040520261025/7C",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 6,
+        "race_id": "pw01dde0104202604040620261025",
+        "jra_official_trio": [
+          {
+            "comb": "3-6-10",
+            "payout_yen": 3960
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040620261025/31",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 7,
+        "race_id": "pw01dde0104202604040720261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-3-8",
+            "payout_yen": 31630
+          }
+        ],
+        "jra_official_result_url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde0104202604040720261025/07",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 8,
+        "race_id": "pw01dde0104202604040820261025",
+        "jra_official_trio": [
+          {
+            "comb": "4-12-14",
+            "payout_yen": 6210
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040820261025/9B",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 9,
+        "race_id": "pw01dde0104202604040920261025",
+        "jra_official_trio": [
+          {
+            "comb": "1-8-13",
+            "payout_yen": 77520
+          }
+        ],
+        "jra_official_result_url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604040920261025/50",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 10,
+        "race_id": "pw01dde0104202604041020261025",
+        "jra_official_trio": [
+          {
+            "comb": "4-8-10",
+            "payout_yen": 166440
+          }
+        ],
+        "jra_official_result_url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604041020261025/45",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 11,
+        "race_id": "pw01dde0104202604041120261025",
+        "jra_official_trio": [
+          {
+            "comb": "9-10-11",
+            "payout_yen": 18620
+          },
+          {
+            "comb": "9-11-14",
+            "payout_yen": 1920
+          }
+        ],
+        "jra_official_result_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1004202604041120261025/6D",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 1920,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "新潟",
+        "race_no": 12,
+        "race_id": "pw01dde0104202604041220261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-6-7",
+            "payout_yen": 64180
+          },
+          {
+            "comb": "6-7-10",
+            "payout_yen": 28060
+          }
+        ],
+        "jra_official_result_url": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde1004202604041220261025/AF",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 1,
+        "race_id": "pw01dde0105202604090120261025",
+        "jra_official_trio": [
+          {
+            "comb": "11-13-16",
+            "payout_yen": 7710
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090120261025/31",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 2,
+        "race_id": "pw01dde0105202604090220261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-4-7",
+            "payout_yen": 250
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090220261025/E6",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 3,
+        "race_id": "pw01dde0105202604090320261025",
+        "jra_official_trio": [
+          {
+            "comb": "1-10-11",
+            "payout_yen": 6250
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090320261025/9B",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 0,
+        "return_yen": 0,
+        "decision": "PASS"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 4,
+        "race_id": "pw01dde0105202604090420261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-3-7",
+            "payout_yen": 1580
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090420261025/50",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 5,
+        "race_id": "pw01dde0105202604090520261025",
+        "jra_official_trio": [
+          {
+            "comb": "3-5-8",
+            "payout_yen": 3880
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090520261025/05",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 6,
+        "race_id": "pw01dde0105202604090620261025",
+        "jra_official_trio": [
+          {
+            "comb": "11-13-14",
+            "payout_yen": 1610
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090620261025/BA",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 7,
+        "race_id": "pw01dde0105202604090720261025",
+        "jra_official_trio": [
+          {
+            "comb": "6-9-10",
+            "payout_yen": 8180
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090720261025/6F",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 8,
+        "race_id": "pw01dde0105202604090820261025",
+        "jra_official_trio": [
+          {
+            "comb": "11-12-14",
+            "payout_yen": 4690
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090820261025/24",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 9,
+        "race_id": "pw01dde0105202604090920261025",
+        "jra_official_trio": [
+          {
+            "comb": "3-5-9",
+            "payout_yen": 5290
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604090920261025/D9",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 0,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 10,
+        "race_id": "pw01dde0105202604091020261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-4-7",
+            "payout_yen": 3880
+          }
+        ],
+        "jra_official_result_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604091020261025/62",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 900,
+        "return_yen": 3880,
+        "decision": "BUY"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 11,
+        "race_id": "pw01dde0105202604091120261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-4-5",
+            "payout_yen": 2190
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604091120261025/83",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      },
+      {
+        "date": "2026-10-25",
+        "track": "東京",
+        "race_no": 12,
+        "race_id": "pw01dde0105202604091220261025",
+        "jra_official_trio": [
+          {
+            "comb": "2-8-11",
+            "payout_yen": 3090
+          }
+        ],
+        "jra_official_result_url": "https://app.jra.jp/JRADB/accessS.html?CNAME=sw01sde1005202604091220261025/38",
+        "source_rechecked_on": "2026-10-30",
+        "stake_yen": 800,
+        "return_yen": 0,
+        "decision": "CAUTION"
+      }
+    ]
+  },
+  "oct25_provisional": {
+    "races": 36,
+    "purchased": 28,
+    "stake_yen": 24100,
+    "return_yen": 6600,
+    "net_yen": -17500,
+    "roi_pct": 27.39,
+    "largest_return_yen": 3880,
+    "roi_ex_largest_pct": 11.29,
+    "hits": 3,
+    "source": "docs/data/validation/strict-unseen-audit-2026-10-26.json",
+    "status": "DIAGNOSTIC_ONLY_PENDING_UPSTREAM_AUDIT"
+  },
+  "current_pre_race_oct31_nov1": {
+    "latest_commit_utc": "2026-10-30T07:36:34Z",
+    "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+    "sealed_dates": [
+      "2026-10-31",
+      "2026-11-01"
+    ],
+    "sealed_races": 48,
+    "frame_known": 322,
+    "frame_total": 625,
+    "frame_coverage_pct": 51.52,
+    "seal_stage": "PARTIAL_FRAME_RESEAL",
+    "original_content_full_read_available": false,
+    "feature_history_runners": 514,
+    "feature_total_runners": 625,
+    "missing_champion_archive": "docs/data/live_predictions_champion_2026-10-30.json",
+    "status": "FUTURE_PRE_RACE_DATA_NOT_SCORED; INCOMPLETE_FRAME_COVERAGE; CHALLENGER_PAIRING_NOT_CERTIFIED",
+    "caveat": "Self-declared results_used=false and odds_popularity_used=false are not independent evidence."
+  },
+  "management_dashboard": {
+    "scored_races": 210,
+    "stake_yen": 155900,
+    "return_yen": 116490,
+    "net_yen": -39410,
+    "roi_pct": 74.72,
+    "reported_max_drawdown_yen": 0,
+    "minimum_possible_max_drawdown_yen": 39410,
+    "dd_status": "INVALID_PENDING_CHRONOLOGICAL_LEDGER_RECOMPUTE",
+    "cohort": "DIAGNOSTIC_NOT_STRICT_UNSEEN"
+  },
+  "carried_forward_timing_matched_upstream_pending": {
+    "races": 150,
+    "purchased": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "roi_pct": 89.49,
+    "roi_ex_largest_pct": 75.24,
+    "newly_promoted_races": 0
+  },
+  "historical_mixed_mechanism_rolling36": {
+    "gross_roi_pct": 156.98,
+    "roi_ex_largest_pct": 94.75,
+    "already_reported": true,
+    "formal_same_mechanism_pass": false
+  },
+  "new_formal_same_mechanism_upstream_audited_fixed36_passes": 0,
+  "challenger": {
+    "paired_test_run": false,
+    "reason": "Same fully audited frozen inputs and matched stakes unavailable; no retrospective optimization."
+  },
+  "next_actions": [
+    "Independently inspect original immutable Oct25 prediction and upstream feature lineage at race time.",
+    "Reconcile actual start times and any ticket-level scratches/refunds; calculate chronological maxDD/losing streak.",
+    "Freeze same-mechanism nonoverlapping 36R prospective cohort with complete frames and paired challenger.",
+    "Retain high-dividend capture as independent model-selection metric."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No newly achieved same-mechanism fully upstream-audited predeclared 36R with both ROI >90%; prior mixed rolling36 reported."
+  }
+}
