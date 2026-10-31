@@ -3,8 +3,8 @@
   "market_layer_only": true,
   "pure_prediction_mutated": false,
   "odds_type": "WIN",
-  "snapshot_slot": "HOURLY",
-  "captured_at": "2026-10-31T08:45:07.768519+09:00",
+  "snapshot_slot": "T30_5MIN",
+  "captured_at": "2026-10-31T11:44:54.857884+09:00",
   "race_count": 24,
   "runner_odds_count": 305,
   "races": [
@@ -20,112 +20,112 @@
           "horse_id": "pw01dud102024108132/AD",
           "horse_no": "5",
           "horse_name": "マルモリマイベスト",
-          "win_odds": 2.0,
+          "win_odds": 1.8,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102024108284/14",
           "horse_no": "1",
           "horse_name": "スリーオブスペイズ",
-          "win_odds": 6.8,
+          "win_odds": 5.9,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024103815/92",
           "horse_no": "9",
           "horse_name": "エアロクリスタ",
-          "win_odds": 9.1,
+          "win_odds": 9.4,
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102024108327/3E",
-          "horse_no": "14",
-          "horse_name": "ピコジャック",
-          "win_odds": 11.6,
+          "horse_id": "pw01dud102024103504/7C",
+          "horse_no": "8",
+          "horse_name": "ベラジオセブン",
+          "win_odds": 11.1,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024109047/BA",
           "horse_no": "7",
           "horse_name": "シムサラビン",
-          "win_odds": 12.7,
+          "win_odds": 11.8,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024100358/69",
           "horse_no": "13",
           "horse_name": "ジャスコヒラリアス",
-          "win_odds": 15.0,
+          "win_odds": 16.8,
           "market_rank": 6
         },
         {
-          "horse_id": "pw01dud102024103504/7C",
-          "horse_no": "8",
-          "horse_name": "ベラジオセブン",
-          "win_odds": 17.9,
+          "horse_id": "pw01dud102024108327/3E",
+          "horse_no": "14",
+          "horse_name": "ピコジャック",
+          "win_odds": 18.9,
           "market_rank": 7
-        },
-        {
-          "horse_id": "pw01dud102024105952/88",
-          "horse_no": "10",
-          "horse_name": "ダイユウエゾフジ",
-          "win_odds": 21.5,
-          "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024105434/59",
           "horse_no": "12",
           "horse_name": "アセンシオン",
           "win_odds": 22.6,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102024103952/AA",
-          "horse_no": "16",
-          "horse_name": "ヴァルダンセ",
-          "win_odds": 30.4,
-          "market_rank": 10
+          "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024108341/AC",
           "horse_no": "11",
           "horse_name": "エリーマイラヴ",
-          "win_odds": 36.5,
-          "market_rank": 11
+          "win_odds": 36.9,
+          "market_rank": 9
         },
         {
-          "horse_id": "pw01dud102024103364/7A",
-          "horse_no": "4",
-          "horse_name": "ランズエンド",
-          "win_odds": 55.0,
-          "market_rank": 12
+          "horse_id": "pw01dud102024105952/88",
+          "horse_no": "10",
+          "horse_name": "ダイユウエゾフジ",
+          "win_odds": 39.2,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024103952/AA",
+          "horse_no": "16",
+          "horse_name": "ヴァルダンセ",
+          "win_odds": 48.2,
+          "market_rank": 11
         },
         {
           "horse_id": "pw01dud102024100260/B0",
           "horse_no": "6",
           "horse_name": "ピエナマーズ",
-          "win_odds": 60.0,
+          "win_odds": 49.3,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024103364/7A",
+          "horse_no": "4",
+          "horse_name": "ランズエンド",
+          "win_odds": 104.0,
           "market_rank": 13
         },
         {
           "horse_id": "pw01dud102024104203/65",
           "horse_no": "3",
           "horse_name": "ウィナーズクロノ",
-          "win_odds": 74.6,
+          "win_odds": 120.2,
           "market_rank": 14
         },
         {
           "horse_id": "pw01dud102024104826/04",
           "horse_no": "15",
           "horse_name": "ヤマトデュノール",
-          "win_odds": 91.1,
+          "win_odds": 327.4,
           "market_rank": 15
         },
         {
           "horse_id": "pw01dud102024105015/E8",
           "horse_no": "2",
           "horse_name": "ゴールドアーク",
-          "win_odds": 157.8,
+          "win_odds": 488.3,
           "market_rank": 16
         }
       ]
@@ -139,73 +139,73 @@
       "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100220261031%2F07",
       "win_odds": [
         {
-          "horse_id": "pw01dud102024102197/B2",
-          "horse_no": "9",
-          "horse_name": "コンセルノ",
-          "win_odds": 2.1,
-          "market_rank": 1
-        },
-        {
           "horse_id": "pw01dud102024106277/7F",
           "horse_no": "6",
           "horse_name": "ラガッタレアーレ",
-          "win_odds": 2.9,
+          "win_odds": 1.9,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024102197/B2",
+          "horse_no": "9",
+          "horse_name": "コンセルノ",
+          "win_odds": 2.2,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024106809/1B",
           "horse_no": "8",
           "horse_name": "ダディーズレガリア",
-          "win_odds": 7.2,
+          "win_odds": 7.9,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102024100340/C1",
           "horse_no": "1",
           "horse_name": "フクノブルースカイ",
-          "win_odds": 11.2,
+          "win_odds": 15.0,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024101070/4D",
           "horse_no": "5",
           "horse_name": "サウンドアミューズ",
-          "win_odds": 12.4,
+          "win_odds": 20.0,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024101768/2C",
           "horse_no": "7",
           "horse_name": "ヒノトリ",
-          "win_odds": 14.7,
+          "win_odds": 49.9,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024106871/F3",
           "horse_no": "10",
           "horse_name": "トゥルーライフ",
-          "win_odds": 27.6,
+          "win_odds": 71.5,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024108222/CE",
           "horse_no": "2",
           "horse_name": "ルガルデ",
-          "win_odds": 73.9,
+          "win_odds": 235.1,
           "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102024104848/0A",
-          "horse_no": "3",
-          "horse_name": "ナムラサフラン",
-          "win_odds": 86.6,
-          "market_rank": 9
         },
         {
           "horse_id": "pw01dud102024106913/AA",
           "horse_no": "4",
           "horse_name": "ジューンルル",
-          "win_odds": 97.7,
+          "win_odds": 271.5,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024104848/0A",
+          "horse_no": "3",
+          "horse_name": "ナムラサフラン",
+          "win_odds": 337.6,
           "market_rank": 10
         }
       ]
@@ -222,56 +222,56 @@
           "horse_id": "pw01dud102024101334/6C",
           "horse_no": "7",
           "horse_name": "ディープリメンバー",
-          "win_odds": 2.4,
+          "win_odds": 1.8,
           "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024106131/5C",
-          "horse_no": "5",
-          "horse_name": "ブラックミューズ",
-          "win_odds": 4.1,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102024106991/44",
-          "horse_no": "8",
-          "horse_name": "アイオリスパルス",
-          "win_odds": 4.4,
-          "market_rank": 3
         },
         {
           "horse_id": "pw01dud102024104309/48",
           "horse_no": "4",
           "horse_name": "ポカポカヨウキ",
-          "win_odds": 4.6,
+          "win_odds": 4.9,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024106131/5C",
+          "horse_no": "5",
+          "horse_name": "ブラックミューズ",
+          "win_odds": 5.0,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102024106991/44",
+          "horse_no": "8",
+          "horse_name": "アイオリスパルス",
+          "win_odds": 5.0,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024107167/2D",
           "horse_no": "1",
           "horse_name": "シルクウォード",
-          "win_odds": 13.7,
+          "win_odds": 12.2,
           "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024100008/86",
-          "horse_no": "3",
-          "horse_name": "メメヤンチャヒメ",
-          "win_odds": 23.5,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102024105768/E8",
-          "horse_no": "6",
-          "horse_name": "サントボーム",
-          "win_odds": 39.6,
-          "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024105274/37",
           "horse_no": "2",
           "horse_name": "ウィリーウィリー",
-          "win_odds": 53.9,
+          "win_odds": 52.5,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024100008/86",
+          "horse_no": "3",
+          "horse_name": "メメヤンチャヒメ",
+          "win_odds": 68.0,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024105768/E8",
+          "horse_no": "6",
+          "horse_name": "サントボーム",
+          "win_odds": 173.8,
           "market_rank": 8
         }
       ]
@@ -288,70 +288,70 @@
           "horse_id": "pw01dud102021104830/BE",
           "horse_no": "1",
           "horse_name": "グロリアラウス",
-          "win_odds": 2.5,
+          "win_odds": 1.6,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102021102388/D3",
           "horse_no": "5",
           "horse_name": "カイコウ",
-          "win_odds": 2.7,
+          "win_odds": 4.2,
           "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102020102648/9A",
-          "horse_no": "9",
-          "horse_name": "ラパンラピッド",
-          "win_odds": 5.6,
-          "market_rank": 3
         },
         {
           "horse_id": "pw01dud102022101461/5C",
           "horse_no": "4",
           "horse_name": "セイフウサツキ",
-          "win_odds": 7.9,
+          "win_odds": 7.7,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102020102648/9A",
+          "horse_no": "9",
+          "horse_name": "ラパンラピッド",
+          "win_odds": 8.2,
           "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102022100044/E2",
+          "horse_no": "6",
+          "horse_name": "ディープサミット",
+          "win_odds": 16.1,
+          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102023101781/9B",
           "horse_no": "8",
           "horse_name": "ラッキーダイヤ",
-          "win_odds": 17.1,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022101587/5F",
-          "horse_no": "10",
-          "horse_name": "クリアクォーツ",
-          "win_odds": 30.1,
+          "win_odds": 27.1,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102022103288/1D",
           "horse_no": "3",
           "horse_name": "ヤコブセン",
-          "win_odds": 33.7,
+          "win_odds": 45.0,
           "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102022100044/E2",
-          "horse_no": "6",
-          "horse_name": "ディープサミット",
-          "win_odds": 38.8,
+          "horse_id": "pw01dud102022101587/5F",
+          "horse_no": "10",
+          "horse_name": "クリアクォーツ",
+          "win_odds": 91.2,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102022102141/98",
           "horse_no": "2",
           "horse_name": "モルゲンゾンネ",
-          "win_odds": 41.8,
+          "win_odds": 140.5,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102019100764/C2",
           "horse_no": "7",
           "horse_name": "ローズピリオド",
-          "win_odds": 49.3,
+          "win_odds": 159.9,
           "market_rank": 10
         }
       ]
@@ -365,94 +365,94 @@
       "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100520261031%2F26",
       "win_odds": [
         {
-          "horse_id": "pw01dud102024106970/B1",
-          "horse_no": "5",
-          "horse_name": "アンドロニクス",
-          "win_odds": 3.5,
-          "market_rank": 1
-        },
-        {
           "horse_id": "pw01dud102024105816/E3",
           "horse_no": "10",
           "horse_name": "フォコンノワール",
-          "win_odds": 3.6,
+          "win_odds": 3.2,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024106970/B1",
+          "horse_no": "5",
+          "horse_name": "アンドロニクス",
+          "win_odds": 3.3,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024105293/E4",
           "horse_no": "9",
           "horse_name": "オーバーアゲイン",
-          "win_odds": 6.4,
+          "win_odds": 6.2,
           "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024106033/11",
-          "horse_no": "11",
-          "horse_name": "ヒロノリホープ",
-          "win_odds": 8.4,
-          "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024106373/E4",
           "horse_no": "1",
           "horse_name": "ソトッキー",
-          "win_odds": 8.6,
-          "market_rank": 5
+          "win_odds": 7.5,
+          "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024106177/4E",
           "horse_no": "2",
           "horse_name": "フェイムシーカー",
-          "win_odds": 11.3,
-          "market_rank": 6
+          "win_odds": 12.4,
+          "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102024102143/96",
-          "horse_no": "8",
-          "horse_name": "メイショウイロドリ",
-          "win_odds": 16.4,
-          "market_rank": 7
+          "horse_id": "pw01dud102024106033/11",
+          "horse_no": "11",
+          "horse_name": "ヒロノリホープ",
+          "win_odds": 13.5,
+          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024103438/47",
           "horse_no": "4",
           "horse_name": "アントレピード",
-          "win_odds": 16.7,
-          "market_rank": 8
+          "win_odds": 16.5,
+          "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102024103587/55",
-          "horse_no": "3",
-          "horse_name": "トゥーリ",
-          "win_odds": 32.3,
-          "market_rank": 9
+          "horse_id": "pw01dud102024102143/96",
+          "horse_no": "8",
+          "horse_name": "メイショウイロドリ",
+          "win_odds": 18.4,
+          "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024106059/E3",
           "horse_no": "7",
           "horse_name": "デルマクズリュウ",
-          "win_odds": 35.7,
+          "win_odds": 42.9,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102024103587/55",
+          "horse_no": "3",
+          "horse_name": "トゥーリ",
+          "win_odds": 43.9,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102024104169/46",
           "horse_no": "12",
           "horse_name": "ホウオウトリリオン",
-          "win_odds": 67.5,
+          "win_odds": 85.2,
           "market_rank": 11
         },
         {
           "horse_id": "pw01dud102024109088/6D",
           "horse_no": "6",
           "horse_name": "フラワーマーチ",
-          "win_odds": 79.8,
+          "win_odds": 88.9,
           "market_rank": 12
         },
         {
           "horse_id": "pw01dud102024103962/BA",
           "horse_no": "13",
           "horse_name": "マンハッタンモーン",
-          "win_odds": 105.6,
+          "win_odds": 123.5,
           "market_rank": 13
         }
       ]
@@ -473,108 +473,108 @@
           "market_rank": 1
         },
         {
-          "horse_id": "pw01dud102024108219/E3",
-          "horse_no": "8",
-          "horse_name": "ジーティーイレブン",
-          "win_odds": 5.7,
-          "market_rank": 2
-        },
-        {
           "horse_id": "pw01dud102024106560/DD",
           "horse_no": "3",
           "horse_name": "クローネンリーベ",
-          "win_odds": 7.5,
+          "win_odds": 6.0,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024108219/E3",
+          "horse_no": "8",
+          "horse_name": "ジーティーイレブン",
+          "win_odds": 7.9,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102024108212/BE",
           "horse_no": "12",
           "horse_name": "ホーフアイゼン",
-          "win_odds": 10.0,
+          "win_odds": 7.9,
           "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024102894/B0",
-          "horse_no": "1",
-          "horse_name": "レッドガレオン",
-          "win_odds": 11.8,
-          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024108331/9C",
           "horse_no": "9",
           "horse_name": "トップエンドパワー",
-          "win_odds": 11.9,
+          "win_odds": 11.4,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024102894/B0",
+          "horse_no": "1",
+          "horse_name": "レッドガレオン",
+          "win_odds": 11.6,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024101871/48",
           "horse_no": "15",
           "horse_name": "マスターピース",
-          "win_odds": 11.9,
+          "win_odds": 12.7,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024106795/AE",
           "horse_no": "4",
           "horse_name": "サマーレディ",
-          "win_odds": 16.5,
+          "win_odds": 18.3,
           "market_rank": 8
         },
         {
-          "horse_id": "pw01dud102024108387/9E",
-          "horse_no": "14",
-          "horse_name": "サイモンレコルト",
-          "win_odds": 22.3,
+          "horse_id": "pw01dud102024104738/C9",
+          "horse_no": "7",
+          "horse_name": "ドリームハロウ",
+          "win_odds": 21.5,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102024108344/05",
           "horse_no": "2",
           "horse_name": "モアザンヴォルト",
-          "win_odds": 22.4,
+          "win_odds": 21.8,
           "market_rank": 10
         },
         {
-          "horse_id": "pw01dud102024104738/C9",
-          "horse_no": "7",
-          "horse_name": "ドリームハロウ",
-          "win_odds": 25.7,
+          "horse_id": "pw01dud102024108387/9E",
+          "horse_no": "14",
+          "horse_name": "サイモンレコルト",
+          "win_odds": 24.1,
           "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024104979/DE",
-          "horse_no": "16",
-          "horse_name": "ビップカレッジ",
-          "win_odds": 70.5,
-          "market_rank": 12
         },
         {
           "horse_id": "pw01dud102024107422/41",
           "horse_no": "6",
           "horse_name": "クリコリンダ",
-          "win_odds": 74.6,
-          "market_rank": 13
+          "win_odds": 76.6,
+          "market_rank": 12
         },
         {
           "horse_id": "pw01dud102024104619/EB",
           "horse_no": "5",
           "horse_name": "キングゴールド",
-          "win_odds": 75.3,
-          "market_rank": 14
+          "win_odds": 88.9,
+          "market_rank": 13
         },
         {
-          "horse_id": "pw01dud102024101238/07",
-          "horse_no": "13",
-          "horse_name": "ルシエルノーブル",
+          "horse_id": "pw01dud102024104979/DE",
+          "horse_no": "16",
+          "horse_name": "ビップカレッジ",
           "win_odds": 96.4,
-          "market_rank": 15
+          "market_rank": 14
         },
         {
           "horse_id": "pw01dud102024100113/88",
           "horse_no": "11",
           "horse_name": "ナムラウルフ",
-          "win_odds": 108.5,
+          "win_odds": 102.9,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102024101238/07",
+          "horse_no": "13",
+          "horse_name": "ルシエルノーブル",
+          "win_odds": 105.5,
           "market_rank": 16
         }
       ]
@@ -591,84 +591,84 @@
           "horse_id": "pw01dud102023105354/BC",
           "horse_no": "10",
           "horse_name": "バリオス",
-          "win_odds": 2.9,
+          "win_odds": 3.2,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102023107229/78",
           "horse_no": "2",
           "horse_name": "スカイストライプス",
-          "win_odds": 3.4,
+          "win_odds": 3.8,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102023102761/6A",
           "horse_no": "8",
           "horse_name": "ハイロード",
-          "win_odds": 7.1,
+          "win_odds": 6.9,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102022104654/D4",
           "horse_no": "12",
           "horse_name": "ジーティーアメリカ",
-          "win_odds": 8.1,
+          "win_odds": 7.2,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102023101840/19",
           "horse_no": "7",
           "horse_name": "ララディアーブル",
-          "win_odds": 11.5,
+          "win_odds": 8.4,
           "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102023105462/17",
-          "horse_no": "6",
-          "horse_name": "クラテロス",
-          "win_odds": 12.1,
-          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102021101391/CF",
           "horse_no": "4",
           "horse_name": "ブラックドレス",
-          "win_odds": 14.4,
+          "win_odds": 13.2,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102023105462/17",
+          "horse_no": "6",
+          "horse_name": "クラテロス",
+          "win_odds": 14.3,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102023104072/74",
           "horse_no": "5",
           "horse_name": "スナークシャラク",
-          "win_odds": 27.0,
+          "win_odds": 24.8,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102023105726/36",
           "horse_no": "9",
           "horse_name": "ゴールデンダガー",
-          "win_odds": 30.7,
+          "win_odds": 37.1,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102023107378/86",
           "horse_no": "11",
           "horse_name": "テーオーアンジェラ",
-          "win_odds": 42.7,
+          "win_odds": 39.9,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102023106076/1E",
           "horse_no": "3",
           "horse_name": "ハノハノ",
-          "win_odds": 46.1,
+          "win_odds": 40.0,
           "market_rank": 11
         },
         {
           "horse_id": "pw01dud102023100804/B6",
           "horse_no": "1",
           "horse_name": "マリノエステーラ",
-          "win_odds": 91.3,
+          "win_odds": 71.3,
           "market_rank": 12
         }
       ]
@@ -682,101 +682,101 @@
       "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604100820261031%2F45",
       "win_odds": [
         {
-          "horse_id": "pw01dud102023103087/D4",
-          "horse_no": "13",
-          "horse_name": "ライトオブヌカタ",
-          "win_odds": 3.7,
+          "horse_id": "pw01dud102023105591/05",
+          "horse_no": "8",
+          "horse_name": "マメタンク",
+          "win_odds": 3.9,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102021100158/63",
           "horse_no": "3",
           "horse_name": "ダノンモンテローザ",
-          "win_odds": 5.3,
+          "win_odds": 5.1,
           "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023103087/D4",
+          "horse_no": "13",
+          "horse_name": "ライトオブヌカタ",
+          "win_odds": 5.5,
+          "market_rank": 3
         },
         {
           "horse_id": "pw01dud102022106923/A2",
           "horse_no": "10",
           "horse_name": "バッハアルプゼー",
-          "win_odds": 6.4,
-          "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102023105591/05",
-          "horse_no": "8",
-          "horse_name": "マメタンク",
-          "win_odds": 6.9,
+          "win_odds": 7.0,
           "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023104044/2A",
-          "horse_no": "12",
-          "horse_name": "モンサンゴールデン",
-          "win_odds": 10.9,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102021103242/9F",
-          "horse_no": "7",
-          "horse_name": "ジーベック",
-          "win_odds": 11.9,
-          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102022104317/5A",
           "horse_no": "1",
           "horse_name": "ミサビスケッツ",
-          "win_odds": 12.6,
-          "market_rank": 7
+          "win_odds": 10.9,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102023104044/2A",
+          "horse_no": "12",
+          "horse_name": "モンサンゴールデン",
+          "win_odds": 11.0,
+          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102021100899/6D",
           "horse_no": "4",
           "horse_name": "ビッグドリーム",
-          "win_odds": 15.2,
+          "win_odds": 15.7,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102021103242/9F",
+          "horse_no": "7",
+          "horse_name": "ジーベック",
+          "win_odds": 16.2,
           "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102022100574/07",
-          "horse_no": "9",
-          "horse_name": "ルイステソーロ",
-          "win_odds": 24.4,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102021105973/77",
-          "horse_no": "11",
-          "horse_name": "ワイノナオミ",
-          "win_odds": 29.2,
-          "market_rank": 10
         },
         {
           "horse_id": "pw01dud102020105957/97",
           "horse_no": "5",
           "horse_name": "ダズリングダンス",
-          "win_odds": 34.9,
-          "market_rank": 11
+          "win_odds": 24.1,
+          "market_rank": 9
         },
         {
           "horse_id": "pw01dud102021105711/CF",
           "horse_no": "6",
           "horse_name": "ズバットマサムネ",
-          "win_odds": 35.2,
+          "win_odds": 26.4,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102022100574/07",
+          "horse_no": "9",
+          "horse_name": "ルイステソーロ",
+          "win_odds": 29.5,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102021105973/77",
+          "horse_no": "11",
+          "horse_name": "ワイノナオミ",
+          "win_odds": 36.4,
           "market_rank": 12
         },
         {
           "horse_id": "pw01dud102022101536/9C",
           "horse_no": "2",
           "horse_name": "ストラテージュ",
-          "win_odds": 41.8,
+          "win_odds": 42.4,
           "market_rank": 13
         },
         {
           "horse_id": "pw01dud102019109106/89",
           "horse_no": "14",
           "horse_name": "バイファーザベスト",
-          "win_odds": 52.9,
+          "win_odds": 64.8,
           "market_rank": 14
         }
       ]
@@ -793,20 +793,20 @@
           "horse_id": "pw01dud102023103907/0D",
           "horse_no": "8",
           "horse_name": "スカイスプレンダー",
-          "win_odds": 3.1,
+          "win_odds": 3.7,
           "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102023104386/E3",
-          "horse_no": "7",
-          "horse_name": "カムアップローゼス",
-          "win_odds": 3.9,
-          "market_rank": 2
         },
         {
           "horse_id": "pw01dud102020103647/16",
           "horse_no": "6",
           "horse_name": "ダイヤモンドハンズ",
+          "win_odds": 4.2,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102023104386/E3",
+          "horse_no": "7",
+          "horse_name": "カムアップローゼス",
           "win_odds": 4.4,
           "market_rank": 3
         },
@@ -814,49 +814,49 @@
           "horse_id": "pw01dud102022103278/0D",
           "horse_no": "4",
           "horse_name": "ホウオウタイタン",
-          "win_odds": 7.6,
+          "win_odds": 5.9,
           "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102021110078/20",
-          "horse_no": "5",
-          "horse_name": "オメガインペリアル",
-          "win_odds": 11.7,
-          "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102022104914/27",
-          "horse_no": "2",
-          "horse_name": "キタサンハナビラ",
-          "win_odds": 13.3,
-          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102021105102/0C",
           "horse_no": "3",
           "horse_name": "スターリングアップ",
-          "win_odds": 14.8,
+          "win_odds": 12.4,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102021110078/20",
+          "horse_no": "5",
+          "horse_name": "オメガインペリアル",
+          "win_odds": 12.5,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102022104914/27",
+          "horse_no": "2",
+          "horse_name": "キタサンハナビラ",
+          "win_odds": 12.7,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102022104719/04",
           "horse_no": "1",
           "horse_name": "ダノンカゼルタ",
-          "win_odds": 18.5,
+          "win_odds": 17.7,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102021101751/53",
           "horse_no": "9",
           "horse_name": "ミカエルパシャ",
-          "win_odds": 24.2,
+          "win_odds": 17.9,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102022102532/BF",
           "horse_no": "10",
           "horse_name": "ビッグデイメイク",
-          "win_odds": 126.0,
+          "win_odds": 107.4,
           "market_rank": 10
         }
       ]
@@ -873,112 +873,112 @@
           "horse_id": "pw01dud102023102120/91",
           "horse_no": "9",
           "horse_name": "システマソラー",
-          "win_odds": 3.7,
+          "win_odds": 4.1,
           "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102022105021/14",
+          "horse_no": "14",
+          "horse_name": "マテンロウブレイブ",
+          "win_odds": 6.2,
+          "market_rank": 2
         },
         {
           "horse_id": "pw01dud102021104092/7C",
           "horse_no": "11",
           "horse_name": "ペンナヴェローチェ",
           "win_odds": 6.3,
-          "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102022105021/14",
-          "horse_no": "14",
-          "horse_name": "マテンロウブレイブ",
-          "win_odds": 6.7,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102023102075/EF",
           "horse_no": "3",
           "horse_name": "ソルチェリア",
-          "win_odds": 6.8,
+          "win_odds": 7.8,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102021105508/82",
           "horse_no": "16",
           "horse_name": "リューデスハイム",
-          "win_odds": 10.8,
+          "win_odds": 10.5,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102021110012/0E",
           "horse_no": "4",
           "horse_name": "アークドール",
-          "win_odds": 11.9,
+          "win_odds": 11.1,
           "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102022102131/88",
-          "horse_no": "2",
-          "horse_name": "ショウサンジョージ",
-          "win_odds": 17.6,
-          "market_rank": 7
         },
         {
           "horse_id": "pw01dud102022102965/0C",
           "horse_no": "10",
           "horse_name": "ブレトワルダ",
-          "win_odds": 18.1,
-          "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102020100771/F8",
-          "horse_no": "8",
-          "horse_name": "ジョータルマエ",
-          "win_odds": 19.0,
-          "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102020103521/13",
-          "horse_no": "1",
-          "horse_name": "セブンマジシャン",
-          "win_odds": 26.7,
-          "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102021106126/E7",
-          "horse_no": "13",
-          "horse_name": "タイセイアディクト",
-          "win_odds": 26.7,
-          "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102020100979/F2",
-          "horse_no": "6",
-          "horse_name": "メイショウコガシラ",
-          "win_odds": 27.1,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102020104297/91",
-          "horse_no": "7",
-          "horse_name": "ルクスビッグスター",
-          "win_odds": 34.9,
-          "market_rank": 13
+          "win_odds": 16.4,
+          "market_rank": 7
         },
         {
           "horse_id": "pw01dud102022105694/03",
           "horse_no": "12",
           "horse_name": "オリーブグリーン",
-          "win_odds": 38.2,
+          "win_odds": 19.2,
+          "market_rank": 8
+        },
+        {
+          "horse_id": "pw01dud102022102131/88",
+          "horse_no": "2",
+          "horse_name": "ショウサンジョージ",
+          "win_odds": 20.7,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102020100771/F8",
+          "horse_no": "8",
+          "horse_name": "ジョータルマエ",
+          "win_odds": 22.0,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102020103521/13",
+          "horse_no": "1",
+          "horse_name": "セブンマジシャン",
+          "win_odds": 23.0,
+          "market_rank": 11
+        },
+        {
+          "horse_id": "pw01dud102021106126/E7",
+          "horse_no": "13",
+          "horse_name": "タイセイアディクト",
+          "win_odds": 24.9,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102020100979/F2",
+          "horse_no": "6",
+          "horse_name": "メイショウコガシラ",
+          "win_odds": 25.8,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102020104297/91",
+          "horse_no": "7",
+          "horse_name": "ルクスビッグスター",
+          "win_odds": 38.6,
           "market_rank": 14
         },
         {
           "horse_id": "pw01dud102019102983/AF",
           "horse_no": "5",
           "horse_name": "キュールエフウジン",
-          "win_odds": 49.4,
+          "win_odds": 72.4,
           "market_rank": 15
         },
         {
           "horse_id": "pw01dud102020102317/64",
           "horse_no": "15",
           "horse_name": "サイモンブーケ",
-          "win_odds": 111.0,
+          "win_odds": 110.5,
           "market_rank": 16
         }
       ]
@@ -995,7 +995,7 @@
           "horse_id": "pw01dud102024105916/14",
           "horse_no": "8",
           "horse_name": "ブライトスクリプト",
-          "win_odds": 2.6,
+          "win_odds": 2.4,
           "market_rank": 1
         },
         {
@@ -1009,63 +1009,63 @@
           "horse_id": "pw01dud102024106712/D5",
           "horse_no": "4",
           "horse_name": "ニクスルーナ",
-          "win_odds": 7.0,
+          "win_odds": 7.6,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102024106262/30",
           "horse_no": "3",
           "horse_name": "ビスケットサンド",
-          "win_odds": 7.3,
+          "win_odds": 7.8,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024105568/86",
           "horse_no": "10",
           "horse_name": "フェリチタ",
-          "win_odds": 11.1,
+          "win_odds": 10.7,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024106355/AA",
           "horse_no": "1",
           "horse_name": "レニュアージュ",
-          "win_odds": 12.9,
+          "win_odds": 14.2,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024106025/E7",
           "horse_no": "7",
           "horse_name": "シャンデヴァーグ",
-          "win_odds": 15.8,
+          "win_odds": 16.8,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024106512/73",
           "horse_no": "11",
           "horse_name": "ツキミ",
-          "win_odds": 17.0,
+          "win_odds": 18.3,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024104447/D3",
           "horse_no": "9",
           "horse_name": "ベニバナ",
-          "win_odds": 18.4,
+          "win_odds": 20.3,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102024101674/3F",
           "horse_no": "2",
           "horse_name": "セイウンマイラヴ",
-          "win_odds": 23.8,
+          "win_odds": 23.0,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102024107318/B2",
           "horse_no": "5",
           "horse_name": "バタフライ",
-          "win_odds": 82.3,
+          "win_odds": 66.8,
           "market_rank": 11
         }
       ]
@@ -1082,35 +1082,35 @@
           "horse_id": "pw01dud102023104034/1A",
           "horse_no": "2",
           "horse_name": "テイエムスティール",
-          "win_odds": 5.1,
+          "win_odds": 4.9,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102022104738/B1",
           "horse_no": "6",
           "horse_name": "パスコード",
-          "win_odds": 5.7,
+          "win_odds": 6.0,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102023107183/F5",
           "horse_no": "17",
           "horse_name": "フォルナックス",
-          "win_odds": 7.8,
+          "win_odds": 8.0,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102023102225/01",
           "horse_no": "1",
           "horse_name": "スマートティアナ",
-          "win_odds": 8.1,
+          "win_odds": 8.4,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102023106569/5C",
           "horse_no": "15",
           "horse_name": "メイショウトウコウ",
-          "win_odds": 9.8,
+          "win_odds": 9.0,
           "market_rank": 5
         },
         {
@@ -1124,84 +1124,84 @@
           "horse_id": "pw01dud102023103766/98",
           "horse_no": "11",
           "horse_name": "タイムレスキス",
-          "win_odds": 15.0,
+          "win_odds": 14.8,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102023105153/E7",
           "horse_no": "12",
           "horse_name": "マテンロウネイビー",
-          "win_odds": 17.0,
+          "win_odds": 17.5,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102022103702/E0",
           "horse_no": "9",
           "horse_name": "アイスヴィレッジ",
-          "win_odds": 18.3,
+          "win_odds": 20.2,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102023103580/A4",
           "horse_no": "3",
           "horse_name": "ラパンドール",
-          "win_odds": 19.9,
+          "win_odds": 21.8,
           "market_rank": 10
-        },
-        {
-          "horse_id": "pw01dud102023106868/7C",
-          "horse_no": "18",
-          "horse_name": "サトノセプター",
-          "win_odds": 23.2,
-          "market_rank": 11
         },
         {
           "horse_id": "pw01dud102022107342/18",
           "horse_no": "4",
           "horse_name": "ザラタン",
-          "win_odds": 24.9,
-          "market_rank": 12
+          "win_odds": 23.0,
+          "market_rank": 11
         },
         {
-          "horse_id": "pw01dud102023110077/C5",
-          "horse_no": "16",
-          "horse_name": "エングルマン",
-          "win_odds": 33.4,
-          "market_rank": 13
+          "horse_id": "pw01dud102023106868/7C",
+          "horse_no": "18",
+          "horse_name": "サトノセプター",
+          "win_odds": 24.7,
+          "market_rank": 12
         },
         {
           "horse_id": "pw01dud102023107290/DD",
           "horse_no": "10",
           "horse_name": "ラヴリーティアラ",
-          "win_odds": 35.6,
-          "market_rank": 14
+          "win_odds": 29.3,
+          "market_rank": 13
         },
         {
-          "horse_id": "pw01dud102023106226/30",
-          "horse_no": "14",
-          "horse_name": "ナムラヒナギク",
-          "win_odds": 44.0,
-          "market_rank": 15
+          "horse_id": "pw01dud102023110077/C5",
+          "horse_no": "16",
+          "horse_name": "エングルマン",
+          "win_odds": 33.2,
+          "market_rank": 14
         },
         {
           "horse_id": "pw01dud102023103615/A4",
           "horse_no": "7",
           "horse_name": "エスティヴァリス",
-          "win_odds": 45.4,
-          "market_rank": 16
+          "win_odds": 41.6,
+          "market_rank": 15
         },
         {
-          "horse_id": "pw01dud102022106593/4E",
-          "horse_no": "13",
-          "horse_name": "カポレイラ",
-          "win_odds": 79.2,
-          "market_rank": 17
+          "horse_id": "pw01dud102023106226/30",
+          "horse_no": "14",
+          "horse_name": "ナムラヒナギク",
+          "win_odds": 43.0,
+          "market_rank": 16
         },
         {
           "horse_id": "pw01dud102023104692/BA",
           "horse_no": "5",
           "horse_name": "サマーブリザード",
-          "win_odds": 91.1,
+          "win_odds": 71.7,
+          "market_rank": 17
+        },
+        {
+          "horse_id": "pw01dud102022106593/4E",
+          "horse_no": "13",
+          "horse_name": "カポレイラ",
+          "win_odds": 88.3,
           "market_rank": 18
         }
       ]
@@ -1218,112 +1218,112 @@
           "horse_id": "pw01dud102024103168/E4",
           "horse_no": "11",
           "horse_name": "ランフェザー",
-          "win_odds": 1.4,
+          "win_odds": 1.3,
           "market_rank": 1
-        },
-        {
-          "horse_id": "pw01dud102024108276/EA",
-          "horse_no": "14",
-          "horse_name": "パレスラン",
-          "win_odds": 8.3,
-          "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024106410/5C",
           "horse_no": "12",
           "horse_name": "ホウオウシュウ",
-          "win_odds": 9.2,
+          "win_odds": 4.6,
+          "market_rank": 2
+        },
+        {
+          "horse_id": "pw01dud102024108276/EA",
+          "horse_no": "14",
+          "horse_name": "パレスラン",
+          "win_odds": 11.9,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102024100161/F2",
           "horse_no": "7",
           "horse_name": "フジサンインフレ",
-          "win_odds": 15.3,
+          "win_odds": 20.4,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024106163/72",
           "horse_no": "5",
           "horse_name": "ハイファイネスト",
-          "win_odds": 17.7,
+          "win_odds": 25.5,
           "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024102763/DC",
-          "horse_no": "6",
-          "horse_name": "イントゥーザブルー",
-          "win_odds": 23.4,
-          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024105705/2F",
           "horse_no": "15",
           "horse_name": "アークレイリ",
-          "win_odds": 24.4,
+          "win_odds": 30.2,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024102763/DC",
+          "horse_no": "6",
+          "horse_name": "イントゥーザブルー",
+          "win_odds": 47.2,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024101415/F0",
           "horse_no": "13",
           "horse_name": "チャリンコリン",
-          "win_odds": 30.8,
+          "win_odds": 64.2,
           "market_rank": 8
         },
         {
-          "horse_id": "pw01dud102024101719/4F",
-          "horse_no": "4",
-          "horse_name": "ボディビルダー",
-          "win_odds": 72.8,
+          "horse_id": "pw01dud102024104246/FE",
+          "horse_no": "9",
+          "horse_name": "サイボーグ",
+          "win_odds": 97.9,
           "market_rank": 9
         },
         {
-          "horse_id": "pw01dud102024102841/07",
-          "horse_no": "8",
-          "horse_name": "フィックスユー",
-          "win_odds": 72.8,
+          "horse_id": "pw01dud102024102617/27",
+          "horse_no": "2",
+          "horse_name": "ニシノツムジカゼ",
+          "win_odds": 134.5,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102024107184/F4",
           "horse_no": "3",
           "horse_name": "ドーンオブホープ",
-          "win_odds": 74.2,
+          "win_odds": 141.9,
           "market_rank": 11
         },
         {
-          "horse_id": "pw01dud102024102617/27",
-          "horse_no": "2",
-          "horse_name": "ニシノツムジカゼ",
-          "win_odds": 74.6,
+          "horse_id": "pw01dud102024101719/4F",
+          "horse_no": "4",
+          "horse_name": "ボディビルダー",
+          "win_odds": 176.2,
           "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024102841/07",
+          "horse_no": "8",
+          "horse_name": "フィックスユー",
+          "win_odds": 220.2,
+          "market_rank": 13
         },
         {
           "horse_id": "pw01dud102024103688/F9",
           "horse_no": "10",
           "horse_name": "サクラトップオメガ",
-          "win_odds": 89.3,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102024104246/FE",
-          "horse_no": "9",
-          "horse_name": "サイボーグ",
-          "win_odds": 97.8,
+          "win_odds": 265.2,
           "market_rank": 14
         },
         {
           "horse_id": "pw01dud102024104637/25",
           "horse_no": "16",
           "horse_name": "ウスズミザクラ",
-          "win_odds": 198.5,
+          "win_odds": 537.4,
           "market_rank": 15
         },
         {
           "horse_id": "pw01dud102024101618/AB",
           "horse_no": "1",
           "horse_name": "トルタネーラ",
-          "win_odds": 207.0,
+          "win_odds": 616.8,
           "market_rank": 16
         }
       ]
@@ -1340,70 +1340,70 @@
           "horse_id": "pw01dud102024106751/A2",
           "horse_no": "9",
           "horse_name": "ローザヴェローナ",
-          "win_odds": 1.2,
+          "win_odds": 1.1,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102024102379/DA",
           "horse_no": "2",
           "horse_name": "ドナフェリーチェ",
-          "win_odds": 7.4,
+          "win_odds": 5.3,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024101835/D4",
           "horse_no": "3",
           "horse_name": "セラフィムコード",
-          "win_odds": 11.6,
+          "win_odds": 20.6,
           "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024102437/E5",
-          "horse_no": "6",
-          "horse_name": "クリガーレ",
-          "win_odds": 19.8,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024105504/5A",
-          "horse_no": "5",
-          "horse_name": "ダンツトリノ",
-          "win_odds": 21.6,
-          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024103626/B3",
           "horse_no": "10",
           "horse_name": "コスモシグナス",
-          "win_odds": 22.7,
-          "market_rank": 6
+          "win_odds": 22.3,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024102437/E5",
+          "horse_no": "6",
+          "horse_name": "クリガーレ",
+          "win_odds": 29.1,
+          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024106838/D8",
           "horse_no": "7",
           "horse_name": "トーセンイルン",
-          "win_odds": 35.9,
-          "market_rank": 7
+          "win_odds": 41.5,
+          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024108317/2E",
           "horse_no": "8",
           "horse_name": "アイビークロノス",
-          "win_odds": 43.2,
+          "win_odds": 43.6,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102024105504/5A",
+          "horse_no": "5",
+          "horse_name": "ダンツトリノ",
+          "win_odds": 49.2,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024105070/09",
           "horse_no": "1",
           "horse_name": "ヒミツヘイキ",
-          "win_odds": 85.6,
+          "win_odds": 269.8,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102024103657/56",
           "horse_no": "4",
           "horse_name": "キタノバトゥーキ",
-          "win_odds": 134.1,
+          "win_odds": 451.0,
           "market_rank": 10
         }
       ]
@@ -1427,49 +1427,49 @@
           "horse_id": "pw01dud102024105832/37",
           "horse_no": "2",
           "horse_name": "グランドストーリー",
-          "win_odds": 6.7,
+          "win_odds": 5.6,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024101275/EE",
           "horse_no": "5",
           "horse_name": "ゴールドテソーロ",
-          "win_odds": 8.0,
+          "win_odds": 11.6,
           "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024105988/6A",
-          "horse_no": "6",
-          "horse_name": "アオイゲート",
-          "win_odds": 12.1,
-          "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024104331/E0",
           "horse_no": "7",
           "horse_name": "サラサシンシアズ",
-          "win_odds": 13.0,
+          "win_odds": 12.1,
+          "market_rank": 4
+        },
+        {
+          "horse_id": "pw01dud102024105988/6A",
+          "horse_no": "6",
+          "horse_name": "アオイゲート",
+          "win_odds": 13.5,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024102027/11",
           "horse_no": "4",
           "horse_name": "リカジョンファンク",
-          "win_odds": 20.5,
+          "win_odds": 21.4,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024105910/62",
           "horse_no": "1",
           "horse_name": "フィニート",
-          "win_odds": 32.5,
+          "win_odds": 45.3,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024103169/57",
           "horse_no": "3",
           "horse_name": "スカイミラー",
-          "win_odds": 41.3,
+          "win_odds": 87.6,
           "market_rank": 8
         }
       ]
@@ -1483,115 +1483,115 @@
       "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100420261031%2F93",
       "win_odds": [
         {
-          "horse_id": "pw01dud102024100472/08",
-          "horse_no": "14",
-          "horse_name": "エコロガルディア",
-          "win_odds": 4.7,
-          "market_rank": 1
-        },
-        {
           "horse_id": "pw01dud102024100741/F8",
           "horse_no": "9",
           "horse_name": "ミヤルロワ",
-          "win_odds": 5.8,
+          "win_odds": 3.7,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102024100472/08",
+          "horse_no": "14",
+          "horse_name": "エコロガルディア",
+          "win_odds": 4.3,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024106230/1A",
           "horse_no": "6",
           "horse_name": "ジャスティンバルサ",
-          "win_odds": 6.2,
+          "win_odds": 5.9,
           "market_rank": 3
-        },
-        {
-          "horse_id": "pw01dud102024103840/83",
-          "horse_no": "3",
-          "horse_name": "ワイワイシャイニー",
-          "win_odds": 8.0,
-          "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102024102324/4B",
-          "horse_no": "13",
-          "horse_name": "チェンジエッジ",
-          "win_odds": 10.0,
-          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024108139/D2",
           "horse_no": "4",
           "horse_name": "ホウオウビリオン",
-          "win_odds": 10.3,
-          "market_rank": 6
+          "win_odds": 8.8,
+          "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102024106959/9C",
-          "horse_no": "10",
-          "horse_name": "モリノヤマセミ",
-          "win_odds": 11.6,
-          "market_rank": 7
+          "horse_id": "pw01dud102024103840/83",
+          "horse_no": "3",
+          "horse_name": "ワイワイシャイニー",
+          "win_odds": 9.3,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102024102324/4B",
+          "horse_no": "13",
+          "horse_name": "チェンジエッジ",
+          "win_odds": 11.1,
+          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024101831/08",
           "horse_no": "12",
           "horse_name": "レーヴマジック",
-          "win_odds": 13.1,
-          "market_rank": 8
+          "win_odds": 11.4,
+          "market_rank": 7
         },
         {
-          "horse_id": "pw01dud102024101913/FF",
-          "horse_no": "2",
-          "horse_name": "アマネディル",
-          "win_odds": 20.4,
-          "market_rank": 9
+          "horse_id": "pw01dud102024106959/9C",
+          "horse_no": "10",
+          "horse_name": "モリノヤマセミ",
+          "win_odds": 12.1,
+          "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024103252/53",
           "horse_no": "7",
           "horse_name": "シンクロニシティ",
-          "win_odds": 21.1,
-          "market_rank": 10
+          "win_odds": 32.4,
+          "market_rank": 9
         },
         {
           "horse_id": "pw01dud102024103897/F8",
           "horse_no": "15",
           "horse_name": "エマリュウオー",
-          "win_odds": 33.7,
+          "win_odds": 44.2,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102024101913/FF",
+          "horse_no": "2",
+          "horse_name": "アマネディル",
+          "win_odds": 51.4,
           "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024104068/A2",
-          "horse_no": "11",
-          "horse_name": "ナニワダマシイ",
-          "win_odds": 43.8,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102024102014/A8",
-          "horse_no": "5",
-          "horse_name": "アヘッドオブオール",
-          "win_odds": 46.3,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102024104622/D6",
-          "horse_no": "8",
-          "horse_name": "ピトンピンク",
-          "win_odds": 50.3,
-          "market_rank": 14
         },
         {
           "horse_id": "pw01dud102024108136/79",
           "horse_no": "16",
           "horse_name": "グランドバッシュ",
-          "win_odds": 51.8,
-          "market_rank": 15
+          "win_odds": 91.7,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024104622/D6",
+          "horse_no": "8",
+          "horse_name": "ピトンピンク",
+          "win_odds": 118.9,
+          "market_rank": 13
         },
         {
           "horse_id": "pw01dud102024105784/3C",
           "horse_no": "1",
           "horse_name": "アワフェリシティ",
-          "win_odds": 54.6,
+          "win_odds": 127.9,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102024104068/A2",
+          "horse_no": "11",
+          "horse_name": "ナニワダマシイ",
+          "win_odds": 196.6,
+          "market_rank": 15
+        },
+        {
+          "horse_id": "pw01dud102024102014/A8",
+          "horse_no": "5",
+          "horse_name": "アヘッドオブオール",
+          "win_odds": 247.4,
           "market_rank": 16
         }
       ]
@@ -1608,63 +1608,63 @@
           "horse_id": "pw01dud102024106349/66",
           "horse_no": "8",
           "horse_name": "エクアトーレ",
-          "win_odds": 1.3,
+          "win_odds": 1.5,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102024107202/BF",
           "horse_no": "2",
           "horse_name": "ラヴェーラ",
-          "win_odds": 8.0,
+          "win_odds": 4.0,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024103777/A7",
           "horse_no": "5",
           "horse_name": "ハクアイソー",
-          "win_odds": 11.0,
+          "win_odds": 10.4,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102024106511/00",
           "horse_no": "3",
           "horse_name": "ケープルグラン",
-          "win_odds": 12.8,
+          "win_odds": 12.5,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024106359/76",
           "horse_no": "6",
           "horse_name": "タイセイリメンバー",
-          "win_odds": 14.7,
+          "win_odds": 13.0,
           "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102024103604/AD",
-          "horse_no": "7",
-          "horse_name": "シャルマンスリール",
-          "win_odds": 21.4,
-          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024104962/A9",
           "horse_no": "9",
           "horse_name": "バーンユアハート",
           "win_odds": 26.6,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102024103604/AD",
+          "horse_no": "7",
+          "horse_name": "シャルマンスリール",
+          "win_odds": 30.7,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024103186/1E",
           "horse_no": "4",
           "horse_name": "ヴィルアペックス",
-          "win_odds": 33.0,
+          "win_odds": 32.9,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024100722/4B",
           "horse_no": "1",
           "horse_name": "サスケサートゥル",
-          "win_odds": 49.4,
+          "win_odds": 50.4,
           "market_rank": 9
         }
       ]
@@ -1681,77 +1681,77 @@
           "horse_id": "pw01dud102022105863/C2",
           "horse_no": "10",
           "horse_name": "ルシャルムール",
-          "win_odds": 2.7,
+          "win_odds": 3.5,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102023102750/E7",
           "horse_no": "8",
           "horse_name": "ワンダーブリッツ",
-          "win_odds": 6.2,
+          "win_odds": 4.3,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102023104958/BF",
           "horse_no": "11",
           "horse_name": "ターフクリスタル",
-          "win_odds": 7.4,
+          "win_odds": 5.8,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102023102833/51",
           "horse_no": "5",
           "horse_name": "グランドスウェル",
-          "win_odds": 8.8,
+          "win_odds": 9.7,
           "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023103731/29",
-          "horse_no": "15",
-          "horse_name": "モデレートゲイル",
-          "win_odds": 11.9,
-          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102023107348/56",
           "horse_no": "9",
           "horse_name": "ピードモント",
-          "win_odds": 12.3,
-          "market_rank": 6
+          "win_odds": 10.9,
+          "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102023105177/D3",
-          "horse_no": "16",
-          "horse_name": "タケルムサシ",
-          "win_odds": 13.2,
-          "market_rank": 7
+          "horse_id": "pw01dud102023103731/29",
+          "horse_no": "15",
+          "horse_name": "モデレートゲイル",
+          "win_odds": 12.0,
+          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102023101301/57",
           "horse_no": "12",
           "horse_name": "クアッドフォルツァ",
-          "win_odds": 14.5,
+          "win_odds": 13.1,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102023105177/D3",
+          "horse_no": "16",
+          "horse_name": "タケルムサシ",
+          "win_odds": 16.6,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102019103219/89",
           "horse_no": "14",
           "horse_name": "ブレイクザアイス",
-          "win_odds": 22.9,
+          "win_odds": 22.7,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102023103698/7D",
           "horse_no": "1",
           "horse_name": "ソニックキャット",
-          "win_odds": 24.2,
+          "win_odds": 26.2,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102023101644/83",
           "horse_no": "3",
           "horse_name": "オルブライト",
-          "win_odds": 35.2,
+          "win_odds": 41.4,
           "market_rank": 11
         },
         {
@@ -1765,28 +1765,28 @@
           "horse_id": "pw01dud102023105654/4F",
           "horse_no": "2",
           "horse_name": "ジオストラテジー",
-          "win_odds": 58.3,
+          "win_odds": 70.3,
           "market_rank": 13
         },
         {
           "horse_id": "pw01dud102022102991/70",
           "horse_no": "4",
           "horse_name": "カイトヴィント",
-          "win_odds": 58.9,
+          "win_odds": 72.4,
           "market_rank": 14
         },
         {
           "horse_id": "pw01dud102022105337/69",
           "horse_no": "6",
           "horse_name": "カサビセンス",
-          "win_odds": 96.1,
+          "win_odds": 87.8,
           "market_rank": 15
         },
         {
           "horse_id": "pw01dud102023106177/C2",
           "horse_no": "7",
           "horse_name": "エクセルクラウン",
-          "win_odds": 109.3,
+          "win_odds": 116.3,
           "market_rank": 16
         }
       ]
@@ -1800,17 +1800,17 @@
       "source_url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0105202604100720261031%2FB2",
       "win_odds": [
         {
-          "horse_id": "pw01dud102023105783/3D",
-          "horse_no": "3",
-          "horse_name": "ホールドザデイ",
-          "win_odds": 3.6,
-          "market_rank": 1
-        },
-        {
           "horse_id": "pw01dud102023107164/48",
           "horse_no": "5",
           "horse_name": "ランザワールド",
-          "win_odds": 3.6,
+          "win_odds": 3.7,
+          "market_rank": 1
+        },
+        {
+          "horse_id": "pw01dud102023105783/3D",
+          "horse_no": "3",
+          "horse_name": "ホールドザデイ",
+          "win_odds": 3.9,
           "market_rank": 2
         },
         {
@@ -1821,59 +1821,59 @@
           "market_rank": 3
         },
         {
-          "horse_id": "pw01dud102023105375/4F",
-          "horse_no": "6",
-          "horse_name": "ジーティーメティオ",
+          "horse_id": "pw01dud102022105864/35",
+          "horse_no": "2",
+          "horse_name": "キアラメンテ",
           "win_odds": 8.0,
           "market_rank": 4
         },
         {
-          "horse_id": "pw01dud102022105864/35",
-          "horse_no": "2",
-          "horse_name": "キアラメンテ",
-          "win_odds": 9.9,
+          "horse_id": "pw01dud102023105375/4F",
+          "horse_no": "6",
+          "horse_name": "ジーティーメティオ",
+          "win_odds": 9.0,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102023105002/F3",
           "horse_no": "8",
           "horse_name": "ミッキーマーメイド",
-          "win_odds": 12.0,
+          "win_odds": 10.5,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102022104716/AB",
           "horse_no": "4",
           "horse_name": "シェーンシュティア",
-          "win_odds": 21.4,
+          "win_odds": 21.2,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102022105365/B3",
           "horse_no": "11",
           "horse_name": "オプレントジュエル",
-          "win_odds": 33.2,
+          "win_odds": 30.1,
           "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102023104576/35",
-          "horse_no": "9",
-          "horse_name": "カンティーナ",
-          "win_odds": 34.9,
-          "market_rank": 9
         },
         {
           "horse_id": "pw01dud102023104628/FC",
           "horse_no": "7",
           "horse_name": "ハーディジェナー",
-          "win_odds": 36.2,
+          "win_odds": 34.8,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102023104576/35",
+          "horse_no": "9",
+          "horse_name": "カンティーナ",
+          "win_odds": 38.1,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102023101812/CF",
           "horse_no": "1",
           "horse_name": "デイズインザサン",
-          "win_odds": 96.0,
+          "win_odds": 91.9,
           "market_rank": 11
         }
       ]
@@ -1890,91 +1890,91 @@
           "horse_id": "pw01dud102023103365/61",
           "horse_no": "7",
           "horse_name": "ヘリテージブルーム",
-          "win_odds": 2.0,
+          "win_odds": 1.9,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102022106699/31",
           "horse_no": "3",
           "horse_name": "ダイシンリンク",
-          "win_odds": 2.9,
+          "win_odds": 4.4,
           "market_rank": 2
-        },
-        {
-          "horse_id": "pw01dud102022102026/86",
-          "horse_no": "13",
-          "horse_name": "アクアマリーナ",
-          "win_odds": 11.0,
-          "market_rank": 3
         },
         {
           "horse_id": "pw01dud102021101121/FD",
           "horse_no": "11",
           "horse_name": "ミライテーラー",
-          "win_odds": 12.0,
+          "win_odds": 9.1,
+          "market_rank": 3
+        },
+        {
+          "horse_id": "pw01dud102022102026/86",
+          "horse_no": "13",
+          "horse_name": "アクアマリーナ",
+          "win_odds": 10.2,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102022104758/D1",
           "horse_no": "10",
           "horse_name": "ヴィンブルレー",
-          "win_odds": 17.5,
+          "win_odds": 16.7,
           "market_rank": 5
-        },
-        {
-          "horse_id": "pw01dud102023103171/43",
-          "horse_no": "2",
-          "horse_name": "プレダトゥール",
-          "win_odds": 31.5,
-          "market_rank": 6
-        },
-        {
-          "horse_id": "pw01dud102021103776/90",
-          "horse_no": "4",
-          "horse_name": "ベルメサイア",
-          "win_odds": 32.8,
-          "market_rank": 7
         },
         {
           "horse_id": "pw01dud102020104174/E7",
           "horse_no": "6",
           "horse_name": "レジーナローズ",
-          "win_odds": 33.0,
+          "win_odds": 18.2,
+          "market_rank": 6
+        },
+        {
+          "horse_id": "pw01dud102023103171/43",
+          "horse_no": "2",
+          "horse_name": "プレダトゥール",
+          "win_odds": 24.7,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102021103776/90",
+          "horse_no": "4",
+          "horse_name": "ベルメサイア",
+          "win_odds": 24.9,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102023104852/DC",
           "horse_no": "5",
           "horse_name": "レディサン",
-          "win_odds": 37.8,
+          "win_odds": 31.1,
           "market_rank": 9
-        },
-        {
-          "horse_id": "pw01dud102021101015/88",
-          "horse_no": "1",
-          "horse_name": "スーパーバイザー",
-          "win_odds": 41.5,
-          "market_rank": 10
         },
         {
           "horse_id": "pw01dud102020101764/30",
           "horse_no": "9",
           "horse_name": "トーホウキザン",
-          "win_odds": 47.7,
+          "win_odds": 40.5,
+          "market_rank": 10
+        },
+        {
+          "horse_id": "pw01dud102021101015/88",
+          "horse_no": "1",
+          "horse_name": "スーパーバイザー",
+          "win_odds": 45.7,
           "market_rank": 11
         },
         {
           "horse_id": "pw01dud102020101412/67",
           "horse_no": "12",
           "horse_name": "パープルナイト",
-          "win_odds": 49.8,
+          "win_odds": 55.7,
           "market_rank": 12
         },
         {
           "horse_id": "pw01dud102020107095/16",
           "horse_no": "8",
           "horse_name": "メモリーグラス",
-          "win_odds": 64.8,
+          "win_odds": 69.2,
           "market_rank": 13
         }
       ]
@@ -1998,91 +1998,91 @@
           "horse_id": "pw01dud102024101709/3F",
           "horse_no": "13",
           "horse_name": "ユイノエスポワール",
-          "win_odds": 4.7,
+          "win_odds": 5.4,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102024101687/A8",
           "horse_no": "7",
           "horse_name": "イトウカカリチョウ",
-          "win_odds": 6.9,
+          "win_odds": 6.7,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102024101716/F6",
           "horse_no": "3",
           "horse_name": "スマートブライド",
-          "win_odds": 10.8,
+          "win_odds": 9.4,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102024100744/51",
           "horse_no": "1",
           "horse_name": "マイスターシューズ",
-          "win_odds": 11.1,
+          "win_odds": 11.0,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102024101076/FF",
           "horse_no": "9",
           "horse_name": "スマートポーション",
-          "win_odds": 18.4,
+          "win_odds": 17.4,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102024101581/C5",
           "horse_no": "8",
           "horse_name": "アレックスケー",
-          "win_odds": 19.2,
+          "win_odds": 23.9,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102024103097/70",
           "horse_no": "5",
           "horse_name": "クロリス",
-          "win_odds": 30.0,
+          "win_odds": 26.5,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102024100292/C6",
           "horse_no": "6",
           "horse_name": "マリノエスプレッソ",
-          "win_odds": 37.0,
+          "win_odds": 39.3,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102024101206/F1",
           "horse_no": "2",
           "horse_name": "コパノキラキラ",
-          "win_odds": 37.4,
+          "win_odds": 40.0,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102024103977/09",
           "horse_no": "14",
           "horse_name": "ニシノイサリビ",
-          "win_odds": 49.2,
+          "win_odds": 41.9,
           "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102024102461/63",
-          "horse_no": "11",
-          "horse_name": "ソラティオ",
-          "win_odds": 50.0,
-          "market_rank": 12
         },
         {
           "horse_id": "pw01dud102024105078/A1",
           "horse_no": "12",
           "horse_name": "グラスラリー",
-          "win_odds": 50.9,
+          "win_odds": 43.4,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102024102461/63",
+          "horse_no": "11",
+          "horse_name": "ソラティオ",
+          "win_odds": 44.0,
           "market_rank": 13
         },
         {
           "horse_id": "pw01dud102024105532/A4",
           "horse_no": "10",
           "horse_name": "モミスケ",
-          "win_odds": 78.8,
+          "win_odds": 46.2,
           "market_rank": 14
         }
       ]
@@ -2099,70 +2099,70 @@
           "horse_id": "pw01dud102022105038/49",
           "horse_no": "3",
           "horse_name": "シャンソンドール",
-          "win_odds": 2.1,
+          "win_odds": 2.5,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102023101566/58",
           "horse_no": "7",
           "horse_name": "フジガイフウ",
-          "win_odds": 3.5,
+          "win_odds": 2.6,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102023106960/15",
           "horse_no": "4",
           "horse_name": "キシダンチョウ",
-          "win_odds": 6.7,
+          "win_odds": 7.8,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102023100504/23",
           "horse_no": "10",
           "horse_name": "クールデイトナ",
-          "win_odds": 9.1,
+          "win_odds": 9.0,
           "market_rank": 4
         },
         {
           "horse_id": "pw01dud102022105807/2E",
           "horse_no": "8",
           "horse_name": "パワースナッチ",
-          "win_odds": 13.6,
+          "win_odds": 14.1,
           "market_rank": 5
         },
         {
           "horse_id": "pw01dud102021105252/8D",
           "horse_no": "5",
           "horse_name": "シャンパンマーク",
-          "win_odds": 17.3,
+          "win_odds": 15.1,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102021103799/09",
           "horse_no": "1",
           "horse_name": "ケイケイ",
-          "win_odds": 19.6,
+          "win_odds": 21.8,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102020101184/2A",
           "horse_no": "6",
           "horse_name": "シャイニースイフト",
-          "win_odds": 27.1,
+          "win_odds": 31.0,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102021102468/E4",
           "horse_no": "2",
           "horse_name": "ブライティアダイヤ",
-          "win_odds": 79.4,
+          "win_odds": 55.8,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102021100008/E2",
           "horse_no": "9",
           "horse_name": "ホークマン",
-          "win_odds": 87.1,
+          "win_odds": 91.9,
           "market_rank": 10
         }
       ]
@@ -2179,112 +2179,112 @@
           "horse_id": "pw01dud102022100204/04",
           "horse_no": "16",
           "horse_name": "ピエマンソン",
-          "win_odds": 4.6,
+          "win_odds": 4.4,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102022104743/82",
           "horse_no": "12",
           "horse_name": "クレーキング",
-          "win_odds": 5.7,
+          "win_odds": 5.5,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102020103331/C1",
           "horse_no": "6",
           "horse_name": "ジェイパームス",
-          "win_odds": 7.2,
+          "win_odds": 7.3,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102020103005/CA",
           "horse_no": "14",
           "horse_name": "ナイトアクアリウム",
-          "win_odds": 8.4,
+          "win_odds": 9.7,
           "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023106651/E5",
-          "horse_no": "9",
-          "horse_name": "リサシテーション",
-          "win_odds": 9.3,
-          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102020102724/DF",
           "horse_no": "13",
           "horse_name": "クールブロン",
-          "win_odds": 10.6,
+          "win_odds": 9.9,
+          "market_rank": 5
+        },
+        {
+          "horse_id": "pw01dud102023106651/E5",
+          "horse_no": "9",
+          "horse_name": "リサシテーション",
+          "win_odds": 10.7,
           "market_rank": 6
         },
         {
           "horse_id": "pw01dud102022104983/24",
           "horse_no": "5",
           "horse_name": "イムホテプ",
-          "win_odds": 12.1,
+          "win_odds": 12.2,
           "market_rank": 7
         },
         {
           "horse_id": "pw01dud102022102117/1A",
           "horse_no": "7",
           "horse_name": "シュラザック",
-          "win_odds": 14.4,
+          "win_odds": 13.4,
           "market_rank": 8
-        },
-        {
-          "horse_id": "pw01dud102020101808/CD",
-          "horse_no": "8",
-          "horse_name": "ハワイアンタイム",
-          "win_odds": 18.7,
-          "market_rank": 9
         },
         {
           "horse_id": "pw01dud102022104584/D3",
           "horse_no": "10",
           "horse_name": "アドマイヤデイトナ",
-          "win_odds": 20.0,
+          "win_odds": 19.8,
+          "market_rank": 9
+        },
+        {
+          "horse_id": "pw01dud102020101808/CD",
+          "horse_no": "8",
+          "horse_name": "ハワイアンタイム",
+          "win_odds": 20.3,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102022100653/A5",
           "horse_no": "3",
           "horse_name": "ロードラビリンス",
-          "win_odds": 24.6,
+          "win_odds": 24.7,
           "market_rank": 11
-        },
-        {
-          "horse_id": "pw01dud102020103275/9C",
-          "horse_no": "2",
-          "horse_name": "シーズンリッチ",
-          "win_odds": 37.3,
-          "market_rank": 12
-        },
-        {
-          "horse_id": "pw01dud102020103148/94",
-          "horse_no": "15",
-          "horse_name": "ショウナンライシン",
-          "win_odds": 43.6,
-          "market_rank": 13
-        },
-        {
-          "horse_id": "pw01dud102021100895/A1",
-          "horse_no": "4",
-          "horse_name": "サフランヒーロー",
-          "win_odds": 46.6,
-          "market_rank": 14
         },
         {
           "horse_id": "pw01dud102019103593/EA",
           "horse_no": "1",
           "horse_name": "ハセドン",
-          "win_odds": 49.4,
+          "win_odds": 36.2,
+          "market_rank": 12
+        },
+        {
+          "horse_id": "pw01dud102020103275/9C",
+          "horse_no": "2",
+          "horse_name": "シーズンリッチ",
+          "win_odds": 36.7,
+          "market_rank": 13
+        },
+        {
+          "horse_id": "pw01dud102020103148/94",
+          "horse_no": "15",
+          "horse_name": "ショウナンライシン",
+          "win_odds": 44.8,
+          "market_rank": 14
+        },
+        {
+          "horse_id": "pw01dud102021100895/A1",
+          "horse_no": "4",
+          "horse_name": "サフランヒーロー",
+          "win_odds": 46.7,
           "market_rank": 15
         },
         {
           "horse_id": "pw01dud102021110069/83",
           "horse_no": "11",
           "horse_name": "エスカル",
-          "win_odds": 61.6,
+          "win_odds": 54.1,
           "market_rank": 16
         }
       ]
@@ -2301,84 +2301,84 @@
           "horse_id": "pw01dud102023105238/37",
           "horse_no": "7",
           "horse_name": "ラヴェニュー",
-          "win_odds": 2.8,
+          "win_odds": 1.6,
           "market_rank": 1
         },
         {
           "horse_id": "pw01dud102022104875/C9",
           "horse_no": "10",
           "horse_name": "オルグジェシダ",
-          "win_odds": 4.0,
+          "win_odds": 5.4,
           "market_rank": 2
         },
         {
           "horse_id": "pw01dud102023106905/F4",
           "horse_no": "12",
           "horse_name": "ヴァロアーク",
-          "win_odds": 6.3,
+          "win_odds": 10.4,
           "market_rank": 3
         },
         {
           "horse_id": "pw01dud102023103814/93",
           "horse_no": "8",
           "horse_name": "アメテュストス",
-          "win_odds": 8.3,
+          "win_odds": 11.3,
           "market_rank": 4
-        },
-        {
-          "horse_id": "pw01dud102023106432/D6",
-          "horse_no": "5",
-          "horse_name": "マイネルグレート",
-          "win_odds": 12.9,
-          "market_rank": 5
         },
         {
           "horse_id": "pw01dud102023110018/D8",
           "horse_no": "6",
           "horse_name": "ラッキーストーン",
-          "win_odds": 12.9,
-          "market_rank": 6
+          "win_odds": 15.9,
+          "market_rank": 5
         },
         {
-          "horse_id": "pw01dud102023103298/B9",
-          "horse_no": "2",
-          "horse_name": "ダイユウアレグロ",
-          "win_odds": 17.9,
-          "market_rank": 7
+          "horse_id": "pw01dud102023106432/D6",
+          "horse_no": "5",
+          "horse_name": "マイネルグレート",
+          "win_odds": 17.8,
+          "market_rank": 6
         },
         {
           "horse_id": "pw01dud102023107329/A9",
           "horse_no": "3",
           "horse_name": "ボニープリンス",
-          "win_odds": 19.4,
+          "win_odds": 23.4,
+          "market_rank": 7
+        },
+        {
+          "horse_id": "pw01dud102023103298/B9",
+          "horse_no": "2",
+          "horse_name": "ダイユウアレグロ",
+          "win_odds": 23.9,
           "market_rank": 8
         },
         {
           "horse_id": "pw01dud102023107111/9F",
           "horse_no": "4",
           "horse_name": "アイムイン",
-          "win_odds": 25.9,
+          "win_odds": 35.9,
           "market_rank": 9
         },
         {
           "horse_id": "pw01dud102023104389/3C",
           "horse_no": "11",
           "horse_name": "フリーガー",
-          "win_odds": 33.4,
+          "win_odds": 45.9,
           "market_rank": 10
         },
         {
           "horse_id": "pw01dud102023102504/01",
           "horse_no": "9",
           "horse_name": "セーヌデローヴ",
-          "win_odds": 33.8,
+          "win_odds": 51.0,
           "market_rank": 11
         },
         {
           "horse_id": "pw01dud102023103045/AE",
           "horse_no": "1",
           "horse_name": "フィクセルリリア",
-          "win_odds": 47.4,
+          "win_odds": 60.9,
           "market_rank": 12
         }
       ]
