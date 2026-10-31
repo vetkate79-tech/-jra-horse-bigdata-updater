@@ -2,7 +2,7 @@
   "status": "READY",
   "title": "実運用分析・改善計画",
   "summary": {
-    "scope": "2026-10-24 / 2026-10-25 の封印予想に対する結果接続PDCA",
+    "scope": "2026-10-31 / 2026-11-01 の封印予想に対する結果接続PDCA",
     "immutable_rule": "封印済み予想は変更せず、結果は後段分析にのみ使用"
   },
   "validation_plan": {
@@ -15,9 +15,9 @@
       "TICKET_CONVERSION_MISS"
     ],
     "decomposition": [
-      "AXIS_MISS: 19",
-      "FULL_SUCCESS: 4",
-      "OPPONENT_CANDIDATE_MISS: 13"
+      "AXIS_MISS: 10",
+      "FULL_SUCCESS: 2",
+      "OPPONENT_CANDIDATE_MISS: 12"
     ],
     "governance": [
       "PDCA output is diagnostic only; it does not automatically rewrite the certified production model."
@@ -28,7 +28,7 @@
       "id": "AXIS",
       "title": "軸飛び",
       "status": "OBSERVED",
-      "observation": "19件",
+      "observation": "11件",
       "risk": "軸が3着外なら買い目構造では救えない",
       "current_action": "軸耐久性を優先監査"
     },
@@ -36,7 +36,7 @@
       "id": "OPPONENT",
       "title": "相手捕捉",
       "status": "OBSERVED",
-      "observation": "13件",
+      "observation": "12件",
       "risk": "軸生存でも候補外馬が侵入する",
       "current_action": "相手役割分散・3着侵入を監査"
     },
@@ -67,5 +67,5 @@
       "promotion_gate": "本番モデルは自動変更しない"
     }
   ],
-  "source_prediction_hash_sha256": "94a065f704042d94d41838a32c6bfbc17b5d327e17cc328a1422b3cbc9898136"
+  "source_prediction_hash_sha256": "bff2202301ff92e939a2f43e51a1d321c81f4e6fe6943aa9f653a052751c7610"
 }
