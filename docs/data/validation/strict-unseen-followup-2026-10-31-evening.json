@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-31",
+  "audit_time_jst": "19:39",
+  "kind": "SUPPLEMENTAL_INDEPENDENT_CHECK_NO_NEW_FORMAL_SCORING",
+  "checked_repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "checked_head_commit": "b400d8223dd05655e51d8b34047403a2729f8001",
+  "earlier_same_day_audit": "docs/data/validation/strict-unseen-audit-2026-10-31.json",
+  "checked_prediction_commit": "35b16be34fbb82fed6757a2550e7274f672ea38b",
+  "prediction_archive_sha256_from_status": "bff2202301ff92e939a2f43e51a1d321c81f4e6fe6943aa9f653a052751c7610",
+  "official_jra_schedule": "https://jra.jp/keiba/calendar2026/2026/10/1031.html",
+  "official_scheduled_last_races_jst": [
+    {
+      "track": "東京",
+      "race_no": 12,
+      "start": "16:15"
+    },
+    {
+      "track": "京都",
+      "race_no": 12,
+      "start": "16:25"
+    }
+  ],
+  "full_frame_commit_jst": "2026-10-31T16:04:44+09:00",
+  "oct31_races_whose_scheduled_start_after_full_frame_commit": 2,
+  "oct31_races_whose_scheduled_start_before_full_frame_commit": 22,
+  "original_large_archive_fetch_utf8_lines_1_2_length": 0,
+  "original_large_archive_fetch_base64_lines_1_2_length": 0,
+  "original_large_archive_blob_sha": "3f973612881252a89b8abd86db4a9ccdd8bab5c2",
+  "original_predictions_and_tickets_independently_verified": false,
+  "upstream_feature_lineage_verified": false,
+  "actual_start_times_all_verified": false,
+  "official_oct31_outcomes_independently_matched_to_original_tickets": false,
+  "oct31_new_formal_races": 0,
+  "oct31_formal_roi": null,
+  "dashboard_snapshot": "2026-10-31T16:11:06+09:00",
+  "dashboard_diagnostic_cohort": {
+    "scored_races": 210,
+    "stake_yen": 155900,
+    "return_yen": 116490,
+    "net_yen": -39410,
+    "reported_max_dd_yen": 0,
+    "min_possible_dd_yen": 39410,
+    "dd_status": "INVALID_ZERO_DD"
+  },
+  "prior_timing_matched_upstream_pending": {
+    "races": 150,
+    "purchased": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "gross_roi_pct": 89.49,
+    "roi_ex_largest_pct": 75.24
+  },
+  "historical_rolling36": {
+    "gross_roi_pct": 156.98,
+    "roi_ex_largest_pct": 94.75,
+    "mixed_mechanism": true,
+    "already_reported": true
+  },
+  "new_same_mechanism_upstream_audited_fixed36_passes": 0,
+  "notification": false,
+  "next_steps": [
+    "Recover immutable full original seal bytes and per-race timestamps",
+    "Verify pre-race feature lineage, exact tickets, cancellations/refunds and JRA results",
+    "Use Oct31 complete-frame archive for prospective Nov1 only if source data timing passes",
+    "Keep fixed 36R cohorts and no post-hoc challenger tuning"
+  ]
+}
