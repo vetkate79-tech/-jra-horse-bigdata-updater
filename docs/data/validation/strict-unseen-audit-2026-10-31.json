@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-10-31",
+  "audit_type": "STRICT_UNSEEN_PROVENANCE_AND_PRE_RACE_SEAL_CHRONOLOGY",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "checked_default_branch_head": "9b245fea004ba0a7e0190f748f969078faf30442",
+  "checked_latest_commit_utc": "2026-10-31T07:11:06Z",
+  "previous_audit": "docs/data/validation/strict-unseen-audit-2026-10-30.json",
+  "official_jra_oct31_schedule": "https://jra.jp/keiba/calendar2026/2026/10/1031.html",
+  "official_jra_oct31_last_races": [
+    {
+      "track": "東京",
+      "race_no": 11,
+      "published_start_jst": "15:30"
+    },
+    {
+      "track": "京都",
+      "race_no": 11,
+      "published_start_jst": "15:45"
+    },
+    {
+      "track": "東京",
+      "race_no": 12,
+      "published_start_jst": "16:15",
+      "official_result": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde0105202604101220261031/C4"
+    },
+    {
+      "track": "京都",
+      "race_no": 12,
+      "published_start_jst": "16:25",
+      "official_result": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde0108202604101220261031/A2"
+    }
+  ],
+  "oct31_nov1_seal_chronology": [
+    {
+      "commit": "c93f64e83bf8cf49b29b0f8c86b1f2b4a3137393",
+      "committed_at_jst": "2026-10-29T23:18:01+09:00",
+      "prediction_hash": "0f9015e4ccd17d38e3f0c43bdea03441466f112b5b01129e682d115ac90355e3",
+      "stage": "PARTIAL_FRAME_RESEAL",
+      "frames_known": 17,
+      "frames_total": 626,
+      "coverage_pct": 2.72,
+      "claimed_sealed_races": 48
+    },
+    {
+      "commit": "bf7c8e9611731d8bb140698f4d5a1ecd7b52fc1d",
+      "committed_at_jst": "2026-10-30T16:06:46+09:00",
+      "prediction_hash": "a79f6095b1336eaf325c633ed7e0dbfc81186d2d92391534e2ca94d397c9fe63",
+      "stage": "PARTIAL_FRAME_RESEAL",
+      "frames_known": 322,
+      "frames_total": 625,
+      "coverage_pct": 51.52,
+      "claimed_sealed_races": 48
+    },
+    {
+      "commit": "35b16be34fbb82fed6757a2550e7274f672ea38b",
+      "committed_at_jst": "2026-10-31T16:04:44+09:00",
+      "prediction_hash": "bff2202301ff92e939a2f43e51a1d321c81f4e6fe6943aa9f653a052751c7610",
+      "stage": "FINAL_WITH_FRAME",
+      "frames_known": 623,
+      "frames_total": 623,
+      "coverage_pct": 100,
+      "claimed_sealed_races": 48
+    },
+    {
+      "commit": "43ffe3ddee8e19554d4df02a4f752f9edab30dd3",
+      "committed_at_jst": "2026-10-31T16:08:35+09:00",
+      "stage": "LIVE_SEALED_FILE_UPDATED_NO_NEW_ARCHIVE_IN_COMMIT",
+      "prediction_hash_in_status": "bff2202301ff92e939a2f43e51a1d321c81f4e6fe6943aa9f653a052751c7610"
+    },
+    {
+      "commit": "9b245fea004ba0a7e0190f748f969078faf30442",
+      "committed_at_jst": "2026-10-31T16:11:06+09:00",
+      "stage": "LIVE_SEALED_FILE_UPDATED_NO_NEW_ARCHIVE_IN_COMMIT",
+      "prediction_hash_in_status": "bff2202301ff92e939a2f43e51a1d321c81f4e6fe6943aa9f653a052751c7610"
+    }
+  ],
+  "oct31_quality_gate": {
+    "scheduled_races": 24,
+    "scheduled_started_before_first_complete_frame_seal": 22,
+    "scheduled_not_started_at_first_complete_frame_seal": [
+      "東京12R",
+      "京都12R"
+    ],
+    "basis": "JRA published scheduled starts; all 1R-11R start by 15:45; first full-frame commit at 16:04:44 JST. Actual-start reconciliation remains outstanding.",
+    "pre_race_partial_seals_exist": true,
+    "pre_race_partial_frame_completeness_unknown_by_race": true,
+    "post_start_full_frame_seal_must_not_be_backfilled_to_earlier_races": true,
+    "last_two_races": "POTENTIALLY_PRE_START_BY_COMMIT_TIME_ONLY; must inspect immutable per-race predictions and upstream feature timestamps before scoring",
+    "independent_full_immutable_seal_read": false,
+    "connector_read_attempts": "GitHub fetch_file with line range on 1.86-1.92MB archive returned empty content with blob SHA; raw web access blocked",
+    "same_day_results_in_repo": false,
+    "jra_results_available_external": true,
+    "eligible_new_scored_races": 0,
+    "reason": "Cannot independently establish per-race original prediction/ticket identity, upstream cutoff, and matched official payouts from immutable snapshots."
+  },
+  "nov1_quality_gate": {
+    "full_frame_archive_committed_before_race_day": true,
+    "full_frame_archive_commit_jst": "2026-10-31T16:04:44+09:00",
+    "frames_known": 623,
+    "frames_total": 623,
+    "dates_in_archive": [
+      "2026-10-31",
+      "2026-11-01"
+    ],
+    "duplicate_archive_hash_across_date_directories": true,
+    "caveat": "The same hash appears under both date directories; do not count archive files as independent race sets. Per-race date|track|race_no/race_id dedup required. Content, upstream lineage and matched Champion/Challenger inputs still unverified.",
+    "status": "FUTURE_PRE_RACE_CANDIDATE_NOT_SCORED"
+  },
+  "oct25_carried_forward": {
+    "races": 36,
+    "purchased": 28,
+    "stake_yen": 24100,
+    "return_yen": 6600,
+    "gross_roi_pct": 27.39,
+    "roi_ex_largest_pct": 11.29,
+    "official_trio_36_of_36_checked": true,
+    "upstream_lineage_complete": false,
+    "ticket_refunds_complete": false,
+    "actual_start_time_sequence_complete": false,
+    "formal_new_races": 0
+  },
+  "carried_forward_timing_matched_upstream_pending": {
+    "races": 150,
+    "purchased": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "gross_roi_pct": 89.49,
+    "roi_ex_largest_pct": 75.24,
+    "fully_upstream_audited": false
+  },
+  "historical_mixed_mechanism_rolling36": {
+    "first_reported": "2026-10-20",
+    "gross_roi_pct": 156.98,
+    "roi_ex_largest_pct": 94.75,
+    "already_reported": true,
+    "single_mechanism_proof": false
+  },
+  "new_same_mechanism_upstream_audited_fixed36_90pct_passes": 0,
+  "new_formal_races": 0,
+  "challenger": {
+    "new_matched_test": false,
+    "reason": "Original per-race fully readable archives and matched Champion inputs unavailable; no after-the-fact changes permitted."
+  },
+  "next_actions": [
+    "Retrieve 2026-10-31 16:04 full-frame immutable archive and 2026-10-30 16:06 pre-race partial archive in full; compare per-race predictions and features without using later reseals.",
+    "Classify Oct31 races individually using actual start times; never promote 1R-11R from 16:04 full-frame seal. Check whether pre-race partial archive is adequate on any specific race.",
+    "Use Oct31 16:04 full-frame archive as prospective Nov1 candidate only after independent per-race content, upstream feature cutoff and same-input Champion pairing checks.",
+    "Score only original pre-start tickets against JRA official trio outcomes including scratches/refunds; dedup by date|track|race_no/race_id.",
+    "Maintain prospective same-mechanism fixed 36R and 100R cohorts and high-payout capture metric."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new fully upstream-audited same-mechanism predeclared 36R with gross ROI>90% and ROI excluding largest payout>90%."
+  }
+}
