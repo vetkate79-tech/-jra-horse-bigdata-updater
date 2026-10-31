@@ -1,11 +1,11 @@
 {
   "summary": {
     "horse_count": 6236,
-    "complete_horse_count": 4904,
-    "incomplete_horse_count": 1332,
+    "complete_horse_count": 4905,
+    "incomplete_horse_count": 1331,
     "missing_field_counts": {
-      "new_sire": 1326,
-      "new_damsire": 1326,
+      "new_sire": 1325,
+      "new_damsire": 1325,
       "race_history": 6
     },
     "category_counts": {
@@ -6042,14 +6042,6 @@
     {
       "horse_id": "pw01dud102024104624/BC",
       "horse_name": "ニシノイケガミ",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024103977/09",
-      "horse_name": "ニシノイサリビ",
       "missing": [
         "new_sire",
         "new_damsire"
