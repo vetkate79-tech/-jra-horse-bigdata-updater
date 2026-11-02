@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-02",
+  "audit_kind": "IMMUTABLE_OCT31_REFUND_CORRECTION_AND_PRESEAL_INPUT_LINEAGE_SPOT_AUDIT",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "scope": "2026-10-31 24R plus 2026-11-01 first 12R diagnostic, no promotion to formal unseen",
+  "github_head_checked": "31408b61e9cd06b44cb3fa7db2497163e85b5728",
+  "oct31_original_prestart": {
+    "commit": "bf7c8e9611731d8bb140698f4d5a1ecd7b52fc1d",
+    "committed_at_jst": "2026-10-30T16:06:46+09:00",
+    "blob_sha": "9156b723d4d90aee55058a15dc4b5a886342f285",
+    "races": 24,
+    "unique_race_ids": 24,
+    "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+    "post_start_reseal_excluded": true
+  },
+  "official_scratches": {
+    "source_jra_news": "https://own.jra.jp/news/202610/103103.html",
+    "source_jra_race": "https://sp.jra.jp/JRADB/accessS.html?CNAME=sw01sde0105202604100620261031/46",
+    "source_announcement": "https://www.radionikkei.jp/keiba_article/news/316r.html",
+    "source_jra_refund_rule": "https://www.jra.go.jp/kouza/baken/index.html",
+    "race": "2026-10-31 東京6R",
+    "horse_no": 13,
+    "horse_name": "タマモトリノ",
+    "announcement_at_jst": "2026-10-30T16:30:00+09:00",
+    "seal_precedes_cancellation_announcement": true,
+    "original_sealed_tickets": [
+      "8-9-15",
+      "8-11-13",
+      "8-10-15",
+      "8-9-12",
+      "8-10-13",
+      "8-11-15",
+      "8-12-13",
+      "8-9-11",
+      "8-12-15"
+    ],
+    "refunded_tickets": [
+      "8-11-13",
+      "8-10-13",
+      "8-12-13"
+    ],
+    "refund_yen": 300,
+    "refund_policy": "Refund all trio combinations containing canceled horse; subtract refunds from effective investment rather than treating as winnings",
+    "other_2026_10_31_scratches_found_in_official_daily_news": 0
+  },
+  "oct31_corrected_diagnostic": {
+    "races": 24,
+    "unique_race_ids": 24,
+    "original_stake_yen": 16700,
+    "refund_yen": 300,
+    "effective_stake_yen": 16400,
+    "return_yen": 108800,
+    "gross_roi_pct": 663.41,
+    "largest_payout_yen": 88020,
+    "roi_ex_largest_payout_pct": 126.71,
+    "hit_races": 2,
+    "staked_races": 19,
+    "hit_rate_pct": 10.53,
+    "risk_scheduled_order": {
+      "net_profit_yen": 92400,
+      "max_drawdown_scheduled_order_yen": 7700,
+      "max_consecutive_unhit_staked_races": 9
+    },
+    "jra_all_24_independent_result_verified": false
+  },
+  "first_36_diagnostic_corrected": {
+    "selection": "Oct31 24 races followed by Nov1 first 12 scheduled-time races; assembled retrospectively, NOT prospectively preregistered",
+    "races": 36,
+    "unique_race_ids": 36,
+    "oct31_races": 24,
+    "nov1_races": 12,
+    "oct31_refund_yen": 300,
+    "nov1_refund_yen": 400,
+    "effective_stake_yen": 22900,
+    "return_yen": 110740,
+    "gross_roi_pct": 483.58,
+    "largest_payout_yen": 88020,
+    "roi_ex_largest_payout_pct": 99.21,
+    "staked_races": 27,
+    "hit_races": 4,
+    "hit_rate_pct": 14.81,
+    "risk_scheduled_order": {
+      "net_profit_yen": 87840,
+      "max_drawdown_scheduled_order_yen": 7700,
+      "max_consecutive_unhit_staked_races": 9
+    },
+    "numerical_90pct_condition_met": true,
+    "formal_90pct_condition_met": false
+  },
+  "cross_day_dedupe": {
+    "races": 48,
+    "unique_race_ids": 48,
+    "duplicate_count": 0
+  },
+  "oct31_preseal_upstream_partial_check": {
+    "source_commit": "bf7c8e9611731d8bb140698f4d5a1ecd7b52fc1d",
+    "feature_file_sha": "fcdb25fc2d2b2f09659019cc1530b6aee35695ef",
+    "weekly_runner_file_sha": "3bb9c15980c06013b54abb8647068860a9926c44",
+    "feature_cutoff": "2026-10-31",
+    "oct31_feature_rows": 305,
+    "oct31_race_card_runners": 305,
+    "oct31_frames_known": 305,
+    "oct31_card_prior_start_records": 913,
+    "nonprior_dated_history_records": 0,
+    "nonprior_examples": [],
+    "meaning": "Prior-start dates in the preseal committed weekly runner snapshot are earlier than target date; this is a partial source-lineage check, not an independent full raw-results and all-transform leakage audit",
+    "full_lineage_pass": false
+  },
+  "quality_gates": {
+    "prestart_commit_and_original_tickets": "PASS",
+    "oct31_frame_completeness": "PASS",
+    "oct31_refund_ticket_reconciliation": "PASS_FOR_OFFICIAL_DAILY_CANCELLATION",
+    "nov1_refund_ticket_reconciliation": "PREVIOUSLY_PARTIAL_AUDIT",
+    "oct31_jra_official_all_24_results": "PENDING_22",
+    "nov1_jra_official_all_24_results": "PENDING_20",
+    "actual_start_times_all": "PENDING",
+    "upstream_feature_full_lineage": "PENDING",
+    "champion_challenger_equal_input_equal_budget": "PENDING",
+    "prospectively_preregistered_same_mechanism_36r": "NOT_MET",
+    "new_formal_accepted_races": 0,
+    "new_formal_36r_pass": false
+  },
+  "carried_forward": {
+    "previous_timing_matched_scored_races": 150,
+    "previous_staked_races": 128,
+    "previous_stake_yen": 111400,
+    "previous_return_yen": 99690,
+    "previous_gross_roi_pct": 89.49,
+    "previous_roi_ex_largest_pct": 75.24,
+    "oct20_mixed_mechanism_rolling36_already_reported": true
+  },
+  "next_actions": [
+    "Independently reconcile remaining Oct31 22 and Nov1 20 JRA official outcomes (including no-hit races) and any other refunds",
+    "Audit raw result CSV provenance, historic card snapshot timestamps and full feature transform chain, not only summary flags",
+    "Prospectively lock same-mechanism 36R cohorts and compare Champion/Challenger on identical pre-start inputs and equal stakes",
+    "Use true official actual start timestamps for drawdown and seal-time validation; scheduled order is only provisional"
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new fully upstream-audited prospectively fixed same-mechanism 36R satisfying both ROI thresholds; only diagnostic refund correction"
+  }
+}
