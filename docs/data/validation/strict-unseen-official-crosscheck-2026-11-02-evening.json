@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-02",
+  "audit_kind": "JRA_OFFICIAL_NINE_RACE_INDEPENDENT_PAYOUT_AND_START_TIME_CROSSCHECK",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "previous_audit": "docs/data/validation/strict-unseen-refund-lineage-2026-11-02.json",
+  "checked_commit": "239e5e875c6cf7ba6d71b9b12684bdd7e04f1f74",
+  "prestart_seals": [
+    {
+      "date": "2026-10-31",
+      "commit": "bf7c8e9611731d8bb140698f4d5a1ecd7b52fc1d",
+      "commit_at_jst": "2026-10-30T16:06:46+09:00",
+      "immutable_blob_sha": "9156b723d4d90aee55058a15dc4b5a886342f285"
+    },
+    {
+      "date": "2026-11-01",
+      "commit": "6d86e4595f40bc059c19cbf6b55d1a46354fecae",
+      "commit_at_jst": "2026-11-01T04:20:18+09:00",
+      "immutable_blob_sha": "344f16606043abbcc530646b8f6eb7267b1e09fe"
+    }
+  ],
+  "crosschecks": [
+    {
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 7,
+      "trio": "2-7-10",
+      "payout_yen": 1330,
+      "actual_start_jst": "13:25",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604100720261031/4C"
+    },
+    {
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 8,
+      "trio": "8-12-13",
+      "payout_yen": 3110,
+      "actual_start_jst": "14:01",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604100820261031/01"
+    },
+    {
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 9,
+      "trio": "1-2-7",
+      "payout_yen": 14910,
+      "actual_start_jst": "14:35",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604100920261031/B6"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "京都",
+      "race_no": 1,
+      "trio": "2-6-10",
+      "payout_yen": 820,
+      "actual_start_jst": "09:45",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604110120261101/EE"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "京都",
+      "race_no": 6,
+      "trio": "6-8-13",
+      "payout_yen": 371320,
+      "actual_start_jst": "12:35",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202604110620261101/77"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "東京",
+      "race_no": 6,
+      "trio": "9-12-15",
+      "payout_yen": 2330,
+      "actual_start_jst": "12:50",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604110620261101/99",
+      "refund_horse_no": 13
+    },
+    {
+      "date": "2026-11-01",
+      "track": "京都",
+      "race_no": 7,
+      "trio": "7-11-15",
+      "payout_yen": 1850,
+      "actual_start_jst": "13:05",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1008202604110720261101/0B"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "京都",
+      "race_no": 8,
+      "trio": "4-9-10",
+      "payout_yen": 1090,
+      "actual_start_jst": "13:35",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1008202604110820261101/C0"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "京都",
+      "race_no": 9,
+      "trio": "2-4-6",
+      "payout_yen": 1670,
+      "actual_start_jst": "14:10",
+      "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1008202604110920261101/75"
+    }
+  ],
+  "new_jra_official_races_checked": 9,
+  "new_mismatches": 0,
+  "official_verified_totals": {
+    "oct31": 5,
+    "oct31_remaining": 19,
+    "nov1": 10,
+    "nov1_remaining": 14,
+    "combined_verified": 15,
+    "combined_remaining": 33
+  },
+  "cross_day_unique_races": 48,
+  "cross_day_duplicates": 0,
+  "diagnostic_after_refunds": {
+    "oct31": {
+      "races": 24,
+      "stake_yen": 16400,
+      "return_yen": 108800,
+      "roi_pct": 663.41,
+      "roi_ex_max_pct": 126.71
+    },
+    "first_36": {
+      "races": 36,
+      "stake_yen": 22900,
+      "return_yen": 110740,
+      "roi_pct": 483.58,
+      "roi_ex_max_pct": 99.21,
+      "prospectively_preregistered": false
+    }
+  },
+  "unresolved": [
+    "33 JRA official result crosschecks remaining across 10/31 and 11/1",
+    "full upstream feature provenance and raw-source lineage independent audit",
+    "prospectively fixed same-mechanism 36R",
+    "same-input same-budget Champion versus Challenger",
+    "complete actual start-time audit and full ticket refund audit"
+  ],
+  "strict_1000r": {
+    "new_formal_accepted_races": 0,
+    "new_formal_36r_pass": false,
+    "previous_timing_matched_scored_races": 150,
+    "previous_stake_yen": 111400,
+    "previous_return_yen": 99690
+  },
+  "notification": {
+    "send": false,
+    "reason": "Only diagnostic JRA crosschecks advanced; no newly qualified prospectively fixed same-mechanism leak-audited 36R with both ROI metrics >90%"
+  }
+}
