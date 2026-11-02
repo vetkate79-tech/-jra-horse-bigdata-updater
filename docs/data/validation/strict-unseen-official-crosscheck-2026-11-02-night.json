@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-02",
+  "audit_kind": "SIX_ADDITIONAL_INDEPENDENT_JRA_OFFICIAL_OUTCOME_CHECKS_AND_IMMUTABLE_TICKET_MATCH",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "previous_audit": "docs/data/validation/strict-unseen-official-crosscheck-2026-11-02-evening.json",
+  "prestart_seal_provenance": [
+    {
+      "date": "2026-10-31",
+      "commit": "bf7c8e9611731d8bb140698f4d5a1ecd7b52fc1d",
+      "commit_at_utc": "2026-10-30T07:06:46Z",
+      "immutable_blob_sha": "9156b723d4d90aee55058a15dc4b5a886342f285",
+      "oct31_frames_known": "305/305",
+      "note": "Original 48-race file includes next-day predictions; Oct31 cohort only is 24 races."
+    },
+    {
+      "date": "2026-11-01",
+      "commit": "6d86e4595f40bc059c19cbf6b55d1a46354fecae",
+      "commit_at_utc": "2026-10-31T19:20:18Z",
+      "immutable_blob_sha": "344f16606043abbcc530646b8f6eb7267b1e09fe",
+      "nov1_frames_known": "318/318"
+    }
+  ],
+  "independent_official_checks": [
+    {
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 4,
+      "official_start_jst": "11:35",
+      "trio": "1-4-5",
+      "trio_payout_yen": 520,
+      "presealed_decision": "CAUTION",
+      "presealed_axis": "5",
+      "presealed_ticket_count": 8,
+      "matched_ticket": false,
+      "official_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1008202604100420261031/0C"
+    },
+    {
+      "date": "2026-10-31",
+      "track": "京都",
+      "race_no": 12,
+      "official_start_jst": "16:25",
+      "trio": "2-9-11",
+      "trio_payout_yen": 36300,
+      "presealed_decision": "BUY",
+      "presealed_axis": "15",
+      "presealed_ticket_count": 9,
+      "matched_ticket": false,
+      "official_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1008202604101220261031/F4"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "東京",
+      "race_no": 1,
+      "official_start_jst": "10:00",
+      "trio": "1-11-13",
+      "trio_payout_yen": 6530,
+      "presealed_decision": "PASS",
+      "presealed_axis": "1",
+      "presealed_ticket_count": 0,
+      "matched_ticket": false,
+      "official_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604110120261101/10"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "東京",
+      "race_no": 3,
+      "official_start_jst": "11:00",
+      "trio": "4-5-9",
+      "trio_payout_yen": 180,
+      "presealed_decision": "CAUTION",
+      "presealed_axis": "9",
+      "presealed_ticket_count": 8,
+      "matched_ticket": false,
+      "official_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0105202604110320261101/7A"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "東京",
+      "race_no": 8,
+      "official_start_jst": "13:50",
+      "trio": "2-4-7",
+      "trio_payout_yen": 440,
+      "presealed_decision": "CAUTION",
+      "presealed_axis": "6",
+      "presealed_ticket_count": 8,
+      "matched_ticket": false,
+      "official_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1005202604110820261101/E2"
+    },
+    {
+      "date": "2026-11-01",
+      "track": "東京",
+      "race_no": 11,
+      "official_start_jst": "15:40",
+      "trio": "3-10-17",
+      "trio_payout_yen": 42010,
+      "presealed_decision": "CAUTION",
+      "presealed_axis": "7",
+      "presealed_ticket_count": 8,
+      "matched_ticket": false,
+      "official_url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde1005202604111120261101/41"
+    }
+  ],
+  "check_summary": {
+    "new_races_checked": 6,
+    "official_trio_or_payout_mismatches": 0,
+    "immutable_preseal_decision_axis_ticket_count_mismatches": 0,
+    "all_six_ticket_match_results": false,
+    "all_six_correctly_scored_as_non_hits": true,
+    "previous_oct31_official_verified": 5,
+    "previous_nov1_official_verified": 10,
+    "new_oct31_verified": 2,
+    "new_nov1_verified": 4,
+    "cumulative_oct31_official_verified": 7,
+    "cumulative_nov1_official_verified": 14,
+    "cumulative_total_official_verified": 21,
+    "remaining_oct31": 17,
+    "remaining_nov1": 10,
+    "remaining_total": 27,
+    "combined_unique_races": 48,
+    "combined_duplicates": 0
+  },
+  "diagnostic_carried_forward": {
+    "oct31": {
+      "races": 24,
+      "effective_stake_yen": 16400,
+      "return_yen": 108800,
+      "gross_roi_pct": 663.41,
+      "roi_ex_largest_pct": 126.71
+    },
+    "nov1": {
+      "races": 24,
+      "effective_stake_yen": 16100,
+      "return_yen": 25790,
+      "gross_roi_pct": 160.19,
+      "roi_ex_largest_pct": 34.29
+    },
+    "retrospective_first36": {
+      "races": 36,
+      "effective_stake_yen": 22900,
+      "return_yen": 110740,
+      "gross_roi_pct": 483.58,
+      "roi_ex_largest_pct": 99.21,
+      "formal_status": "NOT_ELIGIBLE"
+    }
+  },
+  "quality_gates": {
+    "prestart_commit_and_immutable_tickets": "PASS_FOR_48_RACE_COHORT",
+    "official_outcome_crosscheck": "PARTIAL_21_OF_48",
+    "complete_actual_start_time_audit": "PENDING",
+    "upstream_raw_results_lineage_and_full_feature_leak_audit": "PENDING",
+    "prospectively_fixed_same_mechanism_36r": "NOT_MET",
+    "champion_challenger_equal_input_equal_budget": "PENDING",
+    "new_formal_unseen_races_added": 0,
+    "new_formal_36r_pass": false
+  },
+  "strict_1000r_carried_forward": {
+    "timing_matched_scored_races": 150,
+    "staked_races": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "gross_roi_pct": 89.49,
+    "roi_ex_largest_pct": 75.24,
+    "full_upstream_leakage_audit_pending": true
+  },
+  "notes": [
+    "Six official JRA result pages independently read, with trio, payout, and displayed start time compared to source ledger.",
+    "Original immutable Git blobs were retrieved by SHA, not just self-reported odds/results flags; six decisions, axes, ticket counts and non-hits matched.",
+    "JRA result page displayed start times are recorded, but this is not a full actual-start-time audit for all races.",
+    "Oct31 original seal precedes Tokyo6R scratch announcement; Oct31 refund correction already recorded in previous audit.",
+    "No retrospective tuning, model change, or official cohort promotion."
+  ],
+  "notification": {
+    "send": false,
+    "reason": "No new prospectively fixed same-mechanism upstream-leak-audited 36R with both ROI metrics above 90%"
+  }
+}
