@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-04",
+  "audit_kind": "DAILY_REPOSITORY_HEAD_AND_QUALITY_GATE_RECHECK",
+  "repository": "vetkate79-tech/-jra-horse-bigdata-updater",
+  "checked_head": "7d370d77be8c312c85086995a06d262e49eb4266",
+  "prior_audit": "docs/data/validation/strict-unseen-official-crosscheck-2026-11-02-night.json",
+  "recent_commit_search": "No newer commit returned by repository-scoped descending GitHub commit search",
+  "seal_provenance_carried": [
+    {
+      "date": "2026-10-31",
+      "commit": "bf7c8e9611731d8bb140698f4d5a1ecd7b52fc1d",
+      "blob": "9156b723d4d90aee55058a15dc4b5a886342f285",
+      "frames": "305/305"
+    },
+    {
+      "date": "2026-11-01",
+      "commit": "6d86e4595f40bc059c19cbf6b55d1a46354fecae",
+      "blob": "344f16606043abbcc530646b8f6eb7267b1e09fe",
+      "frames": "318/318"
+    }
+  ],
+  "official_result_crosscheck_carried": "21/48; remaining 27; no new independent race-level official result verification this run",
+  "duplicate_check_carried": "48 unique races, 0 duplicates per previous audit; no new cohort",
+  "diagnostic_carried": {
+    "oct31": {
+      "races": 24,
+      "stake": 16400,
+      "return": 108800,
+      "roi_pct": 663.41,
+      "ex_max_pct": 126.71
+    },
+    "nov1": {
+      "races": 24,
+      "stake": 16100,
+      "return": 25790,
+      "roi_pct": 160.19,
+      "ex_max_pct": 34.29
+    },
+    "retrospective36": {
+      "stake": 22900,
+      "return": 110740,
+      "roi_pct": 483.58,
+      "ex_max_pct": 99.21,
+      "formal_eligible": false
+    }
+  },
+  "strict_baseline_carried": {
+    "races": 150,
+    "purchased": 128,
+    "stake": 111400,
+    "return": 99690,
+    "roi_pct": 89.49,
+    "ex_max_pct": 75.24,
+    "full_upstream_audit_pending": true
+  },
+  "outstanding": [
+    "27/48 JRA official results and payouts not independently crosschecked",
+    "Full upstream feature and raw-result lineage audit pending",
+    "Actual start-time audit for all 48 pending",
+    "Prospectively fixed same-mechanism 36R lot not established",
+    "Champion/Challenger same-input and same-budget comparison pending"
+  ],
+  "new_formal_races": 0,
+  "new_formal_36r_pass": false,
+  "model_change": false,
+  "notification": false,
+  "note": "Repository metadata and previous audit file independently re-read today. Prior official results and immutable blob contents not all independently re-fetched in this run; carry-forward evidence must not be presented as newly verified."
+}
