@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-05",
+  "audit_kind": "REPOSITORY_HEAD_AND_IMMUTABLE_BLOB_RECHECK",
+  "latest_commit": "ac9ad63b313b219331bc51ed6aeb2fc67b98e2ce",
+  "latest_commit_at_utc": "2026-11-04T10:38:09Z",
+  "new_commits_after_prior_audit": 0,
+  "immutable_seals_retrieved": [
+    {
+      "date": "2026-10-31",
+      "commit": "bf7c8e9611731d8bb140698f4d5a1ecd7b52fc1d",
+      "blob": "9156b723d4d90aee55058a15dc4b5a886342f285",
+      "blob_characters": 1712176,
+      "generated_at": "2026-10-30T16:06:43.530611+09:00",
+      "note": "48-race file includes next day; Oct31 cohort frame complete 305/305 per previous audit"
+    },
+    {
+      "date": "2026-11-01",
+      "commit": "6d86e4595f40bc059c19cbf6b55d1a46354fecae",
+      "blob": "344f16606043abbcc530646b8f6eb7267b1e09fe",
+      "blob_characters": 882760,
+      "generated_at": "2026-11-01T04:20:15.752357+09:00",
+      "frame_known": 318,
+      "frame_total": 318
+    }
+  ],
+  "official_crosscheck_carried": "21/48",
+  "new_official_checks": 0,
+  "duplicates_carried": 0,
+  "new_formal_races": 0,
+  "strict_baseline": {
+    "races": 150,
+    "purchased": 128,
+    "stake_yen": 111400,
+    "return_yen": 99690,
+    "roi_pct": 89.49,
+    "ex_max_roi_pct": 75.24,
+    "full_upstream_audit_pending": true
+  },
+  "diagnostic_36r": {
+    "roi_pct": 483.58,
+    "ex_max_roi_pct": 99.21,
+    "formal_eligible": false
+  },
+  "formal_36r_pass": false,
+  "model_changed": false,
+  "pending": [
+    "27 independent official outcome checks",
+    "actual start times all races",
+    "full upstream leakage audit",
+    "prospectively fixed same-mechanism 36R",
+    "equal-input champion challenger"
+  ],
+  "note": "Retrieved immutable blob content independently this run. Prior 21 official checks and 48 race duplicate audit are carried, not reverified; no promotion."
+}
