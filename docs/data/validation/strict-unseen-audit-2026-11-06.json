@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-06",
+  "audit_kind": "NEW_WEEKEND_SEAL_QUALITY_GATE",
+  "observed_head": "6f1301cbccddf24c99660b6c8830ade75a6a32bd",
+  "head_commit_utc": "2026-11-06T08:21:17Z",
+  "prior_audit_commit": "b1923784cb6c8e42672655ca81a84e7c68a02fb7",
+  "commits_since_prior": 10,
+  "sealed_dates": [
+    "2026-11-07",
+    "2026-11-08"
+  ],
+  "races": 72,
+  "runners": 998,
+  "frame_known": 535,
+  "frame_missing": 463,
+  "frame_completeness_pct": 53.61,
+  "seal_stage": "PARTIAL_FRAME_RESEAL",
+  "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+  "base_model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
+  "challenger_axis_change_count": 5,
+  "model_comparison_eligible": false,
+  "formal_36r_eligible": false,
+  "reason": "46.39% frame missing; prospectively fixed homogeneous 36R and upstream leakage audit not established; self-declared results_used/odds_popularity_used not independent proof",
+  "prior_official_crosscheck_carried": "21/48",
+  "new_official_crosschecks": 0,
+  "prior_scored_races_carried": 150,
+  "new_formal_races": 0,
+  "baseline_roi_pct": 89.49,
+  "baseline_ex_max_roi_pct": 75.24,
+  "duplicate_check": "not independently recomputed this run",
+  "official_outcome": "Nov 7-8 races future at audit time; no official result yet",
+  "next_steps": [
+    "Preserve immutable pre-race versions and commit times per race",
+    "Recheck all 998 frame entries before admission",
+    "Complete 27 outstanding official result checks and upstream time provenance",
+    "Use same-input fixed-stake single-change Champion/Challenger comparison"
+  ],
+  "notification_condition_met": false
+}
