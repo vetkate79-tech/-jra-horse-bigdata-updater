@@ -1,91 +1,121 @@
 {
   "status": "UPDATED",
-  "checked_at": "2026-10-31T22:53:03.196211+09:00",
+  "checked_at": "2026-11-07T23:20:32.813211+09:00",
   "target_dates": [
-    "20261028",
-    "20261029",
-    "20261030",
-    "20261031"
+    "20261104",
+    "20261105",
+    "20261106",
+    "20261107"
   ],
-  "discovered_races": 24,
+  "discovered_races": 36,
   "complete_dates": [
-    "20261031"
+    "20261107"
   ],
   "incomplete": {},
-  "racecards_ready": 24,
-  "new_runner_rows": 305,
+  "racecards_ready": 36,
+  "new_runner_rows": 501,
   "strict_warnings": [
     {
-      "race": "pw01sde0105202604100120261031/30",
+      "race": "pw01sde0103202603010120261107/A9",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604100420261031/4F",
+      "race": "pw01sde0103202603010320261107/13",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604100620261031/B9",
+      "race": "pw01sde0103202603010420261107/C8",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604100820261031/23",
+      "race": "pw01sde0103202603010820261107/9C",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604100920261031/D8",
+      "race": "pw01sde0103202603011220261107/B0",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0105202604101120261031/82",
+      "race": "pw01sde0105202605010120261107/9F",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604100120261031/0E",
+      "race": "pw01sde0105202605010220261107/54",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604100620261031/97",
+      "race": "pw01sde0105202605010520261107/73",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604100720261031/4C",
+      "race": "pw01sde0105202605010620261107/28",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604100820261031/01",
+      "race": "pw01sde0105202605010920261107/47",
       "strict_errors": [
         "track_condition"
       ]
     },
     {
-      "race": "pw01sde0108202604101020261031/AB",
+      "race": "pw01sde0108202605010120261107/7D",
+      "strict_errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0108202605010320261107/E7",
+      "strict_errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0108202605010620261107/06",
+      "strict_errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0108202605010720261107/BB",
+      "strict_errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0108202605011020261107/1A",
+      "strict_errors": [
+        "track_condition"
+      ]
+    },
+    {
+      "race": "pw01sde0108202605011120261107/CF",
       "strict_errors": [
         "track_condition"
       ]
     }
   ],
   "totals": {
-    "result_rows": 4571,
-    "payout_rows": 4142,
-    "context_rows": 348
+    "result_rows": 5072,
+    "payout_rows": 4573,
+    "context_rows": 384
   },
-  "discovery_pages": 132
+  "discovery_pages": 36
 }
