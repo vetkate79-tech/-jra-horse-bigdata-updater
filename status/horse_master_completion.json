@@ -1,11 +1,11 @@
 {
   "summary": {
     "horse_count": 6674,
-    "complete_horse_count": 5179,
-    "incomplete_horse_count": 1495,
+    "complete_horse_count": 5176,
+    "incomplete_horse_count": 1498,
     "missing_field_counts": {
-      "new_sire": 1486,
-      "new_damsire": 1486,
+      "new_sire": 1489,
+      "new_damsire": 1489,
       "race_history": 9
     },
     "category_counts": {
@@ -3025,6 +3025,14 @@
       ]
     },
     {
+      "horse_id": "pw01dud102024103568/A8",
+      "horse_name": "コスモイェーガー",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
       "horse_id": "pw01dud102023106426/92",
       "horse_name": "コスモエルヴァル",
       "missing": [
@@ -4410,6 +4418,14 @@
     {
       "horse_id": "pw01dud102024105045/18",
       "horse_name": "ジオイメル",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024102740/63",
+      "horse_name": "ジオパークカツキ",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -11526,6 +11542,14 @@
     {
       "horse_id": "pw01dud102024100693/FD",
       "horse_name": "ロンドンエコー",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024100445/31",
+      "horse_name": "ロンドンガーズ",
       "missing": [
         "new_sire",
         "new_damsire"
