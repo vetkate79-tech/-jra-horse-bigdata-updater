@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-08",
+  "audit_kind": "PRE_RACE_COMMIT_RECOVERY_AND_POST_RACE_RESEAL_QUARANTINE",
+  "pre_race_seal": {
+    "commit": "460eb945868539e7e580ca65942e57714bb41f56",
+    "commit_utc": "2026-11-07T19:30:23Z",
+    "commit_jst": "2026-11-08T04:30:23+09:00",
+    "race_count": 36,
+    "frame_known": 497,
+    "frame_total": 497,
+    "seal_stage": "FINAL_WITH_FRAME",
+    "prediction_hash": "844c486919e8745ab1b4692a1a97d210131e586c3768cc2a963f0ce16b8f4dc9",
+    "challenger_axis_changes": 3
+  },
+  "post_race_reseal": {
+    "commit": "44c45fcad07b52b422519d90e542c9432282190d",
+    "commit_utc": "2026-11-08T07:43:59Z",
+    "commit_jst": "2026-11-08T16:43:59+09:00",
+    "same_prediction_hash_reported": true,
+    "content_independent_full_comparison": false,
+    "not_accepted_as_pre_race_evidence": true
+  },
+  "official_sample": {
+    "date": "2026-11-08",
+    "track": "福島",
+    "race_no": 12,
+    "actual_start_jst": "16:01",
+    "url": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0103202603021220261108%2FE0",
+    "note": "Official start time independently checked; presealed tickets and payout not crosschecked"
+  },
+  "official_ticket_crosschecks_new": 0,
+  "duplicate_check": "not independently recomputed",
+  "prior_official_crosscheck_carried": "21/48",
+  "prior_unverified": 27,
+  "formal_new_races": 0,
+  "formal_scored_carried": 150,
+  "formal_total_roi_pct": 89.49,
+  "formal_ex_max_roi_pct": 75.24,
+  "upstream_leakage_audit": "incomplete",
+  "prospectively_fixed_same_mechanism_36r": "not established",
+  "formal_36r_new_success": false,
+  "notification_condition_met": false,
+  "next_steps": [
+    "Retrieve and compare immutable original 04:30 seal tickets and subsequent reseal at race level",
+    "Audit upstream source timestamps and market data access",
+    "Crosscheck 27 outstanding Oct31/Nov1 official results and all Nov8 payouts",
+    "Recompute unique race keys and full risk metrics before admission"
+  ]
+}
