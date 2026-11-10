@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-10",
+  "audit_kind": "STRICT_UNSEEN_CONTINUITY_AND_SOURCE_ACCESS_AUDIT",
+  "latest_commit_observed": "3ac3d2c66cace507b378b2ff5617a1c337c48148",
+  "latest_commit_utc": "2026-11-09T10:37:00Z",
+  "new_commits_since_prior_audit": 0,
+  "seal_before": "460eb945868539e7e580ca65942e57714bb41f56",
+  "seal_after": "44c45fcad07b52b422519d90e542c9432282190d",
+  "seal_commit_utc_before": "2026-11-07T19:30:23Z",
+  "seal_commit_utc_after": "2026-11-08T07:43:59Z",
+  "seal_compare": {
+    "commits": 4,
+    "files_changed": 18,
+    "prediction_file_changed": true,
+    "seal_code_changed": true,
+    "market_odds_changed": true
+  },
+  "immutable_blob_sha": {
+    "before_prediction": "",
+    "after_prediction": "",
+    "before_seal_code": "f9b2399c70a8aedef61a9e26f4d9f1f6f2aa73d6",
+    "after_seal_code": "5d14a3caef25fd9654e90c3c6fe3dbb63905a216"
+  },
+  "fetch_limitation": "GitHub fetch_file returned empty content for both large prediction JSON versions and both live-seal.js versions; therefore full ticket-level diff and code diff cannot be independently computed in this run.",
+  "new_official_ticket_checks": 0,
+  "new_official_start_time_checks": 0,
+  "prior_official_checks_carried": "21/48",
+  "outstanding_official_checks": 27,
+  "duplicate_key_independent_check": "not completed",
+  "upstream_feature_leakage_audit": "not completed",
+  "formal_new_races": 0,
+  "formal_scored_carried": 150,
+  "formal_purchased_carried": 128,
+  "formal_stake_yen": 111400,
+  "formal_return_yen": 99690,
+  "formal_roi_pct": 89.49,
+  "formal_ex_max_roi_pct": 75.24,
+  "new_formal_36r_success": false,
+  "notification_condition_met": false,
+  "next_steps": [
+    "Recover full immutable sealed JSON through alternative raw blob retrieval and compare race keys, axes, BUY and tickets",
+    "Audit upstream features and odds provenance against race-local start times",
+    "Independently verify 27 outstanding JRA official race results",
+    "Do not promote unverified or post-race resealed records"
+  ]
+}
