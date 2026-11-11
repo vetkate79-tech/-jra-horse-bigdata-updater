@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-11",
+  "audit_kind": "STRICT_UNSEEN_CONTINUITY_SOURCE_RETRY",
+  "latest_commit_before_this_audit": "9836c1f879a1e3572f94f8cea7000afe04a0288d",
+  "latest_commit_utc": "2026-11-10T11:13:26Z",
+  "new_prediction_commits_observed": 0,
+  "seal_before": "460eb945868539e7e580ca65942e57714bb41f56",
+  "seal_after": "44c45fcad07b52b422519d90e542c9432282190d",
+  "seal_before_utc": "2026-11-07T19:30:23Z",
+  "seal_after_utc": "2026-11-08T07:43:59Z",
+  "compare_commits": 4,
+  "compare_files": 18,
+  "prediction_blobs": {
+    "before": "f2d5e200fe1b576f87b244e4fb7fc6a017fe04e1",
+    "after": "55ae1629bc9ba71348f3ea48429258a8d6efba07",
+    "identical": false
+  },
+  "seal_code_blobs": {
+    "before": "f9b2399c70a8aedef61a9e26f4d9f1f6f2aa73d6",
+    "after": "5d14a3caef25fd9654e90c3c6fe3dbb63905a216",
+    "identical": false
+  },
+  "source_retrieval": "fetch_file line 1 for both prediction versions and seal code versions returned zero-length content despite SHA; unable to diff ticket/axes/BUY or code. Different blob SHA proves file bytes differ but not which ticket fields changed.",
+  "official_new_checks": 0,
+  "official_checks_carried": "21/48",
+  "official_checks_outstanding": 27,
+  "individual_start_time_checks_new": 0,
+  "duplicate_key_independent_check": "not completed",
+  "upstream_leak_audit": "not completed",
+  "formal_new_races": 0,
+  "formal_scored_carried": 150,
+  "formal_purchased_carried": 128,
+  "formal_stake_yen": 111400,
+  "formal_return_yen": 99690,
+  "formal_roi_pct": 89.49,
+  "formal_ex_max_roi_pct": 75.24,
+  "new_formal_36r_success": false,
+  "notification_condition_met": false,
+  "quarantine": "Nov 8 post-race reseal and unverified upstream remain excluded",
+  "next_steps": [
+    "Retrieve immutable blob bytes using alternate endpoint",
+    "Compare pre/post race-level predictions and tickets",
+    "Independently verify 27 JRA results and start times",
+    "Run feature provenance and duplicate-key audit"
+  ]
+}
