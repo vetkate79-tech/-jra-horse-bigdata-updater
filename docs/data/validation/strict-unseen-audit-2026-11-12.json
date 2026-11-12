@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-12",
+  "audit_kind": "STRICT_UNSEEN_CONTINUITY",
+  "latest_commit_before_audit": "ec41f6a6d8ff9fffe0bec6fefd989e9e6a9ba931",
+  "latest_commit_utc": "2026-11-11T10:51:46Z",
+  "new_prediction_commits_observed": 0,
+  "seal_before": "460eb945868539e7e580ca65942e57714bb41f56",
+  "seal_after": "44c45fcad07b52b422519d90e542c9432282190d",
+  "seal_before_utc": "2026-11-07T19:30:23Z",
+  "seal_after_utc": "2026-11-08T07:43:59Z",
+  "compare_commits": 4,
+  "compare_files": 18,
+  "prediction_blobs": {
+    "before": "f2d5e200fe1b576f87b244e4fb7fc6a017fe04e1",
+    "after": "55ae1629bc9ba71348f3ea48429258a8d6efba07",
+    "identical": false
+  },
+  "source_retrieval": "GitHub fetch_file for line 1 of both immutable versions returned empty content; unable to compare race-level axes, BUY, tickets or calculate duplicate keys",
+  "official_start_time_independently_checked": [
+    {
+      "date": "2026-11-08",
+      "track": "福島",
+      "race_no": 12,
+      "start_jst": "16:01",
+      "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0103202603021220261108%2FE0"
+    }
+  ],
+  "official_new_ticket_crosschecks": 0,
+  "official_checks_carried": "21/48",
+  "official_checks_outstanding": 27,
+  "upstream_leak_audit": "incomplete",
+  "duplicate_key_independent_check": "incomplete",
+  "formal_new_races": 0,
+  "formal_scored_carried": 150,
+  "formal_purchased_carried": 128,
+  "formal_stake_yen": 111400,
+  "formal_return_yen": 99690,
+  "formal_roi_pct": 89.49,
+  "formal_ex_max_roi_pct": 75.24,
+  "new_formal_36r_success": false,
+  "notification_condition_met": false,
+  "quarantine": "Post-race reseal and all not independently verified races excluded",
+  "next_steps": [
+    "Recover immutable full prediction JSON via alternative GitHub Git Blob access",
+    "Compare race-level sealed tickets and BUY/axis fields",
+    "Complete 27 official crosschecks and race-level start-time checks",
+    "Audit upstream feature provenance and independent race-key deduplication"
+  ]
+}
