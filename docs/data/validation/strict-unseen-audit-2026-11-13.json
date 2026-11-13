@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-13",
+  "audit_kind": "STRICT_UNSEEN_CONTINUITY",
+  "latest_commit_before_audit": "3ac1219ea63682621fd00ae39ab2cdd51e714ecc",
+  "latest_commit_utc": "2026-11-13T08:34:20Z",
+  "new_commits_since_previous_audit": 10,
+  "upcoming_sealed_dates": [
+    "2026-11-14",
+    "2026-11-15"
+  ],
+  "upcoming_race_count": 72,
+  "upcoming_runner_count": 1021,
+  "frame_known_count": 534,
+  "frame_missing_count": 487,
+  "frame_completion_pct": 52.3,
+  "seal_stage": "PARTIAL_FRAME_RESEAL",
+  "challenger_axis_changes_reported": 6,
+  "latest_prediction_blob_sha": "162d671105ec0bb0b7db07efe099a842fa4fdae5",
+  "previous_prediction_blob_sha": "ebbe764b99035fde8f04e0bef0b5065e8a549096",
+  "prediction_blob_content_retrieval": "GitHub fetch_file returned empty content for immutable JSON even with line range; SHA differences alone cannot prove race-level ticket consistency",
+  "upstream_feature_cutoff_claim": "2026-11-14",
+  "upstream_feature_audit": "incomplete; source flags are self-reported",
+  "previous_seal_comparison": {
+    "base": "460eb945868539e7e580ca65942e57714bb41f56",
+    "head": "44c45fcad07b52b422519d90e542c9432282190d",
+    "commits": 4,
+    "files": 18,
+    "full_ticket_comparison": "incomplete"
+  },
+  "official_new_ticket_crosschecks": 0,
+  "official_checks_carried": "21/48",
+  "official_checks_outstanding": 27,
+  "individual_start_time_check": "incomplete",
+  "duplicate_key_independent_check": "incomplete",
+  "formal_new_races": 0,
+  "formal_scored_carried": 150,
+  "formal_purchased_carried": 128,
+  "formal_stake_yen": 111400,
+  "formal_return_yen": 99690,
+  "formal_roi_pct": 89.49,
+  "formal_ex_max_roi_pct": 75.24,
+  "new_formal_36r_success": false,
+  "notification_condition_met": false,
+  "quarantine": "All new 72R with missing frame data and incomplete upstream provenance; no formal unseen scoring",
+  "next_steps": [
+    "Recover immutable sealed prediction full contents and race-level tickets",
+    "Complete missing frame data before race-specific lock",
+    "Crosscheck outstanding 27 official results and start times",
+    "Audit upstream feature provenance and independently deduplicate race keys"
+  ]
+}
