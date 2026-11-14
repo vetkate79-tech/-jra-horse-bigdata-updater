@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-14",
+  "audit_kind": "STRICT_UNSEEN_CONTINUITY",
+  "latest_commit_before_audit": "cb717f781701d84a1513f75277e3ad6ce6b64ac3",
+  "latest_commit_utc": "2026-11-14T07:48:35Z",
+  "commits_since_prior_audit": 8,
+  "sealed_dates": [
+    "2026-11-14",
+    "2026-11-15"
+  ],
+  "sealed_races_reported": 72,
+  "frame_known_reported": 1021,
+  "frame_total_reported": 1021,
+  "seal_stage_reported": "FINAL_WITH_FRAME",
+  "challenger_axis_changes_reported": 10,
+  "seal_prediction_hash_reported": "0fa304153f59ceb3bbab842347ea62cd5246cbda45dbd9c86f995aa39b521a83",
+  "latest_seal_commit_jst": "2026-11-14T16:48:35+09:00",
+  "prior_seal_commit_jst": [
+    "2026-11-14T16:40:15+09:00",
+    "2026-11-14T16:42:25+09:00"
+  ],
+  "official_start_time_example": {
+    "race": "2026-11-14 Fukushima 11R",
+    "jst": "15:15",
+    "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0103202603031120261114%2F04"
+  },
+  "post_start_reseal": true,
+  "earlier_pre_start_commit": "3ac1219ea63682621fd00ae39ab2cdd51e714ecc",
+  "earlier_pre_start_frame_completion_reported": "534/1021",
+  "immutable_prediction_content": "empty from connector; race-level tickets not independently recovered",
+  "upstream_provenance": "not independently verified; source flags insufficient",
+  "official_new_ticket_crosschecks": 0,
+  "official_outstanding_carried": 27,
+  "duplicate_key_independent_check": "not completed",
+  "formal_new_races": 0,
+  "formal_scored_carried": 150,
+  "formal_purchased_carried": 128,
+  "formal_stake_yen": 111400,
+  "formal_return_yen": 99690,
+  "formal_roi_pct": 89.49,
+  "formal_ex_max_roi_pct": 75.24,
+  "new_formal_36r_success": false,
+  "notification_condition_met": false,
+  "quarantine": "Nov 14 post-start reseals and Nov 15 provisional until immutable race-level prediction and upstream provenance verified",
+  "next_steps": [
+    "recover pre-start immutable race-level tickets",
+    "compare all axes, BUY decisions and tickets across seals",
+    "crosscheck 27 outstanding JRA results",
+    "audit upstream feature timestamps and deduplicate race keys"
+  ]
+}
