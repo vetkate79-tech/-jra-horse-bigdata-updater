@@ -1,12 +1,11 @@
 {
   "summary": {
     "horse_count": 7015,
-    "complete_horse_count": 5378,
-    "incomplete_horse_count": 1637,
+    "complete_horse_count": 5388,
+    "incomplete_horse_count": 1627,
     "missing_field_counts": {
-      "new_sire": 1620,
-      "new_damsire": 1620,
-      "open_evidence": 5,
+      "new_sire": 1615,
+      "new_damsire": 1615,
       "race_history": 12
     },
     "category_counts": {
@@ -19,10 +18,10 @@
       "NEW": 1175,
       "UNKNOWN": 0
     },
-    "base_open_count": 569,
+    "base_open_count": 574,
     "base_graded_count": 126,
     "base_unbeaten_count": 0,
-    "active_elite_count": 643,
+    "active_elite_count": 648,
     "structural_issues": [],
     "status": "IN_PROGRESS",
     "definition": "complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically"
@@ -346,13 +345,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102020100809/51",
-      "horse_name": "アマイ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -3512,13 +3504,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102020103464/7B",
-      "horse_name": "ゴートゥファースト",
-      "missing": [
-        "open_evidence"
-      ]
-    },
-    {
       "horse_id": "pw01dud102023107056/ED",
       "horse_name": "ゴーラッキー",
       "missing": [
@@ -4438,14 +4423,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102024100266/62",
-      "horse_name": "ショウナンハーヴェ",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024100019/09",
       "horse_name": "ショウナンバラモン",
       "missing": [
@@ -4755,13 +4732,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102023102807/ED",
-      "horse_name": "ジャスティンビスタ",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -6068,14 +6038,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102024103288/35",
-      "horse_name": "ダイシンドラゴン",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102462/D6",
       "horse_name": "ダイチマイスター",
       "missing": [
@@ -6086,14 +6048,6 @@
     {
       "horse_id": "pw01dud102024102815/A3",
       "horse_name": "ダイナビルド",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102354/7B",
-      "horse_name": "ダイメイビッグボス",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -6209,13 +6163,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102022103304/02",
-      "horse_name": "ダンツエラン",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -7802,14 +7749,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102024107104/74",
-      "horse_name": "ノヴァーリス",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102015/1B",
       "horse_name": "ノヴェルクロプラ",
       "missing": [
@@ -8150,13 +8089,6 @@
       "missing": [
         "new_sire",
         "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102021102728/37",
-      "horse_name": "バッデレイト",
-      "missing": [
-        "open_evidence"
       ]
     },
     {
@@ -11736,14 +11668,6 @@
     {
       "horse_id": "pw01dud102024101892/DB",
       "horse_name": "リュウゴリーベ",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107248/B1",
-      "horse_name": "リュウトウコヤク",
       "missing": [
         "new_sire",
         "new_damsire"
