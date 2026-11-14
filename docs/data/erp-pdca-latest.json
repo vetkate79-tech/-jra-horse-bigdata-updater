@@ -2,7 +2,7 @@
   "status": "READY",
   "title": "実運用分析・改善計画",
   "summary": {
-    "scope": "2026-11-07 / 2026-11-08 の封印予想に対する結果接続PDCA",
+    "scope": "2026-11-14 / 2026-11-15 の封印予想に対する結果接続PDCA",
     "immutable_rule": "封印済み予想は変更せず、結果は後段分析にのみ使用"
   },
   "validation_plan": {
@@ -16,7 +16,7 @@
     ],
     "decomposition": [
       "AXIS_MISS: 20",
-      "FULL_SUCCESS: 3",
+      "FULL_SUCCESS: 2",
       "OPPONENT_CANDIDATE_MISS: 13"
     ],
     "governance": [
@@ -28,7 +28,7 @@
       "id": "AXIS",
       "title": "軸飛び",
       "status": "OBSERVED",
-      "observation": "21件",
+      "observation": "20件",
       "risk": "軸が3着外なら買い目構造では救えない",
       "current_action": "軸耐久性を優先監査"
     },
@@ -67,5 +67,5 @@
       "promotion_gate": "本番モデルは自動変更しない"
     }
   ],
-  "source_prediction_hash_sha256": "fbd875e83477dd367d4e9ff5aa5ef7fb9346e66119526748adad0ef1bec618ec"
+  "source_prediction_hash_sha256": "0fa304153f59ceb3bbab842347ea62cd5246cbda45dbd9c86f995aa39b521a83"
 }

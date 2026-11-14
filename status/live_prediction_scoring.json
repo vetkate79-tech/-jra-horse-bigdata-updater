@@ -1,19 +1,19 @@
 {
-  "source_prediction_hash_sha256": "fbd875e83477dd367d4e9ff5aa5ef7fb9346e66119526748adad0ef1bec618ec",
+  "source_prediction_hash_sha256": "0fa304153f59ceb3bbab842347ea62cd5246cbda45dbd9c86f995aa39b521a83",
   "sealed_predictions_immutable": true,
-  "scored_race_count": 36,
-  "pending_race_count": 36,
-  "axis_1st": 8,
-  "axis_2nd_3rd": 7,
-  "axis_outside_top3": 21,
-  "axis_top3_rate_pct": 41.67,
+  "scored_race_count": 35,
+  "pending_race_count": 37,
+  "axis_1st": 6,
+  "axis_2nd_3rd": 9,
+  "axis_outside_top3": 20,
+  "axis_top3_rate_pct": 42.86,
   "decision_counts": {
-    "PASS": 8,
-    "CAUTION": 11,
-    "BUY": 17
+    "PASS": 10,
+    "CAUTION": 9,
+    "BUY": 16
   },
-  "trio_bought_races": 28,
-  "trio_hits": 3,
-  "trio_hit_rate_pct": 10.71,
+  "trio_bought_races": 25,
+  "trio_hits": 2,
+  "trio_hit_rate_pct": 8.0,
   "result_fields_used_only_after_seal": true
 }
