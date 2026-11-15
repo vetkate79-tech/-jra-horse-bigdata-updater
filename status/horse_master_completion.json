@@ -1,27 +1,27 @@
 {
   "summary": {
     "horse_count": 7013,
-    "complete_horse_count": 5406,
-    "incomplete_horse_count": 1607,
+    "complete_horse_count": 5410,
+    "incomplete_horse_count": 1603,
     "missing_field_counts": {
-      "new_sire": 1596,
-      "new_damsire": 1596,
+      "new_sire": 1592,
+      "new_damsire": 1592,
       "race_history": 11
     },
     "category_counts": {
       "GRADED": 129,
       "OPEN": 539,
       "3WIN": 361,
-      "2WIN": 805,
+      "2WIN": 806,
       "1WIN": 1778,
-      "MAIDEN": 2244,
+      "MAIDEN": 2243,
       "NEW": 1157,
       "UNKNOWN": 0
     },
     "base_open_count": 591,
     "base_graded_count": 129,
     "base_unbeaten_count": 0,
-    "active_elite_count": 5,
+    "active_elite_count": 668,
     "structural_issues": [],
     "status": "IN_PROGRESS",
     "definition": "complete within discovered JRA horse master; categories and elite evidence must also pass structural integrity checks; future debut/meeting runners append automatically"
@@ -4391,14 +4391,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102024100266/62",
-      "horse_name": "ショウナンハーヴェ",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024100019/09",
       "horse_name": "ショウナンバラモン",
       "missing": [
@@ -5982,14 +5974,6 @@
       ]
     },
     {
-      "horse_id": "pw01dud102024103288/35",
-      "horse_name": "ダイシンドラゴン",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
       "horse_id": "pw01dud102024102462/D6",
       "horse_name": "ダイチマイスター",
       "missing": [
@@ -6000,14 +5984,6 @@
     {
       "horse_id": "pw01dud102024102815/A3",
       "horse_name": "ダイナビルド",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024102354/7B",
-      "horse_name": "ダイメイビッグボス",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -7656,14 +7632,6 @@
     {
       "horse_id": "pw01dud102024106557/F2",
       "horse_name": "ノヴァルクス",
-      "missing": [
-        "new_sire",
-        "new_damsire"
-      ]
-    },
-    {
-      "horse_id": "pw01dud102024107104/74",
-      "horse_name": "ノヴァーリス",
       "missing": [
         "new_sire",
         "new_damsire"
