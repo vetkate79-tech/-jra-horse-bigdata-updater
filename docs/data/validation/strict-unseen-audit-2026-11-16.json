@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-16",
+  "audit_kind": "STRICT_UNSEEN_CONTINUITY",
+  "latest_commit_before_audit": "90df6bd6bc8502a8a834cdbdc44dd60d285236f9",
+  "latest_commit_utc": "2026-11-16T01:16:27Z",
+  "commits_since_prior_audit": 2,
+  "new_result_ingestion_commit": "b502737b112687be7e3d7fa99275cc240e869a89",
+  "new_result_ingestion_utc": "2026-11-15T15:06:24Z",
+  "result_ingestion_added_race_context_rows": 36,
+  "result_ingestion_added_payout_rows": 432,
+  "result_ingestion_added_result_rows": 505,
+  "nov15_prestart_seal": "e2d36e8cecba9fe5aeee96289d50cbd42ba34c59",
+  "nov15_poststart_reseal": "26502282ba9a6a0ae9ac166e935d2025160a34fa",
+  "nov15_repository_scoring_report": {
+    "races": 36,
+    "axis_top3": 19,
+    "axis_top3_rate_pct": 52.78,
+    "buy": 13,
+    "caution": 16,
+    "pass": 7,
+    "trio_bought_races": 29,
+    "trio_hits": 2,
+    "source": "status/live_prediction_scoring.json",
+    "status": "unverified_repository_claim_not_formal"
+  },
+  "official_spotcheck": {
+    "race": "2026-11-15 Kyoto 11R",
+    "start_jst": "15:40",
+    "first_three_horse_numbers": [
+      15,
+      7,
+      16
+    ],
+    "trio_100yen_payout_yen": 5710,
+    "source": "https://www.jra.go.jp/JRADB/accessS.html?CNAME=pw01sde0108202605041120261115%2F08"
+  },
+  "immutable_ticket_recovery": "not completed",
+  "full_race_key_deduplication": "not completed",
+  "upstream_feature_timestamp_audit": "not completed",
+  "official_new_ticket_crosschecks": 0,
+  "official_outstanding_carried": 27,
+  "formal_new_races": 0,
+  "formal_scored_carried": 150,
+  "formal_purchased_carried": 128,
+  "formal_stake_yen": 111400,
+  "formal_return_yen": 99690,
+  "formal_roi_pct": 89.49,
+  "formal_ex_max_roi_pct": 75.24,
+  "new_formal_36r_success": false,
+  "notification_condition_met": false,
+  "notes": "New scoring/results files are post-race; repository scoring claims are not proof of prestart prediction tickets. No formal ROI promotion."
+}
