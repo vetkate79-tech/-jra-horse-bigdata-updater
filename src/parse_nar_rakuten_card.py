@@ -22,10 +22,14 @@ def parse(html):
             first=cell.select_one(".firstInfo .place")
             match=re.search(r"(\d{2})\.(\d{2})\.(\d{2})",cell.get_text(" ",strip=True))
             distance=re.search(r"(\d{3,4})\s*右?\s*([ダ芝])",cell.get_text(" ",strip=True))
-            if not (first and match and distance):continue
+            if not (first and match and distance):
+                if name=="ファストワン":print("PARSE_DIAG",name,"first",first.get_text(" ",strip=True) if first else None,"date",match.group() if match else None,"distance",distance.group() if distance else None,"cell",cell.get_text(" ",strip=True)[:350])
+                continue
             date=f"20{match.group(1)}-{match.group(2)}-{match.group(3)}"
             finish=re.search(r"\d+",first.get_text(strip=True))
-            if not finish:continue
+            if not finish:
+                if name=="ファストワン":print("PARSE_DIAG_NO_FINISH",name,first.get_text(" ",strip=True))
+                continue
             if date>="2026-11-21":raise ValueError("target result leakage")
             text=cell.get_text(" ",strip=True)
             corners=re.search(r"\b\d+-\d+(?:-\d+){1,3}\b",text)
