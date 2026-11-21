@@ -35,6 +35,12 @@ class AdapterTests(unittest.TestCase):
     def test_non_oddspark_source_rejected(self):
         d=fixture();d["source_url"]="https://example.com/"
         with self.assertRaisesRegex(ValueError,"Oddspark domain"):build(d)
+    def test_odds_leakage_rejected(self):
+        d=fixture();d["runners"][0]["odds"]=1.2
+        with self.assertRaisesRegex(ValueError,"market/result leakage"):build(d)
+    def test_target_results_rejected(self):
+        d=fixture();d["results"]={"winner":"1"}
+        with self.assertRaisesRegex(ValueError,"market/result leakage"):build(d)
     def test_duplicate_numbers_rejected(self):
         d=fixture();d["runners"][1]["horse_no"]="1"
         with self.assertRaisesRegex(ValueError,"duplicate"):build(d)
