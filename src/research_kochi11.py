@@ -37,11 +37,15 @@ def main():
     import itertools
     tickets=[list(sorted((axis,a,b))) for a,b in itertools.combinations([x for x in top if x!=axis],2)]
     result["research_row_index_combinations"]=tickets[:7]
+    result["row_index_not_horse_number"]=True
+    result["formal_prediction_status"]="BLOCKED_NO_VERIFIED_PRE_START_SEAL_AND_HORSE_NUMBER_MAPPING"
+    result["research_input_coverage"]={"horses":len(horses),"history_counts":{h["horse_name"]:len(h["recent_starts"]) for h in horses}}
+    result["research_probability_calibration"]="UNVALIDATED_DO_NOT_INTERPRET_AS_REAL_WORLD_ODDS"
     result["research_trifecta_box_selections"]=[]
     result["research_ticket_status"]="BLOCKED_UNVERIFIED_HORSE_NUMBERS_NO_BETTABLE_TICKETS"
     result["source_provenance"]="RAKUTEN_KEIBA_POST_START_FETCH_RETROSPECTIVE_ONLY"
     result["horse_number_mapping"]="PAGE_ROW_ORDER_ONLY_NOT_VERIFIED_HORSE_NUMBERS"
     result["warning"]="Research-only; no verified pre-start snapshot, not a formal live prediction"
     Path(sys.argv[2]).write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
-    print(json.dumps({"status":result["status"],"ranked":result["ability_ranked"],"axis":result["axis_shadow"],"simulation":result["simulation"]},ensure_ascii=False)[:16000])
+    print(json.dumps({"status":result["status"],"formal_prediction_status":result["formal_prediction_status"],"history_coverage":result["research_input_coverage"],"ranked":result["ability_ranked"],"axis":result["axis_shadow"],"simulation":result["simulation"],"research_ticket_status":result["research_ticket_status"]},ensure_ascii=False)[:16000])
 if __name__=="__main__":main()
