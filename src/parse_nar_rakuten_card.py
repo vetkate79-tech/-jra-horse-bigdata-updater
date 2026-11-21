@@ -30,7 +30,8 @@ def parse(html):
             corners=re.search(r"\b\d+-\d+(?:-\d+){1,3}\b",text)
             last3f=re.search(r"\b(\d{2}\.\d)\s+\d{3}k",text)
             history.append({"race_date":date,"finish_position":int(finish.group()),"surface":"ダート" if distance.group(2)=="ダ" else "芝","distance_m":int(distance.group(1)),"course":text.split(" ",1)[0],"corner_positions":corners.group() if corners else "","last3f":last3f.group(1) if last3f else None})
-        if not history:raise ValueError("no parseable history for "+name)
+        if not history:
+            print("HISTORY_MISSING",name,"race_cells",len(tr.select("td.race")),"sample",tr.get_text(" ",strip=True)[:1200])
         horses.append({"horse_name":name,"horse_id":a.get("href","").split("/")[-1],"recent_starts":history})
     return {"status":"POST_START_SOURCE_UNSEALED_RESEARCH_ONLY","horse_count":len(horses),"horses":horses}
 
