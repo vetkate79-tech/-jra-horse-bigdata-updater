@@ -28,7 +28,7 @@ class NarInputTests(unittest.TestCase):
 
     def test_sp_scores_are_rejected(self):
         self.snapshot["horses"][0]["score_provenance"] = "PUBLIC_SP_INDEX"
-        with self.assertRaisesRegex(ValueError, "unverified"):
+        with self.assertRaisesRegex(ValueError, "provenance inconsistent"):
             run(self.snapshot)
 
     def test_result_leakage_is_rejected(self):
