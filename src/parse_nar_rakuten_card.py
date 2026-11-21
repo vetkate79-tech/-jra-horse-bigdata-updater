@@ -9,7 +9,8 @@ from bs4 import BeautifulSoup
 
 def parse(html):
     soup=BeautifulSoup(html,"lxml")
-    names=["クラックオブドーン","ミラクルドリーム","ヒマワリクン","ビックス","ファストワン","ウォーターレモン","ユキノマリア","ストーミーデイ","マイネルフォーコン","ムサシフウジン","ブルグミューラー"]
+    names=list(dict.fromkeys(a.get_text(strip=True) for a in soup.select("span.mainHorse a") if a.get_text(strip=True)))
+    if not names:raise ValueError("no horses found in race-card body")
     horses=[]
     for name in names:
         a=next((a for a in soup.select("span.mainHorse a") if a.get_text(strip=True)==name),None)
@@ -33,7 +34,7 @@ def parse(html):
         if not history:
             print("HISTORY_MISSING",name,"race_cells",len(tr.select("td.race")),"sample",tr.get_text(" ",strip=True)[:1200])
         horses.append({"horse_name":name,"horse_id":a.get("href","").split("/")[-1],"recent_starts":history})
-    return {"status":"POST_START_SOURCE_UNSEALED_RESEARCH_ONLY","horse_count":len(horses),"horses":horses}
+    return {"status":"UNSEALED_RESEARCH_ONLY","horse_count":len(horses),"horses":horses}
 
 if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("--html",required=True);p.add_argument("--output",required=True);a=p.parse_args()
