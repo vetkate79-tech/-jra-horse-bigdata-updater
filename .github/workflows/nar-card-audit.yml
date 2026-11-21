@@ -8,6 +8,7 @@ on:
       - 'src/research_saga11.py'
       - 'src/research_kochi11.py'
       - 'src/audit_kochi11_completeness.py'
+      - 'src/verify_kochi11_research.py'
       - '.github/workflows/nar-card-audit.yml'
   workflow_dispatch:
 permissions:
@@ -30,6 +31,8 @@ jobs:
         run: python src/audit_kochi11_completeness.py /tmp/nar-parsed-history.json /tmp/kochi11-completeness.json
       - name: Calculate Kochi 11R research ability scores and Monte Carlo
         run: python src/research_kochi11.py /tmp/nar-parsed-history.json /tmp/kochi11-research-prediction.json
+      - name: Verify Kochi 11R simulation invariants and formal-prediction isolation
+        run: python src/verify_kochi11_research.py /tmp/kochi11-research-prediction.json
       - name: Capture Saga 11R actual runners
         run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213200000011 --output /tmp/saga11-card-audit.json
       - name: Parse Saga 11R historical starts
