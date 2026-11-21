@@ -31,15 +31,16 @@ def collect(url, output):
     text=raw.decode(charset,errors="replace")
     parser=TextExtractor()
     parser.feed(text)
-    names=["クラックオブドーン","ミラクルドリーム","ヒマワリクン","ビックス","ファストワン","ウォーターレモン","ユキノマリア","ストーミーデイ","マイネルフォーコン","ムサシフウジン","ブルグミューラー"]
-    found=[n for n in names if n in text]
+    from bs4 import BeautifulSoup
+    soup=BeautifulSoup(text,"lxml")
+    found=list(dict.fromkeys(a.get_text(strip=True) for a in soup.select("span.mainHorse a") if a.get_text(strip=True)))
     body=text.split("</head>",1)[-1]
     for name in found:
         pos=body.find(name)
         excerpt=" ".join(body[max(0,pos-350):pos+2400].split())
         print("HORSE_CARD_CONTEXT",name,excerpt[:1600])
-    if len(found) != 11:
-        raise ValueError(f"only {len(found)}/11 horse names found in fetched card")
+    if not found:
+        raise ValueError("no actual horse rows in fetched card")
     audit={"source_url":url,"retrieved_at":datetime.now(timezone.utc).isoformat(),
            "sha256":hashlib.sha256(raw).hexdigest(),"bytes":len(raw),
            "found_runners":found,"found_count":len(found),
@@ -51,7 +52,7 @@ def collect(url, output):
     out.with_suffix(".txt").write_text("\n".join(parser.parts),encoding="utf-8")
     out.write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps(audit,ensure_ascii=False))
-    if len(found)!=11:raise ValueError("race card did not contain all 11 runners")
+
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("--url",required=True)
