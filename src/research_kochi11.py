@@ -36,12 +36,18 @@ def main():
     axis=int(result["axis_shadow"]["axis"]["horse_no"])
     import itertools
     tickets=[list(sorted((axis,a,b))) for a,b in itertools.combinations([x for x in top if x!=axis],2)]
-    result["research_row_index_combinations"]=tickets[:7]
+    result["research_row_index_combinations"]=[]
+    result["research_row_index_combinations_suppressed"]="Unverified row indices must never be presented as tickets"
     result["row_index_not_horse_number"]=True
     result["formal_prediction_status"]="BLOCKED_NO_VERIFIED_PRE_START_SEAL_AND_HORSE_NUMBER_MAPPING"
     result["research_input_coverage"]={"horses":len(horses),"history_counts":{h["horse_name"]:len(h["recent_starts"]) for h in horses}}
     result["research_probability_calibration"]="UNVALIDATED_DO_NOT_INTERPRET_AS_REAL_WORLD_ODDS"
     result["research_trifecta_box_selections"]=[]
+    result["ability_ranked_by_name"]=[{"name":h["name"],"score":h["score"]} for h in result["ability_ranked"]]
+    for h in result["ability_ranked"]:
+        h["horse_no"]=None
+    for h in result["simulation"]["horse_probabilities"]:
+        h["horse_no"]=None
     result["research_ticket_status"]="BLOCKED_UNVERIFIED_HORSE_NUMBERS_NO_BETTABLE_TICKETS"
     result["source_provenance"]="RAKUTEN_KEIBA_POST_START_FETCH_RETROSPECTIVE_ONLY"
     result["horse_number_mapping"]="PAGE_ROW_ORDER_ONLY_NOT_VERIFIED_HORSE_NUMBERS"
