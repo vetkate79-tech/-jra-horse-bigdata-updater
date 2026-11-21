@@ -8,6 +8,8 @@ Never scrape implicitly or fill in missing history with synthetic races.
 import argparse
 import json
 from collections import defaultdict
+from datetime import datetime
+from urllib.parse import urlparse
 from pathlib import Path
 from build_race_week_pre_race_features import (
     feature_for, people_rates, draw_priors, merge_history, dt, integer
@@ -27,7 +29,17 @@ def build(source):
         raise ValueError("source URL and capture timestamp required")
     if source.get("source_name")!="ODDSPARK":
         raise ValueError("only verified Oddspark input is accepted")
-    if str(source["captured_at"])[:10]>cutoff:
+    host=(urlparse(str(source["source_url"])).hostname or "").lower()
+    if host not in ("oddspark.com","www.oddspark.com","sp.oddspark.com","api.sp.oddspark.com"):
+        raise ValueError("source URL must be an Oddspark domain")
+    try:
+        captured=datetime.fromisoformat(str(source["captured_at"]))
+        scheduled=datetime.fromisoformat(str(race["scheduled_at"]))
+    except (ValueError,KeyError,TypeError):
+        raise ValueError("timezone-aware capture and scheduled_at are required")
+    if captured.tzinfo is None or scheduled.tzinfo is None:
+        raise ValueError("timezone-aware timestamps required")
+    if captured >= scheduled:
         raise ValueError("post-race capture cannot support sealed prediction")
     all_hist=[]
     for runner in runners:
