@@ -1,4 +1,4 @@
-name: NAR isolated prediction (manual)
+name: NAR isolated prediction (tests and gated research)
 on:
   push:
     branches: [feature/nar-isolated-prediction-runner-20261121]
@@ -39,7 +39,7 @@ jobs:
           if not str(p) or str(p)=='.':
               sources=sorted(Path('docs/data/nar/source').glob('*.json'))
               if not sources:
-                  print('No verified NAR source snapshot committed; regression tests only')
+                  print('NO_NAR_SOURCE: verified source snapshot missing; no prediction produced')
                   Path('/tmp/nar-skip').touch()
                   raise SystemExit(0)
               p=sources[-1]
@@ -52,6 +52,16 @@ jobs:
             SOURCE=${SNAPSHOT:-$(ls docs/data/nar/source/*.json | sort | tail -1)}
             python src/build_nar_pre_race_snapshot.py --input "$SOURCE" --output /tmp/nar-input.json
             python src/run_nar_isolated.py --input /tmp/nar-input.json --output /tmp/nar-prediction.json
+          fi
+      - name: Prediction execution status
+        if: always()
+        run: |
+          if [ -s /tmp/nar-prediction.json ]; then
+            echo 'NAR_PREDICTION_OUTPUT=RESEARCH_ONLY' >> "$GITHUB_STEP_SUMMARY"
+          elif [ -f /tmp/nar-skip ]; then
+            echo 'NAR_PREDICTION_OUTPUT=NOT_EXECUTED (missing verified source)' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'NAR_PREDICTION_OUTPUT=FAILED_OR_NOT_PRODUCED' >> "$GITHUB_STEP_SUMMARY"
           fi
       - uses: actions/upload-artifact@v4
         if: hashFiles('docs/data/nar/source/*.json') != ''
