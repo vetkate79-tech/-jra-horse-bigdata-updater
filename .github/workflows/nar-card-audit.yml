@@ -23,6 +23,10 @@ jobs:
         run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213129100511 --output /tmp/nar-card-audit.json
       - name: Parse five-run history for all runners
         run: python src/parse_nar_rakuten_card.py --html /tmp/nar-card-audit.html --output /tmp/nar-parsed-history.json
+      - name: Capture Saga 11R actual runners
+        run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213200000011 --output /tmp/saga11-card-audit.json
+      - name: Parse Saga 11R historical starts
+        run: python src/parse_nar_rakuten_card.py --html /tmp/saga11-card-audit.html --output /tmp/saga11-parsed-history.json
       - name: Archive source evidence and audit
         if: always()
         uses: actions/upload-artifact@v4
@@ -33,4 +37,7 @@ jobs:
             /tmp/nar-card-audit.html
             /tmp/nar-card-audit.txt
             /tmp/nar-parsed-history.json
+            /tmp/saga11-card-audit.json
+            /tmp/saga11-card-audit.html
+            /tmp/saga11-parsed-history.json
           retention-days: 14
