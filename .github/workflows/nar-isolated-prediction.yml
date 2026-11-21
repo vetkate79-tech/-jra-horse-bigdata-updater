@@ -4,7 +4,9 @@ on:
     branches: [feature/nar-isolated-prediction-runner-20261121]
     paths:
       - 'src/run_nar_isolated.py'
+      - 'src/build_nar_pre_race_snapshot.py'
       - 'tests/test_nar_isolated.py'
+      - 'tests/test_nar_adapter.py'
       - '.github/workflows/nar-isolated-prediction.yml'
   workflow_dispatch:
     inputs:
@@ -24,7 +26,7 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - name: Run isolated regression tests
-        run: python -m unittest discover -s tests -p 'test_nar_isolated.py'
+        run: python -m unittest discover -s tests -p 'test_nar_*.py'
       - name: Validate snapshot path and run isolated model
         if: github.event_name == 'workflow_dispatch'
         env:
