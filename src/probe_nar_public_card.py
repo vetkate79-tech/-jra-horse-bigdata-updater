@@ -33,9 +33,10 @@ def collect(url, output):
     parser.feed(text)
     names=["クラックオブドーン","ミラクルドリーム","ヒマワリクン","ビックス","ファストワン","ウォーターレモン","ユキノマリア","ストーミーデイ","マイネルフォーコン","ムサシフウジン","ブルグミューラー"]
     found=[n for n in names if n in text]
+    body=text.split("</head>",1)[-1]
     for name in found:
-        pos=text.find(name)
-        excerpt=" ".join(text[max(0,pos-350):pos+1400].split())
+        pos=body.find(name)
+        excerpt=" ".join(body[max(0,pos-350):pos+2400].split())
         print("HORSE_CARD_CONTEXT",name,excerpt[:1600])
     if len(found) != 11:
         raise ValueError(f"only {len(found)}/11 horse names found in fetched card")
