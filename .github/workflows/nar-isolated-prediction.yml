@@ -1,0 +1,71 @@
+name: NAR isolated prediction (tests and gated research)
+on:
+  push:
+    branches: [feature/nar-isolated-prediction-runner-20261121]
+    paths:
+      - 'src/run_nar_isolated.py'
+      - 'src/build_nar_pre_race_snapshot.py'
+      - 'docs/data/nar/source/*.json'
+      - 'tests/test_nar_isolated.py'
+      - 'tests/test_nar_adapter.py'
+      - '.github/workflows/nar-isolated-prediction.yml'
+  workflow_dispatch:
+    inputs:
+      snapshot_path:
+        description: 'Committed normalized Oddspark source JSON in docs/data/nar/source/'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  nar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Run isolated regression tests
+        run: python -m unittest discover -s tests -p 'test_nar_*.py'
+      - name: Validate source and run isolated model
+        env:
+          SNAPSHOT: ${{ inputs.snapshot_path }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          p=Path(os.environ.get('SNAPSHOT') or '')
+          if not str(p) or str(p)=='.':
+              sources=sorted(Path('docs/data/nar/source').glob('*.json'))
+              if not sources:
+                  print('NO_NAR_SOURCE: verified source snapshot missing; no prediction produced')
+                  Path('/tmp/nar-skip').touch()
+                  raise SystemExit(0)
+              p=sources[-1]
+          if p.is_absolute() or '..' in p.parts or p.suffix != '.json' or not str(p).startswith('docs/data/nar/source/'):
+              raise SystemExit('snapshot must be a repo-local JSON in docs/data/nar/')
+          if not p.is_file():
+              raise SystemExit('verified NAR input snapshot not found')
+          PY
+          if [ ! -f /tmp/nar-skip ]; then
+            SOURCE=${SNAPSHOT:-$(ls docs/data/nar/source/*.json | sort | tail -1)}
+            python src/build_nar_pre_race_snapshot.py --input "$SOURCE" --output /tmp/nar-input.json
+            python src/run_nar_isolated.py --input /tmp/nar-input.json --output /tmp/nar-prediction.json
+          fi
+      - name: Prediction execution status
+        if: always()
+        run: |
+          if [ -s /tmp/nar-prediction.json ]; then
+            echo 'NAR_PREDICTION_OUTPUT=RESEARCH_ONLY' >> "$GITHUB_STEP_SUMMARY"
+          elif [ -f /tmp/nar-skip ]; then
+            echo 'NAR_PREDICTION_OUTPUT=NOT_EXECUTED (missing verified source)' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'NAR_PREDICTION_OUTPUT=FAILED_OR_NOT_PRODUCED' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: hashFiles('docs/data/nar/source/*.json') != ''
+        with:
+          name: nar-isolated-prediction
+          path: /tmp/nar-prediction.json
+          retention-days: 14

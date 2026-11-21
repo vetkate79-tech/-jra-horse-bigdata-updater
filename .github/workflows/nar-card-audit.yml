@@ -1,0 +1,63 @@
+name: NAR public race-card acquisition audit
+on:
+  push:
+    branches: [feature/nar-isolated-prediction-runner-20261121]
+    paths:
+      - 'src/probe_nar_public_card.py'
+      - 'src/parse_nar_rakuten_card.py'
+      - 'src/research_saga11.py'
+      - 'src/research_kochi11.py'
+      - 'src/audit_kochi11_completeness.py'
+      - 'src/verify_kochi11_research.py'
+      - 'src/verify_nar_capture_provenance.py'
+      - '.github/workflows/nar-card-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install HTML parser dependencies
+        run: python -m pip install 'beautifulsoup4>=4.12,<5' 'lxml>=5,<7' 'numpy>=1.26,<3'
+      - name: Capture and verify 11 runner names
+        run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213129100511 --output /tmp/nar-card-audit.json
+      - name: Parse five-run history for all runners
+        run: python src/parse_nar_rakuten_card.py --html /tmp/nar-card-audit.html --output /tmp/nar-parsed-history.json
+      - name: Verify Kochi raw SHA and parsed runner identity
+        run: python src/verify_nar_capture_provenance.py /tmp/nar-card-audit.html /tmp/nar-card-audit.json /tmp/nar-parsed-history.json 202611213129100511 11
+      - name: Audit Kochi 11R full historical coverage and leakage
+        run: python src/audit_kochi11_completeness.py /tmp/nar-parsed-history.json /tmp/kochi11-completeness.json
+      - name: Calculate Kochi 11R research ability scores and Monte Carlo
+        run: python src/research_kochi11.py /tmp/nar-parsed-history.json /tmp/kochi11-research-prediction.json
+      - name: Verify Kochi 11R simulation invariants and formal-prediction isolation
+        run: python src/verify_kochi11_research.py /tmp/kochi11-research-prediction.json
+      - name: Capture Saga 11R actual runners
+        run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213200000011 --output /tmp/saga11-card-audit.json
+      - name: Parse Saga 11R historical starts
+        run: python src/parse_nar_rakuten_card.py --html /tmp/saga11-card-audit.html --output /tmp/saga11-parsed-history.json
+      - name: Verify Saga raw SHA and parsed runner identity
+        run: python src/verify_nar_capture_provenance.py /tmp/saga11-card-audit.html /tmp/saga11-card-audit.json /tmp/saga11-parsed-history.json 202611213200000011 14
+      - name: Calculate Saga 11R research model scores and Monte Carlo
+        run: python src/research_saga11.py /tmp/saga11-parsed-history.json /tmp/saga11-research-prediction.json
+      - name: Archive source evidence and audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nar-card-raw-evidence
+          path: |
+            /tmp/nar-card-audit.json
+            /tmp/nar-card-audit.html
+            /tmp/nar-card-audit.txt
+            /tmp/nar-parsed-history.json
+            /tmp/kochi11-completeness.json
+            /tmp/kochi11-research-prediction.json
+            /tmp/saga11-card-audit.json
+            /tmp/saga11-card-audit.html
+            /tmp/saga11-parsed-history.json
+            /tmp/saga11-research-prediction.json
+          retention-days: 14
