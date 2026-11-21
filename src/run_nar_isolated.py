@@ -31,8 +31,10 @@ def run(snapshot):
                     "uncertainty", "starts_before"):
             if horse.get(key) is None or horse.get(key) == "":
                 raise ValueError(f"runner {horse.get('n', '?')}: missing {key}")
-        if horse["score_provenance"] != "ORAL_VERIFIED_PRE_RACE":
-            raise ValueError("unverified ability score; cannot claim formal model output")
+        research = snapshot.get("model_calibration") == "UNVALIDATED_NAR_TRANSFER"
+        allowed = "JRA_V4_TRANSFER_PRE_RACE_UNCALIBRATED" if research else "ORAL_VERIFIED_PRE_RACE"
+        if horse["score_provenance"] != allowed:
+            raise ValueError("score provenance inconsistent with model calibration")
         for key in ("score", "show_rate_prior", "recent_form", "condition_fit", "uncertainty", "starts_before"):
             if not math.isfinite(float(horse[key])):
                 raise ValueError(f"nonfinite {key}")
