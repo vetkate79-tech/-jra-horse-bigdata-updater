@@ -1,0 +1,38 @@
+name: NAR isolated prediction (manual)
+on:
+  workflow_dispatch:
+    inputs:
+      snapshot_path:
+        description: 'Committed pre-race NAR JSON snapshot path (must be verified)'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  nar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Validate snapshot path and run isolated model
+        env:
+          SNAPSHOT: ${{ inputs.snapshot_path }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          p=Path(os.environ['SNAPSHOT'])
+          if p.is_absolute() or '..' in p.parts or p.suffix != '.json' or not str(p).startswith('docs/data/nar/'):
+              raise SystemExit('snapshot must be a repo-local JSON in docs/data/nar/')
+          if not p.is_file():
+              raise SystemExit('verified NAR input snapshot not found')
+          PY
+          python src/run_nar_isolated.py --input "$SNAPSHOT" --output /tmp/nar-prediction.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nar-isolated-prediction
+          path: /tmp/nar-prediction.json
+          retention-days: 14
