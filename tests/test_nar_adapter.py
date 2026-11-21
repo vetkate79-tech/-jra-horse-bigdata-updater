@@ -9,7 +9,7 @@ def fixture():
     return {"source_name":"ODDSPARK","source_url":"https://www.oddspark.com/keiba/",
             "captured_at":"2026-11-21T12:00:00+09:00",
             "race":{"race_id":"TEST_KOCHI","date":"2026-11-21","track":"高知",
-                    "race_no":11,"surface":"ダート","distance_m":1400},
+                    "race_no":11,"scheduled_at":"2026-11-21T20:20:00+09:00","surface":"ダート","distance_m":1400},
             "runners":[{"horse_no":str(i),"horse_name":"SYNTHETIC_"+str(i),
                         "jockey":"J","trainer":"T","frame_no":str(i),
                         "recent_starts":[{"race_date":"2026-11-01","race_id":"OLD_"+str(i),
@@ -29,6 +29,12 @@ class AdapterTests(unittest.TestCase):
     def test_result_leakage_rejected(self):
         d=fixture();d["runners"][0]["recent_starts"][0]["race_date"]="2026-11-21"
         with self.assertRaisesRegex(ValueError,"post-cutoff"):build(d)
+    def test_after_start_capture_rejected(self):
+        d=fixture();d["captured_at"]="2026-11-21T20:21:00+09:00"
+        with self.assertRaisesRegex(ValueError,"post-race capture"):build(d)
+    def test_non_oddspark_source_rejected(self):
+        d=fixture();d["source_url"]="https://example.com/"
+        with self.assertRaisesRegex(ValueError,"Oddspark domain"):build(d)
     def test_duplicate_numbers_rejected(self):
         d=fixture();d["runners"][1]["horse_no"]="1"
         with self.assertRaisesRegex(ValueError,"duplicate"):build(d)
