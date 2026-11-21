@@ -212,5 +212,25 @@
       "purpose": "万馬券に依存しない基礎回収力の安定性を確認し、実購入検討の主要条件とする",
       "companion_objective": "万馬券以上の高配当は積極的に捕捉し、基礎ROIの上に収益を上乗せする"
     }
+  },
+  "prediction_model_mandate": {
+    "status": "USER_LOCKED",
+    "priority": "ABSOLUTE_HIGHEST",
+    "rule": "Never output a horse-race prediction, ability ranking, numeric score, probability, axis recommendation, ticket, or BUY/CAUTION/PASS judgement unless it was produced by the verified canonical JRA production prediction engine for the specific race and its pre-race inputs.",
+    "required_engine": [
+      "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED",
+      "TOP3_SURVIVAL_AXIS_SHADOW_V4_R2_EXACT",
+      "MONTE_CARLO_FINALIZER_V1"
+    ],
+    "requirements": [
+      "Verify race identity, date, runners and model provenance before displaying predictions.",
+      "Use actual persisted or executed engine outputs; never substitute manual rankings, popularity/odds ordering, intuitive picks or invented numerical scores.",
+      "If engine output is missing, stale, invalid, or not applicable to the race type, state MODEL_OUTPUT_UNAVAILABLE and provide no prediction or ticket.",
+      "Never label a provisional manual assessment as an engine prediction.",
+      "Keep odds and popularity out of pure ability evaluation; allow market/EV judgement only after a sealed engine prediction.",
+      "Do not silently fallback to another model, including for obstacle, maiden or other race types; require verified applicable dedicated model output."
+    ],
+    "scope": "ALL_RACES_AND_ALL_ASSISTANT_PREDICTION_SURFACES",
+    "override": "Explicit user instruction required to change this rule; no automatic fallback."
   }
 }
