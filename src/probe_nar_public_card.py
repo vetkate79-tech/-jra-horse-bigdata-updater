@@ -33,6 +33,8 @@ def collect(url, output):
     parser.feed(text)
     names=["クラックオブドーン","ミラクルドリーム","ヒマワリクン","ビックス","ファストワン","ウォーターレモン","ユキノマリア","ストーミーデイ","マイネルフォーコン","ムサシフウジン","ブルグミューラー"]
     found=[n for n in names if n in text]
+    if len(found) != 11:
+        raise ValueError(f"only {len(found)}/11 horse names found in fetched card")
     audit={"source_url":url,"retrieved_at":datetime.now(timezone.utc).isoformat(),
            "sha256":hashlib.sha256(raw).hexdigest(),"bytes":len(raw),
            "found_runners":found,"found_count":len(found),
