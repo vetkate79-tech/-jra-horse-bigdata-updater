@@ -31,11 +31,6 @@ def main():
         snapshot_horses.append({"n":str(i),"name":h["horse_name"],"score":f["pre_race_score"],"score_provenance":"JRA_V4_TRANSFER_PRE_RACE_UNCALIBRATED","running_style":f["pre_race_running_style"],"show_rate_prior":f["show_rate_prior"],"recent_form":f["recent_form"],"condition_fit":f["condition_fit"],"uncertainty":f["uncertainty"],"starts_before":f["starts_before"]})
     snapshot={"source_type":"NAR","race_id":race["race_id"],"date":cutoff,"track":"高知","race_no":11,"horses":snapshot_horses,"model_calibration":"UNVALIDATED_NAR_TRANSFER"}
     result=run(snapshot)
-    ranked=result["ability_ranked"]
-    top=[int(x["horse_no"]) for x in ranked[:6]]
-    axis=int(result["axis_shadow"]["axis"]["horse_no"])
-    import itertools
-    tickets=[list(sorted((axis,a,b))) for a,b in itertools.combinations([x for x in top if x!=axis],2)]
     result["research_row_index_combinations"]=[]
     result["research_row_index_combinations_suppressed"]="Unverified row indices must never be presented as tickets"
     result["row_index_not_horse_number"]=True
@@ -48,6 +43,18 @@ def main():
         h["horse_no"]=None
     for h in result["simulation"]["horse_probabilities"]:
         h["horse_no"]=None
+    # Internal row indexes are not verified horse numbers. Redact them from every
+    # user-facing axis field as well, including nested candidate and original-axis data.
+    def redact_axis_numbers(obj):
+        if isinstance(obj,dict):
+            for key,value in obj.items():
+                if key=="horse_no":obj[key]=None
+                else:redact_axis_numbers(value)
+        elif isinstance(obj,list):
+            for value in obj:redact_axis_numbers(value)
+    redact_axis_numbers(result["axis_shadow"])
+    if any(h["horse_no"] is not None for h in result["ability_ranked"]+result["simulation"]["horse_probabilities"]):
+        raise ValueError("unverified horse number leaked")
     result["research_ticket_status"]="BLOCKED_UNVERIFIED_HORSE_NUMBERS_NO_BETTABLE_TICKETS"
     result["source_provenance"]="RAKUTEN_KEIBA_POST_START_FETCH_RETROSPECTIVE_ONLY"
     result["horse_number_mapping"]="PAGE_ROW_ORDER_ONLY_NOT_VERIFIED_HORSE_NUMBERS"
