@@ -1,20 +1,20 @@
 {
   "summary": {
     "horse_count": 7331,
-    "complete_horse_count": 5604,
-    "incomplete_horse_count": 1727,
+    "complete_horse_count": 5596,
+    "incomplete_horse_count": 1735,
     "missing_field_counts": {
-      "new_sire": 1719,
-      "new_damsire": 1719,
+      "new_sire": 1727,
+      "new_damsire": 1727,
       "race_history": 8
     },
     "category_counts": {
       "GRADED": 149,
       "OPEN": 564,
       "3WIN": 389,
-      "2WIN": 849,
-      "1WIN": 1810,
-      "MAIDEN": 2405,
+      "2WIN": 863,
+      "1WIN": 1809,
+      "MAIDEN": 2392,
       "NEW": 1165,
       "UNKNOWN": 0
     },
@@ -814,6 +814,14 @@
     {
       "horse_id": "pw01dud102024100614/F0",
       "horse_name": "アンミツ",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024106482/B2",
+      "horse_name": "アンムート",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -2147,6 +2155,14 @@
       ]
     },
     {
+      "horse_id": "pw01dud102024101108/A6",
+      "horse_name": "カナデルペガサス",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
       "horse_id": "pw01dud102023106846/76",
       "horse_name": "カナルサンマルタン",
       "missing": [
@@ -2220,6 +2236,14 @@
     {
       "horse_id": "pw01dud102024101517/07",
       "horse_name": "カレラ",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024105815/70",
+      "horse_name": "カレンハウ",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -3529,6 +3553,14 @@
       ]
     },
     {
+      "horse_id": "pw01dud102024106471/2F",
+      "horse_name": "コラリオン",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024100249/9B",
       "horse_name": "コルシカ",
       "missing": [
@@ -4019,6 +4051,14 @@
     {
       "horse_id": "pw01dud102024100551/A6",
       "horse_name": "サトノステラ",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024107260/39",
+      "horse_name": "サトノスプレマシー",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -4674,6 +4714,14 @@
     {
       "horse_id": "pw01dud102024105919/6D",
       "horse_name": "ショウサンキング",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024106438/14",
+      "horse_name": "ショウナンガレオン",
       "missing": [
         "new_sire",
         "new_damsire"
@@ -6935,6 +6983,14 @@
       ]
     },
     {
+      "horse_id": "pw01dud102024106851/D3",
+      "horse_name": "テンカタイヘイ",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
       "horse_id": "pw01dud102024102247/93",
       "horse_name": "テンタシオン",
       "missing": [
@@ -9016,6 +9072,14 @@
     {
       "horse_id": "pw01dud102024101969/01",
       "horse_name": "ピコプラウド",
+      "missing": [
+        "new_sire",
+        "new_damsire"
+      ]
+    },
+    {
+      "horse_id": "pw01dud102024100713/AE",
+      "horse_name": "ピコベリー",
       "missing": [
         "new_sire",
         "new_damsire"
