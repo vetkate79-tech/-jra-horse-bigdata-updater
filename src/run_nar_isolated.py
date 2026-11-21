@@ -44,14 +44,15 @@ def run(snapshot):
     ranked, simulation = finalize_ranking(snapshot, horses)
     axis = select_survival_axis(ranked)
     return {
-        "status": "COMPUTED_NAR_ISOLATED",
+        "status": "RESEARCH_NAR_UNCALIBRATED" if snapshot.get("model_calibration") == "UNVALIDATED_NAR_TRANSFER" else "COMPUTED_NAR_ISOLATED",
+        "model_calibration": snapshot.get("model_calibration", "UNVERIFIED"),
         "source_type": "NAR",
         "race_id": snapshot["race_id"],
         "date": snapshot["date"],
         "track": snapshot["track"],
         "race_no": snapshot["race_no"],
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
-        "ability_score_origin": "EXTERNAL_VERIFIED_PRE_RACE",
+        "ability_score_origin": "JRA_MULTI_HORIZON_TRANSFER_UNCALIBRATED" if snapshot.get("model_calibration") == "UNVALIDATED_NAR_TRANSFER" else "EXTERNAL_VERIFIED_PRE_RACE",
         "ability_ranked": sorted(
             [{"horse_no": str(h["n"]), "name": h["name"], "score": round(float(h["score"]), 3)}
              for h in horses], key=lambda h: (-h["score"], int(h["horse_no"]))),
