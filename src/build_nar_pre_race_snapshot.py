@@ -66,7 +66,7 @@ def build(source):
         horses.append({
             "n":str(r["horse_no"]),"name":r["horse_name"],
             "score":f["pre_race_score"],
-            "score_provenance":"ORAL_VERIFIED_PRE_RACE",
+            "score_provenance":"JRA_V4_TRANSFER_PRE_RACE_UNCALIBRATED",
             "score_source":f["pre_race_score_source"]+"_NAR_UNCALIBRATED",
             "starts_before":f["starts_before"],
             "show_rate_prior":f["show_rate_prior"],"recent_form":f["recent_form"],
