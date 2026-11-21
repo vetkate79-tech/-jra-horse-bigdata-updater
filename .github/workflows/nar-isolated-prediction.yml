@@ -1,5 +1,11 @@
 name: NAR isolated prediction (manual)
 on:
+  push:
+    branches: [feature/nar-isolated-prediction-runner-20261121]
+    paths:
+      - 'src/run_nar_isolated.py'
+      - 'tests/test_nar_isolated.py'
+      - '.github/workflows/nar-isolated-prediction.yml'
   workflow_dispatch:
     inputs:
       snapshot_path:
@@ -17,7 +23,10 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
+      - name: Run isolated regression tests
+        run: python -m unittest discover -s tests -p 'test_nar_isolated.py'
       - name: Validate snapshot path and run isolated model
+        if: github.event_name == 'workflow_dispatch'
         env:
           SNAPSHOT: ${{ inputs.snapshot_path }}
         run: |
@@ -32,6 +41,7 @@ jobs:
           PY
           python src/run_nar_isolated.py --input "$SNAPSHOT" --output /tmp/nar-prediction.json
       - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch'
         with:
           name: nar-isolated-prediction
           path: /tmp/nar-prediction.json
