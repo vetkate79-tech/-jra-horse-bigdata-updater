@@ -5,13 +5,14 @@ on:
     paths:
       - 'src/run_nar_isolated.py'
       - 'src/build_nar_pre_race_snapshot.py'
+      - 'docs/data/nar/source/*.json'
       - 'tests/test_nar_isolated.py'
       - 'tests/test_nar_adapter.py'
       - '.github/workflows/nar-isolated-prediction.yml'
   workflow_dispatch:
     inputs:
       snapshot_path:
-        description: 'Committed pre-race NAR JSON snapshot path (must be verified)'
+        description: 'Committed normalized Oddspark source JSON in docs/data/nar/source/'
         required: true
         type: string
 permissions:
@@ -27,23 +28,33 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Run isolated regression tests
         run: python -m unittest discover -s tests -p 'test_nar_*.py'
-      - name: Validate snapshot path and run isolated model
-        if: github.event_name == 'workflow_dispatch'
+      - name: Validate source and run isolated model
         env:
           SNAPSHOT: ${{ inputs.snapshot_path }}
         run: |
           python - <<'PY'
           import os
           from pathlib import Path
-          p=Path(os.environ['SNAPSHOT'])
-          if p.is_absolute() or '..' in p.parts or p.suffix != '.json' or not str(p).startswith('docs/data/nar/'):
+          p=Path(os.environ.get('SNAPSHOT') or '')
+          if not str(p) or str(p)=='.':
+              sources=sorted(Path('docs/data/nar/source').glob('*.json'))
+              if not sources:
+                  print('No verified NAR source snapshot committed; regression tests only')
+                  Path('/tmp/nar-skip').touch()
+                  raise SystemExit(0)
+              p=sources[-1]
+          if p.is_absolute() or '..' in p.parts or p.suffix != '.json' or not str(p).startswith('docs/data/nar/source/'):
               raise SystemExit('snapshot must be a repo-local JSON in docs/data/nar/')
           if not p.is_file():
               raise SystemExit('verified NAR input snapshot not found')
           PY
-          python src/run_nar_isolated.py --input "$SNAPSHOT" --output /tmp/nar-prediction.json
+          if [ ! -f /tmp/nar-skip ]; then
+            SOURCE=${SNAPSHOT:-$(ls docs/data/nar/source/*.json | sort | tail -1)}
+            python src/build_nar_pre_race_snapshot.py --input "$SOURCE" --output /tmp/nar-input.json
+            python src/run_nar_isolated.py --input /tmp/nar-input.json --output /tmp/nar-prediction.json
+          fi
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'workflow_dispatch'
+        if: hashFiles('docs/data/nar/source/*.json') != ''
         with:
           name: nar-isolated-prediction
           path: /tmp/nar-prediction.json
