@@ -15,7 +15,20 @@ from build_race_week_pre_race_features import (
     feature_for, people_rates, draw_priors, merge_history, dt, integer
 )
 
+FORBIDDEN_FIELDS = {"odds", "popularity", "market_rank", "payout", "return_amount", "result", "results", "race_result", "finish_after_target"}
+
+def reject_forbidden(value, location="source"):
+    if isinstance(value, dict):
+        for key, child in value.items():
+            if str(key).lower() in FORBIDDEN_FIELDS:
+                raise ValueError(f"market/result leakage at {location}.{key}")
+            reject_forbidden(child, f"{location}.{key}")
+    elif isinstance(value, list):
+        for i, child in enumerate(value):
+            reject_forbidden(child, f"{location}[{i}]")
+
 def build(source):
+    reject_forbidden(source)
     race=source.get("race") or {}
     cutoff=str(race.get("date") or "")
     if not dt(cutoff) or not race.get("race_id") or not race.get("track") or not race.get("race_no"):
