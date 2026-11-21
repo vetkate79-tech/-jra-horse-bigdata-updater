@@ -1,0 +1,30 @@
+name: NAR public race-card acquisition audit
+on:
+  push:
+    branches: [feature/nar-isolated-prediction-runner-20261121]
+    paths:
+      - 'src/probe_nar_public_card.py'
+      - '.github/workflows/nar-card-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Capture and verify 11 runner names
+        run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213129100511 --output /tmp/nar-card-audit.json
+      - name: Archive source evidence and audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nar-card-raw-evidence
+          path: |
+            /tmp/nar-card-audit.json
+            /tmp/nar-card-audit.html
+            /tmp/nar-card-audit.txt
+          retention-days: 14
