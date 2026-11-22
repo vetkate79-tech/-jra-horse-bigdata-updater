@@ -5,6 +5,7 @@ This is a retrospective audit, NOT a sealed pre-race prediction.
 Do not invent missing starts, score scratches, or use market/result fields.
 """
 import json,sys,re
+from datetime import date
 from pathlib import Path
 
 FORBIDDEN={"odds","popularity","market_rank","payout","return_amount","result","results","race_result","finish_after_target"}
@@ -38,8 +39,18 @@ def audit(data):
         history=h.get("recent_starts",[])
         if not history:missing.append(h["horse_name"])
         else:
+            seen_starts=set()
             for start in history:
-                if start["race_date"]>="2026-11-21":raise ValueError("target-date leakage")
+                raw_date=start.get("race_date")
+                if not isinstance(raw_date,str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}",raw_date):
+                    raise ValueError("invalid historical race_date format")
+                try: parsed_date=date.fromisoformat(raw_date)
+                except ValueError as exc: raise ValueError("invalid historical race_date") from exc
+                if parsed_date>=date(2026,11,21):raise ValueError("target-date leakage")
+                # A duplicated date alone is not a reliable unique race ID; flag it
+                # rather than silently double-weighting the same horse history.
+                if raw_date in seen_starts:raise ValueError("duplicate historical race date for "+h["horse_name"])
+                seen_starts.add(raw_date)
                 if not isinstance(start.get("finish_position"),int) or start["finish_position"]<1:raise ValueError("invalid past finish")
             valid.append(h["horse_name"])
     return {"race_id":"202611213129100511","status":"BLOCKED_INCOMPLETE_HISTORY" if missing else "HISTORY_COMPLETE_RESEARCH_ONLY","entries":len(horses),"history_available":len(valid),"missing_history":missing,"market_and_result_fields":"REJECTED","pre_start_seal":"NOT_VERIFIED","formal_scores_generated":False,"formal_top3_probabilities_generated":False,"formal_tickets_generated":False}
