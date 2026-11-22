@@ -159,32 +159,7 @@
       "manage_experiment_registry.py"
     ]
   },
-  "script_policy_mismatches": {
-    "all-bet-types-shadow.yml": {
-      "expected": [],
-      "actual": [
-        "all_bet_types_shadow.py",
-        "build_all_bet_types_shadow_report.py",
-        "collect_all_bet_types_external_shadow.py",
-        "compare_all_bet_types_market_shadow.py"
-      ]
-    },
-    "race-week-prediction-seal.yml": {
-      "expected": [
-        "build_analysis_live_bundle.py",
-        "build_live_sealed_predictions_v2.py",
-        "build_management_erp.py",
-        "publish_verified_today_predictions.py"
-      ],
-      "actual": [
-        "build_analysis_live_bundle.py",
-        "build_live_sealed_predictions_v2.py",
-        "build_management_erp.py",
-        "publish_verified_today_predictions.py",
-        "test_monte_carlo_shadow.py"
-      ]
-    }
-  },
+  "script_policy_mismatches": {},
   "blockers": [
     "unexpected active workflows remain; archive or explicitly authorize them",
     "check failed: active_workflow_scripts_explicitly_allowlisted"
