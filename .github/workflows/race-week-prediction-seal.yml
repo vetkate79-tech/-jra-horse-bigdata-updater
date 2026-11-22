@@ -24,6 +24,7 @@ on:
       - 'src/publish_verified_today_predictions.py'
       - 'src/axis_survival_shadow.py'
       - 'src/monte_carlo_finalizer.py'
+      - 'src/test_monte_carlo_shadow.py'
       - 'src/build_analysis_live_bundle.py'
       - 'requirements.txt'
       - 'src/oral_operational_layer.py'
@@ -64,6 +65,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Smoke-test prediction runtime dependencies
         run: python -c "import numpy; import pandas; print('PREDICTION_RUNTIME_DEPS_OK')"
+      - name: Compare Monte Carlo legacy against coverage-aware shadow on synthetic sparse inputs
+        run: python src/test_monte_carlo_shadow.py
       - name: Build leakage-safe live pure predictions
         run: python src/build_live_sealed_predictions_v2.py
       - name: Verify market/result firewall and new-horse V2
