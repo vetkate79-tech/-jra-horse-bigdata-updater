@@ -99,3 +99,11 @@ Active Workflowから実行を許可するPythonファイルは、`config/system
 - Active Workflowが許可済みの本番・独立監査スクリプトだけを実行するか
 
 この監査の `PASS` は構成・接続・独立性の合格を意味し、予測精度やライブオッズ取得成功を意味しません。
+
+## チャット共通・正式予想の単一参照先（2026-11-22）
+
+レース依頼では最初に `docs/data/live_predictions_today_verified.json` を読み、`date`・`track`・`race_no` の完全一致で対象を抽出する。これは公開用に検証された全頭能力順位、スコア、シミュレーション、軸耐久性、事前BUY/CAUTION/PASS、券型の第一参照先である。ファイルが存在するのに、`docs/data/live_predictions_sealed.json` の大容量による取得失敗だけを根拠に「正式予想なし」「PASS」としてはならない。
+
+照合対象：`status/live_prediction_seal.json` のモデル版・予想SHA256・封印状態、`docs/data/live_predictions_sealed.json` の原本、`docs/data/live_predictions_champion_YYYY-MM-DD.json` の歴史的Champion（別モデルとして区別）、`status/system_architecture.json` の監査状態。公開検証済みJSONの `source_prediction_hash` と封印ステータスの `prediction_hash_sha256` を比較する。監査BLOCKEDは障害として別途表示し、対象レースの存在や事前判定を勝手に書き換えない。公開検証済みファイルが対象を含まない場合は、原本・履歴を順に探索する。数値を推測しない。
+
+回答は必ず、全頭 `final_rank` 順の能力表（`score` は小数第3位）、モデルとデータ時刻、複数展開、軸の3着内耐久性、正式事前判定、実在する買い目を提示する。`pre_market_decision` とデータ未取得を混同しない。事前BUYと直前オッズEV判断は別であり、オッズ未確認時は最終購入確定としない。取得できる限り同一日時・レース・モデル・SHAの回答をチャットごとに変えない。
