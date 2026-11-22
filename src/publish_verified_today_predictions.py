@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Publish compact, verifiable, pre-race-only predictions for every current-JST race."""
 import json
+import math
 import os
 import tempfile
 from datetime import datetime
@@ -34,7 +35,7 @@ def main():
         nums=[str(h.get("n") or "").strip() for h in ranked]
         if any(not n for n in nums) or len(set(nums))!=len(nums):
             raise RuntimeError(f"invalid runner numbers: {key}")
-        if key not in expected or (expected[key] and set(nums)!=expected[key]):
+        if key not in expected or not expected[key] or set(nums)!=expected[key]:
             raise RuntimeError(f"weekly runner mismatch: {key}")
         sim=race.get("simulation_finalizer") or {}
         if int(sim.get("runs") or 0)<10000 or sim.get("market_isolation")!="NO_ODDS_OR_POPULARITY_OR_RESULTS_USED":
@@ -48,11 +49,15 @@ def main():
         ranks=[]
         for h in ranked:
             hs=h.get("simulation") or {}
+            if h.get("score") is None or not math.isfinite(float(h["score"])):
+                raise RuntimeError(f"missing/nonfinite ability score: {key} horse={h.get('n')}")
             if any(hs.get(k) is None for k in required_sim):
                 raise RuntimeError(f"incomplete horse simulation: {key} horse={h.get('n')}")
             if set(hs["scenario_top3"])!={"SLOW_FRONT","AVERAGE","FAST_BALANCED","FAST_CLOSER","EXTREME_COLLAPSE"}:
                 raise RuntimeError(f"incomplete scenarios: {key} horse={h.get('n')}")
-            if any(not 0<=float(hs[k])<=1 for k in ("win_rate","place_rate","top3_rate","scenario_stability")):
+            if any(not math.isfinite(float(hs[k])) or not 0<=float(hs[k])<=1 for k in ("win_rate","place_rate","top3_rate","scenario_stability")):
+                raise RuntimeError(f"invalid simulation probability: {key} horse={h.get('n')}")
+            if any(not math.isfinite(float(v)) or not 0<=float(v)<=1 for v in hs["scenario_top3"].values()):
                 raise RuntimeError(f"invalid simulation probability: {key} horse={h.get('n')}")
             if not (hs["win_rate"]<=hs["place_rate"]<=hs["top3_rate"]):
                 raise RuntimeError(f"probability order failed: {key} horse={h.get('n')}")
@@ -65,6 +70,8 @@ def main():
             raise RuntimeError(f"invalid purchase decision: {key}")
         if str((a["axis"] or {}).get("horse_no") or "") not in set(nums):
             raise RuntimeError(f"axis not in runners: {key}")
+        if len(a["trio_tickets"])!=len(set(a["trio_tickets"])):
+            raise RuntimeError(f"duplicate trio tickets: {key}")
         for ticket in a["trio_tickets"]:
             parts=str(ticket).split("-")
             if len(parts)!=3 or len(set(parts))!=3 or not set(parts).issubset(set(nums)):
