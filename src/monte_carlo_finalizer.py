@@ -9,7 +9,7 @@ from typing import Any
 import numpy as np
 
 MODEL_VERSION = "MONTE_CARLO_FINALIZER_V1"
-EXPERIMENT_VERSION = "MONTE_CARLO_FINALIZER_V2_COVERAGE_SHRINK_SHADOW"
+EXPERIMENT_VERSION = "MONTE_CARLO_FINALIZER_V2_RACE_LEVEL_SHRINK_SHADOW"
 
 def _experiment_enabled() -> bool:
     return os.getenv("JRA_MONTE_CARLO_EXPERIMENT", "0") == "1"
@@ -133,8 +133,12 @@ def _coverage_strength(horses: list[dict[str, Any]], strength: np.ndarray) -> tu
         reliability=(0.15 + 0.85 * min(starts / 6.0, 1.0)) * (0.35 + 0.65 * (1.0 - uncertainty)) * (0.35 + 0.65 * observed / 6.0)
         coverage.append(float(np.clip(reliability, 0.05, 1.0)))
     reliability=np.array(coverage,dtype=float)
+    # Race-wide shrinkage preserves relative ability ordering. Independent per-horse
+    # shrinkage can transfer apparent certainty to another horse without evidence.
     center=float(np.mean(strength))
-    return center + (strength-center)*reliability, reliability
+    race_reliability=float(np.mean(reliability))
+    return center + (strength-center)*race_reliability, reliability
+
 
 
 def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[str, Any]:
@@ -157,7 +161,7 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
     starts = np.array([_num(h.get("starts_before"), 0.0) for h in horses], dtype=float)
     noise_sigma = 0.62 + 0.72 * np.clip(uncertainty, 0.0, 1.25) + np.where(starts < 3, 0.18, 0.0)
     if experiment:
-        noise_sigma += 0.45 * (1.0 - evidence_reliability)
+        # Shared missing-data noise prevents artificial favoritism toward horses\n        # whose input records happen to be more complete.\n        noise_sigma += 0.45 * (1.0 - float(np.mean(evidence_reliability)))
 
     win = np.zeros(n, dtype=np.int64)
     second = np.zeros(n, dtype=np.int64)
