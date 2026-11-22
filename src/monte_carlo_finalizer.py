@@ -169,6 +169,9 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
     scenario_top3 = np.zeros((len(SCENARIOS), n), dtype=np.int64)
     scenario_counts = np.zeros(len(SCENARIOS), dtype=np.int64)
 
+    # Joint ordered top-three counts: needed for all-bet-type ticket probabilities.
+    from collections import Counter
+    ordered_top3_counts = Counter()
     remaining = runs
     while remaining:
         m = min(CHUNK_SIZE, remaining)
@@ -189,6 +192,7 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
         top_order = np.argsort(-top_scores, axis=1)
         ordered = np.take_along_axis(top, top_order, axis=1)
 
+        ordered_top3_counts.update(tuple(map(int, row)) for row in ordered.tolist())
         np.add.at(win, ordered[:, 0], 1)
         np.add.at(second, ordered[:, 1], 1)
         for pos in range(3):
@@ -254,7 +258,16 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
     top5 = finalized[: min(5, len(finalized))]
     overall_stability = float(np.mean([h["simulation"]["scenario_stability"] for h in top5])) if top5 else 0.0
 
+    # Horse numbers are used in stable, machine-readable outcome keys.
+    # No odds or result data are involved; each count is from the same simulated race.
+    joint_top3 = {"-".join(str(horses[i].get("n") or "") for i in idx): count
+                  for idx, count in sorted(ordered_top3_counts.items())}
+    if sum(joint_top3.values()) != runs:
+        raise AssertionError("joint top-three distribution must sum to simulation runs")
+
     return {
+        "joint_top3_ordered_counts": joint_top3,
+        "joint_top3_runs": runs,
         "model_version": EXPERIMENT_VERSION if experiment else MODEL_VERSION,
         "experiment_enabled": experiment,
         "evidence_reliability": {str(h.get("n") or ""): round(float(evidence_reliability[i]),6) for i,h in enumerate(horses)},
