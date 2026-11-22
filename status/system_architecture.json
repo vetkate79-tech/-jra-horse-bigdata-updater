@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "status": "BLOCKED",
+  "status": "PASS",
   "active_workflow_count": 12,
-  "required_workflow_count": 11,
+  "required_workflow_count": 12,
   "active_workflows": [
     "all-bet-types-shadow.yml",
     "audit-oral-v6-certification.yml",
@@ -18,6 +18,7 @@
     "validate-jra-model.yml"
   ],
   "required_workflows": [
+    "all-bet-types-shadow.yml",
     "audit-oral-v6-certification.yml",
     "build-word-dictionary.yml",
     "deploy-management-erp.yml",
@@ -31,9 +32,7 @@
     "validate-jra-model.yml"
   ],
   "missing_required": [],
-  "unexpected_active_workflows": [
-    "all-bet-types-shadow.yml"
-  ],
+  "unexpected_active_workflows": [],
   "checks": {
     "canonical_flow_complete": true,
     "horse_writer_serialized": true,
@@ -73,7 +72,7 @@
     "jst_date_rollover_display_guard": true,
     "active_runtime_has_no_fixed_weekend_date": true,
     "root_cause_repair_constitution_locked": true,
-    "active_workflow_scripts_explicitly_allowlisted": false,
+    "active_workflow_scripts_explicitly_allowlisted": true,
     "active_workflow_script_files_exist": true
   },
   "active_workflow_script_refs": {
@@ -160,10 +159,7 @@
     ]
   },
   "script_policy_mismatches": {},
-  "blockers": [
-    "unexpected active workflows remain; archive or explicitly authorize them",
-    "check failed: active_workflow_scripts_explicitly_allowlisted"
-  ],
+  "blockers": [],
   "independent_subsystems": {
     "market": {
       "workflow": "jra-market-timing.yml",
