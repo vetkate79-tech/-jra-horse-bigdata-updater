@@ -52,7 +52,7 @@ def audit(data):
     missing=[];valid=[]
     for h in horses:
         history=h.get("recent_starts",[])
-        if not history:missing.append(h["horse_name"])
+        if len(history)<5:missing.append(h["horse_name"])
         else:
             seen_starts=set()
             for start in history:
@@ -68,7 +68,7 @@ def audit(data):
                 seen_starts.add(raw_date)
                 if not isinstance(start.get("finish_position"),int) or start["finish_position"]<1:raise ValueError("invalid past finish")
             valid.append(h["horse_name"])
-    return {"race_id":"202611213129100511","status":"BLOCKED_INCOMPLETE_HISTORY" if missing else "HISTORY_COMPLETE_RESEARCH_ONLY","entries":len(horses),"history_available":len(valid),"missing_history":missing,"market_and_result_fields":"REJECTED","pre_start_seal":"NOT_VERIFIED","formal_scores_generated":False,"formal_top3_probabilities_generated":False,"formal_tickets_generated":False}
+    return {"race_id":"202611213129100511","status":"BLOCKED_INCOMPLETE_HISTORY" if missing else "HISTORY_COMPLETE_RESEARCH_ONLY","entries":len(horses),"history_available":len(valid),"five_run_coverage":sum(len(h.get("recent_starts",[]))>=5 for h in horses),"missing_history":missing,"market_and_result_fields":"REJECTED","pre_start_seal":"NOT_VERIFIED","formal_scores_generated":False,"formal_top3_probabilities_generated":False,"formal_tickets_generated":False}
 if __name__=="__main__":
     if len(sys.argv)!=3:raise SystemExit("usage: audit_kochi11_completeness.py parsed.json audit.json")
     output=audit(json.loads(Path(sys.argv[1]).read_text(encoding="utf-8")))
