@@ -17,6 +17,14 @@ def main():
     today=datetime.now(ZoneInfo("Asia/Tokyo")).date().isoformat()
     seal=json.loads(SRC.read_text(encoding="utf-8"))
     weekly=json.loads(WEEKLY.read_text(encoding="utf-8"))
+    # Independently fail closed if the source seal lost its pre-race market/result firewall.
+    status=json.loads(Path("status/live_prediction_seal.json").read_text(encoding="utf-8"))
+    if status.get("odds_popularity_used") is not False or status.get("results_used") is not False:
+        raise RuntimeError("source seal market/result firewall not verified")
+    if status.get("status") != "SEALED":
+        raise RuntimeError("source seal is not SEALED")
+    if not status.get("prediction_hash_sha256") or status["prediction_hash_sha256"] != seal.get("prediction_hash_sha256"):
+        raise RuntimeError("source seal hash mismatch")
     expected={}
     for row in weekly.get("runners") or []:
         race=row.get("race") or {}
