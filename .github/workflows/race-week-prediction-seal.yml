@@ -108,6 +108,37 @@ jobs:
               assert s.get('include_upcoming_dates') is False
           print(json.dumps(s,ensure_ascii=False,indent=2))
           PY
+      - name: Verify each debut race uses the dedicated new-horse model and complete runner set
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('docs/data/live_predictions_sealed.json').read_text(encoding='utf-8'))
+          weekly=json.loads(Path('docs/data/horses/weekly_runner_details.json').read_text(encoding='utf-8'))
+          cards={}
+          for x in weekly.get('runners') or []:
+              r=x.get('race') or {}
+              key=(str(r.get('date') or ''),str(r.get('track') or ''),int(r.get('race_no') or 0))
+              cards.setdefault(key,{'name':str(r.get('race_name') or ''),'horses':set()})
+              no=str(x.get('horse_no') or '').strip()
+              if no: cards[key]['horses'].add(no)
+          sealed={(str(r.get('date') or ''),str(r.get('track') or ''),int(r.get('race_no') or 0)):r for r in p.get('races') or []}
+          for key,card in cards.items():
+              if not ('新馬' in card['name'] or 'メイクデビュー' in card['name']):continue
+              if key not in sealed:raise AssertionError(('DEBUT_RACE_MISSING',key))
+              race=sealed[key]
+              analysis=race.get('analysis') or {}
+              if not str(analysis.get('model_version') or '').startswith('NEW_HORSE_DEDICATED_V2'):
+                  raise AssertionError(('DEBUT_WRONG_MODEL',key,analysis.get('model_version')))
+              actual={str(h.get('n') or '') for h in race.get('ranked_snapshot') or []}
+              unrated={str(h.get('n') or '') for h in race.get('unrated_dark_horses') or []}
+              if actual & unrated or actual|unrated != card['horses']:
+                  raise AssertionError(('DEBUT_RUNNER_MISMATCH',key,sorted(card['horses']),sorted(actual),sorted(unrated)))
+              sim=race.get('simulation_finalizer') or {}
+              if int(sim.get('runs') or 0)<10000:
+                  raise AssertionError(('DEBUT_SIMULATION_MISSING',key))
+          print('DEBUT_MODEL_AND_RUNNER_COVERAGE_OK')
+          PY
       - name: Refresh management ERP from the new sealed predictions
         run: python src/build_management_erp.py
       - name: Build same-origin advanced-analysis live bundle
