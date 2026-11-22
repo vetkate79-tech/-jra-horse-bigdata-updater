@@ -30,6 +30,15 @@ class AuditRegression(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "leakage"):
                     audit(data)
 
+    def test_unknown_fields_fail_closed(self):
+        for level in ("root", "horse", "start"):
+            with self.subTest(level=level):
+                data = fixture()
+                target = data if level == "root" else data["horses"][0] if level == "horse" else data["horses"][0]["recent_starts"][0]
+                target["unrecognized_signal"] = 0.8
+                with self.assertRaisesRegex(ValueError, "unapproved field"):
+                    audit(data)
+
     def test_target_date_and_later_rejected(self):
         for day in ("2026-11-21", "2026-11-22"):
             with self.subTest(day=day):
