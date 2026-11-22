@@ -132,7 +132,12 @@ jobs:
                   raise AssertionError(('DEBUT_WRONG_MODEL',key,analysis.get('model_version')))
               actual={str(h.get('n') or '') for h in race.get('ranked_snapshot') or []}
               unrated={str(h.get('n') or '') for h in race.get('unrated_dark_horses') or []}
-              if actual & unrated or actual|unrated != card['horses']:
+              # A future card may not have numbered runners yet; do not compare blank identifiers as horses.
+              if not card['horses']:
+                  if actual - {''} or unrated - {''}:
+                      raise AssertionError(('UNNUMBERED_DEBUT_HAS_NUMBERED_PREDICTIONS',key))
+                  continue
+              if '' in actual or '' in unrated or actual & unrated or actual|unrated != card['horses']:
                   raise AssertionError(('DEBUT_RUNNER_MISMATCH',key,sorted(card['horses']),sorted(actual),sorted(unrated)))
               sim=race.get('simulation_finalizer') or {}
               if int(sim.get('runs') or 0)<10000:
