@@ -28,8 +28,23 @@ def guard(x,where="root"):
             guard(v,where+"."+str(k))
     elif isinstance(x,list):
         for i,v in enumerate(x):guard(v,f"{where}[{i}]")
+# Strict parser-output schema: reject unknown fields before research features are built.
+# This does not establish a pre-start seal or validate source authenticity.
+ALLOWED_ROOT={"status","horse_count","horses"}
+ALLOWED_HORSE={"horse_name","horse_id","recent_starts"}
+ALLOWED_START={"race_date","finish_position","surface","distance_m","course","corner_positions","last3f"}
+def check_allowed(obj,allowed,where):
+    if not isinstance(obj,dict):raise ValueError("invalid schema: "+where)
+    extra=set(obj)-allowed
+    if extra:raise ValueError("unapproved field: "+where+"."+",".join(sorted(extra)))
 def audit(data):
     guard(data)
+    check_allowed(data,ALLOWED_ROOT,"root")
+    for i,h in enumerate(data.get("horses",[])):
+        check_allowed(h,ALLOWED_HORSE,f"horses[{i}]")
+        if not isinstance(h.get("recent_starts",[]),list):raise ValueError("invalid history list")
+        for j,start in enumerate(h["recent_starts"]):
+            check_allowed(start,ALLOWED_START,f"horses[{i}].recent_starts[{j}]")
     horses=data.get("horses",[])
     if len(horses)!=11:raise ValueError(f"Kochi 11R expected 11 published entries, got {len(horses)}")
     names=[h["horse_name"] for h in horses]
