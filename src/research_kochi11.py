@@ -9,10 +9,15 @@ from collections import defaultdict
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from build_race_week_pre_race_features import feature_for,people_rates,draw_priors,merge_history
 from run_nar_isolated import run
+from audit_kochi11_completeness import audit as audit_history
 
 def main():
     if len(sys.argv)!=3:raise SystemExit("usage: research_kochi11.py parsed_history.json output.json")
     source=json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+    # Apply the leakage and history gate even when this runner is called outside Actions.
+    gate=audit_history(source)
+    if gate["status"]!="HISTORY_COMPLETE_RESEARCH_ONLY":
+        raise ValueError("Kochi history gate failed: "+gate["status"])
     horses=source["horses"]
     if len(horses)!=11:raise ValueError(f"expected 11 runners, got {len(horses)}")
     cutoff="2026-11-21"
