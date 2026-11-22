@@ -161,7 +161,9 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
     starts = np.array([_num(h.get("starts_before"), 0.0) for h in horses], dtype=float)
     noise_sigma = 0.62 + 0.72 * np.clip(uncertainty, 0.0, 1.25) + np.where(starts < 3, 0.18, 0.0)
     if experiment:
-        # Shared missing-data noise prevents artificial favoritism toward horses\n        # whose input records happen to be more complete.\n        noise_sigma += 0.45 * (1.0 - float(np.mean(evidence_reliability)))
+        # Shared missing-data noise prevents artificial favoritism toward horses
+        # whose input records happen to be more complete.
+        noise_sigma += 0.45 * (1.0 - float(np.mean(evidence_reliability)))
 
     win = np.zeros(n, dtype=np.int64)
     second = np.zeros(n, dtype=np.int64)
