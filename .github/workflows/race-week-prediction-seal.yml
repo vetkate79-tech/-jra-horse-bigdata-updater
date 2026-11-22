@@ -157,6 +157,8 @@ jobs:
               ranked=r.get('ranked_snapshot') or []
               a=r.get('analysis') or {}
               horses=[{'n':h.get('n'),'name':h.get('name'),'score':h.get('score'),'final_rank':(h.get('simulation') or {}).get('final_rank')} for h in ranked]
+              if r.get('date')==today and r.get('track')=='東京' and int(r.get('race_no') or 0)==4:
+                  print('JRA_TOKYO4_AUDIT '+json.dumps({'race':r,'seal_status':p.get('status'),'generated_at':p.get('generated_at'),'pre_race_feature_cutoff':p.get('pre_race_feature_cutoff'),'odds_popularity_used':p.get('odds_popularity_used'),'results_used':p.get('results_used')},ensure_ascii=False,separators=(',',':')))
               print('JRA_RACE_OUTPUT '+json.dumps({'date':r.get('date'),'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'model':a.get('model_version'),'horses':horses,'trio_tickets':a.get('trio_tickets'),'axis':a.get('axis'),'decision':a.get('decision')},ensure_ascii=False,separators=(',',':')))
           PY
       - name: Refresh management ERP from the new sealed predictions
