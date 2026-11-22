@@ -262,8 +262,11 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
 
     # Horse numbers are used in stable, machine-readable outcome keys.
     # No odds or result data are involved; each count is from the same simulated race.
-    joint_top3 = {"-".join(str(horses[i].get("n") or "") for i in idx): count
-                  for idx, count in sorted(ordered_top3_counts.items())}
+    joint_top3_counter = Counter()
+    for idx, count in sorted(ordered_top3_counts.items()):
+        key = "-".join(str(horses[i].get("n") or "") for i in idx)
+        joint_top3_counter[key] += count
+    joint_top3 = dict(joint_top3_counter)
     if sum(joint_top3.values()) != runs:
         raise AssertionError("joint top-three distribution must sum to simulation runs")
 
