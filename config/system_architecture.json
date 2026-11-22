@@ -25,7 +25,8 @@
     "build-word-dictionary.yml": "SITE_DICTIONARY_INDEPENDENT",
     "deploy-management-erp.yml": "SITE_DEPLOY_INDEPENDENT",
     "repair-horse-master-integrity.yml": "EMERGENCY_REPAIR_INDEPENDENT",
-    "system-architecture-audit.yml": "GOVERNANCE_AUDIT"
+    "system-architecture-audit.yml": "GOVERNANCE_AUDIT",
+    "all-bet-types-shadow.yml": "ISOLATED_POST_SEAL_SHADOW_READ_ONLY_NONBLOCKING"
   },
   "independent_subsystems": {
     "market": {
@@ -106,7 +107,8 @@
       "build_analysis_live_bundle.py",
       "build_live_sealed_predictions_v2.py",
       "build_management_erp.py",
-      "publish_verified_today_predictions.py"
+      "publish_verified_today_predictions.py",
+      "test_monte_carlo_shadow.py"
     ],
     "register-upcoming-new-horses.yml": [
       "audit_horse_master_uniqueness.py",
@@ -130,6 +132,12 @@
       "build_validation_dataset.py",
       "evaluate_backtest.py",
       "manage_experiment_registry.py"
+    ],
+    "all-bet-types-shadow.yml": [
+      "all_bet_types_shadow.py",
+      "build_all_bet_types_shadow_report.py",
+      "collect_all_bet_types_external_shadow.py",
+      "compare_all_bet_types_market_shadow.py"
     ]
   },
   "retired_workflow_policy": "Historical experiments, one-off diagnostics, backfills and V2-V14 replay calibration workflows live in .github/workflow-archive and cannot trigger automatically.",
