@@ -33,6 +33,11 @@ jobs:
         run: python src/all_bet_types_shadow.py
       - name: Build read-only seven-type probability report
         run: python src/build_all_bet_types_shadow_report.py
+      - name: Install isolated external quote parser dependency
+        run: pip install beautifulsoup4
+      - name: Fetch external multi-ticket quotes experimentally (nonblocking)
+        continue-on-error: true
+        run: python src/collect_all_bet_types_external_shadow.py
       - name: Compare verified market quotes after probabilities (nonblocking)
         continue-on-error: true
         run: python src/compare_all_bet_types_market_shadow.py
