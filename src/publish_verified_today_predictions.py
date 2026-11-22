@@ -41,6 +41,32 @@ def main():
         if "新馬" in str(race.get("race_name") or "") or "メイクデビュー" in str(race.get("race_name") or ""):
             if not str(a.get("model_version") or "").startswith("NEW_HORSE_DEDICATED_V2"):
                 raise RuntimeError(f"wrong debut model: {key}")
+        # Mandatory JRA answer contract: fail closed rather than publish incomplete projections.
+        required_sim=("final_rank","win_rate","place_rate","top3_rate","scenario_stability","scenario_top3")
+        ranks=[]
+        for h in ranked:
+            hs=h.get("simulation") or {}
+            if any(hs.get(k) is None for k in required_sim):
+                raise RuntimeError(f"incomplete horse simulation: {key} horse={h.get('n')}")
+            if set(hs["scenario_top3"])!={"SLOW_FRONT","AVERAGE","FAST_BALANCED","FAST_CLOSER","EXTREME_COLLAPSE"}:
+                raise RuntimeError(f"incomplete scenarios: {key} horse={h.get('n')}")
+            if any(not 0<=float(hs[k])<=1 for k in ("win_rate","place_rate","top3_rate","scenario_stability")):
+                raise RuntimeError(f"invalid simulation probability: {key} horse={h.get('n')}")
+            if not (hs["win_rate"]<=hs["place_rate"]<=hs["top3_rate"]):
+                raise RuntimeError(f"probability order failed: {key} horse={h.get('n')}")
+            ranks.append(int(hs["final_rank"]))
+        if ranks!=list(range(1,len(ranked)+1)):
+            raise RuntimeError(f"invalid final ranks: {key}")
+        if any(a.get(k) is None for k in ("axis","axis_durability","pre_market_decision","classification","formation_columns","trio_tickets")):
+            raise RuntimeError(f"incomplete race analysis: {key}")
+        if a["pre_market_decision"] not in ("BUY","CAUTION","PASS"):
+            raise RuntimeError(f"invalid purchase decision: {key}")
+        if str((a["axis"] or {}).get("horse_no") or "") not in set(nums):
+            raise RuntimeError(f"axis not in runners: {key}")
+        for ticket in a["trio_tickets"]:
+            parts=str(ticket).split("-")
+            if len(parts)!=3 or len(set(parts))!=3 or not set(parts).issubset(set(nums)):
+                raise RuntimeError(f"invalid trio ticket: {key} {ticket}")
         published[key]={
             "date":today,"track":key[0],"race_no":key[1],
             "race_name":race.get("race_name"),"model_version":a.get("model_version"),
@@ -53,6 +79,7 @@ def main():
     if not published:raise RuntimeError(f"no races sealed for today {today}")
     payload={"date":today,"status":"VERIFIED","race_count":len(published),
              "source_prediction_hash":seal.get("prediction_hash_sha256"),
+             "source_generated_at":seal.get("generated_at"),
              "races":[published[k] for k in sorted(published)]}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"TODAY_ALL_RACES_VERIFIED date={today} count={len(published)} path={OUT}")
