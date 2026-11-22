@@ -70,6 +70,19 @@ def main():
             raise RuntimeError(f"invalid purchase decision: {key}")
         if str((a["axis"] or {}).get("horse_no") or "") not in set(nums):
             raise RuntimeError(f"axis not in runners: {key}")
+        durability=a["axis_durability"]
+        if not isinstance(durability,dict) or not math.isfinite(float(durability.get("score") if durability.get("score") is not None else float("nan"))):
+            raise RuntimeError(f"invalid axis durability: {key}")
+        if durability.get("status") not in ("HIGH","MEDIUM","LOW"):
+            raise RuntimeError(f"invalid axis durability status: {key}")
+        formation=a["formation_columns"]
+        if not isinstance(formation,dict) or set(formation)!={"first","second","third"}:
+            raise RuntimeError(f"invalid formation columns: {key}")
+        for column, selections in formation.items():
+            if not isinstance(selections,list) or not selections or len(selections)!=len(set(selections)) or not set(map(str,selections)).issubset(set(nums)):
+                raise RuntimeError(f"invalid formation {column}: {key}")
+        if str(a["axis"]["horse_no"]) not in set(map(str,formation["first"])):
+            raise RuntimeError(f"axis missing from formation first column: {key}")
         if len(a["trio_tickets"])!=len(set(a["trio_tickets"])):
             raise RuntimeError(f"duplicate trio tickets: {key}")
         for ticket in a["trio_tickets"]:
