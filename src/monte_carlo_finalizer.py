@@ -9,6 +9,11 @@ from typing import Any
 import numpy as np
 
 MODEL_VERSION = "MONTE_CARLO_FINALIZER_V1"
+EXPERIMENT_VERSION = "MONTE_CARLO_FINALIZER_V2_COVERAGE_SHRINK_SHADOW"
+
+def _experiment_enabled() -> bool:
+    return os.getenv("JRA_MONTE_CARLO_EXPERIMENT", "0") == "1"
+
 DEFAULT_RUNS = 100_000
 MIN_RUNS = 10_000
 MAX_RUNS = 500_000
@@ -115,6 +120,23 @@ def _base_strength(horses: list[dict[str, Any]]) -> np.ndarray:
     return strength
 
 
+def _coverage_strength(horses: list[dict[str, Any]], strength: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Experimental shrinkage: missing pre-race evidence must not create confident gaps.
+
+    Shadow only by default; coefficients require walk-forward calibration.
+    """
+    coverage=[]
+    for h in horses:
+        starts=max(0.0, _num(h.get("starts_before"), 0.0))
+        uncertainty=np.clip(_num(h.get("uncertainty"), 1.0), 0.0, 1.0)
+        observed=sum(h.get(k) is not None for k in ("show_rate_prior","recent_form","condition_fit","draw_show_prior","running_style","carried_weight"))
+        reliability=(0.15 + 0.85 * min(starts / 6.0, 1.0)) * (0.35 + 0.65 * (1.0 - uncertainty)) * (0.35 + 0.65 * observed / 6.0)
+        coverage.append(float(np.clip(reliability, 0.05, 1.0)))
+    reliability=np.array(coverage,dtype=float)
+    center=float(np.mean(strength))
+    return center + (strength-center)*reliability, reliability
+
+
 def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[str, Any]:
     if len(horses) < 3:
         raise ValueError("simulation requires at least three horses")
@@ -126,10 +148,16 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
     styles = [_style(h.get("running_style")) for h in horses]
     scenario_weights = _scenario_weights(horses)
     base_strength = _base_strength(horses)
+    experiment=_experiment_enabled()
+    evidence_reliability=np.ones(n,dtype=float)
+    if experiment:
+        base_strength,evidence_reliability=_coverage_strength(horses,base_strength)
 
     uncertainty = np.array([_num(h.get("uncertainty"), 0.5) for h in horses], dtype=float)
     starts = np.array([_num(h.get("starts_before"), 0.0) for h in horses], dtype=float)
     noise_sigma = 0.62 + 0.72 * np.clip(uncertainty, 0.0, 1.25) + np.where(starts < 3, 0.18, 0.0)
+    if experiment:
+        noise_sigma += 0.45 * (1.0 - evidence_reliability)
 
     win = np.zeros(n, dtype=np.int64)
     second = np.zeros(n, dtype=np.int64)
@@ -223,7 +251,9 @@ def simulate_race(race: dict[str, Any], horses: list[dict[str, Any]]) -> dict[st
     overall_stability = float(np.mean([h["simulation"]["scenario_stability"] for h in top5])) if top5 else 0.0
 
     return {
-        "model_version": MODEL_VERSION,
+        "model_version": EXPERIMENT_VERSION if experiment else MODEL_VERSION,
+        "experiment_enabled": experiment,
+        "evidence_reliability": {str(h.get("n") or ""): round(float(evidence_reliability[i]),6) for i,h in enumerate(horses)},
         "runs": runs,
         "seed": seed,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
