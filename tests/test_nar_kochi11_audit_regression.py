@@ -81,6 +81,18 @@ class AuditRegression(unittest.TestCase):
         data["horses"][0]["recent_starts"] = []
         self.assertEqual(audit(data)["status"], "BLOCKED_INCOMPLETE_HISTORY")
 
+    def test_runner_count_mismatch_rejected(self):
+        data = fixture()
+        data["horse_count"] = 10
+        with self.assertRaisesRegex(ValueError, "horse_count"):
+            audit(data)
+
+    def test_boolean_finish_rejected(self):
+        data = fixture()
+        data["horses"][0]["recent_starts"][0]["finish_position"] = True
+        with self.assertRaisesRegex(ValueError, "invalid past finish"):
+            audit(data)
+
     def test_entry_count_rejected(self):
         data = fixture()
         data["horses"].pop()
