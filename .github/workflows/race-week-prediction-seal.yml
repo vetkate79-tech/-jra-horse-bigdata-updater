@@ -21,6 +21,7 @@ on:
     paths:
       - 'src/build_live_sealed_predictions.py'
       - 'src/build_live_sealed_predictions_v2.py'
+      - 'src/publish_verified_today_predictions.py'
       - 'src/axis_survival_shadow.py'
       - 'src/monte_carlo_finalizer.py'
       - 'src/build_analysis_live_bundle.py'
@@ -163,6 +164,36 @@ jobs:
           PY
       - name: Publish and verify complete current-day race prediction feed
         run: python src/publish_verified_today_predictions.py
+      - name: Block publication unless every runner has verified simulation probabilities
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          today=datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
+          p=json.loads(Path('docs/data/live_predictions_today_verified.json').read_text(encoding='utf-8'))
+          s=json.loads(Path('docs/data/live_predictions_sealed.json').read_text(encoding='utf-8'))
+          assert p.get('date')==today and p.get('status')=='VERIFIED'
+          assert p.get('source_prediction_hash') and p['source_prediction_hash']==s.get('prediction_hash_sha256')
+          races=p.get('races') or []
+          assert races and p.get('race_count')==len(races)
+          for r in races:
+              assert r.get('date')==today
+              assert int(r.get('simulation_runs') or 0)>=10000
+              assert r.get('pre_market_decision') in ('BUY','CAUTION','PASS')
+              assert r.get('axis_durability') is not None
+              assert r.get('formation_columns') is not None
+              horses=r.get('horses') or []
+              assert horses
+              for h in horses:
+                  for field in ('score','final_rank','win_rate','place_rate','top3_rate','scenario_stability','scenario_top3'):
+                      assert h.get(field) is not None,(r.get('track'),r.get('race_no'),h.get('horse_no'),field)
+                  assert 0<=float(h['win_rate'])<=float(h['place_rate'])<=float(h['top3_rate'])<=1
+                  assert 0<=float(h['scenario_stability'])<=1
+                  assert set(h['scenario_top3'])=={'SLOW_FRONT','AVERAGE','FAST_BALANCED','FAST_CLOSER','EXTREME_COLLAPSE'}
+          print('ALL_RUNNERS_PROBABILITY_PUBLICATION_GATE_PASS',len(races))
+          PY
       - name: Refresh management ERP from the new sealed predictions
         run: python src/build_management_erp.py
       - name: Build same-origin advanced-analysis live bundle
