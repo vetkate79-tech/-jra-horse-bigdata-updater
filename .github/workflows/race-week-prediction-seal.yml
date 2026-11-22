@@ -53,6 +53,7 @@ jobs:
       # Normal schedule/workflow_run must always use today's JST card set.
       # Historical/specified reseals are allowed only from workflow_dispatch input.
       JRA_TARGET_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.target_date || '' }}
+      JRA_MONTE_CARLO_EXPERIMENT: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -82,13 +83,15 @@ jobs:
           assert s.get('new_horse_detection_all_zero_starts_enabled') is True
           assert s.get('simulation_finalizer_enabled') is True
           assert s.get('simulation_market_isolation') is True
-          assert str(s.get('simulation_model_version') or '').startswith('MONTE_CARLO_FINALIZER_V1')
+          assert str(s.get('simulation_model_version') or '').startswith('MONTE_CARLO_FINALIZER_V2')
           assert int(s.get('simulation_runs_per_race') or 0) >= 10000 or s.get('status') in ('DATA_PENDING','NO_UPCOMING_RACES')
           if s.get('status') == 'SEALED':
               p=json.loads(Path('docs/data/live_predictions_sealed.json').read_text())
               for race in p.get('races') or []:
                   sim=race.get('simulation_finalizer') or {}
                   assert int(sim.get('runs') or 0) >= 10000
+                  assert str(sim.get('model_version') or '').startswith('MONTE_CARLO_FINALIZER_V2')
+                  assert sim.get('experiment_enabled') is True
                   assert sim.get('market_isolation') == 'NO_ODDS_OR_POPULARITY_OR_RESULTS_USED'
                   assert race.get('ranked_snapshot')
                   assert all((h.get('simulation') or {}).get('final_rank') for h in race.get('ranked_snapshot') or [])
