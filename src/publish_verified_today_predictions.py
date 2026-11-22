@@ -44,9 +44,9 @@ def main():
         published[key]={
             "date":today,"track":key[0],"race_no":key[1],
             "race_name":race.get("race_name"),"model_version":a.get("model_version"),
-            "horses":[{"horse_no":h.get("n"),"horse_name":h.get("name"),"score":h.get("score"),"final_rank":(h.get("simulation") or {}).get("final_rank")} for h in ranked],
+            "horses":[{"horse_no":h.get("n"),"horse_name":h.get("name"),"score":h.get("score"),"final_rank":(h.get("simulation") or {}).get("final_rank"),"win_rate":(h.get("simulation") or {}).get("win_rate"),"place_rate":(h.get("simulation") or {}).get("place_rate"),"top3_rate":(h.get("simulation") or {}).get("top3_rate"),"scenario_stability":(h.get("simulation") or {}).get("scenario_stability"),"scenario_top3":(h.get("simulation") or {}).get("scenario_top3")} for h in ranked],
             "axis":a.get("axis"),"trio_tickets":a.get("trio_tickets") or [],
-            "simulation_runs":sim.get("runs")
+            "simulation_runs":sim.get("runs"),"axis_durability":a.get("axis_durability"),"pre_market_decision":a.get("pre_market_decision"),"classification":a.get("classification"),"formation_columns":a.get("formation_columns"),"failure_scenarios":a.get("failure_scenarios"),"scenario_weights":sim.get("scenario_weights")
         }
     missing=set(expected)-set(published)
     if missing:raise RuntimeError(f"unpublished today races: {sorted(missing)}")
