@@ -33,11 +33,14 @@ jobs:
         run: python src/all_bet_types_shadow.py
       - name: Build read-only seven-type probability report
         run: python src/build_all_bet_types_shadow_report.py
+      - name: Compare verified market quotes after probabilities (nonblocking)
+        continue-on-error: true
+        run: python src/compare_all_bet_types_market_shadow.py
       - name: Upload research artifact only
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: all-bet-types-shadow-${{ github.run_id }}
-          path: shadow-artifacts/all_bet_types_shadow.json
+          path: shadow-artifacts/all_bet_types_*.json
           if-no-files-found: ignore
           retention-days: 14
