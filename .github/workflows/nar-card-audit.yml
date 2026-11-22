@@ -16,7 +16,7 @@ on:
 permissions:
   contents: read
 jobs:
-  capture:
+  kochi11:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,6 +39,29 @@ jobs:
         run: python src/research_kochi11.py /tmp/nar-parsed-history.json /tmp/kochi11-research-prediction.json
       - name: Verify Kochi 11R simulation invariants and formal-prediction isolation
         run: python src/verify_kochi11_research.py /tmp/kochi11-research-prediction.json
+      - name: Archive source evidence and audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nar-kochi11-raw-evidence
+          if-no-files-found: warn
+          path: |
+            /tmp/nar-card-audit.json
+            /tmp/nar-card-audit.html
+            /tmp/nar-card-audit.txt
+            /tmp/nar-parsed-history.json
+            /tmp/kochi11-completeness.json
+            /tmp/kochi11-research-prediction.json
+          retention-days: 14
+  saga11:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install HTML parser dependencies
+        run: python -m pip install 'beautifulsoup4>=4.12,<5' 'lxml>=5,<7' 'numpy>=1.26,<3'
       - name: Capture Saga 11R actual runners
         run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213200000011 --output /tmp/saga11-card-audit.json
       - name: Parse Saga 11R historical starts
@@ -51,16 +74,12 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: nar-card-raw-evidence
+          name: nar-saga11-raw-evidence
+          if-no-files-found: warn
           path: |
-            /tmp/nar-card-audit.json
-            /tmp/nar-card-audit.html
-            /tmp/nar-card-audit.txt
-            /tmp/nar-parsed-history.json
-            /tmp/kochi11-completeness.json
-            /tmp/kochi11-research-prediction.json
             /tmp/saga11-card-audit.json
             /tmp/saga11-card-audit.html
+            /tmp/saga11-card-audit.txt
             /tmp/saga11-parsed-history.json
             /tmp/saga11-research-prediction.json
           retention-days: 14
