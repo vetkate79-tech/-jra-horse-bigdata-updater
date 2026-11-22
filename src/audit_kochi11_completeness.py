@@ -14,11 +14,17 @@ def normalized_key(key):
     key=re.sub(r"(?<=[a-z0-9])(?=[A-Z])","_",str(key))
     return re.sub(r"[^a-z0-9]","",key.lower())
 FORBIDDEN_NORMALIZED={normalized_key(k) for k in FORBIDDEN}
+# Reject common suffix/prefix variants too (e.g. odds_value, popularityRank).
+# This is a denylist only: formal release still requires a schema allowlist.
+MARKET_PREFIXES=("odds","popularity","marketrank","payout","returnamount","raceresult","finishaftertarget")
+def forbidden_key(key):
+    normalized=normalized_key(key)
+    return normalized in FORBIDDEN_NORMALIZED or normalized.startswith(MARKET_PREFIXES)
 def guard(x,where="root"):
     if isinstance(x,dict):
         for k,v in x.items():
-            if normalized_key(k) in FORBIDDEN_NORMALIZED:raise ValueError("leakage: "+where+"."+k)
-            guard(v,where+"."+k)
+            if forbidden_key(k):raise ValueError("leakage: "+where+"."+str(k))
+            guard(v,where+"."+str(k))
     elif isinstance(x,list):
         for i,v in enumerate(x):guard(v,f"{where}[{i}]")
 def audit(data):
