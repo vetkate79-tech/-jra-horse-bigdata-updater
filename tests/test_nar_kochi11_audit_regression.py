@@ -18,9 +18,18 @@ def fixture():
 class AuditRegression(unittest.TestCase):
     def test_clean_research_only(self):
         result = audit(fixture())
-        self.assertEqual(result["status"], "HISTORY_COMPLETE_RESEARCH_ONLY")
+        self.assertEqual(result["status"], "BLOCKED_INCOMPLETE_HISTORY")
+        self.assertEqual(result["five_run_coverage"], 0)
         self.assertFalse(result["formal_tickets_generated"])
         self.assertEqual(result["pre_start_seal"], "NOT_VERIFIED")
+
+    def test_five_runs_required_for_completeness(self):
+        data = fixture()
+        for horse in data["horses"]:
+            horse["recent_starts"].append({"race_date": "2026-07-01", "finish_position": 2})
+        result = audit(data)
+        self.assertEqual(result["status"], "HISTORY_COMPLETE_RESEARCH_ONLY")
+        self.assertEqual(result["five_run_coverage"], 11)
 
     def test_market_aliases_rejected(self):
         for key in ("odds_value", "popularityRank", "market-rank", "raceResult"):
