@@ -28,7 +28,7 @@ def build(source: dict) -> dict:
         "races": [],
     }
     for race in source.get("races") or []:
-        sim = race.get("simulation_finalizer") or {}
+        sim = (race.get("analysis") or {}).get("simulation_finalizer") or {}
         counts = sim.get("joint_top3_ordered_counts") or {}
         runs = int(sim.get("joint_top3_runs") or 0)
         horses = race.get("ranked_snapshot") or []
