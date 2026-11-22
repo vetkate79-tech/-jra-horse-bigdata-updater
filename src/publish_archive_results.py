@@ -192,9 +192,15 @@ def build_results(pred_archive):
         )
 
     expected = expected_completed_race_count()
-    complete = bool(out) and len(out) == len(by_race)
-    if expected is not None:
-        complete = complete and len(out) == expected
+    # Never certify a newly reconstructed archive without an independently
+    # confirmed race count for this exact meeting date. A partial discovery
+    # can otherwise look complete merely because every discovered race has a top 3.
+    complete = (
+        expected is not None
+        and bool(out)
+        and len(out) == len(by_race)
+        and len(out) == expected
+    )
 
     if not complete:
         existing = existing_complete_results()
