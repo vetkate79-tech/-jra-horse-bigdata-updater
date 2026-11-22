@@ -101,8 +101,28 @@ def expected_completed_race_count():
     compact = target.replace("-", "")
     if compact not in (status.get("complete_dates") or []):
         return None
-    return integer(status.get("discovered_races"))
 
+    # A global discovered_races total is not a safe per-date completeness
+    # threshold when discovery spans multiple meetings.
+    per_date = status.get("discovered_races_by_date") or {}
+    if compact in per_date:
+        count = integer(per_date[compact])
+        if count is None or count <= 0:
+            raise RuntimeError(f"invalid per-date expected race count for {target}")
+        return count
+
+    complete_dates = status.get("complete_dates") or []
+    if len(complete_dates) != 1:
+        raise RuntimeError(
+            f"ambiguous global discovered_races for {target}: "
+            "multiple complete_dates without discovered_races_by_date; refusing to certify archive"
+        )
+    # Legacy single-date statuses remain supported. Multi-date status must
+    # supply an explicit per-date count before an archive can be certified.
+    count = integer(status.get("discovered_races"))
+    if count is None or count <= 0:
+        raise RuntimeError(f"missing valid expected race count for {target}")
+    return count
 
 def build_results(pred_archive):
     result_rows = [r for r in read_csv(RES) if str(r.get("race_date")) == target]
