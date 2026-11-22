@@ -68,7 +68,7 @@ def test_joint_example() -> None:
     assert p["TRIFECTA"]["1-2-3"] == 0.6
     assert p["QUINELLA"]["1-2"] == 0.6
     assert p["WIDE"]["1-3"] == 1.0
-    assert quote_ev(0.2, 8)["net_ev"] == 0.6
+    assert abs(quote_ev(0.2, 8)["net_ev"] - 0.6) < 1e-12
     assert quote_ev(0.2, None)["status"] == "EV_UNAVAILABLE"
 
 
