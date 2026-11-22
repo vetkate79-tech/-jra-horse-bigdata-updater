@@ -73,3 +73,5 @@ if __name__=="__main__":
     output=audit(json.loads(Path(sys.argv[1]).read_text(encoding="utf-8")))
     Path(sys.argv[2]).write_text(json.dumps(output,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps(output,ensure_ascii=False))
+    if output["status"] != "HISTORY_COMPLETE_RESEARCH_ONLY":
+        raise SystemExit("FAIL CLOSED: incomplete five-run history; research simulation blocked")
