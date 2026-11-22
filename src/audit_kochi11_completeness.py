@@ -4,14 +4,20 @@
 This is a retrospective audit, NOT a sealed pre-race prediction.
 Do not invent missing starts, score scratches, or use market/result fields.
 """
-import json,sys
+import json,sys,re
 from pathlib import Path
 
 FORBIDDEN={"odds","popularity","market_rank","payout","return_amount","result","results","race_result","finish_after_target"}
+# Normalize common naming variants before checking; this is defense in depth,
+# not proof that every unknown market-derived feature is excluded.
+def normalized_key(key):
+    key=re.sub(r"(?<=[a-z0-9])(?=[A-Z])","_",str(key))
+    return re.sub(r"[^a-z0-9]","",key.lower())
+FORBIDDEN_NORMALIZED={normalized_key(k) for k in FORBIDDEN}
 def guard(x,where="root"):
     if isinstance(x,dict):
         for k,v in x.items():
-            if k.lower() in FORBIDDEN:raise ValueError("leakage: "+where+"."+k)
+            if normalized_key(k) in FORBIDDEN_NORMALIZED:raise ValueError("leakage: "+where+"."+k)
             guard(v,where+"."+k)
     elif isinstance(x,list):
         for i,v in enumerate(x):guard(v,f"{where}[{i}]")
