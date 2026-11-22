@@ -105,7 +105,8 @@
     "race-week-prediction-seal.yml": [
       "build_analysis_live_bundle.py",
       "build_live_sealed_predictions_v2.py",
-      "build_management_erp.py"
+      "build_management_erp.py",
+      "publish_verified_today_predictions.py"
     ],
     "register-upcoming-new-horses.yml": [
       "audit_horse_master_uniqueness.py",
