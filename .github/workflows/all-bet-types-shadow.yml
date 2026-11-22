@@ -6,6 +6,14 @@ on:
       - Race-week pure prediction seal
     types: [completed]
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/all_bet_types_shadow.py'
+      - 'src/build_all_bet_types_shadow_report.py'
+      - 'src/compare_all_bet_types_market_shadow.py'
+      - 'src/collect_all_bet_types_external_shadow.py'
+      - '.github/workflows/all-bet-types-shadow.yml'
 
 # This workflow must never write production data, seal files, or ERP state.
 permissions:
