@@ -12,7 +12,7 @@ REQUIRED={
  'post-jra-meeting-update.yml','register-upcoming-new-horses.yml','horse-master-maintenance.yml',
  'race-week-prediction-seal.yml','jra-market-timing.yml','validate-jra-model.yml',
  'audit-oral-v6-certification.yml','build-word-dictionary.yml','deploy-management-erp.yml',
- 'repair-horse-master-integrity.yml','system-architecture-audit.yml'
+ 'repair-horse-master-integrity.yml','system-architecture-audit.yml','all-bet-types-shadow.yml'
 }
 
 def text(name):
