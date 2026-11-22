@@ -42,7 +42,7 @@ permissions:
 
 concurrency:
   group: live-prediction-seal
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   seal:
