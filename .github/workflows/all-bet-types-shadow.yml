@@ -1,0 +1,43 @@
+name: All bet types shadow (isolated)
+
+on:
+  workflow_run:
+    workflows:
+      - Race-week pure prediction seal
+    types: [completed]
+  workflow_dispatch:
+
+# This workflow must never write production data, seal files, or ERP state.
+permissions:
+  contents: read
+
+concurrency:
+  group: all-bet-types-shadow-${{ github.event.workflow_run.id || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify independent joint probability implementation
+        run: python src/all_bet_types_shadow.py
+      - name: Build read-only seven-type probability report
+        run: python src/build_all_bet_types_shadow_report.py
+      - name: Upload research artifact only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-bet-types-shadow-${{ github.run_id }}
+          path: shadow-artifacts/all_bet_types_shadow.json
+          if-no-files-found: ignore
+          retention-days: 14
