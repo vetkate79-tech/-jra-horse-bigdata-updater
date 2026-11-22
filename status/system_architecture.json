@@ -80,6 +80,7 @@
     "all-bet-types-shadow.yml": [
       "all_bet_types_shadow.py",
       "build_all_bet_types_shadow_report.py",
+      "collect_all_bet_types_external_shadow.py",
       "compare_all_bet_types_market_shadow.py"
     ],
     "audit-oral-v6-certification.yml": [
@@ -164,6 +165,7 @@
       "actual": [
         "all_bet_types_shadow.py",
         "build_all_bet_types_shadow_report.py",
+        "collect_all_bet_types_external_shadow.py",
         "compare_all_bet_types_market_shadow.py"
       ]
     },
