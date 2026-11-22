@@ -64,6 +64,18 @@ class AuditRegression(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     audit(data)
 
+    def test_incomplete_history_still_rejects_target_date(self):
+        data = fixture()
+        data["horses"][0]["recent_starts"] = [{"race_date": "2026-11-22", "finish_position": 1}]
+        with self.assertRaisesRegex(ValueError, "target-date leakage"):
+            audit(data)
+
+    def test_incomplete_history_still_rejects_invalid_finish(self):
+        data = fixture()
+        data["horses"][0]["recent_starts"] = [{"race_date": "2026-11-01", "finish_position": 0}]
+        with self.assertRaisesRegex(ValueError, "invalid past finish"):
+            audit(data)
+
     def test_missing_history_research_block(self):
         data = fixture()
         data["horses"][0]["recent_starts"] = []
