@@ -20,3 +20,7 @@ Prediction-method changes are allowed ONLY as a separately scoped **prediction-i
 10. Retain rollback-ready revisions, source provenance and deployment audit logs.
 
 This policy applies to all subsequent maintenance work, including autonomous tasks and assistant-led changes.
+
+## Mandatory JRA-project prediction answer contract (2026-11-22)
+
+For EVERY JRA race requested through this project, the answer must start with the full-field ability ranking and show, for each horse, the sealed score (three decimals), win probability, top-two probability, top-three probability, and scenario stability. Include the five scenario-specific top-three probabilities when available; provide the sealed simulation run count, model version, axis and durability, pre-market BUY/CAUTION/PASS, formation, exact valid tickets and budget, and source/seal timestamp. All numeric rates must be copied from the sealed Monte Carlo output and labeled as model estimates, never implied to be empirical frequencies. Never fabricate a missing probability. If a compact publication projection omits any required field, retrieve the original sealed prediction or report the field unavailable and repair the projection. Do not alter scoring, ranking or simulation in a presentation/maintenance fix.
