@@ -1,0 +1,2559 @@
+{
+  "date": "2026-11-22",
+  "status": "VERIFIED",
+  "race_count": 24,
+  "source_prediction_hash": "5b32118cbaa4dff01fd28eb7566dfef1fa8cc7bbfb10bcb08f94f00b9d983641",
+  "races": [
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "8",
+          "horse_name": "ポアサムシュガー",
+          "score": 43.862,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "マシュマロデイズ",
+          "score": 43.656,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "アップルペアー",
+          "score": 42.689,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "エイントノーウェイ",
+          "score": 26.02,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "テムバンヴァン",
+          "score": 24.653,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "タマモウララカ",
+          "score": 22.711,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "カフジペピーノ",
+          "score": 23.42,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "バッテリー",
+          "score": 23.546,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ヒガンバナ",
+          "score": 20.784,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "リケアワルツ",
+          "score": 22.119,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "アディエル",
+          "score": 18.425,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "バンブトンウーノ",
+          "score": 19.078,
+          "final_rank": 12
+        }
+      ],
+      "axis": {
+        "horse_no": "8",
+        "horse_name": "ポアサムシュガー"
+      },
+      "trio_tickets": [],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "10",
+          "horse_name": "スマートメモリー",
+          "score": 51.691,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "レッドガレオン",
+          "score": 27.212,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "プラナベルデ",
+          "score": 26.449,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "パロディ",
+          "score": 26.562,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "カレラ",
+          "score": 24.744,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "シングインザレイン",
+          "score": 23.905,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ナムラレーヴ",
+          "score": 24.449,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "テーオーレコード",
+          "score": 23.576,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "スターオブファイア",
+          "score": 22.782,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ブランル",
+          "score": 21.422,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "ドリームハロウ",
+          "score": 20.771,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ベイビーブラザー",
+          "score": 25.776,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ウィナーズクロノ",
+          "score": 22.242,
+          "final_rank": 13
+        }
+      ],
+      "axis": {
+        "horse_no": "10",
+        "horse_name": "スマートメモリー"
+      },
+      "trio_tickets": [],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 3,
+      "race_name": "2歳未勝利",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "5",
+          "horse_name": "メイショウジェード",
+          "score": 58.995,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "マハロハ",
+          "score": 35.062,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "クオーレサンライズ",
+          "score": 33.729,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ヒロノリホープ",
+          "score": 29.663,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "キララハピネス",
+          "score": 29.548,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "シルヴァニクス",
+          "score": 25.028,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ホウオウトリリオン",
+          "score": 25.216,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ドラゴンアンセム",
+          "score": 22.226,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "マーヴィン",
+          "score": 19.38,
+          "final_rank": 9
+        }
+      ],
+      "axis": {
+        "horse_no": "5",
+        "horse_name": "メイショウジェード"
+      },
+      "trio_tickets": [],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 4,
+      "race_name": "メイクデビュー京都",
+      "model_version": "NEW_HORSE_DEDICATED_V2_CONSERVATIVE_PRIOR",
+      "horses": [
+        {
+          "horse_no": "1",
+          "horse_name": "デュランバローズ",
+          "score": 51.7,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "サンライズテンカ",
+          "score": 51.2,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ビスケインブルー",
+          "score": 51.0,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "アルムランラン",
+          "score": 50.9,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "リベロスピリット",
+          "score": 50.8,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "メイワモットキラリ",
+          "score": 50.7,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ブレイヴモナーク",
+          "score": 50.7,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "リープデイリズム",
+          "score": 50.0,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "ショーヴェントス",
+          "score": 50.0,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ジルドール",
+          "score": 50.0,
+          "final_rank": 10
+        }
+      ],
+      "axis": {
+        "horse_no": "1",
+        "horse_name": "デュランバローズ"
+      },
+      "trio_tickets": [
+        "1-2-8",
+        "1-2-7",
+        "1-2-5",
+        "1-2-6",
+        "1-7-8",
+        "2-7-8",
+        "1-5-8",
+        "2-5-8",
+        "2-5-7"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 5,
+      "race_name": "メイクデビュー京都",
+      "model_version": "NEW_HORSE_DEDICATED_V2_CONSERVATIVE_PRIOR",
+      "horses": [
+        {
+          "horse_no": "9",
+          "horse_name": "フィネスブレード",
+          "score": 51.4,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ゼンノレガリア",
+          "score": 51.3,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "サウンドスイープ",
+          "score": 51.1,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "アキュティアマ",
+          "score": 50.7,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "サフランローブ",
+          "score": 50.7,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ベイカーズダズン",
+          "score": 50.6,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "アルデオリエンス",
+          "score": 50.0,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "サチノリボーン",
+          "score": 50.0,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "サトノセブンス",
+          "score": 50.0,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "インスピリット",
+          "score": 50.0,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ブブカ",
+          "score": 50.0,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ウンメイ",
+          "score": 50.0,
+          "final_rank": 12
+        }
+      ],
+      "axis": {
+        "horse_no": "9",
+        "horse_name": "フィネスブレード"
+      },
+      "trio_tickets": [
+        "1-3-9",
+        "3-9-10",
+        "3-6-9",
+        "3-9-12",
+        "1-9-10",
+        "1-3-10",
+        "1-6-9",
+        "1-3-6",
+        "3-6-10"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 6,
+      "race_name": "3歳以上1勝クラス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "12",
+          "horse_name": "エンブルーシャ",
+          "score": 56.553,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ペンテリコン",
+          "score": 51.047,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "スターフュージョン",
+          "score": 50.412,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ヒッグスボソン",
+          "score": 48.897,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "ダノンステート",
+          "score": 50.328,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "ジューンオアシス",
+          "score": 45.365,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ビサーロ",
+          "score": 39.62,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "フレイムスター",
+          "score": 37.571,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "エシェックオロワ",
+          "score": 38.692,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ラフォン",
+          "score": 35.382,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "アンピュルシオン",
+          "score": 35.692,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "サンライズジュピタ",
+          "score": 35.771,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "サヨノパララックス",
+          "score": 25.777,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "クリノミニスター",
+          "score": 24.265,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "オドラニャソンソン",
+          "score": 25.12,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "スズノソレイユ",
+          "score": 22.545,
+          "final_rank": 16
+        }
+      ],
+      "axis": {
+        "horse_no": "12",
+        "horse_name": "エンブルーシャ"
+      },
+      "trio_tickets": [
+        "3-4-12",
+        "12-13-16",
+        "3-11-12",
+        "4-12-15",
+        "11-12-13",
+        "3-12-16",
+        "4-12-13",
+        "4-12-16",
+        "3-12-13"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "9",
+          "horse_name": "ドリームプレミア",
+          "score": 58.383,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "タイセイアビオン",
+          "score": 54.044,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "コワンニシタガウ",
+          "score": 48.481,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ゴールデンテティス",
+          "score": 47.85,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ノブレスラブリエ",
+          "score": 48.414,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "スピルイット",
+          "score": 42.297,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "パーヴォ",
+          "score": 45.217,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "ヴァロンブローサ",
+          "score": 44.065,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ボンドマティーニ",
+          "score": 38.263,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "アスクファイアモア",
+          "score": 35.721,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ページターナー",
+          "score": 37.009,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ローレルオーブ",
+          "score": 39.231,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ペガサスジルシ",
+          "score": 35.189,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "17",
+          "horse_name": "ゴールドアクセス",
+          "score": 34.122,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ウインヘリオドール",
+          "score": 25.5,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "レイアン",
+          "score": 25.659,
+          "final_rank": 16
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "ピエナオルフェ",
+          "score": 23.567,
+          "final_rank": 17
+        },
+        {
+          "horse_no": "18",
+          "horse_name": "ドゥラシェーナ",
+          "score": 24.07,
+          "final_rank": 18
+        }
+      ],
+      "axis": {
+        "horse_no": "9",
+        "horse_name": "ドリームプレミア"
+      },
+      "trio_tickets": [
+        "3-4-9",
+        "1-6-9",
+        "4-9-10",
+        "1-9-16",
+        "1-3-9",
+        "4-6-9",
+        "3-9-10",
+        "1-9-10",
+        "3-6-9"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 8,
+      "race_name": "3歳以上2勝クラス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "2",
+          "horse_name": "スカイストライプス",
+          "score": 57.155,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ブラックレジェンド",
+          "score": 54.656,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "アンティスマ",
+          "score": 51.348,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "サイモンゼスト",
+          "score": 52.186,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ロードソルスティス",
+          "score": 44.757,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "サマーナイト",
+          "score": 44.183,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ヒミノエトワール",
+          "score": 39.939,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "クリノフィガロ",
+          "score": 38.641,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ケンフィールド",
+          "score": 29.82,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ユージュアーナ",
+          "score": 19.902,
+          "final_rank": 10
+        }
+      ],
+      "axis": {
+        "horse_no": "2",
+        "horse_name": "スカイストライプス"
+      },
+      "trio_tickets": [
+        "1-2-4",
+        "2-3-6",
+        "1-2-7",
+        "2-6-10",
+        "2-4-6",
+        "1-2-3",
+        "2-4-7",
+        "2-6-7",
+        "2-3-4"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 9,
+      "race_name": "花見小路特別",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "2",
+          "horse_name": "リカントロポ",
+          "score": 56.717,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "オックスアイ",
+          "score": 53.51,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "タナブイハチターボ",
+          "score": 49.702,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "テイエムスティール",
+          "score": 49.87,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "バルセシート",
+          "score": 50.38,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "モアニ",
+          "score": 46.906,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ランドプリメーロ",
+          "score": 44.613,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "アイガーリー",
+          "score": 42.563,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ネッタイヤライ",
+          "score": 41.489,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "ジャズ",
+          "score": 38.222,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "カウンティフェア",
+          "score": 25.507,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "グラフィティアート",
+          "score": 28.54,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "バガン",
+          "score": 25.117,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ペルフェツィオーネ",
+          "score": 23.576,
+          "final_rank": 14
+        }
+      ],
+      "axis": {
+        "horse_no": "2",
+        "horse_name": "リカントロポ"
+      },
+      "trio_tickets": [
+        "2-10-14",
+        "2-4-13",
+        "2-10-11",
+        "2-7-13",
+        "2-13-14",
+        "2-4-10",
+        "2-11-14",
+        "2-11-13",
+        "2-4-14"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 10,
+      "race_name": "西陣ステークス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "4",
+          "horse_name": "コーラルクラウン",
+          "score": 56.65,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "メイケイレイン",
+          "score": 54.755,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ニューオーリンズ",
+          "score": 54.326,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "フェンダー",
+          "score": 49.602,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "トゥロン",
+          "score": 46.992,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "スニーカースキル",
+          "score": 45.157,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ゲキザル",
+          "score": 42.575,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "イマージョン",
+          "score": 39.035,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ヴィリアリート",
+          "score": 38.078,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ヤマニンシュラ",
+          "score": 36.587,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ジョディーズマロン",
+          "score": 33.643,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "テーオールビー",
+          "score": 27.104,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ギーロカスタル",
+          "score": 24.076,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "ナスノカンゲツ",
+          "score": 23.887,
+          "final_rank": 14
+        }
+      ],
+      "axis": {
+        "horse_no": "4",
+        "horse_name": "コーラルクラウン"
+      },
+      "trio_tickets": [
+        "4-9-12",
+        "1-4-7",
+        "4-10-12",
+        "1-4-5",
+        "1-4-9",
+        "4-7-12",
+        "4-9-10",
+        "1-4-10",
+        "4-7-9"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 11,
+      "race_name": "第43回 マイルチャンピオンシップ",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "8",
+          "horse_name": "ロデオドライブ",
+          "score": 67.4,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ワールズエンド",
+          "score": 65.854,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "エルデナリ",
+          "score": 62.506,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "エンブロイダリー",
+          "score": 60.533,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "ガイアフォース",
+          "score": 59.237,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "17",
+          "horse_name": "アンパドゥ",
+          "score": 58.734,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "スターアニス",
+          "score": 58.046,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ココナッツブラウン",
+          "score": 56.875,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ピコローズ",
+          "score": 51.658,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "エコロブルーム",
+          "score": 51.384,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ドラゴンブースト",
+          "score": 52.416,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "レザベーション",
+          "score": 43.209,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "スズハローム",
+          "score": 47.664,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "アドマイヤズーム",
+          "score": 43.094,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "シックスペンス",
+          "score": 44.138,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "18",
+          "horse_name": "オフトレイル",
+          "score": 42.719,
+          "final_rank": 16
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "ジューンテイク",
+          "score": 34.843,
+          "final_rank": 17
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ウォーターリヒト",
+          "score": 34.469,
+          "final_rank": 18
+        }
+      ],
+      "axis": {
+        "horse_no": "8",
+        "horse_name": "ロデオドライブ"
+      },
+      "trio_tickets": [
+        "1-8-12",
+        "2-8-14",
+        "8-11-12",
+        "1-7-8",
+        "2-8-11",
+        "8-12-14",
+        "2-7-8",
+        "1-8-14",
+        "7-8-12"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "京都",
+      "race_no": 12,
+      "race_name": "醍醐ステークス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "11",
+          "horse_name": "ルージュスプリヤ",
+          "score": 61.076,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ファビュラススター",
+          "score": 51.834,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "メルトユアハート",
+          "score": 48.977,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "マリノトニトゥルス",
+          "score": 47.987,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ジョヴィアン",
+          "score": 48.181,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ディアドコス",
+          "score": 47.238,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "シカゴスティング",
+          "score": 40.693,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "トーセントラム",
+          "score": 40.332,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "クリエープキー",
+          "score": 38.266,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ルーフ",
+          "score": 37.926,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ミロワール",
+          "score": 38.129,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ポエットリー",
+          "score": 31.288,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "トーラスシャイン",
+          "score": 25.281,
+          "final_rank": 13
+        }
+      ],
+      "axis": {
+        "horse_no": "11",
+        "horse_name": "ルージュスプリヤ"
+      },
+      "trio_tickets": [
+        "9-11-13",
+        "8-11-12",
+        "10-11-13",
+        "3-8-11",
+        "8-9-11",
+        "11-12-13",
+        "9-10-11",
+        "8-10-11",
+        "9-11-12"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 1,
+      "race_name": "2歳未勝利",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "4",
+          "horse_name": "ハイトラクション",
+          "score": 48.79,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "サイモンオリエント",
+          "score": 43.795,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ライヴバーボン",
+          "score": 36.135,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "コパノコーリング",
+          "score": 24.871,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "サザンキンレンカ",
+          "score": 27.931,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "アンヴォルトワ",
+          "score": 21.278,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ゲンバウマ",
+          "score": 19.598,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "サザンレガシー",
+          "score": 19.317,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "トロフィアス",
+          "score": 21.995,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "アッパレヤ",
+          "score": 18.937,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "カンタベリーアップ",
+          "score": 21.605,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ウォークレイズ",
+          "score": 19.377,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "セイカタカキヤチク",
+          "score": 25.404,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "サノノベリー",
+          "score": 22.437,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "サンクレセント",
+          "score": 23.302,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "スノーキャップ",
+          "score": 21.745,
+          "final_rank": 16
+        }
+      ],
+      "axis": {
+        "horse_no": "4",
+        "horse_name": "ハイトラクション"
+      },
+      "trio_tickets": [
+        "4-7-14",
+        "4-8-10",
+        "3-4-7",
+        "4-8-16",
+        "3-10-14",
+        "7-10-14",
+        "3-8-14",
+        "3-10-16"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 2,
+      "race_name": "2歳未勝利",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "12",
+          "horse_name": "ペントザリス",
+          "score": 46.843,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "アラータス",
+          "score": 42.75,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "リバーススイープ",
+          "score": 38.493,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "タイセイリメンバー",
+          "score": 32.438,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ニシノカサブランカ",
+          "score": 27.201,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "コスモディプロマ",
+          "score": 24.323,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ニシノエテルノ",
+          "score": 23.9,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ケイツーラリ",
+          "score": 26.185,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "スターホッピング",
+          "score": 23.306,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "マイネルカピラリス",
+          "score": 24.955,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "アーバンアート",
+          "score": 22.886,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "セイウンサイフィー",
+          "score": 24.067,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "ヴェットビルズ",
+          "score": 20.838,
+          "final_rank": 13
+        }
+      ],
+      "axis": {
+        "horse_no": "12",
+        "horse_name": "ペントザリス"
+      },
+      "trio_tickets": [],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 3,
+      "race_name": "2歳未勝利",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "4",
+          "horse_name": "ディーヴァソラーレ",
+          "score": 54.454,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "マニッシュ",
+          "score": 43.757,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "メイチャトラー",
+          "score": 31.743,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "サルーミアモール",
+          "score": 31.337,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "18",
+          "horse_name": "ジョワリヴレ",
+          "score": 30.6,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "スナッチアップ",
+          "score": 31.136,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "ミコアイランド",
+          "score": 29.985,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ニシノナイトライト",
+          "score": 26.888,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ボルトライン",
+          "score": 27.613,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "17",
+          "horse_name": "ジーティーマルク",
+          "score": 27.349,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "ペルラビアンカ",
+          "score": 25.914,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "シーズザチャンス",
+          "score": 27.726,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "イントリー",
+          "score": 27.27,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ペアレンツハート",
+          "score": 25.967,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ニャンコ",
+          "score": 24.836,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "スリーエンジェル",
+          "score": 25.655,
+          "final_rank": 16
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ドナチャージ",
+          "score": 24.849,
+          "final_rank": 17
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "サツキマンボ",
+          "score": 21.865,
+          "final_rank": 18
+        }
+      ],
+      "axis": {
+        "horse_no": "4",
+        "horse_name": "ディーヴァソラーレ"
+      },
+      "trio_tickets": [],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 4,
+      "race_name": "メイクデビュー東京",
+      "model_version": "NEW_HORSE_DEDICATED_V2_CONSERVATIVE_PRIOR",
+      "horses": [
+        {
+          "horse_no": "11",
+          "horse_name": "マイレホープ",
+          "score": 52.2,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "リアライズラピス",
+          "score": 51.0,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "ドンクベーラ",
+          "score": 50.9,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "キングドミニオン",
+          "score": 50.8,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "チークキス",
+          "score": 50.7,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ナイルブルー",
+          "score": 50.6,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "マイネルマートル",
+          "score": 50.4,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "トラベルメモリーズ",
+          "score": 50.0,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "モンテカルロ",
+          "score": 50.0,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "キラーループ",
+          "score": 50.0,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "オペラリリカ",
+          "score": 50.0,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ダノンブレイズ",
+          "score": 50.0,
+          "final_rank": 12
+        }
+      ],
+      "axis": {
+        "horse_no": "11",
+        "horse_name": "マイレホープ"
+      },
+      "trio_tickets": [
+        "9-11-12",
+        "4-11-12",
+        "7-11-12",
+        "3-11-12",
+        "4-9-11",
+        "4-9-12",
+        "7-9-11",
+        "7-9-12",
+        "4-7-12"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 5,
+      "race_name": "メイクデビュー東京",
+      "model_version": "NEW_HORSE_DEDICATED_V2_CONSERVATIVE_PRIOR",
+      "horses": [
+        {
+          "horse_no": "12",
+          "horse_name": "ドナカリーナ",
+          "score": 51.4,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "コスモコジオスコ",
+          "score": 51.1,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ロックリヴァーブ",
+          "score": 50.8,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ヴァストマーレ",
+          "score": 50.7,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ヴォルシエル",
+          "score": 50.7,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ケアホルム",
+          "score": 50.7,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "オンザマーキュリー",
+          "score": 50.6,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ミクニエクリプス",
+          "score": 50.6,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "ルフォーユー",
+          "score": 50.4,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "エコロゼノ",
+          "score": 50.0,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "テキエロ",
+          "score": 50.0,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ラインフライト",
+          "score": 50.0,
+          "final_rank": 12
+        }
+      ],
+      "axis": {
+        "horse_no": "12",
+        "horse_name": "ドナカリーナ"
+      },
+      "trio_tickets": [
+        "6-9-12",
+        "7-9-12",
+        "1-9-12",
+        "3-9-12",
+        "6-7-12",
+        "6-7-9",
+        "1-6-12",
+        "1-6-9",
+        "1-7-9"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 6,
+      "race_name": "メイクデビュー東京",
+      "model_version": "NEW_HORSE_DEDICATED_V2_CONSERVATIVE_PRIOR",
+      "horses": [
+        {
+          "horse_no": "7",
+          "horse_name": "ミラージュスター",
+          "score": 52.7,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ネスガドル",
+          "score": 51.6,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ガヤーズジャーニー",
+          "score": 51.4,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "コスモパリジェンヌ",
+          "score": 51.3,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "ユイノガルベス",
+          "score": 51.0,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ハルマン",
+          "score": 50.9,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ワンダーシズク",
+          "score": 50.5,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ユメユメ",
+          "score": 50.1,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "シャドウアリア",
+          "score": 50.0,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ウィッチズレター",
+          "score": 50.0,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "フェザリー",
+          "score": 50.0,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "トモジャボーテ",
+          "score": 50.0,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "スノーノート",
+          "score": 50.0,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "サクラトップラック",
+          "score": 50.0,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ライクアストーム",
+          "score": 50.0,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ダノンマローネ",
+          "score": 50.0,
+          "final_rank": 16
+        }
+      ],
+      "axis": {
+        "horse_no": "7",
+        "horse_name": "ミラージュスター"
+      },
+      "trio_tickets": [
+        "7-12-13",
+        "7-9-12",
+        "7-12-16",
+        "7-10-12",
+        "7-9-13",
+        "9-12-13",
+        "7-13-16",
+        "12-13-16",
+        "9-12-16"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 7,
+      "race_name": "3歳以上1勝クラス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "9",
+          "horse_name": "モデレートゲイル",
+          "score": 53.972,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "タイセイデクスター",
+          "score": 50.412,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "ヴァルカンテソーロ",
+          "score": 47.756,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "オメガディコン",
+          "score": 42.974,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ゴールデンダガー",
+          "score": 37.918,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "パッセージピーク",
+          "score": 36.957,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "スワーヴゴダイヴァ",
+          "score": 26.163,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "クラリネットソナタ",
+          "score": 34.355,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ヴァレンティーニ",
+          "score": 26.44,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "サトノシャムロック",
+          "score": 23.109,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ピティロディア",
+          "score": 26.881,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "トゥントゥントゥン",
+          "score": 23.41,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ベイビールビオ",
+          "score": 22.922,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "オルブライト",
+          "score": 22.691,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "タイセイエムロード",
+          "score": 22.891,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "カイトヴィント",
+          "score": 21.466,
+          "final_rank": 16
+        }
+      ],
+      "axis": {
+        "horse_no": "9",
+        "horse_name": "モデレートゲイル"
+      },
+      "trio_tickets": [
+        "5-9-15",
+        "4-9-10",
+        "8-9-15",
+        "9-10-14",
+        "5-9-10",
+        "4-9-15",
+        "5-8-9",
+        "8-9-10",
+        "4-5-9"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 8,
+      "race_name": "3歳以上2勝クラス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "3",
+          "horse_name": "ヴンダーバール",
+          "score": 59.513,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ケープウィッカム",
+          "score": 58.85,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ノアヴィヴァーチェ",
+          "score": 51.477,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "グレイルクエスト",
+          "score": 50.227,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "ロードアルディート",
+          "score": 50.711,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "キョウエイスレーヴ",
+          "score": 46.91,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ホウオウフェイント",
+          "score": 45.219,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "キングツェッペリン",
+          "score": 41.099,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "バロンドール",
+          "score": 38.495,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "タイセイジェイド",
+          "score": 39.853,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "シャンハイナイト",
+          "score": 38.695,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ジェシーテソーロ",
+          "score": 38.226,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "リュウノタブーク",
+          "score": 30.021,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "タリエシン",
+          "score": 25.096,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "サンダーロード",
+          "score": 24.218,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "ホウオウトランプ",
+          "score": 23.667,
+          "final_rank": 16
+        }
+      ],
+      "axis": {
+        "horse_no": "3",
+        "horse_name": "ヴンダーバール"
+      },
+      "trio_tickets": [
+        "3-11-12",
+        "2-3-5",
+        "3-7-12",
+        "3-5-13",
+        "2-7-11",
+        "2-11-12",
+        "5-7-11",
+        "2-7-13"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 9,
+      "race_name": "赤松賞",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "4",
+          "horse_name": "シルクドマルス",
+          "score": 53.961,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "リリカルフレア",
+          "score": 52.099,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "セイウンシャラ",
+          "score": 46.254,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ラプチュラス",
+          "score": 44.7,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ピコベリー",
+          "score": 45.166,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "セプタードアイル",
+          "score": 45.222,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "カナデルペガサス",
+          "score": 43.369,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "モンサンラパージュ",
+          "score": 43.373,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "サトノスプレマシー",
+          "score": 43.841,
+          "final_rank": 9
+        }
+      ],
+      "axis": {
+        "horse_no": "4",
+        "horse_name": "シルクドマルス"
+      },
+      "trio_tickets": [
+        "2-4-8",
+        "4-6-9",
+        "2-4-5",
+        "1-4-9",
+        "5-6-8",
+        "2-6-8",
+        "5-8-9",
+        "1-5-6"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 10,
+      "race_name": "秋色ステークス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "3",
+          "horse_name": "ビップディラン",
+          "score": 68.535,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "ウフドゥウフ",
+          "score": 65.711,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ホウオウシェリー",
+          "score": 64.112,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "ジッピーチューン",
+          "score": 59.25,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "デンプシー",
+          "score": 52.674,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "ガリレア",
+          "score": 46.701,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "トラペジスト",
+          "score": 40.18,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "アルトゥーム",
+          "score": 33.508,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ボーモンド",
+          "score": 36.107,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "フォルテム",
+          "score": 27.386,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "コスモサガルマータ",
+          "score": 27.26,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "レッドアトレーヴ",
+          "score": 32.856,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "マルチャン",
+          "score": 24.985,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "プッシュオン",
+          "score": 22.238,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "テウメッサ",
+          "score": 21.982,
+          "final_rank": 15
+        }
+      ],
+      "axis": {
+        "horse_no": "3",
+        "horse_name": "ビップディラン"
+      },
+      "trio_tickets": [
+        "3-5-6",
+        "3-14-15",
+        "3-4-6",
+        "1-3-15",
+        "3-5-15",
+        "3-6-14",
+        "3-4-5",
+        "3-4-15",
+        "3-5-14"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 11,
+      "race_name": "霜月ステークス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "6",
+          "horse_name": "サトノボヤージュ",
+          "score": 64.997,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "スマートジュリアス",
+          "score": 59.646,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "メリディアンスター",
+          "score": 60.214,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "スナッピードレッサ",
+          "score": 55.483,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "アスクアイルビゼア",
+          "score": 55.827,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "ユキマル",
+          "score": 54.794,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "ペイシャケイプ",
+          "score": 50.313,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "キタノズエッジ",
+          "score": 52.559,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "マーゴットゲイン",
+          "score": 51.068,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ヤマニンアストロン",
+          "score": 51.132,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ブレーザー",
+          "score": 47.842,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "ワイワイレジェンド",
+          "score": 47.186,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "ヴィヴァン",
+          "score": 34.97,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "サトノカルナバル",
+          "score": 29.705,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "マピュース",
+          "score": 27.257,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ブラウンラチェット",
+          "score": 24.843,
+          "final_rank": 16
+        }
+      ],
+      "axis": {
+        "horse_no": "6",
+        "horse_name": "サトノボヤージュ"
+      },
+      "trio_tickets": [
+        "1-2-6",
+        "5-6-11",
+        "2-6-8",
+        "1-6-14",
+        "5-6-8",
+        "2-6-11",
+        "1-5-6",
+        "1-6-11",
+        "2-5-6"
+      ],
+      "simulation_runs": 100000
+    },
+    {
+      "date": "2026-11-22",
+      "track": "東京",
+      "race_no": 12,
+      "race_name": "3歳以上2勝クラス",
+      "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
+      "horses": [
+        {
+          "horse_no": "9",
+          "horse_name": "スペルーチェ",
+          "score": 59.54,
+          "final_rank": 1
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "イヌボウノウタゴエ",
+          "score": 54.897,
+          "final_rank": 2
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "デイトナチャンプ",
+          "score": 56.181,
+          "final_rank": 3
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "ライネリーベ",
+          "score": 55.489,
+          "final_rank": 4
+        },
+        {
+          "horse_no": "15",
+          "horse_name": "ロジャリーマイン",
+          "score": 49.519,
+          "final_rank": 5
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "メローネ",
+          "score": 48.959,
+          "final_rank": 6
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "ラパンチュール",
+          "score": 45.496,
+          "final_rank": 7
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "メランジェ",
+          "score": 43.8,
+          "final_rank": 8
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "デアリングエア",
+          "score": 41.241,
+          "final_rank": 9
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "ミクストベリーズ",
+          "score": 41.031,
+          "final_rank": 10
+        },
+        {
+          "horse_no": "16",
+          "horse_name": "ショウナンカリス",
+          "score": 40.417,
+          "final_rank": 11
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "アドマイヤジェイ",
+          "score": 32.165,
+          "final_rank": 12
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "パーティーガール",
+          "score": 25.514,
+          "final_rank": 13
+        },
+        {
+          "horse_no": "1",
+          "horse_name": "ヒズマスターピース",
+          "score": 26.986,
+          "final_rank": 14
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "エールトゥヘヴン",
+          "score": 24.439,
+          "final_rank": 15
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "ストロングボンド",
+          "score": 25.077,
+          "final_rank": 16
+        }
+      ],
+      "axis": {
+        "horse_no": "9",
+        "horse_name": "スペルーチェ"
+      },
+      "trio_tickets": [
+        "7-9-12",
+        "4-9-15",
+        "7-9-10",
+        "4-5-9",
+        "4-9-12",
+        "7-9-15",
+        "9-10-12",
+        "4-9-10",
+        "9-12-15"
+      ],
+      "simulation_runs": 100000
+    }
+  ]
+}
