@@ -12,7 +12,7 @@
   "simulation_runs_per_race": 100000,
   "simulation_rank_stability_mean": 0.923865,
   "champion_archive": "docs/data/live_predictions_champion_2026-11-22.json",
-  "generated_at": "2026-11-22T13:12:58.636177+09:00",
+  "generated_at": "2026-11-22T13:21:01.329433+09:00",
   "odds_popularity_used": false,
   "results_used": false,
   "pre_race_feature_cutoff": "2026-11-22",
@@ -866,6 +866,21 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "1": 1.0,
+          "8": 1.0,
+          "6": 1.0,
+          "2": 1.0,
+          "7": 1.0,
+          "10": 1.0,
+          "11": 1.0,
+          "5": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "12": 1.0,
+          "9": 1.0
+        },
         "runs": 100000,
         "seed": 541901507,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -1341,6 +1356,21 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "1": 1.0,
+            "8": 1.0,
+            "6": 1.0,
+            "2": 1.0,
+            "7": 1.0,
+            "10": 1.0,
+            "11": 1.0,
+            "5": 1.0,
+            "3": 1.0,
+            "4": 1.0,
+            "12": 1.0,
+            "9": 1.0
+          },
           "runs": 100000,
           "seed": 541901507,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -2669,6 +2699,22 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "10": 1.0,
+          "13": 1.0,
+          "9": 1.0,
+          "6": 1.0,
+          "2": 1.0,
+          "7": 1.0,
+          "1": 1.0,
+          "4": 1.0,
+          "3": 1.0,
+          "8": 1.0,
+          "5": 1.0,
+          "12": 1.0,
+          "11": 1.0
+        },
         "runs": 100000,
         "seed": 1495343750,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -3169,6 +3215,22 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "10": 1.0,
+            "13": 1.0,
+            "9": 1.0,
+            "6": 1.0,
+            "2": 1.0,
+            "7": 1.0,
+            "1": 1.0,
+            "4": 1.0,
+            "3": 1.0,
+            "8": 1.0,
+            "5": 1.0,
+            "12": 1.0,
+            "11": 1.0
+          },
           "runs": 100000,
           "seed": 1495343750,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -4249,6 +4311,18 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "5": 1.0,
+          "6": 1.0,
+          "4": 1.0,
+          "7": 1.0,
+          "8": 1.0,
+          "3": 1.0,
+          "1": 1.0,
+          "2": 1.0,
+          "9": 1.0
+        },
         "runs": 100000,
         "seed": 3998776087,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -4697,6 +4771,18 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "5": 1.0,
+            "6": 1.0,
+            "4": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "3": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "9": 1.0
+          },
           "runs": 100000,
           "seed": 3998776087,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -5959,6 +6045,19 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "1": 1.0,
+          "2": 1.0,
+          "8": 1.0,
+          "7": 1.0,
+          "5": 1.0,
+          "3": 1.0,
+          "6": 1.0,
+          "4": 1.0,
+          "9": 1.0,
+          "10": 1.0
+        },
         "runs": 100000,
         "seed": 1258208772,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -6364,6 +6463,19 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "1": 1.0,
+            "2": 1.0,
+            "8": 1.0,
+            "7": 1.0,
+            "5": 1.0,
+            "3": 1.0,
+            "6": 1.0,
+            "4": 1.0,
+            "9": 1.0,
+            "10": 1.0
+          },
           "runs": 100000,
           "seed": 1258208772,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -7623,6 +7735,21 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "9": 1.0,
+          "3": 1.0,
+          "1": 1.0,
+          "6": 1.0,
+          "10": 1.0,
+          "12": 1.0,
+          "2": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "7": 1.0,
+          "8": 1.0,
+          "11": 1.0
+        },
         "runs": 100000,
         "seed": 4011585785,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -8062,6 +8189,21 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "9": 1.0,
+            "3": 1.0,
+            "1": 1.0,
+            "6": 1.0,
+            "10": 1.0,
+            "12": 1.0,
+            "2": 1.0,
+            "4": 1.0,
+            "5": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "11": 1.0
+          },
           "runs": 100000,
           "seed": 4011585785,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -9400,6 +9542,25 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "12": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "16": 1.0,
+          "13": 1.0,
+          "11": 1.0,
+          "15": 1.0,
+          "5": 1.0,
+          "8": 1.0,
+          "14": 1.0,
+          "9": 1.0,
+          "7": 1.0,
+          "10": 1.0,
+          "1": 1.0,
+          "6": 1.0,
+          "2": 1.0
+        },
         "runs": 100000,
         "seed": 1522511959,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -10005,6 +10166,25 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "12": 1.0,
+            "3": 1.0,
+            "4": 1.0,
+            "16": 1.0,
+            "13": 1.0,
+            "11": 1.0,
+            "15": 1.0,
+            "5": 1.0,
+            "8": 1.0,
+            "14": 1.0,
+            "9": 1.0,
+            "7": 1.0,
+            "10": 1.0,
+            "1": 1.0,
+            "6": 1.0,
+            "2": 1.0
+          },
           "runs": 100000,
           "seed": 1522511959,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -11749,6 +11929,27 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "9": 1.0,
+          "4": 1.0,
+          "1": 1.0,
+          "6": 1.0,
+          "3": 1.0,
+          "10": 1.0,
+          "14": 1.0,
+          "16": 1.0,
+          "2": 1.0,
+          "12": 1.0,
+          "5": 1.0,
+          "15": 1.0,
+          "13": 1.0,
+          "17": 1.0,
+          "7": 1.0,
+          "8": 1.0,
+          "18": 1.0,
+          "11": 1.0
+        },
         "runs": 100000,
         "seed": 2162221113,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -12383,6 +12584,27 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "9": 1.0,
+            "4": 1.0,
+            "1": 1.0,
+            "6": 1.0,
+            "3": 1.0,
+            "10": 1.0,
+            "14": 1.0,
+            "16": 1.0,
+            "2": 1.0,
+            "12": 1.0,
+            "5": 1.0,
+            "15": 1.0,
+            "13": 1.0,
+            "17": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "18": 1.0,
+            "11": 1.0
+          },
           "runs": 100000,
           "seed": 2162221113,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -13609,6 +13831,19 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "2": 1.0,
+          "1": 1.0,
+          "4": 1.0,
+          "6": 1.0,
+          "7": 1.0,
+          "3": 1.0,
+          "10": 1.0,
+          "9": 1.0,
+          "8": 1.0,
+          "5": 1.0
+        },
         "runs": 100000,
         "seed": 1921317058,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -14110,6 +14345,19 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "2": 1.0,
+            "1": 1.0,
+            "4": 1.0,
+            "6": 1.0,
+            "7": 1.0,
+            "3": 1.0,
+            "10": 1.0,
+            "9": 1.0,
+            "8": 1.0,
+            "5": 1.0
+          },
           "runs": 100000,
           "seed": 1921317058,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -15472,6 +15720,23 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "2": 1.0,
+          "10": 1.0,
+          "11": 1.0,
+          "14": 1.0,
+          "13": 1.0,
+          "7": 1.0,
+          "4": 1.0,
+          "12": 1.0,
+          "3": 1.0,
+          "9": 1.0,
+          "6": 1.0,
+          "1": 1.0,
+          "5": 1.0,
+          "8": 1.0
+        },
         "runs": 100000,
         "seed": 914488197,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -16042,6 +16307,23 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "2": 1.0,
+            "10": 1.0,
+            "11": 1.0,
+            "14": 1.0,
+            "13": 1.0,
+            "7": 1.0,
+            "4": 1.0,
+            "12": 1.0,
+            "3": 1.0,
+            "9": 1.0,
+            "6": 1.0,
+            "1": 1.0,
+            "5": 1.0,
+            "8": 1.0
+          },
           "runs": 100000,
           "seed": 914488197,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -17472,6 +17754,23 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "4": 1.0,
+          "12": 1.0,
+          "1": 1.0,
+          "9": 1.0,
+          "5": 1.0,
+          "10": 1.0,
+          "2": 1.0,
+          "6": 1.0,
+          "7": 1.0,
+          "13": 1.0,
+          "8": 1.0,
+          "11": 1.0,
+          "3": 1.0,
+          "14": 1.0
+        },
         "runs": 100000,
         "seed": 1297532990,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -18041,6 +18340,23 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "4": 1.0,
+            "12": 1.0,
+            "1": 1.0,
+            "9": 1.0,
+            "5": 1.0,
+            "10": 1.0,
+            "2": 1.0,
+            "6": 1.0,
+            "7": 1.0,
+            "13": 1.0,
+            "8": 1.0,
+            "11": 1.0,
+            "3": 1.0,
+            "14": 1.0
+          },
           "runs": 100000,
           "seed": 1297532990,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -19743,6 +20059,27 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "8": 1.0,
+          "12": 1.0,
+          "1": 1.0,
+          "2": 1.0,
+          "11": 1.0,
+          "17": 1.0,
+          "14": 1.0,
+          "7": 1.0,
+          "3": 1.0,
+          "6": 1.0,
+          "15": 1.0,
+          "16": 1.0,
+          "4": 1.0,
+          "13": 1.0,
+          "5": 1.0,
+          "18": 1.0,
+          "9": 1.0,
+          "10": 1.0
+        },
         "runs": 100000,
         "seed": 1160344282,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -20387,6 +20724,27 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "8": 1.0,
+            "12": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "11": 1.0,
+            "17": 1.0,
+            "14": 1.0,
+            "7": 1.0,
+            "3": 1.0,
+            "6": 1.0,
+            "15": 1.0,
+            "16": 1.0,
+            "4": 1.0,
+            "13": 1.0,
+            "5": 1.0,
+            "18": 1.0,
+            "9": 1.0,
+            "10": 1.0
+          },
           "runs": 100000,
           "seed": 1160344282,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -21817,6 +22175,22 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "11": 1.0,
+          "13": 1.0,
+          "8": 1.0,
+          "12": 1.0,
+          "9": 1.0,
+          "10": 1.0,
+          "3": 1.0,
+          "2": 1.0,
+          "5": 1.0,
+          "4": 1.0,
+          "6": 1.0,
+          "7": 1.0,
+          "1": 1.0
+        },
         "runs": 100000,
         "seed": 962433425,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -22366,6 +22740,22 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "11": 1.0,
+            "13": 1.0,
+            "8": 1.0,
+            "12": 1.0,
+            "9": 1.0,
+            "10": 1.0,
+            "3": 1.0,
+            "2": 1.0,
+            "5": 1.0,
+            "4": 1.0,
+            "6": 1.0,
+            "7": 1.0,
+            "1": 1.0
+          },
           "runs": 100000,
           "seed": 962433425,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -23923,6 +24313,25 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "4": 1.0,
+          "7": 1.0,
+          "8": 1.0,
+          "10": 1.0,
+          "6": 1.0,
+          "14": 1.0,
+          "9": 1.0,
+          "5": 1.0,
+          "2": 1.0,
+          "11": 1.0,
+          "1": 1.0,
+          "16": 1.0,
+          "13": 1.0,
+          "15": 1.0,
+          "3": 1.0,
+          "12": 1.0
+        },
         "runs": 100000,
         "seed": 1414862422,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -24509,6 +24918,25 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "4": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "10": 1.0,
+            "6": 1.0,
+            "14": 1.0,
+            "9": 1.0,
+            "5": 1.0,
+            "2": 1.0,
+            "11": 1.0,
+            "1": 1.0,
+            "16": 1.0,
+            "13": 1.0,
+            "15": 1.0,
+            "3": 1.0,
+            "12": 1.0
+          },
           "runs": 100000,
           "seed": 1414862422,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -25913,6 +26341,22 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "12": 1.0,
+          "13": 1.0,
+          "6": 1.0,
+          "3": 1.0,
+          "10": 1.0,
+          "7": 1.0,
+          "11": 1.0,
+          "1": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "2": 1.0,
+          "8": 1.0,
+          "9": 1.0
+        },
         "runs": 100000,
         "seed": 1768259114,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -26442,6 +26886,22 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "12": 1.0,
+            "13": 1.0,
+            "6": 1.0,
+            "3": 1.0,
+            "10": 1.0,
+            "7": 1.0,
+            "11": 1.0,
+            "1": 1.0,
+            "4": 1.0,
+            "5": 1.0,
+            "2": 1.0,
+            "8": 1.0,
+            "9": 1.0
+          },
           "runs": 100000,
           "seed": 1768259114,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -28127,6 +28587,27 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "4": 1.0,
+          "13": 1.0,
+          "5": 1.0,
+          "10": 1.0,
+          "2": 1.0,
+          "18": 1.0,
+          "9": 1.0,
+          "6": 1.0,
+          "15": 1.0,
+          "17": 1.0,
+          "11": 1.0,
+          "1": 1.0,
+          "8": 1.0,
+          "16": 1.0,
+          "7": 1.0,
+          "12": 1.0,
+          "3": 1.0,
+          "14": 1.0
+        },
         "runs": 100000,
         "seed": 4247353130,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -28744,6 +29225,27 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "4": 1.0,
+            "13": 1.0,
+            "5": 1.0,
+            "10": 1.0,
+            "2": 1.0,
+            "18": 1.0,
+            "9": 1.0,
+            "6": 1.0,
+            "15": 1.0,
+            "17": 1.0,
+            "11": 1.0,
+            "1": 1.0,
+            "8": 1.0,
+            "16": 1.0,
+            "7": 1.0,
+            "12": 1.0,
+            "3": 1.0,
+            "14": 1.0
+          },
           "runs": 100000,
           "seed": 4247353130,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -30301,6 +30803,21 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "11": 1.0,
+          "12": 1.0,
+          "9": 1.0,
+          "4": 1.0,
+          "7": 1.0,
+          "3": 1.0,
+          "2": 1.0,
+          "1": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "8": 1.0,
+          "10": 1.0
+        },
         "runs": 100000,
         "seed": 2893551287,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -30740,6 +31257,21 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "11": 1.0,
+            "12": 1.0,
+            "9": 1.0,
+            "4": 1.0,
+            "7": 1.0,
+            "3": 1.0,
+            "2": 1.0,
+            "1": 1.0,
+            "5": 1.0,
+            "6": 1.0,
+            "8": 1.0,
+            "10": 1.0
+          },
           "runs": 100000,
           "seed": 2893551287,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -31993,6 +32525,21 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "12": 1.0,
+          "9": 1.0,
+          "6": 1.0,
+          "1": 1.0,
+          "3": 1.0,
+          "7": 1.0,
+          "5": 1.0,
+          "8": 1.0,
+          "11": 1.0,
+          "2": 1.0,
+          "4": 1.0,
+          "10": 1.0
+        },
         "runs": 100000,
         "seed": 804273960,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -32432,6 +32979,21 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "12": 1.0,
+            "9": 1.0,
+            "6": 1.0,
+            "1": 1.0,
+            "3": 1.0,
+            "7": 1.0,
+            "5": 1.0,
+            "8": 1.0,
+            "11": 1.0,
+            "2": 1.0,
+            "4": 1.0,
+            "10": 1.0
+          },
           "runs": 100000,
           "seed": 804273960,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -34021,6 +34583,25 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "7": 1.0,
+          "12": 1.0,
+          "13": 1.0,
+          "9": 1.0,
+          "16": 1.0,
+          "10": 1.0,
+          "8": 1.0,
+          "6": 1.0,
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "11": 1.0,
+          "14": 1.0,
+          "15": 1.0
+        },
         "runs": 100000,
         "seed": 974572384,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -34528,6 +35109,25 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "7": 1.0,
+            "12": 1.0,
+            "13": 1.0,
+            "9": 1.0,
+            "16": 1.0,
+            "10": 1.0,
+            "8": 1.0,
+            "6": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "3": 1.0,
+            "4": 1.0,
+            "5": 1.0,
+            "11": 1.0,
+            "14": 1.0,
+            "15": 1.0
+          },
           "runs": 100000,
           "seed": 974572384,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -35934,6 +36534,25 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "9": 1.0,
+          "15": 1.0,
+          "10": 1.0,
+          "5": 1.0,
+          "8": 1.0,
+          "4": 1.0,
+          "1": 1.0,
+          "3": 1.0,
+          "7": 1.0,
+          "14": 1.0,
+          "6": 1.0,
+          "12": 1.0,
+          "13": 1.0,
+          "16": 1.0,
+          "2": 1.0,
+          "11": 1.0
+        },
         "runs": 100000,
         "seed": 1871264096,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -36531,6 +37150,25 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "9": 1.0,
+            "15": 1.0,
+            "10": 1.0,
+            "5": 1.0,
+            "8": 1.0,
+            "4": 1.0,
+            "1": 1.0,
+            "3": 1.0,
+            "7": 1.0,
+            "14": 1.0,
+            "6": 1.0,
+            "12": 1.0,
+            "13": 1.0,
+            "16": 1.0,
+            "2": 1.0,
+            "11": 1.0
+          },
           "runs": 100000,
           "seed": 1871264096,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -38131,6 +38769,25 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "3": 1.0,
+          "12": 1.0,
+          "5": 1.0,
+          "2": 1.0,
+          "11": 1.0,
+          "13": 1.0,
+          "7": 1.0,
+          "14": 1.0,
+          "4": 1.0,
+          "10": 1.0,
+          "1": 1.0,
+          "6": 1.0,
+          "8": 1.0,
+          "9": 1.0,
+          "15": 1.0,
+          "16": 1.0
+        },
         "runs": 100000,
         "seed": 2722070577,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -38734,6 +39391,25 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "3": 1.0,
+            "12": 1.0,
+            "5": 1.0,
+            "2": 1.0,
+            "11": 1.0,
+            "13": 1.0,
+            "7": 1.0,
+            "14": 1.0,
+            "4": 1.0,
+            "10": 1.0,
+            "1": 1.0,
+            "6": 1.0,
+            "8": 1.0,
+            "9": 1.0,
+            "15": 1.0,
+            "16": 1.0
+          },
           "runs": 100000,
           "seed": 2722070577,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -39859,6 +40535,18 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "4": 1.0,
+          "2": 1.0,
+          "9": 1.0,
+          "1": 1.0,
+          "6": 1.0,
+          "8": 1.0,
+          "5": 1.0,
+          "7": 1.0,
+          "3": 1.0
+        },
         "runs": 100000,
         "seed": 517553943,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -40338,6 +41026,18 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "4": 1.0,
+            "2": 1.0,
+            "9": 1.0,
+            "1": 1.0,
+            "6": 1.0,
+            "8": 1.0,
+            "5": 1.0,
+            "7": 1.0,
+            "3": 1.0
+          },
           "runs": 100000,
           "seed": 517553943,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -41751,6 +42451,24 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "3": 1.0,
+          "6": 1.0,
+          "15": 1.0,
+          "5": 1.0,
+          "14": 1.0,
+          "4": 1.0,
+          "1": 1.0,
+          "7": 1.0,
+          "2": 1.0,
+          "10": 1.0,
+          "8": 1.0,
+          "12": 1.0,
+          "9": 1.0,
+          "11": 1.0,
+          "13": 1.0
+        },
         "runs": 100000,
         "seed": 2690405973,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -42333,6 +43051,24 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "3": 1.0,
+            "6": 1.0,
+            "15": 1.0,
+            "5": 1.0,
+            "14": 1.0,
+            "4": 1.0,
+            "1": 1.0,
+            "7": 1.0,
+            "2": 1.0,
+            "10": 1.0,
+            "8": 1.0,
+            "12": 1.0,
+            "9": 1.0,
+            "11": 1.0,
+            "13": 1.0
+          },
           "runs": 100000,
           "seed": 2690405973,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -43916,6 +44652,25 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "6": 1.0,
+          "1": 1.0,
+          "2": 1.0,
+          "11": 1.0,
+          "5": 1.0,
+          "14": 1.0,
+          "12": 1.0,
+          "8": 1.0,
+          "9": 1.0,
+          "7": 1.0,
+          "13": 1.0,
+          "3": 1.0,
+          "16": 1.0,
+          "4": 1.0,
+          "10": 1.0,
+          "15": 1.0
+        },
         "runs": 100000,
         "seed": 1278765760,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -44526,6 +45281,25 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "6": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "11": 1.0,
+            "5": 1.0,
+            "14": 1.0,
+            "12": 1.0,
+            "8": 1.0,
+            "9": 1.0,
+            "7": 1.0,
+            "13": 1.0,
+            "3": 1.0,
+            "16": 1.0,
+            "4": 1.0,
+            "10": 1.0,
+            "15": 1.0
+          },
           "runs": 100000,
           "seed": 1278765760,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -46126,6 +46900,25 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "9": 1.0,
+          "4": 1.0,
+          "12": 1.0,
+          "7": 1.0,
+          "15": 1.0,
+          "5": 1.0,
+          "13": 1.0,
+          "10": 1.0,
+          "2": 1.0,
+          "8": 1.0,
+          "16": 1.0,
+          "11": 1.0,
+          "1": 1.0,
+          "6": 1.0,
+          "14": 1.0,
+          "3": 1.0
+        },
         "runs": 100000,
         "seed": 2429405479,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -46730,6 +47523,25 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "9": 1.0,
+            "4": 1.0,
+            "12": 1.0,
+            "7": 1.0,
+            "15": 1.0,
+            "5": 1.0,
+            "13": 1.0,
+            "10": 1.0,
+            "2": 1.0,
+            "8": 1.0,
+            "16": 1.0,
+            "11": 1.0,
+            "1": 1.0,
+            "6": 1.0,
+            "14": 1.0,
+            "3": 1.0
+          },
           "runs": 100000,
           "seed": 2429405479,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -48194,6 +49006,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 2014766818,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -48729,6 +49545,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 2014766818,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -50363,6 +51183,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 108645707,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -50951,6 +51775,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 108645707,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -52227,6 +53055,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 735171136,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -52718,6 +53550,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 735171136,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -54164,6 +55000,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 3892676714,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -54709,6 +55549,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 3892676714,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -56376,6 +57220,10 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 660333557,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -56661,6 +57509,10 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 660333557,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -58126,6 +58978,10 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 1001498419,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -58411,6 +59267,10 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 1001498419,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -59783,6 +60643,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 875272880,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -60362,6 +61226,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 875272880,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -61962,6 +62830,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 3465331080,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -62547,6 +63419,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 3465331080,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -63875,6 +64751,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 4090565084,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -64386,6 +65266,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 4090565084,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -65918,6 +66802,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 2988364170,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -66504,6 +67392,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 2988364170,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -67832,6 +68724,21 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "1": 1.0,
+          "12": 1.0,
+          "5": 1.0,
+          "8": 1.0,
+          "6": 1.0,
+          "10": 1.0,
+          "9": 1.0,
+          "11": 1.0,
+          "4": 1.0,
+          "7": 1.0,
+          "2": 1.0,
+          "3": 1.0
+        },
         "runs": 100000,
         "seed": 184601463,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -68373,6 +69280,21 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "1": 1.0,
+            "12": 1.0,
+            "5": 1.0,
+            "8": 1.0,
+            "6": 1.0,
+            "10": 1.0,
+            "9": 1.0,
+            "11": 1.0,
+            "4": 1.0,
+            "7": 1.0,
+            "2": 1.0,
+            "3": 1.0
+          },
           "runs": 100000,
           "seed": 184601463,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -70041,6 +70963,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 3962845248,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -70658,6 +71584,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 3962845248,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -72292,6 +73222,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 2084240883,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -72867,6 +73801,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 2084240883,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -74406,6 +75344,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 2448527698,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -74964,6 +75906,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 2448527698,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -76479,6 +77425,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 3771311718,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -77037,6 +77987,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 3771311718,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -78484,6 +79438,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 482320358,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -79019,6 +79977,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 482320358,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -80849,6 +81811,10 @@
       "unrated_dark_horses": [],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 4042318754,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -81168,6 +82134,10 @@
         "new_horse_detection_reason": "RACE_NAME",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 4042318754,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -82574,6 +83544,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 3806528410,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -83148,6 +84122,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 3806528410,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -84755,6 +85733,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 3899275833,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -85333,6 +86315,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 3899275833,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -86941,6 +87927,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 1810642910,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -87516,6 +88506,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 1810642910,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -89124,6 +90118,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 645096462,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -89707,6 +90705,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 645096462,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -91308,6 +92310,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 941653634,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -91889,6 +92895,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 941653634,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -93421,6 +94431,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 3530899897,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -93986,6 +95000,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 3530899897,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -95569,6 +96587,10 @@
       ],
       "simulation_finalizer": {
         "model_version": "MONTE_CARLO_FINALIZER_V1",
+        "experiment_enabled": false,
+        "evidence_reliability": {
+          "": 1.0
+        },
         "runs": 100000,
         "seed": 1815923821,
         "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -96147,6 +97169,10 @@
         "implementation_note": "V1.3.1 guarded role split: second-line finish-strength partners are separated from third-line intrusion candidates; every displayed third-line horse must appear in a ticket, MID hedges are kept axis/axis-free balanced, and accidental hidden fixed partners are prohibited. Odds and popularity are not used.",
         "simulation_finalizer": {
           "model_version": "MONTE_CARLO_FINALIZER_V1",
+          "experiment_enabled": false,
+          "evidence_reliability": {
+            "": 1.0
+          },
           "runs": 100000,
           "seed": 1815923821,
           "market_isolation": "NO_ODDS_OR_POPULARITY_OR_RESULTS_USED",
@@ -96645,5 +97671,5 @@
     }
   ],
   "pending": [],
-  "prediction_hash_sha256": "5b32118cbaa4dff01fd28eb7566dfef1fa8cc7bbfb10bcb08f94f00b9d983641"
+  "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a"
 }
