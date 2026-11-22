@@ -229,9 +229,31 @@
       "If engine output is missing, stale, invalid, or not applicable to the race type, state MODEL_OUTPUT_UNAVAILABLE and provide no prediction or ticket.",
       "Never label a provisional manual assessment as an engine prediction.",
       "Keep odds and popularity out of pure ability evaluation; allow market/EV judgement only after a sealed engine prediction.",
-      "Do not silently fallback to another model, including for obstacle, maiden or other race types; require verified applicable dedicated model output."
+      "Do not silently fallback to another model, including for obstacle, maiden or other race types; require verified applicable dedicated model output.",
+      "Before publishing any prediction or ticket, retrieve and verify the persisted top3_rate for EVERY declared runner from the canonical pre-race Monte Carlo simulation; never infer it from ability score or final rank.",
+      "Validate each runner top3_rate is numeric in [0,1], that all runner numbers match the official pre-race card, and that simulation provenance and pre-race seal are present; otherwise fail closed with MODEL_OUTPUT_UNAVAILABLE and no rankings, axis, purchase decision or tickets.",
+      "The full-horse top3_rate verification is a mandatory blocking publication gate for ALL assistant prediction surfaces and all JRA races; no partial prediction output before this check succeeds."
     ],
     "scope": "ALL_RACES_AND_ALL_ASSISTANT_PREDICTION_SURFACES",
-    "override": "Explicit user instruction required to change this rule; no automatic fallback."
+    "override": "Explicit user instruction required to change this rule; no automatic fallback.",
+    "required_publication_gate": {
+      "name": "ALL_RUNNERS_TOP3_RATE_VERIFIED_BEFORE_ANY_PREDICTION",
+      "scope": "ALL_JRA_RACES_AND_ASSISTANT_SURFACES",
+      "required_fields": [
+        "horse_no",
+        "score",
+        "final_rank",
+        "simulation.top3_rate"
+      ],
+      "validation": [
+        "exact_official_runner_set",
+        "numeric_top3_rate_0_to_1",
+        "canonical_simulation_provenance",
+        "pre_race_seal_verified",
+        "no_odds_or_results_leakage"
+      ],
+      "on_failure": "MODEL_OUTPUT_UNAVAILABLE_NO_PREDICTION_OR_TICKETS",
+      "no_fallback": true
+    }
   }
 }
