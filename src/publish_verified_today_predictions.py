@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Publish compact, verifiable, pre-race-only predictions for every current-JST race."""
 import json
+import os
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -77,11 +79,18 @@ def main():
     missing=set(expected)-set(published)
     if missing:raise RuntimeError(f"unpublished today races: {sorted(missing)}")
     if not published:raise RuntimeError(f"no races sealed for today {today}")
-    payload={"date":today,"status":"VERIFIED","race_count":len(published),
+    payload={"schema_version":2,"required_probability_fields_verified":True,"date":today,"status":"VERIFIED","race_count":len(published),
              "source_prediction_hash":seal.get("prediction_hash_sha256"),
              "source_generated_at":seal.get("generated_at"),
              "races":[published[k] for k in sorted(published)]}
-    OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    # Publish only a complete, self-describing snapshot; never expose a partial write.
+    OUT.parent.mkdir(parents=True,exist_ok=True)
+    with tempfile.NamedTemporaryFile(mode="w",encoding="utf-8",dir=OUT.parent,prefix=".live_predictions_verified_",suffix=".tmp",delete=False) as temp:
+        temp.write(json.dumps(payload,ensure_ascii=False,indent=2)+"\n")
+        temp.flush()
+        os.fsync(temp.fileno())
+        temporary_path=Path(temp.name)
+    os.replace(temporary_path,OUT)
     print(f"TODAY_ALL_RACES_VERIFIED date={today} count={len(published)} path={OUT}")
 
 if __name__=="__main__":
