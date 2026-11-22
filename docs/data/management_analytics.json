@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-22T13:21:37+09:00",
+  "updated_at": "2026-11-22T14:11:53+09:00",
   "purpose": "管理専用。公開画面には出さない詳細KPI・回収率・条件別分析・Challenger候補。",
   "governance": {
     "production_auto_mutation": false,
@@ -18,7 +18,7 @@
   },
   "summary": {
     "model_version": "ORAL_INTEGRATED_V1_3_1_ROLE_SPLIT_GUARDED__TOP3_SURVIVAL_R2_CHALLENGER",
-    "snapshot_time": "2026-11-22T13:21:37+09:00",
+    "snapshot_time": "2026-11-22T14:11:53+09:00",
     "actual_today_jst": "2026-11-22",
     "display_date": "2026-11-22",
     "total_races": 24,
@@ -1809,7 +1809,7 @@
       },
       {
         "value": "CAUTION",
-        "races": 143,
+        "races": 142,
         "scored_races": 134,
         "bought_races": 134,
         "trio_hits": 16,
@@ -1823,7 +1823,7 @@
       },
       {
         "value": "PASS",
-        "races": 93,
+        "races": 94,
         "scored_races": 65,
         "bought_races": 0,
         "trio_hits": 0,
@@ -34545,9 +34545,9 @@
       "axis_horse_no": "8",
       "axis_horse_name": "ポアサムシュガー",
       "axis_durability": {
-        "score": 45.8,
+        "score": 47.0,
         "status": "LOW",
-        "gap_to_second": 0.206,
+        "gap_to_second": 1.173,
         "uncertainty": 0.8,
         "starts_before": 1.0,
         "reasons": [
@@ -34574,7 +34574,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -34653,7 +34653,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -34705,7 +34705,7 @@
       "axis_durability": {
         "score": 70.1,
         "status": "HIGH",
-        "gap_to_second": 23.933,
+        "gap_to_second": 29.332,
         "uncertainty": 0.4,
         "starts_before": 3.0,
         "reasons": [
@@ -34731,7 +34731,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -34819,7 +34819,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -34883,7 +34883,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -34910,9 +34910,9 @@
       "axis_horse_no": "12",
       "axis_horse_name": "エンブルーシャ",
       "axis_durability": {
-        "score": 70.5,
+        "score": 71.3,
         "status": "HIGH",
-        "gap_to_second": 5.506,
+        "gap_to_second": 6.141,
         "uncertainty": 0.2,
         "starts_before": 4.0,
         "reasons": [
@@ -34928,13 +34928,13 @@
       "trio_tickets": [
         "3-4-12",
         "12-13-16",
-        "3-11-12",
-        "4-12-15",
+        "4-11-12",
+        "3-9-12",
         "11-12-13",
-        "3-12-16",
-        "4-12-13",
         "4-12-16",
-        "3-12-13"
+        "9-12-13",
+        "3-12-16",
+        "4-9-12"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -34948,7 +34948,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35015,13 +35015,13 @@
       "role_tags": [],
       "third_place_intrusion_candidates": [],
       "trio_tickets": [
-        "3-4-9",
-        "1-6-9",
+        "4-6-9",
+        "1-3-9",
         "4-9-10",
         "1-9-16",
-        "1-3-9",
-        "4-6-9",
-        "3-9-10",
+        "1-6-9",
+        "3-4-9",
+        "6-9-10",
         "1-9-10",
         "3-6-9"
       ],
@@ -35037,7 +35037,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35125,7 +35125,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35213,7 +35213,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35301,7 +35301,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35389,7 +35389,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35478,7 +35478,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35546,13 +35546,13 @@
       "third_place_intrusion_candidates": [],
       "trio_tickets": [
         "4-7-14",
-        "4-8-10",
-        "3-4-7",
-        "4-8-16",
-        "3-10-14",
-        "7-10-14",
+        "3-4-8",
+        "4-7-16",
+        "4-8-13",
+        "3-7-14",
         "3-8-14",
-        "3-10-16"
+        "3-14-16",
+        "3-13-14"
       ],
       "ticket_count": 8,
       "scored": false,
@@ -35566,19 +35566,19 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
-        "regime": "BALANCED",
+        "regime": "HIGH_PAYOUT_CAPTURE",
         "hard_score": 3,
-        "volatile_score": 5,
-        "target_points": "5-8",
+        "volatile_score": 7,
+        "target_points": "7-10",
         "reason": [
           "上位の不確実性が高い",
           "3着侵入候補が複数"
         ],
-        "proposed_policy": "標準構造。現行点数を基準に、候補内組合せ漏れを減らす範囲で入替する。",
+        "proposed_policy": "荒れ構造。万馬券級の捕捉を優先するが、軸飛び保険を機械的に足さず、展開・条件・3着侵入の異なる役割を持つ組合せへ配分。",
         "axis_objective": "軸は1着精度ではなく3着内残存率を最上位KPIとする",
         "scenario_learning": "結果後にコーナー通過順から、想定通り3着内／想定外で3着内／想定通り圏外／想定外圏外を分離",
         "longshot_objective": "3連複払戻10,000円以上の捕捉率を主要KPIとして追跡",
@@ -35646,7 +35646,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35724,7 +35724,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -35775,9 +35775,9 @@
       "axis_horse_no": "11",
       "axis_horse_name": "マイレホープ",
       "axis_durability": {
-        "score": 45.6,
+        "score": 45.9,
         "status": "LOW",
-        "gap_to_second": 1.2,
+        "gap_to_second": 1.3,
         "uncertainty": 0.8,
         "starts_before": 0,
         "reasons": [
@@ -35791,14 +35791,14 @@
       "third_place_intrusion_candidates": [],
       "trio_tickets": [
         "9-11-12",
-        "4-11-12",
-        "7-11-12",
-        "3-11-12",
         "4-9-11",
-        "4-9-12",
         "7-9-11",
+        "3-9-11",
+        "4-11-12",
+        "4-9-12",
+        "7-11-12",
         "7-9-12",
-        "4-7-12"
+        "4-7-9"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -35812,7 +35812,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -35855,14 +35855,14 @@
       "third_place_intrusion_candidates": [],
       "trio_tickets": [
         "6-9-12",
+        "5-9-12",
         "7-9-12",
         "1-9-12",
-        "3-9-12",
+        "5-6-12",
+        "5-6-9",
         "6-7-12",
         "6-7-9",
-        "1-6-12",
-        "1-6-9",
-        "1-7-9"
+        "5-7-9"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -35876,7 +35876,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -35903,9 +35903,9 @@
       "axis_horse_no": "7",
       "axis_horse_name": "ミラージュスター",
       "axis_durability": {
-        "score": 45.3,
+        "score": 45.9,
         "status": "LOW",
-        "gap_to_second": 1.1,
+        "gap_to_second": 1.3,
         "uncertainty": 0.8,
         "starts_before": 0,
         "reasons": [
@@ -35918,15 +35918,15 @@
       "role_tags": [],
       "third_place_intrusion_candidates": [],
       "trio_tickets": [
-        "7-12-13",
-        "7-9-12",
-        "7-12-16",
-        "7-10-12",
         "7-9-13",
-        "9-12-13",
+        "7-12-13",
         "7-13-16",
-        "12-13-16",
-        "9-12-16"
+        "7-10-13",
+        "7-9-12",
+        "9-12-13",
+        "7-9-16",
+        "9-13-16",
+        "12-13-16"
       ],
       "ticket_count": 9,
       "scored": false,
@@ -35940,7 +35940,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -36004,7 +36004,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36092,7 +36092,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36179,7 +36179,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36267,7 +36267,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36356,7 +36356,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36445,7 +36445,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36523,7 +36523,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36602,7 +36602,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36680,7 +36680,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36757,7 +36757,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36823,7 +36823,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -36866,7 +36866,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -36920,7 +36920,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -36999,7 +36999,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37077,7 +37077,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37156,7 +37156,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37202,7 +37202,7 @@
       "field_size": null,
       "field_size_band": "不明",
       "scheduled_start": null,
-      "decision": "CAUTION",
+      "decision": "PASS",
       "race_state": "RESULT_PENDING",
       "axis_horse_no": "1",
       "axis_horse_name": "ダノンダックス",
@@ -37220,17 +37220,8 @@
       "predicted_scenario": null,
       "role_tags": [],
       "third_place_intrusion_candidates": [],
-      "trio_tickets": [
-        "1-5-8",
-        "1-10-12",
-        "1-6-8",
-        "1-9-12",
-        "5-6-10",
-        "5-8-10",
-        "5-6-12",
-        "6-9-10"
-      ],
-      "ticket_count": 8,
+      "trio_tickets": [],
+      "ticket_count": 0,
       "scored": false,
       "bought": false,
       "axis_finish": null,
@@ -37242,7 +37233,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37321,7 +37312,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37400,7 +37391,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37478,7 +37469,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37556,7 +37547,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37635,7 +37626,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37703,7 +37694,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {},
       "actual_trio_payout_yen": 0,
       "data_status": null,
@@ -37757,7 +37748,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37834,7 +37825,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37913,7 +37904,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -37992,7 +37983,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -38071,7 +38062,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -38149,7 +38140,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
@@ -38227,7 +38218,7 @@
       "return_yen": 0,
       "profit_yen": 0,
       "roi": null,
-      "prediction_hash_sha256": "88bc60979141be336db7d95cf65cbe6870ff8dece4f552db12928c04eefb916a",
+      "prediction_hash_sha256": "7931a81c86ee339232ae18cb8eba61b4abced71235fa3cc04abcaa30670f9f30",
       "ticket_value_regime_shadow": {
         "status": "RESEARCH_ONLY",
         "architecture": "TICKET_VALUE_REGIME_SHADOW_V3_CAUTION_INTRUSION_GATED",
