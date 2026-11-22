@@ -144,6 +144,21 @@ jobs:
                   raise AssertionError(('DEBUT_SIMULATION_MISSING',key))
           print('DEBUT_MODEL_AND_RUNNER_COVERAGE_OK')
           PY
+      - name: Publish auditable all-race pre-race ability ranking in action logs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          p=json.loads(Path('docs/data/live_predictions_sealed.json').read_text(encoding='utf-8'))
+          today=datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
+          for r in sorted((x for x in p.get('races') or [] if x.get('date')==today),key=lambda x:(x.get('track') or '',int(x.get('race_no') or 0))):
+              ranked=r.get('ranked_snapshot') or []
+              a=r.get('analysis') or {}
+              horses=[{'n':h.get('n'),'name':h.get('name'),'score':h.get('score'),'final_rank':(h.get('simulation') or {}).get('final_rank')} for h in ranked]
+              print('JRA_RACE_OUTPUT '+json.dumps({'date':r.get('date'),'track':r.get('track'),'race_no':r.get('race_no'),'race_name':r.get('race_name'),'model':a.get('model_version'),'horses':horses,'trio_tickets':a.get('trio_tickets'),'axis':a.get('axis'),'decision':a.get('decision')},ensure_ascii=False,separators=(',',':')))
+          PY
       - name: Refresh management ERP from the new sealed predictions
         run: python src/build_management_erp.py
       - name: Build same-origin advanced-analysis live bundle
