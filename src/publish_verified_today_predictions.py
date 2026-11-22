@@ -73,7 +73,7 @@ def main():
         durability=a["axis_durability"]
         if not isinstance(durability,dict) or not math.isfinite(float(durability.get("score") if durability.get("score") is not None else float("nan"))):
             raise RuntimeError(f"invalid axis durability: {key}")
-        if durability.get("status") not in ("HIGH","MEDIUM","LOW"):
+        if durability.get("status") not in ("HIGH","MID","LOW"):
             raise RuntimeError(f"invalid axis durability status: {key}")
         formation=a["formation_columns"]
         if not isinstance(formation,dict) or set(formation)!={"first","second","third"}:
