@@ -79,7 +79,8 @@
   "active_workflow_script_refs": {
     "all-bet-types-shadow.yml": [
       "all_bet_types_shadow.py",
-      "build_all_bet_types_shadow_report.py"
+      "build_all_bet_types_shadow_report.py",
+      "compare_all_bet_types_market_shadow.py"
     ],
     "audit-oral-v6-certification.yml": [
       "audit_oral_golden_v6.py",
@@ -162,7 +163,8 @@
       "expected": [],
       "actual": [
         "all_bet_types_shadow.py",
-        "build_all_bet_types_shadow_report.py"
+        "build_all_bet_types_shadow_report.py",
+        "compare_all_bet_types_market_shadow.py"
       ]
     },
     "race-week-prediction-seal.yml": {
