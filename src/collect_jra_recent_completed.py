@@ -183,7 +183,12 @@ def main():
         totals['result_rows']=merge_csv(OUT,all_rows,['race_id','horse_no'])
         if payouts:totals['payout_rows']=merge_csv(PAYOUTS,payouts,['race_id','bet_type','winning_selection'])
         if contexts:totals['context_rows']=merge_csv(CONTEXT,contexts,['race_id'])
-    status={'status':'UPDATED' if changed else 'NO_COMPLETED_MEETING','checked_at':NOW.isoformat(),'target_dates':sorted(target_dates()),'discovered_races':len(races),'complete_dates':sorted(complete_dates),'incomplete':incomplete,'racecards_ready':racecards_ready,'new_runner_rows':len(all_rows),'strict_warnings':errors,'totals':totals,'discovery_pages':len(discovery_log)}
+    # Archive completeness must be checked per meeting date, never against
+    # the global discovery total across several dates.
+    discovered_races_by_date = {
+        date: len(race_keys) for date, race_keys in sorted(groups.items())
+    }
+    status={'status':'UPDATED' if changed else 'NO_COMPLETED_MEETING','checked_at':NOW.isoformat(),'target_dates':sorted(target_dates()),'discovered_races':len(races),'discovered_races_by_date':discovered_races_by_date,'complete_dates':sorted(complete_dates),'incomplete':incomplete,'racecards_ready':racecards_ready,'new_runner_rows':len(all_rows),'strict_warnings':errors,'totals':totals,'discovery_pages':len(discovery_log)}
     STATUS.parent.mkdir(exist_ok=True);STATUS.write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(status,ensure_ascii=False,indent=2))
 
 if __name__=='__main__':main()
