@@ -46,6 +46,8 @@ def audit(data):
         for j,start in enumerate(h["recent_starts"]):
             check_allowed(start,ALLOWED_START,f"horses[{i}].recent_starts[{j}]")
     horses=data.get("horses",[])
+    if data.get("horse_count") is not None and (type(data["horse_count"]) is not int or data["horse_count"] != len(horses)):
+        raise ValueError("horse_count does not match parsed entries")
     if len(horses)!=11:raise ValueError(f"Kochi 11R expected 11 published entries, got {len(horses)}")
     names=[h["horse_name"] for h in horses]
     if len(set(names))!=11:raise ValueError("duplicate horse name")
@@ -66,7 +68,7 @@ def audit(data):
             # rather than silently double-weighting the same horse history.
             if raw_date in seen_starts:raise ValueError("duplicate historical race date for "+h["horse_name"])
             seen_starts.add(raw_date)
-            if not isinstance(start.get("finish_position"),int) or start["finish_position"]<1:raise ValueError("invalid past finish")
+            if type(start.get("finish_position")) is not int or start["finish_position"]<1:raise ValueError("invalid past finish")
     return {"race_id":"202611213129100511","status":"BLOCKED_INCOMPLETE_HISTORY" if missing else "HISTORY_COMPLETE_RESEARCH_ONLY","entries":len(horses),"history_available":len(valid),"five_run_coverage":sum(len(h.get("recent_starts",[]))>=5 for h in horses),"missing_history":missing,"market_and_result_fields":"REJECTED","pre_start_seal":"NOT_VERIFIED","formal_scores_generated":False,"formal_top3_probabilities_generated":False,"formal_tickets_generated":False}
 if __name__=="__main__":
     if len(sys.argv)!=3:raise SystemExit("usage: audit_kochi11_completeness.py parsed.json audit.json")
