@@ -9,12 +9,13 @@ SCRIPT = Path(__file__).resolve().parents[1] / "src" / "publish_archive_results.
 spec = importlib.util.spec_from_file_location("jra_archive_date_count", SCRIPT)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
-DATE = module.target.replace("-", "")
+TARGET = "2026-11-22"
+DATE = TARGET.replace("-", "")
 
 
 class DateScopedCountTest(unittest.TestCase):
     def expected(self, status):
-        with patch.object(module, "load_json", return_value=status):
+        with patch.object(module, "target", TARGET), patch.object(module, "load_json", return_value=status):
             return module.expected_completed_race_count()
 
     def test_multiple_dates_use_only_target_date(self):
