@@ -73,6 +73,27 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_publication_seal_firewall.py' -v
       - name: Build leakage-safe live pure predictions
         run: python src/build_live_sealed_predictions_v2.py
+      - name: Rebuild if JST date rolled over during prediction generation
+        if: env.JRA_TARGET_DATE == ''
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          status_path = Path('status/live_prediction_seal.json')
+          status = json.loads(status_path.read_text(encoding='utf-8'))
+          today = datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
+          if status.get('today_jst') != today:
+              print(f'JST_DATE_ROLLOVER_REBUILD: generated={status.get("today_jst")} current={today}; regenerating before verification/publication')
+              subprocess.run(['python', 'src/build_live_sealed_predictions_v2.py'], check=True)
+              status = json.loads(status_path.read_text(encoding='utf-8'))
+              after = datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
+              if status.get('today_jst') != after:
+                  raise RuntimeError(f'JST_DATE_ROLLOVER_REBUILD_FAILED: generated={status.get("today_jst")} current={after}; refusing stale publication')
+          PY
       - name: Verify market/result firewall and new-horse V2
         run: |
           python - <<'PY'
