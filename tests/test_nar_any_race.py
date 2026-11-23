@@ -10,7 +10,14 @@ import run_nar_any_race as generic
 
 class GenericNARRoutingTests(unittest.TestCase):
     def setUp(self):
-        self.source = {"race": {"track": "大井", "race_no": 11, "date": "2026-11-24"}}
+        self.source = {"race": {"track": "大井", "race_no": 11, "date": "2026-11-24"},
+                       "runners": [
+                           {"horse_name": f"horse{i}", "horse_id": f"id{i}",
+                            "recent_starts": [{"race_date": f"2026-11-{day:02d}",
+                                               "race_id": f"race{day}",
+                                               "finish_position": 1}
+                                              for day in range(1, 6)]}
+                           for i in range(3)]}
 
     def test_track_mismatch_blocks_before_scoring(self):
         with self.assertRaisesRegex(ValueError, "track"):
@@ -27,6 +34,29 @@ class GenericNARRoutingTests(unittest.TestCase):
     def test_banei_routes_to_separate_model(self):
         self.source["race"]["track"] = "帯広"
         with self.assertRaisesRegex(ValueError, "BANEI_REQUIRES_SEPARATE_MODEL"):
+            generic.execute(self.source)
+
+    def test_missing_fifth_history_blocks_scoring(self):
+        self.source["runners"][0]["recent_starts"].pop()
+        with patch.object(generic, "build") as build:
+            with self.assertRaisesRegex(ValueError, "at least 5 valid"):
+                generic.execute(self.source)
+            build.assert_not_called()
+
+    def test_duplicate_history_blocks_scoring(self):
+        starts = self.source["runners"][0]["recent_starts"]
+        starts[4] = starts[0].copy()
+        with self.assertRaisesRegex(ValueError, "duplicate prior start"):
+            generic.execute(self.source)
+
+    def test_missing_horse_id_blocks_scoring(self):
+        self.source["runners"][0]["horse_id"] = ""
+        with self.assertRaisesRegex(ValueError, "horse_id"):
+            generic.execute(self.source)
+
+    def test_excluded_history_blocks_scoring(self):
+        self.source["runners"][0]["recent_starts"][0]["finish_position"] = None
+        with self.assertRaisesRegex(ValueError, "excluded or unfinished"):
             generic.execute(self.source)
 
     def test_verified_flat_race_calls_existing_pipeline(self):
