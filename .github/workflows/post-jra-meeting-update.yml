@@ -19,6 +19,7 @@ on:
       - 'src/expire_weekly_runner_details.py'
       - 'src/check_horse_master_completion.py'
       - 'src/publish_archive_results.py'
+      - 'docs/data/prediction-archive-*.json' # Re-run completed-date replay when a verified historical seal is restored
       - 'src/build_erp_model_comparison_report.py'
       - '.github/workflows/post-jra-meeting-update.yml'
 
