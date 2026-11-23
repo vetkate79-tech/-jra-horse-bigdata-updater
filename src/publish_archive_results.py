@@ -137,6 +137,12 @@ def expected_completed_race_count():
     return count
 
 def build_results(pred_archive):
+    # A certified historical result is immutable. Never reconstruct and
+    # overwrite it from a later CSV refresh, even when the new rows look valid.
+    existing = existing_complete_results()
+    if existing is not None:
+        return existing, "EXISTING_COMPLETE_RESULT_IMMUTABLE"
+
     result_rows = [r for r in read_csv(RES) if str(r.get("race_date")) == target]
     payout_rows = [r for r in read_csv(PAY) if str(r.get("race_date")) == target]
 
