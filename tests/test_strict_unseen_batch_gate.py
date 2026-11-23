@@ -14,7 +14,7 @@ class StrictBatchGateTests(unittest.TestCase):
             "scheduled_start_time": "2026-11-15T15:40:00+09:00",
             "feature_source_times": ["2026-11-14T23:00:00+09:00"],
             "entry_count": 16, "sealed_entry_count": 16,
-            "upstream_lineage_verified": True, "official_result_verified": True,
+            "independent_seal_evidence": True, "upstream_lineage_verified": True, "official_result_verified": True,
             "official_payout_verified": True, "trio_tickets": ["1-2-3"],
             "decision": "BUY", "stake_yen": 100, "return_yen": 0
         }
