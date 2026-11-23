@@ -36,12 +36,22 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
     runners = source.get("runners") or []
     if len(runners) < 3:
         raise ValueError("at least 3 verified runners required")
+    seen_horse_ids = set()
+    seen_horse_numbers = set()
     for runner in runners:
         name = str(runner.get("horse_name") or "?")
         horse_id = str(runner.get("horse_id") or "")
         starts = runner.get("recent_starts") or []
         if not horse_id:
             raise ValueError(f"{name}: verified horse_id required")
+        if horse_id in seen_horse_ids:
+            raise ValueError(f"{name}: duplicate horse_id")
+        seen_horse_ids.add(horse_id)
+        number = runner.get("horse_no")
+        if number is not None:
+            if str(number) in seen_horse_numbers:
+                raise ValueError(f"{name}: duplicate horse_no")
+            seen_horse_numbers.add(str(number))
         if len(starts) < 5:
             raise ValueError(f"{name}: at least 5 valid prior starts required")
         seen = set()
@@ -53,9 +63,11 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
                 history_date = date_type.fromisoformat(str(date))
             except ValueError as exc:
                 raise ValueError(f"{name}: invalid prior start date") from exc
+            if history_date.isoformat() != str(date):
+                raise ValueError(f"{name}: noncanonical prior start date")
             if history_date >= cutoff:
                 raise ValueError(f"{name}: future or target-date history leakage")
-            key = (date, str(start.get("race_id") or ""))
+            key = str(date)  # one horse cannot have two completed starts on the same date
             if key in seen:
                 raise ValueError(f"{name}: duplicate prior start")
             seen.add(key)
