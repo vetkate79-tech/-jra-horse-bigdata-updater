@@ -29,6 +29,18 @@ def integer(v, default=None):
         return default
 
 
+def positive_race_count(value):
+    """Accept only a positive, integral race count; never truncate floats."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value if value > 0 else None
+    if isinstance(value, str) and value.strip().isascii() and value.strip().isdigit():
+        count = int(value.strip())
+        return count if count > 0 else None
+    return None
+
+
 def combo(xs):
     return "-".join(map(str, sorted(int(x) for x in xs)))
 
@@ -106,7 +118,7 @@ def expected_completed_race_count():
     # threshold when discovery spans multiple meetings.
     per_date = status.get("discovered_races_by_date") or {}
     if compact in per_date:
-        count = integer(per_date[compact])
+        count = positive_race_count(per_date[compact])
         if count is None or count <= 0:
             raise RuntimeError(f"invalid per-date expected race count for {target}")
         return count
@@ -119,7 +131,7 @@ def expected_completed_race_count():
         )
     # Legacy single-date statuses remain supported. Multi-date status must
     # supply an explicit per-date count before an archive can be certified.
-    count = integer(status.get("discovered_races"))
+    count = positive_race_count(status.get("discovered_races"))
     if count is None or count <= 0:
         raise RuntimeError(f"missing valid expected race count for {target}")
     return count
