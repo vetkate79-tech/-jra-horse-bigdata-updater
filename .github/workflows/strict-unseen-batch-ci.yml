@@ -1,0 +1,65 @@
+name: Strict unseen batch gate CI
+on:
+  pull_request:
+    paths:
+      - 'src/strict_unseen_batch_gate.py'
+      - 'src/strict_unseen_replay.py'
+      - 'tests/test_strict_unseen_batch_gate.py'
+      - 'tests/test_strict_unseen_replay.py'
+      - '.github/workflows/strict-unseen-batch-ci.yml'
+  workflow_dispatch:
+jobs:
+  strict-batch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run strict gate and replay tests
+        run: python -m unittest discover -s tests -p 'test_strict_unseen_*.py' -v
+      - name: Benchmark 1000 synthetic candidates (NOT official JRA evidence)
+        shell: bash
+        run: |
+          mkdir -p /tmp/strict-batch
+          python - <<'PY'
+          import json
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+          jst=timezone(timedelta(hours=9))
+          out=Path('/tmp/strict-batch/candidates.jsonl')
+          with out.open('w',encoding='utf-8') as f:
+              for i in range(1000):
+                  day=datetime(2026,1,1,tzinfo=jst)+timedelta(days=i//36)
+                  record={
+                      'date':day.date().isoformat(), 'track':['東京','京都','中山'][i//12%3],
+                      'race_no':i%12+1,'race_id':f'synthetic-{i:04d}',
+                      'seal_commit_sha':'synthetic','prediction_sha256':'synthetic',
+                      'model_version':'synthetic-v1',
+                      'official_result_source':'synthetic','official_payout_source':'synthetic',
+                      'seal_commit_time':(day+timedelta(hours=5)).isoformat(),
+                      'prediction_generated_time':(day+timedelta(hours=4)).isoformat(),
+                      'scheduled_start_time':(day+timedelta(hours=15)).isoformat(),
+                      'feature_source_times':[(day+timedelta(hours=3)).isoformat()],
+                      'entry_count':16,'sealed_entry_count':16,
+                      'upstream_lineage_verified':True,'official_result_verified':True,
+                      'official_payout_verified':True,
+                      'trio_tickets':['1-2-3'],'official_top3':[1,2,3],
+                      'official_trio_payout_per_100':500,
+                      'decision':'BUY','stake_yen':100,'return_yen':500
+                  }
+                  f.write(json.dumps(record,ensure_ascii=False)+'\n')
+          PY
+          time python src/strict_unseen_batch_gate.py --input /tmp/strict-batch/candidates.jsonl --formal-out /tmp/strict-batch/formal.jsonl --diagnostic-out /tmp/strict-batch/diagnostic.jsonl --summary-out /tmp/strict-batch/summary.json
+          time python src/strict_unseen_replay.py --formal /tmp/strict-batch/formal.jsonl --out /tmp/strict-batch/replay.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/strict-batch/summary.json').read_text())
+          assert x['formal_count']==1000 and x['diagnostic_count']==0,x
+          y=json.loads(Path('/tmp/strict-batch/replay.json').read_text())
+          assert y['overall']['races']==1000,y
+          print('Synthetic throughput gate passed; real-world provenance NOT tested')
+          PY
