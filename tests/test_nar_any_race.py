@@ -86,6 +86,31 @@ class GenericNARRoutingTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "noncanonical target race date"):
             generic.execute(self.source)
 
+    def test_duplicate_horse_id_blocks(self):
+        self.source["runners"][1]["horse_id"] = self.source["runners"][0]["horse_id"]
+        with patch.object(generic, "build") as build:
+            with self.assertRaisesRegex(ValueError, "duplicate horse_id"):
+                generic.execute(self.source)
+            build.assert_not_called()
+
+    def test_duplicate_horse_number_blocks(self):
+        for i, runner in enumerate(self.source["runners"]):
+            runner["horse_no"] = i + 1
+        self.source["runners"][1]["horse_no"] = 1
+        with self.assertRaisesRegex(ValueError, "duplicate horse_no"):
+            generic.execute(self.source)
+
+    def test_same_date_different_race_ids_block(self):
+        starts = self.source["runners"][0]["recent_starts"]
+        starts[1]["race_date"] = starts[0]["race_date"]
+        with self.assertRaisesRegex(ValueError, "duplicate prior start"):
+            generic.execute(self.source)
+
+    def test_noncanonical_history_date_blocks(self):
+        self.source["runners"][0]["recent_starts"][0]["race_date"] = "2026-11-1"
+        with self.assertRaisesRegex(ValueError, "noncanonical prior start date"):
+            generic.execute(self.source)
+
     def test_verified_flat_race_calls_existing_pipeline(self):
         with patch.object(generic, "build", return_value={"source_type": "NAR"}) as build, \
              patch.object(generic, "run", return_value={"status": "RESEARCH_NAR_UNCALIBRATED"}) as run:
