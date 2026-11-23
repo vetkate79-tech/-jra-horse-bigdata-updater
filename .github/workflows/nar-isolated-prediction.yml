@@ -4,10 +4,12 @@ on:
     branches: [feature/nar-isolated-prediction-runner-20261121]
     paths:
       - 'src/run_nar_isolated.py'
+      - 'src/run_nar_any_race.py'
       - 'src/build_nar_pre_race_snapshot.py'
       - 'docs/data/nar/source/*.json'
       - 'tests/test_nar_isolated.py'
       - 'tests/test_nar_adapter.py'
+      - 'tests/test_nar_any_race.py'
       - '.github/workflows/nar-isolated-prediction.yml'
   workflow_dispatch:
     inputs:
@@ -50,8 +52,8 @@ jobs:
           PY
           if [ ! -f /tmp/nar-skip ]; then
             SOURCE=${SNAPSHOT:-$(ls docs/data/nar/source/*.json | sort | tail -1)}
-            python src/build_nar_pre_race_snapshot.py --input "$SOURCE" --output /tmp/nar-input.json
-            python src/run_nar_isolated.py --input /tmp/nar-input.json --output /tmp/nar-prediction.json
+            python src/run_nar_any_race.py --source "$SOURCE" --output /tmp/nar-generic-output.json
+            python -c 'import json; from pathlib import Path; p=json.loads(Path("/tmp/nar-generic-output.json").read_text()); Path("/tmp/nar-prediction.json").write_text(json.dumps(p["prediction"], ensure_ascii=False, indent=2))'
           fi
       - name: Prediction execution status
         if: always()
