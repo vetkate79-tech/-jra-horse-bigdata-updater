@@ -15,11 +15,19 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Run strict gate and replay tests
         run: python -m unittest discover -s tests -p 'test_strict_unseen_*.py' -v
+      - name: Inventory actual archived predictions and replays (diagnostic only)
+        run: |
+          mkdir -p /tmp/strict-batch
+          python src/discover_immutable_archives.py --archive-dir docs/data --manifest-out /tmp/strict-batch/archive-manifest.jsonl
+          python src/inventory_historical_replays.py --replay-dir docs/data --out /tmp/strict-batch/replay-inventory.json
+          python src/inspect_seal_git_blob.py --commit e2d36e8cecba9fe5aeee96289d50cbd42ba34c59 --path docs/data/live_predictions_sealed.json
       - name: Benchmark 1000 synthetic candidates (NOT official JRA evidence)
         shell: bash
         run: |
@@ -63,3 +71,11 @@ jobs:
           assert y['overall']['races']==1000,y
           print('Synthetic throughput gate passed; real-world provenance NOT tested')
           PY
+
+      - name: Upload reproducible audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: strict-unseen-audit-evidence
+          path: /tmp/strict-batch/
+          if-no-files-found: warn
