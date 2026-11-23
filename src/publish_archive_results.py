@@ -177,6 +177,7 @@ def build_results(pred_archive):
     }
 
     out = []
+    incomplete_races = []
     for key, rows in sorted(by_race.items(), key=lambda kv: (kv[0][0], kv[0][1] or 99)):
         top = sorted(
             [x for x in rows if integer(x.get("finish_position")) in (1, 2, 3)],
@@ -190,6 +191,7 @@ def build_results(pred_archive):
                 or len({integer(x.get("horse_no")) for x in top}) != 3
                 or len({str(x.get("race_id") or "").strip() for x in top}) != 1
                 or not str(top[0].get("race_id") or "").strip()):
+            incomplete_races.append({"track": key[0], "race_no": key[1], "top3_finishes": [integer(x.get("finish_position")) for x in top], "top3_horse_numbers": [integer(x.get("horse_no")) for x in top], "race_ids": sorted({str(x.get("race_id") or "") for x in top})})
             continue
 
         pred = pred_by.get(key)
@@ -246,7 +248,7 @@ def build_results(pred_archive):
             return existing, "EXISTING_COMPLETE_RESULT_FALLBACK"
         raise RuntimeError(
             f"incomplete result reconstruction for {target}: "
-            f"result_rows={len(result_rows)} race_keys={len(by_race)} completed={len(out)} expected={expected}; "
+            f"result_rows={len(result_rows)} race_keys={len(by_race)} completed={len(out)} expected={expected} incomplete_races={json.dumps(incomplete_races, ensure_ascii=False)}; "
             "refusing to overwrite confirmed archive"
         )
 
