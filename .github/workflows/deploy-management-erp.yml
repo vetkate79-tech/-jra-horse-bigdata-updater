@@ -115,6 +115,32 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: legacy-pages
+      - name: Wait for Pages artifact API visibility
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          GH_RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json, os, time, urllib.request
+          url = f"https://api.github.com/repos/{os.environ['GH_REPO']}/actions/runs/{os.environ['GH_RUN_ID']}/artifacts?per_page=100"
+          for attempt in range(1, 13):
+              request = urllib.request.Request(url, headers={
+                  'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
+                  'Accept': 'application/vnd.github+json',
+              })
+              try:
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      artifacts = json.load(response).get('artifacts', [])
+                  if any(a.get('name') == 'github-pages' and not a.get('expired') for a in artifacts):
+                      print(f'PAGES_ARTIFACT_VISIBLE attempt={attempt}')
+                      break
+              except Exception as exc:
+                  print(f'PAGES_ARTIFACT_API_RETRY attempt={attempt}: {exc}')
+              if attempt == 12:
+                  raise RuntimeError('PAGES_ARTIFACT_NOT_VISIBLE: refuse deployment without uploaded artifact')
+              time.sleep(5)
+          PY
       - name: Deploy legacy redirect to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
