@@ -151,7 +151,12 @@ def build_results(pred_archive):
             [x for x in rows if integer(x.get("finish_position")) in (1, 2, 3)],
             key=lambda x: integer(x.get("finish_position")) or 99,
         )
-        if len(top) != 3:
+        # A duplicated finish row must not masquerade as a complete top three.
+        # Require exactly one 1st, 2nd and 3rd place and three distinct horse numbers.
+        if (len(top) != 3
+                or {integer(x.get("finish_position")) for x in top} != {1, 2, 3}
+                or None in {integer(x.get("horse_no")) for x in top}
+                or len({integer(x.get("horse_no")) for x in top}) != 3):
             continue
 
         pred = pred_by.get(key)
