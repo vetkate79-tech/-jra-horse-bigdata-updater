@@ -30,13 +30,25 @@ class DateScopedCountTest(unittest.TestCase):
             self.expected({"complete_dates": [DATE, "20260101"], "discovered_races": 48})
 
     def test_invalid_date_count_rejected(self):
-        for value in (0, -1, "invalid"):
+        for value in (0, -1, "invalid", 24.5, "24.5", True, False, None):
             with self.subTest(value=value):
                 with self.assertRaisesRegex(RuntimeError, "invalid per-date"):
                     self.expected({
                         "complete_dates": [DATE],
                         "discovered_races_by_date": {DATE: value},
                     })
+
+    def test_invalid_legacy_count_rejected(self):
+        for value in (24.5, "24.5", True, None):
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(RuntimeError, "missing valid expected"):
+                    self.expected({"complete_dates": [DATE], "discovered_races": value})
+
+    def test_integral_string_count_supported(self):
+        self.assertEqual(self.expected({
+            "complete_dates": [DATE],
+            "discovered_races_by_date": {DATE: "24"},
+        }), 24)
 
     def test_unverified_date_is_not_certified(self):
         self.assertIsNone(self.expected({
