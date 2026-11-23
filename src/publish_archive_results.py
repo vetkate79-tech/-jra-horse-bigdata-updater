@@ -70,6 +70,11 @@ def valid_prediction_archive(payload):
 def load_prediction_archive():
     existing = load_json(PRED_ARCHIVE, {})
     if valid_prediction_archive(existing):
+        # An immutable archive must never silently reuse entries from another date.
+        # Reject corruption instead of replacing a historical seal from live data.
+        entries = (existing.get("races") or []) + (existing.get("pending") or [])
+        if any(not isinstance(p, dict) or p.get("date") != target for p in entries):
+            raise RuntimeError(f"immutable prediction archive contains cross-date entries for {target}")
         return existing, "IMMUTABLE_ARCHIVE"
 
     live = load_json(LIVE_PRED, {"races": [], "pending": []})
