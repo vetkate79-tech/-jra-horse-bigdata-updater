@@ -59,6 +59,33 @@ class GenericNARRoutingTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "excluded or unfinished"):
             generic.execute(self.source)
 
+    def test_target_day_history_blocks_before_scoring(self):
+        self.source["runners"][0]["recent_starts"][0]["race_date"] = "2026-11-24"
+        with patch.object(generic, "build") as build:
+            with self.assertRaisesRegex(ValueError, "future or target-date"):
+                generic.execute(self.source)
+            build.assert_not_called()
+
+    def test_future_history_blocks_before_scoring(self):
+        self.source["runners"][0]["recent_starts"][0]["race_date"] = "2026-11-25"
+        with self.assertRaisesRegex(ValueError, "future or target-date"):
+            generic.execute(self.source)
+
+    def test_invalid_history_date_blocks(self):
+        self.source["runners"][0]["recent_starts"][0]["race_date"] = "2026-02-30"
+        with self.assertRaisesRegex(ValueError, "invalid prior start date"):
+            generic.execute(self.source)
+
+    def test_zero_finish_blocks(self):
+        self.source["runners"][0]["recent_starts"][0]["finish_position"] = 0
+        with self.assertRaisesRegex(ValueError, "excluded or unfinished"):
+            generic.execute(self.source)
+
+    def test_noncanonical_target_date_blocks(self):
+        self.source["race"]["date"] = "2026-11-1"
+        with self.assertRaisesRegex(ValueError, "noncanonical target race date"):
+            generic.execute(self.source)
+
     def test_verified_flat_race_calls_existing_pipeline(self):
         with patch.object(generic, "build", return_value={"source_type": "NAR"}) as build, \
              patch.object(generic, "run", return_value={"status": "RESEARCH_NAR_UNCALIBRATED"}) as run:
