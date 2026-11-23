@@ -75,6 +75,11 @@ jobs:
           today=datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
           active_dates=sorted({str(x) for x in (weekly.get('dates') or []) if str(x) >= today})
           sealed_dates=sorted({str(x) for x in (status.get('sealed_dates') or [])})
+          if not active_dates:
+              # This workflow publishes only a legacy redirect, not live prediction artifacts.
+              # No upcoming card exists to require a fresh seal; never treat stale data as SEALED.
+              print('NO_UPCOMING_RACES_REDIRECT_ONLY', {'today': today, 'seal_status': status.get('status'), 'seal_date': status.get('today_jst')})
+              raise SystemExit(0)
           assert status.get('status') == 'SEALED'
           assert status.get('today_jst') == today, (status.get('today_jst'), today)
           if today in active_dates:
