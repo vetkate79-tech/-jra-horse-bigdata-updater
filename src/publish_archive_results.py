@@ -104,6 +104,10 @@ def existing_complete_results():
     summary = payload.get("summary") or {}
     races = payload.get("races") or []
     if summary.get("complete") is True and races:
+        # Never reuse a certified archive belonging to another meeting date.
+        # Fail closed rather than silently replacing an immutable artifact.
+        if payload.get("date") != target or any(r.get("date") != target for r in races):
+            raise RuntimeError(f"certified result archive date mismatch for {target}; refusing to reuse or overwrite")
         return payload
     return None
 
