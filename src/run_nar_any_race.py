@@ -6,6 +6,7 @@ runners, scores, missing history, odds, or post-start sealed predictions.
 This does not perform discovery/scraping; that is a separate adapter stage.
 """
 import argparse
+from datetime import date as date_type
 import json
 import sys
 from pathlib import Path
@@ -26,6 +27,12 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
     track = str(race.get("track") or "")
     if any(x in track for x in ("帯広", "ばんえい", "BANEI")):
         raise ValueError("BANEI_REQUIRES_SEPARATE_MODEL")
+    try:
+        cutoff = date_type.fromisoformat(str(race.get("date") or ""))
+    except ValueError as exc:
+        raise ValueError("invalid target race date") from exc
+    if cutoff.isoformat() != race.get("date"):
+        raise ValueError("noncanonical target race date")
     runners = source.get("runners") or []
     if len(runners) < 3:
         raise ValueError("at least 3 verified runners required")
@@ -42,11 +49,18 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
             date = start.get("race_date")
             if not date:
                 raise ValueError(f"{name}: undated prior start")
+            try:
+                history_date = date_type.fromisoformat(str(date))
+            except ValueError as exc:
+                raise ValueError(f"{name}: invalid prior start date") from exc
+            if history_date >= cutoff:
+                raise ValueError(f"{name}: future or target-date history leakage")
             key = (date, str(start.get("race_id") or ""))
             if key in seen:
                 raise ValueError(f"{name}: duplicate prior start")
             seen.add(key)
-            if start.get("finish_position") is None:
+            finish = start.get("finish_position")
+            if type(finish) is not int or finish < 1:
                 raise ValueError(f"{name}: excluded or unfinished prior start")
     snapshot = build(source)
     prediction = run(snapshot)
