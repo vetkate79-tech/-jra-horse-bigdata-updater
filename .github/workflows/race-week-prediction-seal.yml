@@ -68,6 +68,8 @@ jobs:
         run: python -c "import numpy; import pandas; print('PREDICTION_RUNTIME_DEPS_OK')"
       - name: Compare Monte Carlo legacy against coverage-aware shadow on synthetic sparse inputs
         run: python src/test_monte_carlo_shadow.py
+      - name: Regression-test sealed payload and status market firewall
+        run: python -m unittest discover -s tests -p 'test_publication_seal_firewall.py' -v
       - name: Build leakage-safe live pure predictions
         run: python src/build_live_sealed_predictions_v2.py
       - name: Verify market/result firewall and new-horse V2
