@@ -223,7 +223,7 @@ jobs:
           else:
               raise RuntimeError(f'publication blocked by unresolved seal state: {state}')
           with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as out:
-              out.write(f'publish={decision}\\n')
+              out.write(f'publish={decision}\n')
           PY
       - name: Publish and verify complete current-day race prediction feed
         if: steps.publication_gate.outputs.publish == 'true'
