@@ -52,7 +52,7 @@ jobs:
                       'scheduled_start_time':(day+timedelta(hours=15)).isoformat(),
                       'feature_source_times':[(day+timedelta(hours=3)).isoformat()],
                       'entry_count':16,'sealed_entry_count':16,
-                      'upstream_lineage_verified':True,'official_result_verified':True,
+                      'independent_seal_evidence':True,'upstream_lineage_verified':True,'official_result_verified':True,
                       'official_payout_verified':True,
                       'trio_tickets':['1-2-3'],'official_top3':[1,2,3],
                       'official_trio_payout_per_100':500,
