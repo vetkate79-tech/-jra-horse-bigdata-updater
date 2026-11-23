@@ -19,6 +19,8 @@ def main():
     weekly=json.loads(WEEKLY.read_text(encoding="utf-8"))
     # Independently fail closed if the source seal lost its pre-race market/result firewall.
     status=json.loads(Path("status/live_prediction_seal.json").read_text(encoding="utf-8"))
+    if seal.get("odds_popularity_used") is not False or seal.get("results_used") is not False:
+        raise RuntimeError("prediction payload market/result firewall not verified")
     if status.get("odds_popularity_used") is not False or status.get("results_used") is not False:
         raise RuntimeError("source seal market/result firewall not verified")
     if status.get("status") != "SEALED":
