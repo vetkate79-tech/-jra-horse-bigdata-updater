@@ -30,7 +30,7 @@ jobs:
       - name: Capture and verify 11 runner names
         run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213129100511 --output /tmp/nar-card-audit.json
       - name: Parse five-run history for all runners
-        run: python src/parse_nar_rakuten_card.py --html /tmp/nar-card-audit.html --output /tmp/nar-parsed-history.json
+        run: python src/parse_nar_rakuten_card.py --target-date 2026-11-21 --html /tmp/nar-card-audit.html --output /tmp/nar-parsed-history.json
       - name: Verify Kochi raw SHA and parsed runner identity
         run: python src/verify_nar_capture_provenance.py /tmp/nar-card-audit.html /tmp/nar-card-audit.json /tmp/nar-parsed-history.json 202611213129100511 11
       - name: Audit Kochi 11R full historical coverage and leakage
@@ -65,7 +65,7 @@ jobs:
       - name: Capture Saga 11R actual runners
         run: python src/probe_nar_public_card.py --url https://keiba.rakuten.co.jp/race_card/list/RACEID/202611213200000011 --output /tmp/saga11-card-audit.json
       - name: Parse Saga 11R historical starts
-        run: python src/parse_nar_rakuten_card.py --html /tmp/saga11-card-audit.html --output /tmp/saga11-parsed-history.json
+        run: python src/parse_nar_rakuten_card.py --target-date 2026-11-21 --html /tmp/saga11-card-audit.html --output /tmp/saga11-parsed-history.json
       - name: Verify Saga raw SHA and parsed runner identity
         run: python src/verify_nar_capture_provenance.py /tmp/saga11-card-audit.html /tmp/saga11-card-audit.json /tmp/saga11-parsed-history.json 202611213200000011 14
       - name: Calculate Saga 11R research model scores and Monte Carlo
