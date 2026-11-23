@@ -271,8 +271,26 @@ def build_replay(pred_archive, results):
         for p in (pred_archive.get("races") or [])
     }
     replay_rows = []
+    # A PASS replay must be a one-to-one join of the immutable pre-race
+    # prediction archive and official results. Never silently publish an
+    # unsealed result row or drop a sealed prediction from the replay.
+    pred_entries = pred_archive.get("races") or []
+    result_entries = results.get("races") or []
+    pred_keys = [(str(p.get("track", "")).replace("競馬場", ""), integer(p.get("race_no"))) for p in pred_entries]
+    result_keys = [(str(r.get("track", "")).replace("競馬場", ""), integer(r.get("race_no"))) for r in result_entries]
+    if (
+        len(pred_keys) != len(set(pred_keys))
+        or len(result_keys) != len(set(result_keys))
+        or set(pred_keys) != set(result_keys)
+    ):
+        raise RuntimeError(
+            f"immutable replay key mismatch for {target}: "
+            f"prediction_only={sorted(set(pred_keys) - set(result_keys))} "
+            f"result_only={sorted(set(result_keys) - set(pred_keys))} "
+            f"prediction_rows={len(pred_keys)} result_rows={len(result_keys)}"
+        )
 
-    for r in results.get("races") or []:
+    for r in result_entries:
         key = (r["track"], integer(r["race_no"]))
         pred = pred_map.get(key)
         analysis = (pred or {}).get("analysis") or {}
