@@ -168,7 +168,9 @@ def build_results(pred_archive):
         if (len(top) != 3
                 or {integer(x.get("finish_position")) for x in top} != {1, 2, 3}
                 or None in {integer(x.get("horse_no")) for x in top}
-                or len({integer(x.get("horse_no")) for x in top}) != 3):
+                or len({integer(x.get("horse_no")) for x in top}) != 3
+                or len({str(x.get("race_id") or "").strip() for x in top}) != 1
+                or not str(top[0].get("race_id") or "").strip()):
             continue
 
         pred = pred_by.get(key)
