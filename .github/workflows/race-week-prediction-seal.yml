@@ -22,6 +22,7 @@ on:
       - 'src/build_live_sealed_predictions.py'
       - 'src/build_live_sealed_predictions_v2.py'
       - 'src/publish_verified_today_predictions.py'
+      - 'tests/test_publication_seal_firewall.py'
       - 'src/axis_survival_shadow.py'
       - 'src/monte_carlo_finalizer.py'
       - 'src/test_monte_carlo_shadow.py'
