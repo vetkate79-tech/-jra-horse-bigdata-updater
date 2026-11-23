@@ -26,6 +26,28 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
     track = str(race.get("track") or "")
     if any(x in track for x in ("帯広", "ばんえい", "BANEI")):
         raise ValueError("BANEI_REQUIRES_SEPARATE_MODEL")
+    runners = source.get("runners") or []
+    if len(runners) < 3:
+        raise ValueError("at least 3 verified runners required")
+    for runner in runners:
+        name = str(runner.get("horse_name") or "?")
+        horse_id = str(runner.get("horse_id") or "")
+        starts = runner.get("recent_starts") or []
+        if not horse_id:
+            raise ValueError(f"{name}: verified horse_id required")
+        if len(starts) < 5:
+            raise ValueError(f"{name}: at least 5 valid prior starts required")
+        seen = set()
+        for start in starts:
+            date = start.get("race_date")
+            if not date:
+                raise ValueError(f"{name}: undated prior start")
+            key = (date, str(start.get("race_id") or ""))
+            if key in seen:
+                raise ValueError(f"{name}: duplicate prior start")
+            seen.add(key)
+            if start.get("finish_position") is None:
+                raise ValueError(f"{name}: excluded or unfinished prior start")
     snapshot = build(source)
     prediction = run(snapshot)
     if prediction.get("status") != "RESEARCH_NAR_UNCALIBRATED":
