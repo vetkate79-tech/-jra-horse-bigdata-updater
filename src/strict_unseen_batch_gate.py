@@ -55,6 +55,10 @@ def classify(record):
         reasons.append("UNVERIFIED_TIME_LINEAGE")
     if record.get("entry_count") is None or record.get("sealed_entry_count") != record.get("entry_count"):
         reasons.append("INCOMPLETE_FIELD")
+    # Self-reported flags cannot independently prove that an archive predates a race.
+    # A candidate must be externally certified before joining the formal ledger.
+    if record.get("independent_seal_evidence") is not True:
+        reasons.append("NO_INDEPENDENT_SEAL_EVIDENCE")
     if record.get("upstream_lineage_verified") is not True:
         reasons.append("UNVERIFIED_UPSTREAM_LINEAGE")
     if record.get("official_result_verified") is not True or record.get("official_payout_verified") is not True:
