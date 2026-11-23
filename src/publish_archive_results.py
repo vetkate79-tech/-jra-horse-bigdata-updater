@@ -69,6 +69,10 @@ def valid_prediction_archive(payload):
 
 def load_prediction_archive():
     existing = load_json(PRED_ARCHIVE, {})
+    # An existing historical seal is immutable even when malformed. Never
+    # silently repair or replace it from a later live prediction snapshot.
+    if PRED_ARCHIVE.exists() and not valid_prediction_archive(existing):
+        raise RuntimeError(f"invalid immutable prediction archive for {target}; refusing live replacement")
     if valid_prediction_archive(existing):
         # An immutable archive must never silently reuse entries from another date.
         # Reject corruption instead of replacing a historical seal from live data.
