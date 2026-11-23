@@ -24,13 +24,13 @@ def parse(html):
             distance=re.search(r"(\d{3,4})\s*[左右直]?\s*([ダ芝])",cell.get_text(" ",strip=True))
             if not (first and match and distance):continue
             date=f"20{match.group(1)}-{match.group(2)}-{match.group(3)}"
-            finish=re.search(r"\d+",first.get_text(strip=True))
+            finish=re.fullmatch(r"([1-9][0-9]*)\s*着?",first.get_text(" ",strip=True))
             if not finish:continue
             if date>="2026-11-21":raise ValueError("target result leakage")
             text=cell.get_text(" ",strip=True)
             corners=re.search(r"\b\d+-\d+(?:-\d+){1,3}\b",text)
             last3f=re.search(r"\b(\d{2}\.\d)\s+\d{3}k",text)
-            history.append({"race_date":date,"finish_position":int(finish.group()),"surface":"ダート" if distance.group(2)=="ダ" else "芝","distance_m":int(distance.group(1)),"course":text.split(" ",1)[0],"corner_positions":corners.group() if corners else "","last3f":last3f.group(1) if last3f else None})
+            history.append({"race_date":date,"finish_position":int(finish.group(1)),"surface":"ダート" if distance.group(2)=="ダ" else "芝","distance_m":int(distance.group(1)),"course":text.split(" ",1)[0],"corner_positions":corners.group() if corners else "","last3f":last3f.group(1) if last3f else None})
         if not history:
             print("HISTORY_MISSING",name,"race_cells",len(tr.select("td.race")),"sample",tr.get_text(" ",strip=True)[:1200])
         horses.append({"horse_name":name,"horse_id":a.get("href","").split("/")[-1],"recent_starts":history})
