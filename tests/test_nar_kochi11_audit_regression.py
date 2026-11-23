@@ -23,9 +23,27 @@ class AuditRegression(unittest.TestCase):
         26.10.01 1200 ダ</td>
         <td class="race"><div class="firstInfo"><span class="place">2着</span></div>
         26.09.01 1200 ダ</td></tr></table>"""
-        result = parse(html)
+        result = parse(html, '2026-11-21')
         self.assertEqual(len(result["horses"][0]["recent_starts"]), 1)
         self.assertEqual(result["horses"][0]["recent_starts"][0]["finish_position"], 2)
+
+    def test_generic_cutoff_allows_other_dates(self):
+        html = """<tr><td><span class="mainHorse"><a href="/horse/123">synthetic</a></span></td>
+        <td class="race"><div class="firstInfo"><span class="place">2着</span></div>
+        26.11.22 1200 ダ</td></tr>"""
+        result = parse(html, "2026-11-24")
+        self.assertEqual(result["horses"][0]["recent_starts"][0]["race_date"], "2026-11-22")
+        with self.assertRaisesRegex(ValueError, "target result leakage"):
+            parse(html, "2026-11-22")
+
+    def test_invalid_calendar_dates_fail_closed(self):
+        html = """<tr><td><span class="mainHorse"><a href="/horse/123">synthetic</a></span></td>
+        <td class="race"><div class="firstInfo"><span class="place">2着</span></div>
+        26.02.30 1200 ダ</td></tr>"""
+        with self.assertRaisesRegex(ValueError, "invalid historical race date"):
+            parse(html, "2026-11-21")
+        with self.assertRaisesRegex(ValueError, "valid target_date"):
+            parse(html, "2026-02-30")
 
     def test_clean_research_only(self):
         result = audit(fixture())
