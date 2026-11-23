@@ -92,5 +92,36 @@ class PredictionFirewallTests(unittest.TestCase):
                 finally:
                     os.chdir(old)
 
+    def test_weekly_duplicate_and_unexpected_sealed_race_fail_closed(self):
+        spec = importlib.util.spec_from_file_location("publish_verified_today_predictions", SCRIPT)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+        today = datetime.now(ZoneInfo("Asia/Tokyo")).date().isoformat()
+        race = {"date": today, "track": "東京", "race_no": 4}
+        for kind in ("duplicate_weekly", "unexpected_sealed"):
+            with self.subTest(kind=kind), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / "docs/data/horses").mkdir(parents=True)
+                (root / "status").mkdir()
+                weekly = [{"race": race, "horse_no": "1"}] * (2 if kind == "duplicate_weekly" else 0)
+                seal = {"prediction_hash_sha256": "testhash", "races": [dict(race, ranked_snapshot=[])],
+                        "odds_popularity_used": False, "results_used": False}
+                status = {"prediction_hash_sha256": "testhash", "status": "SEALED",
+                          "odds_popularity_used": False, "results_used": False}
+                (root / "docs/data/live_predictions_sealed.json").write_text(json.dumps(seal))
+                (root / "docs/data/horses/weekly_runner_details.json").write_text(json.dumps({"runners": weekly}))
+                (root / "status/live_prediction_seal.json").write_text(json.dumps(status))
+                old = Path.cwd()
+                try:
+                    os.chdir(root)
+                    expected_error = "duplicate weekly runner" if kind == "duplicate_weekly" else "unexpected sealed race"
+                    with self.assertRaisesRegex(RuntimeError, expected_error):
+                        module.main()
+                    self.assertFalse((root / "docs/data/live_predictions_today_verified.json").exists())
+                finally:
+                    os.chdir(old)
+
 if __name__ == "__main__":
     unittest.main()
