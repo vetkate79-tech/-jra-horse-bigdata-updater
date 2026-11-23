@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from audit_kochi11_completeness import audit
+from parse_nar_rakuten_card import parse
 
 def fixture():
     return {"horses": [
@@ -16,6 +17,16 @@ def fixture():
         ]} for i in range(11)]}
 
 class AuditRegression(unittest.TestCase):
+    def test_parser_never_turns_scratch_with_digits_into_finish(self):
+        html = """<table><tr><td><span class="mainHorse"><a href="/horse/123">synthetic</a></span></td>
+        <td class="race"><div class="firstInfo"><span class="place">除外 1</span></div>
+        26.10.01 1200 ダ</td>
+        <td class="race"><div class="firstInfo"><span class="place">2着</span></div>
+        26.09.01 1200 ダ</td></tr></table>"""
+        result = parse(html)
+        self.assertEqual(len(result["horses"][0]["recent_starts"]), 1)
+        self.assertEqual(result["horses"][0]["recent_starts"][0]["finish_position"], 2)
+
     def test_clean_research_only(self):
         result = audit(fixture())
         self.assertEqual(result["status"], "BLOCKED_INCOMPLETE_HISTORY")
