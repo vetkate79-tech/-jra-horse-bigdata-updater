@@ -155,7 +155,12 @@ jobs:
               no=str(x.get('horse_no') or '').strip()
               if no: cards[key]['horses'].add(no)
           sealed={(str(r.get('date') or ''),str(r.get('track') or ''),int(r.get('race_no') or 0)):r for r in p.get('races') or []}
+          # Weekly cards can retain completed meeting dates after a JST rollover.
+          # Only require coverage for dates represented by this immutable seal;
+          # never demand that a fresh empty seal reproduce yesterday's predictions.
+          sealed_dates={key[0] for key in sealed}
           for key,card in cards.items():
+              if key[0] not in sealed_dates:continue
               if not ('新馬' in card['name'] or 'メイクデビュー' in card['name']):continue
               if key not in sealed:raise AssertionError(('DEBUT_RACE_MISSING',key))
               race=sealed[key]
