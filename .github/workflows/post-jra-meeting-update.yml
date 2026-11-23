@@ -89,7 +89,20 @@ jobs:
               before=hashlib.sha256(archive.read_bytes()).hexdigest() if archive.exists() else None
 
               env=dict(os.environ,TARGET_DATE=date)
-              subprocess.run(['python','src/publish_archive_results.py'],check=True,env=env)
+              run=subprocess.run(['python','src/publish_archive_results.py'],capture_output=True,text=True,env=env)
+              if run.returncode:
+                  # Do not fabricate historical predictions from a later live seal.
+                  # Isolate unavailable dates so valid dates can still be archived.
+                  missing='no immutable prediction archive for ' + date
+                  if missing in run.stderr and 'refusing to overwrite historical archive' in run.stderr:
+                      print(f'::warning title=Historical prediction seal missing::{date}: archive unavailable; replay NOT certified')
+                      with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as summary:
+                          summary.write(f'- BLOCKED {date}: historical prediction seal unavailable; replay not certified.\\n')
+                      continue
+                  print(run.stdout,end='')
+                  print(run.stderr,end='',file=__import__('sys').stderr)
+                  raise RuntimeError(f'archive publishing failed for {date}: exit {run.returncode}')
+              print(run.stdout,end='')
 
               after=hashlib.sha256(archive.read_bytes()).hexdigest() if archive.exists() else None
               if before is not None and after != before:
