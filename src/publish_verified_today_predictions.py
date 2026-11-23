@@ -34,12 +34,17 @@ def main():
         key=(str(race.get("track") or ""),int(race.get("race_no") or 0))
         expected.setdefault(key,set())
         no=str(row.get("horse_no") or "").strip()
-        if no:expected[key].add(no)
+        if no:
+            if no in expected[key]:
+                raise RuntimeError(f"duplicate weekly runner: {key} horse={no}")
+            expected[key].add(no)
     published={}
     for race in seal.get("races") or []:
         if race.get("date")!=today:continue
         key=(str(race.get("track") or ""),int(race.get("race_no") or 0))
         if key in published:raise RuntimeError(f"duplicate sealed race: {key}")
+        if key not in expected:
+            raise RuntimeError(f"unexpected sealed race: {key}")
         ranked=race.get("ranked_snapshot") or []
         if not ranked:raise RuntimeError(f"empty ranking: {key}")
         nums=[str(h.get("n") or "").strip() for h in ranked]
