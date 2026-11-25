@@ -1,4 +1,5 @@
 """Regression: publication must reject leakage flags in either the seal or status."""
+import hashlib
 import importlib.util
 import json
 import os
@@ -108,7 +109,9 @@ class PredictionFirewallTests(unittest.TestCase):
                 weekly = [{"race": race, "horse_no": "1"}] * (2 if kind == "duplicate_weekly" else 0)
                 seal = {"prediction_hash_sha256": "testhash", "races": [dict(race, ranked_snapshot=[])],
                         "odds_popularity_used": False, "results_used": False}
-                status = {"prediction_hash_sha256": "testhash", "status": "SEALED",
+                digest = hashlib.sha256(json.dumps({k: v for k, v in seal.items() if k not in ("generated_at", "prediction_hash_sha256")}, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+                seal["prediction_hash_sha256"] = digest
+                status = {"prediction_hash_sha256": digest, "status": "SEALED",
                           "odds_popularity_used": False, "results_used": False}
                 (root / "docs/data/live_predictions_sealed.json").write_text(json.dumps(seal))
                 (root / "docs/data/horses/weekly_runner_details.json").write_text(json.dumps({"runners": weekly}))
