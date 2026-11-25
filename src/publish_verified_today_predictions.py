@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Publish compact, verifiable, pre-race-only predictions for every current-JST race."""
+import hashlib
 import json
 import math
 import os
@@ -27,6 +28,10 @@ def main():
         raise RuntimeError("source seal is not SEALED")
     if not status.get("prediction_hash_sha256") or status["prediction_hash_sha256"] != seal.get("prediction_hash_sha256"):
         raise RuntimeError("source seal hash mismatch")
+    # Recompute using the v2 seal writer canonical serialization.
+    hash_input=json.dumps({k:v for k,v in seal.items() if k not in ("generated_at","prediction_hash_sha256")},ensure_ascii=False,sort_keys=True,separators=(",",":"))
+    if hashlib.sha256(hash_input.encode("utf-8")).hexdigest()!=seal["prediction_hash_sha256"]:
+        raise RuntimeError("source seal content hash mismatch")
     expected={}
     for row in weekly.get("runners") or []:
         race=row.get("race") or {}
