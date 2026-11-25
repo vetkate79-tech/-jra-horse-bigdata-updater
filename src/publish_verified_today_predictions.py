@@ -98,12 +98,15 @@ def main():
                 raise RuntimeError(f"invalid formation {column}: {key}")
         if str(a["axis"]["horse_no"]) not in set(map(str,formation["first"])):
             raise RuntimeError(f"axis missing from formation first column: {key}")
-        if len(a["trio_tickets"])!=len(set(a["trio_tickets"])):
-            raise RuntimeError(f"duplicate trio tickets: {key}")
+        seen_tickets=set()
         for ticket in a["trio_tickets"]:
             parts=str(ticket).split("-")
             if len(parts)!=3 or len(set(parts))!=3 or not set(parts).issubset(set(nums)):
                 raise RuntimeError(f"invalid trio ticket: {key} {ticket}")
+            canonical=tuple(sorted(parts))
+            if canonical in seen_tickets:
+                raise RuntimeError(f"duplicate trio tickets: {key}")
+            seen_tickets.add(canonical)
         published[key]={
             "date":today,"track":key[0],"race_no":key[1],
             "race_name":race.get("race_name"),"model_version":a.get("model_version"),
