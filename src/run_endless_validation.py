@@ -25,7 +25,9 @@ def load_state():
 def save(state):
  STATE.parent.mkdir(parents=True,exist_ok=True)
  state["updated_at"]=datetime.utcnow().isoformat()+"Z"
- STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
+ tmp=STATE.with_suffix(".tmp")
+ tmp.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
+ tmp.replace(STATE)
 
 def main():
  state=load_state()
@@ -49,6 +51,17 @@ def main():
           or str(r["is_hit"]).lower() not in ("0","1","true","false","yes","no")}
  state["data_quality_race_ids"]=sorted(invalid)
  rows=[r for r in rows if r["race_id"] not in invalid]
+ # Reject races assigned to multiple weeks, and reserve all diagnostic inputs.
+ race_weeks=defaultdict(set)
+ for r in rows:race_weeks[r["race_id"]].add(r["week"])
+ conflicts={rid for rid,w in race_weeks.items() if len(w)!=1}
+ state["data_quality_race_ids"]=sorted(invalid|conflicts)
+ rows=[r for r in rows if r["race_id"] not in conflicts]
+ ledger=state.setdefault("race_usage",{})
+ # Legacy weeks are conservatively marked as previously exposed.
+ legacy={x["week"] for x in state.get("evaluated_weeks",[])}
+ for r in rows:
+  if r["week"] in legacy:ledger.setdefault(r["race_id"],{"purpose":"LEGACY_DIAGNOSTIC","week":r["week"],"result_access":True})
  weeks=sorted(set(r["week"] for r in rows))
  done=set(x["week"] for x in state.get("evaluated_weeks",[]))
  for test_index in range(MIN_TRAIN_WEEKS,len(weeks)):
@@ -67,6 +80,9 @@ def main():
   if not eligible:continue
   _,chosen=max(eligible)
   test=[r for r in rows if r["week"]==test_week and r["model_version"]==chosen]
+  test=[r for r in test if r["race_id"] not in ledger]
+  if not test:continue
+  for r in test:ledger[r["race_id"]]={"purpose":"DIAGNOSTIC_TEST","week":test_week,"model_version":chosen,"input_as_of":None,"result_access":True}
   stake=sum(num(r["stake_yen"]) for r in test);payout=sum(num(r["payout_yen"]) for r in test)
   bets=len(test);hits=sum(str(r["is_hit"]).lower() in ("1","true","yes") for r in test)
   roi=payout/stake*100 if stake else 0.0;hit=hits/bets*100 if bets else 0.0
@@ -74,6 +90,7 @@ def main():
   state.setdefault("evaluated_weeks",[]).append({"week":test_week,"chosen_model":chosen,
    "roi_pct":round(roi,2),"hit_rate_pct":round(hit,2),"bets":bets,
    "passed_130":roi>=TARGET_ROI,"streak":state["current_streak"]})
+  save(state)
   if state["current_streak"]>=TARGET_STREAK:
    state.update(milestone_three_weeks=True,winning_model=chosen)
  state["status"]="RUNNING_WAITING_NEXT_UNSEEN_WEEK" if weeks else "BLOCKED_NO_CONFIRMED_ROWS"
