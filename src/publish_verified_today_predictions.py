@@ -99,7 +99,7 @@ def main():
         if not isinstance(formation,dict) or set(formation)!={"first","second","third"}:
             raise RuntimeError(f"invalid formation columns: {key}")
         for column, selections in formation.items():
-            if not isinstance(selections,list) or not selections or len(selections)!=len(set(selections)) or not set(map(str,selections)).issubset(set(nums)):
+            if not isinstance(selections,list) or not selections or len(selections)!=len(set(map(str,selections))) or not set(map(str,selections)).issubset(set(nums)):
                 raise RuntimeError(f"invalid formation {column}: {key}")
         if str(a["axis"]["horse_no"]) not in set(map(str,formation["first"])):
             raise RuntimeError(f"axis missing from formation first column: {key}")
