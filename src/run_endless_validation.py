@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Leakage-safe walk-forward model selection. Resumes until 3 unseen weeks exceed 130% ROI."""
+"""Leakage-safe walk-forward model selection. Continues after every milestone; historical CSV evaluation is diagnostic only."""
 import csv, json
 from collections import defaultdict
 from datetime import datetime
@@ -27,6 +27,8 @@ def save(state):
 
 def main():
  state=load_state()
+ state["completed"]=False
+ state["evaluation_scope"]="DIAGNOSTIC_ONLY"
  if not SOURCE.exists():
   state.update(status="BLOCKED_NO_CONFIRMED_PREDICTIONS",message="No fabricated backtest was run")
   save(state);print(json.dumps(state,ensure_ascii=False));return
@@ -64,9 +66,8 @@ def main():
    "roi_pct":round(roi,2),"hit_rate_pct":round(hit,2),"bets":bets,
    "passed_130":roi>=TARGET_ROI,"streak":state["current_streak"]})
   if state["current_streak"]>=TARGET_STREAK:
-   state.update(status="COMPLETED_THREE_UNSEEN_WEEKS",completed=True,winning_model=chosen);break
- if not state.get("completed"):
-  state["status"]="RUNNING_WAITING_NEXT_UNSEEN_WEEK" if weeks else "BLOCKED_NO_CONFIRMED_ROWS"
+   state.update(milestone_three_weeks=True,winning_model=chosen)
+ state["status"]="RUNNING_WAITING_NEXT_UNSEEN_WEEK" if weeks else "BLOCKED_NO_CONFIRMED_ROWS"
  save(state);print(json.dumps(state,ensure_ascii=False))
 
 if __name__=="__main__":main()
