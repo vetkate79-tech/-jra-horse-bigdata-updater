@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Leakage-safe walk-forward model selection. Continues after every milestone; historical CSV evaluation is diagnostic only."""
-import csv, json
+import csv, json, math
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -13,8 +13,10 @@ MIN_TRAIN_WEEKS=4
 MIN_TRAIN_BETS=20
 
 def num(x):
- try:return float(x)
- except (TypeError,ValueError):return 0.0
+ try:
+  v=float(x)
+  return v if math.isfinite(v) and v>=0 else None
+ except (TypeError,ValueError):return None
 
 def load_state():
  if STATE.exists():return json.loads(STATE.read_text(encoding="utf-8"))
@@ -40,6 +42,13 @@ def main():
   state.update(status="BLOCKED_BAD_SCHEMA",missing=sorted(missing));save(state);return
  # Only rows produced from fully validated source data may enter evaluation.
  rows=[r for r in rows if r["data_status"] in ("PASS","RESOLVED_CONSENSUS")]
+ # Missing settlement is not a loss; quarantine the entire race.
+ invalid={r["race_id"] for r in rows if not r["race_id"].strip()
+          or num(r["stake_yen"]) is None or num(r["stake_yen"])==0
+          or num(r["payout_yen"]) is None
+          or str(r["is_hit"]).lower() not in ("0","1","true","false","yes","no")}
+ state["data_quality_race_ids"]=sorted(invalid)
+ rows=[r for r in rows if r["race_id"] not in invalid]
  weeks=sorted(set(r["week"] for r in rows))
  done=set(x["week"] for x in state.get("evaluated_weeks",[]))
  for test_index in range(MIN_TRAIN_WEEKS,len(weeks)):
