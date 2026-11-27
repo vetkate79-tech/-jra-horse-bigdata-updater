@@ -42,6 +42,13 @@ def main():
  missing=required-set(rows[0] if rows else [])
  if missing:
   state.update(status="BLOCKED_BAD_SCHEMA",missing=sorted(missing));save(state);return
+ ledger=state.setdefault("race_usage",{})
+ # Preserve rejected source IDs across runs; never erase prior exposure.
+ for r in rows:
+  rid=r["race_id"].strip()
+  if rid and r["data_status"] not in ("PASS","RESOLVED_CONSENSUS"):
+   ledger.setdefault(rid,{"purpose":"QUARANTINE","result_access":True})
+ for r in rows:r["race_id"]=r["race_id"].strip()
  # Only rows produced from fully validated source data may enter evaluation.
  rows=[r for r in rows if r["data_status"] in ("PASS","RESOLVED_CONSENSUS")]
  # Missing settlement is not a loss; quarantine the entire race.
@@ -57,7 +64,9 @@ def main():
  conflicts={rid for rid,w in race_weeks.items() if len(w)!=1}
  state["data_quality_race_ids"]=sorted(invalid|conflicts)
  rows=[r for r in rows if r["race_id"] not in conflicts]
- ledger=state.setdefault("race_usage",{})
+ for rid in invalid|conflicts:
+  if rid:ledger.setdefault(rid,{"purpose":"QUARANTINE","result_access":True})
+ save(state)
  # Legacy weeks are conservatively marked as previously exposed.
  legacy={x["week"] for x in state.get("evaluated_weeks",[])}
  for r in rows:
@@ -69,7 +78,7 @@ def main():
   if test_week in done:continue
   train_weeks=set(weeks[:test_index]);stats=defaultdict(lambda:{"stake":0.0,"payout":0.0,"bets":0})
   for r in rows:
-   if r["week"] in train_weeks:
+   if r["week"] in train_weeks and r["race_id"] not in ledger:
     s=stats[r["model_version"]];s["stake"]+=num(r["stake_yen"]);s["payout"]+=num(r["payout_yen"]);s["bets"]+=1
   eligible=[]
   for model,s in stats.items():
@@ -77,6 +86,10 @@ def main():
     roi=s["payout"]/s["stake"]*100
     # ROI is primary; hit rate is never used to inflate stake or leak test outcomes.
     eligible.append((roi,model))
+  for r in rows:
+   if r["week"] in train_weeks:
+    ledger.setdefault(r["race_id"],{"purpose":"DIAGNOSTIC_TRAIN","week":r["week"],"result_access":True})
+  save(state)
   if not eligible:continue
   _,chosen=max(eligible)
   test=[r for r in rows if r["week"]==test_week and r["model_version"]==chosen]
