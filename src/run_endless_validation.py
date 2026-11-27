@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Leakage-safe walk-forward model selection. Resumes until 3 unseen weeks exceed 130% ROI."""
-import csv, json
+"""Leakage-safe walk-forward model selection. Continues after every milestone; historical CSV evaluation is diagnostic only."""
+import csv, json, math
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -13,8 +13,10 @@ MIN_TRAIN_WEEKS=4
 MIN_TRAIN_BETS=20
 
 def num(x):
- try:return float(x)
- except (TypeError,ValueError):return 0.0
+ try:
+  v=float(x)
+  return v if math.isfinite(v) and v>=0 else None
+ except (TypeError,ValueError):return None
 
 def load_state():
  if STATE.exists():return json.loads(STATE.read_text(encoding="utf-8"))
@@ -23,10 +25,14 @@ def load_state():
 def save(state):
  STATE.parent.mkdir(parents=True,exist_ok=True)
  state["updated_at"]=datetime.utcnow().isoformat()+"Z"
- STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
+ tmp=STATE.with_suffix(".tmp")
+ tmp.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
+ tmp.replace(STATE)
 
 def main():
  state=load_state()
+ state["completed"]=False
+ state["evaluation_scope"]="DIAGNOSTIC_ONLY"
  if not SOURCE.exists():
   state.update(status="BLOCKED_NO_CONFIRMED_PREDICTIONS",message="No fabricated backtest was run")
   save(state);print(json.dumps(state,ensure_ascii=False));return
@@ -36,8 +42,35 @@ def main():
  missing=required-set(rows[0] if rows else [])
  if missing:
   state.update(status="BLOCKED_BAD_SCHEMA",missing=sorted(missing));save(state);return
+ ledger=state.setdefault("race_usage",{})
+ # Preserve rejected source IDs across runs; never erase prior exposure.
+ for r in rows:
+  rid=r["race_id"].strip()
+  if rid and r["data_status"] not in ("PASS","RESOLVED_CONSENSUS"):
+   ledger.setdefault(rid,{"purpose":"QUARANTINE","result_access":True})
+ for r in rows:r["race_id"]=r["race_id"].strip()
  # Only rows produced from fully validated source data may enter evaluation.
  rows=[r for r in rows if r["data_status"] in ("PASS","RESOLVED_CONSENSUS")]
+ # Missing settlement is not a loss; quarantine the entire race.
+ invalid={r["race_id"] for r in rows if not r["race_id"].strip()
+          or num(r["stake_yen"]) is None or num(r["stake_yen"])==0
+          or num(r["payout_yen"]) is None
+          or str(r["is_hit"]).lower() not in ("0","1","true","false","yes","no")}
+ state["data_quality_race_ids"]=sorted(invalid)
+ rows=[r for r in rows if r["race_id"] not in invalid]
+ # Reject races assigned to multiple weeks, and reserve all diagnostic inputs.
+ race_weeks=defaultdict(set)
+ for r in rows:race_weeks[r["race_id"]].add(r["week"])
+ conflicts={rid for rid,w in race_weeks.items() if len(w)!=1}
+ state["data_quality_race_ids"]=sorted(invalid|conflicts)
+ rows=[r for r in rows if r["race_id"] not in conflicts]
+ for rid in invalid|conflicts:
+  if rid:ledger.setdefault(rid,{"purpose":"QUARANTINE","result_access":True})
+ save(state)
+ # Legacy weeks are conservatively marked as previously exposed.
+ legacy={x["week"] for x in state.get("evaluated_weeks",[])}
+ for r in rows:
+  if r["week"] in legacy:ledger.setdefault(r["race_id"],{"purpose":"LEGACY_DIAGNOSTIC","week":r["week"],"result_access":True})
  weeks=sorted(set(r["week"] for r in rows))
  done=set(x["week"] for x in state.get("evaluated_weeks",[]))
  for test_index in range(MIN_TRAIN_WEEKS,len(weeks)):
@@ -45,7 +78,7 @@ def main():
   if test_week in done:continue
   train_weeks=set(weeks[:test_index]);stats=defaultdict(lambda:{"stake":0.0,"payout":0.0,"bets":0})
   for r in rows:
-   if r["week"] in train_weeks:
+   if r["week"] in train_weeks and r["race_id"] not in ledger:
     s=stats[r["model_version"]];s["stake"]+=num(r["stake_yen"]);s["payout"]+=num(r["payout_yen"]);s["bets"]+=1
   eligible=[]
   for model,s in stats.items():
@@ -53,9 +86,16 @@ def main():
     roi=s["payout"]/s["stake"]*100
     # ROI is primary; hit rate is never used to inflate stake or leak test outcomes.
     eligible.append((roi,model))
+  for r in rows:
+   if r["week"] in train_weeks:
+    ledger.setdefault(r["race_id"],{"purpose":"DIAGNOSTIC_TRAIN","week":r["week"],"result_access":True})
+  save(state)
   if not eligible:continue
   _,chosen=max(eligible)
   test=[r for r in rows if r["week"]==test_week and r["model_version"]==chosen]
+  test=[r for r in test if r["race_id"] not in ledger]
+  if not test:continue
+  for r in test:ledger[r["race_id"]]={"purpose":"DIAGNOSTIC_TEST","week":test_week,"model_version":chosen,"input_as_of":None,"result_access":True}
   stake=sum(num(r["stake_yen"]) for r in test);payout=sum(num(r["payout_yen"]) for r in test)
   bets=len(test);hits=sum(str(r["is_hit"]).lower() in ("1","true","yes") for r in test)
   roi=payout/stake*100 if stake else 0.0;hit=hits/bets*100 if bets else 0.0
@@ -63,10 +103,10 @@ def main():
   state.setdefault("evaluated_weeks",[]).append({"week":test_week,"chosen_model":chosen,
    "roi_pct":round(roi,2),"hit_rate_pct":round(hit,2),"bets":bets,
    "passed_130":roi>=TARGET_ROI,"streak":state["current_streak"]})
+  save(state)
   if state["current_streak"]>=TARGET_STREAK:
-   state.update(status="COMPLETED_THREE_UNSEEN_WEEKS",completed=True,winning_model=chosen);break
- if not state.get("completed"):
-  state["status"]="RUNNING_WAITING_NEXT_UNSEEN_WEEK" if weeks else "BLOCKED_NO_CONFIRMED_ROWS"
+   state.update(milestone_three_weeks=True,winning_model=chosen)
+ state["status"]="RUNNING_WAITING_NEXT_UNSEEN_WEEK" if weeks else "BLOCKED_NO_CONFIRMED_ROWS"
  save(state);print(json.dumps(state,ensure_ascii=False))
 
 if __name__=="__main__":main()
