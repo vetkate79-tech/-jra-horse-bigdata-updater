@@ -48,10 +48,11 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
             raise ValueError(f"{name}: duplicate horse_id")
         seen_horse_ids.add(horse_id)
         number = runner.get("horse_no")
-        if number is not None:
-            if str(number) in seen_horse_numbers:
-                raise ValueError(f"{name}: duplicate horse_no")
-            seen_horse_numbers.add(str(number))
+        if type(number) is not int or number < 1:
+            raise ValueError(f"{name}: positive integer horse_no required")
+        if number in seen_horse_numbers:
+            raise ValueError(f"{name}: duplicate horse_no")
+        seen_horse_numbers.add(number)
         if len(starts) < 5:
             raise ValueError(f"{name}: at least 5 valid prior starts required")
         seen = set()

@@ -12,7 +12,7 @@ class GenericNARRoutingTests(unittest.TestCase):
     def setUp(self):
         self.source = {"race": {"track": "大井", "race_no": 11, "date": "2026-11-24"},
                        "runners": [
-                           {"horse_name": f"horse{i}", "horse_id": f"id{i}",
+                           {"horse_name": f"horse{i}", "horse_id": f"id{i}", "horse_no": i + 1,
                             "recent_starts": [{"race_date": f"2026-11-{day:02d}",
                                                "race_id": f"race{day}",
                                                "finish_position": 1}
@@ -92,6 +92,15 @@ class GenericNARRoutingTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate horse_id"):
                 generic.execute(self.source)
             build.assert_not_called()
+
+    def test_invalid_horse_number_blocks_before_scoring(self):
+        for number in (None, 0, -1, True, "01", 1.5):
+            with self.subTest(number=number):
+                self.source["runners"][0]["horse_no"] = number
+                with patch.object(generic, "build") as build:
+                    with self.assertRaisesRegex(ValueError, "horse_no required"):
+                        generic.execute(self.source)
+                    build.assert_not_called()
 
     def test_duplicate_horse_number_blocks(self):
         for i, runner in enumerate(self.source["runners"]):
