@@ -17,6 +17,15 @@ on:
       - 'src/verify_nar_capture_provenance.py'
       - '.github/workflows/nar-card-audit.yml'
   workflow_dispatch:
+    inputs:
+      legacy_case:
+        description: Optional fixed-race diagnostic (not a generic acceptance gate)
+        type: choice
+        default: none
+        options:
+          - none
+          - kochi11
+          - saga11
 permissions:
   contents: read
 jobs:
@@ -32,6 +41,7 @@ jobs:
       - name: Run generic NAR fail-closed regression tests
         run: python -m unittest discover -s tests -p 'test_nar_any_race.py' -v
   kochi11:
+    if: github.event_name == 'workflow_dispatch' && inputs.legacy_case == 'kochi11'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -69,6 +79,7 @@ jobs:
             /tmp/kochi11-research-prediction.json
           retention-days: 14
   saga11:
+    if: github.event_name == 'workflow_dispatch' && inputs.legacy_case == 'saga11'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
