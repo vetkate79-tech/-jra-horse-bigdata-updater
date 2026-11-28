@@ -17,14 +17,21 @@ def parse(html, target_date):
     if cutoff.isoformat() != target_date:
         raise ValueError('canonical target_date YYYY-MM-DD required')
     soup=BeautifulSoup(html,"lxml")
-    names=list(dict.fromkeys(a.get_text(strip=True) for a in soup.select("span.mainHorse a") if a.get_text(strip=True)))
-    if not names:raise ValueError("no horses found in race-card body")
+    anchors=soup.select("span.mainHorse a")
+    if not anchors:raise ValueError("no horses found in race-card body")
     horses=[]
-    for name in names:
-        a=next((a for a in soup.select("span.mainHorse a") if a.get_text(strip=True)==name),None)
-        if a is None:raise ValueError("missing horse row "+name)
+    seen_rows=set()
+    seen_ids=set()
+    for a in anchors:
+        name=a.get_text(strip=True)
+        horse_id=a.get("href","").rstrip("/").split("/")[-1]
+        if not name or not horse_id:raise ValueError("missing horse identity")
         tr=a.find_parent("tr")
         if tr is None:raise ValueError("horse row missing "+name)
+        if id(tr) in seen_rows or horse_id in seen_ids:
+            raise ValueError("duplicate horse row or identity "+name)
+        seen_rows.add(id(tr))
+        seen_ids.add(horse_id)
         history=[]
         for cell in tr.select("td.race"):
             first=cell.select_one(".firstInfo .place")
@@ -45,7 +52,7 @@ def parse(html, target_date):
             history.append({"race_date":start_date,"finish_position":int(finish.group(1)),"surface":"ダート" if distance.group(2)=="ダ" else "芝","distance_m":int(distance.group(1)),"course":text.split(" ",1)[0],"corner_positions":corners.group() if corners else "","last3f":last3f.group(1) if last3f else None})
         if not history:
             print("HISTORY_MISSING",name,"race_cells",len(tr.select("td.race")),"sample",tr.get_text(" ",strip=True)[:1200])
-        horses.append({"horse_name":name,"horse_id":a.get("href","").split("/")[-1],"recent_starts":history})
+        horses.append({"horse_name":name,"horse_id":horse_id,"recent_starts":history})
     return {"status":"UNSEALED_RESEARCH_ONLY","horse_count":len(horses),"horses":horses}
 
 if __name__=="__main__":
