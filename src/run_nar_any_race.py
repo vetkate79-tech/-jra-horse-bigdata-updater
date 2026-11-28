@@ -8,12 +8,24 @@ This does not perform discovery/scraping; that is a separate adapter stage.
 import argparse
 from datetime import date as date_type
 import json
+import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_nar_pre_race_snapshot import build
 from run_nar_isolated import run
+
+
+def parse_canonical_date(value, label):
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"invalid {label}")
+    if re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value) is None:
+        raise ValueError(f"noncanonical {label}")
+    try:
+        return date_type.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError(f"invalid {label}") from exc
 
 
 def execute(source, expected_track=None, expected_race_no=None, expected_date=None):
@@ -27,12 +39,7 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
     track = str(race.get("track") or "")
     if any(x in track for x in ("帯広", "ばんえい", "BANEI")):
         raise ValueError("BANEI_REQUIRES_SEPARATE_MODEL")
-    try:
-        cutoff = date_type.fromisoformat(str(race.get("date") or ""))
-    except ValueError as exc:
-        raise ValueError("invalid target race date") from exc
-    if cutoff.isoformat() != race.get("date"):
-        raise ValueError("noncanonical target race date")
+    cutoff = parse_canonical_date(race.get("date"), "target race date")
     runners = source.get("runners") or []
     if len(runners) < 3:
         raise ValueError("at least 3 verified runners required")
@@ -61,11 +68,9 @@ def execute(source, expected_track=None, expected_race_no=None, expected_date=No
             if not date:
                 raise ValueError(f"{name}: undated prior start")
             try:
-                history_date = date_type.fromisoformat(str(date))
+                history_date = parse_canonical_date(date, "prior start date")
             except ValueError as exc:
-                raise ValueError(f"{name}: invalid prior start date") from exc
-            if history_date.isoformat() != str(date):
-                raise ValueError(f"{name}: noncanonical prior start date")
+                raise ValueError(f"{name}: {exc}") from exc
             if history_date >= cutoff:
                 raise ValueError(f"{name}: future or target-date history leakage")
             key = str(date)  # one horse cannot have two completed starts on the same date
