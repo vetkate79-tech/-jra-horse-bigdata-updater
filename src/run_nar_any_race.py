@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""Generic fail-closed NAR research entry point.
+
+Accepts a verified normalized source JSON for any track/race. No fabricated
+runners, scores, missing history, odds, or post-start sealed predictions.
+This does not perform discovery/scraping; that is a separate adapter stage.
+"""
+import argparse
+from datetime import date as date_type
+import json
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_nar_pre_race_snapshot import build
+from run_nar_isolated import run
+
+
+def parse_canonical_date(value, label):
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"invalid {label}")
+    if re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value) is None:
+        raise ValueError(f"noncanonical {label}")
+    try:
+        return date_type.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError(f"invalid {label}") from exc
+
+
+def execute(source, expected_track=None, expected_race_no=None, expected_date=None):
+    race = source.get("race") or {}
+    if expected_track is not None and str(race.get("track")) != str(expected_track):
+        raise ValueError("requested track differs from verified source")
+    if expected_race_no is not None and str(race.get("race_no")) != str(expected_race_no):
+        raise ValueError("requested race number differs from verified source")
+    if expected_date is not None and str(race.get("date")) != str(expected_date):
+        raise ValueError("requested date differs from verified source")
+    track = str(race.get("track") or "")
+    if any(x in track for x in ("帯広", "ばんえい", "BANEI")):
+        raise ValueError("BANEI_REQUIRES_SEPARATE_MODEL")
+    cutoff = parse_canonical_date(race.get("date"), "target race date")
+    runners = source.get("runners") or []
+    if len(runners) < 3:
+        raise ValueError("at least 3 verified runners required")
+    seen_horse_ids = set()
+    seen_horse_numbers = set()
+    for runner in runners:
+        name = str(runner.get("horse_name") or "?")
+        horse_id = str(runner.get("horse_id") or "")
+        starts = runner.get("recent_starts") or []
+        if not horse_id:
+            raise ValueError(f"{name}: verified horse_id required")
+        if horse_id in seen_horse_ids:
+            raise ValueError(f"{name}: duplicate horse_id")
+        seen_horse_ids.add(horse_id)
+        number = runner.get("horse_no")
+        if type(number) is not int or number < 1:
+            raise ValueError(f"{name}: positive integer horse_no required")
+        if number in seen_horse_numbers:
+            raise ValueError(f"{name}: duplicate horse_no")
+        seen_horse_numbers.add(number)
+        if len(starts) < 5:
+            raise ValueError(f"{name}: at least 5 valid prior starts required")
+        seen = set()
+        for start in starts:
+            date = start.get("race_date")
+            if not date:
+                raise ValueError(f"{name}: undated prior start")
+            try:
+                history_date = parse_canonical_date(date, "prior start date")
+            except ValueError as exc:
+                raise ValueError(f"{name}: {exc}") from exc
+            if history_date >= cutoff:
+                raise ValueError(f"{name}: future or target-date history leakage")
+            key = str(date)  # one horse cannot have two completed starts on the same date
+            if key in seen:
+                raise ValueError(f"{name}: duplicate prior start")
+            seen.add(key)
+            finish = start.get("finish_position")
+            if type(finish) is not int or finish < 1:
+                raise ValueError(f"{name}: excluded or unfinished prior start")
+    snapshot = build(source)
+    prediction = run(snapshot)
+    if prediction.get("status") != "RESEARCH_NAR_UNCALIBRATED":
+        raise ValueError("unexpected research status")
+    return {"snapshot": snapshot, "prediction": prediction}
+
+
+def main():
+    p = argparse.ArgumentParser(description="Run verified NAR research snapshot for any flat-racing track")
+    p.add_argument("--source", required=True, help="Verified normalized pre-start source JSON")
+    p.add_argument("--output", required=True, help="Output JSON with snapshot and prediction")
+    p.add_argument("--track", help="Optional exact track identity check")
+    p.add_argument("--race-no", help="Optional exact race number identity check")
+    p.add_argument("--date", help="Optional YYYY-MM-DD identity check")
+    a = p.parse_args()
+    source = json.loads(Path(a.source).read_text(encoding="utf-8"))
+    result = execute(source, a.track, a.race_no, a.date)
+    path = Path(a.output)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps({"status": result["prediction"]["status"],
+                      "race_id": result["prediction"]["race_id"],
+                      "ticket_status": result["prediction"]["ticket_status"]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()
