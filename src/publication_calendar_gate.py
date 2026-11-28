@@ -6,9 +6,16 @@ def publication_eligible(today, state, official_race_keys, weekly_race_keys, sea
     date.fromisoformat(today)
     if official_race_keys is None:
         raise RuntimeError("OFFICIAL_MEETING_UNKNOWN")
-    official = set(official_race_keys)
-    weekly = set(weekly_race_keys)
-    sealed = set(sealed_race_keys)
+    def unique_keys(keys, source):
+        values = list(keys)
+        unique = set(values)
+        if len(values) != len(unique):
+            raise RuntimeError("DUPLICATE_RACE_KEYS:" + source)
+        return unique
+
+    official = unique_keys(official_race_keys, "official")
+    weekly = unique_keys(weekly_race_keys, "weekly")
+    sealed = unique_keys(sealed_race_keys, "sealed")
     if not official:
         if weekly or sealed:
             raise RuntimeError("NON_MEETING_CARD_CONFLICT")
